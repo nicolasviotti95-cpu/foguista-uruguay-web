@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Normativa URSEA | Foguista Uruguay</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f3f6fa;
+    color:#172033;
+    line-height:1.65;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:linear-gradient(135deg,#071a33,#0d3766);
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo-area img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.logo-text{
+    font-size:21px;
+    font-weight:800;
+}
+
+.logo-text span{
+    display:block;
+    font-size:12px;
+    font-weight:400;
+    opacity:.8;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:7px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:8px;
+    font-size:14px;
+    transition:.2s;
+}
+
+nav a:hover,
+nav a.active{
+    background:rgba(255,255,255,.15);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:470px;
+    background:
+        linear-gradient(rgba(4,20,39,.82),rgba(5,28,55,.90)),
+        url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:70px 8%;
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    background:#1597e5;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:48px;
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:760px;
+    color:#dceafa;
+}
+
+.hero-buttons{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:13px 20px;
+    border-radius:9px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#1597e5;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#087fc8;
+    transform:translateY(-2px);
+}
+
+.btn-light{
+    background:white;
+    color:#082445;
+}
+
+.btn-light:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+section{
+    padding:70px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#092b52;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    max-width:750px;
+    margin:auto;
+    color:#657386;
+}
+
+/* =========================
+   IMPORTANT NOTICE
+========================= */
+
+.notice{
+    margin-top:45px;
+    background:#fff;
+    border-left:6px solid #f0a400;
+    padding:25px 28px;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.notice h3{
+    color:#9a6500;
+    margin-bottom:8px;
+}
+
+/* =========================
+   OFFICIAL CARD
+========================= */
+
+.official-card{
+    background:linear-gradient(135deg,#09294d,#104d82);
+    color:white;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 12px 35px rgba(4,31,60,.2);
+}
+
+.official-card h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.official-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:25px;
+}
+
+.official-item{
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:18px;
+}
+
+.official-item strong{
+    display:block;
+    font-size:13px;
+    opacity:.75;
+    margin-bottom:5px;
+}
+
+.official-item span{
+    font-size:17px;
+    font-weight:bold;
+}
+
+/* =========================
+   READING SYSTEM
+========================= */
+
+.study-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.study-card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+    border-top:5px solid #1597e5;
+}
+
+.study-card h3{
+    color:#0a315d;
+    margin-bottom:10px;
+}
+
+.study-card .icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+/* =========================
+   SECTION CARDS
+========================= */
+
+.reg-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+details{
+    background:white;
+    border-radius:13px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+    overflow:hidden;
+}
+
+summary{
+    cursor:pointer;
+    list-style:none;
+    padding:21px 24px;
+    font-weight:800;
+    color:#092c52;
+    font-size:17px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"+";
+    font-size:25px;
+    color:#1597e5;
+}
+
+details[open] summary::after{
+    content:"−";
+}
+
+.details-content{
+    padding:0 24px 25px;
+    border-top:1px solid #edf0f4;
+}
+
+/* =========================
+   NORMATIVE BLOCK
+========================= */
+
+.normative{
+    margin-top:20px;
+    background:#eef5fb;
+    border-left:5px solid #0c5d99;
+    padding:18px 20px;
+    border-radius:8px;
+}
+
+.normative-title{
+    font-weight:bold;
+    color:#084b7c;
+    margin-bottom:7px;
+}
+
+.explanation{
+    margin-top:18px;
+    background:#edf8f1;
+    border-left:5px solid #26a269;
+    padding:18px 20px;
+    border-radius:8px;
+}
+
+.explanation-title{
+    font-weight:bold;
+    color:#177245;
+    margin-bottom:7px;
+}
+
+.exam{
+    margin-top:18px;
+    background:#fff7df;
+    border-left:5px solid #e3a400;
+    padding:18px 20px;
+    border-radius:8px;
+}
+
+.exam-title{
+    font-weight:bold;
+    color:#936500;
+    margin-bottom:7px;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#092d54;
+    color:white;
+    padding:14px;
+    text-align:left;
+}
+
+td{
+    padding:14px;
+    border-bottom:1px solid #e5eaf0;
+}
+
+tr:nth-child(even){
+    background:#f7f9fb;
+}
+
+/* =========================
+   CONCEPT CARDS
+========================= */
+
+.concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.concept{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 6px 20px rgba(0,0,0,.06);
+}
+
+.concept h3{
+    color:#0b3b6b;
+    margin-bottom:12px;
+}
+
+.concept p{
+    color:#526174;
+}
+
+/* =========================
+   FLOW
+========================= */
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:30px 0;
+}
+
+.flow-step{
+    background:#092e55;
+    color:white;
+    padding:13px 18px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.arrow{
+    font-size:24px;
+    color:#1597e5;
+}
+
+/* =========================
+   ANNEXES
+========================= */
+
+.annex-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.annex{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    border-left:5px solid #1597e5;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.annex strong{
+    color:#092d54;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#06182d;
+    color:#bdcad8;
+    padding:45px 7%;
+    text-align:center;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+footer p{
+    max-width:700px;
+    margin:8px auto;
+    font-size:14px;
+}
+
+.footer-links{
+    margin-top:20px;
+}
+
+.footer-links a{
+    color:#5eb9f2;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    header{
+        position:relative;
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .official-grid,
+    .study-grid,
+    .concept-grid{
+        grid-template-columns:1fr;
+    }
+
+    .reg-grid,
+    .annex-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding:55px 6%;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:50px 0;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo-area">
+
+        <img src="logo.png" alt="Foguista Uruguay">
+
+        <div class="logo-text">
+            Foguista Uruguay
+            <span>Formación y seguridad en generadores de vapor</span>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Inicio</a>
+        <a href="generadores.html">Generadores</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a href="estudio.html">Estudio</a>
+        <a href="normativa.html" class="active">Normativa</a>
+        <a href="app.html">App</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">URSEA · REGLAMENTO 2026</span>
+
+        <h1>
+            Reglamento de Seguridad
+            de Generadores de Vapor
+        </h1>
+
+        <p>
+            Una guía para comprender el reglamento de URSEA,
+            relacionarlo con el funcionamiento del generador
+            y estudiarlo de forma clara para el examen de foguista.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                class="btn btn-primary"
+                href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026"
+                target="_blank"
+            >
+                📄 Reglamento oficial en IMPO
+            </a>
+
+            <a class="btn btn-light" href="#secciones">
+                📚 Explorar normativa
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>¿Cómo utilizar esta sección?</h2>
+
+        <p>
+            Esta página está diseñada para estudiar y comprender
+            la normativa sin confundir una explicación educativa
+            con el texto oficial.
+        </p>
+
+    </div>
+
+
+    <div class="study-grid">
+
+        <div class="study-card">
+
+            <div class="icon">📘</div>
+
+            <h3>Reglamento</h3>
+
+            <p>
+                Se identifican los artículos, secciones y anexos
+                correspondientes al Reglamento de Seguridad de
+                Generadores de Vapor 2026.
+            </p>
+
+        </div>
+
+
+        <div class="study-card">
+
+            <div class="icon">🧠</div>
+
+            <h3>Explicación</h3>
+
+            <p>
+                Los conceptos se explican con lenguaje claro,
+                relacionándolos con el funcionamiento real de
+                un generador de vapor.
+            </p>
+
+        </div>
+
+
+        <div class="study-card">
+
+            <div class="icon">🎯</div>
+
+            <h3>Para el examen</h3>
+
+            <p>
+                Se destacan las relaciones y conceptos que
+                conviene comprender y no solamente memorizar.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        <h3>⚠️ Importante</h3>
+
+        <p>
+            El contenido de esta página es una <strong>guía educativa</strong>.
+            No sustituye el Reglamento oficial. Cuando exista una diferencia
+            entre esta explicación y la normativa vigente, prevalece siempre
+            el texto oficial de URSEA publicado por los organismos competentes.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DATOS OFICIALES
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="official-card">
+
+        <h3>📑 Reglamento de Seguridad de Generadores de Vapor 2026</h3>
+
+        <p>
+            Aprobado mediante Resolución URSEA N.º 101/026.
+            La resolución fue aprobada el 17 de marzo de 2026 y publicada
+            en el Diario Oficial el 25 de marzo de 2026.
+        </p>
+
+        <div class="official-grid">
+
+            <div class="official-item">
+                <strong>Resolución</strong>
+                <span>101/026</span>
+            </div>
+
+            <div class="official-item">
+                <strong>Fecha de aprobación</strong>
+                <span>17/03/2026</span>
+            </div>
+
+            <div class="official-item">
+                <strong>Publicación</strong>
+                <span>25/03/2026</span>
+            </div>
+
+        </div>
+
+        <div style="margin-top:25px;">
+
+            <a
+                href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026"
+                target="_blank"
+                class="btn btn-light"
+            >
+                Ver documento oficial completo
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PMTA / CATEGORÍAS
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Clasificación de los generadores</h2>
+
+        <p>
+            Una de las primeras cosas que establece el reglamento
+            es la clasificación de los generadores de vapor.
+        </p>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Categoría</th>
+                    <th>Condición normativa</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td><strong>P — Pequeño</strong></td>
+                    <td>PMTA mayor a 1 bar y menor o igual a 7 bar.</td>
+                </tr>
+
+                <tr>
+                    <td><strong>M — Mediano</strong></td>
+                    <td>PMTA mayor a 7 bar y menor o igual a 28 bar.</td>
+                </tr>
+
+                <tr>
+                    <td><strong>G — Grande</strong></td>
+                    <td>PMTA mayor a 28 bar.</td>
+                </tr>
+
+                <tr>
+                    <td><strong>E1</strong></td>
+                    <td>
+                        PMTA ≤ 7 bar, volumen ≤ 140 L,
+                        superficie de calefacción ≤ 1,9 m²
+                        y diámetro interior ≤ 0,4 m.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><strong>E2</strong></td>
+                    <td>
+                        Generadores que utilizan licor negro
+                        para recuperación de químicos específicos
+                        con tratamiento particular o no convencional.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><strong>E3</strong></td>
+                    <td>Generador de vapor eléctrico.</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="explanation">
+
+        <div class="explanation-title">
+            🧠 EXPLICADO
+        </div>
+
+        <p>
+            La <strong>PMTA — Presión Máxima de Trabajo Admisible</strong>
+            es una variable fundamental para comprender la clasificación
+            general P, M y G.
+        </p>
+
+        <p style="margin-top:10px;">
+            Pero no alcanza con mirar solamente la presión:
+            las categorías especiales tienen características propias
+            y, según el reglamento, las categorías especiales prevalecen
+            sobre las generales.
+        </p>
+
+    </div>
+
+
+    <div class="exam">
+
+        <div class="exam-title">
+            🎯 PARA EL EXAMEN
+        </div>
+
+        <p>
+            No memorices únicamente los números. Entendé primero qué significa
+            PMTA y después relacioná sus valores con las categorías P, M y G.
+            También tené presente que existen categorías especiales.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DEFINICIONES IMPORTANTES
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Conceptos que tenés que dominar</h2>
+
+        <p>
+            El reglamento comienza definiendo muchos términos que después
+            aparecen a lo largo de sus diferentes secciones.
+        </p>
+
+    </div>
+
+
+    <div class="concept-grid">
+
+        <div class="concept">
+
+            <h3>🔥 Generador de vapor</h3>
+
+            <p>
+                Recipiente sometido a presión interna donde se produce
+                vapor de agua a una presión superior a la atmosférica
+                mediante la aplicación de calor producido por una
+                fuente externa.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>📈 PMTA</h3>
+
+            <p>
+                Es la máxima presión de trabajo admisible para el generador.
+                Se determina considerando los esfuerzos admisibles,
+                reglas de diseño y dimensiones establecidas por la norma
+                de fabricación.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>💨 Presión de trabajo</h3>
+
+            <p>
+                Es la presión a la cual opera el generador de vapor
+                cuando se encuentra en condición normal de operación.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>🛡️ Válvula de seguridad</h3>
+
+            <p>
+                Es una válvula especialmente fabricada para operar
+                con vapor y actuar cuando la presión supera la condición
+                correspondiente a su ajuste.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>👨‍🏭 Foguista</h3>
+
+            <p>
+                El reglamento define al foguista como el operador
+                del generador de vapor certificado por el Consejo
+                de Educación Técnico Profesional.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>📋 Carpeta del generador</h3>
+
+            <p>
+                Es el conjunto documental donde se almacena la información
+                del generador, incluyendo datos, proyecto, inspecciones,
+                reparaciones, alteraciones y tratamiento químico del agua,
+                entre otros registros.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="exam">
+
+        <div class="exam-title">
+            🎯 PARA EL EXAMEN
+        </div>
+
+        <p>
+            Prestá especial atención a la diferencia entre
+            <strong>presión de trabajo</strong> y
+            <strong>PMTA</strong>.
+            Son conceptos relacionados, pero no significan lo mismo.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SECCIONES
+========================= -->
+
+<section id="secciones">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>El Reglamento, sección por sección</h2>
+
+        <p>
+            Abrí cada bloque para estudiar qué regula cada parte.
+        </p>
+
+    </div>
+
+
+    <div class="reg-grid">
+
+
+        <!-- SECCIÓN I -->
+
+        <details>
+
+            <summary>
+                Sección I — Disposiciones generales
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 ¿Qué comprende?
+                    </div>
+
+                    <p>
+                        Objeto, alcance, definiciones y requisitos
+                        generales para el desarrollo de las actividades
+                        relacionadas con generadores de vapor.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        Es la base del reglamento. Antes de estudiar
+                        inspecciones, válvulas, controles o habilitación,
+                        primero hay que saber <strong>a qué equipos se aplica</strong>
+                        y qué significado tienen los términos utilizados.
+                    </p>
+
+                </div>
+
+                <div class="exam">
+
+                    <div class="exam-title">
+                        🎯 Para el examen
+                    </div>
+
+                    <p>
+                        Concentrate en PMTA, categorías, definiciones,
+                        generador de vapor, foguista, presión de trabajo,
+                        válvula de seguridad y condición normal de operación.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN II -->
+
+        <details>
+
+            <summary>
+                Sección II — Identificación e información
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Identificación
+                    </div>
+
+                    <p>
+                        El reglamento establece requisitos para la placa
+                        de fabricación del generador y para la información
+                        que debe acompañarlo.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        La placa permite conocer las características
+                        fundamentales del equipo y conservar su trazabilidad.
+                        Entre otros datos aparecen fabricante, modelo,
+                        número de fábrica, fecha de fabricación,
+                        superficie de calefacción, capacidad de producción,
+                        PMTA y presión de prueba.
+                    </p>
+
+                </div>
+
+                <div class="exam">
+
+                    <div class="exam-title">
+                        🎯 Para el examen
+                    </div>
+
+                    <p>
+                        Cuando veas una placa de generador, pensá:
+                        <strong>¿qué información me permite conocer las
+                        condiciones para las cuales fue diseñado?</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN III -->
+
+        <details>
+
+            <summary>
+                Sección III — Registro del generador
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Registro
+                    </div>
+
+                    <p>
+                        La normativa establece el procedimiento de registro
+                        y la asignación del número correspondiente al
+                        generador de vapor.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        El registro permite identificar formalmente al equipo
+                        dentro del sistema de control correspondiente y mantener
+                        su trazabilidad durante su vida útil.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN IV -->
+
+        <details>
+
+            <summary>
+                Sección IV — Construcción e instalación
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Comprende
+                    </div>
+
+                    <p>
+                        Diseño y fabricación, alimentación de agua,
+                        tuberías de vapor y purga de fondo.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        Esta sección relaciona el equipo físico con
+                        las condiciones de seguridad necesarias para
+                        instalarlo y conectarlo correctamente.
+                    </p>
+
+                    <div class="flow">
+
+                        <div class="flow-step">Agua</div>
+
+                        <div class="arrow">→</div>
+
+                        <div class="flow-step">Generador</div>
+
+                        <div class="arrow">→</div>
+
+                        <div class="flow-step">Vapor</div>
+
+                        <div class="arrow">→</div>
+
+                        <div class="flow-step">Proceso</div>
+
+                    </div>
+
+                    <p>
+                        También aparecen elementos fundamentales como
+                        la alimentación de agua, las tuberías de vapor
+                        y la purga de fondo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN V -->
+
+        <details>
+
+            <summary>
+                Sección V — Operación
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Una sección fundamental para el foguista
+                    </div>
+
+                    <p>
+                        Comprende operadores de generadores de vapor,
+                        mediciones, controles, enclavamientos y
+                        acondicionamiento y control de calidad del agua.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Pensalo como un sistema
+                    </div>
+
+                    <p>
+                        Durante la operación, el foguista debe interpretar
+                        diferentes variables simultáneamente:
+                    </p>
+
+                    <ul style="margin:15px 0 0 20px;">
+
+                        <li>Nivel de agua.</li>
+                        <li>Presión.</li>
+                        <li>Combustión.</li>
+                        <li>Alimentación de agua.</li>
+                        <li>Producción de vapor.</li>
+                        <li>Controles.</li>
+                        <li>Enclavamientos.</li>
+                        <li>Condiciones del agua.</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="exam">
+
+                    <div class="exam-title">
+                        🎯 Para el examen
+                    </div>
+
+                    <p>
+                        No estudies cada elemento aislado.
+                        Preguntate siempre:
+                        <strong>qué variable se está midiendo,
+                        qué elemento la controla y qué ocurre si
+                        aparece una condición peligrosa.</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN VI -->
+
+        <details>
+
+            <summary>
+                Sección VI — Reparaciones y mantenimiento
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Comprende
+                    </div>
+
+                    <p>
+                        Reparaciones mayores y alteraciones,
+                        mantenimiento, ensayo y calibración de válvulas
+                        de seguridad y reportes correspondientes.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        Una intervención sobre un generador no es simplemente
+                        una reparación mecánica. Dependiendo de su naturaleza,
+                        puede modificar condiciones esenciales del equipo
+                        y generar obligaciones específicas dentro del sistema
+                        regulatorio.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN VII -->
+
+        <details>
+
+            <summary>
+                Sección VII — Inspecciones y habilitación
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Inspecciones
+                    </div>
+
+                    <p>
+                        La sección regula aspectos generales,
+                        contenido, alcance, periodicidad de las inspecciones
+                        y resolución de habilitación.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        La habilitación no debe entenderse como un simple
+                        trámite administrativo. Está relacionada con la
+                        verificación de que el generador y sus condiciones
+                        cumplen los requisitos aplicables.
+                    </p>
+
+                </div>
+
+                <div class="exam">
+
+                    <div class="exam-title">
+                        🎯 Para el examen
+                    </div>
+
+                    <p>
+                        Diferenciá <strong>registro</strong>,
+                        <strong>inspección</strong> y
+                        <strong>habilitación</strong>.
+                        Son conceptos relacionados, pero no son sinónimos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN VIII -->
+
+        <details>
+
+            <summary>
+                Sección VIII — Estudio de integridad
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Integridad
+                    </div>
+
+                    <p>
+                        El reglamento establece disposiciones relativas
+                        al estudio de integridad del generador de vapor.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        El objetivo es evaluar técnicamente el estado
+                        del equipo y, cuando corresponda, determinar
+                        condiciones que permitan continuar definiendo
+                        su aptitud de operación.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN IX -->
+
+        <details>
+
+            <summary>
+                Sección IX — Vigencia del reglamento
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Vigencia
+                    </div>
+
+                    <p>
+                        Contiene las disposiciones relativas a la vigencia
+                        del Reglamento de Seguridad de Generadores de Vapor.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        Es importante estudiar siempre la versión vigente
+                        del reglamento. La normativa puede modificarse,
+                        por lo que no conviene utilizar automáticamente
+                        material antiguo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- SECCIÓN X -->
+
+        <details>
+
+            <summary>
+                Sección X — Régimen sancionatorio
+            </summary>
+
+            <div class="details-content">
+
+                <div class="normative">
+
+                    <div class="normative-title">
+                        📘 Régimen sancionatorio
+                    </div>
+
+                    <p>
+                        El reglamento establece disposiciones relativas
+                        al régimen sancionatorio aplicable dentro de
+                        su ámbito.
+                    </p>
+
+                </div>
+
+                <div class="explanation">
+
+                    <div class="explanation-title">
+                        🧠 Explicación
+                    </div>
+
+                    <p>
+                        Esta parte deja claro que el reglamento no solamente
+                        establece condiciones técnicas: también establece
+                        obligaciones cuyo incumplimiento puede generar
+                        consecuencias regulatorias.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SEGURIDAD Y ENCLAVAMIENTOS
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>🛡️ Control, medición y enclavamientos</h2>
+
+        <p>
+            Uno de los puntos donde la normativa se conecta directamente
+            con la seguridad de la operación.
+        </p>
+
+    </div>
+
+
+    <div class="concept-grid">
+
+        <div class="concept">
+
+            <h3>📏 Medición</h3>
+
+            <p>
+                Permite conocer el estado de una variable del proceso.
+                Medir no es lo mismo que controlar.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>🎛️ Control</h3>
+
+            <p>
+                Utiliza la información disponible para mantener
+                determinadas condiciones dentro de los parámetros
+                correspondientes.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>🔒 Enclavamiento</h3>
+
+            <p>
+                Actúa como una condición de seguridad que puede impedir
+                determinadas acciones o provocar acciones previstas
+                cuando se presenta una condición peligrosa.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>🚨 Alarma</h3>
+
+            <p>
+                Advierte al operador de una condición que requiere
+                atención o evaluación.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="exam">
+
+        <div class="exam-title">
+            🎯 CONCEPTO CLAVE
+        </div>
+
+        <p>
+            Una pregunta típica puede buscar que distingas:
+            <strong>medición → control → alarma → enclavamiento</strong>.
+            No son cuatro nombres diferentes para lo mismo.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NIVEL DE AGUA
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>💧 Nivel de agua y protección</h2>
+
+        <p>
+            El reglamento dedica especial atención a los sistemas de
+            control y enclavamiento relacionados con condiciones de nivel.
+        </p>
+
+    </div>
+
+
+    <div class="official-card">
+
+        <h3>Del nivel a la acción de seguridad</h3>
+
+        <div class="flow">
+
+            <div class="flow-step">
+                Nivel disminuye
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="flow-step">
+                Detección
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="flow-step">
+                Enclavamiento
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="flow-step">
+                Acción de seguridad
+            </div>
+
+        </div>
+
+        <p>
+            El Anexo 4 establece requisitos específicos para los sistemas
+            de control, medición y enclavamiento. Para determinadas
+            configuraciones de generadores, contempla condiciones de
+            bajo y muy bajo nivel y las acciones asociadas.
+        </p>
+
+    </div>
+
+
+    <div class="explanation">
+
+        <div class="explanation-title">
+            🧠 ¿Por qué es importante?
+        </div>
+
+        <p>
+            Porque el nivel de agua no es simplemente un dato que el
+            foguista observa. Forma parte de un sistema de protección
+            destinado a evitar que el generador continúe aportando
+            calor cuando se alcanza una condición peligrosa.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     VÁLVULAS
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>🛡️ Válvulas de seguridad</h2>
+
+        <p>
+            Una de las áreas más importantes para comprender la protección
+            frente a sobrepresión.
+        </p>
+
+    </div>
+
+
+    <div class="concept-grid">
+
+        <div class="concept">
+
+            <h3>Presión de apertura</h3>
+
+            <p>
+                Es el valor al que se ajusta la apertura de la válvula
+                de seguridad.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>Presión de cierre</h3>
+
+            <p>
+                Es el valor de presión que provoca el cierre completo
+                de la válvula.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>Blowdown</h3>
+
+            <p>
+                Es la diferencia entre la presión de apertura y la
+                presión de cierre.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>Capacidad de descarga</h3>
+
+            <p>
+                El Anexo 3 establece requisitos relacionados con la
+                cantidad, capacidad de descarga, presiones características,
+                disposición y mantenimiento/calibración.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="exam">
+
+        <div class="exam-title">
+            🎯 PARA EL EXAMEN
+        </div>
+
+        <p>
+            No confundas <strong>presión de trabajo</strong>,
+            <strong>PMTA</strong> y <strong>presión de apertura
+            de una válvula de seguridad</strong>.
+            Son conceptos diferentes que deben analizarse dentro
+            del sistema de protección.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SALA DE GENERACIÓN
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>🏭 Sala o área de generación de vapor</h2>
+
+        <p>
+            El Anexo 5 establece requisitos específicos relacionados
+            con el emplazamiento y las condiciones del lugar.
+        </p>
+
+    </div>
+
+
+    <div class="concept-grid">
+
+        <div class="concept">
+
+            <h3>📍 Emplazamiento</h3>
+
+            <p>
+                El reglamento establece condiciones respecto de la ubicación
+                de los generadores y las distancias aplicables según
+                las características y categoría del equipo.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>🚪 Acceso y circulación</h3>
+
+            <p>
+                Se establecen requisitos para accesos, espacios,
+                circulación y salidas según las características
+                del área de generación.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>🌬️ Ventilación</h3>
+
+            <p>
+                La ventilación debe ser adecuada y continua según
+                las condiciones establecidas por la normativa.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>🔥 Combustible</h3>
+
+            <p>
+                El reglamento también establece disposiciones relativas
+                al combustible y a las instalaciones asociadas.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ANEXOS
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>📚 Los 10 anexos del reglamento</h2>
+
+        <p>
+            Los anexos desarrollan requisitos técnicos específicos
+            que complementan las distintas secciones.
+        </p>
+
+    </div>
+
+
+    <div class="annex-grid">
+
+        <div class="annex">
+            <strong>Anexo 1 — Información para registro</strong>
+            <p>Datos, proyecto de instalación y declaración jurada.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 2 — Pruebas a generadores de vapor</strong>
+            <p>Revisión de información, test hidráulico, test de seguridad y declaraciones.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 3 — Válvulas de seguridad</strong>
+            <p>Cantidad, capacidad, presiones, disposición, mantenimiento y calibración.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 4 — Control, medición y enclavamiento</strong>
+            <p>Medición, control y sistemas de seguridad.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 5 — Sala/Área de generación de vapor</strong>
+            <p>Emplazamiento, espacios, estructuras, combustible, electricidad, ventilación e iluminación.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 6 — Reparaciones mayores</strong>
+            <p>Reparaciones sobre válvulas de seguridad y cuerpo de presión.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 7 — Agentes vinculados</strong>
+            <p>Profesional idóneo, operadores de END, inspectores de soldadura y categorías.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 8 — Estudio de integridad</strong>
+            <p>Plan de inspección y memoria de recálculo de la PMTA.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 9 — Autoclaves</strong>
+            <p>Documentación, instalación, operadores, mantenimiento e inspecciones.</p>
+        </div>
+
+        <div class="annex">
+            <strong>Anexo 10 — Generadores de baja presión</strong>
+            <p>Disposiciones generales, instalación, operación, reparaciones e inspecciones.</p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MÉTODO DE ESTUDIO
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>🧠 Cómo estudiar la normativa</h2>
+
+        <p>
+            La mejor forma de prepararte no es memorizar artículos
+            sin relacionarlos.
+        </p>
+
+    </div>
+
+
+    <div class="study-grid">
+
+        <div class="study-card">
+
+            <div class="icon">1️⃣</div>
+
+            <h3>Identificá</h3>
+
+            <p>
+                ¿De qué equipo o situación está hablando el reglamento?
+            </p>
+
+        </div>
+
+
+        <div class="study-card">
+
+            <div class="icon">2️⃣</div>
+
+            <h3>Comprendé</h3>
+
+            <p>
+                ¿Qué riesgo o problema intenta controlar la exigencia?
+            </p>
+
+        </div>
+
+
+        <div class="study-card">
+
+            <div class="icon">3️⃣</div>
+
+            <h3>Relacioná</h3>
+
+            <p>
+                ¿Qué elemento del generador está involucrado?
+            </p>
+
+        </div>
+
+
+        <div class="study-card">
+
+            <div class="icon">4️⃣</div>
+
+            <h3>Interpretá</h3>
+
+            <p>
+                ¿Qué ocurre si esa condición cambia?
+            </p>
+
+        </div>
+
+
+        <div class="study-card">
+
+            <div class="icon">5️⃣</div>
+
+            <h3>Aplicá</h3>
+
+            <p>
+                ¿Cómo se relaciona con la operación real del generador?
+            </p>
+
+        </div>
+
+
+        <div class="study-card">
+
+            <div class="icon">6️⃣</div>
+
+            <h3>Comprobá</h3>
+
+            <p>
+                Finalmente, verificá el requisito exacto en el reglamento oficial.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CIERRE
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="official-card">
+
+        <h3>📘 La normativa no se estudia aislada</h3>
+
+        <p>
+            Un buen foguista debe poder relacionar el reglamento
+            con el funcionamiento del generador, sus sistemas de
+            seguridad, sus variables de operación y las condiciones
+            reales de trabajo.
+        </p>
+
+        <div style="margin-top:25px;">
+
+            <a
+                href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026"
+                target="_blank"
+                class="btn btn-light"
+            >
+                📄 Consultar Reglamento URSEA oficial
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>Foguista Uruguay</h3>
+
+    <p>
+        Material educativo para comprender generadores de vapor,
+        seguridad, operación y normativa aplicable en Uruguay.
+    </p>
+
+    <p>
+        Esta página tiene finalidad educativa y no sustituye
+        la normativa oficial vigente.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="index.html">Inicio</a>
+        <a href="generadores.html">Generadores</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a href="estudio.html">Estudio</a>
+        <a href="normativa.html">Normativa</a>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
