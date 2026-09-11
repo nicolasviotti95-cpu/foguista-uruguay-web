@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Enclavamientos | Foguista Uruguay</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f3f6fa;
+    color:#172033;
+    line-height:1.65;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+section{
+    padding:70px 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:linear-gradient(135deg,#071a33,#0d3766);
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.brand-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo-area img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.logo-text{
+    font-size:21px;
+    font-weight:800;
+}
+
+.logo-text span{
+    display:block;
+    font-size:12px;
+    font-weight:400;
+    opacity:.8;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:7px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:8px;
+    font-size:14px;
+    transition:.2s;
+}
+
+nav a:hover,
+nav a.active{
+    background:rgba(255,255,255,.15);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:500px;
+
+    background:
+        linear-gradient(
+            rgba(4,20,39,.78),
+            rgba(5,28,55,.91)
+        ),
+        url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    padding:75px 8%;
+
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    background:#1597e5;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:50px;
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#5eb9f2;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:780px;
+    color:#dceafa;
+}
+
+.hero-buttons{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:13px 20px;
+    border-radius:9px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#1597e5;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#087fc8;
+    transform:translateY(-2px);
+}
+
+.btn-light{
+    background:white;
+    color:#082445;
+}
+
+.btn-light:hover{
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   TITLES
+========================= */
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#092b52;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    max-width:760px;
+    margin:auto;
+    color:#657386;
+}
+
+
+/* =========================
+   WARNING
+========================= */
+
+.notice{
+    margin-top:45px;
+    background:#fff7df;
+    border-left:6px solid #e2a400;
+    padding:25px 28px;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.notice h3{
+    color:#946600;
+    margin-bottom:8px;
+}
+
+
+/* =========================
+   WHAT IS
+========================= */
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.info-card{
+    background:white;
+    border-radius:16px;
+    padding:28px;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+    border-top:5px solid #1597e5;
+}
+
+.info-card h3{
+    color:#0a315d;
+    margin-bottom:12px;
+    font-size:23px;
+}
+
+.info-card p{
+    color:#5d6b7d;
+}
+
+
+/* =========================
+   DIFFERENCES
+========================= */
+
+.compare-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.compare-card{
+    background:white;
+    border-radius:14px;
+    padding:23px;
+    box-shadow:0 5px 17px rgba(0,0,0,.06);
+}
+
+.compare-card .icon{
+    font-size:31px;
+    margin-bottom:10px;
+}
+
+.compare-card h3{
+    color:#092d54;
+    margin-bottom:9px;
+}
+
+.compare-card p{
+    color:#637083;
+    font-size:14px;
+}
+
+
+/* =========================
+   FLOW
+========================= */
+
+.flow-box{
+    background:linear-gradient(135deg,#092b52,#105487);
+    color:white;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 12px 30px rgba(5,35,67,.18);
+}
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:25px 0;
+}
+
+.flow-step{
+    background:rgba(255,255,255,.11);
+    border:1px solid rgba(255,255,255,.16);
+    padding:13px 18px;
+    border-radius:10px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.arrow{
+    color:#5eb9f2;
+    font-size:25px;
+}
+
+
+/* =========================
+   ENCLAVAMIENTO CARDS
+========================= */
+
+.enclavamiento{
+    background:white;
+    border-radius:17px;
+    margin-bottom:25px;
+    box-shadow:0 7px 22px rgba(0,0,0,.07);
+    overflow:hidden;
+}
+
+.enclavamiento-header{
+    background:linear-gradient(135deg,#092b52,#105487);
+    color:white;
+    padding:25px 28px;
+}
+
+.enclavamiento-header h3{
+    font-size:26px;
+    margin-bottom:5px;
+}
+
+.enclavamiento-header p{
+    color:#d4e5f4;
+}
+
+.enclavamiento-body{
+    padding:28px;
+}
+
+.enclavamiento-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.detail-box{
+    background:#f7f9fb;
+    border-radius:11px;
+    padding:20px;
+}
+
+.detail-box h4{
+    color:#0b3c6b;
+    margin-bottom:8px;
+}
+
+.detail-box p{
+    color:#5c6a7c;
+}
+
+
+/* =========================
+   OFFICIAL
+========================= */
+
+.normative{
+    margin-top:22px;
+    background:#eef5fb;
+    border-left:5px solid #0c5d99;
+    padding:19px 21px;
+    border-radius:8px;
+}
+
+.normative-title{
+    font-weight:bold;
+    color:#084b7c;
+    margin-bottom:7px;
+}
+
+
+/* =========================
+   EXPLANATION
+========================= */
+
+.explanation{
+    margin-top:22px;
+    background:#edf8f1;
+    border-left:5px solid #26a269;
+    padding:19px 21px;
+    border-radius:8px;
+}
+
+.explanation-title{
+    font-weight:bold;
+    color:#177245;
+    margin-bottom:7px;
+}
+
+
+/* =========================
+   EXAM
+========================= */
+
+.exam{
+    margin-top:22px;
+    background:#fff7df;
+    border-left:5px solid #e3a400;
+    padding:19px 21px;
+    border-radius:8px;
+}
+
+.exam-title{
+    font-weight:bold;
+    color:#936500;
+    margin-bottom:7px;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,.06);
+}
+
+th{
+    background:#092d54;
+    color:white;
+    padding:15px;
+    text-align:left;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #e5eaf0;
+    vertical-align:top;
+}
+
+tr:nth-child(even){
+    background:#f7f9fb;
+}
+
+
+/* =========================
+   RESET BOX
+========================= */
+
+.reset-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.reset-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.reset-card h3{
+    color:#0a315d;
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   KEY POINTS
+========================= */
+
+.key-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.key-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+    border-top:5px solid #1597e5;
+}
+
+.key-card h3{
+    color:#092d54;
+    margin-bottom:9px;
+}
+
+.key-card p{
+    color:#637083;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#06182d;
+    color:#bdcad8;
+    padding:45px 7%;
+    text-align:center;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+footer p{
+    max-width:700px;
+    margin:8px auto;
+    font-size:14px;
+}
+
+.footer-links{
+    margin-top:20px;
+}
+
+.footer-links a{
+    color:#5eb9f2;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    header{
+        position:relative;
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .compare-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .intro-grid,
+    .enclavamiento-grid,
+    .reset-grid{
+        grid-template-columns:1fr;
+    }
+
+    .key-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding:55px 6%;
+    }
+
+    .hero h1{
+        font-size:33px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .compare-grid{
+        grid-template-columns:1fr;
+    }
+
+    nav a{
+        font-size:13px;
+        padding:8px 9px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="index.html" class="brand-link">
+
+        <div class="logo-area">
+
+            <img src="logo.png" alt="Foguista Uruguay">
+
+            <div class="logo-text">
+
+                Foguista Uruguay
+
+                <span>
+                    Formación y seguridad en generadores de vapor
+                </span>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="generadores.html">
+            Generadores
+        </a>
+
+        <a href="seguridad.html">
+            Seguridad
+        </a>
+
+        <a href="estudio.html">
+            Estudio
+        </a>
+
+        <a href="normativa.html">
+            Normativa
+        </a>
+
+        <a href="enclavamientos.html" class="active">
+            Enclavamientos
+        </a>
+
+        <a href="app.html">
+            App
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            SEGURIDAD · URSEA · ANEXO 4
+        </span>
+
+        <h1>
+            Enclavamientos
+            <span>de seguridad</span>
+        </h1>
+
+        <p>
+            Comprendé qué es un enclavamiento, qué condición detecta,
+            qué acción provoca y por qué es fundamental para la
+            operación segura de un generador de vapor.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#enclavamientos" class="btn btn-primary">
+                🔒 Ver enclavamientos
+            </a>
+
+            <a
+                href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026"
+                target="_blank"
+                class="btn btn-light"
+            >
+                📘 Reglamento URSEA
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            ¿Qué es un enclavamiento?
+        </h2>
+
+        <p>
+            Una explicación sencilla antes de entrar en cada sistema.
+        </p>
+
+    </div>
+
+
+    <div class="intro-grid">
+
+        <div class="info-card">
+
+            <h3>
+                🔒 Una protección automática
+            </h3>
+
+            <p>
+                Un enclavamiento de seguridad es un sistema que,
+                ante una determinada condición peligrosa o no permitida,
+                provoca una acción definida para llevar el sistema
+                a una condición más segura.
+            </p>
+
+            <p style="margin-top:12px;">
+                En un generador de vapor puede intervenir sobre
+                el combustible, ventiladores, registros de aire,
+                alarmas y otros elementos según el caso.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                🧠 La idea fundamental
+            </h3>
+
+            <p>
+                No hay que pensar solamente:
+                <strong>“se dispara una alarma”.</strong>
+            </p>
+
+            <p style="margin-top:12px;">
+                Hay que pensar en una cadena completa:
+            </p>
+
+            <div class="flow">
+
+                <div class="flow-step">
+                    Condición
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Detección
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Acción
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        <h3>
+            ⚠️ Diferencia importante
+        </h3>
+
+        <p>
+            El enclavamiento no debe confundirse con una alarma.
+            Una alarma informa al operador de una condición.
+            Un enclavamiento forma parte de la protección y provoca
+            las acciones previstas para esa condición.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MEDICIÓN / CONTROL / ALARMA / ENCLAVAMIENTO
+========================= -->
+
+<section style="background:#eaf1f7;">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            Medición, control, alarma y enclavamiento
+        </h2>
+
+        <p>
+            Cuatro conceptos que suelen confundirse durante el estudio.
+        </p>
+
+    </div>
+
+
+    <div class="compare-grid">
+
+
+        <div class="compare-card">
+
+            <div class="icon">
+                📏
+            </div>
+
+            <h3>
+                Medición
+            </h3>
+
+            <p>
+                Permite conocer el valor de una variable:
+                nivel, presión, temperatura, etc.
+            </p>
+
+        </div>
+
+
+        <div class="compare-card">
+
+            <div class="icon">
+                🎛️
+            </div>
+
+            <h3>
+                Control
+            </h3>
+
+            <p>
+                Actúa sobre una variable para mantener
+                determinadas condiciones de operación.
+            </p>
+
+        </div>
+
+
+        <div class="compare-card">
+
+            <div class="icon">
+                🚨
+            </div>
+
+            <h3>
+                Alarma
+            </h3>
+
+            <p>
+                Informa al operador que se produjo
+                una condición que requiere atención.
+            </p>
+
+        </div>
+
+
+        <div class="compare-card">
+
+            <div class="icon">
+                🔒
+            </div>
+
+            <h3>
+                Enclavamiento
+            </h3>
+
+            <p>
+                Ejecuta una acción de protección
+                cuando aparece una condición determinada.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SYSTEM FLOW
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            Cómo funciona un enclavamiento
+        </h2>
+
+        <p>
+            Esta es la lógica que conviene aprender para todos ellos.
+        </p>
+
+    </div>
+
+
+    <div class="flow-box">
+
+        <div class="flow">
+
+            <div class="flow-step">
+                1. Aparece una condición
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                2. El sistema la detecta
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                3. Se activa el bloqueo
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                4. Ejecuta las acciones
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                5. El operador evalúa
+            </div>
+
+        </div>
+
+        <p style="text-align:center;color:#d6e6f4;">
+            La acción exacta depende del enclavamiento
+            y de los requisitos establecidos para ese sistema.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ENCLAVAMIENTOS
+========================= -->
+
+<section id="enclavamientos">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            Los enclavamientos del generador
+        </h2>
+
+        <p>
+            El artículo 103 del Reglamento URSEA establece que los
+            generadores deben cumplir, respecto de los bloqueos por
+            muy alta presión, falta de llama, bajo y muy bajo nivel
+            de agua, los requisitos del Anexo 4. citeturn0search0
+        </p>
+
+    </div>
+
+
+    <!-- =====================
+         MUY ALTA PRESIÓN
+    ====================== -->
+
+    <div class="enclavamiento">
+
+        <div class="enclavamiento-header">
+
+            <h3>
+                🔴 1. Muy Alta Presión — MAP
+            </h3>
+
+            <p>
+                Protección frente a una presión que supera
+                la condición normal de trabajo.
+            </p>
+
+        </div>
+
+
+        <div class="enclavamiento-body">
+
+
+            <div class="flow">
+
+                <div class="flow-step">
+                    Presión aumenta
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Detección MAP
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Bloqueo
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Corte de combustible
+                </div>
+
+            </div>
+
+
+            <div class="normative">
+
+                <div class="normative-title">
+                    📘 REGLAMENTO URSEA — Anexo 4
+                </div>
+
+                <p>
+                    El generador debe contar con un bloqueo por muy alta
+                    presión adicional e independiente al corte por alta
+                    presión de trabajo asociado al control de operación.
+                </p>
+
+                <p style="margin-top:10px;">
+                    El bloqueo debe actuar a una presión mayor que la
+                    presión de trabajo y menor que la presión de apertura
+                    de la primera válvula de seguridad.
+                </p>
+
+            </div>
+
+
+            <div class="enclavamiento-grid">
+
+                <div class="detail-box">
+
+                    <h4>
+                        🔥 Acción sobre combustible
+                    </h4>
+
+                    <p>
+                        Debe producir el corte del suministro de combustible.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        🚨 Alarma
+                    </h4>
+
+                    <p>
+                        Debe activar una alarma sonora.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        💡 Señal luminosa
+                    </h4>
+
+                    <p>
+                        Debe indicar en el tablero:
+                        <strong>“Muy Alta Presión”</strong>.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        🌬️ Ventilación
+                    </h4>
+
+                    <p>
+                        Debe apagar los ventiladores cuando corresponda
+                        y actuar sobre los registros de aire según
+                        lo establecido.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="exam">
+
+                <div class="exam-title">
+                    🎯 PARA EL EXAMEN
+                </div>
+
+                <p>
+                    Recordá que el bloqueo MAP es
+                    <strong>independiente del control normal de presión</strong>.
+                    No es simplemente “el presostato que regula la presión”.
+                    Es una protección adicional.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================
+         BAJO NIVEL
+    ====================== -->
+
+    <div class="enclavamiento">
+
+        <div class="enclavamiento-header">
+
+            <h3>
+                🟡 2. Bajo Nivel de Agua
+            </h3>
+
+            <p>
+                Protección cuando el nivel de agua desciende
+                hasta una condición de bajo nivel.
+            </p>
+
+        </div>
+
+
+        <div class="enclavamiento-body">
+
+
+            <div class="flow">
+
+                <div class="flow-step">
+                    Nivel ↓
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Detección
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Bloqueo
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Corte de combustible
+                </div>
+
+            </div>
+
+
+            <div class="normative">
+
+                <div class="normative-title">
+                    📘 REGLAMENTO URSEA — Anexo 4
+                </div>
+
+                <p>
+                    El bloqueo por bajo nivel debe actuar cuando
+                    se alcanza la condición correspondiente de nivel.
+                </p>
+
+                <p style="margin-top:10px;">
+                    Para un generador humotubular horizontal,
+                    los bloqueos por bajo y muy bajo nivel deben
+                    estar ajustados de modo que actúen cuando
+                    la columna de agua en el nivel visual no sea
+                    inferior a <strong>25 mm</strong>.
+                </p>
+
+            </div>
+
+
+            <div class="enclavamiento-grid">
+
+                <div class="detail-box">
+
+                    <h4>
+                        🔥 Combustible
+                    </h4>
+
+                    <p>
+                        Corte del suministro de combustible.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        🚨 Alarma
+                    </h4>
+
+                    <p>
+                        Activación de alarma sonora.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        💡 Señal
+                    </h4>
+
+                    <p>
+                        Señal luminosa en el tablero indicando
+                        <strong>“Bajo nivel”</strong>.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        🌬️ Ventiladores
+                    </h4>
+
+                    <p>
+                        Apagado de ventiladores, si corresponde,
+                        y actuación sobre los registros de aire
+                        según lo establecido.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="explanation">
+
+                <div class="explanation-title">
+                    🧠 EXPLICADO
+                </div>
+
+                <p>
+                    El objetivo es evitar que el generador continúe
+                    recibiendo el aporte térmico cuando el agua
+                    ha descendido hasta una condición de protección.
+                </p>
+
+            </div>
+
+
+            <div class="exam">
+
+                <div class="exam-title">
+                    🎯 PARA EL EXAMEN
+                </div>
+
+                <p>
+                    El punto que no tenés que olvidar:
+                    <strong>el bajo nivel no es solamente una alarma.</strong>
+                    El enclavamiento produce acciones sobre el sistema.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================
+         MUY BAJO NIVEL
+    ====================== -->
+
+    <div class="enclavamiento">
+
+        <div class="enclavamiento-header">
+
+            <h3>
+                🔴 3. Muy Bajo Nivel de Agua
+            </h3>
+
+            <p>
+                Es una condición de protección más severa
+                que el bajo nivel.
+            </p>
+
+        </div>
+
+
+        <div class="enclavamiento-body">
+
+
+            <div class="flow">
+
+                <div class="flow-step">
+                    Nivel ↓↓↓
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Muy bajo nivel
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Bloqueo
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Corte de combustible
+                </div>
+
+            </div>
+
+
+            <div class="normative">
+
+                <div class="normative-title">
+                    📘 REGLAMENTO URSEA — Anexo 4
+                </div>
+
+                <p>
+                    El bloqueo por muy bajo nivel debe producir,
+                    como mínimo, las acciones establecidas en el Anexo 4.
+                </p>
+
+            </div>
+
+
+            <div class="enclavamiento-grid">
+
+                <div class="detail-box">
+
+                    <h4>
+                        🔥 Combustible
+                    </h4>
+
+                    <p>
+                        Corte del suministro de combustible.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        🚨 Alarma
+                    </h4>
+
+                    <p>
+                        Activación de alarma sonora.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        💡 Señal
+                    </h4>
+
+                    <p>
+                        Señal luminosa indicando
+                        <strong>“Muy bajo nivel”</strong>.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <h4>
+                        🌬️ Ventilación
+                    </h4>
+
+                    <p>
+                        Apagado de ventiladores, cuando corresponda,
+                        y actuación sobre los registros de aire
+                        establecidos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="explanation">
+
+                <div class="explanation-title">
+                    🧠 ¿Qué cambia respecto al bajo nivel?
+                </div>
+
+                <p>
+                    Una diferencia fundamental está en el
+                    <strong>restablecimiento del bloqueo</strong>.
+                    El muy bajo nivel no debe restablecerse
+                    automáticamente.
+                </p>
+
+                <p style="margin-top:12px;">
+                    El operador debe examinar las causas de la actuación,
+                    tomar los registros correspondientes y adoptar
+                    las medidas correctivas antes de ejecutar
+                    el restablecimiento manual.
+                </p>
+
+            </div>
+
+
+            <div class="exam">
+
+                <div class="exam-title">
+                    🎯 PARA EL EXAMEN
+                </div>
+
+                <p>
+                    <strong>Muy bajo nivel = reset manual.</strong>
+                    Pero no alcanza con pulsar el reset:
+                    primero deben examinarse las causas de la actuación
+                    y tomarse los registros y medidas correctivas
+                    correspondientes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================
+         FALTA DE LLAMA
+    ====================== -->
+
+    <div class="enclavamiento">
+
+        <div class="enclavamiento-header">
+
+            <h3>
+                🔥 4. Falta de Llama
+            </h3>
+
+            <p>
+                Protección del sistema de combustión cuando
+                se pierde la llama.
+            </p>
+
+        </div>
+
+
+        <div class="enclavamiento-body">
+
+
+            <div class="flow">
+
+                <div class="flow-step">
+                    Falla de llama
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Detección
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Bloqueo
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Acción de seguridad
+                </div>
+
+            </div>
+
+
+            <div class="normative">
+
+                <div class="normative-title">
+                    📘 REGLAMENTO URSEA
+                </div>
+
+                <p>
+                    El artículo 103 incluye el bloqueo por falta
+                    de llama entre los sistemas que deben cumplir
+                    los requisitos del Anexo 4.
+                </p>
+
+                <p style="margin-top:10px;">
+                    El test de seguridad también contempla
+                    la verificación de la actuación del dispositivo
+                    de seguridad por falta de llama.
+                </p>
+
+            </div>
+
+
+            <div class="explanation">
+
+                <div class="explanation-title">
+                    🧠 EXPLICADO
+                </div>
+
+                <p>
+                    Si el sistema estaba suministrando combustible
+                    y la llama desaparece, la condición debe ser
+                    detectada por el sistema de seguridad de combustión.
+                </p>
+
+                <p style="margin-top:12px;">
+                    La lógica de seguridad busca evitar que continúe
+                    una condición de alimentación de combustible
+                    incompatible con la ausencia de llama.
+                </p>
+
+            </div>
+
+
+            <div class="exam">
+
+                <div class="exam-title">
+                    🎯 PARA EL EXAMEN
+                </div>
+
+                <p>
+                    Relacioná siempre:
+                    <strong>combustible → llama → detector de llama
+                    → sistema de seguridad de combustión.</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESET
+========================= -->
+
+<section style="background:#eaf1f7;">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            🔄 ¿Cómo se restablece un enclavamiento?
+        </h2>
+
+        <p>
+            No todos los bloqueos tienen el mismo comportamiento.
+        </p>
+
+    </div>
+
+
+    <div class="reset-grid">
+
+
+        <div class="reset-card">
+
+            <h3>
+                🔴 Muy Alta Presión
+            </h3>
+
+            <p>
+                El reseteo <strong>no puede ser automático</strong>.
+                Debe ser ejecutado manualmente por el operador.
+            </p>
+
+        </div>
+
+
+        <div class="reset-card">
+
+            <h3>
+                🟡 Bajo Nivel
+            </h3>
+
+            <p>
+                El reseteo puede ser automático, pero la señal
+                luminosa debe permanecer encendida hasta que
+                el operador evalúe lo ocurrido.
+            </p>
+
+        </div>
+
+
+        <div class="reset-card">
+
+            <h3>
+                🔴 Muy Bajo Nivel
+            </h3>
+
+            <p>
+                El reseteo <strong>no debe ser automático</strong>.
+                Debe realizarlo manualmente el operador después
+                de examinar las causas y tomar las medidas
+                correspondientes.
+            </p>
+
+        </div>
+
+
+        <div class="reset-card">
+
+            <h3>
+                🔥 Falta de Llama
+            </h3>
+
+            <p>
+                Su funcionamiento depende del sistema de seguridad
+                de combustión instalado y de los requisitos aplicables
+                al generador.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        <h3>
+            ⚠️ Nunca confundir “reset” con “solucionar la causa”
+        </h3>
+
+        <p>
+            Restablecer un sistema de protección no significa que
+            el problema que provocó su actuación haya desaparecido.
+            La condición que produjo el bloqueo debe ser evaluada
+            conforme al procedimiento y manual de operación y
+            mantenimiento aplicables.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TABLE
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            📊 Comparación rápida
+        </h2>
+
+        <p>
+            Una tabla para repasar antes del examen.
+        </p>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Enclavamiento
+                    </th>
+
+                    <th>
+                        Condición
+                    </th>
+
+                    <th>
+                        Acción principal
+                    </th>
+
+                    <th>
+                        Reset
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <strong>Muy Alta Presión</strong>
+                    </td>
+
+                    <td>
+                        Presión superior a la condición normal
+                        de trabajo.
+                    </td>
+
+                    <td>
+                        Corte de combustible + alarma +
+                        señal luminosa + acciones sobre ventilación
+                        cuando corresponda.
+                    </td>
+
+                    <td>
+                        Manual.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>Bajo Nivel</strong>
+                    </td>
+
+                    <td>
+                        Descenso del nivel hasta la condición
+                        de bajo nivel.
+                    </td>
+
+                    <td>
+                        Corte de combustible + alarma +
+                        señal luminosa + acciones sobre ventilación
+                        cuando corresponda.
+                    </td>
+
+                    <td>
+                        Puede ser automático.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>Muy Bajo Nivel</strong>
+                    </td>
+
+                    <td>
+                        Descenso hasta condición de muy bajo nivel.
+                    </td>
+
+                    <td>
+                        Corte de combustible + alarma +
+                        señal luminosa + acciones sobre ventilación
+                        cuando corresponda.
+                    </td>
+
+                    <td>
+                        Manual.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>Falta de Llama</strong>
+                    </td>
+
+                    <td>
+                        Pérdida de llama detectada por el sistema
+                        de seguridad de combustión.
+                    </td>
+
+                    <td>
+                        Actuación del sistema de seguridad
+                        de combustión según el sistema instalado.
+                    </td>
+
+                    <td>
+                        Según sistema aplicable.
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     IMPORTANT RULES
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            🧠 Reglas que tenés que recordar
+        </h2>
+
+        <p>
+            Estos son algunos de los conceptos más importantes
+            relacionados con los enclavamientos.
+        </p>
+
+    </div>
+
+
+    <div class="key-grid">
+
+
+        <div class="key-card">
+
+            <h3>
+                🔒 No se anulan
+            </h3>
+
+            <p>
+                El artículo 89 establece que los lazos de control,
+                protecciones o enclavamientos no pueden desactivarse
+                o anularse salvo en las condiciones previstas
+                por la propia normativa.
+            </p>
+
+        </div>
+
+
+        <div class="key-card">
+
+            <h3>
+                ⚠️ Son sistemas críticos
+            </h3>
+
+            <p>
+                La ausencia, desvío o mal funcionamiento de determinados
+                sistemas de medición, control o enclavamiento puede
+                constituir un riesgo grave e inminente.
+            </p>
+
+        </div>
+
+
+        <div class="key-card">
+
+            <h3>
+                📋 Se verifican
+            </h3>
+
+            <p>
+                El test de seguridad incluye la verificación
+                de los enclavamientos presentes en el generador.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="normative">
+
+        <div class="normative-title">
+            📘 REGLAMENTO URSEA
+        </div>
+
+        <p>
+            El artículo 90 establece que la presencia de un generador
+            en servicio con ausencia o desvío de algún dispositivo
+            o sistema de medición, control o enclavamiento constituye
+            un riesgo grave e inminente que exige el cese inmediato
+            de la operación conforme al reglamento.
+        </p>
+
+        <p style="margin-top:10px;">
+            El artículo 169 identifica expresamente, entre otros,
+            la ausencia, desvío o falta de funcionalidad de los
+            bloqueos por bajo o muy bajo nivel, muy alta presión
+            y falta de llama cuando corresponda.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STUDY METHOD
+========================= -->
+
+<section style="background:#eaf1f7;">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            🎯 Cómo responder una pregunta sobre enclavamientos
+        </h2>
+
+        <p>
+            Usá siempre la misma secuencia mental.
+        </p>
+
+    </div>
+
+
+    <div class="flow-box">
+
+        <div class="flow">
+
+            <div class="flow-step">
+                ¿Qué variable cambió?
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                ¿Qué detecta?
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                ¿Qué bloqueo actúa?
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                ¿Qué acción produce?
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                ¿Cómo se restablece?
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="exam">
+
+        <div class="exam-title">
+            🎯 EJEMPLO DE RAZONAMIENTO
+        </div>
+
+        <p>
+            <strong>Pregunta:</strong>
+            ¿Qué ocurre ante muy bajo nivel de agua?
+        </p>
+
+        <p style="margin-top:12px;">
+            <strong>Respuesta razonada:</strong>
+            primero se detecta la condición de muy bajo nivel;
+            actúa el bloqueo correspondiente; se corta el suministro
+            de combustible y se generan las señales y acciones
+            previstas; posteriormente el operador debe examinar
+            las causas y realizar el restablecimiento manual.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     OFFICIAL SOURCE
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="flow-box">
+
+        <h2 style="margin-bottom:12px;">
+            📘 Fuente normativa oficial
+        </h2>
+
+        <p>
+            Reglamento de Seguridad de Generadores de Vapor 2026,
+            aprobado mediante Resolución URSEA N.º 101/026.
+        </p>
+
+        <p style="margin-top:10px;color:#d5e6f4;">
+            Los requisitos técnicos de los enclavamientos se encuentran
+            principalmente en el Anexo 4, y su verificación forma parte
+            del test de seguridad.
+        </p>
+
+        <div style="margin-top:25px;">
+
+            <a
+                href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026"
+                target="_blank"
+                class="btn btn-light"
+            >
+                📄 Ver Reglamento oficial en IMPO
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>
+        Foguista Uruguay
+    </h3>
+
+    <p>
+        Formación y material educativo sobre generadores de vapor,
+        seguridad, operación y normativa en Uruguay.
+    </p>
+
+    <p>
+        Esta página tiene finalidad educativa.
+        Ante cualquier diferencia, prevalece la normativa oficial vigente.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="generadores.html">
+            Generadores
+        </a>
+
+        <a href="seguridad.html">
+            Seguridad
+        </a>
+
+        <a href="estudio.html">
+            Estudio
+        </a>
+
+        <a href="normativa.html">
+            Normativa
+        </a>
+
+        <a href="enclavamientos.html">
+            Enclavamientos
+        </a>
+
+        <a href="app.html">
+            App
+        </a>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
