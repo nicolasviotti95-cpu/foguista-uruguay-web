@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generadores de Vapor | Foguista Uruguay</title>
+
+    <meta name="description" content="Guía técnica y educativa sobre generadores de vapor: funcionamiento, tipos, componentes, combustión, agua, presión, nivel y operación.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #17212b;
+            line-height: 1.65;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: #0b2438;
+            color: white;
+            padding: 18px 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .brand h1 {
+            font-size: 24px;
+            line-height: 1.1;
+        }
+
+        .brand span {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            opacity: 0.75;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(7,30,47,0.88),
+                    rgba(7,30,47,0.88)
+                ),
+                url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg")
+                center / cover no-repeat;
+
+            color: white;
+            padding: 95px 25px;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #72c2ff;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            font-size: clamp(40px, 6vw, 64px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            font-size: 20px;
+            color: #dce8ef;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            max-width: 900px;
+            margin: auto;
+            padding: 65px 25px 45px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: #0b2438;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #59656d;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           SOURCE NOTE
+        ========================= */
+
+        .source-note {
+            max-width: 1050px;
+            margin: 0 auto 55px;
+            padding: 0 25px;
+        }
+
+        .source-box {
+            background: white;
+            border-left: 5px solid #0b4f75;
+            padding: 22px 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .source-box strong {
+            color: #0b2438;
+        }
+
+        .source-box p {
+            color: #59656d;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           TOPIC SECTIONS
+        ========================= */
+
+        .topics {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 25px 80px;
+        }
+
+        .topic-section {
+            margin-bottom: 55px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background: #0b4f75;
+            border-radius: 7px;
+            padding: 8px 11px;
+            min-width: 43px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            color: #0b2438;
+            font-size: 30px;
+        }
+
+        .section-description {
+            color: #59656d;
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           DETAILS
+        ========================= */
+
+        details.topic {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 9px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.055);
+            overflow: hidden;
+        }
+
+        details.topic summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 21px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0b4f75;
+            position: relative;
+            padding-right: 55px;
+        }
+
+        details.topic summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.topic summary::after {
+            content: "+";
+            position: absolute;
+            right: 23px;
+            top: 17px;
+            font-size: 27px;
+            font-weight: normal;
+            color: #6c7c86;
+        }
+
+        details.topic[open] summary::after {
+            content: "−";
+        }
+
+        .topic-content {
+            padding: 0 25px 25px;
+            border-top: 1px solid #e5eaee;
+            color: #3f4c54;
+        }
+
+        .topic-content p {
+            margin-top: 17px;
+        }
+
+        .topic-content ul {
+            margin: 15px 0 0 22px;
+        }
+
+        .topic-content li {
+            margin-bottom: 8px;
+        }
+
+        .topic-content strong {
+            color: #17212b;
+        }
+
+
+        /* =========================
+           INFO BOX
+        ========================= */
+
+        .info-box {
+            background: #eef5f9;
+            border-left: 4px solid #0b4f75;
+            padding: 18px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #0b4f75;
+        }
+
+
+        /* =========================
+           WARNING BOX
+        ========================= */
+
+        .warning-box {
+            background: #fff5e8;
+            border-left: 4px solid #d68a19;
+            padding: 18px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .warning-box strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #9b5d00;
+        }
+
+
+        /* =========================
+           EXAM BOX
+        ========================= */
+
+        .exam-section {
+            background: #0b2438;
+            color: white;
+            padding: 70px 25px;
+        }
+
+        .exam-container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .exam-container h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .exam-container > p {
+            color: #d6e3ea;
+            margin-bottom: 30px;
+        }
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .exam-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 9px;
+            padding: 20px;
+        }
+
+        .exam-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: #72c2ff;
+        }
+
+        .exam-card p {
+            font-size: 14px;
+            color: #d6e3ea;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #061d2d;
+            color: #c6d6e0;
+            padding: 45px 25px 25px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 45px;
+            padding-bottom: 35px;
+        }
+
+        .footer-brand-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .footer-brand-title img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .footer-brand-title h2 {
+            color: white;
+            font-size: 23px;
+        }
+
+        .footer-brand-title span {
+            font-size: 13px;
+        }
+
+        .footer-brand p {
+            max-width: 360px;
+            margin-top: 18px;
+            font-size: 14px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .footer-column a {
+            color: #c6d6e0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: auto;
+            border-top: 1px solid rgba(255,255,255,0.13);
+            padding-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .header-container {
+                flex-direction: column;
+            }
+
+            .exam-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 70px 25px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+            }
+
+            .section-heading h2 {
+                font-size: 25px;
+            }
+
+            details.topic summary {
+                font-size: 16px;
+                padding: 18px 45px 18px 18px;
+            }
+
+            .topic-content {
+                padding: 0 18px 20px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="header-container">
+
+            <a href="index.html" class="brand">
+
+                <img src="logo.png" alt="Foguista Uruguay">
+
+                <div>
+
+                    <h1>Foguista Uruguay</h1>
+
+                    <span>Generadores de vapor</span>
+
+                </div>
+
+            </a>
+
+
+            <nav>
+
+                <a href="index.html">Inicio</a>
+
+                <a href="generadores.html">Generadores</a>
+
+                <a href="seguridad.html">Seguridad</a>
+
+                <a href="estudio.html">Estudio</a>
+
+                <a href="normativa.html">Normativa</a>
+
+                <a href="app.html">App</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                Área técnica
+            </div>
+
+            <h2>
+                Generadores de vapor
+            </h2>
+
+            <p>
+                Comprender el funcionamiento, los componentes,
+                los fenómenos y las condiciones de operación
+                es fundamental antes de operar un generador.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section class="intro">
+
+        <h2>
+            Comprender antes de operar
+        </h2>
+
+        <p>
+            En esta sección vas a encontrar los fundamentos técnicos
+            necesarios para entender cómo se genera el vapor, cómo
+            funciona el equipo y qué variables deben controlarse
+            durante la operación.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SOURCE
+    ========================== -->
+
+    <section class="source-note">
+
+        <div class="source-box">
+
+            <p>
+                <strong>Material de referencia:</strong>
+                esta sección utiliza conceptos técnicos de formación
+                relacionados con la operación de generadores de vapor.
+                Cuando se cite una fuente concreta, se indicará
+                expresamente. El contenido educativo no sustituye
+                el texto de la reglamentación vigente.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOPICS
+    ========================== -->
+
+    <main class="topics">
+
+
+        <!-- 01 -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    01
+                </div>
+
+                <h2>
+                    Principios de funcionamiento
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Los conceptos básicos que permiten comprender
+                qué sucede dentro de un generador de vapor.
+            </p>
+
+
+            <details class="topic">
+
+                <summary>
+                    ¿Qué es un generador de vapor?
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Un generador de vapor es un equipo destinado
+                        a producir vapor mediante la transferencia
+                        de energía al agua.
+                    </p>
+
+                    <p>
+                        En términos generales, una fuente de energía
+                        entrega calor a superficies que transmiten
+                        esa energía al agua hasta producir vapor.
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>Idea fundamental</strong>
+
+                        El generador transforma energía disponible
+                        en el combustible o fuente de calor en energía
+                        térmica contenida en el vapor.
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Transformación de energía
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        En un generador convencional existe una cadena
+                        de transformaciones energéticas.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Energía química del combustible.
+                        </li>
+
+                        <li>
+                            Liberación de energía mediante la combustión.
+                        </li>
+
+                        <li>
+                            Transferencia de calor hacia el agua.
+                        </li>
+
+                        <li>
+                            Transformación del agua en vapor.
+                        </li>
+
+                        <li>
+                            Utilización del vapor en el proceso.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Calor sensible y calor latente
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El agua necesita recibir energía para aumentar
+                        su temperatura. Esta energía se relaciona con
+                        el calor sensible.
+                    </p>
+
+                    <p>
+                        Una vez alcanzadas las condiciones necesarias
+                        para la vaporización, se requiere energía adicional
+                        para producir el cambio de estado de líquido
+                        a vapor. Esta energía se conoce como calor latente
+                        de vaporización.
+                    </p>
+
+                    <div class="info-box">
+
+                        <strong>Para recordar</strong>
+
+                        Calentar el agua y vaporizarla son fenómenos
+                        diferentes y requieren cantidades de energía
+                        diferentes.
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Presión y temperatura
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        En el vapor de agua existe una relación
+                        entre presión y temperatura de saturación.
+                    </p>
+
+                    <p>
+                        Cuando un líquido y su vapor se encuentran
+                        en equilibrio de saturación, una determinada
+                        presión corresponde a una determinada
+                        temperatura de saturación.
+                    </p>
+
+                    <div class="warning-box">
+
+                        <strong>Importante</strong>
+
+                        En operación no debe confundirse presión
+                        de trabajo con presión admisible del equipo.
+                        Son conceptos diferentes.
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Vapor saturado y vapor sobrecalentado
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El vapor saturado se encuentra asociado a las
+                        condiciones de saturación correspondientes
+                        a una determinada presión.
+                    </p>
+
+                    <p>
+                        El vapor sobrecalentado es aquel que ha recibido
+                        calor adicional después de abandonar la condición
+                        de saturación, aumentando su temperatura sin
+                        producirse condensación inmediata por simple
+                        reducción de temperatura hasta la saturación.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Equilibrio entre generación y consumo
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Un generador funciona como un sistema dinámico.
+                        La producción de vapor debe acompañar la demanda
+                        del proceso.
+                    </p>
+
+                    <p>
+                        Si aumenta el consumo y la producción no se adapta,
+                        la presión puede disminuir. Si la generación supera
+                        sostenidamente el consumo, la presión puede aumentar
+                        hasta que actúen los sistemas de control.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </section>
+
+
+        <!-- 02 -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    02
+                </div>
+
+                <h2>
+                    Tipos y construcción
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Diferentes configuraciones de generadores y sus
+                principales elementos constructivos.
+            </p>
+
+
+            <details class="topic">
+
+                <summary>
+                    Generadores pirotubulares
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        En los generadores pirotubulares o de tubos de humo,
+                        los gases calientes producidos por la combustión
+                        circulan por el interior de tubos, mientras que
+                        el agua se encuentra en el exterior de estos.
+                    </p>
+
+                    <p>
+                        El calor atraviesa las paredes de los tubos y
+                        se transmite al agua.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Generadores acuotubulares
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        En los generadores acuotubulares, el agua circula
+                        por el interior de los tubos y los gases calientes
+                        circulan por el exterior.
+                    </p>
+
+                    <p>
+                        Este diseño permite configuraciones apropiadas
+                        para diferentes capacidades y condiciones
+                        de generación.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Diferencias entre pirotubular y acuotubular
+                </summary>
+
+                <div class="topic-content">
+
+                    <ul>
+
+                        <li>
+                            En el pirotubular, los gases circulan dentro
+                            de los tubos.
+                        </li>
+
+                        <li>
+                            En el acuotubular, el agua circula dentro
+                            de los tubos.
+                        </li>
+
+                        <li>
+                            La configuración influye en la circulación,
+                            capacidad, dimensiones y respuesta del equipo.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Hogar o cámara de combustión
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El hogar es la zona donde se produce o desarrolla
+                        la combustión y donde se inicia una parte importante
+                        de la transferencia de energía hacia las superficies
+                        de calefacción.
+                    </p>
+
+                    <p>
+                        Su diseño depende del tipo de combustible,
+                        quemador y configuración del generador.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Superficies de calefacción
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Son las superficies a través de las cuales
+                        se transfiere el calor desde los gases calientes
+                        hacia el agua o fluido que debe recibir energía.
+                    </p>
+
+                    <p>
+                        Su estado influye directamente en la transferencia
+                        de calor y en el rendimiento del generador.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Sobrecalentador
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El sobrecalentador es un conjunto de superficies
+                        destinado a elevar la temperatura del vapor
+                        por encima de su temperatura de saturación
+                        correspondiente.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Economizador y recuperación de calor
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Los sistemas de recuperación de calor permiten
+                        aprovechar parte de la energía que de otro modo
+                        abandonaría el generador con los gases.
+                    </p>
+
+                    <p>
+                        Un economizador puede utilizar el calor disponible
+                        en los gases para precalentar el agua de alimentación.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </section>
+
+
+        <!-- 03 -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    03
+                </div>
+
+                <h2>
+                    Combustión y agua
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Dos aspectos fundamentales para el rendimiento,
+                conservación y seguridad del equipo.
+            </p>
+
+
+            <details class="topic">
+
+                <summary>
+                    Combustibles
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Los generadores pueden utilizar diferentes
+                        fuentes de energía según su diseño y aplicación.
+                    </p>
+
+                    <p>
+                        Entre los combustibles utilizados industrialmente
+                        pueden encontrarse combustibles líquidos, gaseosos
+                        y sólidos.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Aire de combustión
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La combustión necesita un suministro adecuado
+                        de aire para aportar el oxígeno necesario.
+                    </p>
+
+                    <p>
+                        La cantidad de aire debe ser compatible con
+                        el combustible y las condiciones de funcionamiento.
+                    </p>
+
+                    <div class="warning-box">
+
+                        <strong>Combustión incompleta</strong>
+
+                        Una combustión deficiente puede provocar
+                        formación de monóxido de carbono, pérdida
+                        de rendimiento y condiciones peligrosas.
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Transferencia de calor
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El calor puede transferirse mediante mecanismos
+                        como conducción, convección y radiación.
+                    </p>
+
+                    <p>
+                        En un generador real estos mecanismos pueden
+                        actuar simultáneamente en diferentes zonas
+                        del equipo.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Agua de alimentación
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El agua que ingresa al generador debe presentar
+                        características compatibles con el funcionamiento
+                        y tratamiento previsto para el equipo.
+                    </p>
+
+                    <p>
+                        Una mala calidad del agua puede favorecer
+                        incrustaciones, depósitos y fenómenos corrosivos.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Dureza e incrustaciones
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La dureza del agua está asociada principalmente
+                        a la presencia de determinados minerales disueltos.
+                    </p>
+
+                    <p>
+                        Bajo determinadas condiciones pueden formarse
+                        depósitos e incrustaciones sobre las superficies
+                        de transferencia de calor.
+                    </p>
+
+                    <div class="warning-box">
+
+                        <strong>Problema operacional</strong>
+
+                        Una superficie con depósitos puede transferir
+                        peor el calor y favorecer el aumento de temperatura
+                        del metal.
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Corrosión y pitting
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La corrosión es el deterioro del material debido
+                        a reacciones químicas o electroquímicas con
+                        el medio.
+                    </p>
+
+                    <p>
+                        El pitting es una forma localizada de corrosión
+                        que puede producir pequeñas cavidades o picaduras
+                        profundas en el material.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Purga del generador
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La purga permite retirar parte del agua del sistema
+                        y controlar la concentración de determinadas
+                        sustancias disueltas y sólidos.
+                    </p>
+
+                    <p>
+                        Según el diseño y tratamiento utilizado pueden
+                        existir diferentes sistemas y procedimientos
+                        de purga.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </section>
+
+
+        <!-- 04 -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    04
+                </div>
+
+                <h2>
+                    Operación y control
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Variables que deben observarse durante el funcionamiento
+                del generador.
+            </p>
+
+
+            <details class="topic">
+
+                <summary>
+                    Control de presión
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La presión constituye una de las principales
+                        variables de operación del generador.
+                    </p>
+
+                    <p>
+                        Los sistemas de control actúan para mantener
+                        las condiciones de funcionamiento dentro de
+                        los valores previstos para el equipo.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Manómetro
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El manómetro permite al operador conocer
+                        la presión indicada por el instrumento.
+                    </p>
+
+                    <p>
+                        Su lectura debe interpretarse considerando
+                        la escala, unidad de medida y condiciones
+                        de funcionamiento del equipo.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Presostatos
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Un presostato es un dispositivo que responde
+                        a una condición de presión y puede utilizar
+                        esa señal para controlar una determinada función.
+                    </p>
+
+                    <p>
+                        En un sistema de control pueden participar
+                        en órdenes relacionadas con el quemador
+                        y otros elementos del proceso.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Control del nivel de agua
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El nivel de agua es una variable crítica
+                        del funcionamiento de un generador.
+                    </p>
+
+                    <p>
+                        El sistema de alimentación debe mantener
+                        las condiciones previstas de nivel de acuerdo
+                        con el diseño del equipo.
+                    </p>
+
+                    <div class="warning-box">
+
+                        <strong>Bajo nivel</strong>
+
+                        Una disminución peligrosa del nivel puede dejar
+                        superficies de calefacción insuficientemente
+                        refrigeradas por el agua y generar una situación
+                        de alto riesgo.
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Variaciones aparentes del nivel
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El nivel observado puede experimentar
+                        variaciones que no representan necesariamente
+                        un cambio equivalente en la cantidad total
+                        de agua del generador.
+                    </p>
+
+                    <p>
+                        Fenómenos asociados a la circulación, presión,
+                        generación intensa de vapor y condiciones
+                        del agua pueden modificar la indicación aparente.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Espuma y arrastre de agua
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La formación excesiva de espuma puede dificultar
+                        la interpretación del nivel y favorecer el arrastre
+                        de agua junto con el vapor.
+                    </p>
+
+                    <p>
+                        El arrastre puede perjudicar la calidad del vapor
+                        y afectar equipos o procesos que reciben ese vapor.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Puesta en marcha
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La puesta en marcha debe realizarse siguiendo
+                        el procedimiento establecido para el equipo,
+                        verificando previamente sus condiciones
+                        de seguridad y disponibilidad.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Comprobar el estado general del equipo.
+                        </li>
+
+                        <li>
+                            Verificar la disponibilidad de agua.
+                        </li>
+
+                        <li>
+                            Comprobar los instrumentos y controles.
+                        </li>
+
+                        <li>
+                            Verificar las condiciones del sistema
+                            de combustible y combustión.
+                        </li>
+
+                        <li>
+                            Realizar el encendido conforme al procedimiento
+                            correspondiente.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Apertura de la salida de vapor
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La puesta en servicio de la línea de vapor
+                        debe realizarse de manera controlada, considerando
+                        las condiciones del generador, de las tuberías
+                        y del proceso receptor.
+                    </p>
+
+                    <p>
+                        Una apertura inadecuada puede generar cambios
+                        bruscos de presión y fenómenos hidráulicos
+                        indeseados.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Parada del generador
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La parada debe seguir el procedimiento
+                        correspondiente al equipo y al proceso.
+                    </p>
+
+                    <p>
+                        El objetivo es llevar el generador a una condición
+                        segura, evitando maniobras bruscas y manteniendo
+                        el control de las variables relevantes.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </section>
+
+
+        <!-- 05 -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    05
+                </div>
+
+                <h2>
+                    Fenómenos y situaciones de riesgo
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Situaciones que el operador debe comprender para
+                reconocer condiciones anormales.
+            </p>
+
+
+            <details class="topic">
+
+                <summary>
+                    Bajo nivel de agua
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Una condición de bajo nivel puede provocar
+                        que determinadas superficies de calefacción
+                        queden insuficientemente cubiertas por agua.
+                    </p>
+
+                    <div class="warning-box">
+
+                        <strong>Situación crítica</strong>
+
+                        Operar un generador con un nivel de agua
+                        peligrosamente bajo puede producir
+                        sobrecalentamiento de las superficies metálicas
+                        y consecuencias graves para la integridad
+                        del equipo.
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Sobrepresión
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La sobrepresión ocurre cuando la presión del
+                        generador aumenta por encima de las condiciones
+                        previstas de operación.
+                    </p>
+
+                    <p>
+                        Los generadores disponen de sistemas de control
+                        y protección destinados a evitar que una condición
+                        de presión peligrosa evolucione sin control.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Fallo de alimentación de agua
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Una falla del sistema de alimentación puede
+                        provocar una disminución progresiva del nivel.
+                    </p>
+
+                    <p>
+                        El operador debe reconocer la condición y actuar
+                        conforme a los procedimientos establecidos
+                        para el equipo.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Fallo de llama
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La pérdida de llama en un sistema de combustión
+                        debe ser detectada y tratada de acuerdo con
+                        el sistema de seguridad correspondiente.
+                    </p>
+
+                    <p>
+                        La alimentación de combustible no debe continuar
+                        sin las condiciones necesarias para una combustión
+                        segura.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Golpe de ariete
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El golpe de ariete es un fenómeno transitorio
+                        asociado a cambios rápidos en el movimiento
+                        de un fluido dentro de una tubería.
+                    </p>
+
+                    <p>
+                        En instalaciones de vapor y condensado puede
+                        producir esfuerzos y golpes mecánicos importantes.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Arrastre de agua
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El arrastre consiste en el transporte de gotas
+                        de agua junto con el vapor.
+                    </p>
+
+                    <p>
+                        Puede estar asociado a condiciones del agua,
+                        generación intensa, nivel inadecuado o fenómenos
+                        de espuma.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </section>
+
+
+        <!-- 06 -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    06
+                </div>
+
+                <h2>
+                    Eficiencia y rendimiento
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Cómo aprovechar mejor la energía suministrada al generador.
+            </p>
+
+
+            <details class="topic">
+
+                <summary>
+                    Pérdidas de calor
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        No toda la energía suministrada al generador
+                        termina contenida en el vapor producido.
+                    </p>
+
+                    <p>
+                        Existen pérdidas asociadas a gases de combustión,
+                        radiación, convección, purgas y otras condiciones
+                        de funcionamiento.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Temperatura de los gases
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La temperatura de los gases a la salida del
+                        generador constituye una variable importante
+                        para evaluar el aprovechamiento del calor.
+                    </p>
+
+                    <p>
+                        Una temperatura excesivamente elevada puede
+                        indicar un aprovechamiento insuficiente de la
+                        energía disponible, aunque su interpretación
+                        debe realizarse considerando el diseño del equipo.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Exceso de aire
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Una cantidad de aire superior a la necesaria
+                        para la combustión puede incrementar el volumen
+                        de gases que deben calentarse y evacuarse.
+                    </p>
+
+                    <p>
+                        Por eso el ajuste de la combustión debe buscar
+                        condiciones adecuadas para el combustible
+                        y el equipo.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Recuperación de energía
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La recuperación de calor de los gases puede
+                        mejorar el aprovechamiento energético mediante
+                        equipos como economizadores y otros sistemas
+                        diseñados para recuperar energía.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Aislamiento térmico
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Un aislamiento adecuado reduce las pérdidas
+                        de calor hacia el ambiente y contribuye a
+                        mantener la eficiencia térmica del sistema.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </section>
+
+
+        <!-- 07 -->
+
+        <section class="topic-section">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    07
+                </div>
+
+                <h2>
+                    El generador como sistema dinámico
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+                Una visión integral para comprender la relación entre
+                las principales variables del proceso.
+            </p>
+
+
+            <details class="topic">
+
+                <summary>
+                    Generación, consumo y presión
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        La presión del generador está relacionada con
+                        el equilibrio entre la producción de vapor
+                        y el consumo del proceso.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Nivel y alimentación
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        El nivel responde a la relación entre el agua
+                        que ingresa y el agua que se transforma en vapor,
+                        además de las condiciones internas de circulación.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <details class="topic">
+
+                <summary>
+                    Combustión y demanda
+                </summary>
+
+                <div class="topic-content">
+
+                    <p>
+                        Cuando cambia la demanda de vapor, el sistema
+                        de combustión debe responder de acuerdo con
+                        la estrategia de control del generador.
+                    </p>
+
+                    <p>
+                        Esto muestra que el generador no debe entenderse
+                        como un equipo estático, sino como un sistema
+                        en permanente equilibrio dinámico.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         EXAMEN
+    ========================== -->
+
+    <section class="exam-section">
+
+        <div class="exam-container">
+
+            <h2>
+                🎯 Claves para el examen
+            </h2>
+
+            <p>
+                Estos son conceptos que conviene dominar y comprender,
+                no simplemente memorizar.
+            </p>
+
+
+            <div class="exam-grid">
+
+
+                <div class="exam-card">
+
+                    <h3>
+                        Presión
+                    </h3>
+
+                    <p>
+                        Diferenciar presión de trabajo, presión admisible
+                        y los sistemas destinados a controlar y proteger
+                        el generador.
+                    </p>
+
+                </div>
+
+
+                <div class="exam-card">
+
+                    <h3>
+                        Nivel de agua
+                    </h3>
+
+                    <p>
+                        Comprender por qué el nivel es una variable
+                        crítica y qué consecuencias puede tener un
+                        nivel peligrosamente bajo.
+                    </p>
+
+                </div>
+
+
+                <div class="exam-card">
+
+                    <h3>
+                        Combustión
+                    </h3>
+
+                    <p>
+                        Conocer la relación entre combustible, aire,
+                        combustión y transferencia de calor.
+                    </p>
+
+                </div>
+
+
+                <div class="exam-card">
+
+                    <h3>
+                        Agua
+                    </h3>
+
+                    <p>
+                        Comprender dureza, incrustaciones, corrosión,
+                        tratamiento y purga.
+                    </p>
+
+                </div>
+
+
+                <div class="exam-card">
+
+                    <h3>
+                        Pirotubular y acuotubular
+                    </h3>
+
+                    <p>
+                        Saber identificar por dónde circulan los gases
+                        y por dónde circula el agua en cada configuración.
+                    </p>
+
+                </div>
+
+
+                <div class="exam-card">
+
+                    <h3>
+                        Seguridad
+                    </h3>
+
+                    <p>
+                        Entender la función de los controles, alarmas,
+                        enclavamientos y dispositivos de protección.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div>
+
+                <div class="footer-brand-title">
+
+                    <img
+                        src="logo.png"
+                        alt="Foguista Uruguay"
+                    >
+
+                    <div>
+
+                        <h2>
+                            Foguista Uruguay
+                        </h2>
+
+                        <span>
+                            Generadores de vapor
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="footer-brand">
+
+                    Información educativa y material de estudio
+                    relacionado con generadores de vapor,
+                    seguridad y normativa uruguaya.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Navegación
+                </h3>
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="generadores.html">
+                    Generadores
+                </a>
+
+                <a href="seguridad.html">
+                    Seguridad
+                </a>
+
+                <a href="estudio.html">
+                    Estudio
+                </a>
+
+                <a href="normativa.html">
+                    Normativa
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Recursos
+                </h3>
+
+                <a href="#">
+                    Preguntas frecuentes
+                </a>
+
+                <a href="#">
+                    Bibliografía
+                </a>
+
+                <a href="#">
+                    Contacto
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Foguista Uruguay
+            </span>
+
+            <span>
+                Hecho en Uruguay 🇺🇾
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
