@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seguridad | Foguista Uruguay</title>
+
+<style>
+:root{
+    --navy:#071b33;
+    --navy2:#0d2948;
+    --blue:#1261a0;
+    --blue2:#1d73b7;
+    --light:#f3f7fb;
+    --white:#ffffff;
+    --text:#26394b;
+    --muted:#607386;
+    --line:#dce6ef;
+    --gold:#e0a32b;
+    --red:#b43b3b;
+    --green:#247b58;
+    --softblue:#edf6fd;
+    --softgold:#fff8e8;
+    --softred:#fff1f1;
+    --softgreen:#eef8f2;
+    --shadow:0 10px 28px rgba(7,27,51,.08);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:var(--navy);
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 18px rgba(0,0,0,.15);
+}
+
+.nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:800;
+    font-size:1.15rem;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+
+.logo span{
+    color:white;
+}
+
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:6px;
+}
+
+.menu a{
+    color:#dce9f5;
+    padding:10px 13px;
+    border-radius:8px;
+    font-size:.92rem;
+    transition:.2s;
+}
+
+.menu a:hover,
+.menu a.active{
+    background:var(--blue);
+    color:white;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:430px;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(rgba(7,27,51,.78),rgba(7,27,51,.82)),
+        url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg")
+        center/cover no-repeat;
+    color:white;
+}
+
+.hero-content{
+    padding:80px 0;
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:.82rem;
+    font-weight:700;
+    letter-spacing:.4px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(2.3rem,5vw,4rem);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.15rem;
+    color:#dce9f5;
+    max-width:760px;
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+    padding:65px 0 30px;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:35px;
+    align-items:start;
+}
+
+.intro h2{
+    font-size:2rem;
+    color:var(--navy);
+    margin-bottom:15px;
+}
+
+.intro p{
+    margin-bottom:14px;
+}
+
+.intro-card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+}
+
+.intro-card h3{
+    color:var(--blue);
+    margin-bottom:10px;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    padding:45px 0;
+}
+
+.section-header{
+    margin-bottom:25px;
+}
+
+.section-number{
+    color:var(--blue);
+    font-size:.82rem;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.section h2{
+    color:var(--navy);
+    font-size:2rem;
+    line-height:1.2;
+    margin-bottom:10px;
+}
+
+.section-header p{
+    color:var(--muted);
+    max-width:850px;
+}
+
+/* ================= TOPIC ================= */
+
+.topic{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:14px;
+    margin:14px 0;
+    box-shadow:0 5px 16px rgba(7,27,51,.045);
+    overflow:hidden;
+}
+
+.topic summary{
+    cursor:pointer;
+    list-style:none;
+    padding:20px 24px;
+    font-size:1.08rem;
+    font-weight:800;
+    color:var(--navy);
+    position:relative;
+    padding-right:55px;
+}
+
+.topic summary::-webkit-details-marker{
+    display:none;
+}
+
+.topic summary::after{
+    content:"+";
+    position:absolute;
+    right:22px;
+    top:17px;
+    font-size:1.5rem;
+    color:var(--blue);
+}
+
+.topic[open] summary::after{
+    content:"−";
+}
+
+.topic summary:hover{
+    background:#f8fbfe;
+}
+
+.topic-content{
+    padding:0 24px 25px;
+    border-top:1px solid var(--line);
+}
+
+.topic-content p{
+    margin-top:16px;
+}
+
+.topic-content ul{
+    margin:15px 0 15px 22px;
+}
+
+.topic-content li{
+    margin:7px 0;
+}
+
+.topic-content strong{
+    color:var(--navy);
+}
+
+/* ================= CALLOUTS ================= */
+
+.callout{
+    margin-top:20px;
+    padding:19px 21px;
+    border-radius:12px;
+    border-left:5px solid var(--blue);
+    background:var(--softblue);
+}
+
+.callout h4{
+    color:var(--blue);
+    margin-bottom:5px;
+}
+
+.example{
+    margin-top:20px;
+    padding:19px 21px;
+    border-radius:12px;
+    border-left:5px solid var(--gold);
+    background:var(--softgold);
+}
+
+.example h4{
+    color:#966b00;
+    margin-bottom:5px;
+}
+
+.exam{
+    margin-top:20px;
+    padding:19px 21px;
+    border-radius:12px;
+    border-left:5px solid var(--green);
+    background:var(--softgreen);
+}
+
+.exam h4{
+    color:var(--green);
+    margin-bottom:5px;
+}
+
+.warning{
+    margin-top:20px;
+    padding:19px 21px;
+    border-radius:12px;
+    border-left:5px solid var(--red);
+    background:var(--softred);
+}
+
+.warning h4{
+    color:var(--red);
+    margin-bottom:5px;
+}
+
+/* ================= FLOW ================= */
+
+.flow{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:22px;
+}
+
+.flow-item{
+    background:#f8fbfe;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px;
+}
+
+.flow-number{
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--blue);
+    color:white;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.flow-item h4{
+    color:var(--navy);
+    margin-bottom:7px;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    min-width:650px;
+}
+
+th{
+    background:var(--navy);
+    color:white;
+    padding:13px;
+    text-align:left;
+}
+
+td{
+    padding:13px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+}
+
+tr:nth-child(even) td{
+    background:#f8fbfe;
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:23px;
+    box-shadow:var(--shadow);
+}
+
+.card-icon{
+    font-size:1.8rem;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:var(--navy);
+    margin-bottom:8px;
+}
+
+/* ================= FINAL ================= */
+
+.final{
+    padding:60px 0 75px;
+}
+
+.final-box{
+    background:linear-gradient(135deg,var(--navy),var(--navy2));
+    color:white;
+    padding:42px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.final-box h2{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.final-box p{
+    color:#dce9f5;
+    max-width:850px;
+}
+
+.checklist{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px 30px;
+    margin-top:25px;
+}
+
+.check{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    color:#e8f1f8;
+}
+
+.check span{
+    color:#7ed2a7;
+    font-weight:900;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#041326;
+    color:#b9c9d8;
+    padding:45px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:35px;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:13px;
+}
+
+footer p{
+    font-size:.92rem;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:35px;
+    padding-top:20px;
+    text-align:center;
+    font-size:.82rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    .nav{
+        flex-direction:column;
+        padding:14px 0;
+    }
+
+    .menu{
+        justify-content:center;
+    }
+
+    .intro-grid{
+        grid-template-columns:1fr;
+    }
+
+    .flow{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .checklist{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:390px;
+    }
+
+    .hero-content{
+        padding:60px 0;
+    }
+
+    .hero h1{
+        font-size:2.45rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section{
+        padding:35px 0;
+    }
+
+    .section h2{
+        font-size:1.65rem;
+    }
+
+    .topic summary{
+        padding:17px 20px;
+        padding-right:45px;
+    }
+
+    .topic-content{
+        padding:0 20px 22px;
+    }
+
+    .final-box{
+        padding:28px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="container nav">
+
+<a href="index.html" class="logo">
+    <img src="logo.png" alt="Foguista Uruguay">
+    <span>Foguista Uruguay</span>
+</a>
+
+<nav class="menu">
+
+<a href="index.html">Inicio</a>
+
+<a href="generadores.html">Generadores</a>
+
+<a href="seguridad.html" class="active">Seguridad</a>
+
+<a href="estudio.html">Estudio</a>
+
+<a href="normativa.html">Normativa</a>
+
+<a href="app.html">App</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">SEGURIDAD EN GENERADORES DE VAPOR</span>
+
+<h1>La seguridad empieza por entender el riesgo.</h1>
+
+<p>
+Un generador de vapor concentra agua, presión, temperatura y energía.
+Comprender cómo se controlan esas variables es fundamental para operar
+de manera segura y para interpretar correctamente las situaciones que
+pueden presentarse durante el funcionamiento.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+<div class="container intro-grid">
+
+<div>
+
+<h2>Seguridad no es memorizar: es comprender.</h2>
+
+<p>
+La seguridad de un generador de vapor no depende de un único elemento.
+Existe un conjunto de dispositivos, controles, sistemas de alimentación
+y condiciones de operación que trabajan relacionados entre sí.
+</p>
+
+<p>
+Para estudiar correctamente hay que entender qué variable controla cada
+elemento, qué situación pretende evitar y qué relación existe entre
+ellos.
+</p>
+
+<p>
+En esta sección vamos a recorrer esos conceptos desde una visión práctica
+y didáctica, pensando especialmente en la formación del foguista.
+</p>
+
+</div>
+
+<div class="intro-card">
+
+<h3>¿Qué debemos controlar?</h3>
+
+<ul>
+<li>La <strong>presión</strong> del vapor.</li>
+<li>El <strong>nivel de agua</strong>.</li>
+<li>La <strong>combustión</strong> y la llama.</li>
+<li>La <strong>alimentación de agua</strong>.</li>
+<li>Los <strong>dispositivos de protección</strong>.</li>
+<li>Las condiciones de la <strong>sala de generación</strong>.</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 01 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">01 · FUNDAMENTOS</div>
+
+<h2>¿Por qué un generador de vapor puede ser peligroso?</h2>
+
+<p>
+Antes de estudiar válvulas, controles o alarmas, hay que comprender
+qué energía existe dentro del generador y por qué determinadas
+condiciones pueden resultar peligrosas.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>La presión y la energía almacenada</summary>
+
+<div class="topic-content">
+
+<p>
+Cuando el agua se transforma en vapor dentro de un recipiente cerrado,
+el vapor queda sometido a presión. Esa presión representa energía
+almacenada en el sistema.
+</p>
+
+<p>
+Cuanto mayor es la presión, mayor es la importancia de mantener bajo
+control las condiciones de funcionamiento del generador y de disponer
+de dispositivos capaces de actuar cuando una variable supera el límite
+establecido.
+</p>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+La presión no es simplemente "un número que aparece en el manómetro".
+Es una manifestación de la energía contenida en el sistema de vapor.
+Por eso el control de presión es una cuestión fundamental de seguridad.
+</p>
+
+</div>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+No confundas <strong>presión de trabajo</strong> con la
+<strong>presión máxima admisible</strong>. La primera corresponde a las
+condiciones normales de operación; la segunda establece un límite que
+no debe ser superado.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Temperatura, presión y estado del agua</summary>
+
+<div class="topic-content">
+
+<p>
+El agua y el vapor están directamente relacionados con la presión del
+sistema. Para una determinada presión existe una temperatura de
+saturación correspondiente.
+</p>
+
+<p>
+Esto permite comprender por qué presión y temperatura son variables
+fundamentales en un generador de vapor.
+</p>
+
+<p>
+Cuando el agua recibe energía suficiente, alcanza la temperatura de
+saturación y comienza el cambio de estado. A partir de allí, una parte
+de la energía suministrada se utiliza en la transformación del líquido
+en vapor.
+</p>
+
+<div class="example">
+
+<h4>Ejemplo</h4>
+
+<p>
+Si la presión del generador cambia, también cambia la temperatura a la
+que el agua hierve. Por eso presión y temperatura no deben estudiarse
+como conceptos independientes.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>El peligro de una condición fuera de control</summary>
+
+<div class="topic-content">
+
+<p>
+Una condición peligrosa normalmente no aparece aislada. Puede comenzar
+con una variación de una variable y terminar afectando a otras.
+</p>
+
+<div class="flow">
+
+<div class="flow-item">
+
+<div class="flow-number">1</div>
+
+<h4>Variable</h4>
+
+<p>
+Por ejemplo, cambia el nivel de agua o aumenta la presión.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">2</div>
+
+<h4>Detección</h4>
+
+<p>
+Un instrumento o sistema de control detecta la condición.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">3</div>
+
+<h4>Protección</h4>
+
+<p>
+El sistema de protección actúa según su función y configuración.
+</p>
+
+</div>
+
+</div>
+
+<div class="callout">
+
+<h4>Idea fundamental</h4>
+
+<p>
+La seguridad se basa en mantener las variables del generador dentro de
+condiciones controladas y disponer de sistemas que permitan detectar
+situaciones anormales.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 02 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">02 · NIVEL DE AGUA</div>
+
+<h2>El nivel de agua: una variable crítica</h2>
+
+<p>
+El agua dentro del generador no solo produce vapor. También cumple una
+función fundamental en la refrigeración de las superficies que reciben
+calor.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>¿Por qué es tan importante mantener el nivel?</summary>
+
+<div class="topic-content">
+
+<p>
+Las superficies que reciben directamente el calor de la combustión
+deben encontrarse correctamente refrigeradas por el agua.
+</p>
+
+<p>
+Si el nivel disminuye demasiado, determinadas superficies pueden quedar
+insuficientemente cubiertas por agua mientras continúan recibiendo
+energía térmica.
+</p>
+
+<p>
+Por eso el control del nivel constituye una de las variables más
+importantes en la operación segura.
+</p>
+
+<div class="warning">
+
+<h4>No confundir</h4>
+
+<p>
+Un nivel aparentemente normal no significa necesariamente que todas las
+condiciones del generador sean normales. El operador debe interpretar
+el nivel junto con el resto de las variables e instrumentos disponibles.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>¿Cómo se controla el nivel?</summary>
+
+<div class="topic-content">
+
+<p>
+El nivel puede observarse mediante instrumentos destinados a indicar la
+cantidad de agua existente y puede intervenir también en sistemas
+automáticos de control y protección.
+</p>
+
+<p>
+En un sistema de alimentación automática, una disminución del nivel
+puede generar la orden correspondiente para aumentar la alimentación
+de agua.
+</p>
+
+<p>
+Los sistemas de protección, por su parte, tienen una función diferente:
+su objetivo es detectar determinadas condiciones anormales y actuar de
+acuerdo con su diseño.
+</p>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+Hay que separar tres conceptos:
+<strong>medir</strong>, <strong>controlar</strong> y
+<strong>proteger</strong>.
+Un instrumento puede indicar una variable; un control puede actuar
+sobre ella; y un sistema de protección puede intervenir cuando se
+alcanza una condición peligrosa.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Variaciones aparentes del nivel</summary>
+
+<div class="topic-content">
+
+<p>
+El nivel observado puede no representar exactamente el comportamiento
+instantáneo del agua dentro del generador.
+</p>
+
+<p>
+Fenómenos relacionados con la circulación, la formación de burbujas,
+la generación intensa de vapor y las condiciones de presión pueden
+producir variaciones aparentes.
+</p>
+
+<p>
+Por eso el foguista debe conocer el funcionamiento del sistema de
+medición y no interpretar una indicación aislada sin considerar el
+estado general del generador.
+</p>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+La pregunta importante no es solamente "¿qué nivel tiene?", sino
+<strong>"¿qué significa esa indicación y qué puede estar ocurriendo
+dentro del generador?"</strong>
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 03 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">03 · PRESIÓN</div>
+
+<h2>Control de presión y protección contra sobrepresión</h2>
+
+<p>
+La presión debe mantenerse dentro de los límites de operación. Para ello
+intervienen instrumentos de medición, controles y dispositivos de
+protección.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>El manómetro: saber qué está pasando</summary>
+
+<div class="topic-content">
+
+<p>
+El manómetro permite al operador conocer la presión existente en el
+sistema.
+</p>
+
+<p>
+Es uno de los instrumentos fundamentales porque proporciona una
+indicación directa de una variable crítica del generador.
+</p>
+
+<p>
+Pero medir no significa controlar. El manómetro informa al operador;
+otros elementos del sistema pueden encargarse de regular o proteger.
+</p>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+Pensalo así:
+<strong>manómetro = indica</strong>.
+No hay que atribuirle funciones que pertenecen a otros elementos.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Presostatos y control de presión</summary>
+
+<div class="topic-content">
+
+<p>
+Un presostato es un dispositivo que responde a una determinada
+condición de presión y puede utilizarse dentro de un sistema de control
+para generar una orden cuando se alcanza un valor establecido.
+</p>
+
+<p>
+Su función concreta depende del diseño del generador y del circuito de
+control en el que se encuentre instalado.
+</p>
+
+<div class="example">
+
+<h4>Ejemplo</h4>
+
+<p>
+Si el sistema está configurado para controlar la combustión mediante
+presión, una variación de presión puede provocar un cambio en el régimen
+de funcionamiento del quemador o sistema de combustión.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Válvulas de seguridad</summary>
+
+<div class="topic-content">
+
+<p>
+Las válvulas de seguridad constituyen dispositivos de protección contra
+la sobrepresión.
+</p>
+
+<p>
+Su función fundamental es evitar que la presión del generador continúe
+aumentando indefinidamente cuando se alcanza la condición para la cual
+están ajustadas.
+</p>
+
+<p>
+No deben confundirse con los controles normales de presión. Un control
+puede regular el funcionamiento; una válvula de seguridad pertenece al
+sistema de protección.
+</p>
+
+<div class="warning">
+
+<h4>No confundir</h4>
+
+<p>
+<strong>Presostato ≠ válvula de seguridad.</strong><br>
+El presostato participa en el control según el diseño del sistema.
+La válvula de seguridad es un dispositivo destinado a proteger frente
+a una condición de sobrepresión.
+</p>
+
+</div>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+Cuando te pregunten por la función de una válvula de seguridad, la idea
+central es: <strong>protección frente a sobrepresión</strong>.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>¿Por qué existen varios niveles de protección?</summary>
+
+<div class="topic-content">
+
+<p>
+La seguridad de un generador no debe depender de una única barrera.
+Por eso pueden coexistir medición, control, alarma, enclavamientos y
+dispositivos de protección.
+</p>
+
+<div class="flow">
+
+<div class="flow-item">
+
+<div class="flow-number">1</div>
+
+<h4>Medición</h4>
+
+<p>
+Permite conocer el estado de una variable.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">2</div>
+
+<h4>Control</h4>
+
+<p>
+Permite mantener la variable dentro de un rango previsto.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">3</div>
+
+<h4>Protección</h4>
+
+<p>
+Actúa ante determinadas condiciones anormales.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 04 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">04 · COMBUSTIÓN</div>
+
+<h2>Combustión, llama y energía térmica</h2>
+
+<p>
+La combustión es la fuente de energía del generador cuando se utiliza
+un combustible. Por eso su control también forma parte de la seguridad.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>Combustible + aire + ignición</summary>
+
+<div class="topic-content">
+
+<p>
+Para que exista una combustión adecuada deben encontrarse presentes los
+elementos necesarios del proceso: combustible, oxígeno y una fuente de
+ignición cuando corresponde.
+</p>
+
+<p>
+La cantidad y proporción de aire tiene una influencia directa sobre la
+calidad de la combustión y sobre la estabilidad de la llama.
+</p>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+La combustión no consiste simplemente en "quemar combustible".
+Es un proceso controlado. Una alteración de las condiciones de
+combustión puede modificar la llama, la temperatura y el comportamiento
+del generador.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>¿Por qué es importante detectar la pérdida de llama?</summary>
+
+<div class="topic-content">
+
+<p>
+Si un sistema de combustión pierde la llama mientras continúa existiendo
+alimentación de combustible, se genera una condición que debe ser
+detectada y gestionada por el sistema correspondiente.
+</p>
+
+<p>
+Los sistemas de control y protección asociados a la combustión tienen
+precisamente la finalidad de evitar que una condición anormal continúe
+sin ser detectada.
+</p>
+
+<div class="warning">
+
+<h4>Idea de seguridad</h4>
+
+<p>
+Nunca hay que pensar en la llama solamente como "algo que genera calor".
+También debe existir control sobre la presencia y condición de la
+combustión.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>El aire de combustión</summary>
+
+<div class="topic-content">
+
+<p>
+Una combustión necesita una cantidad adecuada de aire. La falta o el
+exceso de aire pueden afectar el proceso y modificar el rendimiento del
+generador.
+</p>
+
+<p>
+El sistema de ventilación, los registros, ventiladores y conductos
+forman parte del conjunto que permite suministrar el aire necesario
+según el diseño.
+</p>
+
+<p>
+Desde el punto de vista de seguridad, también es importante que exista
+una ventilación adecuada del área de generación cuando corresponda.
+</p>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 05 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">05 · ALIMENTACIÓN DE AGUA</div>
+
+<h2>Agua de alimentación: mantener el equilibrio</h2>
+
+<p>
+El generador produce vapor continuamente mientras exista demanda. Para
+mantener el proceso debe reponerse el agua que abandona el sistema en
+forma de vapor.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>Generación de vapor y alimentación de agua</summary>
+
+<div class="topic-content">
+
+<p>
+Cuando el generador entrega vapor, está retirando masa de agua del
+sistema. Por eso debe existir un sistema de alimentación capaz de
+reponerla.
+</p>
+
+<div class="flow">
+
+<div class="flow-item">
+
+<div class="flow-number">1</div>
+
+<h4>Agua</h4>
+
+<p>
+El generador recibe agua de alimentación.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">2</div>
+
+<h4>Calor</h4>
+
+<p>
+La energía térmica transforma parte del agua en vapor.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">3</div>
+
+<h4>Vapor</h4>
+
+<p>
+El vapor abandona el generador hacia el sistema de consumo.
+</p>
+
+</div>
+
+</div>
+
+<p>
+El control del nivel mantiene este proceso dentro de las condiciones
+previstas.
+</p>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>¿Qué ocurre si falla la alimentación?</summary>
+
+<div class="topic-content">
+
+<p>
+Una falla en la alimentación de agua significa que el generador puede
+continuar recibiendo energía térmica mientras deja de recibir el agua
+necesaria para mantener sus condiciones normales.
+</p>
+
+<p>
+Por eso los sistemas asociados al nivel y a la alimentación tienen una
+importancia fundamental dentro de la protección del generador.
+</p>
+
+<div class="warning">
+
+<h4>Concepto crítico</h4>
+
+<p>
+La combinación de <strong>aporte de calor</strong> y
+<strong>disminución del agua disponible</strong> es una condición que
+debe ser detectada y controlada.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Calidad del agua y seguridad</summary>
+
+<div class="topic-content">
+
+<p>
+La seguridad no depende únicamente del nivel. La calidad del agua
+también influye sobre el estado interno del generador.
+</p>
+
+<p>
+La presencia de sales, dureza y otras sustancias puede favorecer la
+formación de incrustaciones o depósitos. También existen fenómenos
+relacionados con la corrosión.
+</p>
+
+<p>
+Estos problemas pueden afectar la transferencia de calor y el estado de
+las superficies sometidas a temperatura.
+</p>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+Recordá la relación:
+<strong>calidad del agua → estado interno → transferencia de calor →
+condiciones de operación.</strong>
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 06 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">06 · CONTROLES Y ENCLAVAMIENTOS</div>
+
+<h2>Cuando el generador detecta una condición anormal</h2>
+
+<p>
+Los controles y enclavamientos constituyen una parte fundamental de la
+seguridad porque permiten relacionar una condición detectada con una
+acción prevista por el sistema.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>¿Qué es un enclavamiento?</summary>
+
+<div class="topic-content">
+
+<p>
+Un enclavamiento es una condición lógica de seguridad que impide o
+interrumpe determinada operación cuando no se cumplen las condiciones
+necesarias para continuar.
+</p>
+
+<p>
+Su función es evitar que el sistema continúe funcionando de una manera
+que pueda resultar peligrosa cuando aparece una condición previamente
+definida.
+</p>
+
+<div class="example">
+
+<h4>Ejemplo conceptual</h4>
+
+<p>
+Si una determinada condición necesaria para la combustión deja de estar
+presente, el sistema de control puede impedir que el proceso continúe
+según la lógica de protección establecida.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Alarma y protección no son exactamente lo mismo</summary>
+
+<div class="topic-content">
+
+<p>
+Una alarma tiene como objetivo informar que se ha producido o detectado
+una condición determinada.
+</p>
+
+<p>
+Una protección puede además generar una acción sobre el sistema.
+</p>
+
+<table>
+
+<tr>
+<th>Elemento</th>
+<th>Idea principal</th>
+</tr>
+
+<tr>
+<td><strong>Indicador</strong></td>
+<td>Muestra una variable o condición.</td>
+</tr>
+
+<tr>
+<td><strong>Alarma</strong></td>
+<td>Advierte al operador sobre una condición.</td>
+</tr>
+
+<tr>
+<td><strong>Control</strong></td>
+<td>Actúa para mantener una variable dentro de condiciones previstas.</td>
+</tr>
+
+<tr>
+<td><strong>Enclavamiento</strong></td>
+<td>Condiciona o impide una operación cuando no se cumplen determinados requisitos.</td>
+</tr>
+
+<tr>
+<td><strong>Dispositivo de seguridad</strong></td>
+<td>Protege frente a una condición peligrosa específica.</td>
+</tr>
+
+</table>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+Una forma sencilla de recordarlo es:
+<strong>indicar → avisar → controlar → proteger</strong>.
+Cada función tiene un propósito diferente.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Protecciones independientes</summary>
+
+<div class="topic-content">
+
+<p>
+Una protección no debe entenderse como un reemplazo del operador ni de
+todos los demás sistemas.
+</p>
+
+<p>
+Los generadores pueden utilizar diferentes capas de seguridad porque
+cada una está destinada a una condición concreta.
+</p>
+
+<p>
+Por eso es importante estudiar cada dispositivo según su función y no
+memorizar simplemente una lista de componentes.
+</p>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+Si te preguntan "¿para qué sirve?", respondé primero con la
+<strong>variable o condición que controla</strong> y después con la
+<strong>acción o protección asociada</strong>.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 07 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">07 · SITUACIONES ANORMALES</div>
+
+<h2>Aprender a reconocer que algo no está funcionando bien</h2>
+
+<p>
+Una parte importante de la formación del foguista consiste en reconocer
+señales que indican que el funcionamiento se está alejando de las
+condiciones normales.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-icon">◉</div>
+
+<h3>Presión</h3>
+
+<p>
+Una variación inesperada de presión debe interpretarse junto con el
+estado de la combustión, la demanda de vapor y el funcionamiento del
+sistema de control.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">▣</div>
+
+<h3>Nivel</h3>
+
+<p>
+Una variación anormal del nivel requiere comprender qué ocurre con la
+alimentación de agua, la producción de vapor y la indicación del
+instrumento.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">♨</div>
+
+<h3>Combustión</h3>
+
+<p>
+Cambios en la llama, combustión irregular o pérdida de llama pueden
+indicar una condición que debe ser detectada y tratada según el sistema
+instalado.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">◌</div>
+
+<h3>Agua</h3>
+
+<p>
+Problemas de alimentación, calidad o circulación pueden afectar tanto
+la operación como el estado interno del generador.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">⚙</div>
+
+<h3>Controles</h3>
+
+<p>
+Una alarma, señal o actuación automática debe interpretarse como
+información sobre una condición determinada, no simplemente como una
+luz o sonido.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">!</div>
+
+<h3>Conducta</h3>
+
+<p>
+Ante una situación anormal, el operador debe actuar de acuerdo con los
+procedimientos, sistemas instalados y condiciones específicas del
+generador.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="warning">
+
+<h4>Importante</h4>
+
+<p>
+Los procedimientos concretos frente a una emergencia dependen del tipo
+de generador, sistema de combustión, automatización, instalación y
+procedimientos establecidos. No existe una única secuencia universal
+que pueda aplicarse indistintamente a todos los equipos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 08 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">08 · SALA DE GENERACIÓN</div>
+
+<h2>La seguridad también está fuera del generador</h2>
+
+<p>
+El generador forma parte de una instalación. Por eso las condiciones
+del lugar donde se encuentra instalado también influyen en la seguridad.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>Ventilación y ambiente de trabajo</summary>
+
+<div class="topic-content">
+
+<p>
+Los equipos de combustión necesitan condiciones adecuadas para disponer
+del aire requerido para el proceso.
+</p>
+
+<p>
+Además, una sala de generación debe permitir condiciones apropiadas
+para la operación, mantenimiento y circulación del personal.
+</p>
+
+<p>
+La ventilación, distribución de equipos, accesos y condiciones del
+ambiente forman parte del concepto general de seguridad.
+</p>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Orden y accesibilidad</summary>
+
+<div class="topic-content">
+
+<p>
+Los instrumentos y dispositivos necesarios para controlar el generador
+deben poder ser observados y operados correctamente.
+</p>
+
+<p>
+Una instalación desordenada, con accesos bloqueados o con elementos
+ubicados de manera que dificulten la operación, aumenta el riesgo de
+error humano.
+</p>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+La seguridad no consiste solamente en tener buenos dispositivos.
+También importa que el operador pueda <strong>verlos, interpretarlos y
+actuar correctamente</strong>.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Normativa y condiciones de instalación</summary>
+
+<div class="topic-content">
+
+<p>
+Las condiciones exigibles para una sala o área de generación de vapor,
+sus instalaciones y sus dispositivos de seguridad deben estudiarse
+directamente desde la normativa vigente aplicable.
+</p>
+
+<p>
+En Foguista Uruguay, los contenidos normativos se tratarán en la sección
+<strong>Normativa</strong>, diferenciando el texto reglamentario de la
+explicación educativa.
+</p>
+
+<div class="warning">
+
+<h4>Importante para estudiar</h4>
+
+<p>
+No tomes una explicación didáctica como si fuera el texto completo de
+un reglamento. Cuando una pregunta requiera un requisito normativo
+exacto, hay que recurrir al texto oficial correspondiente.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 09 ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">09 · ERRORES FRECUENTES</div>
+
+<h2>Lo que conviene no confundir</h2>
+
+<p>
+Muchos errores durante el estudio aparecen porque varios elementos
+cumplen funciones relacionadas, pero no iguales.
+</p>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Concepto</th>
+
+<th>No confundir con</th>
+
+<th>Idea clave</th>
+
+</tr>
+
+<tr>
+
+<td><strong>Manómetro</strong></td>
+
+<td>Presostato</td>
+
+<td>El manómetro indica presión; el presostato actúa según una condición de presión.</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Control de presión</strong></td>
+
+<td>Válvula de seguridad</td>
+
+<td>Controlar y proteger frente a sobrepresión son funciones diferentes.</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Alarma</strong></td>
+
+<td>Enclavamiento</td>
+
+<td>La alarma informa; el enclavamiento puede condicionar una operación.</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Nivel de agua</strong></td>
+
+<td>Presión</td>
+
+<td>Son variables diferentes y requieren sistemas de medición y control específicos.</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Alimentación de agua</strong></td>
+
+<td>Control de nivel</td>
+
+<td>La alimentación aporta agua; el control determina cuándo y cómo debe actuar según el sistema.</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Combustión</strong></td>
+
+<td>Generación de vapor</td>
+
+<td>La combustión aporta energía; el generador utiliza esa energía para producir vapor.</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FINAL REPASO ================= -->
+
+<section class="final">
+
+<div class="container">
+
+<div class="final-box">
+
+<h2>Repaso rápido para el examen</h2>
+
+<p>
+Si entendés estas relaciones, tenés una base sólida para estudiar la
+seguridad de un generador de vapor.
+</p>
+
+<div class="checklist">
+
+<div class="check">
+<span>✓</span>
+<p>La presión representa una variable crítica del sistema.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>El nivel de agua debe mantenerse bajo control.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>La alimentación de agua permite reponer el agua transformada en vapor.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>La combustión debe mantenerse bajo condiciones controladas.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>Las alarmas informan condiciones determinadas.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>Los controles mantienen variables dentro de condiciones previstas.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>Los enclavamientos condicionan determinadas operaciones.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>Las válvulas de seguridad protegen frente a sobrepresión.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>La calidad del agua influye sobre el estado interno del generador.</p>
+</div>
+
+<div class="check">
+<span>✓</span>
+<p>La seguridad depende de varias capas de protección.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>Foguista Uruguay</h3>
+
+<p>
+Material educativo para comprender generadores de vapor, seguridad,
+operación y normativa aplicable en Uruguay.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Secciones</h3>
+
+<div class="footer-links">
+
+<a href="index.html">Inicio</a>
+
+<a href="generadores.html">Generadores</a>
+
+<a href="seguridad.html">Seguridad</a>
+
+<a href="estudio.html">Estudio</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<h3>Recursos</h3>
+
+<div class="footer-links">
+
+<a href="normativa.html">Normativa</a>
+
+<a href="app.html">App</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container copyright">
+
+© 2026 Foguista Uruguay · Material educativo
+
+</div>
+
+</footer>
+
+</body>
+</html>
