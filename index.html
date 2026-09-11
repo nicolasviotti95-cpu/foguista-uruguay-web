@@ -9,6 +9,7 @@
     <meta name="description" content="Foguista Uruguay: información, estudio, seguridad y normativa sobre generadores de vapor en Uruguay.">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -92,6 +93,7 @@
             opacity: 0.75;
         }
 
+
         /* =========================
            HERO
         ========================= */
@@ -149,6 +151,7 @@
             transform: translateY(-2px);
         }
 
+
         /* =========================
            INTRO
         ========================= */
@@ -170,6 +173,7 @@
             font-size: 18px;
             color: #53616c;
         }
+
 
         /* =========================
            FEATURES
@@ -208,6 +212,7 @@
             color: #5d6870;
             font-size: 14px;
         }
+
 
         /* =========================
            MAIN SECTIONS
@@ -276,6 +281,7 @@
             color: #59656d;
         }
 
+
         /* =========================
            ARTICLES
         ========================= */
@@ -320,56 +326,345 @@
             color: #59656d;
         }
 
+
         /* =========================
-           APP
+           APP PROMO
         ========================= */
 
-        .app-section {
-            background: #0b2438;
+        .app-promo {
+            background: #09283f;
             color: white;
-            padding: 75px 25px;
-            text-align: center;
+            padding: 80px 25px 0;
+            overflow: hidden;
         }
 
-        .app-section h2 {
-            font-size: 34px;
+        .app-promo-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 300px 1fr 360px;
+            align-items: center;
+            gap: 45px;
+        }
+
+
+        /* PHONE */
+
+        .app-phone {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 520px;
+        }
+
+        .phone-frame {
+            width: 235px;
+            height: 455px;
+
+            background: #111;
+            border-radius: 38px;
+
+            padding: 9px;
+
+            transform: rotate(-7deg);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.45),
+                inset 0 0 0 2px #777;
+        }
+
+        .phone-screen {
+            height: 100%;
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #0b4265,
+                    #092b44
+                );
+
+            padding: 25px 14px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .phone-screen > img {
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+
+            align-self: center;
+
+            border-radius: 18px;
+
             margin-bottom: 15px;
         }
 
-        .app-section p {
-            max-width: 650px;
-            margin: auto;
-            color: #d9e4eb;
+        .phone-option {
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 9px;
+
+            padding: 12px;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 14px;
         }
 
-        .app-badge {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 22px;
-            border: 1px solid rgba(255,255,255,0.4);
-            border-radius: 7px;
-            font-weight: bold;
+
+        /* APP TEXT */
+
+        .app-promo-main h2 {
+            font-size: clamp(38px, 4vw, 56px);
+            line-height: 1.05;
+
+            margin-bottom: 25px;
         }
+
+        .app-promo-main h2 span {
+            display: block;
+            color: #65b8ff;
+        }
+
+        .app-promo-main > p {
+            font-size: 18px;
+            line-height: 1.7;
+
+            color: #d5e2eb;
+
+            max-width: 650px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* GOOGLE PLAY */
+
+        .app-store-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            background: #050505;
+
+            border: 1px solid #8a8a8a;
+
+            border-radius: 10px;
+
+            padding: 10px 22px;
+
+            min-width: 245px;
+        }
+
+        .play-icon {
+            font-size: 28px;
+        }
+
+        .app-store-badge small {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .app-store-badge strong {
+            display: block;
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .app-coming {
+            margin-top: 12px !important;
+            font-size: 14px !important;
+        }
+
+
+        /* APP FEATURES */
+
+        .app-features {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .app-feature {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+        }
+
+        .app-feature-icon {
+            min-width: 52px;
+            height: 52px;
+
+            border-radius: 50%;
+
+            background: rgba(53,143,217,0.25);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+        }
+
+        .app-feature h3 {
+            font-size: 18px;
+            margin-bottom: 3px;
+        }
+
+        .app-feature p {
+            color: #c6d6e0;
+            font-size: 14px;
+        }
+
 
         /* =========================
            FOOTER
         ========================= */
 
-        footer {
-            background: #071a29;
-            color: #b9c6ce;
-            padding: 35px 25px;
-            text-align: center;
+        .site-footer {
+            background: #061d2d;
+            color: #c6d6e0;
+            padding: 50px 6% 25px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 40px;
+        }
+
+        .footer-brand-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-brand-title img {
+            width: 70px;
+            height: 70px;
+
+            border-radius: 15px;
+        }
+
+        .footer-brand-title h2 {
+            color: white;
+            font-size: 25px;
+        }
+
+        .footer-brand-title span {
             font-size: 14px;
         }
 
-        footer strong {
+        .footer-brand > p {
+            max-width: 360px;
+            margin-top: 22px;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 22px;
+        }
+
+        .social-links a {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.1);
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .footer-column a {
+            color: #c6d6e0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
             color: white;
         }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: auto;
+
+            border-top: 1px solid rgba(255,255,255,0.15);
+
+            padding-top: 25px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            font-size: 13px;
+        }
+
+        .footer-bottom b {
+            margin: 0 10px;
+        }
+
 
         /* =========================
            RESPONSIVE
         ========================= */
+
+        @media (max-width: 1000px) {
+
+            .app-promo-container {
+                grid-template-columns: 250px 1fr;
+            }
+
+            .app-features {
+                grid-column: 1 / -1;
+
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                padding-bottom: 50px;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
 
         @media (max-width: 900px) {
 
@@ -377,14 +672,12 @@
                 flex-direction: column;
             }
 
-            nav {
-                justify-content: center;
-            }
-
             .features {
                 grid-template-columns: repeat(2, 1fr);
             }
+
         }
+
 
         @media (max-width: 650px) {
 
@@ -398,6 +691,7 @@
 
             nav {
                 gap: 13px;
+                justify-content: center;
             }
 
             nav a {
@@ -428,38 +722,100 @@
             .app-section h2 {
                 font-size: 28px;
             }
+
+
+            /* APP MOBILE */
+
+            .app-promo {
+                padding-top: 55px;
+            }
+
+            .app-promo-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .app-phone {
+                height: 400px;
+            }
+
+            .phone-frame {
+                width: 200px;
+                height: 390px;
+            }
+
+            .app-promo-main > p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .app-features {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+
+            /* FOOTER MOBILE */
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
         }
+
     </style>
 </head>
 
 <body>
 
+
     <!-- =========================
          HEADER
-    ========================== -->
+    ========================= -->
 
     <header>
+
         <div class="header-container">
 
             <a href="index.html" class="brand">
+
                 <img src="logo.png" alt="Foguista Uruguay">
 
                 <div class="brand-text">
+
                     <h1>Foguista Uruguay</h1>
+
                     <span>Generadores de vapor</span>
+
                 </div>
+
             </a>
 
+
             <nav>
+
                 <a href="index.html">Inicio</a>
+
                 <a href="generadores.html">Generadores</a>
+
                 <a href="seguridad.html">Seguridad</a>
+
                 <a href="estudio.html">Estudio</a>
+
                 <a href="normativa.html">Normativa</a>
+
                 <a href="app.html">App</a>
+
             </nav>
 
         </div>
+
     </header>
 
 
@@ -518,39 +874,74 @@
         <section class="features">
 
             <div class="feature">
-                <div class="feature-icon">✓</div>
-                <h3>Información confiable</h3>
+
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Información confiable
+                </h3>
+
                 <p>
                     Contenido técnico elaborado para comprender
                     el funcionamiento de los equipos.
                 </p>
+
             </div>
 
+
             <div class="feature">
-                <div class="feature-icon">📚</div>
-                <h3>Material de estudio</h3>
+
+                <div class="feature-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Material de estudio
+                </h3>
+
                 <p>
                     Conceptos y explicaciones orientados al aprendizaje
                     del foguista.
                 </p>
+
             </div>
 
+
             <div class="feature">
-                <div class="feature-icon">⚠</div>
-                <h3>Seguridad</h3>
+
+                <div class="feature-icon">
+                    ⚠
+                </div>
+
+                <h3>
+                    Seguridad
+                </h3>
+
                 <p>
                     La seguridad operacional como parte fundamental
                     del trabajo con vapor.
                 </p>
+
             </div>
 
+
             <div class="feature">
-                <div class="feature-icon">🇺🇾</div>
-                <h3>Normativa uruguaya</h3>
+
+                <div class="feature-icon">
+                    🇺🇾
+                </div>
+
+                <h3>
+                    Normativa uruguaya
+                </h3>
+
                 <p>
                     Acceso y referencia a la reglamentación aplicable
                     en Uruguay.
                 </p>
+
             </div>
 
         </section>
@@ -661,7 +1052,7 @@
 
 
         <!-- =========================
-             ARTÍCULOS
+             CONCEPTOS
         ========================== -->
 
         <section class="articles">
@@ -676,6 +1067,7 @@
 
 
             <div class="articles-grid">
+
 
                 <article class="article">
 
@@ -743,26 +1135,199 @@
 
 
         <!-- =========================
-             APP
+             APP PROMO
         ========================== -->
 
-        <section class="app-section">
+        <section class="app-promo">
 
-            <h2>
-                Foguista Uruguay también tendrá su App
-            </h2>
+            <div class="app-promo-container">
 
-            <p>
-                Una herramienta complementaria para estudiar,
-                practicar y reforzar conocimientos sobre generación
-                de vapor.
-            </p>
 
-            <div class="app-badge">
-                Próximamente
+                <!-- TELÉFONO -->
+
+                <div class="app-phone">
+
+                    <div class="phone-frame">
+
+                        <div class="phone-screen">
+
+                            <img
+                                src="logo.png"
+                                alt="Foguista Uruguay"
+                            >
+
+                            <div class="phone-option">
+                                🎓
+                                <span>Simulacros</span>
+                            </div>
+
+                            <div class="phone-option">
+                                📋
+                                <span>Preguntas</span>
+                            </div>
+
+                            <div class="phone-option">
+                                📊
+                                <span>Estadísticas</span>
+                            </div>
+
+                            <div class="phone-option">
+                                ⚙️
+                                <span>Configuración</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEXTO PRINCIPAL -->
+
+                <div class="app-promo-main">
+
+                    <h2>
+
+                        Llevá Foguista Uruguay
+
+                        <span>
+                            en tu celular
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+                        Practicá con preguntas, simulacros y reforzá tus
+                        conocimientos sobre generadores de vapor en cualquier
+                        momento y lugar.
+                    </p>
+
+
+                    <div class="app-store-badge">
+
+                        <div class="play-icon">
+                            ▶
+                        </div>
+
+                        <div>
+
+                            <small>
+                                PRÓXIMAMENTE EN
+                            </small>
+
+                            <strong>
+                                Google Play
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="app-coming">
+                        Próximamente en más plataformas.
+                    </p>
+
+                </div>
+
+
+                <!-- CARACTERÍSTICAS -->
+
+                <div class="app-features">
+
+
+                    <div class="app-feature">
+
+                        <div class="app-feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Simulacros de examen
+                            </h3>
+
+                            <p>
+                                Poné a prueba tus conocimientos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="app-feature">
+
+                        <div class="app-feature-icon">
+                            ▤
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Preguntas actualizadas
+                            </h3>
+
+                            <p>
+                                Basadas en normativa uruguaya.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="app-feature">
+
+                        <div class="app-feature-icon">
+                            ▥
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Seguimiento de progreso
+                            </h3>
+
+                            <p>
+                                Mejorá con cada práctica.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="app-feature">
+
+                        <div class="app-feature-icon">
+                            📱
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Diseño simple y práctico
+                            </h3>
+
+                            <p>
+                                Ideal para estudiar desde el celular.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
             </div>
 
         </section>
+
 
     </main>
 
@@ -771,18 +1336,169 @@
          FOOTER
     ========================== -->
 
-    <footer>
+    <footer class="site-footer">
 
-        <p>
-            <strong>Foguista Uruguay</strong>
-        </p>
+        <div class="footer-container">
 
-        <p>
-            Información educativa sobre generadores de vapor,
-            seguridad y normativa uruguaya.
-        </p>
+
+            <!-- MARCA -->
+
+            <div class="footer-brand">
+
+                <div class="footer-brand-title">
+
+                    <img
+                        src="logo.png"
+                        alt="Foguista Uruguay"
+                    >
+
+                    <div>
+
+                        <h2>
+                            Foguista Uruguay
+                        </h2>
+
+                        <span>
+                            Generadores de vapor
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Información educativa sobre generadores de vapor,
+                    seguridad y normativa uruguaya.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a
+                        href="#"
+                        aria-label="YouTube"
+                    >
+                        ▶
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="GitHub"
+                    >
+                        ●
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ENLACES -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Enlaces rápidos
+                </h3>
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="generadores.html">
+                    Generadores
+                </a>
+
+                <a href="seguridad.html">
+                    Seguridad
+                </a>
+
+                <a href="estudio.html">
+                    Estudio
+                </a>
+
+                <a href="normativa.html">
+                    Normativa
+                </a>
+
+                <a href="app.html">
+                    App
+                </a>
+
+            </div>
+
+
+            <!-- RECURSOS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Recursos
+                </h3>
+
+                <a href="#">
+                    Preguntas frecuentes
+                </a>
+
+                <a href="#">
+                    Bibliografía
+                </a>
+
+                <a href="#">
+                    Enlaces de interés
+                </a>
+
+                <a href="#">
+                    Contacto
+                </a>
+
+            </div>
+
+
+            <!-- LEGAL -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="#">
+                    Aviso legal
+                </a>
+
+                <a href="#">
+                    Privacidad
+                </a>
+
+                <a href="#">
+                    Términos de uso
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- COPYRIGHT -->
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Foguista Uruguay. Todos los derechos reservados.
+            </span>
+
+            <span>
+                Hecho en Uruguay 🇺🇾
+                <b>|</b>
+                Contribuyendo a una operación más segura
+            </span>
+
+        </div>
 
     </footer>
+
 
 </body>
 </html>
