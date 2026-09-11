@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Estudio | Foguista Uruguay</title>
+
+<style>
+
+:root{
+    --navy:#071b33;
+    --navy2:#0d2948;
+    --blue:#1261a0;
+    --blue2:#1d73b7;
+    --light:#f3f7fb;
+    --white:#ffffff;
+    --text:#26394b;
+    --muted:#607386;
+    --line:#dce6ef;
+    --gold:#e0a32b;
+    --green:#247b58;
+    --red:#b43b3b;
+    --softblue:#edf6fd;
+    --softgold:#fff8e8;
+    --softgreen:#eef8f2;
+    --softred:#fff1f1;
+    --shadow:0 10px 28px rgba(7,27,51,.08);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    background:var(--navy);
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 18px rgba(0,0,0,.15);
+}
+
+.nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:800;
+    font-size:1.15rem;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+
+.logo span{
+    color:white;
+}
+
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:6px;
+}
+
+.menu a{
+    color:#dce9f5;
+    padding:10px 13px;
+    border-radius:8px;
+    font-size:.92rem;
+    transition:.2s;
+}
+
+.menu a:hover,
+.menu a.active{
+    background:var(--blue);
+    color:white;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    background:
+        linear-gradient(135deg,rgba(7,27,51,.97),rgba(13,41,72,.94));
+    color:white;
+}
+
+.hero-content{
+    padding:75px 0 70px;
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.22);
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:.82rem;
+    font-weight:700;
+    letter-spacing:.5px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(2.3rem,5vw,4rem);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.12rem;
+    color:#dce9f5;
+    max-width:800px;
+}
+
+
+/* ================= INTRO ================= */
+
+.intro{
+    padding:60px 0 25px;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:30px;
+    align-items:start;
+}
+
+.intro h2{
+    font-size:2rem;
+    color:var(--navy);
+    margin-bottom:15px;
+}
+
+.intro p{
+    margin-bottom:14px;
+}
+
+.intro-card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+}
+
+.intro-card h3{
+    color:var(--blue);
+    margin-bottom:10px;
+}
+
+.intro-card ul{
+    margin-left:20px;
+}
+
+.intro-card li{
+    margin:7px 0;
+}
+
+
+/* ================= STUDY NAV ================= */
+
+.study-nav{
+    padding:20px 0 35px;
+}
+
+.study-nav-box{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    box-shadow:0 5px 16px rgba(7,27,51,.05);
+}
+
+.study-nav a{
+    background:var(--softblue);
+    color:var(--blue);
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:.9rem;
+    font-weight:700;
+}
+
+.study-nav a:hover{
+    background:var(--blue);
+    color:white;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section{
+    padding:42px 0;
+}
+
+.section-header{
+    margin-bottom:25px;
+}
+
+.section-number{
+    color:var(--blue);
+    font-size:.82rem;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.section h2{
+    color:var(--navy);
+    font-size:2rem;
+    line-height:1.2;
+    margin-bottom:10px;
+}
+
+.section-header p{
+    color:var(--muted);
+    max-width:850px;
+}
+
+
+/* ================= TOPIC ================= */
+
+.topic{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:14px;
+    margin:14px 0;
+    box-shadow:0 5px 16px rgba(7,27,51,.045);
+    overflow:hidden;
+}
+
+.topic summary{
+    cursor:pointer;
+    list-style:none;
+    padding:20px 24px;
+    font-size:1.08rem;
+    font-weight:800;
+    color:var(--navy);
+    position:relative;
+    padding-right:55px;
+}
+
+.topic summary::-webkit-details-marker{
+    display:none;
+}
+
+.topic summary::after{
+    content:"+";
+    position:absolute;
+    right:22px;
+    top:17px;
+    font-size:1.5rem;
+    color:var(--blue);
+}
+
+.topic[open] summary::after{
+    content:"−";
+}
+
+.topic summary:hover{
+    background:#f8fbfe;
+}
+
+.topic-content{
+    padding:0 24px 25px;
+    border-top:1px solid var(--line);
+}
+
+.topic-content p{
+    margin-top:16px;
+}
+
+.topic-content ul{
+    margin:15px 0 15px 22px;
+}
+
+.topic-content li{
+    margin:7px 0;
+}
+
+
+/* ================= CALLOUTS ================= */
+
+.callout{
+    margin-top:20px;
+    padding:19px 21px;
+    border-radius:12px;
+    border-left:5px solid var(--blue);
+    background:var(--softblue);
+}
+
+.callout h4{
+    color:var(--blue);
+    margin-bottom:5px;
+}
+
+.example{
+    margin-top:20px;
+    padding:19px 21px;
+    border-radius:12px;
+    border-left:5px solid var(--gold);
+    background:var(--softgold);
+}
+
+.example h4{
+    color:#966b00;
+    margin-bottom:5px;
+}
+
+.exam{
+    margin-top:20px;
+    padding:19px 21px;
+    border-radius:12px;
+    border-left:5px solid var(--green);
+    background:var(--softgreen);
+}
+
+.exam h4{
+    color:var(--green);
+    margin-bottom:5px;
+}
+
+.warning{
+    margin-top:20px;
+    padding:19px 21px;
+    border-radius:12px;
+    border-left:5px solid var(--red);
+    background:var(--softred);
+}
+
+.warning h4{
+    color:var(--red);
+    margin-bottom:5px;
+}
+
+
+/* ================= QUESTION CARDS ================= */
+
+.question{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:24px;
+    margin:16px 0;
+    box-shadow:0 5px 16px rgba(7,27,51,.045);
+}
+
+.question-label{
+    color:var(--blue);
+    font-size:.78rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.question h3{
+    color:var(--navy);
+    margin-bottom:16px;
+    font-size:1.1rem;
+}
+
+.options{
+    display:grid;
+    gap:9px;
+}
+
+.option{
+    padding:12px 15px;
+    background:#f8fbfe;
+    border:1px solid var(--line);
+    border-radius:9px;
+}
+
+.answer{
+    margin-top:17px;
+    padding:16px;
+    border-radius:10px;
+    background:var(--softgreen);
+    border-left:4px solid var(--green);
+}
+
+.answer strong{
+    color:var(--green);
+}
+
+
+/* ================= TRUE FALSE ================= */
+
+.tf-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.tf{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:22px;
+    box-shadow:0 5px 16px rgba(7,27,51,.045);
+}
+
+.tf h3{
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+.tf-answer{
+    margin-top:14px;
+    font-size:.92rem;
+}
+
+.true{
+    color:var(--green);
+    font-weight:800;
+}
+
+.false{
+    color:var(--red);
+    font-weight:800;
+}
+
+
+/* ================= FLOW ================= */
+
+.flow{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:22px;
+}
+
+.flow-item{
+    background:#f8fbfe;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px;
+}
+
+.flow-number{
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--blue);
+    color:white;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.flow-item h4{
+    color:var(--navy);
+    margin-bottom:7px;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    min-width:650px;
+}
+
+th{
+    background:var(--navy);
+    color:white;
+    padding:13px;
+    text-align:left;
+}
+
+td{
+    padding:13px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+}
+
+tr:nth-child(even) td{
+    background:#f8fbfe;
+}
+
+
+/* ================= MEMORY CARDS ================= */
+
+.memory-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.memory{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:22px;
+    box-shadow:var(--shadow);
+}
+
+.memory-number{
+    color:var(--blue);
+    font-size:1.5rem;
+    font-weight:900;
+    margin-bottom:5px;
+}
+
+.memory h3{
+    color:var(--navy);
+    margin-bottom:8px;
+}
+
+
+/* ================= FINAL ================= */
+
+.final{
+    padding:60px 0 75px;
+}
+
+.final-box{
+    background:linear-gradient(135deg,var(--navy),var(--navy2));
+    color:white;
+    padding:42px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.final-box h2{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.final-box p{
+    color:#dce9f5;
+    max-width:850px;
+}
+
+.final-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px 30px;
+    margin-top:25px;
+}
+
+.final-item{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    color:#e8f1f8;
+}
+
+.final-item span{
+    color:#7ed2a7;
+    font-weight:900;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#041326;
+    color:#b9c9d8;
+    padding:45px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:35px;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:13px;
+}
+
+footer p{
+    font-size:.92rem;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:35px;
+    padding-top:20px;
+    text-align:center;
+    font-size:.82rem;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    .nav{
+        flex-direction:column;
+        padding:14px 0;
+    }
+
+    .menu{
+        justify-content:center;
+    }
+
+    .intro-grid{
+        grid-template-columns:1fr;
+    }
+
+    .flow{
+        grid-template-columns:1fr;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tf-grid{
+        grid-template-columns:1fr;
+    }
+
+    .final-list{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero-content{
+        padding:60px 0;
+    }
+
+    .hero h1{
+        font-size:2.45rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section{
+        padding:35px 0;
+    }
+
+    .section h2{
+        font-size:1.65rem;
+    }
+
+    .topic summary{
+        padding:17px 20px;
+        padding-right:45px;
+    }
+
+    .topic-content{
+        padding:0 20px 22px;
+    }
+
+    .final-box{
+        padding:28px 22px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="container nav">
+
+<a href="index.html" class="logo">
+
+<img src="logo.png" alt="Foguista Uruguay">
+
+<span>Foguista Uruguay</span>
+
+</a>
+
+
+<nav class="menu">
+
+<a href="index.html">Inicio</a>
+
+<a href="generadores.html">Generadores</a>
+
+<a href="seguridad.html">Seguridad</a>
+
+<a href="estudio.html" class="active">Estudio</a>
+
+<a href="normativa.html">Normativa</a>
+
+<a href="app.html">App</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">PREPARACIÓN PARA EL EXAMEN</span>
+
+<h1>Estudiá entendiendo, no solamente memorizando.</h1>
+
+<p>
+Esta sección está pensada para ayudarte a transformar los conceptos
+de generadores de vapor y seguridad en conocimientos que puedas
+comprender, relacionar y aplicar al momento del examen.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+<div class="container intro-grid">
+
+<div>
+
+<h2>¿Cómo estudiar para ser foguista?</h2>
+
+<p>
+Aprender a operar un generador de vapor no consiste únicamente en
+memorizar nombres de componentes. Lo importante es comprender qué
+sucede dentro del sistema y cómo se relacionan sus diferentes partes.
+</p>
+
+<p>
+Por eso, cada tema de esta sección intenta responder tres preguntas:
+<strong>¿qué es?, ¿cómo funciona? y ¿por qué importa?</strong>
+</p>
+
+<p>
+Después aparecen preguntas de práctica para comprobar si realmente
+comprendiste el concepto.
+</p>
+
+</div>
+
+
+<div class="intro-card">
+
+<h3>Una buena forma de estudiar</h3>
+
+<ul>
+
+<li>Primero comprendé el concepto.</li>
+
+<li>Después relacioná sus componentes.</li>
+
+<li>Luego intentá explicarlo con tus propias palabras.</li>
+
+<li>Finalmente resolvé preguntas.</li>
+
+<li>Volvé a los errores y estudiá el motivo.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= STUDY NAV ================= -->
+
+<section class="study-nav">
+
+<div class="container">
+
+<div class="study-nav-box">
+
+<a href="#fundamentos">Fundamentos</a>
+
+<a href="#presion">Presión</a>
+
+<a href="#agua">Agua</a>
+
+<a href="#combustion">Combustión</a>
+
+<a href="#seguridad">Seguridad</a>
+
+<a href="#preguntas">Preguntas</a>
+
+<a href="#verdadero-falso">Verdadero / Falso</a>
+
+<a href="#repaso">Repaso final</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FUNDAMENTOS ================= -->
+
+<section class="section" id="fundamentos">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">01 · FUNDAMENTOS</div>
+
+<h2>Los conceptos que tenés que dominar primero</h2>
+
+<p>
+Antes de entrar en preguntas, asegurate de comprender estos conceptos
+básicos. Son la base sobre la que se construye el resto del estudio.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>¿Qué es un generador de vapor?</summary>
+
+<div class="topic-content">
+
+<p>
+Un generador de vapor es un equipo en el que se suministra energía
+al agua para producir vapor bajo determinadas condiciones de presión
+y temperatura.
+</p>
+
+<p>
+La energía normalmente proviene de la combustión de un combustible,
+aunque existen otros sistemas de generación.
+</p>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+Pensalo como una cadena:
+<strong>energía → agua → calor → cambio de estado → vapor</strong>.
+</p>
+
+</div>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+No memorices solamente "produce vapor". Entendé que para producirlo
+es necesario transferir energía al agua.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Calor sensible y calor latente</summary>
+
+<div class="topic-content">
+
+<p>
+El calor sensible es la energía que provoca un cambio de temperatura
+sin producir un cambio de estado.
+</p>
+
+<p>
+El calor latente interviene durante el cambio de estado. En la
+vaporización, la energía suministrada permite transformar agua líquida
+en vapor.
+</p>
+
+<div class="example">
+
+<h4>Ejemplo</h4>
+
+<p>
+Cuando calentás agua desde una temperatura inicial hasta su temperatura
+de ebullición, estás aportando calor sensible. Durante la vaporización,
+la energía interviene en el cambio de estado.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Vapor saturado y vapor sobrecalentado</summary>
+
+<div class="topic-content">
+
+<p>
+El vapor saturado se encuentra relacionado con la condición de
+saturación correspondiente a una determinada presión.
+</p>
+
+<p>
+El vapor sobrecalentado es aquel que, después de separarse de la
+condición de saturación, recibe energía adicional aumentando su
+temperatura sin aumentar su contenido de humedad por ese proceso.
+</p>
+
+<div class="warning">
+
+<h4>No confundir</h4>
+
+<p>
+<strong>Vapor saturado y vapor sobrecalentado no son lo mismo.</strong>
+La diferencia está relacionada con la condición del vapor respecto de
+la saturación.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PRESION ================= -->
+
+<section class="section" id="presion">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">02 · PRESIÓN Y TEMPERATURA</div>
+
+<h2>Aprendé a relacionar presión, temperatura y vapor</h2>
+
+<p>
+Estos conceptos aparecen constantemente cuando se estudian generadores
+de vapor y son fundamentales para comprender su funcionamiento.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>¿Por qué presión y temperatura están relacionadas?</summary>
+
+<div class="topic-content">
+
+<p>
+En condiciones de saturación existe una relación definida entre la
+presión y la temperatura del agua y del vapor.
+</p>
+
+<p>
+Por eso, cuando cambia la presión de saturación, también cambia la
+temperatura correspondiente.
+</p>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+No estudies presión y temperatura como dos números independientes.
+En un sistema de vapor están físicamente relacionados.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Presión de trabajo y presión máxima admisible</summary>
+
+<div class="topic-content">
+
+<p>
+La presión de trabajo es aquella en la que el generador desarrolla
+normalmente su funcionamiento dentro de las condiciones previstas.
+</p>
+
+<p>
+La presión máxima admisible representa el límite máximo establecido
+para el equipo.
+</p>
+
+<div class="warning">
+
+<h4>No confundir</h4>
+
+<p>
+Que un generador pueda trabajar normalmente a determinada presión no
+significa que esa presión sea necesariamente su máxima admisible.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>¿Qué instrumentos y dispositivos intervienen?</summary>
+
+<div class="topic-content">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Elemento</th>
+<th>Función general</th>
+</tr>
+
+<tr>
+<td><strong>Manómetro</strong></td>
+<td>Indica la presión.</td>
+</tr>
+
+<tr>
+<td><strong>Presostato</strong></td>
+<td>Responde a una condición de presión dentro del sistema de control.</td>
+</tr>
+
+<tr>
+<td><strong>Control</strong></td>
+<td>Puede actuar para mantener una variable dentro de condiciones previstas.</td>
+</tr>
+
+<tr>
+<td><strong>Válvula de seguridad</strong></td>
+<td>Dispositivo de protección frente a sobrepresión.</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+Si te preguntan qué indica la presión, pensá primero en el
+<strong>manómetro</strong>. Si te preguntan por protección frente a
+sobrepresión, pensá en la <strong>válvula de seguridad</strong>.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= AGUA ================= -->
+
+<section class="section" id="agua">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">03 · AGUA</div>
+
+<h2>El agua: mucho más que el elemento que se transforma en vapor</h2>
+
+<p>
+El comportamiento del agua dentro del generador afecta directamente
+la producción de vapor, la transferencia de calor y las condiciones
+de operación.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>El ciclo básico del agua</summary>
+
+<div class="topic-content">
+
+<div class="flow">
+
+<div class="flow-item">
+
+<div class="flow-number">1</div>
+
+<h4>Alimentación</h4>
+
+<p>
+El agua ingresa al generador.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">2</div>
+
+<h4>Calentamiento</h4>
+
+<p>
+La energía térmica se transfiere al agua.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">3</div>
+
+<h4>Vaporización</h4>
+
+<p>
+El agua cambia de estado y se produce vapor.
+</p>
+
+</div>
+
+</div>
+
+<p>
+El proceso continúa mientras exista aporte de energía, alimentación
+de agua y demanda de vapor dentro de las condiciones previstas.
+</p>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>¿Por qué la calidad del agua importa?</summary>
+
+<div class="topic-content">
+
+<p>
+El agua contiene sustancias disueltas y suspendidas que pueden afectar
+el funcionamiento y el estado interno del generador.
+</p>
+
+<p>
+La dureza puede favorecer la formación de incrustaciones. También
+pueden producirse depósitos y fenómenos de corrosión.
+</p>
+
+<p>
+Estos problemas pueden afectar la transferencia de calor y las
+superficies internas del equipo.
+</p>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+Relacioná:
+<strong>agua inadecuada → depósitos/incrustaciones o corrosión →
+alteración de las condiciones del equipo.</strong>
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Purga y concentración de sales</summary>
+
+<div class="topic-content">
+
+<p>
+Durante el funcionamiento, determinadas sustancias presentes en el agua
+pueden concentrarse dentro del generador.
+</p>
+
+<p>
+Las purgas permiten retirar una parte del agua del sistema para ayudar
+a controlar determinadas concentraciones y condiciones del agua,
+siempre de acuerdo con el sistema y procedimiento correspondiente.
+</p>
+
+<div class="warning">
+
+<h4>No confundir</h4>
+
+<p>
+La purga no tiene como finalidad "sacar presión". Su función está
+relacionada con el control del agua y de las sustancias que pueden
+concentrarse en el generador.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= COMBUSTION ================= -->
+
+<section class="section" id="combustion">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">04 · COMBUSTIÓN</div>
+
+<h2>Combustión: convertir energía química en energía térmica</h2>
+
+<p>
+Comprender la combustión permite entender de dónde proviene la energía
+que posteriormente será transferida al agua.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>La cadena energética</summary>
+
+<div class="topic-content">
+
+<div class="flow">
+
+<div class="flow-item">
+
+<div class="flow-number">1</div>
+
+<h4>Combustible</h4>
+
+<p>
+Contiene energía química.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">2</div>
+
+<h4>Combustión</h4>
+
+<p>
+La energía química se libera principalmente como energía térmica.
+</p>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">3</div>
+
+<h4>Agua</h4>
+
+<p>
+Recibe energía y se transforma en vapor.
+</p>
+
+</div>
+
+</div>
+
+<div class="callout">
+
+<h4>Para entenderlo</h4>
+
+<p>
+La combustión no produce directamente "vapor".
+La combustión proporciona energía térmica y esa energía es transferida
+al agua.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>Combustión completa e incompleta</summary>
+
+<div class="topic-content">
+
+<p>
+La calidad de la combustión depende, entre otros factores, de la
+cantidad de aire disponible y de la correcta mezcla entre combustible
+y aire.
+</p>
+
+<p>
+Una combustión deficiente puede producir menor aprovechamiento de la
+energía y generación de productos de combustión no deseados.
+</p>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+Cuando estudies combustión, relacioná siempre
+<strong>combustible + aire + temperatura/ignición + mezcla adecuada</strong>.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SEGURIDAD ================= -->
+
+<section class="section" id="seguridad">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">05 · SEGURIDAD</div>
+
+<h2>La seguridad se construye con varias capas</h2>
+
+<p>
+La forma correcta de estudiar seguridad es entender qué variable se
+controla, qué elemento la observa y qué función cumple cada sistema.
+</p>
+
+</div>
+
+
+<details class="topic" open>
+
+<summary>Medir, controlar, alarmar y proteger</summary>
+
+<div class="topic-content">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Función</th>
+<th>Pregunta que debemos hacernos</th>
+</tr>
+
+<tr>
+<td><strong>Medir</strong></td>
+<td>¿Cuál es el valor de la variable?</td>
+</tr>
+
+<tr>
+<td><strong>Controlar</strong></td>
+<td>¿Cómo se mantiene dentro de las condiciones previstas?</td>
+</tr>
+
+<tr>
+<td><strong>Alarmar</strong></td>
+<td>¿Cómo se informa al operador que existe una condición determinada?</td>
+</tr>
+
+<tr>
+<td><strong>Proteger</strong></td>
+<td>¿Qué ocurre cuando aparece una condición peligrosa?</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="callout">
+
+<h4>Regla mental</h4>
+
+<p>
+<strong>Medir → controlar → informar → proteger.</strong>
+No todos los dispositivos cumplen las cuatro funciones.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>¿Por qué el bajo nivel de agua es una condición crítica?</summary>
+
+<div class="topic-content">
+
+<p>
+Las superficies sometidas al calor necesitan estar adecuadamente
+refrigeradas por el agua.
+</p>
+
+<p>
+Si el nivel disminuye demasiado, algunas superficies pueden quedar
+insuficientemente cubiertas mientras continúa el aporte térmico.
+</p>
+
+<p>
+Por eso existen sistemas de medición, control y protección relacionados
+con el nivel.
+</p>
+
+<div class="warning">
+
+<h4>Concepto fundamental</h4>
+
+<p>
+Nunca estudies "bajo nivel" solamente como una alarma. Hay que
+comprender la relación entre <strong>nivel de agua + superficies
+calentadas + aporte de calor</strong>.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>¿Por qué existen las válvulas de seguridad?</summary>
+
+<div class="topic-content">
+
+<p>
+Porque la presión del generador debe mantenerse dentro de límites
+seguros y es necesario contar con un dispositivo destinado a proteger
+contra una condición de sobrepresión.
+</p>
+
+<p>
+La válvula de seguridad pertenece a la capa de protección del sistema.
+</p>
+
+<div class="exam">
+
+<h4>Clave para el examen</h4>
+
+<p>
+<strong>Válvula de seguridad = protección frente a sobrepresión.</strong>
+No la confundas con el manómetro ni con un elemento normal de control.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= QUESTIONS ================= -->
+
+<section class="section" id="preguntas">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">06 · PREGUNTAS DE PRÁCTICA</div>
+
+<h2>¿Cuánto entendiste realmente?</h2>
+
+<p>
+Intentá responder antes de abrir la respuesta. El objetivo no es
+adivinar: es comprobar si podés explicar el razonamiento.
+</p>
+
+</div>
+
+
+<!-- QUESTION 1 -->
+
+<div class="question">
+
+<div class="question-label">Pregunta 01</div>
+
+<h3>
+¿Cuál es la función principal de un generador de vapor?
+</h3>
+
+<div class="options">
+
+<div class="option">A) Almacenar combustible.</div>
+
+<div class="option">B) Transformar energía suministrada en energía del vapor producido.</div>
+
+<div class="option">C) Reducir siempre la presión del vapor.</div>
+
+<div class="option">D) Eliminar las sales del agua.</div>
+
+</div>
+
+<div class="answer">
+
+<strong>Respuesta: B.</strong>
+
+<p>
+El generador recibe energía y la utiliza para transferir calor al agua
+y producir vapor bajo determinadas condiciones.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- QUESTION 2 -->
+
+<div class="question">
+
+<div class="question-label">Pregunta 02</div>
+
+<h3>
+¿Qué instrumento indica directamente la presión?
+</h3>
+
+<div class="options">
+
+<div class="option">A) Termómetro.</div>
+
+<div class="option">B) Manómetro.</div>
+
+<div class="option">C) Nivel de agua.</div>
+
+<div class="option">D) Quemador.</div>
+
+</div>
+
+<div class="answer">
+
+<strong>Respuesta: B.</strong>
+
+<p>
+El manómetro proporciona la indicación de presión.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- QUESTION 3 -->
+
+<div class="question">
+
+<div class="question-label">Pregunta 03</div>
+
+<h3>
+¿Qué función general cumple una válvula de seguridad?
+</h3>
+
+<div class="options">
+
+<div class="option">A) Alimentar agua.</div>
+
+<div class="option">B) Medir temperatura.</div>
+
+<div class="option">C) Proteger frente a sobrepresión.</div>
+
+<div class="option">D) Regular la dureza del agua.</div>
+
+</div>
+
+<div class="answer">
+
+<strong>Respuesta: C.</strong>
+
+<p>
+Su función fundamental es actuar como dispositivo de protección frente
+a una condición de sobrepresión, de acuerdo con su diseño y ajuste.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- QUESTION 4 -->
+
+<div class="question">
+
+<div class="question-label">Pregunta 04</div>
+
+<h3>
+¿Por qué es importante mantener un nivel adecuado de agua?
+</h3>
+
+<div class="options">
+
+<div class="option">A) Porque el agua solamente sirve para aumentar la presión.</div>
+
+<div class="option">B) Porque participa en la absorción del calor y en la producción de vapor.</div>
+
+<div class="option">C) Porque elimina automáticamente todas las incrustaciones.</div>
+
+<div class="option">D) Porque reemplaza al sistema de combustión.</div>
+
+</div>
+
+<div class="answer">
+
+<strong>Respuesta: B.</strong>
+
+<p>
+El agua recibe la energía térmica y su presencia adecuada permite
+mantener las superficies calefaccionadas en las condiciones previstas.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- QUESTION 5 -->
+
+<div class="question">
+
+<div class="question-label">Pregunta 05</div>
+
+<h3>
+¿Cuál es la diferencia básica entre un manómetro y una válvula de seguridad?
+</h3>
+
+<div class="options">
+
+<div class="option">A) Ambos cumplen exactamente la misma función.</div>
+
+<div class="option">B) El manómetro indica presión y la válvula de seguridad protege frente a sobrepresión.</div>
+
+<div class="option">C) El manómetro alimenta agua y la válvula mide temperatura.</div>
+
+<div class="option">D) La válvula indica presión y el manómetro protege contra sobrepresión.</div>
+
+</div>
+
+<div class="answer">
+
+<strong>Respuesta: B.</strong>
+
+<p>
+Son elementos diferentes y pertenecen a funciones diferentes dentro
+del sistema.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- QUESTION 6 -->
+
+<div class="question">
+
+<div class="question-label">Pregunta 06</div>
+
+<h3>
+¿Qué transformación energética ocurre durante la combustión de un combustible?
+</h3>
+
+<div class="options">
+
+<div class="option">A) Energía química → energía térmica.</div>
+
+<div class="option">B) Energía térmica → energía química.</div>
+
+<div class="option">C) Energía mecánica → energía química.</div>
+
+<div class="option">D) Energía eléctrica → energía nuclear.</div>
+
+</div>
+
+<div class="answer">
+
+<strong>Respuesta: A.</strong>
+
+<p>
+La combustión libera principalmente energía térmica a partir de la
+energía química almacenada en el combustible.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= TRUE FALSE ================= -->
+
+<section class="section" id="verdadero-falso">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">07 · VERDADERO O FALSO</div>
+
+<h2>Preguntas rápidas para detectar errores</h2>
+
+<p>
+Son preguntas sencillas, pero están pensadas para detectar confusiones
+muy comunes durante el estudio.
+</p>
+
+</div>
+
+
+<div class="tf-grid">
+
+
+<div class="tf">
+
+<h3>
+1. El manómetro es un dispositivo de protección contra sobrepresión.
+</h3>
+
+<div class="tf-answer">
+
+<span class="false">❌ FALSO.</span>
+
+<p>
+El manómetro indica la presión. La protección frente a sobrepresión
+corresponde a los dispositivos destinados específicamente a esa función,
+como las válvulas de seguridad.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tf">
+
+<h3>
+2. La presión y la temperatura del vapor están relacionadas.
+</h3>
+
+<div class="tf-answer">
+
+<span class="true">✅ VERDADERO.</span>
+
+<p>
+En condiciones de saturación existe una relación definida entre ambas
+variables.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tf">
+
+<h3>
+3. El agua solamente sirve para producir vapor.
+</h3>
+
+<div class="tf-answer">
+
+<span class="false">❌ FALSO.</span>
+
+<p>
+Además de ser el fluido que se transforma en vapor, su presencia es
+fundamental para las condiciones térmicas de las superficies
+calefaccionadas.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tf">
+
+<h3>
+4. Una alarma y un enclavamiento cumplen exactamente la misma función.
+</h3>
+
+<div class="tf-answer">
+
+<span class="false">❌ FALSO.</span>
+
+<p>
+Una alarma informa una condición; un enclavamiento puede condicionar
+una operación según la lógica del sistema.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tf">
+
+<h3>
+5. La combustión aporta energía térmica al proceso de generación.
+</h3>
+
+<div class="tf-answer">
+
+<span class="true">✅ VERDADERO.</span>
+
+<p>
+La energía liberada por la combustión es transferida posteriormente al
+agua.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tf">
+
+<h3>
+6. La calidad del agua puede afectar el estado interno del generador.
+</h3>
+
+<div class="tf-answer">
+
+<span class="true">✅ VERDADERO.</span>
+
+<p>
+Incrustaciones, depósitos y corrosión son algunos de los fenómenos
+relacionados con la calidad del agua.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= TRAPS ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-number">08 · OJO CON ESTAS TRAMPAS</div>
+
+<h2>Conceptos que suelen confundirse</h2>
+
+<p>
+Cuando dos conceptos están relacionados, es fácil mezclarlos. Estas
+diferencias conviene tenerlas muy claras.
+</p>
+
+</div>
+
+
+<div class="memory-grid">
+
+
+<div class="memory">
+
+<div class="memory-number">01</div>
+
+<h3>Indicar ≠ proteger</h3>
+
+<p>
+Que un instrumento muestre una variable no significa que también
+proteja al equipo frente a esa variable.
+</p>
+
+</div>
+
+
+<div class="memory">
+
+<div class="memory-number">02</div>
+
+<h3>Controlar ≠ alarmar</h3>
+
+<p>
+Un sistema puede controlar automáticamente una variable mientras otro
+elemento informa al operador sobre una condición determinada.
+</p>
+
+</div>
+
+
+<div class="memory">
+
+<div class="memory-number">03</div>
+
+<h3>Presión ≠ temperatura</h3>
+
+<p>
+Están relacionadas, pero son magnitudes diferentes y se miden mediante
+instrumentos diferentes.
+</p>
+
+</div>
+
+
+<div class="memory">
+
+<div class="memory-number">04</div>
+
+<h3>Nivel ≠ alimentación</h3>
+
+<p>
+El nivel indica una condición del agua; la alimentación es el proceso
+mediante el cual se incorpora agua al sistema.
+</p>
+
+</div>
+
+
+<div class="memory">
+
+<div class="memory-number">05</div>
+
+<h3>Combustión ≠ vapor</h3>
+
+<p>
+La combustión proporciona energía térmica; esa energía permite producir
+vapor.
+</p>
+
+</div>
+
+
+<div class="memory">
+
+<div class="memory-number">06</div>
+
+<h3>Explicación ≠ normativa</h3>
+
+<p>
+Una explicación educativa ayuda a comprender. Un requisito reglamentario
+debe consultarse en el texto oficial correspondiente.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= REPASO ================= -->
+
+<section class="final" id="repaso">
+
+<div class="container">
+
+<div class="final-box">
+
+<h2>Repaso final</h2>
+
+<p>
+Antes de pasar al siguiente tema, intentá explicar estas ideas sin
+mirar la página. Si podés hacerlo con tus propias palabras, realmente
+las estás comprendiendo.
+</p>
+
+
+<div class="final-list">
+
+<div class="final-item">
+<span>✓</span>
+<p>Qué es un generador de vapor.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Cómo se transforma la energía para producir vapor.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Qué relación existe entre presión y temperatura.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Diferencia entre vapor saturado y sobrecalentado.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Por qué el nivel de agua es una variable crítica.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Por qué importa la calidad del agua.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Qué función cumple el manómetro.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Qué función cumple una válvula de seguridad.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Qué diferencia existe entre alarma, control y protección.</p>
+</div>
+
+<div class="final-item">
+<span>✓</span>
+<p>Cómo se relacionan combustible, combustión, calor y vapor.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer-grid">
+
+
+<div>
+
+<h3>Foguista Uruguay</h3>
+
+<p>
+Material educativo para comprender generadores de vapor, seguridad,
+operación y normativa aplicable en Uruguay.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Secciones</h3>
+
+<div class="footer-links">
+
+<a href="index.html">Inicio</a>
+
+<a href="generadores.html">Generadores</a>
+
+<a href="seguridad.html">Seguridad</a>
+
+<a href="estudio.html">Estudio</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<h3>Recursos</h3>
+
+<div class="footer-links">
+
+<a href="normativa.html">Normativa</a>
+
+<a href="app.html">App</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="container copyright">
+
+© 2026 Foguista Uruguay · Material educativo
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
