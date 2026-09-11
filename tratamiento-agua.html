@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tratamiento del agua | Foguista Uruguay</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fa;
+    color:#17324d;
+    line-height:1.7;
+}
+
+header{
+    background:#ffffff;
+    border-bottom:1px solid #dce5ec;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.navbar{
+    max-width:1150px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    text-decoration:none;
+    color:#073b70;
+    font-size:21px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:flex-end;
+}
+
+nav a{
+    text-decoration:none;
+    color:#315a7d;
+    padding:8px 10px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+nav a:hover{
+    background:#eaf4fb;
+    color:#0d8fe5;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0d8fe5,#0869ad);
+    color:white;
+    padding:65px 20px;
+}
+
+.hero-content{
+    max-width:1050px;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:42px;
+    margin:0 0 15px;
+}
+
+.hero p{
+    max-width:800px;
+    font-size:19px;
+    margin:0;
+}
+
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:45px 20px;
+}
+
+.section{
+    background:white;
+    border-radius:16px;
+    padding:30px;
+    margin-bottom:28px;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.section h2{
+    color:#073b70;
+    margin-top:0;
+    font-size:28px;
+}
+
+.section h3{
+    color:#0b78bd;
+    margin-top:28px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#f8fbfd;
+    border:1px solid #e0e9ef;
+    border-radius:13px;
+    padding:22px;
+}
+
+.card h3{
+    margin-top:0;
+}
+
+.warning{
+    background:#fff7e6;
+    border-left:5px solid #f0a000;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.info{
+    background:#eef8ff;
+    border-left:5px solid #0d8fe5;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.normativa{
+    background:#f2f0ff;
+    border-left:5px solid #6654c7;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.success{
+    background:#eef9f2;
+    border-left:5px solid #35a765;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+    background:white;
+}
+
+th,td{
+    border:1px solid #dbe4ea;
+    padding:13px;
+    text-align:left;
+    vertical-align:top;
+}
+
+th{
+    background:#eaf4fb;
+    color:#073b70;
+}
+
+ul{
+    padding-left:25px;
+}
+
+.key{
+    font-weight:bold;
+    color:#073b70;
+}
+
+footer{
+    background:#073b70;
+    color:white;
+    padding:35px 20px;
+    text-align:center;
+}
+
+footer a{
+    color:white;
+}
+
+.button{
+    display:inline-block;
+    background:#1597df;
+    color:white;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:8px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.button:hover{
+    background:#087bc0;
+}
+
+@media(max-width:800px){
+    .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    nav{
+        justify-content:flex-start;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .section{
+        padding:23px;
+    }
+
+    table{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <a href="index.html" class="brand">
+            🔥 Foguista Uruguay
+        </a>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="generadores.html">Generadores</a>
+            <a href="seguridad.html">Seguridad</a>
+            <a href="estudio.html">Estudio</a>
+            <a href="normativa.html">Normativa</a>
+            <a href="enclavamientos.html">Enclavamientos</a>
+            <a href="tratamiento-agua.html">Tratamiento del agua</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>💧 Tratamiento del agua</h1>
+
+        <p>
+            Comprendé por qué la calidad del agua es fundamental para la
+            seguridad, la vida útil, la eficiencia y el correcto funcionamiento
+            de un generador de vapor.
+        </p>
+
+    </div>
+</section>
+
+
+<main class="container">
+
+
+<section class="section">
+
+<h2>¿Por qué es tan importante el tratamiento del agua?</h2>
+
+<p>
+El agua que ingresa a un generador de vapor no debe considerarse simplemente
+como "agua para producir vapor". Sus características físico-químicas pueden
+afectar directamente al cuerpo de presión, a las superficies de transferencia
+de calor y al funcionamiento general del equipo.
+</p>
+
+<p>
+Un tratamiento adecuado busca mantener el agua dentro de las condiciones
+necesarias para reducir problemas como:
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>🔥 Incrustaciones</h3>
+<p>
+Depósitos sólidos que se adhieren a las superficies de transferencia de calor
+y dificultan el paso del calor.
+</p>
+</div>
+
+<div class="card">
+<h3>⚙️ Corrosión</h3>
+<p>
+Ataque químico o electroquímico que puede deteriorar las superficies metálicas
+del generador.
+</p>
+</div>
+
+<div class="card">
+<h3>💧 Arrastre de sólidos</h3>
+<p>
+La presencia excesiva de determinadas sustancias puede favorecer problemas
+en la calidad del vapor y en el funcionamiento del sistema.
+</p>
+</div>
+
+<div class="card">
+<h3>📉 Pérdida de eficiencia</h3>
+<p>
+Los depósitos sobre las superficies de transferencia dificultan el intercambio
+de calor y pueden aumentar el consumo energético.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>🧪 ¿Qué se controla en el agua?</h2>
+
+<p>
+El tratamiento no consiste solamente en agregar productos químicos.
+Primero es necesario conocer las características del agua y controlar su
+comportamiento durante la operación.
+</p>
+
+<table>
+
+<tr>
+<th>Parámetro</th>
+<th>¿Qué permite conocer?</th>
+</tr>
+
+<tr>
+<td><span class="key">Dureza</span></td>
+<td>
+Permite evaluar la presencia de determinados minerales que pueden favorecer
+la formación de incrustaciones.
+</td>
+</tr>
+
+<tr>
+<td><span class="key">pH</span></td>
+<td>
+Indica el grado de acidez o alcalinidad del agua y es importante para el
+control químico y la protección de los materiales.
+</td>
+</tr>
+
+<tr>
+<td><span class="key">Conductividad</span></td>
+<td>
+Se relaciona con la cantidad de especies iónicas disueltas y puede utilizarse
+como parámetro de control del agua del generador.
+</td>
+</tr>
+
+<tr>
+<td><span class="key">Sólidos disueltos</span></td>
+<td>
+Permiten evaluar la concentración de sustancias que permanecen en el agua.
+</td>
+</tr>
+
+<tr>
+<td><span class="key">Alcalinidad</span></td>
+<td>
+Es un parámetro importante dentro del control químico del agua y de la
+formación de determinadas condiciones dentro del generador.
+</td>
+</tr>
+
+<tr>
+<td><span class="key">Oxígeno disuelto</span></td>
+<td>
+Su presencia puede favorecer procesos corrosivos, por lo que debe ser
+controlado mediante el tratamiento correspondiente.
+</td>
+</tr>
+
+</table>
+
+<div class="warning">
+<strong>Importante:</strong>
+no existe un único valor universal que pueda aplicarse a todos los generadores.
+Los límites de control deben establecerse de acuerdo con el equipo,
+el tratamiento utilizado, el agua de alimentación y el programa específico
+de tratamiento.
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>⚠️ Dureza e incrustaciones</h2>
+
+<p>
+La dureza está relacionada principalmente con la presencia de sales de calcio
+y magnesio en el agua.
+</p>
+
+<p>
+Cuando determinadas sustancias alcanzan condiciones favorables dentro del
+generador pueden precipitar y formar depósitos sobre las superficies calientes.
+Estos depósitos reciben el nombre de <strong>incrustaciones</strong>.
+</p>
+
+<h3>¿Por qué son peligrosas?</h3>
+
+<ul>
+<li>Dificultan la transferencia de calor.</li>
+<li>Favorecen el sobrecalentamiento de determinadas superficies metálicas.</li>
+<li>Reducen la eficiencia térmica.</li>
+<li>Pueden provocar daños en superficies sometidas a alta temperatura.</li>
+<li>Incrementan la necesidad de mantenimiento.</li>
+</ul>
+
+<div class="info">
+<strong>Idea clave para estudiar:</strong><br>
+La incrustación actúa como una barrera térmica entre los gases calientes
+y el agua. Si el calor encuentra más dificultad para transferirse al agua,
+la superficie metálica puede alcanzar temperaturas más elevadas.
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>🔩 Corrosión</h2>
+
+<p>
+La corrosión es el deterioro del material metálico debido a reacciones
+químicas o electroquímicas con el medio.
+</p>
+
+<p>
+En un generador de vapor es especialmente importante porque afecta al
+<strong>cuerpo de presión y a sus componentes</strong>.
+</p>
+
+<h3>Factores que pueden favorecerla</h3>
+
+<ul>
+<li>Presencia de oxígeno disuelto.</li>
+<li>Condiciones químicas inadecuadas.</li>
+<li>Agua fuera de los parámetros establecidos.</li>
+<li>Depósitos y zonas con condiciones localizadas.</li>
+<li>Operación o tratamiento incorrectos.</li>
+</ul>
+
+<div class="warning">
+<strong>Recordá:</strong>
+la corrosión no siempre significa que aparecerá una pérdida de material
+visible inmediatamente. Puede producir reducción progresiva del espesor
+y deterioro de componentes.
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>📊 Conductividad y concentración de sales</h2>
+
+<p>
+La conductividad eléctrica del agua permite obtener información indirecta
+sobre la cantidad de especies iónicas presentes.
+</p>
+
+<p>
+A medida que el agua se concentra dentro del generador debido a la
+evaporación, determinadas sustancias permanecen en el agua mientras
+el vapor se separa.
+</p>
+
+<p>
+Por esta razón, el control de la concentración y las purgas forman parte
+del manejo del agua del generador.
+</p>
+
+<div class="info">
+<strong>Concepto fundamental:</strong><br>
+El vapor sale del generador, pero muchas sustancias disueltas permanecen
+en el agua. Sin un control adecuado, su concentración puede aumentar.
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>🔄 Purga del generador</h2>
+
+<p>
+La purga permite retirar una determinada cantidad de agua del generador
+para controlar la concentración de sustancias disueltas y sedimentos,
+de acuerdo con el programa de operación y tratamiento.
+</p>
+
+<h3>Tipos de purga</h3>
+
+<div class="grid">
+
+<div class="card">
+<h3>Purga de fondo</h3>
+
+<p>
+Se realiza desde la parte inferior del generador y permite retirar agua
+y sedimentos acumulados en la zona correspondiente.
+</p>
+
+<p>
+La purga de fondo también constituye un elemento de la instalación
+regulado por el Reglamento de Seguridad de Generadores de Vapor.
+</p>
+
+</div>
+
+<div class="card">
+<h3>Purga asociada al control de concentración</h3>
+
+<p>
+Se utiliza dentro del esquema de control del tratamiento del agua para
+mantener determinados parámetros dentro de los límites establecidos
+por el programa.
+</p>
+
+</div>
+
+</div>
+
+<div class="warning">
+<strong>Atención:</strong>
+la frecuencia y forma de realizar las purgas no deben determinarse
+"de memoria" con un único valor para todos los equipos. Deben seguir
+el programa de tratamiento y las instrucciones aplicables al generador.
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>🧴 Tratamiento químico</h2>
+
+<p>
+El tratamiento químico tiene como objetivo mantener las condiciones
+químicas del agua dentro de los parámetros definidos para el generador.
+</p>
+
+<p>
+Dependiendo de la instalación pueden utilizarse diferentes estrategias
+de tratamiento, siempre de acuerdo con el programa correspondiente,
+las características del agua y las instrucciones técnicas aplicables.
+</p>
+
+<h3>El tratamiento puede involucrar</h3>
+
+<ul>
+<li>Acondicionamiento del agua de alimentación.</li>
+<li>Control de dureza.</li>
+<li>Control de pH y alcalinidad.</li>
+<li>Control de corrosión.</li>
+<li>Control de oxígeno y otros agentes corrosivos.</li>
+<li>Control de concentración mediante purgas.</li>
+<li>Dosificación de productos químicos específicos.</li>
+</ul>
+
+<div class="warning">
+<strong>No improvisar la dosificación.</strong><br>
+Los productos químicos deben utilizarse siguiendo el programa de tratamiento,
+sus instrucciones técnicas y las medidas de seguridad correspondientes.
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>🚰 Acondicionamiento del agua de alimentación</h2>
+
+<p>
+El tratamiento puede comenzar antes de que el agua ingrese al generador.
+El objetivo es acondicionar el agua para reducir la incorporación de
+sustancias que puedan resultar perjudiciales durante la generación de vapor.
+</p>
+
+<h3>Ejemplos de tratamientos previos</h3>
+
+<div class="grid">
+
+<div class="card">
+<h3>Ablandamiento</h3>
+<p>
+Reduce la dureza del agua mediante un proceso adecuado para disminuir
+la presencia de determinados iones responsables de la formación de
+incrustaciones.
+</p>
+</div>
+
+<div class="card">
+<h3>Desmineralización</h3>
+<p>
+Proceso destinado a reducir significativamente la carga iónica del agua
+mediante tecnologías específicas.
+</p>
+</div>
+
+<div class="card">
+<h3>Desaireación</h3>
+<p>
+Tratamiento destinado a reducir gases disueltos, especialmente aquellos
+que pueden contribuir a procesos corrosivos.
+</p>
+</div>
+
+<div class="card">
+<h3>Filtración</h3>
+<p>
+Permite retirar determinadas partículas o sólidos presentes en el agua,
+dependiendo del sistema utilizado.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>🔬 Análisis y seguimiento</h2>
+
+<p>
+El tratamiento del agua no debe considerarse una acción aislada.
+Es un proceso de <strong>control continuo</strong>.
+</p>
+
+<p>
+El análisis permite conocer la evolución de los parámetros y detectar
+tendencias antes de que aparezcan problemas importantes.
+</p>
+
+<h3>Un buen sistema de seguimiento debería permitir conocer:</h3>
+
+<ul>
+<li>Qué parámetros se analizan.</li>
+<li>Con qué frecuencia se toman muestras.</li>
+<li>Cuáles son los límites aceptables establecidos.</li>
+<li>Qué producto químico se utiliza.</li>
+<li>Qué cantidad debe dosificarse.</li>
+<li>Dónde se realiza la dosificación.</li>
+<li>Cuándo corresponde realizar purgas.</li>
+<li>Qué acciones deben tomarse cuando un parámetro sale de rango.</li>
+</ul>
+
+</section>
+
+
+<section class="section">
+
+<h2>📋 ¿Qué establece el Reglamento URSEA 2026?</h2>
+
+<div class="normativa">
+
+<p>
+<strong>El artículo 106 del Reglamento de Seguridad de Generadores de Vapor
+2026 establece que el agua que ingresa al generador debe ser acondicionada
+previamente siguiendo un programa de tratamiento químico del agua.</strong>
+</p>
+
+<p>
+Ese programa debe formar parte de la carpeta del generador y contemplar,
+entre otros elementos, un protocolo para realizar los análisis químicos,
+la periodicidad de purgas y toma de muestras, un formulario para registrar
+los parámetros físico-químicos y las instrucciones correspondientes a los
+productos químicos utilizados.
+</p>
+
+<p>
+El Reglamento también establece que el programa debe ser elaborado y
+asistido por un agente vinculado registrado en URSEA en la categoría
+correspondiente al tratamiento químico del agua.
+</p>
+
+</div>
+
+<h3>Registro y documentación</h3>
+
+<p>
+El Reglamento establece además que los controles del programa, incluyendo
+la dosificación de productos químicos y los resultados de los análisis
+físico-químicos, deben quedar debidamente documentados.
+</p>
+
+<div class="info">
+<strong>Para el examen:</strong><br>
+No confundas "tratar el agua" con "agregar productos químicos".
+El tratamiento es un programa de control que comprende análisis,
+parámetros, límites, dosificación, purgas, seguimiento y documentación.
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>👨‍🔧 ¿Qué debe entender un foguista?</h2>
+
+<p>
+El foguista debe comprender la relación entre el agua y el funcionamiento
+del generador, aunque determinadas tareas químicas especializadas puedan
+corresponder a personal técnico específico.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>1. Observar</h3>
+<p>
+Reconocer cambios en los parámetros y condiciones normales de operación.
+</p>
+</div>
+
+<div class="card">
+<h3>2. Registrar</h3>
+<p>
+Dejar constancia de los controles y actividades que correspondan.
+</p>
+</div>
+
+<div class="card">
+<h3>3. Interpretar</h3>
+<p>
+Comprender qué significa una desviación respecto de las condiciones
+establecidas.
+</p>
+</div>
+
+<div class="card">
+<h3>4. Actuar correctamente</h3>
+<p>
+Seguir el procedimiento y las instrucciones del programa de tratamiento,
+sin improvisar.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>🚨 ¿Qué puede ocurrir si el agua está mal tratada?</h2>
+
+<table>
+
+<tr>
+<th>Problema</th>
+<th>Posible consecuencia</th>
+</tr>
+
+<tr>
+<td>Exceso de dureza</td>
+<td>Formación de depósitos e incrustaciones.</td>
+</tr>
+
+<tr>
+<td>Incrustaciones</td>
+<td>Menor transferencia de calor y aumento de temperatura de las superficies.</td>
+</tr>
+
+<tr>
+<td>Condiciones corrosivas</td>
+<td>Deterioro progresivo de superficies y reducción del espesor.</td>
+</tr>
+
+<tr>
+<td>Concentración excesiva</td>
+<td>Necesidad de controlar mediante el programa de purgas.</td>
+</tr>
+
+<tr>
+<td>Tratamiento químico incorrecto</td>
+<td>Parámetros fuera de los límites establecidos.</td>
+</tr>
+
+<tr>
+<td>Falta de seguimiento</td>
+<td>Problemas que pueden permanecer ocultos hasta generar daños importantes.</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<section class="section">
+
+<h2>🧠 Resumen para estudiar</h2>
+
+<div class="success">
+
+<p>
+<strong>Agua → tratamiento → análisis → control → purgas → registro.</strong>
+</p>
+
+<p>
+La calidad del agua influye directamente en la seguridad, eficiencia
+y vida útil del generador de vapor.
+</p>
+
+<p>
+Los principales problemas que debemos comprender son
+<strong>incrustación, corrosión y concentración de sustancias disueltas</strong>.
+</p>
+
+<p>
+El tratamiento no se improvisa: debe existir un programa específico,
+con parámetros, límites, análisis, dosificación, purgas y registros.
+</p>
+
+</div>
+
+<h3>Preguntas que deberías poder responder</h3>
+
+<ul>
+<li>¿Por qué se trata el agua de un generador?</li>
+<li>¿Qué es la dureza?</li>
+<li>¿Cómo se forman las incrustaciones?</li>
+<li>¿Por qué una incrustación perjudica la transferencia de calor?</li>
+<li>¿Qué es la corrosión?</li>
+<li>¿Por qué se controla la conductividad?</li>
+<li>¿Para qué sirven las purgas?</li>
+<li>¿Qué diferencia existe entre acondicionar el agua y tratar químicamente el agua?</li>
+<li>¿Qué debe contener un programa de tratamiento de agua?</li>
+<li>¿Por qué deben registrarse los resultados?</li>
+</ul>
+
+<a href="estudio.html" class="button">
+Volver al apartado de estudio →
+</a>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Foguista Uruguay</strong>
+</p>
+
+<p>
+Plataforma educativa dedicada a la formación y estudio
+sobre generadores de vapor y operación de calderas en Uruguay.
+</p>
+
+<p>
+<a href="index.html">Inicio</a> ·
+<a href="normativa.html">Normativa</a> ·
+<a href="estudio.html">Estudio</a>
+</p>
+
+</footer>
+
+</body>
+</html>
