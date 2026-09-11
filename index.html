@@ -1,1503 +1,1230 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Foguista Uruguay | Generadores de Vapor</title>
-
-    <meta name="description" content="Foguista Uruguay: información, estudio, seguridad y normativa sobre generadores de vapor en Uruguay.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-            color: #17212b;
-            line-height: 1.6;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            background: #0b2438;
-            color: white;
-            padding: 18px 6%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-            color: white;
-        }
-
-        .brand img {
-            width: 58px;
-            height: 58px;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .brand-text h1 {
-            font-size: 24px;
-            line-height: 1.1;
-        }
-
-        .brand-text span {
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            opacity: 0.75;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 620px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    rgba(7, 30, 47, 0.82),
-                    rgba(7, 30, 47, 0.82)
-                ),
-                url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg")
-                center / cover no-repeat;
-        }
-
-        .hero-content {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 80px 6%;
-            color: white;
-        }
-
-        .hero-content h2 {
-            max-width: 800px;
-            font-size: clamp(38px, 6vw, 68px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .hero-content p {
-            max-width: 700px;
-            font-size: 20px;
-            margin-bottom: 35px;
-            color: #e4edf3;
-        }
-
-        .hero-button {
-            display: inline-block;
-            background: white;
-            color: #0b2438;
-            padding: 14px 25px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .hero-button:hover {
-            transform: translateY(-2px);
-        }
-
-
-        /* =========================
-           INTRO
-        ========================= */
-
-        .intro {
-            max-width: 950px;
-            margin: auto;
-            padding: 75px 25px 45px;
-            text-align: center;
-        }
-
-        .intro h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
-            color: #0b2438;
-        }
-
-        .intro p {
-            font-size: 18px;
-            color: #53616c;
-        }
-
-
-        /* =========================
-           FEATURES
-        ========================= */
-
-        .features {
-            max-width: 1150px;
-            margin: auto;
-            padding: 20px 25px 75px;
-
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .feature {
-            background: white;
-            padding: 28px 22px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
-        }
-
-        .feature-icon {
-            font-size: 34px;
-            margin-bottom: 12px;
-        }
-
-        .feature h3 {
-            color: #0b4f75;
-            margin-bottom: 8px;
-            font-size: 19px;
-        }
-
-        .feature p {
-            color: #5d6870;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           MAIN SECTIONS
-        ========================= */
-
-        .sections {
-            background: #e9eef2;
-            padding: 75px 25px;
-        }
-
-        .sections-container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        .sections-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .sections-title h2 {
-            color: #0b2438;
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
-
-        .sections-title p {
-            color: #5d6870;
-        }
-
-        .section-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .section-card {
-            background: white;
-            border-radius: 12px;
-            padding: 32px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .section-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 7px 20px rgba(0,0,0,0.11);
-        }
-
-        .section-number {
-            font-size: 13px;
-            font-weight: bold;
-            color: #6d7d88;
-            margin-bottom: 10px;
-        }
-
-        .section-card h3 {
-            font-size: 25px;
-            color: #0b4f75;
-            margin-bottom: 12px;
-        }
-
-        .section-card p {
-            color: #59656d;
-        }
-
-
-        /* =========================
-           ARTICLES
-        ========================= */
-
-        .articles {
-            max-width: 1100px;
-            margin: auto;
-            padding: 75px 25px;
-        }
-
-        .articles-header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .articles-header h2 {
-            color: #0b2438;
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .article {
-            background: white;
-            padding: 28px;
-            border-radius: 10px;
-            border-left: 5px solid #0b4f75;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-        }
-
-        .article h3 {
-            margin-bottom: 10px;
-            color: #0b4f75;
-        }
-
-        .article p {
-            color: #59656d;
-        }
-
-
-        /* =========================
-           APP PROMO
-        ========================= */
-
-        .app-promo {
-            background: #09283f;
-            color: white;
-            padding: 80px 25px 0;
-            overflow: hidden;
-        }
-
-        .app-promo-container {
-            max-width: 1200px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 300px 1fr 360px;
-            align-items: center;
-            gap: 45px;
-        }
-
-
-        /* PHONE */
-
-        .app-phone {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            height: 520px;
-        }
-
-        .phone-frame {
-            width: 235px;
-            height: 455px;
-
-            background: #111;
-            border-radius: 38px;
-
-            padding: 9px;
-
-            transform: rotate(-7deg);
-
-            box-shadow:
-                0 20px 45px rgba(0,0,0,0.45),
-                inset 0 0 0 2px #777;
-        }
-
-        .phone-screen {
-            height: 100%;
-            border-radius: 30px;
-
-            background:
-                linear-gradient(
-                    160deg,
-                    #0b4265,
-                    #092b44
-                );
-
-            padding: 25px 14px;
-
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .phone-screen > img {
-            width: 85px;
-            height: 85px;
-            object-fit: contain;
-
-            align-self: center;
-
-            border-radius: 18px;
-
-            margin-bottom: 15px;
-        }
-
-        .phone-option {
-            background: rgba(255,255,255,0.08);
-
-            border-radius: 9px;
-
-            padding: 12px;
-
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            font-size: 14px;
-        }
-
-
-        /* APP TEXT */
-
-        .app-promo-main h2 {
-            font-size: clamp(38px, 4vw, 56px);
-            line-height: 1.05;
-
-            margin-bottom: 25px;
-        }
-
-        .app-promo-main h2 span {
-            display: block;
-            color: #65b8ff;
-        }
-
-        .app-promo-main > p {
-            font-size: 18px;
-            line-height: 1.7;
-
-            color: #d5e2eb;
-
-            max-width: 650px;
-
-            margin-bottom: 30px;
-        }
-
-
-        /* GOOGLE PLAY */
-
-        .app-store-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-
-            background: #050505;
-
-            border: 1px solid #8a8a8a;
-
-            border-radius: 10px;
-
-            padding: 10px 22px;
-
-            min-width: 245px;
-        }
-
-        .play-icon {
-            font-size: 28px;
-        }
-
-        .app-store-badge small {
-            display: block;
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
-
-        .app-store-badge strong {
-            display: block;
-            font-size: 22px;
-            font-weight: normal;
-        }
-
-        .app-coming {
-            margin-top: 12px !important;
-            font-size: 14px !important;
-        }
-
-
-        /* APP FEATURES */
-
-        .app-features {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .app-feature {
-            display: flex;
-            align-items: center;
-            gap: 17px;
-        }
-
-        .app-feature-icon {
-            min-width: 52px;
-            height: 52px;
-
-            border-radius: 50%;
-
-            background: rgba(53,143,217,0.25);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 24px;
-        }
-
-        .app-feature h3 {
-            font-size: 18px;
-            margin-bottom: 3px;
-        }
-
-        .app-feature p {
-            color: #c6d6e0;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        .site-footer {
-            background: #061d2d;
-            color: #c6d6e0;
-            padding: 50px 6% 25px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-
-            gap: 50px;
-
-            padding-bottom: 40px;
-        }
-
-        .footer-brand-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .footer-brand-title img {
-            width: 70px;
-            height: 70px;
-
-            border-radius: 15px;
-        }
-
-        .footer-brand-title h2 {
-            color: white;
-            font-size: 25px;
-        }
-
-        .footer-brand-title span {
-            font-size: 14px;
-        }
-
-        .footer-brand > p {
-            max-width: 360px;
-            margin-top: 22px;
-            line-height: 1.7;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 22px;
-        }
-
-        .social-links a {
-            width: 38px;
-            height: 38px;
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,0.1);
-
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-decoration: none;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
-        }
-
-        .footer-column h3 {
-            color: white;
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
-
-        .footer-column a {
-            color: #c6d6e0;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: auto;
-
-            border-top: 1px solid rgba(255,255,255,0.15);
-
-            padding-top: 25px;
-
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-
-            font-size: 13px;
-        }
-
-        .footer-bottom b {
-            margin: 0 10px;
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 1000px) {
-
-            .app-promo-container {
-                grid-template-columns: 250px 1fr;
-            }
-
-            .app-features {
-                grid-column: 1 / -1;
-
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-
-                padding-bottom: 50px;
-            }
-
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-
-        @media (max-width: 900px) {
-
-            .header-container {
-                flex-direction: column;
-            }
-
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-        }
-
-
-        @media (max-width: 650px) {
-
-            header {
-                position: relative;
-            }
-
-            .brand-text h1 {
-                font-size: 21px;
-            }
-
-            nav {
-                gap: 13px;
-                justify-content: center;
-            }
-
-            nav a {
-                font-size: 13px;
-            }
-
-            .hero {
-                min-height: 520px;
-            }
-
-            .hero-content {
-                padding: 60px 25px;
-            }
-
-            .hero-content p {
-                font-size: 17px;
-            }
-
-            .features,
-            .section-grid,
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .intro h2,
-            .sections-title h2,
-            .articles-header h2,
-            .app-section h2 {
-                font-size: 28px;
-            }
-
-
-            /* APP MOBILE */
-
-            .app-promo {
-                padding-top: 55px;
-            }
-
-            .app-promo-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .app-phone {
-                height: 400px;
-            }
-
-            .phone-frame {
-                width: 200px;
-                height: 390px;
-            }
-
-            .app-promo-main > p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .app-features {
-                grid-template-columns: 1fr;
-                text-align: left;
-            }
-
-
-            /* FOOTER MOBILE */
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Foguista Uruguay | Generadores de Vapor</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f3f6fa;
+    color:#172033;
+    line-height:1.65;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:linear-gradient(135deg,#071a33,#0d3766);
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.brand-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo-area img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.logo-text{
+    font-size:21px;
+    font-weight:800;
+}
+
+.logo-text span{
+    display:block;
+    font-size:12px;
+    font-weight:400;
+    opacity:.8;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:7px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:8px;
+    font-size:14px;
+    transition:.2s;
+}
+
+nav a:hover,
+nav a.active{
+    background:rgba(255,255,255,.15);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:620px;
+    background:
+        linear-gradient(rgba(4,20,39,.70),rgba(5,28,55,.88)),
+        url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:80px 8%;
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    background:#1597e5;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:52px;
+    line-height:1.08;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:#5eb9f2;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:760px;
+    color:#dceafa;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:13px 21px;
+    border-radius:9px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#1597e5;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#087fc8;
+    transform:translateY(-2px);
+}
+
+.btn-light{
+    background:white;
+    color:#082445;
+}
+
+.btn-light:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+section{
+    padding:75px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#092b52;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    max-width:750px;
+    margin:auto;
+    color:#657386;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    background:white;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:35px;
+    align-items:center;
+}
+
+.intro-text h2{
+    font-size:35px;
+    color:#092b52;
+    margin-bottom:18px;
+}
+
+.intro-text p{
+    color:#536174;
+    margin-bottom:15px;
+}
+
+.intro-box{
+    background:linear-gradient(135deg,#092b52,#105487);
+    color:white;
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 12px 30px rgba(5,35,67,.18);
+}
+
+.intro-box h3{
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.intro-box ul{
+    list-style:none;
+}
+
+.intro-box li{
+    padding:9px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.intro-box li:last-child{
+    border-bottom:none;
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:27px;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+    transition:.25s;
+    border-top:5px solid #1597e5;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(0,0,0,.11);
+}
+
+.card-icon{
+    font-size:35px;
+    margin-bottom:14px;
+}
+
+.card h3{
+    color:#0a315d;
+    margin-bottom:10px;
+    font-size:21px;
+}
+
+.card p{
+    color:#637083;
+}
+
+/* =========================
+   SECTION CARDS
+========================= */
+
+.section-links{
+    background:#eaf1f7;
+}
+
+.link-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.link-card{
+    position:relative;
+    overflow:hidden;
+    background:white;
+    border-radius:17px;
+    padding:30px;
+    min-height:200px;
+    box-shadow:0 7px 22px rgba(0,0,0,.07);
+    text-decoration:none;
+    color:inherit;
+    transition:.25s;
+}
+
+.link-card:hover{
+    transform:translateY(-5px);
+}
+
+.link-card h3{
+    color:#092d54;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.link-card p{
+    color:#617084;
+    max-width:500px;
+}
+
+.link-card .arrow{
+    position:absolute;
+    right:25px;
+    bottom:20px;
+    font-size:30px;
+    color:#1597e5;
+}
+
+.link-card .small-label{
+    display:inline-block;
+    color:#1597e5;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:9px;
+    text-transform:uppercase;
+}
+
+/* =========================
+   CONCEPTS
+========================= */
+
+.concepts{
+    background:white;
+}
+
+.concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.concept{
+    padding:25px;
+    border:1px solid #e2e8ef;
+    border-radius:14px;
+    background:#fafcfe;
+}
+
+.concept h3{
+    color:#0b3b6b;
+    margin-bottom:9px;
+}
+
+.concept p{
+    color:#5c6b7d;
+}
+
+/* =========================
+   APP PROMO
+========================= */
+
+.app-promo{
+    background:linear-gradient(135deg,#061a31,#0d3c69);
+    color:white;
+    overflow:hidden;
+}
+
+.app-grid{
+    display:grid;
+    grid-template-columns:1fr .8fr;
+    gap:50px;
+    align-items:center;
+}
+
+.app-text h2{
+    font-size:39px;
+    margin-bottom:16px;
+}
+
+.app-text p{
+    color:#d3e2f1;
+    max-width:600px;
+    margin-bottom:22px;
+}
+
+.app-features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.app-feature{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    padding:14px;
+    border-radius:10px;
+}
+
+/* =========================
+   PHONE
+========================= */
+
+.phone-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.phone{
+    width:250px;
+    height:470px;
+    background:#111;
+    border-radius:35px;
+    padding:10px;
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+    transform:rotate(5deg);
+}
+
+.phone-screen{
+    height:100%;
+    border-radius:27px;
+    background:linear-gradient(160deg,#edf5fc,#ffffff);
+    padding:22px 15px;
+    color:#092b52;
+    overflow:hidden;
+}
+
+.phone-logo{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.phone-logo img{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    border-radius:12px;
+}
+
+.phone-title{
+    text-align:center;
+    font-weight:800;
+    font-size:17px;
+    margin-bottom:20px;
+}
+
+.fake-option{
+    background:white;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:9px;
+    box-shadow:0 3px 9px rgba(0,0,0,.08);
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.final{
+    background:#f3f6fa;
+}
+
+.final-box{
+    background:white;
+    border-radius:18px;
+    padding:38px;
+    text-align:center;
+    box-shadow:0 7px 22px rgba(0,0,0,.07);
+}
+
+.final-box h2{
+    color:#092d54;
+    font-size:31px;
+    margin-bottom:12px;
+}
+
+.final-box p{
+    max-width:720px;
+    margin:0 auto 22px;
+    color:#637083;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#06182d;
+    color:#bdcad8;
+    padding:45px 7%;
+    text-align:center;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+footer p{
+    max-width:700px;
+    margin:8px auto;
+    font-size:14px;
+}
+
+.footer-links{
+    margin-top:20px;
+}
+
+.footer-links a{
+    color:#5eb9f2;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    header{
+        position:relative;
+        flex-direction:column;
+    }
+
+    .hero{
+        min-height:550px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .intro-grid,
+    .app-grid{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .link-grid,
+    .concept-grid{
+        grid-template-columns:1fr;
+    }
+
+    .phone{
+        transform:none;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding:55px 6%;
+    }
+
+    .hero h1{
+        font-size:33px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .app-text h2{
+        font-size:31px;
+    }
+
+    .app-features{
+        grid-template-columns:1fr;
+    }
+
+    nav a{
+        font-size:13px;
+        padding:8px 9px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
-    <header>
+<header>
 
-        <div class="header-container">
+    <a href="index.html" class="brand-link">
 
-            <a href="index.html" class="brand">
+        <div class="logo-area">
 
-                <img src="logo.png" alt="Foguista Uruguay">
+            <img src="logo.png" alt="Foguista Uruguay">
 
-                <div class="brand-text">
-
-                    <h1>Foguista Uruguay</h1>
-
-                    <span>Generadores de vapor</span>
-
-                </div>
-
-            </a>
-
-
-            <nav>
-
-                <a href="index.html">Inicio</a>
-
-                <a href="generadores.html">Generadores</a>
-
-                <a href="seguridad.html">Seguridad</a>
-
-                <a href="estudio.html">Estudio</a>
-
-                <a href="normativa.html">Normativa</a>
-
-                <a href="app.html">App</a>
-
-            </nav>
+            <div class="logo-text">
+                Foguista Uruguay
+                <span>Formación y seguridad en generadores de vapor</span>
+            </div>
 
         </div>
 
-    </header>
+    </a>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <nav>
 
-    <main>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="generadores.html">Generadores</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a href="estudio.html">Estudio</a>
+        <a href="normativa.html">Normativa</a>
+        <a href="app.html">App</a>
 
-        <section class="hero">
+    </nav>
 
-            <div class="hero-content">
-
-                <h2>
-                    Todo lo que necesitás saber sobre generadores de vapor.
-                </h2>
-
-                <p>
-                    Información técnica, seguridad, material de estudio
-                    y normativa uruguaya, explicados de forma clara,
-                    práctica y responsable.
-                </p>
-
-                <a href="generadores.html" class="hero-button">
-                    Explorar contenidos →
-                </a>
-
-            </div>
-
-        </section>
+</header>
 
 
-        <!-- =========================
-             INTRO
-        ========================== -->
+<!-- =========================
+     HERO
+========================= -->
 
-        <section class="intro">
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            FOGUISTA URUGUAY
+        </span>
+
+        <h1>
+            Comprendé los
+            <span>generadores de vapor</span>
+            desde adentro.
+        </h1>
+
+        <p>
+            Un espacio pensado para aprender, estudiar y comprender
+            el funcionamiento de los generadores de vapor, sus sistemas
+            de seguridad y la normativa aplicable en Uruguay.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="generadores.html" class="btn btn-primary">
+                🔥 Conocer los generadores
+            </a>
+
+            <a href="estudio.html" class="btn btn-light">
+                📚 Ir a estudiar
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+<div class="container">
+
+    <div class="intro-grid">
+
+        <div class="intro-text">
 
             <h2>
-                Conocimiento para operar con seguridad
+                Más que memorizar: entender.
             </h2>
 
             <p>
-                Foguista Uruguay es un espacio dedicado al estudio y
-                comprensión de los generadores de vapor, su operación,
-                sus sistemas de seguridad y la normativa vigente en Uruguay.
+                Trabajar con un generador de vapor exige comprender
+                cómo se relacionan el combustible, la combustión,
+                el agua, el vapor, la presión, la temperatura y
+                los sistemas de control.
             </p>
 
-        </section>
+            <p>
+                Foguista Uruguay busca reunir esos conocimientos
+                en un solo lugar y explicarlos de una manera clara,
+                práctica y ordenada.
+            </p>
+
+        </div>
 
 
-        <!-- =========================
-             FEATURES
-        ========================== -->
+        <div class="intro-box">
 
-        <section class="features">
+            <h3>¿Qué vas a encontrar?</h3>
 
-            <div class="feature">
+            <ul>
 
-                <div class="feature-icon">
-                    ✓
+                <li>🔥 Funcionamiento de generadores de vapor</li>
+
+                <li>🛡️ Seguridad y sistemas de protección</li>
+
+                <li>📚 Material para estudiar</li>
+
+                <li>📘 Reglamento URSEA</li>
+
+                <li>📱 Aplicación para estudiar</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            Una formación completa
+        </h2>
+
+        <p>
+            Cada sección aborda una parte diferente del conocimiento
+            que necesita quien trabaja o se prepara para trabajar
+            con generadores de vapor.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="card">
+
+            <div class="card-icon">🔥</div>
+
+            <h3>Generadores</h3>
+
+            <p>
+                Conocé cómo se produce el vapor, cómo circula el agua,
+                cómo se transmite el calor y cuáles son los principales
+                componentes de un generador.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🛡️</div>
+
+            <h3>Seguridad</h3>
+
+            <p>
+                Comprendé los riesgos asociados a presión, nivel,
+                combustión y las diferentes protecciones del sistema.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">📘</div>
+
+            <h3>Normativa</h3>
+
+            <p>
+                Estudiá el Reglamento de Seguridad de Generadores
+                de Vapor de URSEA y aprendé a relacionarlo con
+                la operación real.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SECTION LINKS
+========================= -->
+
+<section class="section-links">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            Explorá Foguista Uruguay
+        </h2>
+
+        <p>
+            Entrá directamente al contenido que querés estudiar.
+        </p>
+
+    </div>
+
+
+    <div class="link-grid">
+
+
+        <a href="generadores.html" class="link-card">
+
+            <span class="small-label">
+                CONOCIMIENTO
+            </span>
+
+            <h3>
+                Generadores de vapor
+            </h3>
+
+            <p>
+                Desde la transformación de energía hasta los
+                componentes internos y los distintos tipos
+                de generadores.
+            </p>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="seguridad.html" class="link-card">
+
+            <span class="small-label">
+                SEGURIDAD
+            </span>
+
+            <h3>
+                Seguridad del sistema
+            </h3>
+
+            <p>
+                Nivel de agua, presión, combustión, controles,
+                alarmas, enclavamientos y situaciones anormales.
+            </p>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="estudio.html" class="link-card">
+
+            <span class="small-label">
+                PREPARACIÓN
+            </span>
+
+            <h3>
+                Zona de estudio
+            </h3>
+
+            <p>
+                Aprendé a razonar como foguista y relacioná
+                las variables del proceso en lugar de memorizar
+                conceptos aislados.
+            </p>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="normativa.html" class="link-card">
+
+            <span class="small-label">
+                URSEA
+            </span>
+
+            <h3>
+                Reglamento y normativa
+            </h3>
+
+            <p>
+                Conocé la estructura del reglamento vigente,
+                sus secciones, anexos y los conceptos que
+                conviene dominar para el examen.
+            </p>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONCEPTS
+========================= -->
+
+<section class="concepts">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            El generador como un sistema
+        </h2>
+
+        <p>
+            Para entender un generador hay que conectar cada parte
+            con la siguiente.
+        </p>
+
+    </div>
+
+
+    <div class="concept-grid">
+
+
+        <div class="concept">
+
+            <h3>
+                🔥 Combustible y combustión
+            </h3>
+
+            <p>
+                La energía química del combustible se transforma
+                mediante la combustión en energía térmica.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>
+                ♨️ Transferencia de calor
+            </h3>
+
+            <p>
+                El calor producido por la combustión se transfiere
+                hacia el agua a través de las superficies de calefacción.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>
+                💧 Agua
+            </h3>
+
+            <p>
+                El agua recibe energía y cambia de estado hasta
+                producir vapor en las condiciones correspondientes.
+            </p>
+
+        </div>
+
+
+        <div class="concept">
+
+            <h3>
+                💨 Vapor
+            </h3>
+
+            <p>
+                El vapor producido transporta energía hacia
+                el proceso que utiliza esa energía.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div style="text-align:center;margin-top:30px;">
+
+        <a href="generadores.html" class="btn btn-primary">
+            Aprender cómo funciona →
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     APP PROMO
+========================= -->
+
+<section class="app-promo">
+
+<div class="container">
+
+    <div class="app-grid">
+
+
+        <div class="app-text">
+
+            <span class="badge">
+                PRÓXIMAMENTE
+            </span>
+
+            <h2>
+                Foguista Uruguay
+                también en tu celular.
+            </h2>
+
+            <p>
+                Una aplicación pensada para llevar el material
+                de estudio siempre contigo y ayudarte a prepararte
+                para el examen de foguista.
+            </p>
+
+
+            <a href="app.html" class="btn btn-light">
+                📱 Conocer la aplicación
+            </a>
+
+
+            <div class="app-features">
+
+                <div class="app-feature">
+                    📚 Material de estudio
                 </div>
 
-                <h3>
-                    Información confiable
-                </h3>
-
-                <p>
-                    Contenido técnico elaborado para comprender
-                    el funcionamiento de los equipos.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    📚
+                <div class="app-feature">
+                    🧠 Preguntas y razonamiento
                 </div>
 
-                <h3>
-                    Material de estudio
-                </h3>
-
-                <p>
-                    Conceptos y explicaciones orientados al aprendizaje
-                    del foguista.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    ⚠
+                <div class="app-feature">
+                    🛡️ Seguridad
                 </div>
 
-                <h3>
-                    Seguridad
-                </h3>
-
-                <p>
-                    La seguridad operacional como parte fundamental
-                    del trabajo con vapor.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    🇺🇾
+                <div class="app-feature">
+                    📘 Normativa
                 </div>
-
-                <h3>
-                    Normativa uruguaya
-                </h3>
-
-                <p>
-                    Acceso y referencia a la reglamentación aplicable
-                    en Uruguay.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             SECCIONES
-        ========================== -->
-
-        <section class="sections">
-
-            <div class="sections-container">
-
-                <div class="sections-title">
-
-                    <h2>
-                        Explorá la web
-                    </h2>
-
-                    <p>
-                        Seleccioná un área para comenzar.
-                    </p>
-
-                </div>
-
-
-                <div class="section-grid">
-
-                    <a href="generadores.html" class="section-card">
-
-                        <div class="section-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Generadores de vapor
-                        </h3>
-
-                        <p>
-                            Funcionamiento, componentes, combustión,
-                            transferencia de calor, agua, presión,
-                            nivel y operación.
-                        </p>
-
-                    </a>
-
-
-                    <a href="seguridad.html" class="section-card">
-
-                        <div class="section-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Seguridad
-                        </h3>
-
-                        <p>
-                            Sistemas de seguridad, válvulas,
-                            controles, enclavamientos y condiciones
-                            peligrosas de operación.
-                        </p>
-
-                    </a>
-
-
-                    <a href="estudio.html" class="section-card">
-
-                        <div class="section-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Área de estudio
-                        </h3>
-
-                        <p>
-                            Material para estudiar los principales
-                            conceptos relacionados con la operación
-                            de generadores de vapor.
-                        </p>
-
-                    </a>
-
-
-                    <a href="normativa.html" class="section-card">
-
-                        <div class="section-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Normativa uruguaya
-                        </h3>
-
-                        <p>
-                            Reglamento de Seguridad de Generadores
-                            de Vapor y acceso a las fuentes oficiales.
-                        </p>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONCEPTOS
-        ========================== -->
-
-        <section class="articles">
-
-            <div class="articles-header">
-
-                <h2>
-                    Conceptos fundamentales
-                </h2>
-
-            </div>
-
-
-            <div class="articles-grid">
-
-
-                <article class="article">
-
-                    <h3>
-                        ¿Qué es un generador de vapor?
-                    </h3>
-
-                    <p>
-                        Es un equipo destinado a generar vapor mediante
-                        la transferencia de energía al agua bajo condiciones
-                        controladas de presión y temperatura.
-                    </p>
-
-                </article>
-
-
-                <article class="article">
-
-                    <h3>
-                        ¿Qué función cumple una válvula de seguridad?
-                    </h3>
-
-                    <p>
-                        Su función es proteger el generador frente a
-                        condiciones de sobrepresión, actuando cuando
-                        se alcanza la presión de ajuste correspondiente.
-                    </p>
-
-                </article>
-
-
-                <article class="article">
-
-                    <h3>
-                        ¿Por qué es importante el nivel de agua?
-                    </h3>
-
-                    <p>
-                        Mantener un nivel adecuado de agua es fundamental
-                        para la seguridad del generador y para evitar
-                        condiciones de operación peligrosas.
-                    </p>
-
-                </article>
-
-
-                <article class="article">
-
-                    <h3>
-                        ¿Qué son los enclavamientos?
-                    </h3>
-
-                    <p>
-                        Son sistemas de control que actúan ante determinadas
-                        condiciones para impedir o detener una operación
-                        cuando existe una situación que puede resultar
-                        peligrosa.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             APP PROMO
-        ========================== -->
-
-        <section class="app-promo">
-
-            <div class="app-promo-container">
-
-
-                <!-- TELÉFONO -->
-
-                <div class="app-phone">
-
-                    <div class="phone-frame">
-
-                        <div class="phone-screen">
-
-                            <img
-                                src="logo.png"
-                                alt="Foguista Uruguay"
-                            >
-
-                            <div class="phone-option">
-                                🎓
-                                <span>Simulacros</span>
-                            </div>
-
-                            <div class="phone-option">
-                                📋
-                                <span>Preguntas</span>
-                            </div>
-
-                            <div class="phone-option">
-                                📊
-                                <span>Estadísticas</span>
-                            </div>
-
-                            <div class="phone-option">
-                                ⚙️
-                                <span>Configuración</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- TEXTO PRINCIPAL -->
-
-                <div class="app-promo-main">
-
-                    <h2>
-
-                        Llevá Foguista Uruguay
-
-                        <span>
-                            en tu celular
-                        </span>
-
-                    </h2>
-
-
-                    <p>
-                        Practicá con preguntas, simulacros y reforzá tus
-                        conocimientos sobre generadores de vapor en cualquier
-                        momento y lugar.
-                    </p>
-
-
-                    <div class="app-store-badge">
-
-                        <div class="play-icon">
-                            ▶
-                        </div>
-
-                        <div>
-
-                            <small>
-                                PRÓXIMAMENTE EN
-                            </small>
-
-                            <strong>
-                                Google Play
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <p class="app-coming">
-                        Próximamente en más plataformas.
-                    </p>
-
-                </div>
-
-
-                <!-- CARACTERÍSTICAS -->
-
-                <div class="app-features">
-
-
-                    <div class="app-feature">
-
-                        <div class="app-feature-icon">
-                            ✓
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Simulacros de examen
-                            </h3>
-
-                            <p>
-                                Poné a prueba tus conocimientos.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="app-feature">
-
-                        <div class="app-feature-icon">
-                            ▤
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Preguntas actualizadas
-                            </h3>
-
-                            <p>
-                                Basadas en normativa uruguaya.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="app-feature">
-
-                        <div class="app-feature-icon">
-                            ▥
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Seguimiento de progreso
-                            </h3>
-
-                            <p>
-                                Mejorá con cada práctica.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="app-feature">
-
-                        <div class="app-feature-icon">
-                            📱
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Diseño simple y práctico
-                            </h3>
-
-                            <p>
-                                Ideal para estudiar desde el celular.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="site-footer">
-
-        <div class="footer-container">
-
-
-            <!-- MARCA -->
-
-            <div class="footer-brand">
-
-                <div class="footer-brand-title">
-
-                    <img
-                        src="logo.png"
-                        alt="Foguista Uruguay"
-                    >
-
-                    <div>
-
-                        <h2>
-                            Foguista Uruguay
-                        </h2>
-
-                        <span>
-                            Generadores de vapor
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <p>
-                    Información educativa sobre generadores de vapor,
-                    seguridad y normativa uruguaya.
-                </p>
-
-
-                <div class="social-links">
-
-                    <a
-                        href="#"
-                        aria-label="YouTube"
-                    >
-                        ▶
-                    </a>
-
-                    <a
-                        href="#"
-                        aria-label="GitHub"
-                    >
-                        ●
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- ENLACES -->
-
-            <div class="footer-column">
-
-                <h3>
-                    Enlaces rápidos
-                </h3>
-
-                <a href="index.html">
-                    Inicio
-                </a>
-
-                <a href="generadores.html">
-                    Generadores
-                </a>
-
-                <a href="seguridad.html">
-                    Seguridad
-                </a>
-
-                <a href="estudio.html">
-                    Estudio
-                </a>
-
-                <a href="normativa.html">
-                    Normativa
-                </a>
-
-                <a href="app.html">
-                    App
-                </a>
-
-            </div>
-
-
-            <!-- RECURSOS -->
-
-            <div class="footer-column">
-
-                <h3>
-                    Recursos
-                </h3>
-
-                <a href="#">
-                    Preguntas frecuentes
-                </a>
-
-                <a href="#">
-                    Bibliografía
-                </a>
-
-                <a href="#">
-                    Enlaces de interés
-                </a>
-
-                <a href="#">
-                    Contacto
-                </a>
-
-            </div>
-
-
-            <!-- LEGAL -->
-
-            <div class="footer-column">
-
-                <h3>
-                    Legal
-                </h3>
-
-                <a href="#">
-                    Aviso legal
-                </a>
-
-                <a href="#">
-                    Privacidad
-                </a>
-
-                <a href="#">
-                    Términos de uso
-                </a>
 
             </div>
 
         </div>
 
 
-        <!-- COPYRIGHT -->
+        <div class="phone-area">
 
-        <div class="footer-bottom">
+            <div class="phone">
 
-            <span>
-                © 2026 Foguista Uruguay. Todos los derechos reservados.
-            </span>
+                <div class="phone-screen">
 
-            <span>
-                Hecho en Uruguay 🇺🇾
-                <b>|</b>
-                Contribuyendo a una operación más segura
-            </span>
+                    <div class="phone-logo">
+
+                        <img src="logo.png" alt="Foguista Uruguay">
+
+                    </div>
+
+                    <div class="phone-title">
+                        Foguista Uruguay
+                    </div>
+
+
+                    <div class="fake-option">
+                        🔥 Generadores de vapor
+                    </div>
+
+                    <div class="fake-option">
+                        🛡️ Seguridad
+                    </div>
+
+                    <div class="fake-option">
+                        📘 Normativa URSEA
+                    </div>
+
+                    <div class="fake-option">
+                        🧠 Modo estudio
+                    </div>
+
+                    <div class="fake-option">
+                        📝 Examen
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </footer>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+<div class="container">
+
+    <div class="final-box">
+
+        <h2>
+            Empezá por donde quieras.
+        </h2>
+
+        <p>
+            Conocé el funcionamiento, estudiá la seguridad,
+            repasá la normativa y preparate para el examen.
+            Todo desde un mismo lugar.
+        </p>
+
+        <a href="estudio.html" class="btn btn-primary">
+            📚 Comenzar a estudiar
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>
+        Foguista Uruguay
+    </h3>
+
+    <p>
+        Formación y material educativo sobre generadores de vapor,
+        seguridad, operación y normativa en Uruguay.
+    </p>
+
+    <p>
+        Material educativo. La normativa oficial vigente
+        prevalece ante cualquier explicación de este sitio.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="index.html">Inicio</a>
+        <a href="generadores.html">Generadores</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a href="estudio.html">Estudio</a>
+        <a href="normativa.html">Normativa</a>
+        <a href="app.html">App</a>
+
+    </div>
+
+</footer>
 
 
 </body>
