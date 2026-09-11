@@ -11,15 +11,18 @@
     --navy:#071b33;
     --navy2:#0d2948;
     --blue:#1261a0;
-    --blue2:#1b78c2;
+    --blue2:#1d73b7;
     --light:#f3f7fb;
     --white:#ffffff;
-    --text:#203040;
+    --text:#26394b;
     --muted:#607386;
     --line:#dce6ef;
-    --gold:#e3a72f;
-    --green:#23845b;
-    --shadow:0 12px 30px rgba(7,27,51,.09);
+    --gold:#e0a32b;
+    --green:#247b58;
+    --softblue:#edf6fd;
+    --softgold:#fff8e8;
+    --softgreen:#eef8f2;
+    --shadow:0 10px 28px rgba(7,27,51,.08);
 }
 
 *{
@@ -28,19 +31,25 @@
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:var(--light);
     color:var(--text);
-    line-height:1.7;
+    line-height:1.75;
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
     background:var(--navy);
@@ -48,7 +57,7 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 4px 18px rgba(0,0,0,.15);
+    box-shadow:0 4px 18px rgba(0,0,0,.16);
 }
 
 .navbar{
@@ -66,8 +75,8 @@ header{
     display:flex;
     align-items:center;
     gap:12px;
-    font-weight:bold;
     font-size:20px;
+    font-weight:bold;
     white-space:nowrap;
 }
 
@@ -85,11 +94,11 @@ header{
     align-items:center;
     justify-content:flex-end;
     flex-wrap:wrap;
-    gap:6px;
+    gap:5px;
 }
 
 .nav a{
-    color:#dce9f5;
+    color:#d9e6f2;
     padding:9px 12px;
     border-radius:8px;
     font-size:14px;
@@ -98,19 +107,21 @@ header{
 
 .nav a:hover,
 .nav a.active{
-    background:#12395f;
     color:white;
+    background:#12395e;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
     background:
-        linear-gradient(rgba(7,27,51,.82),rgba(7,27,51,.9)),
+        linear-gradient(rgba(7,27,51,.84),rgba(7,27,51,.91)),
         url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg")
         center/cover;
     color:white;
-    padding:90px 24px 85px;
+    padding:95px 24px 90px;
 }
 
 .hero-content{
@@ -120,28 +131,30 @@ header{
 
 .eyebrow{
     display:inline-block;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.2);
-    padding:7px 13px;
+    padding:7px 14px;
     border-radius:30px;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.1);
     font-size:13px;
-    letter-spacing:.6px;
+    letter-spacing:.7px;
     margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:clamp(38px,6vw,66px);
-    line-height:1.08;
+    font-size:clamp(40px,6vw,68px);
+    line-height:1.05;
     margin-bottom:20px;
 }
 
 .hero p{
-    max-width:780px;
+    max-width:820px;
+    color:#dce8f2;
     font-size:19px;
-    color:#dbe7f1;
 }
 
-/* MAIN */
+/* =========================
+   CONTENIDO
+========================= */
 
 .container{
     max-width:1100px;
@@ -150,13 +163,14 @@ header{
 }
 
 .intro{
-    max-width:850px;
-    margin-bottom:55px;
+    max-width:880px;
+    margin-bottom:45px;
 }
 
 .intro h2{
-    font-size:34px;
     color:var(--navy);
+    font-size:35px;
+    line-height:1.2;
     margin-bottom:18px;
 }
 
@@ -165,15 +179,13 @@ header{
     font-size:17px;
 }
 
-/* SOURCE */
-
 .source{
     background:white;
     border-left:5px solid var(--gold);
+    border-radius:11px;
     padding:20px 24px;
-    border-radius:10px;
+    margin-bottom:65px;
     box-shadow:var(--shadow);
-    margin-bottom:55px;
     color:#52677b;
 }
 
@@ -181,35 +193,38 @@ header{
     color:var(--navy);
 }
 
-/* SECTIONS */
+/* =========================
+   SECCIONES
+========================= */
 
 .section{
-    margin-bottom:65px;
+    margin-bottom:75px;
 }
 
 .section-heading{
     display:flex;
-    align-items:flex-start;
     gap:18px;
-    margin-bottom:25px;
+    align-items:flex-start;
+    margin-bottom:27px;
 }
 
 .number{
-    min-width:52px;
-    height:52px;
-    border-radius:13px;
+    width:54px;
+    height:54px;
+    min-width:54px;
+    border-radius:14px;
     background:var(--navy);
     color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:bold;
     font-size:15px;
+    font-weight:bold;
 }
 
 .section-heading h2{
     color:var(--navy);
-    font-size:29px;
+    font-size:30px;
     line-height:1.2;
     margin-bottom:5px;
 }
@@ -219,28 +234,30 @@ header{
     font-size:15px;
 }
 
-/* ACCORDIONS */
+/* =========================
+   DESPLEGABLES
+========================= */
 
 .topic{
     background:white;
     border:1px solid var(--line);
     border-radius:14px;
-    margin-bottom:13px;
     overflow:hidden;
-    box-shadow:0 5px 18px rgba(7,27,51,.04);
+    margin-bottom:14px;
+    box-shadow:0 5px 17px rgba(7,27,51,.04);
 }
 
 .topic summary{
     list-style:none;
     cursor:pointer;
     padding:20px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    color:var(--navy);
     font-size:17px;
     font-weight:bold;
-    color:var(--navy);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
     transition:.2s;
 }
 
@@ -250,15 +267,15 @@ header{
 
 .topic summary::after{
     content:"+";
-    width:30px;
-    height:30px;
+    width:31px;
+    height:31px;
+    min-width:31px;
     border-radius:50%;
     background:#edf4fa;
     color:var(--blue);
     display:flex;
     align-items:center;
     justify-content:center;
-    flex-shrink:0;
     font-size:21px;
     font-weight:normal;
 }
@@ -273,100 +290,122 @@ header{
 }
 
 .topic-content{
-    padding:28px 30px 32px;
+    padding:30px 31px 34px;
 }
 
 .topic-content p{
-    margin-bottom:17px;
     color:#42576b;
+    margin-bottom:18px;
 }
 
 .topic-content h3{
     color:var(--navy);
-    font-size:20px;
-    margin:28px 0 12px;
+    font-size:21px;
+    margin:29px 0 12px;
 }
 
 .topic-content h3:first-child{
     margin-top:0;
 }
 
-.topic-content ul{
-    margin:12px 0 20px 22px;
+.topic-content ul,
+.topic-content ol{
+    margin:10px 0 20px 23px;
     color:#42576b;
 }
 
 .topic-content li{
-    margin-bottom:8px;
+    margin-bottom:9px;
 }
 
-/* INFO BOXES */
+/* =========================
+   CAJAS DIDÁCTICAS
+========================= */
+
+.info-box,
+.example-box,
+.exam-box,
+.compare-box{
+    margin:26px 0;
+    padding:21px 23px;
+    border-radius:11px;
+}
 
 .info-box{
-    margin:24px 0;
-    padding:20px 22px;
-    border-radius:11px;
-    background:#eef6fc;
+    background:var(--softblue);
     border-left:5px solid var(--blue);
 }
 
-.info-box strong{
-    display:block;
-    color:var(--navy);
-    margin-bottom:7px;
-}
-
-.example{
-    margin:24px 0;
-    padding:20px 22px;
-    border-radius:11px;
-    background:#f5f8f4;
+.example-box{
+    background:var(--softgreen);
     border-left:5px solid var(--green);
 }
 
-.example strong{
-    display:block;
-    color:#1b6848;
-    margin-bottom:7px;
-}
-
-.exam{
-    margin:24px 0;
-    padding:20px 22px;
-    border-radius:11px;
-    background:#fff8e9;
+.exam-box{
+    background:var(--softgold);
     border-left:5px solid var(--gold);
 }
 
-.exam strong{
+.compare-box{
+    background:#f5f7fa;
+    border-left:5px solid #70859a;
+}
+
+.info-box strong,
+.example-box strong,
+.exam-box strong,
+.compare-box strong{
     display:block;
-    color:#775411;
-    margin-bottom:7px;
+    margin-bottom:8px;
+    color:var(--navy);
 }
 
-.warning{
-    margin:24px 0;
-    padding:20px 22px;
-    border-radius:11px;
-    background:#f8f5ef;
-    border-left:5px solid #b98535;
+/* =========================
+   FLUJOS
+========================= */
+
+.flow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    flex-wrap:wrap;
+    margin:27px 0;
 }
 
-.warning strong{
-    display:block;
-    color:#6b4e20;
-    margin-bottom:7px;
+.flow-item{
+    flex:1 1 140px;
+    max-width:190px;
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:14px;
+    border:1px solid var(--line);
+    background:#f4f8fc;
+    border-radius:10px;
+    color:var(--navy);
+    font-weight:bold;
 }
 
-/* COMPARISON */
+.arrow{
+    color:var(--blue);
+    font-size:25px;
+    font-weight:bold;
+}
+
+/* =========================
+   TABLAS
+========================= */
 
 .compare{
     width:100%;
     border-collapse:collapse;
     margin:25px 0;
     background:white;
-    overflow:hidden;
     border-radius:10px;
+    overflow:hidden;
 }
 
 .compare th,
@@ -386,88 +425,73 @@ header{
     color:#42576b;
 }
 
-/* FLOW */
+/* =========================
+   TARJETAS
+========================= */
 
-.flow{
-    display:flex;
-    align-items:stretch;
-    gap:10px;
-    flex-wrap:wrap;
+.cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:17px;
     margin:25px 0;
 }
 
-.flow-item{
-    flex:1 1 150px;
-    background:#f4f8fc;
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:18px;
-    text-align:center;
-    font-weight:bold;
-    color:var(--navy);
-}
-
-.arrow{
-    display:flex;
-    align-items:center;
-    color:var(--blue);
-    font-size:25px;
-}
-
-/* KEY CONCEPTS */
-
-.key-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-    margin-top:25px;
-}
-
-.key{
-    background:white;
+.card{
+    background:#f7fafc;
     border:1px solid var(--line);
     border-radius:12px;
     padding:22px;
 }
 
-.key strong{
-    display:block;
+.card h4{
     color:var(--navy);
+    font-size:17px;
     margin-bottom:8px;
 }
 
-/* FINAL */
+.card p{
+    margin:0;
+    font-size:15px;
+}
+
+/* =========================
+   CIERRE
+========================= */
 
 .final-box{
     background:linear-gradient(135deg,var(--navy),var(--navy2));
     color:white;
-    border-radius:18px;
-    padding:40px;
-    margin-top:20px;
+    border-radius:19px;
+    padding:42px;
     box-shadow:var(--shadow);
 }
 
 .final-box h2{
-    font-size:30px;
+    font-size:31px;
     margin-bottom:18px;
 }
 
-.final-box p{
-    color:#dbe7f1;
-    margin-bottom:15px;
+.final-box p,
+.final-box li{
+    color:#dce8f2;
 }
 
 .final-box ul{
-    margin-left:22px;
-    color:#dbe7f1;
+    margin:15px 0 0 23px;
 }
 
-/* FOOTER */
+.final-box li{
+    margin-bottom:9px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:var(--navy);
     color:#b9c9d8;
-    margin-top:30px;
+    margin-top:35px;
 }
 
 .footer-main{
@@ -504,27 +528,29 @@ footer{
 }
 
 .footer-bottom{
-    border-top:1px solid rgba(255,255,255,.1);
     max-width:1100px;
     margin:auto;
+    border-top:1px solid rgba(255,255,255,.1);
     padding:20px 24px;
     font-size:13px;
     color:#8fa4b7;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:850px){
 
     .navbar{
-        align-items:flex-start;
         flex-direction:column;
+        align-items:flex-start;
         padding:14px 18px;
     }
 
     .nav{
-        width:100%;
         justify-content:flex-start;
+        width:100%;
     }
 
     .hero{
@@ -536,10 +562,10 @@ footer{
     }
 
     .topic-content{
-        padding:23px 20px 27px;
+        padding:24px 20px 28px;
     }
 
-    .key-grid{
+    .cards{
         grid-template-columns:1fr;
     }
 
@@ -561,24 +587,25 @@ footer{
     }
 
     .hero h1{
-        font-size:40px;
+        font-size:41px;
     }
 
     .hero p{
         font-size:17px;
     }
 
+    .intro h2{
+        font-size:29px;
+    }
+
     .section-heading h2{
         font-size:25px;
     }
 
-    .section-heading{
-        gap:12px;
-    }
-
     .number{
-        min-width:44px;
-        height:44px;
+        width:45px;
+        min-width:45px;
+        height:45px;
     }
 
     .topic summary{
@@ -587,7 +614,7 @@ footer{
     }
 
     .topic-content{
-        padding:20px 17px 24px;
+        padding:21px 17px 26px;
     }
 
     .compare{
@@ -600,7 +627,7 @@ footer{
     }
 
     .final-box{
-        padding:28px 22px;
+        padding:29px 22px;
     }
 }
 </style>
@@ -608,1914 +635,2827 @@ footer{
 
 <body>
 
-<header>
-    <div class="navbar">
+<!-- =========================
+     HEADER
+========================= -->
 
-        <a href="index.html" class="brand">
-            <img src="logo.png" alt="Foguista Uruguay">
-            <span>Foguista Uruguay</span>
+<header>
+
+<div class="navbar">
+
+    <a href="index.html" class="brand">
+
+        <img src="logo.png" alt="Foguista Uruguay">
+
+        <span>Foguista Uruguay</span>
+
+    </a>
+
+    <nav class="nav">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="generadores.html" class="active">
+            Generadores
         </a>
 
-        <nav class="nav">
-            <a href="index.html">Inicio</a>
-            <a href="generadores.html" class="active">Generadores</a>
-            <a href="seguridad.html">Seguridad</a>
-            <a href="estudio.html">Estudio</a>
-            <a href="normativa.html">Normativa</a>
-            <a href="app.html">App</a>
-        </nav>
+        <a href="seguridad.html">
+            Seguridad
+        </a>
 
-    </div>
+        <a href="estudio.html">
+            Estudio
+        </a>
+
+        <a href="normativa.html">
+            Normativa
+        </a>
+
+        <a href="app.html">
+            App
+        </a>
+
+    </nav>
+
+</div>
+
 </header>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <span class="eyebrow">FORMACIÓN TÉCNICA · FOGUISTA URUGUAY</span>
+    <span class="eyebrow">
+        FORMACIÓN TÉCNICA · FOGUISTA URUGUAY
+    </span>
 
-        <h1>Generadores de vapor</h1>
+    <h1>
+        Generadores de vapor
+    </h1>
 
-        <p>
-            Comprender cómo está construido un generador de vapor,
-            cómo circulan sus diferentes fluidos y de qué manera
-            se transforma el calor en vapor es la base para entender
-            realmente su funcionamiento.
-        </p>
+    <p>
+        Entender cómo está construido un generador, cómo circulan
+        el agua y los gases y cómo se transforma la energía térmica
+        en vapor es la base para comprender realmente su funcionamiento.
+    </p>
 
-    </div>
+</div>
 
 </section>
 
 
+<!-- =========================
+     CONTENIDO
+========================= -->
+
 <main class="container">
 
-    <section class="intro">
 
-        <h2>Comprender antes de memorizar</h2>
+<section class="intro">
+
+    <h2>
+        No memorices la caldera: entendela
+    </h2>
+
+    <p>
+        Un generador de vapor es un sistema formado por diferentes
+        elementos que trabajan juntos. Hay una fuente de energía,
+        una zona donde se libera el calor, superficies que permiten
+        transferirlo y circuitos por los que circulan agua, vapor
+        y gases calientes.
+    </p>
+
+    <br>
+
+    <p>
+        La mejor manera de estudiarlo es seguir el recorrido de la
+        energía. El combustible libera calor mediante la combustión;
+        ese calor pasa a través de las superficies del generador y
+        finalmente es absorbido por el agua, que cambia de estado
+        y se convierte en vapor.
+    </p>
+
+</section>
+
+
+<div class="source">
+
+    <strong>Material de estudio</strong><br>
+
+    Esta sección tiene finalidad educativa y está dedicada
+    exclusivamente a comprender los generadores de vapor,
+    sus tipos, construcción, componentes y funcionamiento.
+    No sustituye la normativa vigente ni la documentación
+    específica de cada fabricante.
+
+</div>
+
+
+
+<!-- =========================================================
+     01
+========================================================= -->
+
+<section class="section">
+
+<div class="section-heading">
+
+    <div class="number">01</div>
+
+    <div>
+
+        <h2>
+            Principios de funcionamiento
+        </h2>
 
         <p>
-            Un generador de vapor es mucho más que un recipiente que
-            contiene agua. Es un sistema en el que intervienen
-            combustión, transferencia de calor, circulación de agua,
-            circulación de gases y producción de vapor.
+            Primero entendamos qué hace realmente un generador.
         </p>
-
-        <br>
-
-        <p>
-            Para estudiarlo correctamente conviene seguir el recorrido
-            de la energía y de los distintos fluidos. Primero aparece
-            el calor generado por la combustión; después ese calor se
-            transmite a las superficies metálicas; el agua recibe esa
-            energía y finalmente se transforma en vapor.
-        </p>
-
-    </section>
-
-
-    <div class="source">
-
-        <strong>Material de estudio</strong><br>
-
-        Esta sección presenta conceptos técnicos con finalidad educativa.
-        Puede utilizarse como material de apoyo para el estudio del
-        funcionamiento y construcción de generadores de vapor.
-        No sustituye reglamentos, normas técnicas ni documentación
-        específica del fabricante.
 
     </div>
 
+</div>
 
 
-    <!-- 01 -->
+<details class="topic">
 
-    <section class="section">
+<summary>
+    ¿Qué es un generador de vapor?
+</summary>
 
-        <div class="section-heading">
+<div class="topic-content">
 
-            <div class="number">01</div>
+<p>
+    Un generador de vapor es un equipo destinado a producir vapor
+    mediante la transferencia de energía térmica al agua.
+    Para conseguirlo, reúne una serie de elementos que permiten
+    generar calor, transmitirlo y conducir el agua y el vapor
+    por los recorridos correspondientes.
+</p>
 
-            <div>
-                <h2>Principios de funcionamiento</h2>
-                <p>La idea fundamental detrás de cualquier generador de vapor.</p>
-            </div>
+<p>
+    Cuando hablamos de un generador alimentado con combustible,
+    el proceso comienza con la combustión. El combustible libera
+    energía química en forma de calor. Ese calor es transportado
+    principalmente por los gases calientes y posteriormente
+    transferido a las superficies que están en contacto con el agua.
+</p>
 
-        </div>
+<h3>
+    La idea fundamental
+</h3>
 
+<p>
+    No debemos imaginar al generador simplemente como un recipiente
+    lleno de agua al que se le aplica fuego. En realidad es un
+    sistema de transferencia de energía cuidadosamente organizado.
+</p>
 
-        <details class="topic">
+<div class="flow">
 
-            <summary>¿Qué es un generador de vapor?</summary>
+    <div class="flow-item">
+        Combustible
+    </div>
 
-            <div class="topic-content">
+    <div class="arrow">→</div>
 
-                <p>
-                    Un generador de vapor es un equipo diseñado para
-                    transferir energía térmica al agua con el objetivo
-                    de producir vapor en las condiciones requeridas
-                    por un determinado proceso.
-                </p>
+    <div class="flow-item">
+        Combustión
+    </div>
 
-                <p>
-                    Para conseguirlo, el generador reúne diferentes
-                    elementos que trabajan conjuntamente: una fuente
-                    de calor, superficies de transferencia, un circuito
-                    de agua y un espacio destinado a la formación y
-                    acumulación del vapor.
-                </p>
+    <div class="arrow">→</div>
 
-                <h3>La idea más sencilla</h3>
+    <div class="flow-item">
+        Calor
+    </div>
 
-                <p>
-                    Podemos imaginarlo como una gran máquina de
-                    transferencia de energía:
-                </p>
+    <div class="arrow">→</div>
 
-                <div class="flow">
+    <div class="flow-item">
+        Agua
+    </div>
 
-                    <div class="flow-item">Combustible</div>
+    <div class="arrow">→</div>
 
-                    <div class="arrow">→</div>
+    <div class="flow-item">
+        Vapor
+    </div>
 
-                    <div class="flow-item">Combustión</div>
+</div>
 
-                    <div class="arrow">→</div>
+<div class="info-box">
 
-                    <div class="flow-item">Calor</div>
+<strong>Para entenderlo</strong>
 
-                    <div class="arrow">→</div>
+El generador no crea energía. Su función es
+<b>aprovechar una fuente de energía y transferirla al agua</b>
+hasta obtener vapor en las condiciones requeridas.
 
-                    <div class="flow-item">Agua</div>
+</div>
 
-                    <div class="arrow">→</div>
+<div class="exam-box">
 
-                    <div class="flow-item">Vapor</div>
+<strong>Clave para el examen</strong>
 
-                </div>
+Si tenés que explicar qué hace un generador de vapor,
+relacioná siempre tres ideas:
 
-                <div class="info-box">
+<b>fuente de calor → transferencia de energía → producción de vapor.</b>
 
-                    <strong>Para entenderlo</strong>
+</div>
 
-                    El generador no “crea” energía. Aprovecha la energía
-                    liberada por el combustible y la transfiere al agua
-                    hasta convertirla en vapor.
+</div>
 
-                </div>
+</details>
 
-                <div class="exam">
 
-                    <strong>Clave para el examen</strong>
+<details class="topic">
 
-                    Si te preguntan cuál es la función fundamental de un
-                    generador de vapor, la respuesta debe relacionar
-                    <b>energía térmica + agua + producción de vapor</b>.
+<summary>
+    ¿Cómo se transforma la energía?
+</summary>
 
-                </div>
+<div class="topic-content">
 
-            </div>
+<p>
+    El combustible contiene energía química. Durante la combustión,
+    esa energía se libera principalmente en forma de energía térmica.
+</p>
 
-        </details>
+<p>
+    Los gases producidos por la combustión alcanzan temperaturas
+    elevadas y transportan una cantidad importante de energía.
+    El generador está construido para aprovechar esa energía
+    antes de que los gases abandonen el equipo.
+</p>
 
+<p>
+    Las superficies metálicas reciben el calor y lo transmiten
+    hacia el agua. El agua, al recibir energía, aumenta su
+    temperatura y finalmente puede pasar al estado de vapor.
+</p>
 
-        <details class="topic">
+<h3>
+    La cadena energética completa
+</h3>
 
-            <summary>Transformación de la energía</summary>
+<div class="flow">
 
-            <div class="topic-content">
+    <div class="flow-item">
+        Energía química
+    </div>
 
-                <p>
-                    En un generador que utiliza combustible, la energía
-                    química almacenada en ese combustible se libera
-                    mediante la combustión.
-                </p>
+    <div class="arrow">→</div>
 
-                <p>
-                    Esa energía aparece principalmente como energía
-                    térmica en los gases calientes producidos por la
-                    combustión. El generador aprovecha esa energía
-                    mediante sus superficies de calefacción.
-                </p>
+    <div class="flow-item">
+        Combustión
+    </div>
 
-                <h3>La cadena energética</h3>
+    <div class="arrow">→</div>
 
-                <div class="flow">
+    <div class="flow-item">
+        Energía térmica
+    </div>
 
-                    <div class="flow-item">Energía química</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Combustión</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Energía térmica</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Agua caliente</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Vapor</div>
+    <div class="arrow">→</div>
 
-                </div>
+    <div class="flow-item">
+        Agua
+    </div>
 
-                <p>
-                    Una parte del calor se transmite por radiación desde
-                    la llama y las zonas calientes hacia las superficies.
-                    Otra parte se transmite por convección mediante el
-                    movimiento de los gases calientes.
-                </p>
+    <div class="arrow">→</div>
 
-                <div class="info-box">
+    <div class="flow-item">
+        Vapor
+    </div>
 
-                    <strong>Para entenderlo</strong>
+</div>
 
-                    Cuando estudiás un generador, preguntate siempre:
-                    <b>¿de dónde viene el calor, por dónde viaja y dónde
-                    termina?</b>
+<p>
+    Esta secuencia permite comprender por qué todos los componentes
+    están relacionados. El hogar genera las condiciones para liberar
+    energía; los tubos y superficies permiten transferirla; el
+    circuito de agua recibe esa energía y el circuito de vapor
+    permite utilizar el producto obtenido.
+</p>
 
-                    Esa pregunta permite comprender gran parte del equipo.
+<div class="example-box">
 
-                </div>
+<strong>Ejemplo para imaginarlo</strong>
 
-            </div>
+Pensá que el generador es una máquina que recibe energía
+por un extremo y entrega vapor por el otro.
 
-        </details>
+Entre ambos puntos existe todo un recorrido:
+combustión, gases calientes, superficies de transferencia,
+agua caliente, vaporización y vapor.
 
+</div>
 
-        <details class="topic">
+</div>
 
-            <summary>Calor sensible y calor latente</summary>
+</details>
 
-            <div class="topic-content">
 
-                <p>
-                    Para comprender cómo el agua llega a convertirse en
-                    vapor es necesario diferenciar dos conceptos:
-                    <b>calor sensible</b> y <b>calor latente</b>.
-                </p>
+<details class="topic">
 
-                <h3>Calor sensible</h3>
+<summary>
+    Calor sensible y calor latente
+</summary>
 
-                <p>
-                    Es la energía que provoca un aumento de temperatura
-                    del agua sin producir todavía el cambio de estado.
-                </p>
+<div class="topic-content">
 
-                <p>
-                    Por ejemplo, cuando el agua pasa de una temperatura
-                    baja a una temperatura cercana a la de saturación,
-                    estamos aportando calor sensible.
-                </p>
+<p>
+    Para comprender la producción de vapor hay que diferenciar
+    dos etapas del calentamiento del agua.
+</p>
 
-                <h3>Calor latente</h3>
+<h3>
+    Calor sensible
+</h3>
 
-                <p>
-                    Una vez alcanzadas las condiciones de vaporización,
-                    el aporte de energía permite producir el cambio de
-                    estado de líquido a vapor.
-                </p>
+<p>
+    Es la energía que recibe el agua y que produce un aumento
+    de su temperatura sin que todavía se produzca el cambio
+    de estado.
+</p>
 
-                <div class="example">
+<p>
+    Por ejemplo, cuando el agua pasa progresivamente de una
+    temperatura baja a una temperatura cercana a las condiciones
+    de vaporización, estamos hablando de un proceso donde el
+    aporte de energía produce principalmente aumento de temperatura.
+</p>
 
-                    <strong>Ejemplo práctico</strong>
+<h3>
+    Calor latente
+</h3>
 
-                    Pensá en una olla con agua. Primero el agua aumenta
-                    su temperatura. Después llega el momento en que
-                    comienza a hervir y una parte del agua se transforma
-                    en vapor.
+<p>
+    Cuando el agua alcanza las condiciones correspondientes a
+    la vaporización, el aporte de energía participa en el cambio
+    de estado de líquido a vapor.
+</p>
 
-                    En el generador ocurre el mismo principio, aunque
-                    bajo condiciones de presión, temperatura y diseño
-                    mucho más controladas.
+<div class="example-box">
 
-                </div>
+<strong>Ejemplo sencillo</strong>
 
-                <div class="exam">
+Imaginá una olla con agua.
 
-                    <strong>Clave para el examen</strong>
+Primero la temperatura del agua aumenta.
 
-                    <b>Calor sensible → cambia la temperatura.</b><br>
-                    <b>Calor latente → participa en el cambio de estado.</b>
+Después llega al punto en que comienza a hervir y el agua
+empieza a transformarse en vapor.
 
-                </div>
+El principio físico es el mismo en un generador, aunque
+las condiciones de presión y temperatura sean diferentes.
 
-            </div>
+</div>
 
-        </details>
+<div class="exam-box">
 
+<strong>Para recordar</strong>
 
-        <details class="topic">
+<b>Calor sensible → aumenta la temperatura.</b>
 
-            <summary>Presión y temperatura del vapor</summary>
+<br><br>
 
-            <div class="topic-content">
+<b>Calor latente → participa en el cambio de estado.</b>
 
-                <p>
-                    Presión y temperatura están estrechamente relacionadas
-                    cuando hablamos de vapor de agua.
-                </p>
+</div>
 
-                <p>
-                    Para una determinada presión existe una temperatura
-                    de saturación correspondiente. Si el agua alcanza
-                    esa condición y continúa recibiendo energía, puede
-                    producirse la vaporización.
-                </p>
+</div>
 
-                <h3>¿Por qué importa la presión?</h3>
+</details>
 
-                <p>
-                    Porque la presión de operación determina, entre otras
-                    cosas, las condiciones en las que el agua puede pasar
-                    al estado de vapor.
-                </p>
 
-                <div class="info-box">
+<details class="topic">
 
-                    <strong>Para entenderlo</strong>
+<summary>
+    Presión y temperatura
+</summary>
 
-                    No conviene estudiar presión y temperatura como dos
-                    datos aislados. En un generador de vapor forman parte
-                    de un mismo fenómeno termodinámico.
+<div class="topic-content">
 
-                </div>
+<p>
+    Presión y temperatura son dos variables fundamentales cuando
+    estudiamos agua y vapor.
+</p>
 
-            </div>
+<p>
+    Para una determinada presión existe una temperatura de
+    saturación correspondiente. Cuando el agua alcanza esa
+    condición puede comenzar el proceso de vaporización.
+</p>
 
-        </details>
+<p>
+    Por eso no conviene estudiar la presión y la temperatura
+    como conceptos independientes. Forman parte del mismo
+    comportamiento termodinámico del agua y del vapor.
+</p>
 
+<div class="info-box">
 
-        <details class="topic">
+<strong>Para entenderlo</strong>
 
-            <summary>Vapor saturado y vapor sobrecalentado</summary>
+Cuando la presión cambia, también cambia la temperatura
+de saturación correspondiente.
 
-            <div class="topic-content">
+Por eso, en el estudio de un generador, presión y temperatura
+deben analizarse conjuntamente.
 
-                <p>
-                    El vapor producido por un generador puede encontrarse
-                    en diferentes condiciones.
-                </p>
+</div>
 
-                <h3>Vapor saturado</h3>
+</div>
 
-                <p>
-                    Es el vapor que se encuentra asociado a las condiciones
-                    de saturación correspondientes a su presión. En estas
-                    condiciones existe una relación definida entre presión
-                    y temperatura.
-                </p>
+</details>
 
-                <h3>Vapor sobrecalentado</h3>
 
-                <p>
-                    Si al vapor saturado se le continúa aportando calor
-                    sin aumentar su contenido de humedad por condensación,
-                    su temperatura puede elevarse por encima de la
-                    temperatura de saturación correspondiente a esa
-                    presión.
-                </p>
+<details class="topic">
 
-                <div class="exam">
+<summary>
+    Vapor saturado y vapor sobrecalentado
+</summary>
 
-                    <strong>Clave para el examen</strong>
+<div class="topic-content">
 
-                    <b>Vapor saturado:</b> se encuentra en condiciones de
-                    saturación.<br><br>
+<p>
+    El vapor puede encontrarse en diferentes condiciones.
+    Dos conceptos fundamentales son el vapor saturado y
+    el vapor sobrecalentado.
+</p>
 
-                    <b>Vapor sobrecalentado:</b> está a una temperatura
-                    superior a la de saturación correspondiente a su
-                    presión.
+<h3>
+    Vapor saturado
+</h3>
 
-                </div>
+<p>
+    Es el vapor que se encuentra en las condiciones de saturación
+    correspondientes a su presión.
+</p>
 
-            </div>
+<p>
+    En estas condiciones existe una relación determinada entre
+    presión y temperatura.
+</p>
 
-        </details>
+<h3>
+    Vapor sobrecalentado
+</h3>
 
-    </section>
+<p>
+    Si al vapor se le continúa aportando calor después de alcanzar
+    la condición de vapor saturado, puede elevarse su temperatura
+    por encima de la temperatura de saturación correspondiente
+    a su presión.
+</p>
 
+<div class="flow">
 
+    <div class="flow-item">
+        Agua
+    </div>
 
-    <!-- 02 -->
+    <div class="arrow">→</div>
 
-    <section class="section">
+    <div class="flow-item">
+        Vapor saturado
+    </div>
 
-        <div class="section-heading">
+    <div class="arrow">→</div>
 
-            <div class="number">02</div>
+    <div class="flow-item">
+        Sobrecalentamiento
+    </div>
 
-            <div>
-                <h2>Tipos de generadores</h2>
-                <p>La diferencia fundamental está en qué fluido circula por los tubos.</p>
-            </div>
+    <div class="arrow">→</div>
 
-        </div>
+    <div class="flow-item">
+        Vapor sobrecalentado
+    </div>
 
+</div>
 
-        <details class="topic">
+<div class="exam-box">
 
-            <summary>Generadores pirotubulares</summary>
+<strong>Clave para el examen</strong>
 
-            <div class="topic-content">
+El vapor sobrecalentado no es simplemente “vapor más caliente”.
+Es vapor cuya temperatura está por encima de la temperatura
+de saturación correspondiente a su presión.
 
-                <p>
-                    En un generador pirotubular, los gases calientes
-                    producidos por la combustión circulan por el interior
-                    de los tubos, mientras que el agua se encuentra
-                    alrededor de esos tubos.
-                </p>
+</div>
 
-                <div class="info-box">
+</div>
 
-                    <strong>La regla que no tenés que olvidar</strong>
+</details>
 
-                    <b>PIROTUBULAR → el FUEGO y los GASES van por los TUBOS.</b>
+</section>
 
-                </div>
 
-                <h3>¿Cómo funciona?</h3>
 
-                <p>
-                    El combustible se quema en el hogar. Los gases calientes
-                    ingresan al sistema de tubos y recorren diferentes
-                    pasos dentro del generador.
-                </p>
+<!-- =========================================================
+     02
+========================================================= -->
 
-                <p>
-                    Mientras los gases circulan por el interior de los
-                    tubos, el agua rodea exteriormente esas superficies.
-                    El calor atraviesa la pared metálica del tubo y pasa
-                    hacia el agua.
-                </p>
+<section class="section">
 
-                <h3>Recorrido simplificado</h3>
+<div class="section-heading">
 
-                <div class="flow">
+    <div class="number">02</div>
 
-                    <div class="flow-item">Combustión</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Gases calientes</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Tubos</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Agua</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Vapor</div>
+    <div>
 
-                </div>
+        <h2>
+            Tipos de generadores
+        </h2>
 
-                <h3>¿Por qué se utilizan?</h3>
+        <p>
+            La diferencia fundamental está en qué fluido circula por los tubos.
+        </p>
 
-                <p>
-                    Su construcción puede resultar robusta y relativamente
-                    sencilla, y han tenido una amplia utilización en
-                    instalaciones donde se requiere producción de vapor
-                    en condiciones compatibles con este tipo de diseño.
-                </p>
+    </div>
 
-                <h3>Una forma fácil de imaginarla</h3>
+</div>
 
-                <p>
-                    Imaginá una gran cantidad de tubos atravesando un
-                    recipiente lleno de agua. Por dentro de esos tubos
-                    pasan gases muy calientes. El calor de esos gases
-                    atraviesa las paredes metálicas y calienta el agua
-                    que está alrededor.
-                </p>
 
-                <div class="example">
+<details class="topic">
 
-                    <strong>Ejemplo mental</strong>
+<summary>
+    Generadores pirotubulares
+</summary>
 
-                    Si pudieras cortar una pirotubular y mirar su interior,
-                    verías que el agua está alrededor de los tubos y que
-                    el recorrido de los gases se produce dentro de ellos.
+<div class="topic-content">
 
-                </div>
+<p>
+    En un generador pirotubular, los gases calientes producidos
+    por la combustión circulan por el interior de los tubos,
+    mientras que el agua se encuentra alrededor de ellos.
+</p>
 
-                <div class="exam">
+<div class="info-box">
 
-                    <strong>Clave para el examen</strong>
+<strong>La regla fundamental</strong>
 
-                    Si la pregunta dice:
+<b>PIROTUBULAR = gases calientes dentro de los tubos.</b>
 
-                    <br><br>
+</div>
 
-                    <b>“¿Qué circula por el interior de los tubos en una
-                    caldera pirotubular?”</b>
+<h3>
+    ¿Cómo comienza el proceso?
+</h3>
 
-                    <br><br>
+<p>
+    El combustible llega al sistema de combustión y se quema
+    en el hogar. Como consecuencia se producen gases calientes
+    que contienen una gran cantidad de energía térmica.
+</p>
 
-                    La respuesta es:
+<p>
+    Estos gases son conducidos por el interior de los tubos.
+    Mientras recorren esos tubos, transfieren parte de su calor
+    a las paredes metálicas.
+</p>
 
-                    <b>los gases calientes de la combustión.</b>
+<p>
+    Del otro lado de la pared se encuentra el agua. El calor
+    atraviesa el material metálico y es absorbido por el agua.
+    De esta manera, la energía que originalmente estaba en
+    el combustible termina siendo utilizada para producir vapor.
+</p>
 
-                </div>
+<h3>
+    ¿Por qué se llaman pirotubulares?
+</h3>
 
-            </div>
+<p>
+    El nombre ayuda a recordar su funcionamiento:
+    “piro” hace referencia al fuego o al calor de la combustión,
+    mientras que “tubular” hace referencia a los tubos.
+</p>
 
-        </details>
+<p>
+    Lo importante no es memorizar solamente el nombre, sino
+    asociarlo inmediatamente con el recorrido de los gases.
+</p>
 
+<h3>
+    El recorrido de los gases
+</h3>
 
-        <details class="topic">
+<div class="flow">
 
-            <summary>Generadores acuotubulares</summary>
+    <div class="flow-item">
+        Hogar
+    </div>
 
-            <div class="topic-content">
+    <div class="arrow">→</div>
 
-                <p>
-                    En un generador acuotubular ocurre lo contrario:
-                    <b>el agua circula por el interior de los tubos</b>
-                    mientras que los gases calientes circulan por fuera
-                    de ellos.
-                </p>
+    <div class="flow-item">
+        Gases calientes
+    </div>
 
-                <div class="info-box">
+    <div class="arrow">→</div>
 
-                    <strong>La regla que no tenés que olvidar</strong>
+    <div class="flow-item">
+        Tubos
+    </div>
 
-                    <b>ACUOTUBULAR → el AGUA circula por los TUBOS.</b>
+    <div class="arrow">→</div>
 
-                </div>
+    <div class="flow-item">
+        Transferencia de calor
+    </div>
 
-                <h3>¿Cómo funciona?</h3>
+    <div class="arrow">→</div>
 
-                <p>
-                    El agua ingresa al circuito formado por tubos y
-                    colectores. El calor generado en el hogar y transportado
-                    por los gases se transmite desde el exterior hacia las
-                    paredes de esos tubos.
-                </p>
+    <div class="flow-item">
+        Salida de gases
+    </div>
 
-                <p>
-                    El agua que circula por el interior recibe energía,
-                    aumenta su temperatura y puede producir una mezcla
-                    de agua y vapor que continúa circulando hacia las
-                    zonas destinadas a la separación y acumulación del
-                    vapor.
-                </p>
+</div>
 
-                <h3>Recorrido simplificado</h3>
+<h3>
+    ¿Qué ocurre con el agua?
+</h3>
 
-                <div class="flow">
+<p>
+    El agua rodea exteriormente los tubos que contienen los gases
+    calientes. A medida que recibe energía, aumenta su temperatura
+    y finalmente se produce la vaporización.
+</p>
 
-                    <div class="flow-item">Combustión</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Gases calientes</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Exterior de tubos</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Agua dentro de tubos</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item">Vapor</div>
+<p>
+    Por lo tanto, dentro de una misma pared metálica tenemos
+    dos zonas con funciones diferentes: de un lado circulan
+    gases calientes y del otro está el agua que recibe el calor.
+</p>
 
-                </div>
+<div class="example-box">
 
-                <h3>¿Por qué son importantes?</h3>
+<strong>Una imagen mental que ayuda mucho</strong>
 
-                <p>
-                    El diseño acuotubular permite desarrollar configuraciones
-                    apropiadas para grandes capacidades de generación y
-                    condiciones de operación exigentes.
-                </p>
+Imaginá un recipiente lleno de agua atravesado por muchos tubos.
 
-                <p>
-                    Su construcción puede incorporar numerosos tubos,
-                    colectores, tambores y superficies especializadas,
-                    formando circuitos complejos de circulación.
-                </p>
+Por dentro de los tubos circulan gases muy calientes.
 
-                <div class="example">
+El agua está alrededor.
 
-                    <strong>Para visualizarlo</strong>
+El calor atraviesa la pared del tubo y pasa al agua.
 
-                    En una acuotubular podés imaginar cientos de pequeños
-                    conductos por donde circula el agua mientras el calor
-                    de los gases rodea exteriormente esos conductos.
+Eso es, simplificando, el principio de una pirotubular.
 
-                </div>
+</div>
 
-                <div class="exam">
+<div class="exam-box">
 
-                    <strong>Clave para el examen</strong>
+<strong>Clave para el examen</strong>
 
-                    <b>Acuotubular → agua dentro de los tubos.</b><br>
-                    <b>Pirotubular → gases dentro de los tubos.</b>
+Si te preguntan:
 
-                </div>
+<br><br>
 
-            </div>
+<b>¿Qué circula por dentro de los tubos de una pirotubular?</b>
 
-        </details>
+<br><br>
 
+<b>Los gases calientes producidos por la combustión.</b>
 
-        <details class="topic">
+</div>
 
-            <summary>Pirotubular vs. acuotubular</summary>
+</div>
 
-            <div class="topic-content">
+</details>
 
-                <p>
-                    Esta es una de las comparaciones más importantes para
-                    entender los distintos diseños.
-                </p>
 
-                <table class="compare">
+<details class="topic">
 
-                    <tr>
-                        <th>Característica</th>
-                        <th>Pirotubular</th>
-                        <th>Acuotubular</th>
-                    </tr>
+<summary>
+    Generadores acuotubulares
+</summary>
 
-                    <tr>
-                        <td>Interior de los tubos</td>
-                        <td>Gases calientes</td>
-                        <td>Agua o mezcla agua-vapor</td>
-                    </tr>
+<div class="topic-content">
 
-                    <tr>
-                        <td>Agua</td>
-                        <td>Rodea los tubos</td>
-                        <td>Circula dentro de tubos</td>
-                    </tr>
+<p>
+    En un generador acuotubular ocurre lo contrario.
+    El agua circula por el interior de los tubos y los gases
+    calientes circulan por el exterior de ellos.
+</p>
 
-                    <tr>
-                        <td>Gases</td>
-                        <td>Circulan por tubos</td>
-                        <td>Circulan alrededor de tubos</td>
-                    </tr>
+<div class="info-box">
 
-                    <tr>
-                        <td>Construcción</td>
-                        <td>Generalmente más compacta y sencilla</td>
-                        <td>Puede ser más compleja</td>
-                    </tr>
+<strong>La regla fundamental</strong>
 
-                    <tr>
-                        <td>Aplicación típica</td>
-                        <td>Producciones y condiciones compatibles con su diseño</td>
-                        <td>Grandes capacidades y condiciones exigentes</td>
-                    </tr>
+<b>ACUOTUBULAR = agua dentro de los tubos.</b>
 
-                </table>
+</div>
 
-                <div class="info-box">
+<h3>
+    ¿Cómo funciona?
+</h3>
 
-                    <strong>Truco para memorizar</strong>
+<p>
+    El agua entra al circuito formado por tubos y otros elementos
+    asociados. Al mismo tiempo, en el hogar se produce la combustión
+    y se generan gases a elevada temperatura.
+</p>
 
-                    <b>PIRO = fuego/gases.</b><br>
-                    <b>ACUO = agua.</b>
+<p>
+    Los gases calientes rodean exteriormente las superficies de
+    los tubos. El calor atraviesa las paredes metálicas y llega
+    al agua que circula por su interior.
+</p>
 
-                    No memorices solamente las palabras: relacioná cada
-                    nombre con el fluido que circula por los tubos.
+<p>
+    A medida que el agua recibe energía, aumenta su temperatura
+    y puede comenzar a formarse vapor. La circulación del fluido
+    permite transportar el agua y la mezcla agua-vapor por las
+    diferentes partes del circuito.
+</p>
 
-                </div>
+<h3>
+    ¿Por qué utilizar tubos llenos de agua?
+</h3>
 
-            </div>
+<p>
+    Una gran cantidad de tubos permite disponer de una superficie
+    considerable para transferir calor. Además, el diseño puede
+    organizar circuitos complejos de circulación de agua y vapor.
+</p>
 
-        </details>
+<p>
+    Esto hace que las acuotubulares sean especialmente importantes
+    en instalaciones donde se necesitan grandes capacidades de
+    generación y condiciones de operación exigentes.
+</p>
 
+<h3>
+    El recorrido simplificado
+</h3>
 
-        <details class="topic">
+<div class="flow">
 
-            <summary>Hogar y cámara de combustión</summary>
+    <div class="flow-item">
+        Hogar
+    </div>
 
-            <div class="topic-content">
+    <div class="arrow">→</div>
 
-                <p>
-                    El hogar es la zona donde se produce la combustión
-                    y donde se libera gran parte de la energía térmica
-                    que posteriormente será aprovechada para generar
-                    vapor.
-                </p>
+    <div class="flow-item">
+        Gases calientes
+    </div>
 
-                <p>
-                    Su diseño debe permitir que el combustible y el aire
-                    se mezclen adecuadamente y que la combustión tenga
-                    lugar de forma apropiada.
-                </p>
+    <div class="arrow">→</div>
 
-                <h3>¿Qué ocurre allí?</h3>
+    <div class="flow-item">
+        Exterior de tubos
+    </div>
 
-                <ul>
+    <div class="arrow">→</div>
 
-                    <li>Ingresa combustible.</li>
+    <div class="flow-item">
+        Agua dentro de tubos
+    </div>
 
-                    <li>Ingresa el aire necesario para la combustión.</li>
+    <div class="arrow">→</div>
 
-                    <li>Se produce la reacción de combustión.</li>
+    <div class="flow-item">
+        Vapor
+    </div>
 
-                    <li>Se libera energía térmica.</li>
+</div>
 
-                    <li>Se forman gases calientes.</li>
+<div class="example-box">
 
-                    <li>Los gases comienzan su recorrido por el generador.</li>
+<strong>Para visualizarla</strong>
 
-                </ul>
+Imaginá muchos pequeños conductos por donde circula agua,
+rodeados exteriormente por gases calientes.
 
-                <div class="info-box">
+El calor atraviesa las paredes de esos conductos y llega al agua.
 
-                    <strong>Para entenderlo</strong>
+Esa imagen mental permite diferenciar rápidamente una acuotubular
+de una pirotubular.
 
-                    El hogar es el punto donde comienza el recorrido
-                    térmico del generador. Desde allí los gases transportan
-                    energía hacia las distintas superficies de calefacción.
+</div>
 
-                </div>
+<div class="exam-box">
 
-            </div>
+<strong>Clave para el examen</strong>
 
-        </details>
+<b>Acuotubular → agua dentro de los tubos.</b>
 
+<br>
 
-        <details class="topic">
+<b>Pirotubular → gases dentro de los tubos.</b>
 
-            <summary>Superficies de calefacción</summary>
+</div>
 
-            <div class="topic-content">
+</div>
 
-                <p>
-                    Las superficies de calefacción son aquellas superficies
-                    metálicas a través de las cuales se transmite calor
-                    desde los gases calientes hacia el agua o el vapor.
-                </p>
+</details>
 
-                <p>
-                    Cuanto mejor se aproveche la energía térmica disponible,
-                    mayor será el aprovechamiento del combustible.
-                </p>
 
-                <h3>¿De qué depende la transferencia?</h3>
+<details class="topic">
 
-                <ul>
+<summary>
+    Diferencias entre pirotubulares y acuotubulares
+</summary>
 
-                    <li>Diferencia de temperatura.</li>
+<div class="topic-content">
 
-                    <li>Superficie disponible.</li>
+<p>
+    La diferencia principal parece sencilla, pero de ella se
+    desprenden muchas características constructivas y de funcionamiento.
+</p>
 
-                    <li>Características del material.</li>
+<table class="compare">
 
-                    <li>Velocidad y condiciones de circulación.</li>
+<tr>
 
-                    <li>Estado de limpieza de las superficies.</li>
+<th>
+Característica
+</th>
 
-                </ul>
+<th>
+Pirotubular
+</th>
 
-                <div class="warning">
+<th>
+Acuotubular
+</th>
 
-                    <strong>Un concepto importante</strong>
+</tr>
 
-                    Una superficie cubierta por depósitos o suciedad puede
-                    dificultar la transferencia de calor. Por eso el estado
-                    de las superficies influye directamente en el
-                    aprovechamiento térmico del generador.
+<tr>
 
-                </div>
+<td>
+Fluido dentro de los tubos
+</td>
 
-            </div>
+<td>
+Gases calientes
+</td>
 
-        </details>
+<td>
+Agua o mezcla agua-vapor
+</td>
 
-    </section>
+</tr>
 
+<tr>
 
+<td>
+Ubicación del agua
+</td>
 
-    <!-- 03 -->
+<td>
+Alrededor de los tubos
+</td>
 
-    <section class="section">
+<td>
+Dentro de los tubos
+</td>
 
-        <div class="section-heading">
+</tr>
 
-            <div class="number">03</div>
+<tr>
 
-            <div>
-                <h2>Componentes principales</h2>
-                <p>Conocer cada componente permite entender el recorrido completo.</p>
-            </div>
+<td>
+Ubicación de los gases
+</td>
 
-        </div>
+<td>
+Dentro de los tubos
+</td>
 
+<td>
+Alrededor de los tubos
+</td>
 
-        <details class="topic">
+</tr>
 
-            <summary>Recipiente, cuerpo y superficies internas</summary>
+<tr>
 
-            <div class="topic-content">
+<td>
+Construcción
+</td>
 
-                <p>
-                    El cuerpo del generador contiene y organiza las
-                    diferentes zonas donde se encuentran el agua y el
-                    vapor, además de las superficies a través de las
-                    cuales se produce la transferencia térmica.
-                </p>
+<td>
+Generalmente más simple y compacta</td>
 
-                <p>
-                    Dependiendo del diseño, puede tratarse de una envolvente
-                    con tubos internos, un sistema de tubos y colectores,
-                    tambores o diferentes combinaciones constructivas.
-                </p>
+<td>
+Puede presentar circuitos de tubos y colectores más complejos
+</td>
 
-                <div class="info-box">
+</tr>
 
-                    <strong>Idea fundamental</strong>
+<tr>
 
-                    El diseño del recipiente no es arbitrario. Su geometría
-                    está relacionada con la presión, la circulación de los
-                    fluidos, la transferencia de calor y la capacidad de
-                    generación.
+<td>
+Aplicaciones
+</td>
 
-                </div>
+<td>
+Amplio uso en instalaciones compatibles con sus características
+</td>
 
-            </div>
+<td>
+Muy utilizadas cuando se requieren grandes capacidades y condiciones exigentes
+</td>
 
-        </details>
+</tr>
 
+</table>
 
-        <details class="topic">
+<div class="compare-box">
 
-            <summary>Tubos</summary>
+<strong>La pregunta que resuelve todo</strong>
 
-            <div class="topic-content">
+Cuando veas un generador que no conocés, no empieces
+por su forma exterior.
 
-                <p>
-                    Los tubos tienen una importancia fundamental porque
-                    permiten aumentar considerablemente la superficie
-                    disponible para transferir calor.
-                </p>
+Preguntá primero:
 
-                <p>
-                    Según el tipo de generador, por ellos pueden circular
-                    gases calientes o agua.
-                </p>
+<b>¿Qué fluido está circulando dentro de los tubos?</b>
 
-                <h3>En una pirotubular</h3>
+Si son gases → pirotubular.
 
-                <p>
-                    Los tubos forman parte del recorrido de los gases
-                    calientes.
-                </p>
+Si es agua → acuotubular.
 
-                <h3>En una acuotubular</h3>
+</div>
 
-                <p>
-                    Los tubos forman parte del circuito de agua y vapor.
-                </p>
+</div>
 
-                <div class="exam">
+</details>
 
-                    <strong>Clave para el examen</strong>
 
-                    Nunca respondas simplemente “los tubos sirven para
-                    transportar”. Primero preguntate:
+<details class="topic">
 
-                    <br><br>
+<summary>
+    ¿Cómo identificar rápidamente el tipo de generador?
+</summary>
 
-                    <b>¿Qué tipo de generador estoy analizando y qué fluido
-                    circula dentro de esos tubos?</b>
+<div class="topic-content">
 
-                </div>
+<p>
+    Una buena forma de identificar un generador es observar
+    conceptualmente el recorrido de sus fluidos.
+</p>
 
-            </div>
+<h3>
+    Paso 1: buscar los tubos
+</h3>
 
-        </details>
+<p>
+    Identificá las superficies tubulares que participan de la
+    transferencia de calor.
+</p>
 
+<h3>
+    Paso 2: preguntarse qué circula por ellos
+</h3>
 
-        <details class="topic">
+<p>
+    Si por dentro pasan los gases de combustión, estamos ante
+    el principio de una pirotubular.
+</p>
 
-            <summary>Domos y colectores</summary>
+<p>
+    Si por dentro circula el agua o la mezcla agua-vapor,
+    estamos ante el principio de una acuotubular.
+</p>
 
-            <div class="topic-content">
+<h3>
+    Paso 3: seguir el calor
+</h3>
 
-                <p>
-                    En determinados diseños, especialmente en generadores
-                    acuotubulares, aparecen tambores o domos y colectores
-                    que permiten organizar la circulación del agua y del
-                    vapor.
-                </p>
+<p>
+    Finalmente preguntate cómo pasa la energía desde los gases
+    hasta el agua. Esa observación permite entender la función
+    de las superficies de calefacción.
+</p>
 
-                <h3>¿Qué función cumplen?</h3>
+<div class="exam-box">
 
-                <p>
-                    Los colectores permiten reunir o distribuir el flujo
-                    entre diferentes grupos de tubos.
-                </p>
+<strong>Método para estudiar</strong>
 
-                <p>
-                    Los tambores o domos pueden intervenir en la separación,
-                    acumulación y distribución de agua y vapor dependiendo
-                    del diseño del generador.
-                </p>
+No memorices:
 
-                <div class="info-box">
+“Pirotubular = esto”.
 
-                    <strong>Para entenderlo</strong>
+Memorizá la relación:
 
-                    Pensá en los colectores como “distribuidores” y
-                    “recolectores” del circuito. Permiten que muchos tubos
-                    funcionen como parte de un sistema organizado.
+<b>PIRO → gases dentro → agua afuera.</b>
 
-                </div>
+<b>ACUO → agua dentro → gases afuera.</b>
 
-            </div>
+</div>
 
-        </details>
+</div>
 
+</details>
 
-        <details class="topic">
+</section>
 
-            <summary>Sobrecalentador</summary>
 
-            <div class="topic-content">
 
-                <p>
-                    El sobrecalentador es una superficie diseñada para
-                    recibir vapor y agregarle energía térmica adicional,
-                    elevando su temperatura por encima de la temperatura
-                    de saturación correspondiente a su presión.
-                </p>
+<!-- =========================================================
+     03
+========================================================= -->
 
-                <p>
-                    En lugar de utilizar el calor únicamente para producir
-                    vapor, se aprovecha parte de la energía de los gases
-                    calientes para aumentar la temperatura del vapor ya
-                    formado.
-                </p>
+<section class="section">
 
-                <div class="flow">
+<div class="section-heading">
 
-                    <div class="flow-item">Vapor saturado</div>
+    <div class="number">03</div>
 
-                    <div class="arrow">→</div>
+    <div>
 
-                    <div class="flow-item">Sobrecalentador</div>
+        <h2>
+            Construcción y componentes
+        </h2>
 
-                    <div class="arrow">→</div>
+        <p>
+            Cada componente tiene una función dentro del recorrido de la energía.
+        </p>
 
-                    <div class="flow-item">Vapor sobrecalentado</div>
+    </div>
 
-                </div>
+</div>
 
-                <div class="exam">
 
-                    <strong>Clave para el examen</strong>
+<details class="topic">
 
-                    El sobrecalentador <b>no tiene como función principal
-                    producir el agua líquida ni iniciar la vaporización</b>.
-                    Su función es aportar calor al vapor para aumentar su
-                    temperatura por encima de la condición de saturación.
+<summary>
+    Hogar o cámara de combustión
+</summary>
 
-                </div>
+<div class="topic-content">
 
-            </div>
+<p>
+    El hogar es la zona donde se desarrolla la combustión.
+    Allí se encuentran el combustible y el aire en condiciones
+    que permiten liberar la energía química del combustible.
+</p>
 
-        </details>
+<p>
+    Como resultado se genera una llama y una corriente de gases
+    calientes que posteriormente recorrerán las superficies
+    de calefacción.
+</p>
 
+<h3>
+    El hogar es el comienzo del recorrido térmico
+</h3>
 
-        <details class="topic">
+<p>
+    Si seguimos la energía desde su origen, el hogar es el primer
+    punto fundamental del generador.
+</p>
 
-            <summary>Economizador</summary>
+<div class="flow">
 
-            <div class="topic-content">
+<div class="flow-item">
+Combustible
+</div>
 
-                <p>
-                    El economizador aprovecha parte del calor que todavía
-                    poseen los gases de combustión antes de abandonar el
-                    generador.
-                </p>
+<div class="arrow">+</div>
 
-                <p>
-                    Ese calor puede utilizarse para precalentar el agua de
-                    alimentación que posteriormente ingresará al sistema.
-                </p>
+<div class="flow-item">
+Aire
+</div>
 
-                <div class="flow">
+<div class="arrow">→</div>
 
-                    <div class="flow-item">Gases calientes</div>
+<div class="flow-item">
+Combustión
+</div>
 
-                    <div class="arrow">→</div>
+<div class="arrow">→</div>
 
-                    <div class="flow-item">Economizador</div>
+<div class="flow-item">
+Gases calientes
+</div>
 
-                    <div class="arrow">→</div>
+</div>
 
-                    <div class="flow-item">Agua precalentada</div>
+<div class="info-box">
 
-                </div>
+<strong>Para entenderlo</strong>
 
-                <div class="info-box">
+El hogar no está separado del resto del generador.
+Su función está directamente relacionada con las superficies
+de calefacción que reciben posteriormente el calor de los gases.
 
-                    <strong>Para entenderlo</strong>
+</div>
 
-                    La idea del economizador es simple:
+</div>
 
-                    <br><br>
+</details>
 
-                    <b>“Antes de dejar escapar el calor, aprovechemos una
-                    parte de él.”</b>
 
-                </div>
+<details class="topic">
 
-            </div>
+<summary>
+    Tubos y superficies tubulares
+</summary>
 
-        </details>
+<div class="topic-content">
 
+<p>
+    Los tubos permiten construir grandes superficies de transferencia
+    dentro de un volumen relativamente compacto.
+</p>
 
-        <details class="topic">
+<p>
+    La función exacta de esos tubos depende del tipo de generador.
+    En una pirotubular contienen los gases calientes. En una
+    acuotubular contienen agua o mezcla agua-vapor.
+</p>
 
-            <summary>Precalentador de aire</summary>
+<h3>
+    ¿Por qué tantos tubos?
+</h3>
 
-            <div class="topic-content">
+<p>
+    Una superficie tubular permite que exista una gran cantidad
+    de área de contacto entre los fluidos y las paredes metálicas.
+    De esta manera se facilita la transferencia de energía térmica.
+</p>
 
-                <p>
-                    Otro posible sistema de recuperación térmica es el
-                    precalentador de aire, que utiliza parte del calor de
-                    los gases para aumentar la temperatura del aire que
-                    será utilizado posteriormente en la combustión.
-                </p>
+<div class="example-box">
 
-                <p>
-                    De esta manera se puede mejorar el aprovechamiento
-                    energético del sistema al recuperar una parte del
-                    calor que de otro modo se perdería con los gases.
-                </p>
+<strong>Una comparación sencilla</strong>
 
-                <div class="example">
+Si tuvieras que calentar agua con una sola superficie pequeña,
+el intercambio sería limitado.
 
-                    <strong>Idea práctica</strong>
+Si aumentás mucho la superficie disponible para transferir calor,
+podés aprovechar mejor la energía disponible.
 
-                    Si los gases de salida todavía tienen una temperatura
-                    importante, parte de esa energía puede utilizarse
-                    nuevamente dentro del propio proceso.
+Los tubos permiten precisamente aumentar esa superficie.
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-        </details>
+</details>
 
-    </section>
 
+<details class="topic">
 
+<summary>
+    Cuerpo o envolvente del generador
+</summary>
 
-    <!-- 04 -->
+<div class="topic-content">
 
-    <section class="section">
+<p>
+    El cuerpo o envolvente forma parte de la estructura que contiene
+    y organiza los diferentes espacios internos del generador.
+</p>
 
-        <div class="section-heading">
+<p>
+    En una pirotubular, por ejemplo, el cuerpo puede contener el
+    volumen de agua y vapor mientras en su interior se encuentran
+    los tubos que conducen los gases.
+</p>
 
-            <div class="number">04</div>
+<p>
+    La forma y dimensiones del conjunto están relacionadas con
+    el diseño del equipo, su capacidad, las condiciones de presión
+    y la superficie necesaria para realizar la transferencia térmica.
+</p>
 
-            <div>
-                <h2>Combustión y transferencia de calor</h2>
-                <p>De la llama a la pared metálica y de la pared al agua.</p>
-            </div>
+<div class="info-box">
 
-        </div>
+<strong>Idea importante</strong>
 
+El cuerpo no debe verse solamente como una “carcasa”.
+Forma parte del sistema que permite contener el fluido y soportar
+las condiciones para las que fue diseñado.
 
-        <details class="topic">
+</div>
 
-            <summary>Combustibles</summary>
+</div>
 
-            <div class="topic-content">
+</details>
 
-                <p>
-                    El combustible constituye la fuente de energía química
-                    que será transformada en energía térmica mediante la
-                    combustión.
-                </p>
 
-                <p>
-                    Los generadores pueden diseñarse para trabajar con
-                    diferentes combustibles según su construcción y el
-                    sistema de combustión empleado.
-                </p>
+<details class="topic">
 
-                <h3>Lo importante para comprender el generador</h3>
+<summary>
+    Domos o tambores
+</summary>
 
-                <p>
-                    Independientemente del combustible utilizado, el
-                    objetivo es liberar su energía de forma que pueda ser
-                    aprovechada por las superficies de calefacción.
-                </p>
+<div class="topic-content">
 
-                <div class="info-box">
+<p>
+    En determinados diseños, especialmente en generadores
+    acuotubulares, encontramos tambores o domos que forman parte
+    del circuito de agua y vapor.
+</p>
 
-                    <strong>Para entenderlo</strong>
+<p>
+    Estos elementos pueden cumplir funciones relacionadas con
+    la acumulación, distribución y separación de agua y vapor,
+    dependiendo de la configuración del generador.
+</p>
 
-                    El combustible no calienta directamente el agua.
-                    Primero libera energía mediante la combustión; luego
-                    esa energía es transferida hacia el agua.
+<h3>
+    ¿Por qué son necesarios?
+</h3>
 
-                </div>
+<p>
+    Cuando existen numerosos tubos trabajando simultáneamente,
+    es necesario organizar cómo entra el agua, cómo se distribuye
+    por los circuitos y cómo se reúne la mezcla de agua y vapor.
+</p>
 
-            </div>
+<div class="example-box">
 
-        </details>
+<strong>Para imaginarlo</strong>
 
+Pensá en cientos de tubos que forman parte de una misma red.
 
-        <details class="topic">
+Los colectores y tambores permiten que esa red no sea un conjunto
+desordenado de tubos, sino un circuito hidráulico organizado.
 
-            <summary>Aire de combustión</summary>
+</div>
 
-            <div class="topic-content">
+</div>
 
-                <p>
-                    La combustión necesita oxígeno. En un generador
-                    convencional ese oxígeno se obtiene del aire.
-                </p>
+</details>
 
-                <p>
-                    Por eso el sistema de combustión debe proporcionar
-                    una cantidad adecuada de aire y lograr una mezcla
-                    apropiada con el combustible.
-                </p>
 
-                <h3>¿Qué ocurre si la mezcla no es adecuada?</h3>
+<details class="topic">
 
-                <p>
-                    Una combustión deficiente puede provocar una menor
-                    utilización de la energía del combustible y modificar
-                    las características de los gases producidos.
-                </p>
+<summary>
+    Colectores
+</summary>
 
-                <div class="exam">
+<div class="topic-content">
 
-                    <strong>Clave para el examen</strong>
+<p>
+    Los colectores son elementos que permiten reunir o distribuir
+    el fluido entre diferentes grupos de tubos.
+</p>
 
-                    Combustible y aire deben encontrarse en condiciones
-                    apropiadas para que la combustión libere eficazmente
-                    la energía disponible.
+<p>
+    En un generador acuotubular pueden ser fundamentales para
+    organizar la circulación del agua y de la mezcla agua-vapor.
+</p>
 
-                </div>
+<p>
+    Su función debe entenderse siempre dentro del circuito:
+    un colector puede recibir flujo desde varios tubos o distribuir
+    flujo hacia ellos.
+</p>
 
-            </div>
+<div class="info-box">
 
-        </details>
+<strong>Una forma sencilla de recordarlo</strong>
 
+Un colector funciona como una especie de “punto de encuentro”
+del circuito.
 
-        <details class="topic">
+Puede <b>recibir</b> flujo o <b>distribuirlo</b>, según su ubicación
+y función dentro del diseño.
 
-            <summary>Radiación, conducción y convección</summary>
+</div>
 
-            <div class="topic-content">
+</div>
 
-                <p>
-                    El calor puede transferirse mediante diferentes
-                    mecanismos. En un generador de vapor, estos mecanismos
-                    aparecen combinados.
-                </p>
+</details>
 
-                <h3>Radiación</h3>
 
-                <p>
-                    La llama y las superficies a alta temperatura emiten
-                    energía térmica que puede alcanzar las superficies
-                    expuestas.
-                </p>
+<details class="topic">
 
-                <h3>Convección</h3>
+<summary>
+    Sobrecalentador
+</summary>
 
-                <p>
-                    Los gases calientes en movimiento transfieren calor
-                    cuando circulan junto a las superficies metálicas.
-                </p>
+<div class="topic-content">
 
-                <h3>Conducción</h3>
+<p>
+    El sobrecalentador es una superficie de transferencia destinada
+    a recibir vapor y aportarle energía térmica adicional.
+</p>
 
-                <p>
-                    Una vez que el calor llega a la pared metálica, se
-                    transmite a través del propio material de la superficie.
-                </p>
+<p>
+    Su objetivo es elevar la temperatura del vapor por encima de
+    la temperatura de saturación correspondiente a su presión.
+</p>
 
-                <div class="flow">
+<h3>
+    ¿Dónde está dentro del proceso?
+</h3>
 
-                    <div class="flow-item">Gases calientes</div>
+<p>
+    Primero se produce el vapor. Después, si el diseño del generador
+    incorpora un sobrecalentador, ese vapor puede atravesar una
+    nueva superficie donde recibe calor adicional.
+</p>
 
-                    <div class="arrow">→</div>
+<div class="flow">
 
-                    <div class="flow-item">Pared metálica</div>
+<div class="flow-item">
+Vapor saturado
+</div>
 
-                    <div class="arrow">→</div>
+<div class="arrow">→</div>
 
-                    <div class="flow-item">Agua</div>
+<div class="flow-item">
+Superficie del sobrecalentador
+</div>
 
-                    <div class="arrow">→</div>
+<div class="arrow">→</div>
 
-                    <div class="flow-item">Vapor</div>
+<div class="flow-item">
+Más energía térmica
+</div>
 
-                </div>
+<div class="arrow">→</div>
 
-                <div class="info-box">
+<div class="flow-item">
+Vapor sobrecalentado
+</div>
 
-                    <strong>La película completa</strong>
+</div>
 
-                    No hay que imaginar la transferencia como si el calor
-                    “saltara” directamente desde la llama hasta el agua.
-                    Existe una cadena de transferencia a través de las
-                    superficies del generador.
+<div class="exam-box">
 
-                </div>
+<strong>Clave para el examen</strong>
 
-            </div>
+El sobrecalentador trabaja sobre el <b>vapor</b>.
+Su función es aportar calor adicional y elevar su temperatura
+por encima de la condición de saturación correspondiente.
 
-        </details>
+</div>
 
+</div>
 
-        <details class="topic">
+</details>
 
-            <summary>Recorrido de los gases</summary>
 
-            <div class="topic-content">
+<details class="topic">
 
-                <p>
-                    Después de producirse la combustión, los gases calientes
-                    recorren diferentes zonas del generador entregando
-                    progresivamente parte de su energía térmica.
-                </p>
+<summary>
+    Economizador
+</summary>
 
-                <p>
-                    El diseño busca aprovechar el calor antes de que los
-                    gases abandonen definitivamente el equipo.
-                </p>
+<div class="topic-content">
 
-                <div class="flow">
+<p>
+    El economizador es una superficie que permite aprovechar
+    parte del calor que todavía poseen los gases antes de salir
+    del generador.
+</p>
 
-                    <div class="flow-item">Hogar</div>
+<p>
+    Ese calor se utiliza para precalentar el agua de alimentación.
+    De esta manera, el agua entra al proceso con una temperatura
+    mayor que si ingresara directamente desde una condición más fría.
+</p>
 
-                    <div class="arrow">→</div>
+<h3>
+    ¿Por qué mejora el aprovechamiento?
+</h3>
 
-                    <div class="flow-item">Superficies de calefacción</div>
+<p>
+    Porque una parte de la energía que estaba contenida en los
+    gases de salida vuelve a aprovecharse dentro del sistema.
+</p>
 
-                    <div class="arrow">→</div>
+<div class="flow">
 
-                    <div class="flow-item">Recuperación de calor</div>
+<div class="flow-item">
+Gases calientes
+</div>
 
-                    <div class="arrow">→</div>
+<div class="arrow">→</div>
 
-                    <div class="flow-item">Salida de gases</div>
+<div class="flow-item">
+Economizador
+</div>
 
-                </div>
+<div class="arrow">→</div>
 
-                <div class="example">
+<div class="flow-item">
+Agua precalentada
+</div>
 
-                    <strong>Para pensarlo</strong>
+</div>
 
-                    Cuanto más calor útil pueda extraerse de los gases
-                    antes de su salida, mayor será el aprovechamiento de
-                    la energía disponible, siempre dentro de las condiciones
-                    apropiadas de diseño y operación.
+<div class="info-box">
 
-                </div>
+<strong>La idea en una frase</strong>
 
-            </div>
+<b>El economizador recupera calor de los gases para calentar
+el agua de alimentación.</b>
 
-        </details>
+</div>
 
-    </section>
+</div>
 
+</details>
 
 
-    <!-- 05 -->
+<details class="topic">
 
-    <section class="section">
+<summary>
+    Precalentador de aire
+</summary>
 
-        <div class="section-heading">
+<div class="topic-content">
 
-            <div class="number">05</div>
+<p>
+    El precalentador de aire aprovecha parte del calor disponible
+    en los gases para aumentar la temperatura del aire destinado
+    a la combustión.
+</p>
 
-            <div>
-                <h2>Agua, circulación y generación de vapor</h2>
-                <p>El agua es el medio que finalmente recibe la energía térmica.</p>
-            </div>
+<p>
+    De esta manera se recupera energía que todavía estaba presente
+    en los gases y se utiliza nuevamente dentro del proceso.
+</p>
 
-        </div>
+<div class="flow">
 
+<div class="flow-item">
+Gases calientes
+</div>
 
-        <details class="topic">
+<div class="arrow">→</div>
 
-            <summary>Agua de alimentación</summary>
+<div class="flow-item">
+Precalentador
+</div>
 
-            <div class="topic-content">
+<div class="arrow">→</div>
 
-                <p>
-                    El agua que ingresa al generador aporta la materia prima
-                    necesaria para producir vapor.
-                </p>
+<div class="flow-item">
+Aire más caliente
+</div>
 
-                <p>
-                    Antes de ingresar al generador, puede haber recorrido
-                    diferentes etapas de acondicionamiento y calentamiento,
-                    dependiendo de la instalación.
-                </p>
+<div class="arrow">→</div>
 
-                <h3>¿Qué ocurre dentro del generador?</h3>
+<div class="flow-item">
+Combustión
+</div>
 
-                <p>
-                    El agua recibe energía de las superficies de calefacción,
-                    aumenta su temperatura y una parte de ella pasa al
-                    estado de vapor.
-                </p>
+</div>
 
-                <div class="flow">
+<div class="compare-box">
 
-                    <div class="flow-item">Agua de alimentación</div>
+<strong>No confundir</strong>
 
-                    <div class="arrow">→</div>
+<b>Economizador → precalienta agua.</b>
 
-                    <div class="flow-item">Calentamiento</div>
+<br>
 
-                    <div class="arrow">→</div>
+<b>Precalentador de aire → precalienta aire.</b>
 
-                    <div class="flow-item">Vaporización</div>
+<br>
 
-                    <div class="arrow">→</div>
+<b>Sobrecalentador → eleva la temperatura del vapor.</b>
 
-                    <div class="flow-item">Vapor</div>
+</div>
 
-                </div>
+</div>
 
-            </div>
+</details>
 
-        </details>
 
+<details class="topic">
 
-        <details class="topic">
+<summary>
+    Chimenea y salida de gases
+</summary>
 
-            <summary>Circulación natural y circulación forzada</summary>
+<div class="topic-content">
 
-            <div class="topic-content">
+<p>
+    Después de atravesar las diferentes superficies del generador,
+    los gases de combustión deben continuar su recorrido hasta
+    abandonar el sistema.
+</p>
 
-                <p>
-                    En los generadores acuotubulares puede ser necesario
-                    mover grandes cantidades de agua a través de complejos
-                    circuitos de tubos.
-                </p>
+<p>
+    La chimenea forma parte del recorrido de salida de los gases.
+    Dependiendo del diseño, pueden existir antes de ella diferentes
+    superficies destinadas a aprovechar el calor restante.
+</p>
 
-                <h3>Circulación natural</h3>
+<h3>
+    El recorrido completo
+</h3>
 
-                <p>
-                    Se basa en las diferencias de densidad que aparecen
-                    entre el agua más fría y la mezcla de agua y vapor más
-                    caliente.
-                </p>
+<div class="flow">
 
-                <p>
-                    El calentamiento modifica la densidad del fluido y
-                    favorece el movimiento dentro del circuito diseñado
-                    para ese propósito.
-                </p>
+<div class="flow-item">
+Combustión
+</div>
 
-                <h3>Circulación forzada</h3>
+<div class="arrow">→</div>
 
-                <p>
-                    En otros diseños, el movimiento del agua se obtiene
-                    mediante medios mecánicos, como bombas, que impulsan
-                    el fluido a través del circuito.
-                </p>
+<div class="flow-item">
+Superficies de calefacción
+</div>
 
-                <div class="info-box">
+<div class="arrow">→</div>
 
-                    <strong>Idea clave</strong>
+<div class="flow-item">
+Recuperación de calor
+</div>
 
-                    La circulación es fundamental porque permite llevar
-                    agua hacia las superficies donde recibe calor y
-                    transportar la mezcla de agua y vapor hacia las zonas
-                    correspondientes del generador.
+<div class="arrow">→</div>
 
-                </div>
+<div class="flow-item">
+Chimenea
+</div>
 
-            </div>
+</div>
 
-        </details>
+<div class="info-box">
 
+<strong>Para entenderlo</strong>
 
-        <details class="topic">
+La salida de gases es el final de un recorrido.
+Antes de abandonar el generador, los gases pueden haber
+entregado una parte importante de su energía térmica a
+diferentes superficies.
 
-            <summary>Formación y separación del vapor</summary>
+</div>
 
-            <div class="topic-content">
+</div>
 
-                <p>
-                    Cuando el agua recibe suficiente energía, comienza
-                    la formación de vapor. En los sistemas diseñados para
-                    ello, el vapor debe separarse adecuadamente del agua
-                    antes de continuar hacia el proceso.
-                </p>
+</details>
 
-                <p>
-                    La calidad del vapor producido depende de múltiples
-                    factores relacionados con el diseño y las condiciones
-                    del generador.
-                </p>
+</section>
 
-                <div class="example">
 
-                    <strong>Una forma de visualizarlo</strong>
 
-                    Imaginá una zona donde llegan agua y burbujas de vapor.
-                    El sistema debe permitir que el vapor siga su recorrido
-                    mientras el agua retorna al circuito correspondiente.
+<!-- =========================================================
+     04
+========================================================= -->
 
-                </div>
+<section class="section">
 
-            </div>
+<div class="section-heading">
 
-        </details>
+    <div class="number">04</div>
 
+    <div>
 
-        <details class="topic">
+        <h2>
+            Combustión y transferencia de calor
+        </h2>
 
-            <summary>Agua, vapor y gases: tres recorridos diferentes</summary>
+        <p>
+            Cómo pasa la energía desde el combustible hasta el agua.
+        </p>
 
-            <div class="topic-content">
+    </div>
 
-                <p>
-                    Una de las mejores formas de entender un generador es
-                    separar mentalmente los tres recorridos principales.
-                </p>
+</div>
 
-                <h3>Recorrido del combustible</h3>
 
-                <p>
-                    El combustible llega al sistema de combustión y libera
-                    su energía mediante la combustión.
-                </p>
+<details class="topic">
 
-                <h3>Recorrido de los gases</h3>
+<summary>
+    Combustión
+</summary>
 
-                <p>
-                    Los productos calientes de la combustión atraviesan
-                    las superficies de calefacción y entregan energía.
-                </p>
+<div class="topic-content">
 
-                <h3>Recorrido del agua y vapor</h3>
+<p>
+    La combustión es el proceso mediante el cual el combustible
+    reacciona con el oxígeno y libera energía térmica.
+</p>
 
-                <p>
-                    El agua recibe la energía térmica, se calienta,
-                    se vaporiza y el vapor continúa hacia la utilización
-                    correspondiente.
-                </p>
+<p>
+    En un generador, esa energía representa el punto de partida
+    del proceso que finalmente permitirá producir vapor.
+</p>
 
-                <div class="flow">
+<p>
+    La calidad de la combustión tiene una relación directa con
+    el aprovechamiento de la energía disponible en el combustible.
+</p>
 
-                    <div class="flow-item">Combustible<br>↓<br>Combustión</div>
+<div class="info-box">
 
-                    <div class="flow-item">Gases<br>↓<br>Calor</div>
+<strong>Para entenderlo</strong>
 
-                    <div class="flow-item">Agua<br>↓<br>Vaporización</div>
+El combustible contiene la energía, pero esa energía no llega
+directamente al agua.
 
-                    <div class="flow-item">Vapor<br>↓<br>Proceso</div>
+Primero debe liberarse mediante la combustión y después
+transferirse a través de las superficies del generador.
 
-                </div>
+</div>
 
-                <div class="exam">
+</div>
 
-                    <strong>Clave para el examen</strong>
+</details>
 
-                    Si lográs explicar estos tres recorridos sin
-                    confundirte, ya tenés una base sólida para comprender
-                    el funcionamiento general de un generador de vapor.
 
-                </div>
+<details class="topic">
 
-            </div>
+<summary>
+    Aire de combustión
+</summary>
 
-        </details>
+<div class="topic-content">
 
-    </section>
+<p>
+    Para que exista combustión es necesario disponer de oxígeno.
+    En los sistemas convencionales este oxígeno se obtiene del aire.
+</p>
 
+<p>
+    Por eso el sistema de combustión necesita proporcionar aire
+    suficiente y lograr una mezcla adecuada con el combustible.
+</p>
 
+<h3>
+    ¿Por qué es importante?
+</h3>
 
-    <!-- 06 -->
+<p>
+    Porque el proceso de combustión determina la cantidad de
+    energía liberada y las características de los gases calientes
+    que posteriormente recorrerán el generador.
+</p>
 
-    <section class="section">
+<div class="exam-box">
 
-        <div class="section-heading">
+<strong>Concepto fundamental</strong>
 
-            <div class="number">06</div>
+El aire no es un elemento secundario.
 
-            <div>
-                <h2>Aprovechamiento de la energía</h2>
-                <p>Cómo intenta el generador aprovechar el calor disponible.</p>
-            </div>
+<b>Combustible + aire + condiciones adecuadas de combustión
+→ liberación de energía térmica.</b>
 
-        </div>
+</div>
 
+</div>
 
-        <details class="topic">
+</details>
 
-            <summary>Eficiencia del generador</summary>
 
-            <div class="topic-content">
+<details class="topic">
 
-                <p>
-                    La eficiencia expresa qué proporción de la energía
-                    disponible en el combustible termina siendo aprovechada
-                    de manera útil en el proceso de generación.
-                </p>
+<summary>
+    Radiación, convección y conducción
+</summary>
 
-                <p>
-                    No toda la energía liberada durante la combustión
-                    puede convertirse en energía útil del vapor. Existen
-                    pérdidas asociadas a los gases de salida, radiación,
-                    convección hacia el ambiente y otros fenómenos.
-                </p>
+<div class="topic-content">
 
-                <div class="info-box">
+<p>
+    La transferencia de calor dentro de un generador no ocurre
+    mediante un único mecanismo. Los diferentes mecanismos
+    pueden actuar conjuntamente.
+</p>
 
-                    <strong>Para entenderlo</strong>
+<h3>
+    Radiación
+</h3>
 
-                    Un generador eficiente no es simplemente aquel que
-                    “produce mucho vapor”. Es aquel que aprovecha de forma
-                    adecuada la energía disponible para obtener el resultado
-                    requerido.
+<p>
+    La llama y las superficies a elevada temperatura emiten
+    energía térmica que puede ser absorbida por otras superficies.
+</p>
 
-                </div>
+<h3>
+    Convección
+</h3>
 
-            </div>
+<p>
+    Los gases calientes que circulan junto a una superficie
+    transfieren energía térmica hacia ella.
+</p>
 
-        </details>
+<h3>
+    Conducción
+</h3>
 
+<p>
+    Una vez que el calor llega a la pared metálica, se transmite
+    a través del material hasta alcanzar la superficie del otro lado.
+</p>
 
-        <details class="topic">
+<div class="flow">
 
-            <summary>Pérdidas de calor</summary>
+<div class="flow-item">
+Gases calientes
+</div>
 
-            <div class="topic-content">
+<div class="arrow">→</div>
 
-                <p>
-                    Parte de la energía termina abandonando el sistema sin
-                    convertirse directamente en energía útil del vapor.
-                </p>
+<div class="flow-item">
+Pared metálica
+</div>
 
-                <h3>Algunas fuentes de pérdida</h3>
+<div class="arrow">→</div>
 
-                <ul>
+<div class="flow-item">
+Agua
+</div>
 
-                    <li>Calor que permanece en los gases de salida.</li>
+<div class="arrow">→</div>
 
-                    <li>Pérdidas hacia el ambiente.</li>
+<div class="flow-item">
+Vapor
+</div>
 
-                    <li>Combustión que no aprovecha completamente la energía disponible.</li>
+</div>
 
-                    <li>Pérdidas asociadas al propio funcionamiento del sistema.</li>
+<div class="info-box">
 
-                </ul>
+<strong>La película completa</strong>
 
-                <p>
-                    Por eso el diseño del generador incorpora superficies
-                    de transferencia y sistemas de recuperación que buscan
-                    aprovechar una mayor cantidad de la energía liberada.
-                </p>
+No pienses que el calor “salta” directamente de la llama al agua.
 
-            </div>
+Existe un recorrido de transferencia:
 
-        </details>
+<b>gases → superficie metálica → agua → vapor.</b>
 
+</div>
 
-        <details class="topic">
+</div>
 
-            <summary>Economizador, precalentador y recuperación de calor</summary>
+</details>
 
-            <div class="topic-content">
 
-                <p>
-                    Los sistemas de recuperación térmica tienen una idea
-                    común: aprovechar energía que todavía está disponible
-                    en los gases calientes.
-                </p>
+<details class="topic">
 
-                <div class="key-grid">
+<summary>
+    Superficies de calefacción
+</summary>
 
-                    <div class="key">
+<div class="topic-content">
 
-                        <strong>Economizador</strong>
+<p>
+    Las superficies de calefacción son las zonas del generador
+    mediante las cuales se produce el intercambio térmico entre
+    los gases calientes y el fluido que recibe el calor.
+</p>
 
-                        Aprovecha calor de los gases para precalentar el
-                        agua de alimentación.
+<p>
+    Pueden estar formadas por tubos, paredes, bancos tubulares
+    u otras configuraciones según el diseño del generador.
+</p>
 
-                    </div>
+<h3>
+    ¿Qué hace que una superficie transfiera calor?
+</h3>
 
-                    <div class="key">
+<p>
+    La transferencia depende de factores como la diferencia de
+    temperatura, el área disponible, las propiedades del material
+    y las condiciones de circulación de los fluidos.
+</p>
 
-                        <strong>Precalentador de aire</strong>
+<p>
+    Por eso el diseño de un generador busca disponer de suficiente
+    superficie para aprovechar la energía térmica disponible.
+</p>
 
-                        Aprovecha calor para aumentar la temperatura del
-                        aire destinado a la combustión.
+<div class="example-box">
 
-                    </div>
+<strong>Una forma de visualizarlo</strong>
 
-                    <div class="key">
+Cuanto mayor sea la superficie correctamente aprovechada para
+el intercambio térmico, mayor puede ser la capacidad del equipo
+para transferir energía entre los gases y el agua, siempre de
+acuerdo con su diseño.
 
-                        <strong>Sobrecalentador</strong>
+</div>
 
-                        Utiliza energía térmica para elevar la temperatura
-                        del vapor por encima de la condición de saturación.
+</div>
 
-                    </div>
+</details>
 
-                    <div class="key">
+</section>
 
-                        <strong>Superficies de calefacción</strong>
 
-                        Permiten transferir energía térmica desde los gases
-                        hacia el agua y el vapor.
 
-                    </div>
+<!-- =========================================================
+     05
+========================================================= -->
 
-                </div>
+<section class="section">
 
-            </div>
+<div class="section-heading">
 
-        </details>
+    <div class="number">05</div>
 
-    </section>
+    <div>
 
+        <h2>
+            Agua y circulación
+        </h2>
 
+        <p>
+            El agua recorre el generador mientras recibe la energía necesaria para vaporizarse.
+        </p>
 
-    <!-- 07 -->
+    </div>
 
-    <section class="section">
+</div>
 
-        <div class="section-heading">
 
-            <div class="number">07</div>
+<details class="topic">
 
-            <div>
-                <h2>El generador como sistema</h2>
-                <p>La mejor forma de unir todos los conceptos.</p>
-            </div>
+<summary>
+    Agua de alimentación
+</summary>
 
-        </div>
+<div class="topic-content">
 
+<p>
+    El agua de alimentación es el agua que ingresa al sistema
+    para mantener disponible el fluido que posteriormente será
+    calentado y convertido en vapor.
+</p>
 
-        <details class="topic">
+<p>
+    Antes de llegar al generador puede haber atravesado diferentes
+    etapas de tratamiento y calentamiento, dependiendo de las
+    características de la instalación.
+</p>
 
-            <summary>Todo ocurre al mismo tiempo</summary>
+<h3>
+    ¿Qué ocurre después de ingresar?
+</h3>
 
-            <div class="topic-content">
+<p>
+    El agua comienza a recibir energía térmica a través de las
+    superficies de transferencia. Su temperatura aumenta y
+    finalmente se produce la vaporización.
+</p>
 
-                <p>
-                    Una vez que conocemos los componentes podemos dejar
-                    de estudiarlos como elementos aislados y comenzar a
-                    ver el generador como un único sistema.
-                </p>
+<div class="flow">
 
-                <p>
-                    Mientras se produce la combustión, los gases recorren
-                    las superficies de calefacción. Al mismo tiempo,
-                    el agua circula por su circuito, recibe energía,
-                    aumenta su temperatura y produce vapor.
-                </p>
+<div class="flow-item">
+Agua de alimentación
+</div>
 
-                <p>
-                    El vapor continúa su recorrido hacia el proceso,
-                    mientras nuevas cantidades de agua ingresan al sistema
-                    para mantener la producción.
-                </p>
+<div class="arrow">→</div>
 
-                <div class="flow">
+<div class="flow-item">
+Calentamiento
+</div>
 
-                    <div class="flow-item">
-                        Combustible
-                    </div>
+<div class="arrow">→</div>
 
-                    <div class="arrow">→</div>
+<div class="flow-item">
+Vaporización
+</div>
 
-                    <div class="flow-item">
-                        Combustión
-                    </div>
+<div class="arrow">→</div>
 
-                    <div class="arrow">→</div>
+<div class="flow-item">
+Vapor
+</div>
 
-                    <div class="flow-item">
-                        Gases calientes
-                    </div>
+</div>
 
-                    <div class="arrow">→</div>
+</div>
 
-                    <div class="flow-item">
-                        Transferencia de calor
-                    </div>
+</details>
 
-                    <div class="arrow">→</div>
 
-                    <div class="flow-item">
-                        Agua
-                    </div>
+<details class="topic">
 
-                    <div class="arrow">→</div>
+<summary>
+    Circulación natural
+</summary>
 
-                    <div class="flow-item">
-                        Vapor
-                    </div>
+<div class="topic-content">
 
-                </div>
+<p>
+    En determinados generadores, especialmente acuotubulares,
+    el movimiento del agua puede producirse naturalmente debido
+    a diferencias de densidad dentro del circuito.
+</p>
 
-                <div class="info-box">
+<p>
+    El agua que recibe calor modifica su temperatura y, al cambiar
+    su densidad, puede establecerse una circulación dentro de los
+    tubos diseñados para ese propósito.
+</p>
 
-                    <strong>La idea central</strong>
+<p>
+    La formación de vapor también modifica las características
+    de la mezcla y participa en el comportamiento de la circulación.
+</p>
 
-                    Un generador de vapor funciona como una cadena.
-                    Si entendés cómo se conecta cada eslabón con el
-                    siguiente, dejás de depender de la memorización
-                    mecánica.
+<div class="info-box">
 
-                </div>
+<strong>La idea clave</strong>
 
-            </div>
+La circulación natural no significa que el agua “se mueva sola”
+sin una causa.
 
-        </details>
+El movimiento está relacionado con las diferencias de densidad
+generadas por las diferencias de temperatura y por la presencia
+de vapor dentro del circuito.
 
+</div>
 
-        <details class="topic">
+</div>
 
-            <summary>¿Qué diferencia realmente a un generador de otro?</summary>
+</details>
 
-            <div class="topic-content">
 
-                <p>
-                    Los generadores pueden presentar enormes diferencias
-                    de tamaño, geometría y cantidad de componentes, pero
-                    todos parten de una misma necesidad: transferir
-                    energía al agua para producir vapor.
-                </p>
+<details class="topic">
 
-                <p>
-                    Lo que cambia es la manera en que se organiza esa
-                    transferencia.
-                </p>
+<summary>
+    Circulación forzada
+</summary>
 
-                <ul>
+<div class="topic-content">
 
-                    <li>Cómo se produce la combustión.</li>
+<p>
+    En otros diseños, la circulación del agua se obtiene mediante
+    medios mecánicos que impulsan el fluido a través del circuito.
+</p>
 
-                    <li>Por dónde circulan los gases.</li>
+<p>
+    Esto permite controlar y mantener el movimiento del agua
+    independientemente de los mecanismos naturales de circulación.
+</p>
 
-                    <li>Por dónde circula el agua.</li>
+<h3>
+    ¿Por qué puede ser necesaria?
+</h3>
 
-                    <li>Cómo se produce la circulación.</li>
+<p>
+    Cuando los circuitos son complejos o las condiciones de
+    funcionamiento requieren determinadas velocidades de circulación,
+    puede ser conveniente utilizar medios mecánicos para mover
+    el fluido.
+</p>
 
-                    <li>Qué superficies de transferencia se incorporan.</li>
+<div class="compare-box">
 
-                    <li>Cómo se separa y conduce el vapor.</li>
+<strong>Comparación rápida</strong>
 
-                    <li>Cómo se recupera el calor restante.</li>
+<b>Circulación natural:</b> se produce aprovechando diferencias
+de densidad.
 
-                </ul>
+<br><br>
 
-                <div class="exam">
+<b>Circulación forzada:</b> el movimiento se obtiene mediante
+medios mecánicos.
 
-                    <strong>Clave para el examen</strong>
+</div>
 
-                    Cuando te presenten un generador que no conocés,
-                    no intentes memorizar su forma inmediatamente.
+</div>
 
-                    <br><br>
+</details>
 
-                    Primero identificá:
 
-                    <br><br>
+<details class="topic">
 
-                    <b>1. ¿Dónde se produce la combustión?</b><br>
-                    <b>2. ¿Por dónde circulan los gases?</b><br>
-                    <b>3. ¿Por dónde circula el agua?</b><br>
-                    <b>4. ¿Dónde se produce la transferencia de calor?</b><br>
-                    <b>5. ¿Dónde se forma y recoge el vapor?</b>
+<summary>
+    Formación del vapor
+</summary>
 
-                </div>
+<div class="topic-content">
 
-            </div>
+<p>
+    Cuando el agua recibe suficiente energía térmica, su estado
+    comienza a cambiar de líquido a vapor.
+</p>
 
-        </details>
+<p>
+    El proceso de vaporización no consiste simplemente en que
+    “el agua se caliente mucho”. Implica un cambio de estado
+    acompañado por la absorción de energía.
+</p>
 
-    </section>
+<h3>
+    Del agua al vapor
+</h3>
 
+<div class="flow">
 
+<div class="flow-item">
+Agua líquida
+</div>
 
-    <!-- FINAL -->
+<div class="arrow">→</div>
 
-    <section>
+<div class="flow-item">
+Aumento de temperatura
+</div>
 
-        <div class="final-box">
+<div class="arrow">→</div>
 
-            <h2>🧠 Lo esencial para llevarte</h2>
+<div class="flow-item">
+Condiciones de saturación
+</div>
 
-            <p>
-                Si estás estudiando generadores de vapor, intentá poder
-                explicar estas ideas con tus propias palabras:
-            </p>
+<div class="arrow">→</div>
 
-            <ul>
+<div class="flow-item">
+Vaporización
+</div>
 
-                <li>
-                    Un generador transforma la energía disponible en
-                    energía térmica aprovechable para producir vapor.
-                </li>
+<div class="arrow">→</div>
 
-                <li>
-                    La combustión libera la energía del combustible.
-                </li>
+<div class="flow-item">
+Vapor
+</div>
 
-                <li>
-                    Los gases calientes transportan esa energía hacia
-                    las superficies de calefacción.
-                </li>
+</div>
 
-                <li>
-                    El calor atraviesa las superficies metálicas y llega
-                    al agua.
-                </li>
+<div class="example-box">
 
-                <li>
-                    El agua recibe energía, aumenta su temperatura y
-                    finalmente se transforma en vapor.
-                </li>
+<strong>Para entenderlo</strong>
 
-                <li>
-                    En una <b>pirotubular</b>, los gases circulan por
-                    dentro de los tubos.
-                </li>
+La función del generador es proporcionar al agua la energía
+necesaria para llevarla desde su condición inicial hasta
+la condición en la que pueda producirse vapor.
 
-                <li>
-                    En una <b>acuotubular</b>, el agua circula por
-                    dentro de los tubos.
-                </li>
+</div>
 
-                <li>
-                    Sobrecalentadores, economizadores y precalentadores
-                    permiten aprovechar de diferentes maneras la energía
-                    térmica disponible.
-                </li>
+</div>
 
-            </ul>
+</details>
 
-            <br>
 
-            <p>
-                <b>Cuando entendés el recorrido del calor, entendés
-                el generador.</b>
-            </p>
+<details class="topic">
 
-        </div>
+<summary>
+    Separación entre agua y vapor
+</summary>
 
-    </section>
+<div class="topic-content">
+
+<p>
+    Durante la vaporización puede existir una mezcla de agua
+    y vapor. El diseño del generador debe permitir que estos
+    dos estados sean manejados adecuadamente dentro del circuito.
+</p>
+
+<p>
+    En determinados diseños existen espacios, tambores o elementos
+    destinados a facilitar la separación del vapor respecto del
+    agua antes de que el vapor continúe hacia las etapas siguientes.
+</p>
+
+<p>
+    La separación es importante porque el vapor destinado al
+    proceso debe encontrarse en las condiciones correspondientes
+    al diseño del sistema.
+</p>
+
+<div class="info-box">
+
+<strong>Idea central</strong>
+
+Producir vapor no significa simplemente generar burbujas dentro
+del agua. El generador debe conducir, organizar y separar los
+fluidos dentro de un circuito diseñado para producir vapor útil.
+
+</div>
+
+</div>
+
+</details>
+
+</section>
+
+
+
+<!-- =========================================================
+     06
+========================================================= -->
+
+<section class="section">
+
+<div class="section-heading">
+
+    <div class="number">06</div>
+
+    <div>
+
+        <h2>
+            Aprovechamiento de la energía
+        </h2>
+
+        <p>
+            Un buen diseño intenta aprovechar la mayor cantidad posible del calor disponible.
+        </p>
+
+    </div>
+
+</div>
+
+
+<details class="topic">
+
+<summary>
+    Eficiencia del generador
+</summary>
+
+<div class="topic-content">
+
+<p>
+    La eficiencia permite relacionar la energía disponible en
+    el combustible con la energía útil que finalmente se obtiene
+    en forma de vapor.
+</p>
+
+<p>
+    No toda la energía liberada durante la combustión termina
+    siendo aprovechada por el agua. Parte puede abandonar el
+    sistema con los gases, perderse hacia el ambiente o quedar
+    asociada a diferentes pérdidas del proceso.
+</p>
+
+<h3>
+    ¿Qué intenta hacer el diseño?
+</h3>
+
+<p>
+    Aprovechar la mayor cantidad posible de la energía disponible.
+    Por eso se incorporan superficies de calefacción y, en algunos
+    equipos, sistemas de recuperación como economizadores,
+    precalentadores y sobrecalentadores.
+</p>
+
+<div class="info-box">
+
+<strong>Para entenderlo</strong>
+
+Un generador eficiente no significa simplemente
+“un generador que produce mucho vapor”.
+
+Significa aprovechar adecuadamente la energía disponible
+para obtener el resultado útil requerido.
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>
+    Pérdidas de calor
+</summary>
+
+<div class="topic-content">
+
+<p>
+    Una parte de la energía térmica producida por la combustión
+    no termina directamente en el vapor.
+</p>
+
+<h3>
+    ¿Dónde puede ir esa energía?
+</h3>
+
+<ul>
+
+<li>
+Puede permanecer en los gases que abandonan el generador.
+</li>
+
+<li>
+Puede transferirse al ambiente a través de las superficies externas.
+</li>
+
+<li>
+Puede estar asociada a una combustión que no aprovecha
+completamente la energía disponible.
+</li>
+
+<li>
+Puede perderse en diferentes etapas del proceso.
+</li>
+
+</ul>
+
+<p>
+    El diseño térmico busca reducir las pérdidas y aumentar
+    la proporción de energía que termina siendo útil.
+</p>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>
+    Recuperación del calor de los gases
+</summary>
+
+<div class="topic-content">
+
+<p>
+    Los gases que salen del generador todavía pueden contener
+    una cantidad considerable de energía térmica.
+</p>
+
+<p>
+    En lugar de dejar que toda esa energía se pierda, algunos
+    diseños incorporan superficies adicionales que permiten
+    recuperarla.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h4>
+Economizador
+</h4>
+
+<p>
+Utiliza calor de los gases para precalentar el agua de alimentación.
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>
+Precalentador de aire
+</h4>
+
+<p>
+Utiliza calor de los gases para aumentar la temperatura del aire
+de combustión.
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>
+Sobrecalentador
+</h4>
+
+<p>
+Utiliza energía térmica para aumentar la temperatura del vapor.
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>
+Superficies de calefacción
+</h4>
+
+<p>
+Permiten transferir energía desde los gases hacia el agua o vapor.
+</p>
+
+</div>
+
+</div>
+
+<div class="exam-box">
+
+<strong>Para no confundirse</strong>
+
+<b>Economizador → agua.</b><br>
+
+<b>Precalentador → aire.</b><br>
+
+<b>Sobrecalentador → vapor.</b>
+
+</div>
+
+</div>
+
+</details>
+
+</section>
+
+
+
+<!-- =========================================================
+     07
+========================================================= -->
+
+<section class="section">
+
+<div class="section-heading">
+
+    <div class="number">07</div>
+
+    <div>
+
+        <h2>
+            El generador como un solo sistema
+        </h2>
+
+        <p>
+            Ahora unimos todos los conceptos.
+        </p>
+
+    </div>
+
+</div>
+
+
+<details class="topic">
+
+<summary>
+    Seguir el recorrido completo de la energía
+</summary>
+
+<div class="topic-content">
+
+<p>
+    Después de estudiar los componentes por separado, podemos
+    volver a unirlos y observar el generador como un único sistema.
+</p>
+
+<p>
+    El combustible libera energía mediante la combustión.
+    Los gases calientes transportan esa energía por el interior
+    o exterior de las superficies tubulares, según el tipo de
+    generador.
+</p>
+
+<p>
+    Las superficies metálicas reciben ese calor y lo transmiten
+    hacia el agua. El agua aumenta su temperatura, alcanza las
+    condiciones necesarias y comienza a transformarse en vapor.
+</p>
+
+<p>
+    Dependiendo del diseño, el vapor puede posteriormente pasar
+    por superficies adicionales, como un sobrecalentador, antes
+    de continuar hacia su utilización.
+</p>
+
+<div class="flow">
+
+<div class="flow-item">
+Combustible
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-item">
+Combustión
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-item">
+Gases calientes
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-item">
+Transferencia de calor
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-item">
+Agua
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-item">
+Vapor
+</div>
+
+</div>
+
+<div class="info-box">
+
+<strong>Esta es la idea que une todo</strong>
+
+<b>
+Combustible → calor → transferencia → agua → vaporización → vapor.
+</b>
+
+Todos los componentes que estudiamos existen para hacer posible
+ese recorrido.
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>
+    Seguir los tres circuitos
+</summary>
+
+<div class="topic-content">
+
+<p>
+    Otra manera excelente de estudiar un generador es imaginar
+    tres recorridos diferentes funcionando simultáneamente.
+</p>
+
+<h3>
+    Circuito del combustible
+</h3>
+
+<p>
+    El combustible llega al sistema de combustión y libera
+    energía térmica.
+</p>
+
+<h3>
+    Circuito de los gases
+</h3>
+
+<p>
+    Los gases calientes recorren las superficies de transferencia
+    y entregan progresivamente parte de su energía.
+</p>
+
+<h3>
+    Circuito del agua y vapor
+</h3>
+
+<p>
+    El agua recibe energía, aumenta su temperatura, se vaporiza
+    y el vapor continúa su recorrido.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h4>
+Combustible
+</h4>
+
+<p>
+Fuente de energía química.
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>
+Gases
+</h4>
+
+<p>
+Transportan la energía térmica desde la combustión.
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>
+Agua
+</h4>
+
+<p>
+Recibe energía y cambia progresivamente de condición.
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>
+Vapor
+</h4>
+
+<p>
+Es el producto que se obtiene después del proceso de vaporización.
+</p>
+
+</div>
+
+</div>
+
+<div class="exam-box">
+
+<strong>Forma de razonar en un examen</strong>
+
+Si te muestran un componente que no recordás exactamente,
+preguntate:
+
+<br><br>
+
+<b>
+¿Con qué circuito está relacionado?
+</b>
+
+<br><br>
+
+¿Combustible? ¿Gases? ¿Agua? ¿Vapor?
+
+Esa pregunta muchas veces permite deducir su función.
+
+</div>
+
+</div>
+
+</details>
+
+
+<details class="topic">
+
+<summary>
+    Cómo estudiar cualquier generador que no conozcas
+</summary>
+
+<div class="topic-content">
+
+<p>
+    Los generadores pueden tener diseños muy diferentes.
+    Por eso es imposible depender únicamente de memorizar
+    dibujos o formas exteriores.
+</p>
+
+<p>
+    Una estrategia mucho más sólida es analizar cualquier equipo
+    siguiendo siempre las mismas preguntas.
+</p>
+
+<ol>
+
+<li>
+<b>¿Dónde se produce la combustión?</b>
+</li>
+
+<li>
+<b>¿Por dónde circulan los gases calientes?</b>
+</li>
+
+<li>
+<b>¿Por dónde circula el agua?</b>
+</li>
+
+<li>
+<b>¿Dónde están las principales superficies de transferencia?</b>
+</li>
+
+<li>
+<b>¿Dónde se forma el vapor?</b>
+</li>
+
+<li>
+<b>¿Cómo circula el agua y la mezcla agua-vapor?</b>
+</li>
+
+<li>
+<b>¿Existe algún sistema adicional para recuperar calor?</b>
+</li>
+
+</ol>
+
+<div class="example-box">
+
+<strong>El truco está en seguir el calor</strong>
+
+Si podés responder:
+
+<b>
+“el calor nace acá, viaja por acá, atraviesa esta superficie,
+llega al agua y termina produciendo vapor”,
+</b>
+
+entonces ya no estás memorizando el generador.
+
+<b>Lo estás entendiendo.</b>
+
+</div>
+
+</div>
+
+</details>
+
+</section>
+
+
+
+<!-- =========================
+     CIERRE
+========================= -->
+
+<section>
+
+<div class="final-box">
+
+<h2>
+    🧠 Lo que deberías poder explicar
+</h2>
+
+<p>
+    Después de estudiar esta sección, deberías poder explicar
+    con tus propias palabras:
+</p>
+
+<ul>
+
+<li>
+Qué es un generador de vapor y cuál es su función.
+</li>
+
+<li>
+Cómo se transforma la energía del combustible en energía térmica
+aprovechable.
+</li>
+
+<li>
+La diferencia entre calor sensible y calor latente.
+</li>
+
+<li>
+La relación entre presión, temperatura y saturación.
+</li>
+
+<li>
+La diferencia entre vapor saturado y vapor sobrecalentado.
+</li>
+
+<li>
+La diferencia fundamental entre una pirotubular y una acuotubular.
+</li>
+
+<li>
+Qué ocurre dentro del hogar.
+</li>
+
+<li>
+Cuál es la función de los tubos y las superficies de calefacción.
+</li>
+
+<li>
+Qué función cumplen domos, tambores y colectores.
+</li>
+
+<li>
+Qué hace un sobrecalentador.
+</li>
+
+<li>
+Qué hace un economizador.
+</li>
+
+<li>
+Qué hace un precalentador de aire.
+</li>
+
+<li>
+Cómo circulan los gases, el agua y el vapor.
+</li>
+
+<li>
+Cómo se produce la transferencia de calor.
+</li>
+
+<li>
+Cómo se aprovecha la energía térmica disponible.
+</li>
+
+</ul>
+
+<br>
+
+<p>
+    <b>
+        La clave no es recordar una lista de componentes.
+        La clave es poder explicar cómo todos ellos trabajan juntos
+        para transformar energía en vapor.
+    </b>
+</p>
+
+</div>
+
+</section>
 
 </main>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-    <div class="footer-main">
+<div class="footer-main">
 
-        <div>
+<div>
 
-            <div class="footer-brand">
-                Foguista Uruguay
-            </div>
+<div class="footer-brand">
+Foguista Uruguay
+</div>
 
-            <p>
-                Material de apoyo para el estudio y comprensión de los
-                generadores de vapor y la actividad del foguista en Uruguay.
-            </p>
+<p>
+Material de apoyo para el estudio y comprensión de los
+generadores de vapor y la actividad del foguista en Uruguay.
+</p>
 
-        </div>
-
-
-        <div>
-
-            <h3>Navegación</h3>
-
-            <a href="index.html">Inicio</a>
-            <a href="generadores.html">Generadores</a>
-            <a href="seguridad.html">Seguridad</a>
-            <a href="estudio.html">Estudio</a>
-            <a href="normativa.html">Normativa</a>
-            <a href="app.html">App</a>
-
-        </div>
+</div>
 
 
-        <div>
+<div>
 
-            <h3>Contenido</h3>
+<h3>
+Navegación
+</h3>
 
-            <a href="generadores.html">Funcionamiento</a>
-            <a href="generadores.html">Tipos de generadores</a>
-            <a href="generadores.html">Componentes</a>
-            <a href="generadores.html">Combustión</a>
-            <a href="generadores.html">Transferencia de calor</a>
-            <a href="generadores.html">Producción de vapor</a>
+<a href="index.html">
+Inicio
+</a>
 
-        </div>
+<a href="generadores.html">
+Generadores
+</a>
 
-    </div>
+<a href="seguridad.html">
+Seguridad
+</a>
+
+<a href="estudio.html">
+Estudio
+</a>
+
+<a href="normativa.html">
+Normativa
+</a>
+
+<a href="app.html">
+App
+</a>
+
+</div>
 
 
-    <div class="footer-bottom">
+<div>
 
-        © 2026 Foguista Uruguay · Material educativo de apoyo
+<h3>
+Generadores
+</h3>
 
-    </div>
+<a href="generadores.html">
+Funcionamiento
+</a>
+
+<a href="generadores.html">
+Tipos
+</a>
+
+<a href="generadores.html">
+Componentes
+</a>
+
+<a href="generadores.html">
+Combustión
+</a>
+
+<a href="generadores.html">
+Transferencia de calor
+</a>
+
+<a href="generadores.html">
+Agua y vapor
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 Foguista Uruguay · Material educativo de apoyo
+
+</div>
 
 </footer>
 
