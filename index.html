@@ -6,17 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="Foguista Uruguay — Formación, estudio y seguridad en generadores de vapor y operación de calderas en Uruguay.">
+content="Foguista Uruguay. Formación técnica, seguridad, normativa y estudio para operadores de generadores de vapor.">
 
-<title>Foguista Uruguay | Formación técnica y seguridad</title>
+<title>Foguista Uruguay | Formación técnica</title>
 
 <style>
 
 /* =========================================================
-   BASE
+   RESET
 ========================================================= */
 
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
@@ -25,18 +27,56 @@ html{
 }
 
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#eef5fa;
-    color:#12375d;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#f4f7fa;
+
+    color:#173b60;
+
+    line-height:1.5;
 }
 
 a{
     text-decoration:none;
+    color:inherit;
 }
 
 img{
+    display:block;
     max-width:100%;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --navy:#062b4f;
+
+    --navy-dark:#041d36;
+
+    --blue:#1198e5;
+
+    --blue-dark:#087fc5;
+
+    --blue-light:#e8f5fc;
+
+    --text:#173b60;
+
+    --muted:#607b95;
+
+    --white:#ffffff;
+
+    --border:#dce7ef;
+
+    --shadow:
+        0 12px 35px rgba(13,52,82,.08);
+
 }
 
 
@@ -44,91 +84,158 @@ img{
    HEADER
 ========================================================= */
 
-header{
+.site-header{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
 
-    background:#06294c;
-    color:white;
+    background:
+        rgba(6,43,79,.97);
 
-    box-shadow:0 3px 14px rgba(0,0,0,.18);
+    backdrop-filter:blur(10px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
 }
+
 
 .header-inner{
-    max-width:1220px;
+
+    max-width:1280px;
+
+    min-height:76px;
+
     margin:auto;
 
-    padding:8px 22px;
+    padding:
+        8px 28px;
 
     display:flex;
+
     align-items:center;
 
-    gap:22px;
+    justify-content:space-between;
+
+    gap:30px;
+
 }
 
-.logo-area{
+
+/* LOGO */
+
+.brand{
+
     display:flex;
+
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
     flex-shrink:0;
 
     color:white;
+
 }
 
-.logo-area img{
+.brand-logo{
+
     width:58px;
+
     height:58px;
 
     object-fit:contain;
 
     border-radius:12px;
+
 }
 
-.logo-text h1{
-    margin:0;
+.brand-name{
 
     font-size:21px;
 
-    color:white;
+    font-weight:800;
+
+    letter-spacing:-.3px;
+
 }
 
-.logo-text p{
-    margin:3px 0 0;
+.brand-subtitle{
+
+    display:block;
+
+    margin-top:2px;
 
     font-size:11px;
 
-    color:#d7e6f4;
+    color:#c8d9e8;
+
 }
 
-nav{
-    margin-left:auto;
+
+/* NAV */
+
+.main-nav{
 
     display:flex;
+
     align-items:center;
 
     gap:3px;
+
 }
 
-nav a{
-    color:white;
+.main-nav a{
+
+    padding:
+        10px 11px;
+
+    border-radius:7px;
+
+    color:#e8f1f8;
 
     font-size:13px;
 
     font-weight:600;
 
-    padding:11px 10px;
-
-    border-radius:7px;
+    transition:
+        background .2s ease,
+        color .2s ease;
 
     white-space:nowrap;
+
 }
 
-nav a:hover,
-nav a.active{
-    background:#168fe0;
+.main-nav a:hover{
+
+    background:
+        rgba(17,152,229,.18);
+
+    color:white;
+
+}
+
+.main-nav .nav-app{
+
+    background:
+        var(--blue);
+
+    color:white;
+
+    padding-left:15px;
+
+    padding-right:15px;
+
+}
+
+.main-nav .nav-app:hover{
+
+    background:
+        var(--blue-dark);
+
 }
 
 
@@ -137,303 +244,1292 @@ nav a.active{
 ========================================================= */
 
 .hero{
-    position:relative;
 
-    min-height:470px;
+    background:
+        var(--navy-dark);
+
+    color:white;
+
+    position:relative;
 
     overflow:hidden;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(2,25,47,.98) 0%,
-            rgba(2,29,53,.94) 30%,
-            rgba(2,29,53,.70) 55%,
-            rgba(2,29,53,.18) 100%
-        ),
-        url("hero-foguista.jpg")
-        center center / cover no-repeat;
 }
 
+
 .hero-inner{
-    position:relative;
 
-    z-index:2;
+    max-width:1280px;
 
-    max-width:1220px;
+    min-height:555px;
 
     margin:auto;
 
-    padding:60px 25px 65px;
+    padding:
+        72px 28px 70px;
 
-    color:white;
-}
-
-.hero h2{
-    max-width:700px;
-
-    margin:0 0 18px;
-
-    font-size:48px;
-
-    line-height:1.08;
-
-    letter-spacing:-1px;
-}
-
-.hero h2 span{
-    color:#159ce9;
-}
-
-.hero-description{
-    max-width:630px;
-
-    margin:0 0 28px;
-
-    font-size:18px;
-
-    line-height:1.55;
-
-    color:#e3edf6;
-}
-
-
-/* =========================================================
-   HERO FEATURES
-========================================================= */
-
-.hero-features{
     display:grid;
 
     grid-template-columns:
-        repeat(4,auto);
+        .92fr 1.08fr;
 
-    justify-content:start;
+    align-items:center;
 
-    gap:30px;
+    gap:50px;
 
-    max-width:820px;
-
-    margin-bottom:30px;
 }
 
-.hero-feature{
+
+/* HERO TEXT */
+
+.hero-copy{
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+.hero-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:20px;
+
+    padding:
+        7px 12px;
+
+    border:
+        1px solid rgba(17,152,229,.45);
+
+    border-radius:30px;
+
+    background:
+        rgba(17,152,229,.08);
+
+    color:#70c9f5;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-transform:uppercase;
+
+}
+
+.hero-label::before{
+
+    content:"";
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        var(--blue);
+
+    box-shadow:
+        0 0 10px rgba(17,152,229,.8);
+
+}
+
+
+.hero h1{
+
+    max-width:690px;
+
+    margin-bottom:20px;
+
+    font-size:
+        clamp(42px,5vw,66px);
+
+    line-height:1.02;
+
+    letter-spacing:-2px;
+
+    font-weight:800;
+
+}
+
+.hero h1 span{
+
+    color:
+        var(--blue);
+
+}
+
+.hero-description{
+
+    max-width:590px;
+
+    margin-bottom:30px;
+
+    color:#cbdceb;
+
+    font-size:18px;
+
+    line-height:1.65;
+
+}
+
+
+/* HERO BUTTONS */
+
+.hero-actions{
+
     display:flex;
 
     align-items:center;
 
-    gap:9px;
-
-    color:#f3f8fc;
-
-    font-size:12px;
-
-    line-height:1.3;
-}
-
-.hero-feature-icon{
-    width:32px;
-
-    text-align:center;
-
-    font-size:27px;
-
-    flex-shrink:0;
-}
-
-
-/* =========================================================
-   HERO BUTTONS
-========================================================= */
-
-.hero-buttons{
-    display:flex;
-
-    gap:14px;
-
     flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:34px;
+
 }
 
-.btn{
-    display:inline-block;
+.button{
 
-    padding:13px 25px;
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:47px;
+
+    padding:
+        0 22px;
 
     border-radius:7px;
 
     font-size:14px;
 
-    font-weight:bold;
+    font-weight:700;
 
     transition:
         transform .2s ease,
-        background .2s ease;
+        background .2s ease,
+        border-color .2s ease;
+
 }
 
-.btn:hover{
+.button:hover{
+
     transform:translateY(-2px);
+
 }
 
-.btn-primary{
-    background:#159ce9;
+.button-primary{
 
-    color:white;
-}
-
-.btn-primary:hover{
-    background:#0d8dd8;
-}
-
-.btn-outline{
-    border:1px solid white;
+    background:
+        var(--blue);
 
     color:white;
 
-    background:rgba(255,255,255,.04);
 }
 
-.btn-outline:hover{
-    background:rgba(255,255,255,.12);
+.button-primary:hover{
+
+    background:
+        var(--blue-dark);
+
 }
 
-.btn-light{
-    background:white;
+.button-secondary{
 
-    color:#07345d;
+    border:
+        1px solid rgba(255,255,255,.35);
+
+    color:white;
+
+    background:
+        rgba(255,255,255,.03);
+
+}
+
+.button-secondary:hover{
+
+    background:
+        rgba(255,255,255,.09);
+
+}
+
+
+/* HERO POINTS */
+
+.hero-points{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    max-width:620px;
+
+    gap:18px;
+
+}
+
+.hero-point{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:9px;
+
+}
+
+.hero-point-icon{
+
+    width:31px;
+
+    height:31px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:7px;
+
+    background:
+        rgba(17,152,229,.13);
+
+    font-size:17px;
+
+}
+
+.hero-point strong{
+
+    display:block;
+
+    margin-bottom:2px;
+
+    font-size:11px;
+
+    color:white;
+
+}
+
+.hero-point small{
+
+    display:block;
+
+    color:#91abc0;
+
+    font-size:10px;
+
+    line-height:1.35;
+
 }
 
 
 /* =========================================================
-   SECTIONS
+   HERO IMAGE
 ========================================================= */
 
-.section{
-    max-width:1220px;
+.hero-visual{
+
+    position:relative;
+
+    min-height:420px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+/*
+   IMAGEN DEL GENERADOR
+
+   Se utiliza la imagen industrial existente.
+   Si luego subís la nueva imagen al repositorio
+   con el nombre hero-foguista.jpg, solamente
+   cambiás esta URL.
+*/
+
+.hero-image{
+
+    width:100%;
+
+    max-width:690px;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.38);
+
+    opacity:.96;
+
+}
+
+
+/* overlay */
+
+.hero-visual::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,29,54,.15),
+            transparent 45%
+        );
+
+    pointer-events:none;
+
+}
+
+
+/* FLOATING CARD */
+
+.hero-card{
+
+    position:absolute;
+
+    left:-25px;
+
+    bottom:25px;
+
+    width:205px;
+
+    padding:17px;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    color:var(--text);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.28);
+
+    z-index:5;
+
+}
+
+.hero-card-icon{
+
+    width:37px;
+
+    height:37px;
+
+    margin-bottom:9px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:8px;
+
+    background:
+        var(--blue-light);
+
+    font-size:20px;
+
+}
+
+.hero-card strong{
+
+    display:block;
+
+    margin-bottom:3px;
+
+    font-size:13px;
+
+}
+
+.hero-card span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.4;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro{
+
+    background:white;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+.intro-inner{
+
+    max-width:1050px;
 
     margin:auto;
 
-    padding:65px 25px;
-}
+    padding:
+        65px 28px;
 
-.section-title{
     text-align:center;
 
-    margin-bottom:40px;
 }
 
-.section-title h2{
-    margin:0 0 10px;
+.section-tag{
 
-    font-size:32px;
+    display:inline-block;
 
-    color:#082f59;
+    margin-bottom:9px;
+
+    color:
+        var(--blue);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
 }
 
-.section-title p{
+.intro h2{
+
+    margin-bottom:13px;
+
+    color:var(--navy);
+
+    font-size:34px;
+
+    letter-spacing:-.7px;
+
+}
+
+.intro p{
+
     max-width:760px;
 
     margin:auto;
 
-    color:#597592;
-
-    line-height:1.55;
+    color:var(--muted);
 
     font-size:16px;
+
+    line-height:1.7;
+
 }
 
 
 /* =========================================================
-   MAIN FEATURES
+   MAIN AREAS
 ========================================================= */
 
-.features{
+.content-section{
+
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:
+        72px 28px;
+
+}
+
+.section-heading{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    margin-bottom:30px;
+
+}
+
+.section-heading h2{
+
+    color:var(--navy);
+
+    font-size:32px;
+
+    letter-spacing:-.7px;
+
+}
+
+.section-heading p{
+
+    max-width:530px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+
+/* GRID */
+
+.areas-grid{
+
     display:grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:20px;
-}
+    gap:18px;
 
-.card{
-    background:white;
-
-    border-radius:14px;
-
-    padding:23px 20px 20px;
-
-    border-top:3px solid #159ce9;
-
-    box-shadow:
-        0 7px 22px rgba(12,53,86,.08);
-
-    display:flex;
-
-    flex-direction:column;
-
-    min-height:220px;
-}
-
-.card-icon{
-    font-size:35px;
-
-    margin-bottom:10px;
-}
-
-.card h3{
-    margin:0 0 10px;
-
-    font-size:20px;
-
-    color:#082f59;
-}
-
-.card p{
-    margin:0;
-
-    color:#597592;
-
-    line-height:1.55;
-
-    font-size:14px;
-}
-
-.card .btn{
-    margin-top:auto;
-
-    align-self:flex-start;
-
-    padding:10px 17px;
-
-    font-size:12px;
 }
 
 
-/* =========================================================
-   LEARNING SECTION
-========================================================= */
+/* AREA CARD */
 
-.learning-section{
+.area-card{
+
     position:relative;
 
     overflow:hidden;
 
-    background:
-        linear-gradient(
-            90deg,
-            #e0f1fa,
-            #eff9fd
-        );
+    min-height:305px;
+
+    padding:
+        25px 22px 22px;
+
+    background:white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:14px;
+
+    box-shadow:
+        0 8px 25px rgba(15,55,85,.05);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
 }
 
-.learning-section::before{
+.area-card:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(15,55,85,.10);
+
+}
+
+.area-card::before{
+
     content:"";
 
     position:absolute;
 
-    left:-100px;
+    top:0;
 
-    bottom:-100px;
+    left:0;
+
+    right:0;
+
+    height:4px;
+
+    background:
+        var(--blue);
+
+}
+
+.area-icon{
+
+    width:48px;
+
+    height:48px;
+
+    margin-bottom:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:
+        var(--blue-light);
+
+    font-size:25px;
+
+}
+
+.area-card h3{
+
+    margin-bottom:11px;
+
+    color:var(--navy);
+
+    font-size:20px;
+
+}
+
+.area-card p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.65;
+
+}
+
+.area-link{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:22px;
+
+    color:var(--blue);
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+.area-link::after{
+
+    content:" →";
+
+}
+
+
+/* =========================================================
+   STUDY PATH
+========================================================= */
+
+.study-section{
+
+    background:
+        #eaf4fa;
+
+    border-top:
+        1px solid #dceaf3;
+
+    border-bottom:
+        1px solid #dceaf3;
+
+}
+
+.study-inner{
+
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:
+        72px 28px;
+
+}
+
+.study-header{
+
+    max-width:700px;
+
+    margin-bottom:38px;
+
+}
+
+.study-header h2{
+
+    margin-bottom:12px;
+
+    color:var(--navy);
+
+    font-size:34px;
+
+    letter-spacing:-.7px;
+
+}
+
+.study-header p{
+
+    color:var(--muted);
+
+    font-size:15px;
+
+}
+
+
+/* PATH */
+
+.study-path{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:14px;
+
+}
+
+.study-step{
+
+    position:relative;
+
+    padding:
+        23px 18px;
+
+    background:white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:12px;
+
+}
+
+.study-step:not(:last-child)::after{
+
+    content:"→";
+
+    position:absolute;
+
+    right:-17px;
+
+    top:31px;
+
+    z-index:5;
+
+    color:
+        #80b7d7;
+
+    font-size:20px;
+
+}
+
+.step-number{
+
+    margin-bottom:13px;
+
+    color:
+        var(--blue);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+}
+
+.study-step h3{
+
+    margin-bottom:7px;
+
+    color:var(--navy);
+
+    font-size:15px;
+
+}
+
+.study-step p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.55;
+
+}
+
+
+/* =========================================================
+   CONCEPTS
+========================================================= */
+
+.concepts-section{
+
+    background:white;
+
+}
+
+.concepts-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+
+}
+
+.concept-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    padding:21px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:12px;
+
+    background:#fbfdfe;
+
+}
+
+.concept-icon{
+
+    width:42px;
+
+    height:42px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:
+        var(--blue-light);
+
+    font-size:21px;
+
+}
+
+.concept-card h3{
+
+    margin-bottom:4px;
+
+    color:var(--navy);
+
+    font-size:15px;
+
+}
+
+.concept-card p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.5;
+
+}
+
+
+/* =========================================================
+   NORMATIVA
+========================================================= */
+
+.normativa-section{
+
+    background:
+        var(--navy);
+
+    color:white;
+
+}
+
+.normativa-inner{
+
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:
+        72px 28px;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.normativa-copy .section-tag{
+
+    color:#65c5f4;
+
+}
+
+.normativa-copy h2{
+
+    margin-bottom:15px;
+
+    font-size:35px;
+
+    line-height:1.15;
+
+}
+
+.normativa-copy p{
+
+    max-width:570px;
+
+    margin-bottom:22px;
+
+    color:#c5d8e8;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+.normativa-points{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+    margin-bottom:26px;
+
+}
+
+.normativa-point{
+
+    padding:11px 13px;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:8px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:#e1edf5;
+
+    font-size:11px;
+
+}
+
+.normativa-box{
+
+    padding:28px;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+}
+
+.normativa-box-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:22px;
+
+}
+
+.normativa-box-icon{
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:
+        rgba(17,152,229,.18);
+
+    font-size:27px;
+
+}
+
+.normativa-box h3{
+
+    font-size:18px;
+
+}
+
+.normativa-box span{
+
+    color:#9fb8ca;
+
+    font-size:11px;
+
+}
+
+.normativa-box ul{
+
+    list-style:none;
+
+}
+
+.normativa-box li{
+
+    padding:11px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    color:#d4e2ed;
+
+    font-size:12px;
+
+}
+
+.normativa-box li:last-child{
+
+    border-bottom:0;
+
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app-section{
+
+    background:
+        #f4f8fb;
+
+}
+
+.app-inner{
+
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:
+        75px 28px;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+/* APP COPY */
+
+.app-copy{
+
+    max-width:600px;
+
+}
+
+.app-copy h2{
+
+    margin-bottom:14px;
+
+    color:var(--navy);
+
+    font-size:36px;
+
+    line-height:1.15;
+
+    letter-spacing:-.8px;
+
+}
+
+.app-copy > p{
+
+    margin-bottom:25px;
+
+    color:var(--muted);
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+/*
+   LOGO REAL DE LA APP
+   NO SE MODIFICA
+*/
+
+.app-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:17px;
+
+    margin-bottom:20px;
+
+}
+
+.app-logo{
+
+    width:92px;
+
+    height:92px;
+
+    object-fit:contain;
+
+    border-radius:18px;
+
+    flex-shrink:0;
+
+}
+
+.app-brand-label{
+
+    color:var(--blue);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+.app-features{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.app-feature{
+
+    padding:11px 13px;
+
+    background:white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:8px;
+
+    color:var(--text);
+
+    font-size:12px;
+
+}
+
+.app-feature::before{
+
+    content:"✓";
+
+    margin-right:7px;
+
+    color:var(--blue);
+
+    font-weight:800;
+
+}
+
+
+/* APP VISUAL */
+
+.app-showcase{
+
+    min-height:420px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.app-glow{
+
+    position:absolute;
 
     width:330px;
 
@@ -442,486 +1538,238 @@ nav a.active{
     border-radius:50%;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(21,156,233,.08),
-            transparent 68%
-        );
+        rgba(17,152,229,.10);
 
-    pointer-events:none;
-}
+    filter:blur(3px);
 
-.learning-path{
-    max-width:1140px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(6,1fr);
-
-    gap:12px;
-
-    position:relative;
-
-    z-index:2;
-}
-
-.learning-item{
-    text-align:center;
-
-    position:relative;
-}
-
-.learning-item:not(:last-child)::after{
-    content:"→";
-
-    position:absolute;
-
-    right:-13px;
-
-    top:12px;
-
-    color:#83bde2;
-
-    font-size:22px;
-}
-
-.learning-number{
-    width:40px;
-
-    height:40px;
-
-    border-radius:50%;
-
-    margin:auto;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:#159ce9;
-
-    color:white;
-
-    font-weight:bold;
-
-    font-size:12px;
-}
-
-.learning-icon{
-    font-size:27px;
-
-    margin:8px 0;
-}
-
-.learning-content h3{
-    margin:0 0 7px;
-
-    font-size:14px;
-
-    color:#073563;
-}
-
-.learning-content p{
-    margin:0;
-
-    font-size:12px;
-
-    line-height:1.45;
-
-    color:#597592;
 }
 
 
-/* =========================================================
-   CONCEPTS
-========================================================= */
-
-.concepts{
-    display:grid;
-
-    grid-template-columns:
-        repeat(6,1fr);
-
-    gap:13px;
-}
-
-.concept{
-    background:white;
-
-    border-radius:11px;
-
-    padding:21px 12px;
-
-    text-align:center;
-
-    box-shadow:
-        0 5px 17px rgba(12,53,86,.07);
-}
-
-.concept-icon{
-    font-size:29px;
-
-    margin-bottom:8px;
-}
-
-.concept h3{
-    margin:0;
-
-    font-size:14px;
-
-    color:#073563;
-}
-
-.concept p{
-    margin:7px 0 0;
-
-    font-size:11px;
-
-    line-height:1.4;
-
-    color:#637d96;
-}
-
-
-/* =========================================================
-   APP SECTION
-========================================================= */
-
-.app-section{
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(3,34,64,.98),
-            rgba(7,61,99,.97)
-        );
-
-    color:white;
-}
-
-.app-section::before{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        radial-gradient(
-            circle at 72% 50%,
-            rgba(21,156,233,.20),
-            transparent 34%
-        );
-
-    pointer-events:none;
-}
-
-.app-inner{
-    position:relative;
-
-    z-index:2;
-
-    max-width:1140px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-        1.05fr .95fr;
-
-    align-items:center;
-
-    gap:50px;
-}
-
-
-/* =========================================================
-   APP COPY
-========================================================= */
-
-.app-copy{
-    position:relative;
-}
-
-.app-brand{
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    margin-bottom:20px;
-}
-
-
-/*
-   IMPORTANTE:
-   ESTE ES EL LOGO ACTUAL DE LA APP.
-   NO SE MODIFICA.
-*/
-
-.app-logo{
-    width:105px;
-
-    height:105px;
-
-    object-fit:contain;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.30);
-}
-
-.app-copy h2{
-    margin:0;
-
-    font-size:31px;
-
-    line-height:1.15;
-}
-
-.app-copy p{
-    max-width:540px;
-
-    color:#d8e8f5;
-
-    line-height:1.6;
-
-    font-size:15px;
-}
-
-.app-list{
-    list-style:none;
-
-    padding:0;
-
-    margin:22px 0;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:10px;
-}
-
-.app-list li{
-    font-size:14px;
-
-    color:#f0f7fc;
-}
-
-.app-list li::before{
-    content:"✓";
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:20px;
-
-    height:20px;
-
-    border-radius:50%;
-
-    background:#159ce9;
-
-    margin-right:8px;
-
-    font-size:12px;
-
-    font-weight:bold;
-}
-
-
-/* =========================================================
-   GOOGLE PLAY
-========================================================= */
-
-.google-play{
-    display:inline-block;
-
-    margin-top:8px;
-
-    background:#050505;
-
-    border:1px solid #ddd;
-
-    border-radius:7px;
-
-    padding:8px 15px;
-
-    color:white;
-
-    font-size:10px;
-}
-
-.google-play strong{
-    display:block;
-
-    font-size:18px;
-
-    line-height:1;
-}
-
-
-/* =========================================================
-   APP PREVIEW
-========================================================= */
-
-.app-preview{
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-    gap:18px;
-
-    min-height:350px;
-}
+/* PHONE */
 
 .phone{
-    width:185px;
 
-    height:360px;
+    position:relative;
 
-    background:#0c1724;
+    z-index:3;
 
-    border-radius:28px;
+    width:205px;
 
-    padding:7px;
-
-    box-shadow:
-        0 20px 40px rgba(0,0,0,.35);
-
-    transform:rotate(-3deg);
-}
-
-.phone.second{
-    transform:
-        rotate(4deg)
-        translateY(18px);
-}
-
-.phone-screen{
-    height:100%;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    background:#f5f9fc;
-
-    color:#073563;
-}
-
-.phone-header{
-    background:#159ce9;
-
-    padding:12px 10px;
-
-    text-align:center;
-
-    color:white;
-
-    font-weight:bold;
-}
-
-.phone-header img{
-    width:50px;
-
-    height:50px;
-
-    object-fit:contain;
-
-    border-radius:10px;
-
-    display:block;
-
-    margin:0 auto 5px;
-}
-
-.phone-title{
-    font-size:10px;
-}
-
-.phone-items{
-    padding:10px;
-}
-
-.phone-item{
-    background:white;
-
-    padding:9px;
-
-    margin-bottom:6px;
-
-    border-radius:7px;
-
-    font-size:9px;
-
-    box-shadow:
-        0 2px 6px rgba(0,0,0,.06);
-}
-
-.question{
-    padding:12px;
-
-    font-size:10px;
-
-    font-weight:bold;
-}
-
-.answer{
-    margin:6px 10px;
+    height:405px;
 
     padding:8px;
 
-    border:1px solid #dce8f1;
+    border-radius:31px;
+
+    background:#101923;
+
+    box-shadow:
+        0 25px 55px rgba(4,29,54,.28);
+
+    transform:
+        rotate(-3deg);
+
+}
+
+.phone-screen{
+
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:#f3f7fa;
+
+}
+
+.phone-top{
+
+    padding:
+        16px 12px 13px;
+
+    background:
+        var(--blue);
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.phone-logo{
+
+    width:53px;
+
+    height:53px;
+
+    margin:
+        0 auto 6px;
+
+    object-fit:contain;
+
+    border-radius:11px;
+
+}
+
+.phone-title{
+
+    font-size:10px;
+
+    font-weight:800;
+
+}
+
+.phone-body{
+
+    padding:12px;
+
+}
+
+.phone-card{
+
+    margin-bottom:8px;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    background:white;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.06);
+
+    color:var(--text);
+
+    font-size:10px;
+
+    font-weight:600;
+
+}
+
+
+/* SECOND PHONE */
+
+.phone-small{
+
+    position:absolute;
+
+    z-index:2;
+
+    width:175px;
+
+    height:350px;
+
+    padding:7px;
+
+    border-radius:27px;
+
+    background:#101923;
+
+    box-shadow:
+        0 20px 45px rgba(4,29,54,.20);
+
+    transform:
+        translate(120px,45px)
+        rotate(5deg);
+
+}
+
+.phone-small-screen{
+
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:21px;
+
+    background:white;
+
+}
+
+.quiz-header{
+
+    padding:13px;
+
+    background:var(--navy);
+
+    color:white;
+
+    text-align:center;
+
+    font-size:10px;
+
+    font-weight:700;
+
+}
+
+.quiz-question{
+
+    padding:15px;
+
+    color:var(--navy);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    line-height:1.5;
+
+}
+
+.quiz-answer{
+
+    margin:
+        6px 12px;
+
+    padding:9px;
+
+    border:
+        1px solid #dce6ee;
 
     border-radius:7px;
 
+    color:var(--muted);
+
     font-size:9px;
+
 }
 
-.answer.selected{
-    background:#dff3ff;
+.quiz-answer.correct{
 
-    border-color:#159ce9;
+    border-color:
+        var(--blue);
+
+    background:
+        #e8f6fd;
+
+    color:var(--navy);
+
 }
 
 
 /* =========================================================
-   FINAL CALLOUT
+   FINAL CTA
 ========================================================= */
 
 .final-section{
-    padding:30px 25px;
+
+    padding:
+        30px 28px 70px;
+
+    background:
+        #f4f8fb;
+
 }
 
 .final-box{
-    max-width:1140px;
+
+    max-width:1165px;
 
     margin:auto;
 
-    background:white;
-
-    border-radius:13px;
-
-    padding:22px 28px;
+    padding:
+        30px 34px;
 
     display:flex;
 
@@ -929,40 +1777,38 @@ nav a.active{
 
     justify-content:space-between;
 
-    gap:25px;
+    gap:30px;
+
+    border-radius:14px;
+
+    background:white;
+
+    border:
+        1px solid var(--border);
 
     box-shadow:
-        0 7px 22px rgba(12,53,86,.08);
-}
+        var(--shadow);
 
-.final-content{
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-}
-
-.final-icon{
-    font-size:39px;
 }
 
 .final-box h2{
-    margin:0 0 5px;
 
-    font-size:19px;
+    margin-bottom:5px;
 
-    color:#073563;
+    color:var(--navy);
+
+    font-size:21px;
+
 }
 
 .final-box p{
-    margin:0;
 
-    color:#597592;
+    max-width:700px;
+
+    color:var(--muted);
 
     font-size:13px;
 
-    line-height:1.5;
 }
 
 
@@ -971,77 +1817,120 @@ nav a.active{
 ========================================================= */
 
 footer{
-    background:#052847;
 
-    color:#cbdbea;
+    background:
+        #031d36;
 
-    padding:30px 25px;
+    color:#b9ccdc;
+
 }
 
 .footer-inner{
-    max-width:1140px;
+
+    max-width:1220px;
 
     margin:auto;
 
-    display:flex;
+    padding:
+        38px 28px;
 
-    align-items:center;
+}
 
-    justify-content:space-between;
+.footer-main{
 
-    gap:25px;
+    display:grid;
+
+    grid-template-columns:
+        1.4fr 2fr;
+
+    gap:50px;
+
+    padding-bottom:28px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.09);
+
 }
 
 .footer-brand{
+
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
+
 }
 
-.footer-brand img{
-    width:52px;
+.footer-logo{
 
-    height:52px;
+    width:55px;
+
+    height:55px;
 
     object-fit:contain;
 
-    border-radius:10px;
+    border-radius:11px;
+
 }
 
 .footer-brand strong{
+
     display:block;
 
     color:white;
 
-    font-size:16px;
+    font-size:17px;
+
 }
 
 .footer-brand span{
-    font-size:11px;
-}
 
-.footer-links{
-    display:flex;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-}
-
-.footer-links a{
-    color:#d9e6f2;
-
-    font-size:11px;
-}
-
-.footer-copy{
     font-size:10px;
 
-    text-align:right;
+    color:#8fa7ba;
+
+}
+
+.footer-nav{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+}
+
+.footer-nav a{
+
+    color:#b9ccdc;
+
+    font-size:11px;
+
+}
+
+.footer-nav a:hover{
+
+    color:white;
+
+}
+
+.footer-bottom{
+
+    padding-top:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    font-size:10px;
+
+    color:#7892a7;
+
 }
 
 
@@ -1049,206 +1938,332 @@ footer{
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:1050px){
+@media(max-width:1100px){
 
-    .features{
+    .main-nav a{
+
+        padding:
+            9px 7px;
+
+        font-size:11px;
+
+    }
+
+    .hero-inner{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:30px;
+
+    }
+
+    .areas-grid{
+
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
-    .learning-path{
+    .study-path{
+
         grid-template-columns:
             repeat(3,1fr);
 
-        gap:28px 15px;
     }
 
-    .learning-item:not(:last-child)::after{
+    .study-step:nth-child(3)::after{
+
         display:none;
+
     }
 
-    .concepts{
+    .concepts-grid{
+
         grid-template-columns:
-            repeat(3,1fr);
+            repeat(2,1fr);
+
     }
 
-    nav a{
-        font-size:12px;
-
-        padding:9px 7px;
-    }
 }
 
 
 @media(max-width:850px){
 
     .header-inner{
+
         flex-direction:column;
 
         align-items:flex-start;
+
+        padding-bottom:10px;
+
     }
 
-    nav{
+    .main-nav{
+
         width:100%;
 
         overflow-x:auto;
 
-        margin-left:0;
+        padding-bottom:2px;
 
-        padding-bottom:3px;
-    }
-
-    nav a{
-        white-space:nowrap;
-    }
-
-    .hero{
-        min-height:560px;
-    }
-
-    .hero h2{
-        font-size:39px;
-    }
-
-    .hero-features{
-        grid-template-columns:
-            repeat(2,auto);
-
-        gap:18px 28px;
-    }
-
-    .app-inner{
-        grid-template-columns:1fr;
-
-        text-align:center;
-    }
-
-    .app-brand{
-        justify-content:center;
-    }
-
-    .app-copy p{
-        margin-left:auto;
-
-        margin-right:auto;
-    }
-
-    .app-list{
-        text-align:left;
-
-        max-width:550px;
-
-        margin-left:auto;
-
-        margin-right:auto;
-    }
-
-    .final-box{
-        flex-direction:column;
-
-        text-align:center;
-    }
-
-    .final-content{
-        justify-content:center;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-
-        text-align:center;
-    }
-
-    .footer-copy{
-        text-align:center;
-    }
-}
-
-
-@media(max-width:600px){
-
-    .logo-area img{
-        width:52px;
-
-        height:52px;
-    }
-
-    .logo-text h1{
-        font-size:18px;
-    }
-
-    .hero{
-        min-height:620px;
     }
 
     .hero-inner{
-        padding:45px 20px;
+
+        grid-template-columns:1fr;
+
+        padding-top:55px;
+
     }
 
-    .hero h2{
-        font-size:34px;
+    .hero-copy{
+
+        text-align:left;
+
+    }
+
+    .hero-visual{
+
+        min-height:390px;
+
+    }
+
+    .hero-image{
+
+        height:370px;
+
+    }
+
+    .hero-card{
+
+        left:10px;
+
+    }
+
+    .normativa-inner{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .app-inner{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .app-copy{
+
+        max-width:none;
+
+    }
+
+    .app-showcase{
+
+        min-height:410px;
+
+    }
+
+    .final-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .brand-name{
+
+        font-size:18px;
+
+    }
+
+    .brand-subtitle{
+
+        font-size:9px;
+
+    }
+
+    .brand-logo{
+
+        width:52px;
+
+        height:52px;
+
+    }
+
+    .hero-inner{
+
+        padding:
+            45px 20px 50px;
+
+    }
+
+    .hero h1{
+
+        font-size:40px;
+
+        letter-spacing:-1.2px;
+
     }
 
     .hero-description{
-        font-size:16px;
+
+        font-size:15px;
+
     }
 
-    .hero-features{
+    .hero-points{
+
         grid-template-columns:
-            1fr 1fr;
+            1fr;
 
-        gap:14px;
+        gap:11px;
+
     }
 
-    .features{
+    .hero-visual{
+
+        min-height:300px;
+
+    }
+
+    .hero-image{
+
+        height:285px;
+
+    }
+
+    .hero-card{
+
+        width:175px;
+
+        left:5px;
+
+        bottom:8px;
+
+    }
+
+    .content-section,
+    .study-inner,
+    .intro-inner,
+    .app-inner,
+    .normativa-inner{
+
+        padding-left:20px;
+
+        padding-right:20px;
+
+    }
+
+    .section-heading{
+
+        display:block;
+
+    }
+
+    .section-heading p{
+
+        margin-top:10px;
+
+    }
+
+    .areas-grid{
+
         grid-template-columns:1fr;
+
     }
 
-    .section{
-        padding:50px 18px;
-    }
+    .study-path{
 
-    .section-title h2{
-        font-size:28px;
-    }
-
-    .learning-path{
         grid-template-columns:
-            1fr 1fr;
+            1fr;
+
     }
 
-    .concepts{
-        grid-template-columns:
-            1fr 1fr;
+    .study-step:not(:last-child)::after{
+
+        display:none;
+
     }
 
-    .app-list{
+    .concepts-grid{
+
         grid-template-columns:1fr;
+
     }
 
-    .app-preview{
-        transform:scale(.88);
+    .normativa-points{
 
-        margin-left:-15px;
+        grid-template-columns:1fr;
 
-        margin-right:-15px;
     }
 
-    .phone{
-        width:155px;
+    .app-features{
 
-        height:315px;
+        grid-template-columns:1fr;
+
     }
 
-    .app-logo{
-        width:85px;
+    .app-brand{
 
-        height:85px;
+        align-items:flex-start;
+
     }
 
     .app-copy h2{
-        font-size:27px;
+
+        font-size:30px;
+
     }
+
+    .phone-small{
+
+        transform:
+            translate(85px,35px)
+            rotate(5deg);
+
+    }
+
+    .final-box{
+
+        padding:
+            24px 20px;
+
+    }
+
+    .footer-main{
+
+        grid-template-columns:1fr;
+
+        gap:28px;
+
+    }
+
+    .footer-nav{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+    }
+
 }
 
 </style>
@@ -1263,37 +2278,38 @@ footer{
      HEADER
 ========================================================= -->
 
-<header>
+<header class="site-header">
 
 <div class="header-inner">
 
 
 <a href="index.html"
-class="logo-area">
+class="brand">
 
-<img src="logo.png"
-alt="Foguista Uruguay">
+<img
+src="logo.png"
+alt="Foguista Uruguay"
+class="brand-logo"
+>
 
+<div>
 
-<div class="logo-text">
-
-<h1>
+<div class="brand-name">
 Foguista Uruguay
-</h1>
+</div>
 
-<p>
+<span class="brand-subtitle">
 Formación y seguridad en generadores de vapor
-</p>
+</span>
 
 </div>
 
 </a>
 
 
-<nav>
+<nav class="main-nav">
 
-<a href="index.html"
-class="active">
+<a href="index.html">
 Inicio
 </a>
 
@@ -1321,15 +2337,18 @@ Enclavamientos
 Tratamiento del agua
 </a>
 
-<a href="app.html">
+<a href="app.html"
+class="nav-app">
 App
 </a>
 
 </nav>
 
+
 </div>
 
 </header>
+
 
 
 <!-- =========================================================
@@ -1342,89 +2361,37 @@ App
 <div class="hero-inner">
 
 
-<h2>
+<div class="hero-copy">
 
-Conocimiento técnico para un
+
+<div class="hero-label">
+FORMACIÓN TÉCNICA
+</div>
+
+
+<h1>
+
+Conocimiento técnico
+para un
 <span>trabajo seguro</span>
 
-</h2>
+</h1>
 
 
 <p class="hero-description">
 
-Formación, estudio y recursos sobre generadores de vapor,
-con base en la normativa de Uruguay.
+Formación, estudio y recursos para comprender
+el funcionamiento de los generadores de vapor,
+sus sistemas de seguridad y la normativa aplicable.
 
 </p>
 
 
-<div class="hero-features">
-
-
-<div class="hero-feature">
-
-<div class="hero-feature-icon">
-📖
-</div>
-
-<div>
-Contenido<br>
-claro y ordenado
-</div>
-
-</div>
-
-
-<div class="hero-feature">
-
-<div class="hero-feature-icon">
-🛡️
-</div>
-
-<div>
-Basado en<br>
-normativa URSEA
-</div>
-
-</div>
-
-
-<div class="hero-feature">
-
-<div class="hero-feature-icon">
-⚙️
-</div>
-
-<div>
-Orientado a la<br>
-práctica real
-</div>
-
-</div>
-
-
-<div class="hero-feature">
-
-<div class="hero-feature-icon">
-🎓
-</div>
-
-<div>
-Ideal para el<br>
-examen y el trabajo
-</div>
-
-</div>
-
-
-</div>
-
-
-<div class="hero-buttons">
+<div class="hero-actions">
 
 
 <a href="#formacion"
-class="btn btn-primary">
+class="button button-primary">
 
 Comenzar a estudiar →
 
@@ -1432,11 +2399,116 @@ Comenzar a estudiar →
 
 
 <a href="app.html"
-class="btn btn-outline">
+class="button button-secondary">
 
 Conocer la App
 
 </a>
+
+
+</div>
+
+
+<div class="hero-points">
+
+
+<div class="hero-point">
+
+<div class="hero-point-icon">
+📖
+</div>
+
+<div>
+
+<strong>
+Contenido organizado
+</strong>
+
+<small>
+Conceptos explicados paso a paso
+</small>
+
+</div>
+
+</div>
+
+
+<div class="hero-point">
+
+<div class="hero-point-icon">
+🛡️
+</div>
+
+<div>
+
+<strong>
+Seguridad
+</strong>
+
+<small>
+Protecciones y situaciones anormales
+</small>
+
+</div>
+
+</div>
+
+
+<div class="hero-point">
+
+<div class="hero-point-icon">
+🎓
+</div>
+
+<div>
+
+<strong>
+Preparación
+</strong>
+
+<small>
+Estudio para examen y trabajo
+</small>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="hero-visual">
+
+
+<img
+src="https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg"
+alt="Generador de vapor industrial"
+class="hero-image"
+>
+
+
+<div class="hero-card">
+
+<div class="hero-card-icon">
+⚙️
+</div>
+
+<strong>
+Pensá como foguista
+</strong>
+
+<span>
+Comprender el sistema para poder
+interpretar lo que sucede durante
+la operación.
+</span>
+
+</div>
 
 
 </div>
@@ -1447,37 +2519,82 @@ Conocer la App
 </section>
 
 
+
 <!-- =========================================================
-     FORMACION
+     INTRO
 ========================================================= -->
 
-<section class="section"
-id="formacion">
+<section class="intro">
 
+<div class="intro-inner">
 
-<div class="section-title">
+<span class="section-tag">
+FOGUISTA URUGUAY
+</span>
 
 <h2>
-Una formación completa
+Una formación pensada para entender
 </h2>
 
 <p>
 
-Cada sección aborda una parte diferente del conocimiento
-que necesita quien trabaja o se prepara para trabajar
-con generadores de vapor.
+El objetivo no es solamente memorizar conceptos.
+Es comprender cómo funciona un generador de vapor,
+cómo se relacionan sus variables, qué protecciones
+intervienen y cómo interpretar cada situación.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AREAS
+========================================================= -->
+
+<section
+class="content-section"
+id="formacion"
+>
+
+
+<div class="section-heading">
+
+<div>
+
+<span class="section-tag">
+ÁREAS DE FORMACIÓN
+</span>
+
+<h2>
+Todo el conocimiento en un solo lugar
+</h2>
+
+</div>
+
+<p>
+
+Recorré las diferentes áreas y construí una visión
+completa del funcionamiento, la seguridad y el
+mantenimiento de un generador de vapor.
 
 </p>
 
 </div>
 
 
-<div class="features">
+
+<div class="areas-grid">
 
 
-<div class="card">
+<!-- GENERADORES -->
 
-<div class="card-icon">
+<article class="area-card">
+
+<div class="area-icon">
 🔥
 </div>
 
@@ -1495,18 +2612,21 @@ componentes de un generador.
 </p>
 
 <a href="generadores.html"
-class="btn btn-primary">
+class="area-link">
 
-Ver generadores →
+Ver generadores
 
 </a>
 
-</div>
+</article>
 
 
-<div class="card">
 
-<div class="card-icon">
+<!-- SEGURIDAD -->
+
+<article class="area-card">
+
+<div class="area-icon">
 🛡️
 </div>
 
@@ -1517,24 +2637,27 @@ Seguridad
 <p>
 
 Comprendé los riesgos asociados a presión,
-nivel, combustión y las diferentes
-protecciones del sistema.
+nivel, combustión, controles, alarmas y
+situaciones anormales del sistema.
 
 </p>
 
 <a href="seguridad.html"
-class="btn btn-primary">
+class="area-link">
 
-Ver seguridad →
+Ver seguridad
 
 </a>
 
-</div>
+</article>
 
 
-<div class="card">
 
-<div class="card-icon">
+<!-- ENCLAVAMIENTOS -->
+
+<article class="area-card">
+
+<div class="area-icon">
 🔒
 </div>
 
@@ -1544,26 +2667,28 @@ Enclavamientos
 
 <p>
 
-Aprendé cómo funcionan los bloqueos
-de seguridad, qué condición detecta cada
-uno y qué acción produce ante una
-situación anormal.
+Aprendé qué condición detecta cada bloqueo
+de seguridad, qué acción produce y cómo
+protege al generador.
 
 </p>
 
 <a href="enclavamientos.html"
-class="btn btn-primary">
+class="area-link">
 
-Ver enclavamientos →
+Ver enclavamientos
 
 </a>
 
-</div>
+</article>
 
 
-<div class="card">
 
-<div class="card-icon">
+<!-- AGUA -->
+
+<article class="area-card">
+
+<div class="area-icon">
 💧
 </div>
 
@@ -1573,21 +2698,20 @@ Tratamiento del agua
 
 <p>
 
-Comprendé la importancia de la calidad
-del agua, las incrustaciones, la corrosión,
-las purgas y el control químico
-del generador.
+Dureza, incrustaciones, corrosión,
+conductividad, purgas, tratamiento químico
+y control de calidad del agua.
 
 </p>
 
 <a href="tratamiento-agua.html"
-class="btn btn-primary">
+class="area-link">
 
-Ver tratamiento del agua →
+Ver tratamiento del agua
 
 </a>
 
-</div>
+</article>
 
 
 </div>
@@ -1595,197 +2719,138 @@ Ver tratamiento del agua →
 </section>
 
 
+
 <!-- =========================================================
-     APRENDIZAJE
+     STUDY PATH
 ========================================================= -->
 
-<section class="learning-section">
+<section class="study-section">
 
 
-<div class="section">
+<div class="study-inner">
 
 
-<div class="section-title">
+<div class="study-header">
+
+<span class="section-tag">
+MÉTODO DE ESTUDIO
+</span>
 
 <h2>
-¿Qué vas a aprender?
+Aprendé relacionando los conceptos
 </h2>
 
 <p>
-Un recorrido completo desde los conceptos básicos
-hasta la aplicación práctica.
+
+El conocimiento se construye paso a paso:
+primero comprendés, después relacionás,
+interpretás y finalmente comprobás lo aprendido.
+
 </p>
 
 </div>
 
 
-<div class="learning-path">
+
+<div class="study-path">
 
 
-<div class="learning-item">
+<div class="study-step">
 
-<div class="learning-number">
-01
+<div class="step-number">
+01 · COMPRENDER
 </div>
-
-<div class="learning-icon">
-⚙️
-</div>
-
-<div class="learning-content">
 
 <h3>
-Comprender<br>
-el generador
+Entender el sistema
 </h3>
 
 <p>
-Energía, combustión,
-transferencia de calor,
-agua, vapor y componentes.
+
+Conocer qué ocurre dentro del generador
+y cuál es la función de cada componente.
+
 </p>
 
 </div>
 
+
+<div class="study-step">
+
+<div class="step-number">
+02 · RELACIONAR
 </div>
-
-
-<div class="learning-item">
-
-<div class="learning-number">
-02
-</div>
-
-<div class="learning-icon">
-🛡️
-</div>
-
-<div class="learning-content">
 
 <h3>
-Trabajar<br>
-con seguridad
+Conectar variables
 </h3>
 
 <p>
-Nivel, presión, combustión,
-controles, alarmas y
-situaciones anormales.
+
+Relacionar agua, presión, temperatura,
+combustión, vapor y control.
+
 </p>
 
 </div>
 
+
+<div class="study-step">
+
+<div class="step-number">
+03 · INTERPRETAR
 </div>
-
-
-<div class="learning-item">
-
-<div class="learning-number">
-03
-</div>
-
-<div class="learning-icon">
-🔒
-</div>
-
-<div class="learning-content">
 
 <h3>
-Entender<br>
-las protecciones
+Leer las condiciones
 </h3>
 
 <p>
-Enclavamientos,
-condiciones de disparo
-y acciones del sistema.
+
+Reconocer qué significa cada indicación,
+alarma o cambio de variable.
+
 </p>
 
 </div>
 
+
+<div class="study-step">
+
+<div class="step-number">
+04 · RAZONAR
 </div>
-
-
-<div class="learning-item">
-
-<div class="learning-number">
-04
-</div>
-
-<div class="learning-icon">
-💧
-</div>
-
-<div class="learning-content">
 
 <h3>
-Controlar<br>
-el agua
+Pensar como foguista
 </h3>
 
 <p>
-Dureza, incrustaciones,
-corrosión, conductividad,
-purgas y tratamiento químico.
+
+Comprender qué puede estar ocurriendo
+y qué consecuencias puede tener.
+
 </p>
 
 </div>
 
+
+<div class="study-step">
+
+<div class="step-number">
+05 · COMPROBAR
 </div>
-
-
-<div class="learning-item">
-
-<div class="learning-number">
-05
-</div>
-
-<div class="learning-icon">
-📋
-</div>
-
-<div class="learning-content">
 
 <h3>
-Interpretar<br>
-la normativa
+Poner a prueba
 </h3>
 
 <p>
-Conocer el Reglamento
-de URSEA y sus
-requisitos aplicables.
+
+Utilizar preguntas y situaciones para
+comprobar realmente el conocimiento.
+
 </p>
-
-</div>
-
-</div>
-
-
-<div class="learning-item">
-
-<div class="learning-number">
-06
-</div>
-
-<div class="learning-icon">
-🎓
-</div>
-
-<div class="learning-content">
-
-<h3>
-Prepararte<br>
-para el examen
-</h3>
-
-<p>
-Relacionar conceptos,
-interpretar situaciones
-y comprobar tus conocimientos.
-</p>
-
-</div>
 
 </div>
 
@@ -1797,91 +2862,119 @@ y comprobar tus conocimientos.
 </section>
 
 
+
 <!-- =========================================================
-     CONCEPTOS FUNDAMENTALES
+     CONCEPTOS
 ========================================================= -->
 
-<section class="section">
+<section class="content-section concepts-section">
 
 
-<div class="section-title">
+<div class="section-heading">
+
+<div>
+
+<span class="section-tag">
+CONOCIMIENTO
+</span>
 
 <h2>
-Conceptos fundamentales
+Los conceptos que tenés que dominar
 </h2>
+
+</div>
 
 <p>
 
-El funcionamiento de un generador de vapor puede entenderse
-relacionando estos elementos.
+El funcionamiento de un generador se comprende
+cuando sus diferentes partes se relacionan
+entre sí.
 
 </p>
 
 </div>
 
 
-<div class="concepts">
+
+<div class="concepts-grid">
 
 
-<div class="concept">
+<div class="concept-card">
 
 <div class="concept-icon">
 🔥
 </div>
+
+<div>
 
 <h3>
 Combustible y combustión
 </h3>
 
 <p>
-La energía química del combustible
-se transforma en energía térmica.
+La energía química se transforma
+en energía térmica.
 </p>
 
 </div>
 
+</div>
 
-<div class="concept">
+
+
+<div class="concept-card">
 
 <div class="concept-icon">
 ♨️
 </div>
+
+<div>
 
 <h3>
 Transferencia de calor
 </h3>
 
 <p>
-El calor producido por la combustión
-se transmite hacia el agua.
+El calor producido llega al agua
+a través de las superficies de intercambio.
 </p>
 
 </div>
 
+</div>
 
-<div class="concept">
+
+
+<div class="concept-card">
 
 <div class="concept-icon">
 💧
 </div>
+
+<div>
 
 <h3>
 Agua
 </h3>
 
 <p>
-Su calidad y tratamiento son fundamentales
-para la operación.
+Su calidad, nivel y tratamiento
+son fundamentales para la operación.
 </p>
 
 </div>
 
+</div>
 
-<div class="concept">
+
+
+<div class="concept-card">
 
 <div class="concept-icon">
 💨
 </div>
+
+<div>
 
 <h3>
 Vapor
@@ -1894,39 +2987,51 @@ transformarse en vapor.
 
 </div>
 
+</div>
 
-<div class="concept">
+
+
+<div class="concept-card">
 
 <div class="concept-icon">
 🔒
 </div>
 
+<div>
+
 <h3>
-Enclavamientos
+Protecciones
 </h3>
 
 <p>
-Las protecciones actúan ante
-condiciones peligrosas.
+Los enclavamientos actúan frente
+a condiciones anormales.
 </p>
 
 </div>
 
+</div>
 
-<div class="concept">
+
+
+<div class="concept-card">
 
 <div class="concept-icon">
 🎛️
 </div>
+
+<div>
 
 <h3>
 Control
 </h3>
 
 <p>
-El sistema mantiene las variables
-dentro de las condiciones previstas.
+Las variables del sistema son
+medidas y controladas continuamente.
 </p>
+
+</div>
 
 </div>
 
@@ -1936,14 +3041,136 @@ dentro de las condiciones previstas.
 </section>
 
 
+
+<!-- =========================================================
+     NORMATIVA
+========================================================= -->
+
+<section class="normativa-section">
+
+
+<div class="normativa-inner">
+
+
+<div class="normativa-copy">
+
+<span class="section-tag">
+NORMATIVA
+</span>
+
+<h2>
+La normativa también forma parte
+de la formación
+</h2>
+
+<p>
+
+Conocé el Reglamento de URSEA y aprendé
+a diferenciar el texto normativo de las
+explicaciones educativas y de las
+interpretaciones prácticas para el estudio.
+
+</p>
+
+
+<div class="normativa-points">
+
+<div class="normativa-point">
+⚖️ Reglamento URSEA
+</div>
+
+<div class="normativa-point">
+📋 Requisitos aplicables
+</div>
+
+<div class="normativa-point">
+📚 Material de estudio
+</div>
+
+<div class="normativa-point">
+🔎 Interpretación responsable
+</div>
+
+</div>
+
+
+<a href="normativa.html"
+class="button button-primary">
+
+Estudiar normativa →
+
+</a>
+
+</div>
+
+
+
+<div class="normativa-box">
+
+
+<div class="normativa-box-top">
+
+<div class="normativa-box-icon">
+⚖️
+</div>
+
+<div>
+
+<h3>
+Normativa URSEA
+</h3>
+
+<span>
+Reglamento de generadores de vapor
+</span>
+
+</div>
+
+</div>
+
+
+<ul>
+
+<li>
+Definiciones y clasificación
+</li>
+
+<li>
+Requisitos de instalación y operación
+</li>
+
+<li>
+Dispositivos de seguridad
+</li>
+
+<li>
+Controles y documentación
+</li>
+
+<li>
+Tratamiento y control del agua
+</li>
+
+<li>
+Mantenimiento e inspecciones
+</li>
+
+</ul>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
 <!-- =========================================================
      APP
 ========================================================= -->
 
 <section class="app-section">
-
-
-<div class="section">
 
 
 <div class="app-inner">
@@ -1955,158 +3182,170 @@ dentro de las condiciones previstas.
 <div class="app-brand">
 
 
-<!-- LOGO REAL DE LA APP — NO MODIFICAR -->
+<!-- =====================================================
+     ESTE ES EL LOGO REAL DE LA APP.
+     NO SE MODIFICA.
+===================================================== -->
 
-<img src="logo.png"
+<img
+src="logo.png"
 alt="Logo de la App Foguista Uruguay"
-class="app-logo">
+class="app-logo"
+>
 
 
-<h2>
+<div>
 
-También podés estudiar
-<br>
-desde la App
+<div class="app-brand-label">
+APP FOGUISTA URUGUAY
+</div>
 
-</h2>
-
+</div>
 
 </div>
 
 
+<h2>
+También podés estudiar
+desde tu teléfono
+</h2>
+
+
 <p>
 
-Complementá la formación con la aplicación
-de Foguista Uruguay. Practicá preguntas,
+Complementá la formación de la web con la
+aplicación de Foguista Uruguay. Practicá preguntas,
 repasá conceptos y comprobá tus conocimientos
 desde el teléfono.
 
 </p>
 
 
-<ul class="app-list">
+<div class="app-features">
 
 
-<li>
+<div class="app-feature">
 Preguntas de estudio
-</li>
+</div>
 
-<li>
-Modo práctica y examen
-</li>
+<div class="app-feature">
+Modo práctica
+</div>
 
-<li>
-Todas las secciones
-</li>
+<div class="app-feature">
+Modo examen
+</div>
 
-<li>
-Funciona sin conexión
-</li>
+<div class="app-feature">
+Repaso de conceptos
+</div>
 
-<li>
-Diseñada para foguistas en Uruguay
-</li>
+<div class="app-feature">
+Normativa
+</div>
 
+<div class="app-feature">
+Seguridad y operación
+</div>
 
-</ul>
+</div>
 
 
 <a href="app.html"
-class="btn btn-light">
+class="button button-primary">
 
 Conocer la App →
 
 </a>
 
 
-<br>
-
-
-<a href="app.html"
-class="google-play">
-
-DISPONIBLE EN
-
-<strong>
-▶ Google Play
-</strong>
-
-</a>
-
-
 </div>
 
 
-<!-- =====================================================
-     PREVISUALIZACION APP
-===================================================== -->
 
-<div class="app-preview">
+<!-- APP SHOWCASE -->
 
+<div class="app-showcase">
+
+
+<div class="app-glow">
+</div>
+
+
+<!-- PHONE 1 -->
 
 <div class="phone">
 
 <div class="phone-screen">
 
 
-<div class="phone-header">
+<div class="phone-top">
 
-<img src="logo.png"
-alt="Foguista Uruguay">
+
+<img
+src="logo.png"
+alt="Foguista Uruguay"
+class="phone-logo"
+>
+
 
 <div class="phone-title">
 FOGUISTA URUGUAY
 </div>
 
+
 </div>
 
 
-<div class="phone-items">
+<div class="phone-body">
 
-<div class="phone-item">
+
+<div class="phone-card">
 🔥 Generadores
 </div>
 
-<div class="phone-item">
+<div class="phone-card">
 🛡️ Seguridad
 </div>
 
-<div class="phone-item">
+<div class="phone-card">
 🔒 Enclavamientos
 </div>
 
-<div class="phone-item">
+<div class="phone-card">
 💧 Tratamiento del agua
 </div>
 
-<div class="phone-item">
+<div class="phone-card">
 ⚖️ Normativa URSEA
 </div>
 
-<div class="phone-item">
+<div class="phone-card">
 📚 Preguntas de estudio
 </div>
 
-</div>
 
 </div>
 
 </div>
 
-
-<div class="phone second">
-
-<div class="phone-screen">
-
-
-<div class="phone-header">
-
-Pregunta 1/10
-
 </div>
 
 
-<div class="question">
+
+<!-- PHONE 2 -->
+
+<div class="phone-small">
+
+<div class="phone-small-screen">
+
+
+<div class="quiz-header">
+PREGUNTA DE ESTUDIO
+</div>
+
+
+<div class="quiz-question">
 
 ¿Qué función cumple una válvula
 de seguridad?
@@ -2114,31 +3353,23 @@ de seguridad?
 </div>
 
 
-<div class="answer">
-
-A&nbsp;&nbsp; Regular el nivel de agua
-
+<div class="quiz-answer">
+A · Regular el nivel
 </div>
 
 
-<div class="answer selected">
-
-B&nbsp;&nbsp; Limitar la presión máxima
-
+<div class="quiz-answer correct">
+B · Limitar la presión
 </div>
 
 
-<div class="answer">
-
-C&nbsp;&nbsp; Controlar la combustión
-
+<div class="quiz-answer">
+C · Inyectar agua
 </div>
 
 
-<div class="answer">
-
-D&nbsp;&nbsp; Inyectar agua al generador
-
+<div class="quiz-answer">
+D · Controlar combustible
 </div>
 
 
@@ -2146,8 +3377,6 @@ D&nbsp;&nbsp; Inyectar agua al generador
 
 </div>
 
-
-</div>
 
 </div>
 
@@ -2156,22 +3385,15 @@ D&nbsp;&nbsp; Inyectar agua al generador
 </section>
 
 
+
 <!-- =========================================================
-     CIERRE
+     FINAL CTA
 ========================================================= -->
 
 <section class="final-section">
 
 
 <div class="final-box">
-
-
-<div class="final-content">
-
-
-<div class="final-icon">
-👥
-</div>
 
 
 <div>
@@ -2183,19 +3405,17 @@ Aprender para operar con criterio
 <p>
 
 Ser foguista no consiste solamente en conocer
-el funcionamiento de una caldera. Implica comprender
-el sistema, reconocer sus variables, interpretar
-sus protecciones y actuar con seguridad.
+una caldera. Implica comprender el sistema,
+reconocer sus variables, interpretar sus
+protecciones y actuar con seguridad.
 
 </p>
 
 </div>
 
-</div>
-
 
 <a href="estudio.html"
-class="btn btn-primary">
+class="button button-primary">
 
 Ir al método de estudio →
 
@@ -2205,6 +3425,7 @@ Ir al método de estudio →
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -2217,11 +3438,17 @@ Ir al método de estudio →
 <div class="footer-inner">
 
 
+<div class="footer-main">
+
+
 <div class="footer-brand">
 
 
-<img src="logo.png"
-alt="Foguista Uruguay">
+<img
+src="logo.png"
+alt="Foguista Uruguay"
+class="footer-logo"
+>
 
 
 <div>
@@ -2236,10 +3463,13 @@ Formación y seguridad en generadores de vapor
 
 </div>
 
+
 </div>
 
 
-<div class="footer-links">
+
+<div class="footer-nav">
+
 
 <a href="generadores.html">
 Generadores
@@ -2269,14 +3499,29 @@ Tratamiento del agua
 App
 </a>
 
+<a href="index.html">
+Inicio
+</a>
+
+
 </div>
 
 
-<div class="footer-copy">
+</div>
 
-© 2026 Foguista Uruguay.<br>
 
-Todos los derechos reservados.
+
+<div class="footer-bottom">
+
+
+<span>
+© 2026 Foguista Uruguay
+</span>
+
+<span>
+Formación técnica · Seguridad · Estudio
+</span>
+
 
 </div>
 
