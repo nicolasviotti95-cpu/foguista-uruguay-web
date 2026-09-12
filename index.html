@@ -8,13 +8,11 @@
 <meta name="description"
 content="Foguista Uruguay. Formación técnica, seguridad, normativa y estudio para operadores de generadores de vapor.">
 
+<link rel="canonical" href="https://foguistauruguay.uy/">
+
 <title>Foguista Uruguay | Formación técnica</title>
 
 <style>
-
-/* =====================================================
-   BASE
-===================================================== */
 
 *{
     margin:0;
@@ -173,9 +171,6 @@ img{
     gap:34px;
 }
 
-
-/* TEXTO */
-
 .hero-copy{
     position:relative;
     z-index:5;
@@ -244,9 +239,6 @@ img{
     line-height:1.65;
 }
 
-
-/* BOTONES */
-
 .hero-actions{
     display:flex;
     flex-wrap:wrap;
@@ -298,9 +290,6 @@ img{
 .button-secondary:hover{
     background:rgba(255,255,255,.10);
 }
-
-
-/* PUNTOS */
 
 .hero-points{
     display:grid;
@@ -358,7 +347,7 @@ img{
 
 
 /* =====================================================
-   IMAGEN DEL GENERADOR
+   IMAGEN
 ===================================================== */
 
 .hero-visual{
@@ -869,14 +858,12 @@ img{
     margin-bottom:12px;
 
     font-size:25px;
-
-    line-height:1.25;
 }
 
 .normativa-box p{
-    margin-bottom:24px;
+    margin-bottom:22px;
 
-    color:#c5d8e8;
+    color:#bcd0df;
 
     font-size:13px;
 
@@ -889,11 +876,11 @@ img{
 ===================================================== */
 
 .app-section{
-    background:white;
+    background:#f4f7fa;
 }
 
 .app-inner{
-    max-width:1220px;
+    max-width:1050px;
 
     margin:auto;
 
@@ -903,13 +890,24 @@ img{
 
     grid-template-columns:.9fr 1.1fr;
 
-    gap:70px;
+    gap:60px;
 
     align-items:center;
 }
 
-.app-copy .section-tag{
-    margin-bottom:10px;
+.app-image{
+    display:flex;
+
+    justify-content:center;
+}
+
+.app-image img{
+    width:260px;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.15);
 }
 
 .app-copy h2{
@@ -917,15 +915,11 @@ img{
 
     color:#062b4f;
 
-    font-size:36px;
-
-    line-height:1.15;
+    font-size:34px;
 }
 
 .app-copy p{
-    max-width:560px;
-
-    margin-bottom:25px;
+    margin-bottom:22px;
 
     color:#607b95;
 
@@ -934,148 +928,28 @@ img{
     line-height:1.7;
 }
 
-.app-logo{
-    width:105px;
-    height:105px;
-
-    margin-bottom:20px;
-
-    object-fit:contain;
-
-    border-radius:18px;
-}
-
-.app-features{
+.app-list{
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
-
-    gap:12px;
+    gap:10px;
 
     margin-bottom:25px;
 }
 
-.app-feature{
-    padding:14px;
-
-    border:1px solid #dce7ef;
-
-    border-radius:10px;
-
-    background:#fbfdfe;
-}
-
-.app-feature strong{
-    display:block;
-
-    margin-bottom:3px;
-
-    color:#062b4f;
-
-    font-size:12px;
-}
-
-.app-feature span{
-    color:#607b95;
-
-    font-size:10px;
-
-    line-height:1.4;
-}
-
-
-/* TELÉFONOS */
-
-.app-visual{
+.app-list div{
     display:flex;
 
-    align-items:center;
-    justify-content:center;
+    gap:10px;
 
-    gap:20px;
+    color:#385d7b;
 
-    min-height:420px;
+    font-size:13px;
 }
 
-.phone{
-    position:relative;
+.app-list span{
+    color:#1198e5;
 
-    width:190px;
-    height:370px;
-
-    padding:9px;
-
-    border-radius:28px;
-
-    background:#071e33;
-
-    box-shadow:
-        0 25px 55px rgba(4,35,60,.22);
-}
-
-.phone.small{
-    width:165px;
-    height:320px;
-
-    transform:translateY(25px);
-}
-
-.phone-screen{
-    width:100%;
-    height:100%;
-
-    overflow:hidden;
-
-    border-radius:21px;
-
-    background:#f4f7fa;
-}
-
-.phone-top{
-    height:58px;
-
-    padding:15px;
-
-    background:#062b4f;
-
-    color:white;
-
-    font-size:10px;
     font-weight:800;
-}
-
-.phone-content{
-    padding:16px;
-}
-
-.phone-card{
-    margin-bottom:10px;
-
-    padding:14px;
-
-    border:1px solid #dce7ef;
-
-    border-radius:10px;
-
-    background:white;
-}
-
-.phone-card strong{
-    display:block;
-
-    margin-bottom:5px;
-
-    color:#062b4f;
-
-    font-size:11px;
-}
-
-.phone-card span{
-    color:#607b95;
-
-    font-size:8px;
-
-    line-height:1.4;
 }
 
 
@@ -1083,13 +957,13 @@ img{
    CTA FINAL
 ===================================================== */
 
-.final-section{
-    background:#eaf4fa;
+.final-cta{
+    background:white;
 
     border-top:1px solid #dce7ef;
 }
 
-.final-inner{
+.final-cta-inner{
     max-width:950px;
 
     margin:auto;
@@ -1099,17 +973,17 @@ img{
     text-align:center;
 }
 
-.final-inner h2{
-    margin-bottom:13px;
+.final-cta h2{
+    margin-bottom:14px;
 
     color:#062b4f;
 
     font-size:36px;
 
-    line-height:1.15;
+    letter-spacing:-.8px;
 }
 
-.final-inner p{
+.final-cta p{
     max-width:700px;
 
     margin:0 auto 25px;
@@ -1129,7 +1003,7 @@ img{
 .site-footer{
     background:#031d36;
 
-    color:#a9c1d4;
+    color:white;
 }
 
 .footer-inner{
@@ -1142,6 +1016,7 @@ img{
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
     gap:30px;
@@ -1155,11 +1030,9 @@ img{
     gap:12px;
 }
 
-.footer-logo{
+.footer-brand img{
     width:45px;
     height:45px;
-
-    object-fit:contain;
 
     border-radius:9px;
 }
@@ -1167,25 +1040,47 @@ img{
 .footer-brand strong{
     display:block;
 
+    font-size:14px;
+}
+
+.footer-brand small{
+    color:#91abc0;
+
+    font-size:10px;
+}
+
+.footer-nav{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+
+    gap:16px;
+}
+
+.footer-nav a{
+    color:#a9c1d4;
+
+    font-size:11px;
+}
+
+.footer-nav a:hover{
     color:white;
-
-    font-size:13px;
 }
 
-.footer-brand span{
-    display:block;
+.footer-bottom{
+    max-width:1220px;
 
-    margin-top:2px;
+    margin:auto;
+
+    padding:0 28px 25px;
+
+    color:#6f8da5;
 
     font-size:10px;
-}
 
-.footer-copy{
     text-align:right;
-
-    font-size:10px;
-
-    line-height:1.5;
 }
 
 
@@ -1200,19 +1095,10 @@ img{
     }
 
     .main-nav a{
-        padding:9px 7px;
+        padding-left:7px;
+        padding-right:7px;
 
         font-size:12px;
-    }
-
-    .hero-inner{
-        grid-template-columns:.8fr 1.2fr;
-
-        gap:25px;
-    }
-
-    .hero h1{
-        font-size:48px;
     }
 
     .areas-grid{
@@ -1238,9 +1124,7 @@ img{
     .header-inner{
         flex-direction:column;
 
-        padding:10px 20px;
-
-        gap:8px;
+        padding:12px 20px;
     }
 
     .main-nav{
@@ -1254,27 +1138,13 @@ img{
     .hero-inner{
         grid-template-columns:1fr;
 
-        padding:45px 22px;
+        min-height:auto;
 
-        gap:30px;
+        padding:40px 22px;
     }
 
     .hero-copy{
-        text-align:center;
-
-        align-items:center;
-    }
-
-    .hero-description{
-        max-width:700px;
-    }
-
-    .hero-points{
-        width:100%;
-
-        max-width:700px;
-
-        text-align:left;
+        padding:20px 0;
     }
 
     .hero-visual{
@@ -1283,37 +1153,38 @@ img{
 
     .hero-image{
         min-height:360px;
-
-        height:360px;
     }
 
-    .section-heading{
+    .normativa-inner{
+        grid-template-columns:1fr;
+
+        gap:35px;
+    }
+
+    .app-inner{
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        text-align:center;
+    }
+
+    .app-list{
+        text-align:left;
+    }
+
+    .footer-inner{
         flex-direction:column;
 
         align-items:flex-start;
     }
 
-    .normativa-inner,
-    .app-inner{
-        grid-template-columns:1fr;
-
-        gap:40px;
+    .footer-nav{
+        justify-content:flex-start;
     }
 
-    .app-copy{
-        text-align:center;
-    }
-
-    .app-copy p{
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-    .app-features{
-        max-width:600px;
-
-        margin-left:auto;
-        margin-right:auto;
+    .footer-bottom{
+        text-align:left;
     }
 }
 
@@ -1329,104 +1200,71 @@ img{
     }
 
     .main-nav a{
-        padding:7px 6px;
+        font-size:11px;
 
-        font-size:10px;
-    }
-
-    .hero-inner{
-        min-height:auto;
-
-        padding:38px 18px;
+        padding:8px 6px;
     }
 
     .hero h1{
         font-size:42px;
-
-        letter-spacing:-1.5px;
     }
 
     .hero-description{
-        font-size:15px;
-    }
-
-    .hero-actions{
-        justify-content:center;
+        font-size:16px;
     }
 
     .hero-points{
         grid-template-columns:1fr;
-
-        gap:12px;
     }
 
     .hero-visual{
-        min-height:290px;
+        min-height:280px;
     }
 
     .hero-image{
-        min-height:290px;
-
-        height:290px;
+        min-height:280px;
 
         border-radius:13px;
     }
 
-    .content-section,
-    .study-inner,
-    .normativa-inner,
-    .app-inner,
-    .intro-inner,
-    .final-inner{
-        padding-left:18px;
-        padding-right:18px;
+    .intro h2,
+    .study-header h2,
+    .app-copy h2{
+        font-size:29px;
+    }
+
+    .section-heading{
+        flex-direction:column;
+
+        align-items:flex-start;
     }
 
     .areas-grid,
-    .concepts-grid,
+    .concepts-grid{
+        grid-template-columns:1fr;
+    }
+
     .study-path{
         grid-template-columns:1fr;
     }
 
-    .area-card{
-        min-height:270px;
-    }
-
-    .normativa-points,
-    .app-features{
+    .normativa-points{
         grid-template-columns:1fr;
     }
 
-    .app-visual{
-        min-height:auto;
-
-        gap:8px;
+    .normativa-copy h2{
+        font-size:30px;
     }
 
-    .phone{
-        width:160px;
-        height:315px;
-    }
-
-    .phone.small{
-        width:135px;
-        height:270px;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-
-        text-align:center;
-    }
-
-    .footer-copy{
-        text-align:center;
+    .final-cta h2{
+        font-size:30px;
     }
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -1453,7 +1291,7 @@ img{
                 </div>
 
                 <span class="brand-subtitle">
-                    Formación y seguridad en generadores de vapor
+                    Formación técnica para generadores de vapor
                 </span>
             </div>
 
@@ -1461,6 +1299,870 @@ img{
 
 
         <nav class="main-nav">
+
+            <a href="index.html">Inicio</a>
+
+            <a href="generadores.html">Generadores</a>
+
+            <a href="seguridad.html">Seguridad</a>
+
+            <a href="estudio.html">Estudio</a>
+
+            <a href="normativa.html">Normativa</a>
+
+            <a href="enclavamientos.html">Enclavamientos</a>
+
+            <a href="tratamiento-agua.html">Tratamiento del agua</a>
+
+            <a href="app.html" class="nav-app">App</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+
+        <div class="hero-copy">
+
+            <div class="hero-label">
+                FORMACIÓN TÉCNICA
+            </div>
+
+
+            <h1>
+                Pensá como
+                <span>foguista.</span>
+            </h1>
+
+
+            <p class="hero-description">
+                Un espacio dedicado al estudio de los generadores
+                de vapor, su funcionamiento, seguridad, normativa
+                y operación en Uruguay.
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="generadores.html"
+                    class="button button-primary"
+                >
+                    Empezar a estudiar
+                </a>
+
+                <a
+                    href="normativa.html"
+                    class="button button-secondary"
+                >
+                    Ver normativa
+                </a>
+
+            </div>
+
+
+            <div class="hero-points">
+
+                <div class="hero-point">
+
+                    <div class="hero-point-icon">
+                        ⚙
+                    </div>
+
+                    <div>
+                        <strong>Comprender</strong>
+
+                        <small>
+                            El funcionamiento del generador
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-point">
+
+                    <div class="hero-point-icon">
+                        🛡
+                    </div>
+
+                    <div>
+                        <strong>Seguridad</strong>
+
+                        <small>
+                            Identificar riesgos y protecciones
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-point">
+
+                    <div class="hero-point-icon">
+                        📘
+                    </div>
+
+                    <div>
+                        <strong>Normativa</strong>
+
+                        <small>
+                            Estudiar la reglamentación vigente
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <img
+                src="hero-foguista.png"
+                alt="Generador de vapor industrial"
+                class="hero-image"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro">
+
+    <div class="intro-inner">
+
+        <span class="section-tag">
+            FOGUISTA URUGUAY
+        </span>
+
+        <h2>
+            Una formación basada en comprender
+        </h2>
+
+        <p>
+            El objetivo no es solamente memorizar respuestas.
+            Es comprender cómo funciona un sistema de generación
+            de vapor, relacionar sus variables, interpretar sus
+            protecciones y poder razonar frente a una situación
+            real de operación.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ÁREAS
+===================================================== -->
+
+<section class="content-section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-tag">
+                CONTENIDOS
+            </span>
+
+            <h2>
+                Áreas principales
+            </h2>
+        </div>
+
+        <p>
+            Material organizado para avanzar desde los conceptos
+            fundamentales hasta los aspectos de seguridad,
+            operación y normativa.
+        </p>
+
+    </div>
+
+
+    <div class="areas-grid">
+
+
+        <article class="area-card">
+
+            <div class="area-icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Generadores de vapor
+            </h3>
+
+            <p>
+                Funcionamiento, transferencia de calor, presión,
+                temperatura, producción de vapor, tipos de
+                generadores y principales componentes.
+            </p>
+
+            <a
+                href="generadores.html"
+                class="area-link"
+            >
+                Estudiar generadores
+            </a>
+
+        </article>
+
+
+        <article class="area-card">
+
+            <div class="area-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Seguridad
+            </h3>
+
+            <p>
+                Riesgos asociados a la operación, nivel de agua,
+                presión, combustión, alimentación, controles,
+                alarmas y situaciones anormales.
+            </p>
+
+            <a
+                href="seguridad.html"
+                class="area-link"
+            >
+                Estudiar seguridad
+            </a>
+
+        </article>
+
+
+        <article class="area-card">
+
+            <div class="area-icon">
+                📖
+            </div>
+
+            <h3>
+                Estudio
+            </h3>
+
+            <p>
+                Un método para aprender relacionando conceptos,
+                variables, sistemas y consecuencias en lugar de
+                memorizar respuestas aisladas.
+            </p>
+
+            <a
+                href="estudio.html"
+                class="area-link"
+            >
+                Ver método de estudio
+            </a>
+
+        </article>
+
+
+        <article class="area-card">
+
+            <div class="area-icon">
+                ⚖️
+            </div>
+
+            <h3>
+                Normativa
+            </h3>
+
+            <p>
+                Material educativo basado en la reglamentación
+                de URSEA, diferenciando claramente el texto
+                normativo de las explicaciones para estudiar.
+            </p>
+
+            <a
+                href="normativa.html"
+                class="area-link"
+            >
+                Estudiar normativa
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MÉTODO
+===================================================== -->
+
+<section class="study-section">
+
+    <div class="study-inner">
+
+        <div class="study-header">
+
+            <span class="section-tag">
+                MÉTODO
+            </span>
+
+            <h2>
+                Una forma diferente de estudiar
+            </h2>
+
+            <p>
+                La operación de un generador de vapor exige
+                relacionar diferentes variables y entender qué
+                ocurre cuando una de ellas cambia.
+            </p>
+
+        </div>
+
+
+        <div class="study-path">
+
+
+            <div class="study-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Comprender
+                </h3>
+
+                <p>
+                    Entender qué es cada componente y cuál es
+                    su función dentro del sistema.
+                </p>
+
+            </div>
+
+
+            <div class="study-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Relacionar
+                </h3>
+
+                <p>
+                    Conectar presión, temperatura, nivel,
+                    combustión y producción de vapor.
+                </p>
+
+            </div>
+
+
+            <div class="study-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Interpretar
+                </h3>
+
+                <p>
+                    Leer instrumentos, controles, alarmas y
+                    condiciones de funcionamiento.
+                </p>
+
+            </div>
+
+
+            <div class="study-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Razonar
+                </h3>
+
+                <p>
+                    Pensar qué puede ocurrir cuando una variable
+                    se sale de su condición normal.
+                </p>
+
+            </div>
+
+
+            <div class="study-step">
+
+                <div class="step-number">
+                    05
+                </div>
+
+                <h3>
+                    Comprobar
+                </h3>
+
+                <p>
+                    Contrastar lo aprendido con la normativa y
+                    los procedimientos correspondientes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONCEPTOS
+===================================================== -->
+
+<section class="concepts-section">
+
+    <div class="content-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-tag">
+                    BASE TÉCNICA
+                </span>
+
+                <h2>
+                    Conceptos que hay que dominar
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="concepts-grid">
+
+
+            <div class="concept-card">
+
+                <div class="concept-icon">
+                    💨
+                </div>
+
+                <div>
+
+                    <h3>
+                        Vapor
+                    </h3>
+
+                    <p>
+                        Formación del vapor, calor sensible,
+                        calor latente y condiciones de vapor
+                        saturado o sobrecalentado.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="concept-card">
+
+                <div class="concept-icon">
+                    🌡️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Temperatura
+                    </h3>
+
+                    <p>
+                        Relación entre temperatura, presión y
+                        estado del agua y del vapor.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="concept-card">
+
+                <div class="concept-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Presión
+                    </h3>
+
+                    <p>
+                        Presión de trabajo, presión admisible,
+                        instrumentos y sistemas de protección.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="concept-card">
+
+                <div class="concept-icon">
+                    💧
+                </div>
+
+                <div>
+
+                    <h3>
+                        Nivel de agua
+                    </h3>
+
+                    <p>
+                        Alimentación, control de nivel, indicación
+                        y consecuencias de un nivel inadecuado.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="concept-card">
+
+                <div class="concept-icon">
+                    🔥
+                </div>
+
+                <div>
+
+                    <h3>
+                        Combustión
+                    </h3>
+
+                    <p>
+                        Combustible, aire, llama, transferencia
+                        de calor y control del proceso.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="concept-card">
+
+                <div class="concept-icon">
+                    🧪
+                </div>
+
+                <div>
+
+                    <h3>
+                        Agua
+                    </h3>
+
+                    <p>
+                        Calidad del agua, tratamiento químico,
+                        purgas, incrustaciones y corrosión.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NORMATIVA
+===================================================== -->
+
+<section class="normativa-section">
+
+    <div class="normativa-inner">
+
+
+        <div class="normativa-copy">
+
+            <span class="section-tag">
+                URSEA
+            </span>
+
+            <h2>
+                La normativa también se estudia comprendiendo
+            </h2>
+
+            <p>
+                El contenido normativo se presenta diferenciando
+                el texto oficial, la explicación educativa y las
+                observaciones orientadas al estudio. De esta forma
+                se evita confundir una explicación con una
+                exigencia reglamentaria.
+            </p>
+
+
+            <div class="normativa-points">
+
+                <div class="normativa-point">
+
+                    <strong>
+                        Texto oficial
+                    </strong>
+
+                    <span>
+                        Referencia directa a la reglamentación.
+                    </span>
+
+                </div>
+
+
+                <div class="normativa-point">
+
+                    <strong>
+                        Explicación
+                    </strong>
+
+                    <span>
+                        Interpretación para facilitar el estudio.
+                    </span>
+
+                </div>
+
+
+                <div class="normativa-point">
+
+                    <strong>
+                        Seguridad
+                    </strong>
+
+                    <span>
+                        Relación entre requisitos y operación.
+                    </span>
+
+                </div>
+
+
+                <div class="normativa-point">
+
+                    <strong>
+                        Examen
+                    </strong>
+
+                    <span>
+                        Puntos importantes para razonar y recordar.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="normativa-box">
+
+            <div class="normativa-box-label">
+                REGLAMENTACIÓN VIGENTE
+            </div>
+
+            <h3>
+                Generadores de vapor
+            </h3>
+
+            <p>
+                Accedé al material de estudio de la normativa
+                aplicable a los generadores de vapor en Uruguay.
+            </p>
+
+            <a
+                href="normativa.html"
+                class="button button-primary"
+            >
+                Ver normativa
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     APP
+===================================================== -->
+
+<section class="app-section">
+
+    <div class="app-inner">
+
+
+        <div class="app-image">
+
+            <img
+                src="logo.png"
+                alt="App Foguista Uruguay"
+            >
+
+        </div>
+
+
+        <div class="app-copy">
+
+            <span class="section-tag">
+                HERRAMIENTA DE ESTUDIO
+            </span>
+
+            <h2>
+                Foguista Uruguay también está en formato App
+            </h2>
+
+            <p>
+                Una herramienta pensada para acompañar el estudio
+                y practicar los conocimientos necesarios para la
+                formación de un foguista.
+            </p>
+
+
+            <div class="app-list">
+
+                <div>
+                    <span>✓</span>
+                    Preguntas de práctica
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Contenidos relacionados con la formación
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Estudio desde el celular
+                </div>
+
+            </div>
+
+
+            <a
+                href="app.html"
+                class="button button-primary"
+            >
+                Conocer la App
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="final-cta">
+
+    <div class="final-cta-inner">
+
+        <span class="section-tag">
+            FOGUISTA URUGUAY
+        </span>
+
+        <h2>
+            Aprender para operar con criterio
+        </h2>
+
+        <p>
+            Conocer el funcionamiento, comprender los riesgos,
+            interpretar las protecciones y estudiar la normativa
+            son partes fundamentales de la formación técnica.
+        </p>
+
+        <a
+            href="estudio.html"
+            class="button button-primary"
+        >
+            Comenzar el estudio
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="logo.png"
+                alt="Foguista Uruguay"
+            >
+
+            <div>
+
+                <strong>
+                    Foguista Uruguay
+                </strong>
+
+                <small>
+                    Formación técnica y estudio
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <nav class="footer-nav">
 
             <a href="index.html">
                 Inicio
@@ -1490,1049 +2192,15 @@ img{
                 Tratamiento del agua
             </a>
 
-            <a href="app.html" class="nav-app">
-                App
-            </a>
-
         </nav>
 
     </div>
 
-</header>
 
+    <div class="footer-bottom">
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-    <div class="hero-inner">
-
-
-        <div class="hero-copy">
-
-            <div class="hero-label">
-                FORMACIÓN TÉCNICA
-            </div>
-
-
-            <h1>
-                Conocimiento técnico para un
-                <span>trabajo seguro</span>
-            </h1>
-
-
-            <p class="hero-description">
-                Formación, estudio y recursos sobre generadores de vapor,
-                seguridad, operación y normativa aplicable en Uruguay.
-            </p>
-
-
-            <div class="hero-actions">
-
-                <a
-                    href="estudio.html"
-                    class="button button-primary"
-                >
-                    Comenzar a estudiar →
-                </a>
-
-                <a
-                    href="app.html"
-                    class="button button-secondary"
-                >
-                    Conocer la App
-                </a>
-
-            </div>
-
-
-            <div class="hero-points">
-
-
-                <div class="hero-point">
-
-                    <div class="hero-point-icon">
-                        📖
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Contenido organizado
-                        </strong>
-
-                        <small>
-                            Conceptos explicados
-                            paso a paso
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-point">
-
-                    <div class="hero-point-icon">
-                        🛡️
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Seguridad
-                        </strong>
-
-                        <small>
-                            Protecciones y situaciones
-                            anormales
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-point">
-
-                    <div class="hero-point-icon">
-                        🎓
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Preparación
-                        </strong>
-
-                        <small>
-                            Examen y práctica
-                            profesional
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-visual">
-
-            <img
-                src="hero-foguista.png"
-                alt="Generador de vapor industrial"
-                class="hero-image"
-            >
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     INTRO
-===================================================== -->
-
-<section class="intro">
-
-    <div class="intro-inner">
-
-        <span class="section-tag">
-            FOGUISTA URUGUAY
-        </span>
-
-        <h2>
-            Una base para comprender la operación
-        </h2>
-
-        <p>
-            Este espacio reúne conocimientos técnicos, conceptos de seguridad,
-            material de estudio y referencias normativas para ayudar a
-            comprender el funcionamiento de los generadores de vapor y
-            desarrollar un criterio de operación responsable.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ÁREAS
-===================================================== -->
-
-<section class="content-section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="section-tag">
-                ÁREAS DE CONOCIMIENTO
-            </span>
-
-            <h2>
-                Aprendé por áreas
-            </h2>
-
-        </div>
-
-        <p>
-            Contenido organizado para avanzar desde los fundamentos
-            del generador de vapor hasta la seguridad, los enclavamientos
-            y el tratamiento del agua.
-        </p>
-
-    </div>
-
-
-    <div class="areas-grid">
-
-
-        <article class="area-card">
-
-            <div class="area-icon">
-                ⚙️
-            </div>
-
-            <h3>
-                Generadores
-            </h3>
-
-            <p>
-                Comprendé cómo funciona un generador de vapor,
-                la transformación de energía, la generación de vapor,
-                sus componentes y los principales sistemas involucrados.
-            </p>
-
-            <a
-                href="generadores.html"
-                class="area-link"
-            >
-                Ver contenido
-            </a>
-
-        </article>
-
-
-        <article class="area-card">
-
-            <div class="area-icon">
-                🛡️
-            </div>
-
-            <h3>
-                Seguridad
-            </h3>
-
-            <p>
-                Conocé los principales riesgos asociados a la operación,
-                las variables críticas y la importancia de los sistemas
-                de protección y control.
-            </p>
-
-            <a
-                href="seguridad.html"
-                class="area-link"
-            >
-                Ver contenido
-            </a>
-
-        </article>
-
-
-        <article class="area-card">
-
-            <div class="area-icon">
-                🔒
-            </div>
-
-            <h3>
-                Enclavamientos
-            </h3>
-
-            <p>
-                Aprendé qué es un enclavamiento, cómo se diferencia
-                de una alarma o un control y por qué resulta fundamental
-                para la protección del generador.
-            </p>
-
-            <a
-                href="enclavamientos.html"
-                class="area-link"
-            >
-                Ver contenido
-            </a>
-
-        </article>
-
-
-        <article class="area-card">
-
-            <div class="area-icon">
-                💧
-            </div>
-
-            <h3>
-                Tratamiento del agua
-            </h3>
-
-            <p>
-                Comprendé la importancia de la calidad del agua,
-                las incrustaciones, la corrosión, las purgas y el
-                control químico del sistema.
-            </p>
-
-            <a
-                href="tratamiento-agua.html"
-                class="area-link"
-            >
-                Ver contenido
-            </a>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     MÉTODO DE ESTUDIO
-===================================================== -->
-
-<section class="study-section">
-
-    <div class="study-inner">
-
-        <div class="study-header">
-
-            <span class="section-tag">
-                MÉTODO DE ESTUDIO
-            </span>
-
-            <h2>
-                No memorices solamente: comprendé
-            </h2>
-
-            <p>
-                El objetivo es desarrollar la capacidad de relacionar
-                variables, interpretar situaciones y razonar como operador.
-            </p>
-
-        </div>
-
-
-        <div class="study-path">
-
-
-            <div class="study-step">
-
-                <div class="step-number">
-                    01
-                </div>
-
-                <h3>
-                    Comprender
-                </h3>
-
-                <p>
-                    Entender qué hace cada componente y cuál es su función
-                    dentro del sistema.
-                </p>
-
-            </div>
-
-
-            <div class="study-step">
-
-                <div class="step-number">
-                    02
-                </div>
-
-                <h3>
-                    Relacionar
-                </h3>
-
-                <p>
-                    Vincular presión, temperatura, nivel, combustión,
-                    agua y energía.
-                </p>
-
-            </div>
-
-
-            <div class="study-step">
-
-                <div class="step-number">
-                    03
-                </div>
-
-                <h3>
-                    Interpretar
-                </h3>
-
-                <p>
-                    Comprender qué significa cada indicación
-                    y qué está ocurriendo en el generador.
-                </p>
-
-            </div>
-
-
-            <div class="study-step">
-
-                <div class="step-number">
-                    04
-                </div>
-
-                <h3>
-                    Razonar
-                </h3>
-
-                <p>
-                    Analizar situaciones normales y anormales
-                    antes de actuar.
-                </p>
-
-            </div>
-
-
-            <div class="study-step">
-
-                <div class="step-number">
-                    05
-                </div>
-
-                <h3>
-                    Comprobar
-                </h3>
-
-                <p>
-                    Verificar lo aprendido mediante preguntas,
-                    situaciones y práctica.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONCEPTOS
-===================================================== -->
-
-<section class="concepts-section">
-
-    <div class="content-section">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-tag">
-                    FUNDAMENTOS
-                </span>
-
-                <h2>
-                    Conceptos que tenés que dominar
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="concepts-grid">
-
-
-            <div class="concept-card">
-
-                <div class="concept-icon">
-                    🔥
-                </div>
-
-                <div>
-
-                    <h3>
-                        Combustión
-                    </h3>
-
-                    <p>
-                        Comprender cómo se libera y transfiere
-                        la energía hacia el agua.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="concept-card">
-
-                <div class="concept-icon">
-                    💨
-                </div>
-
-                <div>
-
-                    <h3>
-                        Vapor
-                    </h3>
-
-                    <p>
-                        Diferenciar vapor saturado, sobrecalentado
-                        y los cambios de estado.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="concept-card">
-
-                <div class="concept-icon">
-                    📈
-                </div>
-
-                <div>
-
-                    <h3>
-                        Presión
-                    </h3>
-
-                    <p>
-                        Relacionar presión, temperatura y condiciones
-                        de operación del generador.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="concept-card">
-
-                <div class="concept-icon">
-                    💧
-                </div>
-
-                <div>
-
-                    <h3>
-                        Nivel de agua
-                    </h3>
-
-                    <p>
-                        Comprender por qué el nivel es una variable
-                        fundamental para la seguridad.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="concept-card">
-
-                <div class="concept-icon">
-                    ⚡
-                </div>
-
-                <div>
-
-                    <h3>
-                        Energía
-                    </h3>
-
-                    <p>
-                        Seguir la cadena desde el combustible hasta
-                        la energía contenida en el vapor.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="concept-card">
-
-                <div class="concept-icon">
-                    🧪
-                </div>
-
-                <div>
-
-                    <h3>
-                        Agua
-                    </h3>
-
-                    <p>
-                        Entender cómo la calidad del agua afecta
-                        el funcionamiento y la conservación.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     NORMATIVA
-===================================================== -->
-
-<section class="normativa-section">
-
-    <div class="normativa-inner">
-
-
-        <div class="normativa-copy">
-
-            <span class="section-tag">
-                NORMATIVA
-            </span>
-
-            <h2>
-                Estudiá la normativa con criterio
-            </h2>
-
-            <p>
-                La normativa debe estudiarse distinguiendo claramente
-                el texto oficial de las explicaciones educativas y
-                de las observaciones prácticas para el operador.
-            </p>
-
-
-            <div class="normativa-points">
-
-
-                <div class="normativa-point">
-
-                    <strong>
-                        Texto oficial
-                    </strong>
-
-                    <span>
-                        Referencia directa al contenido normativo.
-                    </span>
-
-                </div>
-
-
-                <div class="normativa-point">
-
-                    <strong>
-                        Explicación
-                    </strong>
-
-                    <span>
-                        Interpretación educativa del contenido.
-                    </span>
-
-                </div>
-
-
-                <div class="normativa-point">
-
-                    <strong>
-                        Estudio
-                    </strong>
-
-                    <span>
-                        Puntos importantes para preparar el examen.
-                    </span>
-
-                </div>
-
-
-                <div class="normativa-point">
-
-                    <strong>
-                        Aplicación
-                    </strong>
-
-                    <span>
-                        Relación con la operación del generador.
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <div class="normativa-box">
-
-            <div class="normativa-box-label">
-                URSEA
-            </div>
-
-            <h3>
-                Reglamento de generadores de vapor
-            </h3>
-
-            <p>
-                Accedé al material de estudio de la normativa y
-                diferenciá siempre entre lo que establece el reglamento
-                y la explicación utilizada para comprenderlo.
-            </p>
-
-            <a
-                href="normativa.html"
-                class="button button-primary"
-            >
-                Estudiar normativa →
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     APP
-===================================================== -->
-
-<section class="app-section">
-
-    <div class="app-inner">
-
-
-        <div class="app-copy">
-
-            <span class="section-tag">
-                HERRAMIENTA DE ESTUDIO
-            </span>
-
-
-            <img
-                src="logo.png"
-                alt="Foguista Uruguay"
-                class="app-logo"
-            >
-
-
-            <h2>
-                Llevá tu preparación con vos
-            </h2>
-
-
-            <p>
-                La App Foguista Uruguay está pensada como una herramienta
-                complementaria para practicar, repasar conceptos y
-                prepararse para la evaluación.
-            </p>
-
-
-            <div class="app-features">
-
-
-                <div class="app-feature">
-
-                    <strong>
-                        Preguntas
-                    </strong>
-
-                    <span>
-                        Practicá conceptos relacionados
-                        con la operación.
-                    </span>
-
-                </div>
-
-
-                <div class="app-feature">
-
-                    <strong>
-                        Repaso
-                    </strong>
-
-                    <span>
-                        Volvé sobre los temas que
-                        necesitás reforzar.
-                    </span>
-
-                </div>
-
-
-                <div class="app-feature">
-
-                    <strong>
-                        Preparación
-                    </strong>
-
-                    <span>
-                        Entrená tu razonamiento
-                        antes del examen.
-                    </span>
-
-                </div>
-
-
-                <div class="app-feature">
-
-                    <strong>
-                        Complemento
-                    </strong>
-
-                    <span>
-                        Utilizala junto al material
-                        educativo del sitio.
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-            <a
-                href="app.html"
-                class="button button-primary"
-            >
-                Conocer la App →
-            </a>
-
-        </div>
-
-
-        <div class="app-visual">
-
-
-            <div class="phone small">
-
-                <div class="phone-screen">
-
-                    <div class="phone-top">
-                        FOGUISTA URUGUAY
-                    </div>
-
-                    <div class="phone-content">
-
-                        <div class="phone-card">
-
-                            <strong>
-                                Generadores de vapor
-                            </strong>
-
-                            <span>
-                                Repasá los conceptos
-                                fundamentales.
-                            </span>
-
-                        </div>
-
-                        <div class="phone-card">
-
-                            <strong>
-                                Seguridad
-                            </strong>
-
-                            <span>
-                                Identificá variables
-                                y situaciones críticas.
-                            </span>
-
-                        </div>
-
-                        <div class="phone-card">
-
-                            <strong>
-                                Práctica
-                            </strong>
-
-                            <span>
-                                Poné a prueba
-                                tus conocimientos.
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="phone">
-
-                <div class="phone-screen">
-
-                    <div class="phone-top">
-                        FOGUISTA URUGUAY
-                    </div>
-
-                    <div class="phone-content">
-
-                        <div class="phone-card">
-
-                            <strong>
-                                Pregunta de práctica
-                            </strong>
-
-                            <span>
-                                ¿Qué variable resulta
-                                fundamental para la seguridad
-                                del generador?
-                            </span>
-
-                        </div>
-
-                        <div class="phone-card">
-
-                            <strong>
-                                Seleccioná una respuesta
-                            </strong>
-
-                            <span>
-                                Nivel de agua
-                            </span>
-
-                        </div>
-
-                        <div class="phone-card">
-
-                            <strong>
-                                Repasar concepto
-                            </strong>
-
-                            <span>
-                                Volvé al contenido para
-                                profundizar.
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CTA FINAL
-===================================================== -->
-
-<section class="final-section">
-
-    <div class="final-inner">
-
-        <span class="section-tag">
-            FOGUISTA URUGUAY
-        </span>
-
-        <h2>
-            Comprender para operar mejor
-        </h2>
-
-        <p>
-            Estudiá los fundamentos, relacioná las variables,
-            comprendé los sistemas de protección y desarrollá
-            el criterio necesario para una operación responsable.
-        </p>
-
-        <a
-            href="estudio.html"
-            class="button button-primary"
-        >
-            Comenzar a estudiar →
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="site-footer">
-
-    <div class="footer-inner">
-
-
-        <div class="footer-brand">
-
-            <img
-                src="logo.png"
-                alt="Foguista Uruguay"
-                class="footer-logo"
-            >
-
-            <div>
-
-                <strong>
-                    Foguista Uruguay
-                </strong>
-
-                <span>
-                    Formación y seguridad en generadores de vapor
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-copy">
-
-            <div>
-                Formación técnica, estudio y recursos.
-            </div>
-
-            <div>
-                Foguista Uruguay
-            </div>
-
-        </div>
-
+        Foguista Uruguay · Material educativo para formación
+        técnica en generadores de vapor.
 
     </div>
 
