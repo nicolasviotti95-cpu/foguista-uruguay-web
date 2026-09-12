@@ -274,7 +274,7 @@ section{
 
 .features{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
     gap:22px;
 }
 
@@ -305,6 +305,10 @@ section{
 
 .card p{
     color:#637083;
+}
+
+.card .btn{
+    margin-top:18px;
 }
 
 /* =========================
@@ -560,6 +564,14 @@ footer p{
    RESPONSIVE
 ========================= */
 
+@media(max-width:1050px){
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
 @media(max-width:850px){
 
     header{
@@ -633,7 +645,6 @@ footer p{
 
 <body>
 
-
 <!-- =========================
      HEADER
 ========================= -->
@@ -656,7 +667,6 @@ footer p{
         </div>
 
     </a>
-
 
     <nav>
 
@@ -684,6 +694,10 @@ footer p{
             Enclavamientos
         </a>
 
+        <a href="tratamiento-agua.html">
+            Tratamiento del agua
+        </a>
+
         <a href="app.html">
             App
         </a>
@@ -691,7 +705,6 @@ footer p{
     </nav>
 
 </header>
-
 
 <!-- =========================
      HERO
@@ -733,7 +746,6 @@ footer p{
 
 </section>
 
-
 <!-- =========================
      INTRO
 ========================= -->
@@ -765,7 +777,6 @@ footer p{
 
         </div>
 
-
         <div class="intro-box">
 
             <h3>
@@ -776,6 +787,10 @@ footer p{
 
                 <li>
                     🔥 Funcionamiento de generadores de vapor
+                </li>
+
+                <li>
+                    💧 Tratamiento y control del agua
                 </li>
 
                 <li>
@@ -808,7 +823,6 @@ footer p{
 
 </section>
 
-
 <!-- =========================
      FEATURES
 ========================= -->
@@ -831,9 +845,7 @@ footer p{
 
     </div>
 
-
     <div class="features">
-
 
         <div class="card">
 
@@ -851,8 +863,11 @@ footer p{
                 componentes de un generador.
             </p>
 
-        </div>
+            <a href="generadores.html" class="btn btn-primary">
+                Ver generadores →
+            </a>
 
+        </div>
 
         <div class="card">
 
@@ -869,8 +884,11 @@ footer p{
                 combustión y las diferentes protecciones del sistema.
             </p>
 
-        </div>
+            <a href="seguridad.html" class="btn btn-primary">
+                Ver seguridad →
+            </a>
 
+        </div>
 
         <div class="card">
 
@@ -888,12 +906,30 @@ footer p{
                 ante una situación anormal.
             </p>
 
-            <a
-                href="enclavamientos.html"
-                class="btn btn-primary"
-                style="margin-top:18px;"
-            >
+            <a href="enclavamientos.html" class="btn btn-primary">
                 Ver enclavamientos →
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">
+                💧
+            </div>
+
+            <h3>
+                Tratamiento del agua
+            </h3>
+
+            <p>
+                Comprendé la importancia de la calidad del agua,
+                las incrustaciones, la corrosión, las purgas y
+                el control químico del generador.
+            </p>
+
+            <a href="tratamiento-agua.html" class="btn btn-primary">
+                Ver tratamiento del agua →
             </a>
 
         </div>
@@ -903,7 +939,6 @@ footer p{
 </div>
 
 </section>
-
 
 <!-- =========================
      SECTION LINKS
@@ -925,9 +960,7 @@ footer p{
 
     </div>
 
-
     <div class="link-grid">
-
 
         <a href="generadores.html" class="link-card">
 
@@ -951,7 +984,6 @@ footer p{
 
         </a>
 
-
         <a href="seguridad.html" class="link-card">
 
             <span class="small-label">
@@ -972,7 +1004,6 @@ footer p{
             </span>
 
         </a>
-
 
         <a href="enclavamientos.html" class="link-card">
 
@@ -996,6 +1027,27 @@ footer p{
 
         </a>
 
+        <a href="tratamiento-agua.html" class="link-card">
+
+            <span class="small-label">
+                AGUA
+            </span>
+
+            <h3>
+                Tratamiento del agua
+            </h3>
+
+            <p>
+                Dureza, incrustaciones, corrosión, conductividad,
+                purgas, tratamiento químico y control de calidad
+                del agua del generador.
+            </p>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
 
         <a href="estudio.html" class="link-card">
 
@@ -1019,7 +1071,6 @@ footer p{
 
         </a>
 
-
         <a href="normativa.html" class="link-card">
 
             <span class="small-label">
@@ -1041,7 +1092,6 @@ footer p{
             </span>
 
         </a>
-
 
         <a href="app.html" class="link-card">
 
@@ -1071,7 +1121,6 @@ footer p{
 
 </section>
 
-
 <!-- =========================
      CONCEPTS
 ========================= -->
@@ -1093,9 +1142,7 @@ footer p{
 
     </div>
 
-
     <div class="concept-grid">
-
 
         <div class="concept">
 
@@ -1110,7 +1157,6 @@ footer p{
 
         </div>
 
-
         <div class="concept">
 
             <h3>
@@ -1124,7 +1170,6 @@ footer p{
 
         </div>
 
-
         <div class="concept">
 
             <h3>
@@ -1134,10 +1179,25 @@ footer p{
             <p>
                 El agua recibe energía y cambia de estado hasta
                 producir vapor en las condiciones correspondientes.
+                Su calidad también influye en la seguridad y eficiencia
+                del generador.
             </p>
 
         </div>
 
+        <div class="concept">
+
+            <h3>
+                🧪 Tratamiento del agua
+            </h3>
+
+            <p>
+                El acondicionamiento y control del agua permite reducir
+                problemas como incrustaciones, corrosión y exceso de
+                concentración de sustancias disueltas.
+            </p>
+
+        </div>
 
         <div class="concept">
 
@@ -1152,7 +1212,6 @@ footer p{
 
         </div>
 
-
         <div class="concept">
 
             <h3>
@@ -1166,7 +1225,6 @@ footer p{
             </p>
 
         </div>
-
 
         <div class="concept">
 
@@ -1184,7 +1242,6 @@ footer p{
 
     </div>
 
-
     <div style="text-align:center;margin-top:30px;">
 
         <a href="generadores.html" class="btn btn-primary">
@@ -1197,7 +1254,6 @@ footer p{
 
 </section>
 
-
 <!-- =========================
      APP PROMO
 ========================= -->
@@ -1207,7 +1263,6 @@ footer p{
 <div class="container">
 
     <div class="app-grid">
-
 
         <div class="app-text">
 
@@ -1226,11 +1281,9 @@ footer p{
                 para el examen de foguista.
             </p>
 
-
             <a href="app.html" class="btn btn-light">
                 📱 Conocer la aplicación
             </a>
-
 
             <div class="app-features">
 
@@ -1254,7 +1307,6 @@ footer p{
 
         </div>
 
-
         <div class="phone-area">
 
             <div class="phone">
@@ -1274,7 +1326,6 @@ footer p{
                         Foguista Uruguay
                     </div>
 
-
                     <div class="fake-option">
                         🔥 Generadores de vapor
                     </div>
@@ -1285,6 +1336,10 @@ footer p{
 
                     <div class="fake-option">
                         🔒 Enclavamientos
+                    </div>
+
+                    <div class="fake-option">
+                        💧 Tratamiento del agua
                     </div>
 
                     <div class="fake-option">
@@ -1311,7 +1366,6 @@ footer p{
 
 </section>
 
-
 <!-- =========================
      FINAL
 ========================= -->
@@ -1328,7 +1382,8 @@ footer p{
 
         <p>
             Conocé el funcionamiento, estudiá la seguridad,
-            comprendé los enclavamientos, repasá la normativa
+            comprendé los enclavamientos, aprendé sobre el
+            tratamiento del agua, repasá la normativa
             y preparate para el examen.
         </p>
 
@@ -1341,7 +1396,6 @@ footer p{
 </div>
 
 </section>
-
 
 <!-- =========================
      FOOTER
@@ -1389,6 +1443,10 @@ footer p{
             Enclavamientos
         </a>
 
+        <a href="tratamiento-agua.html">
+            Tratamiento del agua
+        </a>
+
         <a href="app.html">
             App
         </a>
@@ -1396,7 +1454,6 @@ footer p{
     </div>
 
 </footer>
-
 
 </body>
 </html>
