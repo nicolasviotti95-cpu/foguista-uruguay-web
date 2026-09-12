@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Foguista Uruguay — Formación, estudio y seguridad en generadores de vapor y operación de calderas en Uruguay.">
+<meta name="description"
+content="Foguista Uruguay — Formación, estudio y seguridad en generadores de vapor y operación de calderas en Uruguay.">
 
 <title>Foguista Uruguay | Formación técnica y seguridad</title>
 
 <style>
+
+/* =========================================================
+   BASE
+========================================================= */
 
 *{
     box-sizing:border-box;
@@ -33,9 +39,10 @@ img{
     max-width:100%;
 }
 
-/* =====================================================
+
+/* =========================================================
    HEADER
-===================================================== */
+========================================================= */
 
 header{
     position:sticky;
@@ -103,64 +110,39 @@ nav a.active{
     background:#168fe0;
 }
 
-/* =====================================================
+
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero{
     position:relative;
-    min-height:465px;
+    min-height:470px;
     overflow:hidden;
 
     background:
         linear-gradient(
             90deg,
-            rgba(3,28,53,.97) 0%,
-            rgba(3,31,57,.93) 35%,
+            rgba(3,27,51,.98) 0%,
+            rgba(3,29,54,.94) 32%,
             rgba(3,31,57,.68) 58%,
-            rgba(3,31,57,.28) 100%
+            rgba(3,31,57,.20) 100%
         ),
         url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg")
         center/cover no-repeat;
 }
 
-.hero::after{
-    content:"";
-    position:absolute;
-    right:-80px;
-    top:0;
-    width:430px;
-    height:100%;
-
-    background:
-        radial-gradient(
-            circle at 65% 35%,
-            rgba(255,255,255,.16) 0 3%,
-            transparent 3.5%
-        ),
-        linear-gradient(
-            120deg,
-            transparent 20%,
-            rgba(255,255,255,.08) 20%,
-            rgba(255,255,255,.08) 21%,
-            transparent 21%
-        );
-
-    opacity:.7;
-    pointer-events:none;
-}
-
 .hero-inner{
     position:relative;
-    z-index:2;
+    z-index:4;
     max-width:1220px;
     margin:auto;
-    padding:55px 25px 60px;
+    padding:60px 25px 65px;
     color:white;
 }
 
 .hero h2{
-    max-width:650px;
+    max-width:680px;
     margin:0 0 18px;
     font-size:48px;
     line-height:1.08;
@@ -172,34 +154,47 @@ nav a.active{
 }
 
 .hero-description{
-    max-width:620px;
+    max-width:630px;
+    margin:0 0 28px;
     font-size:18px;
     line-height:1.55;
-    color:#e2edf7;
-    margin-bottom:26px;
+    color:#e3edf6;
 }
 
+
+/* =========================================================
+   HERO FEATURES
+========================================================= */
+
 .hero-features{
-    display:flex;
+    display:grid;
+    grid-template-columns:repeat(4,auto);
+    justify-content:start;
     gap:28px;
-    max-width:760px;
     margin-bottom:28px;
-    flex-wrap:wrap;
+    max-width:800px;
 }
 
 .hero-feature{
     display:flex;
     align-items:center;
     gap:9px;
+    color:#f3f8fc;
     font-size:12px;
-    line-height:1.25;
-    color:#f2f7fb;
+    line-height:1.3;
 }
 
 .hero-feature-icon{
-    font-size:27px;
-    color:#16a0ef;
+    width:31px;
+    text-align:center;
+    font-size:26px;
+    flex-shrink:0;
 }
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
 
 .hero-buttons{
     display:flex;
@@ -236,73 +231,114 @@ nav a.active{
     color:#07345d;
 }
 
-/* =====================================================
-   URUGUAY WATERMARK
-===================================================== */
 
-.uy-mark{
+/* =========================================================
+   URUGUAY — MARCA DE AGUA
+========================================================= */
+
+.uruguay-watermark{
     position:absolute;
-    right:45px;
-    bottom:30px;
+    right:30px;
+    top:30px;
+    width:320px;
+    height:390px;
     z-index:2;
-    width:190px;
-    height:190px;
-    opacity:.20;
+    opacity:.13;
     pointer-events:none;
 }
 
-.uy-sun{
+.uruguay-map{
     position:absolute;
-    right:5px;
-    top:5px;
-    width:105px;
-    height:105px;
-    border-radius:50%;
+    right:0;
+    top:25px;
+    width:250px;
+    height:330px;
+}
 
+.uruguay-map svg{
+    width:100%;
+    height:100%;
+    overflow:visible;
+}
+
+.uruguay-map path{
+    fill:rgba(255,255,255,.13);
+    stroke:rgba(255,255,255,.45);
+    stroke-width:2;
+}
+
+
+/* Sol de Mayo sutil */
+
+.uruguay-sun{
+    position:absolute;
+    right:68px;
+    top:75px;
+    width:75px;
+    height:75px;
+    border:2px solid rgba(255,255,255,.48);
+    border-radius:50%;
+}
+
+.uruguay-sun::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:22px;
+    height:22px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:rgba(255,255,255,.35);
+}
+
+.uruguay-sun::after{
+    content:"";
+    position:absolute;
+    inset:-18px;
+    border-radius:50%;
     background:
         repeating-conic-gradient(
-            from 0deg,
-            rgba(255,255,255,.85) 0deg 8deg,
-            transparent 8deg 20deg
+            rgba(255,255,255,.32) 0deg 4deg,
+            transparent 4deg 18deg
         );
-
     -webkit-mask-image:
         radial-gradient(
             circle,
-            transparent 0 31px,
-            #000 32px
+            transparent 0 36px,
+            #000 37px
         );
-
     mask-image:
         radial-gradient(
             circle,
-            transparent 0 31px,
-            #000 32px
+            transparent 0 36px,
+            #000 37px
         );
 }
 
-.uy-text{
+.uruguay-watermark-text{
     position:absolute;
-    right:0;
-    bottom:0;
-    font-size:34px;
-    font-weight:900;
-    letter-spacing:4px;
+    right:15px;
+    bottom:20px;
     color:white;
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-align:right;
 }
 
-.uy-line{
-    position:absolute;
-    right:0;
-    bottom:39px;
-    width:135px;
-    height:2px;
-    background:#159ce9;
+.uruguay-watermark-text span{
+    display:block;
+    font-size:10px;
+    font-weight:normal;
+    letter-spacing:1px;
+    margin-top:4px;
 }
 
-/* =====================================================
-   SECTION
-===================================================== */
+
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 .section{
     max-width:1220px;
@@ -329,9 +365,10 @@ nav a.active{
     font-size:16px;
 }
 
-/* =====================================================
-   MAIN CARDS
-===================================================== */
+
+/* =========================================================
+   MAIN FEATURES
+========================================================= */
 
 .features{
     display:grid;
@@ -345,8 +382,10 @@ nav a.active{
     padding:23px 20px 20px;
     border-top:3px solid #159ce9;
     box-shadow:0 7px 22px rgba(12,53,86,.08);
+
     display:flex;
     flex-direction:column;
+
     min-height:220px;
 }
 
@@ -375,9 +414,10 @@ nav a.active{
     font-size:12px;
 }
 
-/* =====================================================
+
+/* =========================================================
    LEARNING SECTION
-===================================================== */
+========================================================= */
 
 .learning-section{
     position:relative;
@@ -386,30 +426,37 @@ nav a.active{
     background:
         linear-gradient(
             90deg,
-            #dff0fa,
-            #eef8fd
+            #e0f1fa,
+            #eff9fd
         );
 }
 
-.learning-section::after{
-    content:"URUGUAY";
+.learning-section::before{
+    content:"";
     position:absolute;
-    right:-40px;
-    bottom:15px;
-    font-size:100px;
-    font-weight:900;
-    letter-spacing:5px;
-    color:#168fdf;
-    opacity:.035;
+    left:-80px;
+    bottom:-80px;
+    width:300px;
+    height:300px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(21,156,233,.08),
+            transparent 65%
+        );
+
     pointer-events:none;
 }
 
 .learning-path{
     max-width:1140px;
     margin:auto;
+
     display:grid;
     grid-template-columns:repeat(6,1fr);
     gap:12px;
+
     position:relative;
     z-index:2;
 }
@@ -432,12 +479,16 @@ nav a.active{
     width:40px;
     height:40px;
     border-radius:50%;
+
     margin:auto;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     background:#159ce9;
     color:white;
+
     font-weight:bold;
     font-size:12px;
 }
@@ -460,9 +511,10 @@ nav a.active{
     color:#597592;
 }
 
-/* =====================================================
+
+/* =========================================================
    CONCEPTS
-===================================================== */
+========================================================= */
 
 .concepts{
     display:grid;
@@ -474,7 +526,9 @@ nav a.active{
     background:white;
     border-radius:11px;
     padding:21px 12px;
+
     text-align:center;
+
     box-shadow:0 5px 17px rgba(12,53,86,.07);
 }
 
@@ -496,19 +550,22 @@ nav a.active{
     color:#637d96;
 }
 
-/* =====================================================
+
+/* =========================================================
    APP SECTION
-===================================================== */
+========================================================= */
 
 .app-section{
     position:relative;
     overflow:hidden;
+
     background:
         linear-gradient(
             90deg,
             rgba(3,34,64,.98),
-            rgba(7,61,99,.96)
+            rgba(7,61,99,.97)
         );
+
     color:white;
 }
 
@@ -519,9 +576,9 @@ nav a.active{
 
     background:
         radial-gradient(
-            circle at 75% 50%,
-            rgba(21,156,233,.22),
-            transparent 32%
+            circle at 72% 50%,
+            rgba(21,156,233,.20),
+            transparent 34%
         );
 
     pointer-events:none;
@@ -530,13 +587,22 @@ nav a.active{
 .app-inner{
     position:relative;
     z-index:2;
+
     max-width:1140px;
     margin:auto;
+
     display:grid;
     grid-template-columns:1.05fr .95fr;
+
     align-items:center;
+
     gap:50px;
 }
+
+
+/* =========================================================
+   APP COPY
+========================================================= */
 
 .app-copy{
     position:relative;
@@ -552,29 +618,37 @@ nav a.active{
 .app-logo{
     width:105px;
     height:105px;
-    border-radius:20px;
+
     object-fit:contain;
-    background:#159ce9;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    border-radius:20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.3);
 }
 
 .app-copy h2{
-    font-size:31px;
     margin:0;
+
+    font-size:31px;
     line-height:1.15;
 }
 
 .app-copy p{
+    max-width:540px;
+
     color:#d8e8f5;
+
     line-height:1.6;
     font-size:15px;
-    max-width:540px;
 }
 
 .app-list{
     list-style:none;
+
     padding:0;
     margin:22px 0;
+
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:10px;
@@ -587,83 +661,127 @@ nav a.active{
 
 .app-list li::before{
     content:"✓";
+
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
+
     width:20px;
     height:20px;
+
     border-radius:50%;
+
     background:#159ce9;
+
     margin-right:8px;
+
     font-size:12px;
     font-weight:bold;
 }
 
+
+/* =========================================================
+   GOOGLE PLAY
+========================================================= */
+
 .google-play{
     display:inline-block;
+
     margin-top:8px;
+
     background:#050505;
+
     border:1px solid #ddd;
+
     border-radius:7px;
+
     padding:8px 15px;
+
     color:white;
-    font-size:11px;
+
+    font-size:10px;
 }
 
 .google-play strong{
     display:block;
+
     font-size:18px;
     line-height:1;
 }
 
-/* =====================================================
+
+/* =========================================================
    APP PREVIEW
-===================================================== */
+========================================================= */
 
 .app-preview{
     display:flex;
+
     justify-content:center;
     align-items:flex-end;
+
     gap:18px;
+
     min-height:350px;
 }
 
 .phone{
     width:185px;
     height:360px;
+
     background:#0c1724;
+
     border-radius:28px;
+
     padding:7px;
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.35);
+
     transform:rotate(-3deg);
 }
 
 .phone.second{
-    transform:rotate(4deg) translateY(18px);
+    transform:
+        rotate(4deg)
+        translateY(18px);
 }
 
 .phone-screen{
     height:100%;
+
     border-radius:22px;
+
     overflow:hidden;
+
     background:#f5f9fc;
+
     color:#073563;
 }
 
 .phone-header{
     background:#159ce9;
-    padding:18px 10px 12px;
+
+    padding:12px 10px;
+
     text-align:center;
+
     color:white;
+
     font-weight:bold;
 }
 
 .phone-header img{
-    width:45px;
-    height:45px;
+    width:50px;
+    height:50px;
+
     object-fit:contain;
-    border-radius:9px;
+
+    border-radius:10px;
+
     display:block;
+
     margin:0 auto 5px;
 }
 
@@ -677,24 +795,35 @@ nav a.active{
 
 .phone-item{
     background:white;
+
     padding:9px;
+
     margin-bottom:6px;
+
     border-radius:7px;
+
     font-size:9px;
-    box-shadow:0 2px 6px rgba(0,0,0,.06);
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.06);
 }
 
 .question{
     padding:12px;
+
     font-size:10px;
     font-weight:bold;
 }
 
 .answer{
     margin:6px 10px;
+
     padding:8px;
+
     border:1px solid #dce8f1;
+
     border-radius:7px;
+
     font-size:9px;
 }
 
@@ -703,9 +832,10 @@ nav a.active{
     border-color:#159ce9;
 }
 
-/* =====================================================
+
+/* =========================================================
    FINAL CALLOUT
-===================================================== */
+========================================================= */
 
 .final-section{
     padding:30px 25px;
@@ -713,20 +843,32 @@ nav a.active{
 
 .final-box{
     max-width:1140px;
+
     margin:auto;
+
     background:white;
+
     border-radius:13px;
+
     padding:22px 28px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:25px;
-    box-shadow:0 7px 22px rgba(12,53,86,.08);
+
+    box-shadow:
+        0 7px 22px rgba(12,53,86,.08);
 }
 
 .final-content{
     display:flex;
+
     align-items:center;
+
     gap:18px;
 }
 
@@ -736,52 +878,71 @@ nav a.active{
 
 .final-box h2{
     margin:0 0 5px;
+
     font-size:19px;
+
     color:#073563;
 }
 
 .final-box p{
     margin:0;
+
     color:#597592;
+
     font-size:13px;
+
     line-height:1.5;
 }
 
-/* =====================================================
+
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer{
     background:#052847;
+
     color:#cbdbea;
+
     padding:30px 25px;
 }
 
 .footer-inner{
     max-width:1140px;
+
     margin:auto;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:25px;
 }
 
 .footer-brand{
     display:flex;
+
     align-items:center;
+
     gap:12px;
 }
 
 .footer-brand img{
     width:52px;
     height:52px;
+
     object-fit:contain;
+
     border-radius:10px;
 }
 
 .footer-brand strong{
     display:block;
+
     color:white;
+
     font-size:16px;
 }
 
@@ -791,24 +952,30 @@ footer{
 
 .footer-links{
     display:flex;
+
     gap:15px;
+
     flex-wrap:wrap;
+
     justify-content:center;
 }
 
 .footer-links a{
     color:#d9e6f2;
+
     font-size:11px;
 }
 
 .footer-copy{
     font-size:10px;
+
     text-align:right;
 }
 
-/* =====================================================
+
+/* =========================================================
    RESPONSIVE
-===================================================== */
+========================================================= */
 
 @media(max-width:1050px){
 
@@ -818,6 +985,7 @@ footer{
 
     .learning-path{
         grid-template-columns:repeat(3,1fr);
+
         gap:28px 15px;
     }
 
@@ -833,7 +1001,13 @@ footer{
         font-size:12px;
         padding:9px 7px;
     }
+
+    .uruguay-watermark{
+        right:-50px;
+        opacity:.09;
+    }
 }
+
 
 @media(max-width:850px){
 
@@ -844,8 +1018,11 @@ footer{
 
     nav{
         width:100%;
+
         overflow-x:auto;
+
         margin-left:0;
+
         padding-bottom:3px;
     }
 
@@ -854,20 +1031,25 @@ footer{
     }
 
     .hero{
-        min-height:550px;
+        min-height:560px;
     }
 
     .hero h2{
         font-size:39px;
     }
 
-    .uy-mark{
-        right:10px;
-        opacity:.13;
+    .hero-features{
+        grid-template-columns:repeat(2,auto);
+    }
+
+    .uruguay-watermark{
+        right:-80px;
+        opacity:.07;
     }
 
     .app-inner{
         grid-template-columns:1fr;
+
         text-align:center;
     }
 
@@ -882,13 +1064,16 @@ footer{
 
     .app-list{
         text-align:left;
+
         max-width:550px;
+
         margin-left:auto;
         margin-right:auto;
     }
 
     .final-box{
         flex-direction:column;
+
         text-align:center;
     }
 
@@ -898,6 +1083,7 @@ footer{
 
     .footer-inner{
         flex-direction:column;
+
         text-align:center;
     }
 
@@ -905,6 +1091,7 @@ footer{
         text-align:center;
     }
 }
+
 
 @media(max-width:600px){
 
@@ -918,7 +1105,7 @@ footer{
     }
 
     .hero{
-        min-height:610px;
+        min-height:620px;
     }
 
     .hero-inner{
@@ -934,8 +1121,8 @@ footer{
     }
 
     .hero-features{
-        display:grid;
         grid-template-columns:1fr 1fr;
+
         gap:14px;
     }
 
@@ -965,8 +1152,9 @@ footer{
 
     .app-preview{
         transform:scale(.88);
-        margin-left:-10px;
-        margin-right:-10px;
+
+        margin-left:-15px;
+        margin-right:-15px;
     }
 
     .phone{
@@ -983,7 +1171,7 @@ footer{
         font-size:27px;
     }
 
-    .uy-mark{
+    .uruguay-watermark{
         display:none;
     }
 }
@@ -994,9 +1182,10 @@ footer{
 
 <body>
 
-<!-- =====================================================
+
+<!-- =========================================================
      HEADER
-===================================================== -->
+========================================================= -->
 
 <header>
 
@@ -1004,11 +1193,17 @@ footer{
 
 <a href="index.html" class="logo-area">
 
-<img src="logo.png" alt="Foguista Uruguay">
+<img src="logo.png"
+     alt="Foguista Uruguay">
 
 <div class="logo-text">
+
 <h1>Foguista Uruguay</h1>
-<p>Formación y seguridad en generadores de vapor</p>
+
+<p>
+Formación y seguridad en generadores de vapor
+</p>
+
 </div>
 
 </a>
@@ -1016,14 +1211,37 @@ footer{
 
 <nav>
 
-<a href="index.html" class="active">Inicio</a>
-<a href="generadores.html">Generadores</a>
-<a href="seguridad.html">Seguridad</a>
-<a href="estudio.html">Estudio</a>
-<a href="normativa.html">Normativa</a>
-<a href="enclavamientos.html">Enclavamientos</a>
-<a href="tratamiento-agua.html">Tratamiento del agua</a>
-<a href="app.html">App</a>
+<a href="index.html" class="active">
+Inicio
+</a>
+
+<a href="generadores.html">
+Generadores
+</a>
+
+<a href="seguridad.html">
+Seguridad
+</a>
+
+<a href="estudio.html">
+Estudio
+</a>
+
+<a href="normativa.html">
+Normativa
+</a>
+
+<a href="enclavamientos.html">
+Enclavamientos
+</a>
+
+<a href="tratamiento-agua.html">
+Tratamiento del agua
+</a>
+
+<a href="app.html">
+App
+</a>
 
 </nav>
 
@@ -1032,18 +1250,23 @@ footer{
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
 <section class="hero">
 
+
 <div class="hero-inner">
 
+
 <h2>
+
 Conocimiento técnico para un
 <span>trabajo seguro</span>
+
 </h2>
+
 
 <p class="hero-description">
 
@@ -1055,74 +1278,171 @@ con base en la normativa de Uruguay.
 
 <div class="hero-features">
 
-<div class="hero-feature">
-<div class="hero-feature-icon">📖</div>
-<div>Contenido<br>claro y ordenado</div>
-</div>
 
 <div class="hero-feature">
-<div class="hero-feature-icon">🛡️</div>
-<div>Basado en<br>normativa URSEA</div>
+
+<div class="hero-feature-icon">
+📖
 </div>
 
-<div class="hero-feature">
-<div class="hero-feature-icon">⚙️</div>
-<div>Orientado a la<br>práctica real</div>
+<div>
+Contenido<br>
+claro y ordenado
 </div>
 
-<div class="hero-feature">
-<div class="hero-feature-icon">▮▮▮</div>
-<div>Ideal para el<br>examen y el trabajo</div>
 </div>
+
+
+<div class="hero-feature">
+
+<div class="hero-feature-icon">
+🛡️
+</div>
+
+<div>
+Basado en<br>
+normativa URSEA
+</div>
+
+</div>
+
+
+<div class="hero-feature">
+
+<div class="hero-feature-icon">
+⚙️
+</div>
+
+<div>
+Orientado a la<br>
+práctica real
+</div>
+
+</div>
+
+
+<div class="hero-feature">
+
+<div class="hero-feature-icon">
+🎓
+</div>
+
+<div>
+Ideal para el<br>
+examen y el trabajo
+</div>
+
+</div>
+
 
 </div>
 
 
 <div class="hero-buttons">
 
-<a href="#formacion" class="btn btn-primary">
+<a href="#formacion"
+class="btn btn-primary">
+
 Comenzar a estudiar →
+
 </a>
 
-<a href="app.html" class="btn btn-outline">
+
+<a href="app.html"
+class="btn btn-outline">
+
 Conocer la App
+
 </a>
 
 </div>
 
+
 </div>
 
 
-<!-- Uruguay integrado como marca de agua -->
+<!-- =====================================================
+     URUGUAY — MARCA DE AGUA
+===================================================== -->
 
-<div class="uy-mark">
+<div class="uruguay-watermark">
 
-<div class="uy-sun"></div>
 
-<div class="uy-line"></div>
+<div class="uruguay-map">
 
-<div class="uy-text">
-UY
+<svg viewBox="0 0 250 330"
+aria-hidden="true">
+
+<!-- Silueta estilizada de Uruguay,
+     utilizada como marca de agua -->
+
+<path d="
+M108 18
+C124 24 143 25 158 35
+C171 44 181 56 187 70
+C193 84 190 101 202 115
+C213 128 219 143 214 157
+C210 169 199 179 194 191
+C188 204 194 218 188 232
+C182 245 171 252 161 263
+C151 274 148 291 137 302
+C126 313 112 317 98 308
+C87 301 81 288 70 281
+C60 274 47 270 39 258
+C30 246 31 231 27 218
+C23 205 15 192 17 179
+C19 165 32 156 39 144
+C46 132 42 117 48 104
+C55 90 69 83 75 70
+C81 56 80 41 88 30
+C93 23 99 20 108 18
+Z
+"/>
+
+</svg>
+
 </div>
+
+
+<div class="uruguay-sun"></div>
+
+
+<div class="uruguay-watermark-text">
+
+Foguista Uruguay
+
+<span>
+FORMACIÓN TÉCNICA
+</span>
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     FORMACION
-===================================================== -->
+<!-- =========================================================
+     FORMACION COMPLETA
+========================================================= -->
 
-<section class="section" id="formacion">
+<section class="section"
+id="formacion">
+
 
 <div class="section-title">
 
-<h2>Una formación completa</h2>
+<h2>
+Una formación completa
+</h2>
 
 <p>
-Cada sección aborda una parte diferente del conocimiento que necesita
-quien trabaja o se prepara para trabajar con generadores de vapor.
+
+Cada sección aborda una parte diferente del conocimiento
+que necesita quien trabaja o se prepara para trabajar
+con generadores de vapor.
+
 </p>
 
 </div>
@@ -1131,76 +1451,124 @@ quien trabaja o se prepara para trabajar con generadores de vapor.
 <div class="features">
 
 
+<!-- GENERADORES -->
+
 <div class="card">
 
-<div class="card-icon">🔥</div>
+<div class="card-icon">
+🔥
+</div>
 
-<h3>Generadores</h3>
+<h3>
+Generadores
+</h3>
 
 <p>
-Conocé cómo se produce el vapor, cómo circula el agua,
-cómo se transmite el calor y cuáles son los principales
+
+Conocé cómo se produce el vapor,
+cómo circula el agua, cómo se transmite
+el calor y cuáles son los principales
 componentes de un generador.
+
 </p>
 
-<a href="generadores.html" class="btn btn-primary">
+<a href="generadores.html"
+class="btn btn-primary">
+
 Ver generadores →
+
 </a>
 
 </div>
 
 
+<!-- SEGURIDAD -->
+
 <div class="card">
 
-<div class="card-icon">🛡️</div>
+<div class="card-icon">
+🛡️
+</div>
 
-<h3>Seguridad</h3>
+<h3>
+Seguridad
+</h3>
 
 <p>
-Comprendé los riesgos asociados a presión, nivel,
-combustión y las diferentes protecciones del sistema.
+
+Comprendé los riesgos asociados a presión,
+nivel, combustión y las diferentes
+protecciones del sistema.
+
 </p>
 
-<a href="seguridad.html" class="btn btn-primary">
+<a href="seguridad.html"
+class="btn btn-primary">
+
 Ver seguridad →
+
 </a>
 
 </div>
 
 
+<!-- ENCLAVAMIENTOS -->
+
 <div class="card">
 
-<div class="card-icon">🔒</div>
+<div class="card-icon">
+🔒
+</div>
 
-<h3>Enclavamientos</h3>
+<h3>
+Enclavamientos
+</h3>
 
 <p>
-Aprendé cómo funcionan los bloqueos de seguridad,
-qué condición detecta cada uno y qué acción produce
-ante una situación anormal.
+
+Aprendé cómo funcionan los bloqueos
+de seguridad, qué condición detecta cada
+uno y qué acción produce ante una
+situación anormal.
+
 </p>
 
-<a href="enclavamientos.html" class="btn btn-primary">
+<a href="enclavamientos.html"
+class="btn btn-primary">
+
 Ver enclavamientos →
+
 </a>
 
 </div>
 
 
+<!-- AGUA -->
+
 <div class="card">
 
-<div class="card-icon">💧</div>
+<div class="card-icon">
+💧
+</div>
 
-<h3>Tratamiento del agua</h3>
+<h3>
+Tratamiento del agua
+</h3>
 
 <p>
-Comprendé la importancia de la calidad del agua,
-las incrustaciones, la corrosión, las purgas y
-el control químico del generador.
+
+Comprendé la importancia de la calidad
+del agua, las incrustaciones, la corrosión,
+las purgas y el control químico
+del generador.
+
 </p>
 
-<a href="tratamiento-agua.html" class="btn btn-primary">
+<a href="tratamiento-agua.html"
+class="btn btn-primary">
+
 Ver tratamiento del agua →
+
 </a>
 
 </div>
@@ -1211,20 +1579,25 @@ Ver tratamiento del agua →
 </section>
 
 
-<!-- =====================================================
-     QUE VAS A APRENDER
-===================================================== -->
+<!-- =========================================================
+     RECORRIDO DE APRENDIZAJE
+========================================================= -->
 
 <section class="learning-section">
 
+
 <div class="section">
+
 
 <div class="section-title">
 
-<h2>¿Qué vas a aprender?</h2>
+<h2>
+¿Qué vas a aprender?
+</h2>
 
 <p>
-Un recorrido completo desde los conceptos básicos hasta la aplicación práctica.
+Un recorrido completo desde los conceptos básicos
+hasta la aplicación práctica.
 </p>
 
 </div>
@@ -1233,18 +1606,28 @@ Un recorrido completo desde los conceptos básicos hasta la aplicación práctic
 <div class="learning-path">
 
 
+<!-- 01 -->
+
 <div class="learning-item">
 
-<div class="learning-number">01</div>
+<div class="learning-number">
+01
+</div>
 
-<div class="learning-icon">⚙️</div>
+<div class="learning-icon">
+⚙️
+</div>
 
 <div class="learning-content">
 
-<h3>Comprender<br>el generador</h3>
+<h3>
+Comprender<br>
+el generador
+</h3>
 
 <p>
-Energía, combustión, transferencia de calor,
+Energía, combustión,
+transferencia de calor,
 agua, vapor y componentes.
 </p>
 
@@ -1253,19 +1636,29 @@ agua, vapor y componentes.
 </div>
 
 
+<!-- 02 -->
+
 <div class="learning-item">
 
-<div class="learning-number">02</div>
+<div class="learning-number">
+02
+</div>
 
-<div class="learning-icon">🛡️</div>
+<div class="learning-icon">
+🛡️
+</div>
 
 <div class="learning-content">
 
-<h3>Trabajar<br>con seguridad</h3>
+<h3>
+Trabajar<br>
+con seguridad
+</h3>
 
 <p>
 Nivel, presión, combustión,
-controles, alarmas y situaciones anormales.
+controles, alarmas y
+situaciones anormales.
 </p>
 
 </div>
@@ -1273,18 +1666,28 @@ controles, alarmas y situaciones anormales.
 </div>
 
 
+<!-- 03 -->
+
 <div class="learning-item">
 
-<div class="learning-number">03</div>
+<div class="learning-number">
+03
+</div>
 
-<div class="learning-icon">🔒</div>
+<div class="learning-icon">
+🔒
+</div>
 
 <div class="learning-content">
 
-<h3>Entender<br>las protecciones</h3>
+<h3>
+Entender<br>
+las protecciones
+</h3>
 
 <p>
-Enclavamientos, condiciones de disparo
+Enclavamientos,
+condiciones de disparo
 y acciones del sistema.
 </p>
 
@@ -1293,19 +1696,29 @@ y acciones del sistema.
 </div>
 
 
+<!-- 04 -->
+
 <div class="learning-item">
 
-<div class="learning-number">04</div>
+<div class="learning-number">
+04
+</div>
 
-<div class="learning-icon">💧</div>
+<div class="learning-icon">
+💧
+</div>
 
 <div class="learning-content">
 
-<h3>Controlar<br>el agua</h3>
+<h3>
+Controlar<br>
+el agua
+</h3>
 
 <p>
-Dureza, incrustaciones, corrosión,
-conductividad, purgas y tratamiento químico.
+Dureza, incrustaciones,
+corrosión, conductividad,
+purgas y tratamiento químico.
 </p>
 
 </div>
@@ -1313,19 +1726,29 @@ conductividad, purgas y tratamiento químico.
 </div>
 
 
+<!-- 05 -->
+
 <div class="learning-item">
 
-<div class="learning-number">05</div>
+<div class="learning-number">
+05
+</div>
 
-<div class="learning-icon">📋</div>
+<div class="learning-icon">
+📋
+</div>
 
 <div class="learning-content">
 
-<h3>Interpretar<br>la normativa</h3>
+<h3>
+Interpretar<br>
+la normativa
+</h3>
 
 <p>
-Conocer el Reglamento de URSEA
-y sus requisitos aplicables.
+Conocer el Reglamento
+de URSEA y sus
+requisitos aplicables.
 </p>
 
 </div>
@@ -1333,18 +1756,28 @@ y sus requisitos aplicables.
 </div>
 
 
+<!-- 06 -->
+
 <div class="learning-item">
 
-<div class="learning-number">06</div>
+<div class="learning-number">
+06
+</div>
 
-<div class="learning-icon">🎓</div>
+<div class="learning-icon">
+🎓
+</div>
 
 <div class="learning-content">
 
-<h3>Prepararte<br>para el examen</h3>
+<h3>
+Prepararte<br>
+para el examen
+</h3>
 
 <p>
-Relacionar conceptos, interpretar situaciones
+Relacionar conceptos,
+interpretar situaciones
 y comprobar tus conocimientos.
 </p>
 
@@ -1360,19 +1793,24 @@ y comprobar tus conocimientos.
 </section>
 
 
-<!-- =====================================================
-     CONCEPTOS
-===================================================== -->
+<!-- =========================================================
+     CONCEPTOS FUNDAMENTALES
+========================================================= -->
 
 <section class="section">
 
+
 <div class="section-title">
 
-<h2>Conceptos fundamentales</h2>
+<h2>
+Conceptos fundamentales
+</h2>
 
 <p>
+
 El funcionamiento de un generador de vapor puede entenderse
 relacionando estos elementos.
+
 </p>
 
 </div>
@@ -1383,12 +1821,17 @@ relacionando estos elementos.
 
 <div class="concept">
 
-<div class="concept-icon">🔥</div>
+<div class="concept-icon">
+🔥
+</div>
 
-<h3>Combustible y combustión</h3>
+<h3>
+Combustible y combustión
+</h3>
 
 <p>
-La energía química del combustible se transforma en energía térmica.
+La energía química del combustible
+se transforma en energía térmica.
 </p>
 
 </div>
@@ -1396,12 +1839,17 @@ La energía química del combustible se transforma en energía térmica.
 
 <div class="concept">
 
-<div class="concept-icon">♨️</div>
+<div class="concept-icon">
+♨️
+</div>
 
-<h3>Transferencia de calor</h3>
+<h3>
+Transferencia de calor
+</h3>
 
 <p>
-El calor producido por la combustión se transmite hacia el agua.
+El calor producido por la combustión
+se transmite hacia el agua.
 </p>
 
 </div>
@@ -1409,12 +1857,17 @@ El calor producido por la combustión se transmite hacia el agua.
 
 <div class="concept">
 
-<div class="concept-icon">💧</div>
+<div class="concept-icon">
+💧
+</div>
 
-<h3>Agua</h3>
+<h3>
+Agua
+</h3>
 
 <p>
-Su calidad y tratamiento son fundamentales para la operación.
+Su calidad y tratamiento son fundamentales
+para la operación.
 </p>
 
 </div>
@@ -1422,12 +1875,17 @@ Su calidad y tratamiento son fundamentales para la operación.
 
 <div class="concept">
 
-<div class="concept-icon">💨</div>
+<div class="concept-icon">
+💨
+</div>
 
-<h3>Vapor</h3>
+<h3>
+Vapor
+</h3>
 
 <p>
-El agua recibe energía hasta transformarse en vapor.
+El agua recibe energía hasta
+transformarse en vapor.
 </p>
 
 </div>
@@ -1435,12 +1893,17 @@ El agua recibe energía hasta transformarse en vapor.
 
 <div class="concept">
 
-<div class="concept-icon">🔒</div>
+<div class="concept-icon">
+🔒
+</div>
 
-<h3>Enclavamientos</h3>
+<h3>
+Enclavamientos
+</h3>
 
 <p>
-Las protecciones actúan ante condiciones peligrosas.
+Las protecciones actúan ante
+condiciones peligrosas.
 </p>
 
 </div>
@@ -1448,12 +1911,17 @@ Las protecciones actúan ante condiciones peligrosas.
 
 <div class="concept">
 
-<div class="concept-icon">🎛️</div>
+<div class="concept-icon">
+🎛️
+</div>
 
-<h3>Control</h3>
+<h3>
+Control
+</h3>
 
 <p>
-El sistema mantiene las variables dentro de las condiciones previstas.
+El sistema mantiene las variables
+dentro de las condiciones previstas.
 </p>
 
 </div>
@@ -1464,13 +1932,15 @@ El sistema mantiene las variables dentro de las condiciones previstas.
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      APP
-===================================================== -->
+========================================================= -->
 
 <section class="app-section">
 
+
 <div class="section">
+
 
 <div class="app-inner">
 
@@ -1480,23 +1950,29 @@ El sistema mantiene las variables dentro de las condiciones previstas.
 
 <div class="app-brand">
 
+
 <img src="logo.png"
-     alt="Logo de la App Foguista Uruguay"
-     class="app-logo">
+alt="Logo de la App Foguista Uruguay"
+class="app-logo">
+
 
 <h2>
+
 También podés estudiar
 <br>
 desde la App
+
 </h2>
+
 
 </div>
 
 
 <p>
 
-Complementá la formación con la aplicación de Foguista Uruguay.
-Practicá preguntas, repasá conceptos y comprobá tus conocimientos
+Complementá la formación con la aplicación
+de Foguista Uruguay. Practicá preguntas,
+repasá conceptos y comprobá tus conocimientos
 desde el teléfono.
 
 </p>
@@ -1504,28 +1980,48 @@ desde el teléfono.
 
 <ul class="app-list">
 
-<li>Preguntas de estudio</li>
-<li>Modo práctica y examen</li>
-<li>Todas las secciones</li>
-<li>Funciona sin conexión</li>
-<li>Diseñada para foguistas en Uruguay</li>
+<li>
+Preguntas de estudio
+</li>
+
+<li>
+Modo práctica y examen
+</li>
+
+<li>
+Todas las secciones
+</li>
+
+<li>
+Funciona sin conexión
+</li>
+
+<li>
+Diseñada para foguistas en Uruguay
+</li>
 
 </ul>
 
 
-<a href="app.html" class="btn btn-light">
+<a href="app.html"
+class="btn btn-light">
+
 Conocer la App →
+
 </a>
 
 
 <br>
 
 
-<a href="app.html" class="google-play">
+<a href="app.html"
+class="google-play">
 
 DISPONIBLE EN
 
-<strong>▶ Google Play</strong>
+<strong>
+▶ Google Play
+</strong>
 
 </a>
 
@@ -1533,18 +2029,24 @@ DISPONIBLE EN
 </div>
 
 
-<!-- PREVISUALIZACION DE APP -->
+<!-- =====================================================
+     TELEFONOS APP
+===================================================== -->
 
 <div class="app-preview">
 
+
+<!-- TELEFONO 1 -->
 
 <div class="phone">
 
 <div class="phone-screen">
 
+
 <div class="phone-header">
 
-<img src="logo.png" alt="Foguista Uruguay">
+<img src="logo.png"
+alt="Foguista Uruguay">
 
 <div class="phone-title">
 FOGUISTA URUGUAY
@@ -1555,49 +2057,86 @@ FOGUISTA URUGUAY
 
 <div class="phone-items">
 
-<div class="phone-item">🔥 Generadores</div>
-<div class="phone-item">🛡️ Seguridad</div>
-<div class="phone-item">🔒 Enclavamientos</div>
-<div class="phone-item">💧 Tratamiento del agua</div>
-<div class="phone-item">⚖️ Normativa URSEA</div>
-<div class="phone-item">📚 Preguntas de estudio</div>
+<div class="phone-item">
+🔥 Generadores
+</div>
 
+<div class="phone-item">
+🛡️ Seguridad
+</div>
+
+<div class="phone-item">
+🔒 Enclavamientos
+</div>
+
+<div class="phone-item">
+💧 Tratamiento del agua
+</div>
+
+<div class="phone-item">
+⚖️ Normativa URSEA
+</div>
+
+<div class="phone-item">
+📚 Preguntas de estudio
 </div>
 
 </div>
 
 </div>
 
+</div>
+
+
+<!-- TELEFONO 2 -->
 
 <div class="phone second">
 
 <div class="phone-screen">
 
+
 <div class="phone-header">
+
 Pregunta 1/10
+
 </div>
+
 
 <div class="question">
 
-¿Qué función cumple una válvula de seguridad?
+¿Qué función cumple una válvula
+de seguridad?
 
 </div>
+
 
 <div class="answer">
+
 A&nbsp;&nbsp; Regular el nivel de agua
+
 </div>
+
 
 <div class="answer selected">
+
 B&nbsp;&nbsp; Limitar la presión máxima
+
 </div>
 
+
 <div class="answer">
+
 C&nbsp;&nbsp; Controlar la combustión
+
 </div>
 
+
 <div class="answer">
+
 D&nbsp;&nbsp; Inyectar agua al generador
+
 </div>
+
 
 </div>
 
@@ -1613,27 +2152,37 @@ D&nbsp;&nbsp; Inyectar agua al generador
 </section>
 
 
-<!-- =====================================================
-     FINAL
-===================================================== -->
+<!-- =========================================================
+     CIERRE
+========================================================= -->
 
 <section class="final-section">
+
 
 <div class="final-box">
 
 
 <div class="final-content">
 
-<div class="final-icon">👥</div>
+
+<div class="final-icon">
+👥
+</div>
+
 
 <div>
 
-<h2>Aprender para operar con criterio</h2>
+<h2>
+Aprender para operar con criterio
+</h2>
 
 <p>
-Ser foguista no consiste solamente en conocer el funcionamiento de una caldera.
-Implica comprender el sistema, reconocer sus variables, interpretar sus
-protecciones y actuar con seguridad.
+
+Ser foguista no consiste solamente en conocer
+el funcionamiento de una caldera. Implica comprender
+el sistema, reconocer sus variables, interpretar
+sus protecciones y actuar con seguridad.
+
 </p>
 
 </div>
@@ -1641,8 +2190,11 @@ protecciones y actuar con seguridad.
 </div>
 
 
-<a href="estudio.html" class="btn btn-primary">
+<a href="estudio.html"
+class="btn btn-primary">
+
 Ir al método de estudio →
+
 </a>
 
 
@@ -1651,22 +2203,28 @@ Ir al método de estudio →
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
 <footer>
+
 
 <div class="footer-inner">
 
 
 <div class="footer-brand">
 
-<img src="logo.png" alt="Foguista Uruguay">
+
+<img src="logo.png"
+alt="Foguista Uruguay">
+
 
 <div>
 
-<strong>Foguista Uruguay</strong>
+<strong>
+Foguista Uruguay
+</strong>
 
 <span>
 Formación y seguridad en generadores de vapor
@@ -1679,19 +2237,33 @@ Formación y seguridad en generadores de vapor
 
 <div class="footer-links">
 
-<a href="generadores.html">Generadores</a>
+<a href="generadores.html">
+Generadores
+</a>
 
-<a href="seguridad.html">Seguridad</a>
+<a href="seguridad.html">
+Seguridad
+</a>
 
-<a href="estudio.html">Estudio</a>
+<a href="estudio.html">
+Estudio
+</a>
 
-<a href="normativa.html">Normativa</a>
+<a href="normativa.html">
+Normativa
+</a>
 
-<a href="enclavamientos.html">Enclavamientos</a>
+<a href="enclavamientos.html">
+Enclavamientos
+</a>
 
-<a href="tratamiento-agua.html">Tratamiento del agua</a>
+<a href="tratamiento-agua.html">
+Tratamiento del agua
+</a>
 
-<a href="app.html">App</a>
+<a href="app.html">
+App
+</a>
 
 </div>
 
