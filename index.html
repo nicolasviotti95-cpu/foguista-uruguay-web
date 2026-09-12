@@ -3,1058 +3,1711 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Foguista Uruguay — Formación, estudio y seguridad en generadores de vapor y operación de calderas en Uruguay.">
-<title>Foguista Uruguay | Formación y seguridad en generadores de vapor</title>
+
+<title>Foguista Uruguay | Formación técnica y seguridad</title>
 
 <style>
-* {
-    box-sizing: border-box;
+
+*{
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #eef4f8;
-    color: #12345b;
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eef5fa;
+    color:#12375d;
 }
 
-a {
-    text-decoration: none;
+a{
+    text-decoration:none;
 }
 
-/* =========================
+img{
+    max-width:100%;
+}
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
-header {
-    background: #08284a;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#06294c;
+    color:white;
+    box-shadow:0 3px 14px rgba(0,0,0,.18);
 }
 
-.header-inner {
-    max-width: 1180px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    gap: 20px;
+.header-inner{
+    max-width:1220px;
+    margin:auto;
+    padding:8px 22px;
+    display:flex;
+    align-items:center;
+    gap:22px;
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+    color:white;
 }
 
-.logo-area img {
-    width: 58px;
-    height: 58px;
-    object-fit: contain;
-    border-radius: 10px;
+.logo-area img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    border-radius:12px;
 }
 
-.logo-text h1 {
-    margin: 0;
-    font-size: 22px;
-    color: white;
+.logo-text h1{
+    margin:0;
+    font-size:21px;
+    color:white;
 }
 
-.logo-text p {
-    margin: 3px 0 0;
-    font-size: 12px;
-    color: #d8e6f5;
+.logo-text p{
+    margin:3px 0 0;
+    font-size:11px;
+    color:#d7e6f4;
 }
 
-nav {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    flex-wrap: wrap;
+nav{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:3px;
 }
 
-nav a {
-    color: white;
-    padding: 11px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
+nav a{
+    color:white;
+    font-size:13px;
+    font-weight:600;
+    padding:11px 10px;
+    border-radius:7px;
+    white-space:nowrap;
 }
 
 nav a:hover,
-nav a.active {
-    background: rgba(255,255,255,0.15);
+nav a.active{
+    background:#168fe0;
 }
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
-.hero {
-    min-height: 520px;
-    display: flex;
-    align-items: center;
+.hero{
+    position:relative;
+    min-height:465px;
+    overflow:hidden;
+
     background:
-        linear-gradient(rgba(5,35,65,0.76), rgba(5,35,65,0.76)),
+        linear-gradient(
+            90deg,
+            rgba(3,28,53,.97) 0%,
+            rgba(3,31,57,.93) 35%,
+            rgba(3,31,57,.68) 58%,
+            rgba(3,31,57,.28) 100%
+        ),
         url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg")
         center/cover no-repeat;
 }
 
-.hero-inner {
-    max-width: 1180px;
-    width: 100%;
-    margin: auto;
-    padding: 70px 25px;
-    color: white;
+.hero::after{
+    content:"";
+    position:absolute;
+    right:-80px;
+    top:0;
+    width:430px;
+    height:100%;
+
+    background:
+        radial-gradient(
+            circle at 65% 35%,
+            rgba(255,255,255,.16) 0 3%,
+            transparent 3.5%
+        ),
+        linear-gradient(
+            120deg,
+            transparent 20%,
+            rgba(255,255,255,.08) 20%,
+            rgba(255,255,255,.08) 21%,
+            transparent 21%
+        );
+
+    opacity:.7;
+    pointer-events:none;
 }
 
-.hero h2 {
-    font-size: 48px;
-    max-width: 760px;
-    margin: 0 0 20px;
-    line-height: 1.1;
+.hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:1220px;
+    margin:auto;
+    padding:55px 25px 60px;
+    color:white;
 }
 
-.hero p {
-    font-size: 20px;
-    max-width: 760px;
-    line-height: 1.6;
-    color: #e5eef7;
+.hero h2{
+    max-width:650px;
+    margin:0 0 18px;
+    font-size:48px;
+    line-height:1.08;
+    letter-spacing:-1px;
 }
 
-.hero-list {
-    list-style: none;
-    padding: 0;
-    margin: 28px 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 30px;
-    max-width: 800px;
+.hero h2 span{
+    color:#159ce9;
 }
 
-.hero-list li {
-    font-size: 16px;
+.hero-description{
+    max-width:620px;
+    font-size:18px;
+    line-height:1.55;
+    color:#e2edf7;
+    margin-bottom:26px;
 }
 
-.hero-list li::first-letter {
-    font-size: 18px;
+.hero-features{
+    display:flex;
+    gap:28px;
+    max-width:760px;
+    margin-bottom:28px;
+    flex-wrap:wrap;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
-.btn {
-    display: inline-block;
-    padding: 13px 22px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 12px;
-    transition: transform 0.2s, opacity 0.2s;
+.hero-feature{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:12px;
+    line-height:1.25;
+    color:#f2f7fb;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.92;
+.hero-feature-icon{
+    font-size:27px;
+    color:#16a0ef;
 }
 
-.btn-primary {
-    background: #1597e5;
-    color: white;
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
 }
 
-.btn-light {
-    background: white;
-    color: #0b467b;
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:bold;
+    transition:.2s ease;
 }
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
-
-.section {
-    max-width: 1180px;
-    margin: auto;
-    padding: 70px 25px;
+.btn:hover{
+    transform:translateY(-2px);
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
+.btn-primary{
+    background:#159ce9;
+    color:white;
 }
 
-.section-title h2 {
-    font-size: 34px;
-    margin: 0 0 12px;
-    color: #082f58;
+.btn-outline{
+    border:1px solid white;
+    color:white;
+    background:rgba(255,255,255,.04);
 }
 
-.section-title p {
-    font-size: 17px;
-    color: #54708d;
-    max-width: 780px;
-    margin: auto;
-    line-height: 1.6;
+.btn-light{
+    background:white;
+    color:#07345d;
 }
 
-/* =========================
-   MAIN FEATURES
-========================= */
+/* =====================================================
+   URUGUAY WATERMARK
+===================================================== */
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+.uy-mark{
+    position:absolute;
+    right:45px;
+    bottom:30px;
+    z-index:2;
+    width:190px;
+    height:190px;
+    opacity:.20;
+    pointer-events:none;
 }
 
-.card {
-    background: white;
-    border-radius: 16px;
-    padding: 26px;
-    box-shadow: 0 8px 24px rgba(15,55,90,0.09);
-    border-top: 4px solid #1597e5;
-    display: flex;
-    flex-direction: column;
+.uy-sun{
+    position:absolute;
+    right:5px;
+    top:5px;
+    width:105px;
+    height:105px;
+    border-radius:50%;
+
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(255,255,255,.85) 0deg 8deg,
+            transparent 8deg 20deg
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            circle,
+            transparent 0 31px,
+            #000 32px
+        );
+
+    mask-image:
+        radial-gradient(
+            circle,
+            transparent 0 31px,
+            #000 32px
+        );
 }
 
-.card-icon {
-    font-size: 38px;
-    margin-bottom: 18px;
+.uy-text{
+    position:absolute;
+    right:0;
+    bottom:0;
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:4px;
+    color:white;
 }
 
-.card h3 {
-    margin: 0 0 15px;
-    color: #082f58;
-    font-size: 22px;
+.uy-line{
+    position:absolute;
+    right:0;
+    bottom:39px;
+    width:135px;
+    height:2px;
+    background:#159ce9;
 }
 
-.card p {
-    color: #52708e;
-    line-height: 1.65;
-    margin: 0;
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section{
+    max-width:1220px;
+    margin:auto;
+    padding:65px 25px;
 }
 
-.card .btn {
-    align-self: flex-start;
-    margin-top: auto;
-    padding-top: 12px;
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-/* =========================
-   LEARNING PATH
-========================= */
-
-.learning-section {
-    background: #f8fbfd;
-    border-top: 1px solid #dfeaf2;
-    border-bottom: 1px solid #dfeaf2;
+.section-title h2{
+    margin:0 0 10px;
+    font-size:32px;
+    color:#082f59;
 }
 
-.learning-path {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 28px;
+.section-title p{
+    max-width:760px;
+    margin:auto;
+    color:#597592;
+    line-height:1.55;
+    font-size:16px;
 }
 
-.learning-item {
-    background: white;
-    border-radius: 14px;
-    padding: 25px 28px;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    box-shadow: 0 6px 20px rgba(15,55,90,0.07);
-    transition: transform 0.2s, box-shadow 0.2s;
+/* =====================================================
+   MAIN CARDS
+===================================================== */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-.learning-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(15,55,90,0.11);
+.card{
+    background:white;
+    border-radius:14px;
+    padding:23px 20px 20px;
+    border-top:3px solid #159ce9;
+    box-shadow:0 7px 22px rgba(12,53,86,.08);
+    display:flex;
+    flex-direction:column;
+    min-height:220px;
 }
 
-.learning-number {
-    min-width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #1597e5;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 17px;
+.card-icon{
+    font-size:35px;
+    margin-bottom:10px;
 }
 
-.learning-content h3 {
-    margin: 2px 0 8px;
-    color: #082f58;
-    font-size: 20px;
+.card h3{
+    margin:0 0 10px;
+    font-size:20px;
+    color:#082f59;
 }
 
-.learning-content p {
-    margin: 0;
-    color: #5b7590;
-    line-height: 1.6;
+.card p{
+    margin:0;
+    color:#597592;
+    line-height:1.55;
+    font-size:14px;
 }
 
-/* =========================
+.card .btn{
+    margin-top:auto;
+    align-self:flex-start;
+    padding:10px 17px;
+    font-size:12px;
+}
+
+/* =====================================================
+   LEARNING SECTION
+===================================================== */
+
+.learning-section{
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #dff0fa,
+            #eef8fd
+        );
+}
+
+.learning-section::after{
+    content:"URUGUAY";
+    position:absolute;
+    right:-40px;
+    bottom:15px;
+    font-size:100px;
+    font-weight:900;
+    letter-spacing:5px;
+    color:#168fdf;
+    opacity:.035;
+    pointer-events:none;
+}
+
+.learning-path{
+    max-width:1140px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+    position:relative;
+    z-index:2;
+}
+
+.learning-item{
+    text-align:center;
+    position:relative;
+}
+
+.learning-item:not(:last-child)::after{
+    content:"→";
+    position:absolute;
+    right:-13px;
+    top:12px;
+    color:#83bde2;
+    font-size:22px;
+}
+
+.learning-number{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#159ce9;
+    color:white;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.learning-icon{
+    font-size:27px;
+    margin:8px 0;
+}
+
+.learning-content h3{
+    margin:0 0 7px;
+    font-size:14px;
+    color:#073563;
+}
+
+.learning-content p{
+    margin:0;
+    font-size:12px;
+    line-height:1.45;
+    color:#597592;
+}
+
+/* =====================================================
    CONCEPTS
-========================= */
+===================================================== */
 
-.concepts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+.concepts{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:13px;
 }
 
-.concept {
-    background: white;
-    border-radius: 12px;
-    padding: 22px;
-    box-shadow: 0 5px 18px rgba(15,55,90,0.06);
+.concept{
+    background:white;
+    border-radius:11px;
+    padding:21px 12px;
+    text-align:center;
+    box-shadow:0 5px 17px rgba(12,53,86,.07);
 }
 
-.concept h3 {
-    margin: 0 0 9px;
-    color: #0b477c;
-    font-size: 18px;
+.concept-icon{
+    font-size:29px;
+    margin-bottom:8px;
 }
 
-.concept p {
-    margin: 0;
-    color: #5d7790;
-    line-height: 1.55;
+.concept h3{
+    margin:0;
+    font-size:14px;
+    color:#073563;
 }
 
-/* =========================
+.concept p{
+    margin:7px 0 0;
+    font-size:11px;
+    line-height:1.4;
+    color:#637d96;
+}
+
+/* =====================================================
    APP SECTION
-========================= */
+===================================================== */
 
-.app-section {
-    background: linear-gradient(135deg, #08284a, #104f82);
-    color: white;
+.app-section{
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,34,64,.98),
+            rgba(7,61,99,.96)
+        );
+    color:white;
 }
 
-.app-content {
-    max-width: 1050px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    align-items: center;
-    gap: 50px;
+.app-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(21,156,233,.22),
+            transparent 32%
+        );
+
+    pointer-events:none;
 }
 
-.app-content h2 {
-    font-size: 34px;
-    margin-top: 0;
+.app-inner{
+    position:relative;
+    z-index:2;
+    max-width:1140px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:50px;
 }
 
-.app-content p {
-    color: #dceaf6;
-    line-height: 1.7;
-    font-size: 17px;
+.app-copy{
+    position:relative;
 }
 
-.phone {
-    width: 220px;
-    min-height: 370px;
-    background: white;
-    border-radius: 28px;
-    padding: 18px;
-    margin: auto;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-    color: #082f58;
+.app-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:20px;
 }
 
-.phone-top {
-    background: #1597e5;
-    color: white;
-    border-radius: 14px;
-    padding: 15px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 14px;
+.app-logo{
+    width:105px;
+    height:105px;
+    border-radius:20px;
+    object-fit:contain;
+    background:#159ce9;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-.phone-item {
-    padding: 12px;
-    border-bottom: 1px solid #e3ebf1;
-    font-size: 13px;
+.app-copy h2{
+    font-size:31px;
+    margin:0;
+    line-height:1.15;
 }
 
-/* =========================
-   FINAL SECTION
-========================= */
-
-.final-section {
-    text-align: center;
+.app-copy p{
+    color:#d8e8f5;
+    line-height:1.6;
+    font-size:15px;
+    max-width:540px;
 }
 
-.final-box {
-    max-width: 850px;
-    margin: auto;
-    background: white;
-    border-radius: 18px;
-    padding: 45px 30px;
-    box-shadow: 0 8px 25px rgba(15,55,90,0.08);
+.app-list{
+    list-style:none;
+    padding:0;
+    margin:22px 0;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
 }
 
-.final-box h2 {
-    margin-top: 0;
-    font-size: 32px;
-    color: #082f58;
+.app-list li{
+    font-size:14px;
+    color:#f0f7fc;
 }
 
-.final-box p {
-    color: #58728c;
-    line-height: 1.7;
+.app-list li::before{
+    content:"✓";
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#159ce9;
+    margin-right:8px;
+    font-size:12px;
+    font-weight:bold;
 }
 
-/* =========================
+.google-play{
+    display:inline-block;
+    margin-top:8px;
+    background:#050505;
+    border:1px solid #ddd;
+    border-radius:7px;
+    padding:8px 15px;
+    color:white;
+    font-size:11px;
+}
+
+.google-play strong{
+    display:block;
+    font-size:18px;
+    line-height:1;
+}
+
+/* =====================================================
+   APP PREVIEW
+===================================================== */
+
+.app-preview{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:18px;
+    min-height:350px;
+}
+
+.phone{
+    width:185px;
+    height:360px;
+    background:#0c1724;
+    border-radius:28px;
+    padding:7px;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+    transform:rotate(-3deg);
+}
+
+.phone.second{
+    transform:rotate(4deg) translateY(18px);
+}
+
+.phone-screen{
+    height:100%;
+    border-radius:22px;
+    overflow:hidden;
+    background:#f5f9fc;
+    color:#073563;
+}
+
+.phone-header{
+    background:#159ce9;
+    padding:18px 10px 12px;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+}
+
+.phone-header img{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+    border-radius:9px;
+    display:block;
+    margin:0 auto 5px;
+}
+
+.phone-title{
+    font-size:10px;
+}
+
+.phone-items{
+    padding:10px;
+}
+
+.phone-item{
+    background:white;
+    padding:9px;
+    margin-bottom:6px;
+    border-radius:7px;
+    font-size:9px;
+    box-shadow:0 2px 6px rgba(0,0,0,.06);
+}
+
+.question{
+    padding:12px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.answer{
+    margin:6px 10px;
+    padding:8px;
+    border:1px solid #dce8f1;
+    border-radius:7px;
+    font-size:9px;
+}
+
+.answer.selected{
+    background:#dff3ff;
+    border-color:#159ce9;
+}
+
+/* =====================================================
+   FINAL CALLOUT
+===================================================== */
+
+.final-section{
+    padding:30px 25px;
+}
+
+.final-box{
+    max-width:1140px;
+    margin:auto;
+    background:white;
+    border-radius:13px;
+    padding:22px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    box-shadow:0 7px 22px rgba(12,53,86,.08);
+}
+
+.final-content{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.final-icon{
+    font-size:39px;
+}
+
+.final-box h2{
+    margin:0 0 5px;
+    font-size:19px;
+    color:#073563;
+}
+
+.final-box p{
+    margin:0;
+    color:#597592;
+    font-size:13px;
+    line-height:1.5;
+}
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
-footer {
-    background: #061e38;
-    color: #c9d8e7;
-    padding: 35px 20px;
+footer{
+    background:#052847;
+    color:#cbdbea;
+    padding:30px 25px;
 }
 
-.footer-inner {
-    max-width: 1180px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
+.footer-inner{
+    max-width:1140px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
-.footer-inner p {
-    margin: 5px 0;
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.footer-links {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+.footer-brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    border-radius:10px;
 }
 
-.footer-links a {
-    color: #d9e8f5;
-    font-size: 14px;
+.footer-brand strong{
+    display:block;
+    color:white;
+    font-size:16px;
 }
 
-/* =========================
+.footer-brand span{
+    font-size:11px;
+}
+
+.footer-links{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.footer-links a{
+    color:#d9e6f2;
+    font-size:11px;
+}
+
+.footer-copy{
+    font-size:10px;
+    text-align:right;
+}
+
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
-@media (max-width: 1050px) {
+@media(max-width:1050px){
 
-    .features {
-        grid-template-columns: repeat(2, 1fr);
+    .features{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    nav a {
-        padding: 9px 8px;
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 850px) {
-
-    .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
+    .learning-path{
+        grid-template-columns:repeat(3,1fr);
+        gap:28px 15px;
     }
 
-    nav {
-        margin-left: 0;
-        width: 100%;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 4px;
+    .learning-item:not(:last-child)::after{
+        display:none;
     }
 
-    nav a {
-        white-space: nowrap;
+    .concepts{
+        grid-template-columns:repeat(3,1fr);
     }
 
-    .hero h2 {
-        font-size: 38px;
-    }
-
-    .hero-list {
-        grid-template-columns: 1fr;
-    }
-
-    .learning-path {
-        grid-template-columns: 1fr;
-    }
-
-    .concepts {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .app-content {
-        grid-template-columns: 1fr;
-        text-align: center;
+    nav a{
+        font-size:12px;
+        padding:9px 7px;
     }
 }
 
-@media (max-width: 600px) {
+@media(max-width:850px){
 
-    .features {
-        grid-template-columns: 1fr;
+    .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-    .concepts {
-        grid-template-columns: 1fr;
+    nav{
+        width:100%;
+        overflow-x:auto;
+        margin-left:0;
+        padding-bottom:3px;
     }
 
-    .hero {
-        min-height: 560px;
+    nav a{
+        white-space:nowrap;
     }
 
-    .hero-inner {
-        padding: 55px 20px;
+    .hero{
+        min-height:550px;
     }
 
-    .hero h2 {
-        font-size: 34px;
+    .hero h2{
+        font-size:39px;
     }
 
-    .hero p {
-        font-size: 17px;
+    .uy-mark{
+        right:10px;
+        opacity:.13;
     }
 
-    .section {
-        padding: 55px 18px;
+    .app-inner{
+        grid-template-columns:1fr;
+        text-align:center;
     }
 
-    .section-title h2 {
-        font-size: 29px;
+    .app-brand{
+        justify-content:center;
     }
 
-    .learning-item {
-        padding: 22px;
+    .app-copy p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .app-list{
+        text-align:left;
+        max-width:550px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .final-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .final-content{
+        justify-content:center;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-copy{
+        text-align:center;
     }
 }
+
+@media(max-width:600px){
+
+    .logo-area img{
+        width:52px;
+        height:52px;
+    }
+
+    .logo-text h1{
+        font-size:18px;
+    }
+
+    .hero{
+        min-height:610px;
+    }
+
+    .hero-inner{
+        padding:45px 20px;
+    }
+
+    .hero h2{
+        font-size:34px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .hero-features{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:14px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:50px 18px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .learning-path{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .concepts{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .app-list{
+        grid-template-columns:1fr;
+    }
+
+    .app-preview{
+        transform:scale(.88);
+        margin-left:-10px;
+        margin-right:-10px;
+    }
+
+    .phone{
+        width:155px;
+        height:315px;
+    }
+
+    .app-logo{
+        width:85px;
+        height:85px;
+    }
+
+    .app-copy h2{
+        font-size:27px;
+    }
+
+    .uy-mark{
+        display:none;
+    }
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
-    <div class="header-inner">
 
-        <a href="index.html" class="logo-area">
-            <img src="logo.png" alt="Foguista Uruguay">
-            <div class="logo-text">
-                <h1>Foguista Uruguay</h1>
-                <p>Formación y seguridad en generadores de vapor</p>
-            </div>
-        </a>
+<div class="header-inner">
 
-        <nav>
-            <a href="index.html" class="active">Inicio</a>
-            <a href="generadores.html">Generadores</a>
-            <a href="seguridad.html">Seguridad</a>
-            <a href="estudio.html">Estudio</a>
-            <a href="normativa.html">Normativa</a>
-            <a href="enclavamientos.html">Enclavamientos</a>
-            <a href="tratamiento-agua.html">Tratamiento del agua</a>
-            <a href="app.html">App</a>
-        </nav>
+<a href="index.html" class="logo-area">
 
-    </div>
+<img src="logo.png" alt="Foguista Uruguay">
+
+<div class="logo-text">
+<h1>Foguista Uruguay</h1>
+<p>Formación y seguridad en generadores de vapor</p>
+</div>
+
+</a>
+
+
+<nav>
+
+<a href="index.html" class="active">Inicio</a>
+<a href="generadores.html">Generadores</a>
+<a href="seguridad.html">Seguridad</a>
+<a href="estudio.html">Estudio</a>
+<a href="normativa.html">Normativa</a>
+<a href="enclavamientos.html">Enclavamientos</a>
+<a href="tratamiento-agua.html">Tratamiento del agua</a>
+<a href="app.html">App</a>
+
+</nav>
+
+</div>
+
 </header>
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero">
 
-    <div class="hero-inner">
+<div class="hero-inner">
 
-        <h2>Formación para trabajar con generadores de vapor</h2>
+<h2>
+Conocimiento técnico para un
+<span>trabajo seguro</span>
+</h2>
 
-        <p>
-            Un espacio educativo pensado para comprender cómo funciona un generador
-            de vapor, cómo se controla, cuáles son sus riesgos y qué conocimientos
-            necesita un foguista en Uruguay.
-        </p>
+<p class="hero-description">
 
-        <ul class="hero-list">
-            <li>🔥 Generadores de vapor</li>
-            <li>🛡️ Seguridad y protección</li>
-            <li>📚 Estudio y comprensión</li>
-            <li>⚖️ Normativa URSEA</li>
-            <li>🔒 Enclavamientos de seguridad</li>
-            <li>💧 Tratamiento y control del agua</li>
-        </ul>
+Formación, estudio y recursos sobre generadores de vapor,
+con base en la normativa de Uruguay.
 
-        <a href="#formacion" class="btn btn-primary">
-            Comenzar a estudiar →
-        </a>
+</p>
 
-    </div>
+
+<div class="hero-features">
+
+<div class="hero-feature">
+<div class="hero-feature-icon">📖</div>
+<div>Contenido<br>claro y ordenado</div>
+</div>
+
+<div class="hero-feature">
+<div class="hero-feature-icon">🛡️</div>
+<div>Basado en<br>normativa URSEA</div>
+</div>
+
+<div class="hero-feature">
+<div class="hero-feature-icon">⚙️</div>
+<div>Orientado a la<br>práctica real</div>
+</div>
+
+<div class="hero-feature">
+<div class="hero-feature-icon">▮▮▮</div>
+<div>Ideal para el<br>examen y el trabajo</div>
+</div>
+
+</div>
+
+
+<div class="hero-buttons">
+
+<a href="#formacion" class="btn btn-primary">
+Comenzar a estudiar →
+</a>
+
+<a href="app.html" class="btn btn-outline">
+Conocer la App
+</a>
+
+</div>
+
+</div>
+
+
+<!-- Uruguay integrado como marca de agua -->
+
+<div class="uy-mark">
+
+<div class="uy-sun"></div>
+
+<div class="uy-line"></div>
+
+<div class="uy-text">
+UY
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================
-     MAIN FEATURES
-========================= -->
+<!-- =====================================================
+     FORMACION
+===================================================== -->
 
 <section class="section" id="formacion">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>Una formación completa</h2>
+<h2>Una formación completa</h2>
 
-        <p>
-            Cada sección aborda una parte diferente del conocimiento que necesita
-            quien trabaja o se prepara para trabajar con generadores de vapor.
-        </p>
+<p>
+Cada sección aborda una parte diferente del conocimiento que necesita
+quien trabaja o se prepara para trabajar con generadores de vapor.
+</p>
 
-    </div>
-
-
-    <div class="features">
-
-        <div class="card">
-
-            <div class="card-icon">🔥</div>
-
-            <h3>Generadores</h3>
-
-            <p>
-                Conocé cómo se produce el vapor, cómo circula el agua,
-                cómo se transmite el calor y cuáles son los principales
-                componentes de un generador.
-            </p>
-
-            <a href="generadores.html" class="btn btn-primary">
-                Ver generadores →
-            </a>
-
-        </div>
+</div>
 
 
-        <div class="card">
-
-            <div class="card-icon">🛡️</div>
-
-            <h3>Seguridad</h3>
-
-            <p>
-                Comprendé los riesgos asociados a presión, nivel,
-                combustión, controles y las diferentes protecciones
-                del sistema.
-            </p>
-
-            <a href="seguridad.html" class="btn btn-primary">
-                Ver seguridad →
-            </a>
-
-        </div>
+<div class="features">
 
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icon">🔒</div>
+<div class="card-icon">🔥</div>
 
-            <h3>Enclavamientos</h3>
+<h3>Generadores</h3>
 
-            <p>
-                Aprendé cómo funcionan los bloqueos de seguridad,
-                qué condición detecta cada uno y qué acción produce
-                ante una situación anormal.
-            </p>
+<p>
+Conocé cómo se produce el vapor, cómo circula el agua,
+cómo se transmite el calor y cuáles son los principales
+componentes de un generador.
+</p>
 
-            <a href="enclavamientos.html" class="btn btn-primary">
-                Ver enclavamientos →
-            </a>
+<a href="generadores.html" class="btn btn-primary">
+Ver generadores →
+</a>
 
-        </div>
+</div>
 
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icon">💧</div>
+<div class="card-icon">🛡️</div>
 
-            <h3>Tratamiento del agua</h3>
+<h3>Seguridad</h3>
 
-            <p>
-                Comprendé la importancia de la calidad del agua,
-                las incrustaciones, la corrosión, las purgas y
-                el control químico del generador.
-            </p>
+<p>
+Comprendé los riesgos asociados a presión, nivel,
+combustión y las diferentes protecciones del sistema.
+</p>
 
-            <a href="tratamiento-agua.html" class="btn btn-primary">
-                Ver tratamiento del agua →
-            </a>
+<a href="seguridad.html" class="btn btn-primary">
+Ver seguridad →
+</a>
 
-        </div>
+</div>
 
-    </div>
+
+<div class="card">
+
+<div class="card-icon">🔒</div>
+
+<h3>Enclavamientos</h3>
+
+<p>
+Aprendé cómo funcionan los bloqueos de seguridad,
+qué condición detecta cada uno y qué acción produce
+ante una situación anormal.
+</p>
+
+<a href="enclavamientos.html" class="btn btn-primary">
+Ver enclavamientos →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">💧</div>
+
+<h3>Tratamiento del agua</h3>
+
+<p>
+Comprendé la importancia de la calidad del agua,
+las incrustaciones, la corrosión, las purgas y
+el control químico del generador.
+</p>
+
+<a href="tratamiento-agua.html" class="btn btn-primary">
+Ver tratamiento del agua →
+</a>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- =========================
-     LEARNING PATH
-========================= -->
+<!-- =====================================================
+     QUE VAS A APRENDER
+===================================================== -->
 
-<section class="section learning-section">
+<section class="learning-section">
 
-    <div class="section-title">
+<div class="section">
 
-        <h2>¿Qué vas a aprender?</h2>
+<div class="section-title">
 
-        <p>
-            El objetivo no es solamente memorizar conceptos. Es entender cómo
-            funciona el sistema, relacionar sus variables y poder razonar
-            frente a una situación de operación.
-        </p>
+<h2>¿Qué vas a aprender?</h2>
 
-    </div>
+<p>
+Un recorrido completo desde los conceptos básicos hasta la aplicación práctica.
+</p>
 
-
-    <div class="learning-path">
-
-        <div class="learning-item">
-
-            <div class="learning-number">01</div>
-
-            <div class="learning-content">
-
-                <h3>Comprender el generador</h3>
-
-                <p>
-                    Energía, combustión, transferencia de calor, agua,
-                    vapor, presión, temperatura y componentes principales.
-                </p>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="learning-item">
-
-            <div class="learning-number">02</div>
-
-            <div class="learning-content">
-
-                <h3>Trabajar con seguridad</h3>
-
-                <p>
-                    Nivel de agua, presión, combustión, controles,
-                    alarmas y situaciones anormales de funcionamiento.
-                </p>
-
-            </div>
-
-        </div>
+<div class="learning-path">
 
 
-        <div class="learning-item">
+<div class="learning-item">
 
-            <div class="learning-number">03</div>
+<div class="learning-number">01</div>
 
-            <div class="learning-content">
+<div class="learning-icon">⚙️</div>
 
-                <h3>Entender las protecciones</h3>
+<div class="learning-content">
 
-                <p>
-                    Enclavamientos, condiciones de disparo, bloqueos
-                    y acciones destinadas a proteger el generador.
-                </p>
+<h3>Comprender<br>el generador</h3>
 
-            </div>
+<p>
+Energía, combustión, transferencia de calor,
+agua, vapor y componentes.
+</p>
 
-        </div>
+</div>
 
-
-        <div class="learning-item">
-
-            <div class="learning-number">04</div>
-
-            <div class="learning-content">
-
-                <h3>Controlar el agua</h3>
-
-                <p>
-                    Dureza, incrustaciones, corrosión, conductividad,
-                    purgas, tratamiento químico y control de calidad.
-                </p>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="learning-item">
+<div class="learning-item">
 
-            <div class="learning-number">05</div>
+<div class="learning-number">02</div>
 
-            <div class="learning-content">
+<div class="learning-icon">🛡️</div>
 
-                <h3>Interpretar la normativa</h3>
+<div class="learning-content">
 
-                <p>
-                    Conocer el Reglamento de URSEA, distinguir los
-                    requisitos normativos y comprender su aplicación.
-                </p>
+<h3>Trabajar<br>con seguridad</h3>
 
-            </div>
+<p>
+Nivel, presión, combustión,
+controles, alarmas y situaciones anormales.
+</p>
 
-        </div>
+</div>
+
+</div>
 
 
-        <div class="learning-item">
+<div class="learning-item">
 
-            <div class="learning-number">06</div>
+<div class="learning-number">03</div>
 
-            <div class="learning-content">
+<div class="learning-icon">🔒</div>
 
-                <h3>Prepararte para el examen</h3>
+<div class="learning-content">
 
-                <p>
-                    Aprender a relacionar conceptos, interpretar
-                    situaciones y comprobar si realmente comprendiste
-                    lo que estás estudiando.
-                </p>
+<h3>Entender<br>las protecciones</h3>
 
-            </div>
+<p>
+Enclavamientos, condiciones de disparo
+y acciones del sistema.
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
+
+
+<div class="learning-item">
+
+<div class="learning-number">04</div>
+
+<div class="learning-icon">💧</div>
+
+<div class="learning-content">
+
+<h3>Controlar<br>el agua</h3>
+
+<p>
+Dureza, incrustaciones, corrosión,
+conductividad, purgas y tratamiento químico.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="learning-item">
+
+<div class="learning-number">05</div>
+
+<div class="learning-icon">📋</div>
+
+<div class="learning-content">
+
+<h3>Interpretar<br>la normativa</h3>
+
+<p>
+Conocer el Reglamento de URSEA
+y sus requisitos aplicables.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="learning-item">
+
+<div class="learning-number">06</div>
+
+<div class="learning-icon">🎓</div>
+
+<div class="learning-content">
+
+<h3>Prepararte<br>para el examen</h3>
+
+<p>
+Relacionar conceptos, interpretar situaciones
+y comprobar tus conocimientos.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================
-     CONCEPTS
-========================= -->
+<!-- =====================================================
+     CONCEPTOS
+===================================================== -->
 
 <section class="section">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>Conceptos fundamentales</h2>
+<h2>Conceptos fundamentales</h2>
 
-        <p>
-            El funcionamiento de un generador de vapor puede entenderse
-            relacionando estos elementos.
-        </p>
+<p>
+El funcionamiento de un generador de vapor puede entenderse
+relacionando estos elementos.
+</p>
 
-    </div>
-
-
-    <div class="concepts">
-
-        <div class="concept">
-            <h3>🔥 Combustible y combustión</h3>
-            <p>
-                La energía química del combustible se transforma en energía térmica.
-            </p>
-        </div>
+</div>
 
 
-        <div class="concept">
-            <h3>♨️ Transferencia de calor</h3>
-            <p>
-                El calor producido por la combustión se transmite hacia el agua.
-            </p>
-        </div>
+<div class="concepts">
 
 
-        <div class="concept">
-            <h3>💧 Agua</h3>
-            <p>
-                Su calidad y tratamiento son fundamentales para la operación
-                y conservación del generador.
-            </p>
-        </div>
+<div class="concept">
+
+<div class="concept-icon">🔥</div>
+
+<h3>Combustible y combustión</h3>
+
+<p>
+La energía química del combustible se transforma en energía térmica.
+</p>
+
+</div>
 
 
-        <div class="concept">
-            <h3>💨 Vapor</h3>
-            <p>
-                El agua recibe energía hasta transformarse en vapor utilizable
-                por el proceso.
-            </p>
-        </div>
+<div class="concept">
+
+<div class="concept-icon">♨️</div>
+
+<h3>Transferencia de calor</h3>
+
+<p>
+El calor producido por la combustión se transmite hacia el agua.
+</p>
+
+</div>
 
 
-        <div class="concept">
-            <h3>🔒 Enclavamientos</h3>
-            <p>
-                Las protecciones actúan cuando determinadas condiciones
-                representan una situación peligrosa.
-            </p>
-        </div>
+<div class="concept">
+
+<div class="concept-icon">💧</div>
+
+<h3>Agua</h3>
+
+<p>
+Su calidad y tratamiento son fundamentales para la operación.
+</p>
+
+</div>
 
 
-        <div class="concept">
-            <h3>🎛️ Control</h3>
-            <p>
-                El sistema mantiene variables de funcionamiento dentro
-                de las condiciones previstas.
-            </p>
-        </div>
+<div class="concept">
 
-    </div>
+<div class="concept-icon">💨</div>
+
+<h3>Vapor</h3>
+
+<p>
+El agua recibe energía hasta transformarse en vapor.
+</p>
+
+</div>
+
+
+<div class="concept">
+
+<div class="concept-icon">🔒</div>
+
+<h3>Enclavamientos</h3>
+
+<p>
+Las protecciones actúan ante condiciones peligrosas.
+</p>
+
+</div>
+
+
+<div class="concept">
+
+<div class="concept-icon">🎛️</div>
+
+<h3>Control</h3>
+
+<p>
+El sistema mantiene las variables dentro de las condiciones previstas.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      APP
-========================= -->
+===================================================== -->
 
-<section class="section app-section">
+<section class="app-section">
 
-    <div class="app-content">
+<div class="section">
 
-        <div>
-
-            <h2>También podés estudiar desde la App</h2>
-
-            <p>
-                Complementá la formación con la aplicación de Foguista Uruguay.
-                Practicá preguntas, repasá conceptos y comprobá tus conocimientos
-                desde el teléfono.
-            </p>
-
-            <a href="app.html" class="btn btn-light">
-                Conocer la App →
-            </a>
-
-        </div>
+<div class="app-inner">
 
 
-        <div class="phone">
+<div class="app-copy">
 
-            <div class="phone-top">
-                Foguista Uruguay
-            </div>
 
-            <div class="phone-item">
-                🔥 Generadores
-            </div>
+<div class="app-brand">
 
-            <div class="phone-item">
-                🛡️ Seguridad
-            </div>
+<img src="logo.png"
+     alt="Logo de la App Foguista Uruguay"
+     class="app-logo">
 
-            <div class="phone-item">
-                🔒 Enclavamientos
-            </div>
+<h2>
+También podés estudiar
+<br>
+desde la App
+</h2>
 
-            <div class="phone-item">
-                💧 Tratamiento del agua
-            </div>
+</div>
 
-            <div class="phone-item">
-                ⚖️ Normativa URSEA
-            </div>
 
-            <div class="phone-item">
-                📚 Preguntas de estudio
-            </div>
+<p>
 
-        </div>
+Complementá la formación con la aplicación de Foguista Uruguay.
+Practicá preguntas, repasá conceptos y comprobá tus conocimientos
+desde el teléfono.
 
-    </div>
+</p>
+
+
+<ul class="app-list">
+
+<li>Preguntas de estudio</li>
+<li>Modo práctica y examen</li>
+<li>Todas las secciones</li>
+<li>Funciona sin conexión</li>
+<li>Diseñada para foguistas en Uruguay</li>
+
+</ul>
+
+
+<a href="app.html" class="btn btn-light">
+Conocer la App →
+</a>
+
+
+<br>
+
+
+<a href="app.html" class="google-play">
+
+DISPONIBLE EN
+
+<strong>▶ Google Play</strong>
+
+</a>
+
+
+</div>
+
+
+<!-- PREVISUALIZACION DE APP -->
+
+<div class="app-preview">
+
+
+<div class="phone">
+
+<div class="phone-screen">
+
+<div class="phone-header">
+
+<img src="logo.png" alt="Foguista Uruguay">
+
+<div class="phone-title">
+FOGUISTA URUGUAY
+</div>
+
+</div>
+
+
+<div class="phone-items">
+
+<div class="phone-item">🔥 Generadores</div>
+<div class="phone-item">🛡️ Seguridad</div>
+<div class="phone-item">🔒 Enclavamientos</div>
+<div class="phone-item">💧 Tratamiento del agua</div>
+<div class="phone-item">⚖️ Normativa URSEA</div>
+<div class="phone-item">📚 Preguntas de estudio</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="phone second">
+
+<div class="phone-screen">
+
+<div class="phone-header">
+Pregunta 1/10
+</div>
+
+<div class="question">
+
+¿Qué función cumple una válvula de seguridad?
+
+</div>
+
+<div class="answer">
+A&nbsp;&nbsp; Regular el nivel de agua
+</div>
+
+<div class="answer selected">
+B&nbsp;&nbsp; Limitar la presión máxima
+</div>
+
+<div class="answer">
+C&nbsp;&nbsp; Controlar la combustión
+</div>
+
+<div class="answer">
+D&nbsp;&nbsp; Inyectar agua al generador
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      FINAL
-========================= -->
+===================================================== -->
 
-<section class="section final-section">
+<section class="final-section">
 
-    <div class="final-box">
+<div class="final-box">
 
-        <h2>Aprender para operar con criterio</h2>
 
-        <p>
-            Ser foguista no consiste solamente en conocer el funcionamiento
-            de una caldera. Implica comprender el sistema, reconocer sus
-            variables, interpretar sus protecciones y actuar con seguridad.
-        </p>
+<div class="final-content">
 
-        <p>
-            Foguista Uruguay busca reunir ese conocimiento en un espacio
-            claro, ordenado y orientado al estudio.
-        </p>
+<div class="final-icon">👥</div>
 
-        <a href="estudio.html" class="btn btn-primary">
-            Ir al método de estudio →
-        </a>
+<div>
 
-    </div>
+<h2>Aprender para operar con criterio</h2>
+
+<p>
+Ser foguista no consiste solamente en conocer el funcionamiento de una caldera.
+Implica comprender el sistema, reconocer sus variables, interpretar sus
+protecciones y actuar con seguridad.
+</p>
+
+</div>
+
+</div>
+
+
+<a href="estudio.html" class="btn btn-primary">
+Ir al método de estudio →
+</a>
+
+
+</div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
-    <div class="footer-inner">
-
-        <div>
-
-            <p><strong>Foguista Uruguay</strong></p>
-
-            <p>
-                Formación y seguridad en generadores de vapor.
-            </p>
-
-        </div>
+<div class="footer-inner">
 
 
-        <div class="footer-links">
+<div class="footer-brand">
 
-            <a href="generadores.html">Generadores</a>
-            <a href="seguridad.html">Seguridad</a>
-            <a href="estudio.html">Estudio</a>
-            <a href="normativa.html">Normativa</a>
-            <a href="enclavamientos.html">Enclavamientos</a>
-            <a href="tratamiento-agua.html">Tratamiento del agua</a>
-            <a href="app.html">App</a>
+<img src="logo.png" alt="Foguista Uruguay">
 
-        </div>
+<div>
 
-    </div>
+<strong>Foguista Uruguay</strong>
+
+<span>
+Formación y seguridad en generadores de vapor
+</span>
+
+</div>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="generadores.html">Generadores</a>
+
+<a href="seguridad.html">Seguridad</a>
+
+<a href="estudio.html">Estudio</a>
+
+<a href="normativa.html">Normativa</a>
+
+<a href="enclavamientos.html">Enclavamientos</a>
+
+<a href="tratamiento-agua.html">Tratamiento del agua</a>
+
+<a href="app.html">App</a>
+
+</div>
+
+
+<div class="footer-copy">
+
+© 2026 Foguista Uruguay.<br>
+Todos los derechos reservados.
+
+</div>
+
+
+</div>
 
 </footer>
+
 
 </body>
 </html>
