@@ -12,9 +12,9 @@ content="Foguista Uruguay. Formación técnica, seguridad, normativa y estudio p
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
+/* =====================================================
+   BASE
+===================================================== */
 
 *{
     margin:0;
@@ -27,15 +27,9 @@ html{
 }
 
 body{
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family:Arial, Helvetica, sans-serif;
     background:#f4f7fa;
-
     color:#173b60;
-
     line-height:1.5;
 }
 
@@ -49,325 +43,191 @@ img{
     max-width:100%;
 }
 
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root{
-
     --navy:#062b4f;
-
-    --navy-dark:#041d36;
-
+    --navy-dark:#031d36;
     --blue:#1198e5;
-
     --blue-dark:#087fc5;
-
     --blue-light:#e8f5fc;
-
     --text:#173b60;
-
     --muted:#607b95;
-
     --white:#ffffff;
-
     --border:#dce7ef;
-
-    --shadow:
-        0 12px 35px rgba(13,52,82,.08);
-
 }
 
 
-/* =========================================================
+/* =====================================================
    HEADER
-========================================================= */
+===================================================== */
 
 .site-header{
-
     position:sticky;
-
     top:0;
-
     z-index:1000;
-
-    background:
-        rgba(6,43,79,.97);
-
-    backdrop-filter:blur(10px);
-
-    border-bottom:
-        1px solid rgba(255,255,255,.08);
-
+    background:#062b4f;
+    box-shadow:0 3px 18px rgba(0,0,0,.16);
 }
-
 
 .header-inner{
-
     max-width:1280px;
-
     min-height:76px;
-
     margin:auto;
-
-    padding:
-        8px 28px;
+    padding:8px 28px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
-    gap:30px;
-
+    gap:25px;
 }
 
-
-/* LOGO */
-
 .brand{
-
     display:flex;
-
     align-items:center;
-
     gap:13px;
 
-    flex-shrink:0;
-
     color:white;
-
+    flex-shrink:0;
 }
 
 .brand-logo{
-
     width:58px;
-
     height:58px;
-
     object-fit:contain;
-
     border-radius:12px;
-
 }
 
 .brand-name{
-
     font-size:21px;
-
     font-weight:800;
-
-    letter-spacing:-.3px;
-
 }
 
 .brand-subtitle{
-
     display:block;
-
     margin-top:2px;
-
     font-size:11px;
-
     color:#c8d9e8;
-
 }
 
-
-/* NAV */
-
 .main-nav{
-
     display:flex;
-
     align-items:center;
-
     gap:3px;
-
 }
 
 .main-nav a{
-
-    padding:
-        10px 11px;
-
+    padding:10px 10px;
     border-radius:7px;
 
     color:#e8f1f8;
 
     font-size:13px;
-
     font-weight:600;
-
-    transition:
-        background .2s ease,
-        color .2s ease;
 
     white-space:nowrap;
 
+    transition:.2s;
 }
 
 .main-nav a:hover{
-
-    background:
-        rgba(17,152,229,.18);
-
+    background:rgba(17,152,229,.18);
     color:white;
-
 }
 
 .main-nav .nav-app{
-
-    background:
-        var(--blue);
-
+    background:#1198e5;
     color:white;
 
     padding-left:15px;
-
     padding-right:15px;
-
 }
 
 .main-nav .nav-app:hover{
-
-    background:
-        var(--blue-dark);
-
+    background:#087fc5;
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
 .hero{
-
-    background:
-        var(--navy-dark);
-
-    color:white;
-
     position:relative;
-
     overflow:hidden;
 
+    background:#031d36;
+    color:white;
 }
-
 
 .hero-inner{
-
     max-width:1280px;
-
-    min-height:555px;
+    min-height:575px;
 
     margin:auto;
-
-    padding:
-        72px 28px 70px;
+    padding:65px 28px;
 
     display:grid;
-
-    grid-template-columns:
-        .92fr 1.08fr;
+    grid-template-columns:.88fr 1.12fr;
 
     align-items:center;
-
-    gap:50px;
-
+    gap:48px;
 }
 
 
-/* HERO TEXT */
+/* TEXTO */
 
 .hero-copy{
-
     position:relative;
-
-    z-index:3;
-
+    z-index:5;
 }
 
 .hero-label{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:8px;
 
     margin-bottom:20px;
+    padding:7px 13px;
 
-    padding:
-        7px 12px;
-
-    border:
-        1px solid rgba(17,152,229,.45);
-
+    border:1px solid rgba(17,152,229,.45);
     border-radius:30px;
 
-    background:
-        rgba(17,152,229,.08);
+    background:rgba(17,152,229,.08);
 
     color:#70c9f5;
 
     font-size:11px;
-
-    font-weight:700;
-
-    letter-spacing:.8px;
-
-    text-transform:uppercase;
-
+    font-weight:800;
+    letter-spacing:1px;
 }
 
 .hero-label::before{
-
     content:"";
 
     width:7px;
-
     height:7px;
 
     border-radius:50%;
 
-    background:
-        var(--blue);
-
-    box-shadow:
-        0 0 10px rgba(17,152,229,.8);
-
+    background:#1198e5;
 }
 
-
 .hero h1{
-
-    max-width:690px;
+    max-width:650px;
 
     margin-bottom:20px;
 
-    font-size:
-        clamp(42px,5vw,66px);
+    font-size:clamp(42px,5vw,64px);
 
-    line-height:1.02;
-
+    line-height:1.03;
     letter-spacing:-2px;
-
-    font-weight:800;
-
 }
 
 .hero h1 span{
-
-    color:
-        var(--blue);
-
+    color:#1198e5;
 }
 
 .hero-description{
-
     max-width:590px;
 
     margin-bottom:30px;
@@ -375,158 +235,112 @@ img{
     color:#cbdceb;
 
     font-size:18px;
-
     line-height:1.65;
-
 }
 
 
-/* HERO BUTTONS */
+/* BOTONES */
 
 .hero-actions{
-
     display:flex;
-
-    align-items:center;
-
     flex-wrap:wrap;
 
     gap:12px;
 
     margin-bottom:34px;
-
 }
 
 .button{
-
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     min-height:47px;
 
-    padding:
-        0 22px;
+    padding:0 22px;
 
     border-radius:7px;
 
     font-size:14px;
-
     font-weight:700;
 
-    transition:
-        transform .2s ease,
-        background .2s ease,
-        border-color .2s ease;
-
+    transition:.2s;
 }
 
 .button:hover{
-
     transform:translateY(-2px);
-
 }
 
 .button-primary{
-
-    background:
-        var(--blue);
-
+    background:#1198e5;
     color:white;
-
 }
 
 .button-primary:hover{
-
-    background:
-        var(--blue-dark);
-
+    background:#087fc5;
 }
 
 .button-secondary{
+    border:1px solid rgba(255,255,255,.4);
 
-    border:
-        1px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.03);
 
     color:white;
-
-    background:
-        rgba(255,255,255,.03);
-
 }
 
 .button-secondary:hover{
-
-    background:
-        rgba(255,255,255,.09);
-
+    background:rgba(255,255,255,.10);
 }
 
 
-/* HERO POINTS */
+/* PUNTOS */
 
 .hero-points{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     max-width:620px;
 
     gap:18px;
-
 }
 
 .hero-point{
-
     display:flex;
-
     align-items:flex-start;
 
     gap:9px;
-
 }
 
 .hero-point-icon{
-
     width:31px;
-
     height:31px;
 
     flex-shrink:0;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     border-radius:7px;
 
-    background:
-        rgba(17,152,229,.13);
+    background:rgba(17,152,229,.13);
 
     font-size:17px;
-
 }
 
 .hero-point strong{
-
     display:block;
 
     margin-bottom:2px;
 
-    font-size:11px;
-
     color:white;
 
+    font-size:11px;
 }
 
 .hero-point small{
-
     display:block;
 
     color:#91abc0;
@@ -534,356 +348,248 @@ img{
     font-size:10px;
 
     line-height:1.35;
-
 }
 
 
-/* =========================================================
-   HERO IMAGE
-========================================================= */
+/* =====================================================
+   IMAGEN DEL GENERADOR
+===================================================== */
 
 .hero-visual{
-
     position:relative;
 
-    min-height:420px;
+    min-height:440px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
-
 }
 
-
-/*
-   IMAGEN DEL GENERADOR
-
-   Se utiliza la imagen industrial existente.
-   Si luego subís la nueva imagen al repositorio
-   con el nombre hero-foguista.jpg, solamente
-   cambiás esta URL.
-*/
-
 .hero-image{
-
     width:100%;
+    max-width:720px;
 
-    max-width:690px;
-
-    height:420px;
+    height:440px;
 
     object-fit:cover;
 
-    border-radius:16px;
+    border-radius:18px;
 
     box-shadow:
-        0 28px 70px rgba(0,0,0,.38);
-
-    opacity:.96;
-
+        0 30px 75px rgba(0,0,0,.45);
 }
 
 
-/* overlay */
-
-.hero-visual::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:16px;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(4,29,54,.15),
-            transparent 45%
-        );
-
-    pointer-events:none;
-
-}
-
-
-/* FLOATING CARD */
+/* TARJETA */
 
 .hero-card{
-
     position:absolute;
 
-    left:-25px;
+    left:-22px;
+    bottom:22px;
 
-    bottom:25px;
-
-    width:205px;
+    width:215px;
 
     padding:17px;
 
     border-radius:12px;
 
-    background:
-        rgba(255,255,255,.97);
+    background:rgba(255,255,255,.97);
 
-    color:var(--text);
+    color:#173b60;
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,.28);
+        0 18px 45px rgba(0,0,0,.30);
 
-    z-index:5;
-
+    z-index:10;
 }
 
 .hero-card-icon{
-
     width:37px;
-
     height:37px;
 
     margin-bottom:9px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     border-radius:8px;
 
-    background:
-        var(--blue-light);
+    background:#e8f5fc;
 
     font-size:20px;
-
 }
 
 .hero-card strong{
-
     display:block;
 
-    margin-bottom:3px;
+    margin-bottom:4px;
 
     font-size:13px;
-
 }
 
 .hero-card span{
-
     display:block;
 
-    color:var(--muted);
+    color:#607b95;
 
     font-size:11px;
 
     line-height:1.4;
-
 }
 
 
-/* =========================================================
+/* =====================================================
    INTRO
-========================================================= */
+===================================================== */
 
 .intro{
-
     background:white;
 
-    border-bottom:
-        1px solid var(--border);
-
+    border-bottom:1px solid #dce7ef;
 }
 
 .intro-inner{
-
     max-width:1050px;
 
     margin:auto;
 
-    padding:
-        65px 28px;
+    padding:65px 28px;
 
     text-align:center;
-
 }
 
 .section-tag{
-
     display:inline-block;
 
     margin-bottom:9px;
 
-    color:
-        var(--blue);
+    color:#1198e5;
 
     font-size:11px;
-
     font-weight:800;
 
     letter-spacing:1px;
-
-    text-transform:uppercase;
-
 }
 
 .intro h2{
-
     margin-bottom:13px;
 
-    color:var(--navy);
+    color:#062b4f;
 
     font-size:34px;
 
     letter-spacing:-.7px;
-
 }
 
 .intro p{
-
-    max-width:760px;
+    max-width:770px;
 
     margin:auto;
 
-    color:var(--muted);
+    color:#607b95;
 
     font-size:16px;
 
     line-height:1.7;
-
 }
 
 
-/* =========================================================
-   MAIN AREAS
-========================================================= */
+/* =====================================================
+   ÁREAS
+===================================================== */
 
 .content-section{
-
     max-width:1220px;
 
     margin:auto;
 
-    padding:
-        72px 28px;
-
+    padding:72px 28px;
 }
 
 .section-heading{
-
     display:flex;
 
     align-items:flex-end;
-
     justify-content:space-between;
 
     gap:30px;
 
     margin-bottom:30px;
-
 }
 
 .section-heading h2{
-
-    color:var(--navy);
+    color:#062b4f;
 
     font-size:32px;
 
     letter-spacing:-.7px;
-
 }
 
 .section-heading p{
-
     max-width:530px;
 
-    color:var(--muted);
+    color:#607b95;
 
     font-size:14px;
 
     line-height:1.6;
-
 }
-
-
-/* GRID */
 
 .areas-grid{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:18px;
-
 }
 
-
-/* AREA CARD */
-
 .area-card{
-
     position:relative;
-
-    overflow:hidden;
 
     min-height:305px;
 
-    padding:
-        25px 22px 22px;
+    padding:25px 22px 22px;
 
     background:white;
 
-    border:
-        1px solid var(--border);
+    border:1px solid #dce7ef;
 
     border-radius:14px;
 
     box-shadow:
         0 8px 25px rgba(15,55,85,.05);
 
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+    overflow:hidden;
 
+    transition:.2s;
 }
 
 .area-card:hover{
-
-    transform:
-        translateY(-4px);
+    transform:translateY(-4px);
 
     box-shadow:
         0 15px 35px rgba(15,55,85,.10);
-
 }
 
 .area-card::before{
-
     content:"";
 
     position:absolute;
 
     top:0;
-
     left:0;
-
     right:0;
 
     height:4px;
 
-    background:
-        var(--blue);
-
+    background:#1198e5;
 }
 
 .area-icon{
-
     width:48px;
-
     height:48px;
 
     margin-bottom:20px;
@@ -891,225 +597,169 @@ img{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border-radius:11px;
 
-    background:
-        var(--blue-light);
+    background:#e8f5fc;
 
     font-size:25px;
-
 }
 
 .area-card h3{
-
     margin-bottom:11px;
 
-    color:var(--navy);
+    color:#062b4f;
 
     font-size:20px;
-
 }
 
 .area-card p{
-
-    color:var(--muted);
+    color:#607b95;
 
     font-size:13px;
 
     line-height:1.65;
-
 }
 
 .area-link{
-
     position:absolute;
 
+    left:22px;
     bottom:20px;
 
-    left:22px;
-
-    color:var(--blue);
+    color:#1198e5;
 
     font-size:12px;
 
     font-weight:800;
-
 }
 
 .area-link::after{
-
     content:" →";
-
 }
 
 
-/* =========================================================
-   STUDY PATH
-========================================================= */
+/* =====================================================
+   MÉTODO DE ESTUDIO
+===================================================== */
 
 .study-section{
+    background:#eaf4fa;
 
-    background:
-        #eaf4fa;
-
-    border-top:
-        1px solid #dceaf3;
-
-    border-bottom:
-        1px solid #dceaf3;
-
+    border-top:1px solid #dceaf3;
+    border-bottom:1px solid #dceaf3;
 }
 
 .study-inner{
-
     max-width:1220px;
 
     margin:auto;
 
-    padding:
-        72px 28px;
-
+    padding:72px 28px;
 }
 
 .study-header{
-
     max-width:700px;
 
     margin-bottom:38px;
-
 }
 
 .study-header h2{
-
     margin-bottom:12px;
 
-    color:var(--navy);
+    color:#062b4f;
 
     font-size:34px;
 
     letter-spacing:-.7px;
-
 }
 
 .study-header p{
-
-    color:var(--muted);
+    color:#607b95;
 
     font-size:15px;
-
 }
 
-
-/* PATH */
-
 .study-path{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(5,1fr);
+    grid-template-columns:repeat(5,1fr);
 
     gap:14px;
-
 }
 
 .study-step{
-
     position:relative;
 
-    padding:
-        23px 18px;
+    padding:23px 18px;
 
     background:white;
 
-    border:
-        1px solid var(--border);
+    border:1px solid #dce7ef;
 
     border-radius:12px;
-
 }
 
 .study-step:not(:last-child)::after{
-
     content:"→";
 
     position:absolute;
 
     right:-17px;
-
     top:31px;
 
     z-index:5;
 
-    color:
-        #80b7d7;
+    color:#80b7d7;
 
     font-size:20px;
-
 }
 
 .step-number{
-
     margin-bottom:13px;
 
-    color:
-        var(--blue);
+    color:#1198e5;
 
     font-size:11px;
 
     font-weight:800;
-
-    letter-spacing:.5px;
-
 }
 
 .study-step h3{
-
     margin-bottom:7px;
 
-    color:var(--navy);
+    color:#062b4f;
 
     font-size:15px;
-
 }
 
 .study-step p{
-
-    color:var(--muted);
+    color:#607b95;
 
     font-size:11px;
 
     line-height:1.55;
-
 }
 
 
-/* =========================================================
-   CONCEPTS
-========================================================= */
+/* =====================================================
+   CONCEPTOS
+===================================================== */
 
 .concepts-section{
-
     background:white;
-
 }
 
 .concepts-grid{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:16px;
-
 }
 
 .concept-card{
-
     display:flex;
 
     align-items:flex-start;
@@ -1118,19 +768,15 @@ img{
 
     padding:21px;
 
-    border:
-        1px solid var(--border);
-
-    border-radius:12px;
-
     background:#fbfdfe;
 
+    border:1px solid #dce7ef;
+
+    border-radius:12px;
 }
 
 .concept-icon{
-
     width:42px;
-
     height:42px;
 
     flex-shrink:0;
@@ -1138,90 +784,71 @@ img{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border-radius:9px;
 
-    background:
-        var(--blue-light);
+    background:#e8f5fc;
 
     font-size:21px;
-
 }
 
 .concept-card h3{
-
     margin-bottom:4px;
 
-    color:var(--navy);
+    color:#062b4f;
 
     font-size:15px;
-
 }
 
 .concept-card p{
-
-    color:var(--muted);
+    color:#607b95;
 
     font-size:11px;
 
     line-height:1.5;
-
 }
 
 
-/* =========================================================
+/* =====================================================
    NORMATIVA
-========================================================= */
+===================================================== */
 
 .normativa-section{
-
-    background:
-        var(--navy);
+    background:#062b4f;
 
     color:white;
-
 }
 
 .normativa-inner{
-
     max-width:1220px;
 
     margin:auto;
 
-    padding:
-        72px 28px;
+    padding:72px 28px;
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:60px;
 
     align-items:center;
-
 }
 
 .normativa-copy .section-tag{
-
     color:#65c5f4;
-
 }
 
 .normativa-copy h2{
-
     margin-bottom:15px;
 
     font-size:35px;
 
     line-height:1.15;
-
 }
 
 .normativa-copy p{
-
     max-width:570px;
 
     margin-bottom:22px;
@@ -1231,46 +858,36 @@ img{
     font-size:14px;
 
     line-height:1.7;
-
 }
 
 .normativa-points{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:10px;
 
     margin-bottom:26px;
-
 }
 
 .normativa-point{
-
     padding:11px 13px;
 
-    border:
-        1px solid rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.10);
 
     border-radius:8px;
 
-    background:
-        rgba(255,255,255,.04);
+    background:rgba(255,255,255,.04);
 
     color:#e1edf5;
 
     font-size:11px;
-
 }
 
 .normativa-box{
-
     padding:28px;
 
-    border:
-        1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.12);
 
     border-radius:15px;
 
@@ -1280,11 +897,9 @@ img{
             rgba(255,255,255,.09),
             rgba(255,255,255,.025)
         );
-
 }
 
 .normativa-box-top{
-
     display:flex;
 
     align-items:center;
@@ -1292,52 +907,39 @@ img{
     gap:14px;
 
     margin-bottom:22px;
-
 }
 
 .normativa-box-icon{
-
     width:52px;
-
     height:52px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border-radius:11px;
 
-    background:
-        rgba(17,152,229,.18);
+    background:rgba(17,152,229,.18);
 
     font-size:27px;
-
 }
 
 .normativa-box h3{
-
     font-size:18px;
-
 }
 
 .normativa-box span{
-
     color:#9fb8ca;
 
     font-size:11px;
-
 }
 
 .normativa-box ul{
-
     list-style:none;
-
 }
 
 .normativa-box li{
-
     padding:11px 0;
 
     border-bottom:
@@ -1346,90 +948,42 @@ img{
     color:#d4e2ed;
 
     font-size:12px;
-
 }
 
 .normativa-box li:last-child{
-
     border-bottom:0;
-
 }
 
 
-/* =========================================================
+/* =====================================================
    APP
-========================================================= */
+===================================================== */
 
 .app-section{
-
-    background:
-        #f4f8fb;
-
+    background:#f4f8fb;
 }
 
 .app-inner{
-
     max-width:1220px;
 
     margin:auto;
 
-    padding:
-        75px 28px;
+    padding:75px 28px;
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:60px;
 
     align-items:center;
-
 }
-
-
-/* APP COPY */
 
 .app-copy{
-
     max-width:600px;
-
 }
-
-.app-copy h2{
-
-    margin-bottom:14px;
-
-    color:var(--navy);
-
-    font-size:36px;
-
-    line-height:1.15;
-
-    letter-spacing:-.8px;
-
-}
-
-.app-copy > p{
-
-    margin-bottom:25px;
-
-    color:var(--muted);
-
-    font-size:15px;
-
-    line-height:1.7;
-
-}
-
-
-/*
-   LOGO REAL DE LA APP
-   NO SE MODIFICA
-*/
 
 .app-brand{
-
     display:flex;
 
     align-items:center;
@@ -1437,13 +991,16 @@ img{
     gap:17px;
 
     margin-bottom:20px;
-
 }
 
+
+/* =====================================================
+   LOGO REAL DE LA APP
+   NO SE CAMBIA
+===================================================== */
+
 .app-logo{
-
     width:92px;
-
     height:92px;
 
     object-fit:contain;
@@ -1451,110 +1008,108 @@ img{
     border-radius:18px;
 
     flex-shrink:0;
-
 }
 
 .app-brand-label{
-
-    color:var(--blue);
+    color:#1198e5;
 
     font-size:11px;
 
     font-weight:800;
 
     letter-spacing:1px;
+}
 
-    text-transform:uppercase;
+.app-copy h2{
+    margin-bottom:14px;
 
+    color:#062b4f;
+
+    font-size:36px;
+
+    line-height:1.15;
+}
+
+.app-copy > p{
+    margin-bottom:25px;
+
+    color:#607b95;
+
+    font-size:15px;
+
+    line-height:1.7;
 }
 
 .app-features{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:10px;
 
     margin-bottom:25px;
-
 }
 
 .app-feature{
-
     padding:11px 13px;
 
     background:white;
 
-    border:
-        1px solid var(--border);
+    border:1px solid #dce7ef;
 
     border-radius:8px;
 
-    color:var(--text);
+    color:#173b60;
 
     font-size:12px;
-
 }
 
 .app-feature::before{
-
     content:"✓";
 
     margin-right:7px;
 
-    color:var(--blue);
+    color:#1198e5;
 
     font-weight:800;
-
 }
 
 
-/* APP VISUAL */
+/* =====================================================
+   APP VISUAL
+===================================================== */
 
 .app-showcase{
+    position:relative;
 
     min-height:420px;
-
-    position:relative;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
-
 }
 
 .app-glow{
-
     position:absolute;
 
     width:330px;
-
     height:330px;
 
     border-radius:50%;
 
-    background:
-        rgba(17,152,229,.10);
-
-    filter:blur(3px);
-
+    background:rgba(17,152,229,.10);
 }
 
 
-/* PHONE */
+/* TELÉFONO */
 
 .phone{
-
     position:relative;
 
     z-index:3;
 
     width:205px;
-
     height:405px;
 
     padding:8px;
@@ -1566,13 +1121,10 @@ img{
     box-shadow:
         0 25px 55px rgba(4,29,54,.28);
 
-    transform:
-        rotate(-3deg);
-
+    transform:rotate(-3deg);
 }
 
 .phone-screen{
-
     height:100%;
 
     overflow:hidden;
@@ -1580,54 +1132,40 @@ img{
     border-radius:25px;
 
     background:#f3f7fa;
-
 }
 
 .phone-top{
+    padding:16px 12px 13px;
 
-    padding:
-        16px 12px 13px;
-
-    background:
-        var(--blue);
+    background:#1198e5;
 
     color:white;
 
     text-align:center;
-
 }
 
 .phone-logo{
-
     width:53px;
-
     height:53px;
 
-    margin:
-        0 auto 6px;
+    margin:0 auto 6px;
 
     object-fit:contain;
 
     border-radius:11px;
-
 }
 
 .phone-title{
-
     font-size:10px;
 
     font-weight:800;
-
 }
 
 .phone-body{
-
     padding:12px;
-
 }
 
 .phone-card{
-
     margin-bottom:8px;
 
     padding:10px;
@@ -1639,25 +1177,22 @@ img{
     box-shadow:
         0 2px 8px rgba(0,0,0,.06);
 
-    color:var(--text);
+    color:#173b60;
 
     font-size:10px;
 
     font-weight:600;
-
 }
 
 
-/* SECOND PHONE */
+/* SEGUNDO TELÉFONO */
 
 .phone-small{
-
     position:absolute;
 
     z-index:2;
 
     width:175px;
-
     height:350px;
 
     padding:7px;
@@ -1672,11 +1207,9 @@ img{
     transform:
         translate(120px,45px)
         rotate(5deg);
-
 }
 
 .phone-small-screen{
-
     height:100%;
 
     overflow:hidden;
@@ -1684,14 +1217,12 @@ img{
     border-radius:21px;
 
     background:white;
-
 }
 
 .quiz-header{
-
     padding:13px;
 
-    background:var(--navy);
+    background:#062b4f;
 
     color:white;
 
@@ -1700,76 +1231,59 @@ img{
     font-size:10px;
 
     font-weight:700;
-
 }
 
 .quiz-question{
-
     padding:15px;
 
-    color:var(--navy);
+    color:#062b4f;
 
     font-size:10px;
 
     font-weight:700;
 
     line-height:1.5;
-
 }
 
 .quiz-answer{
-
-    margin:
-        6px 12px;
+    margin:6px 12px;
 
     padding:9px;
 
-    border:
-        1px solid #dce6ee;
+    border:1px solid #dce6ee;
 
     border-radius:7px;
 
-    color:var(--muted);
+    color:#607b95;
 
     font-size:9px;
-
 }
 
 .quiz-answer.correct{
+    border-color:#1198e5;
 
-    border-color:
-        var(--blue);
+    background:#e8f6fd;
 
-    background:
-        #e8f6fd;
-
-    color:var(--navy);
-
+    color:#062b4f;
 }
 
 
-/* =========================================================
-   FINAL CTA
-========================================================= */
+/* =====================================================
+   CIERRE
+===================================================== */
 
 .final-section{
+    padding:30px 28px 70px;
 
-    padding:
-        30px 28px 70px;
-
-    background:
-        #f4f8fb;
-
+    background:#f4f8fb;
 }
 
 .final-box{
-
     max-width:1165px;
 
     margin:auto;
 
-    padding:
-        30px 34px;
+    padding:30px 34px;
 
     display:flex;
 
@@ -1783,65 +1297,51 @@ img{
 
     background:white;
 
-    border:
-        1px solid var(--border);
+    border:1px solid #dce7ef;
 
     box-shadow:
-        var(--shadow);
-
+        0 12px 35px rgba(13,52,82,.08);
 }
 
 .final-box h2{
-
     margin-bottom:5px;
 
-    color:var(--navy);
+    color:#062b4f;
 
     font-size:21px;
-
 }
 
 .final-box p{
-
     max-width:700px;
 
-    color:var(--muted);
+    color:#607b95;
 
     font-size:13px;
-
 }
 
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer{
-
-    background:
-        #031d36;
+    background:#031d36;
 
     color:#b9ccdc;
-
 }
 
 .footer-inner{
-
     max-width:1220px;
 
     margin:auto;
 
-    padding:
-        38px 28px;
-
+    padding:38px 28px;
 }
 
 .footer-main{
-
     display:grid;
 
-    grid-template-columns:
-        1.4fr 2fr;
+    grid-template-columns:1.4fr 2fr;
 
     gap:50px;
 
@@ -1849,76 +1349,58 @@ footer{
 
     border-bottom:
         1px solid rgba(255,255,255,.09);
-
 }
 
 .footer-brand{
-
     display:flex;
 
     align-items:center;
 
     gap:13px;
-
 }
 
 .footer-logo{
-
     width:55px;
-
     height:55px;
 
     object-fit:contain;
 
     border-radius:11px;
-
 }
 
 .footer-brand strong{
-
     display:block;
 
     color:white;
 
     font-size:17px;
-
 }
 
 .footer-brand span{
-
     font-size:10px;
 
     color:#8fa7ba;
-
 }
 
 .footer-nav{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:10px;
-
 }
 
 .footer-nav a{
-
     color:#b9ccdc;
 
     font-size:11px;
-
 }
 
 .footer-nav a:hover{
-
     color:white;
-
 }
 
 .footer-bottom{
-
     padding-top:22px;
 
     display:flex;
@@ -1927,232 +1409,158 @@ footer{
 
     gap:20px;
 
-    font-size:10px;
-
     color:#7892a7;
 
+    font-size:10px;
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media(max-width:1100px){
 
     .main-nav a{
-
-        padding:
-            9px 7px;
-
+        padding:9px 7px;
         font-size:11px;
-
     }
 
     .hero-inner{
-
-        grid-template-columns:
-            1fr 1fr;
-
+        grid-template-columns:1fr 1fr;
         gap:30px;
-
     }
 
     .areas-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
     }
 
     .study-path{
-
-        grid-template-columns:
-            repeat(3,1fr);
-
+        grid-template-columns:repeat(3,1fr);
     }
 
     .study-step:nth-child(3)::after{
-
         display:none;
-
     }
 
     .concepts-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
     }
-
 }
 
+
+/* =====================================================
+   TABLET PEQUEÑA
+===================================================== */
 
 @media(max-width:850px){
 
     .header-inner{
-
         flex-direction:column;
 
         align-items:flex-start;
 
         padding-bottom:10px;
-
     }
 
     .main-nav{
-
         width:100%;
 
         overflow-x:auto;
-
-        padding-bottom:2px;
-
     }
 
     .hero-inner{
-
         grid-template-columns:1fr;
 
         padding-top:55px;
-
-    }
-
-    .hero-copy{
-
-        text-align:left;
-
     }
 
     .hero-visual{
-
         min-height:390px;
-
     }
 
     .hero-image{
-
         height:370px;
-
     }
 
     .hero-card{
-
         left:10px;
-
     }
 
     .normativa-inner{
-
         grid-template-columns:1fr;
-
         gap:35px;
-
     }
 
     .app-inner{
-
         grid-template-columns:1fr;
-
         gap:35px;
-
     }
 
     .app-copy{
-
         max-width:none;
-
-    }
-
-    .app-showcase{
-
-        min-height:410px;
-
     }
 
     .final-box{
-
         flex-direction:column;
 
         align-items:flex-start;
-
     }
-
 }
 
+
+/* =====================================================
+   MÓVIL
+===================================================== */
 
 @media(max-width:650px){
 
     .brand-name{
-
         font-size:18px;
-
     }
 
     .brand-subtitle{
-
         font-size:9px;
-
     }
 
     .brand-logo{
-
         width:52px;
-
         height:52px;
-
     }
 
     .hero-inner{
-
-        padding:
-            45px 20px 50px;
-
+        padding:45px 20px 50px;
     }
 
     .hero h1{
-
         font-size:40px;
 
         letter-spacing:-1.2px;
-
     }
 
     .hero-description{
-
         font-size:15px;
-
     }
 
     .hero-points{
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns:1fr;
 
         gap:11px;
-
     }
 
     .hero-visual{
-
         min-height:300px;
-
     }
 
     .hero-image{
-
         height:285px;
-
     }
 
     .hero-card{
-
         width:175px;
 
         left:5px;
-
         bottom:8px;
-
     }
 
     .content-section,
@@ -2160,110 +1568,72 @@ footer{
     .intro-inner,
     .app-inner,
     .normativa-inner{
-
         padding-left:20px;
-
         padding-right:20px;
-
     }
 
     .section-heading{
-
         display:block;
-
     }
 
     .section-heading p{
-
         margin-top:10px;
-
     }
 
     .areas-grid{
-
         grid-template-columns:1fr;
-
     }
 
     .study-path{
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns:1fr;
     }
 
     .study-step:not(:last-child)::after{
-
         display:none;
-
     }
 
     .concepts-grid{
-
         grid-template-columns:1fr;
-
     }
 
     .normativa-points{
-
         grid-template-columns:1fr;
-
     }
 
     .app-features{
-
         grid-template-columns:1fr;
-
     }
 
     .app-brand{
-
         align-items:flex-start;
-
     }
 
     .app-copy h2{
-
         font-size:30px;
-
     }
 
     .phone-small{
-
         transform:
             translate(85px,35px)
             rotate(5deg);
-
     }
 
     .final-box{
-
-        padding:
-            24px 20px;
-
+        padding:24px 20px;
     }
 
     .footer-main{
-
         grid-template-columns:1fr;
-
         gap:28px;
-
     }
 
     .footer-nav{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
     }
 
     .footer-bottom{
-
         flex-direction:column;
-
     }
-
 }
 
 </style>
@@ -2274,17 +1644,16 @@ footer{
 <body>
 
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- =====================================================
+     CABECERA
+===================================================== -->
 
 <header class="site-header">
 
 <div class="header-inner">
 
 
-<a href="index.html"
-class="brand">
+<a href="index.html" class="brand">
 
 <img
 src="logo.png"
@@ -2337,13 +1706,11 @@ Enclavamientos
 Tratamiento del agua
 </a>
 
-<a href="app.html"
-class="nav-app">
+<a href="app.html" class="nav-app">
 App
 </a>
 
 </nav>
-
 
 </div>
 
@@ -2351,9 +1718,9 @@ App
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      HERO
-========================================================= -->
+===================================================== -->
 
 <section class="hero">
 
@@ -2380,9 +1747,9 @@ para un
 
 <p class="hero-description">
 
-Formación, estudio y recursos para comprender
-el funcionamiento de los generadores de vapor,
-sus sistemas de seguridad y la normativa aplicable.
+Formación, estudio y recursos sobre generadores
+de vapor, seguridad, operación y normativa
+aplicable en Uruguay.
 
 </p>
 
@@ -2390,16 +1757,20 @@ sus sistemas de seguridad y la normativa aplicable.
 <div class="hero-actions">
 
 
-<a href="#formacion"
-class="button button-primary">
+<a
+href="#formacion"
+class="button button-primary"
+>
 
 Comenzar a estudiar →
 
 </a>
 
 
-<a href="app.html"
-class="button button-secondary">
+<a
+href="app.html"
+class="button button-secondary"
+>
 
 Conocer la App
 
@@ -2467,7 +1838,7 @@ Preparación
 </strong>
 
 <small>
-Estudio para examen y trabajo
+Examen y práctica profesional
 </small>
 
 </div>
@@ -2482,11 +1853,15 @@ Estudio para examen y trabajo
 
 
 
+<!-- =====================================================
+     NUEVA IMAGEN
+===================================================== -->
+
 <div class="hero-visual">
 
 
 <img
-src="https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg"
+src="hero-foguista.png"
 alt="Generador de vapor industrial"
 class="hero-image"
 >
@@ -2503,9 +1878,10 @@ Pensá como foguista
 </strong>
 
 <span>
-Comprender el sistema para poder
-interpretar lo que sucede durante
-la operación.
+
+Comprender el sistema para interpretar
+qué sucede durante la operación.
+
 </span>
 
 </div>
@@ -2520,21 +1896,25 @@ la operación.
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      INTRO
-========================================================= -->
+===================================================== -->
 
 <section class="intro">
 
+
 <div class="intro-inner">
+
 
 <span class="section-tag">
 FOGUISTA URUGUAY
 </span>
 
+
 <h2>
 Una formación pensada para entender
 </h2>
+
 
 <p>
 
@@ -2545,15 +1925,16 @@ intervienen y cómo interpretar cada situación.
 
 </p>
 
+
 </div>
 
 </section>
 
 
 
-<!-- =========================================================
-     AREAS
-========================================================= -->
+<!-- =====================================================
+     ÁREAS DE FORMACIÓN
+===================================================== -->
 
 <section
 class="content-section"
@@ -2562,6 +1943,7 @@ id="formacion"
 
 
 <div class="section-heading">
+
 
 <div>
 
@@ -2575,13 +1957,15 @@ Todo el conocimiento en un solo lugar
 
 </div>
 
+
 <p>
 
 Recorré las diferentes áreas y construí una visión
 completa del funcionamiento, la seguridad y el
-mantenimiento de un generador de vapor.
+tratamiento del agua de un generador de vapor.
 
 </p>
+
 
 </div>
 
@@ -2589,8 +1973,6 @@ mantenimiento de un generador de vapor.
 
 <div class="areas-grid">
 
-
-<!-- GENERADORES -->
 
 <article class="area-card">
 
@@ -2611,8 +1993,10 @@ componentes de un generador.
 
 </p>
 
-<a href="generadores.html"
-class="area-link">
+<a
+href="generadores.html"
+class="area-link"
+>
 
 Ver generadores
 
@@ -2621,8 +2005,6 @@ Ver generadores
 </article>
 
 
-
-<!-- SEGURIDAD -->
 
 <article class="area-card">
 
@@ -2642,8 +2024,10 @@ situaciones anormales del sistema.
 
 </p>
 
-<a href="seguridad.html"
-class="area-link">
+<a
+href="seguridad.html"
+class="area-link"
+>
 
 Ver seguridad
 
@@ -2652,8 +2036,6 @@ Ver seguridad
 </article>
 
 
-
-<!-- ENCLAVAMIENTOS -->
 
 <article class="area-card">
 
@@ -2673,8 +2055,10 @@ protege al generador.
 
 </p>
 
-<a href="enclavamientos.html"
-class="area-link">
+<a
+href="enclavamientos.html"
+class="area-link"
+>
 
 Ver enclavamientos
 
@@ -2683,8 +2067,6 @@ Ver enclavamientos
 </article>
 
 
-
-<!-- AGUA -->
 
 <article class="area-card">
 
@@ -2704,8 +2086,10 @@ y control de calidad del agua.
 
 </p>
 
-<a href="tratamiento-agua.html"
-class="area-link">
+<a
+href="tratamiento-agua.html"
+class="area-link"
+>
 
 Ver tratamiento del agua
 
@@ -2720,9 +2104,9 @@ Ver tratamiento del agua
 
 
 
-<!-- =========================================================
-     STUDY PATH
-========================================================= -->
+<!-- =====================================================
+     MÉTODO DE ESTUDIO
+===================================================== -->
 
 <section class="study-section">
 
@@ -2863,14 +2247,15 @@ comprobar realmente el conocimiento.
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      CONCEPTOS
-========================================================= -->
+===================================================== -->
 
 <section class="content-section concepts-section">
 
 
 <div class="section-heading">
+
 
 <div>
 
@@ -2884,13 +2269,14 @@ Los conceptos que tenés que dominar
 
 </div>
 
+
 <p>
 
 El funcionamiento de un generador se comprende
-cuando sus diferentes partes se relacionan
-entre sí.
+cuando sus diferentes partes se relacionan entre sí.
 
 </p>
+
 
 </div>
 
@@ -3042,9 +2428,9 @@ medidas y controladas continuamente.
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      NORMATIVA
-========================================================= -->
+===================================================== -->
 
 <section class="normativa-section">
 
@@ -3054,14 +2440,17 @@ medidas y controladas continuamente.
 
 <div class="normativa-copy">
 
+
 <span class="section-tag">
 NORMATIVA
 </span>
+
 
 <h2>
 La normativa también forma parte
 de la formación
 </h2>
+
 
 <p>
 
@@ -3094,12 +2483,15 @@ interpretaciones prácticas para el estudio.
 </div>
 
 
-<a href="normativa.html"
-class="button button-primary">
+<a
+href="normativa.html"
+class="button button-primary"
+>
 
 Estudiar normativa →
 
 </a>
+
 
 </div>
 
@@ -3166,9 +2558,9 @@ Mantenimiento e inspecciones
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      APP
-========================================================= -->
+===================================================== -->
 
 <section class="app-section">
 
@@ -3181,11 +2573,6 @@ Mantenimiento e inspecciones
 
 <div class="app-brand">
 
-
-<!-- =====================================================
-     ESTE ES EL LOGO REAL DE LA APP.
-     NO SE MODIFICA.
-===================================================== -->
 
 <img
 src="logo.png"
@@ -3248,11 +2635,14 @@ Normativa
 Seguridad y operación
 </div>
 
+
 </div>
 
 
-<a href="app.html"
-class="button button-primary">
+<a
+href="app.html"
+class="button button-primary"
+>
 
 Conocer la App →
 
@@ -3263,8 +2653,6 @@ Conocer la App →
 
 
 
-<!-- APP SHOWCASE -->
-
 <div class="app-showcase">
 
 
@@ -3272,9 +2660,8 @@ Conocer la App →
 </div>
 
 
-<!-- PHONE 1 -->
-
 <div class="phone">
+
 
 <div class="phone-screen">
 
@@ -3333,9 +2720,8 @@ FOGUISTA URUGUAY
 
 
 
-<!-- PHONE 2 -->
-
 <div class="phone-small">
+
 
 <div class="phone-small-screen">
 
@@ -3386,9 +2772,9 @@ D · Controlar combustible
 
 
 
-<!-- =========================================================
-     FINAL CTA
-========================================================= -->
+<!-- =====================================================
+     CIERRE
+===================================================== -->
 
 <section class="final-section">
 
@@ -3414,8 +2800,10 @@ protecciones y actuar con seguridad.
 </div>
 
 
-<a href="estudio.html"
-class="button button-primary">
+<a
+href="estudio.html"
+class="button button-primary"
+>
 
 Ir al método de estudio →
 
@@ -3428,9 +2816,9 @@ Ir al método de estudio →
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
 <footer>
 
@@ -3513,7 +2901,6 @@ Inicio
 
 <div class="footer-bottom">
 
-
 <span>
 © 2026 Foguista Uruguay
 </span>
@@ -3521,7 +2908,6 @@ Inicio
 <span>
 Formación técnica · Seguridad · Estudio
 </span>
-
 
 </div>
 
