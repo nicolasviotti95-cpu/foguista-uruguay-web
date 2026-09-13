@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Comunidad Foguista Uruguay. Preguntas, experiencias y conocimiento entre foguistas.">
+
+<link rel="canonical" href="https://foguistauruguay.uy/comunidad.html">
+<link rel="icon" type="image/png" href="/logo.png">
+
+<title>Comunidad Foguista | Foguista Uruguay</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fa;
+    color:#173b60;
+    line-height:1.5;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+:root{
+    --navy:#062b4f;
+    --navy-dark:#031d36;
+    --blue:#1198e5;
+    --blue-dark:#087fc5;
+    --blue-light:#e8f5fc;
+    --text:#173b60;
+    --muted:#607b95;
+    --white:#ffffff;
+    --border:#dce7ef;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#062b4f;
+
+    box-shadow:0 3px 18px rgba(0,0,0,.16);
+}
+
+.header-inner{
+    max-width:1280px;
+    min-height:76px;
+
+    margin:auto;
+    padding:8px 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+
+    gap:13px;
+
+    color:white;
+
+    flex-shrink:0;
+}
+
+.brand-logo{
+    width:58px;
+    height:58px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+}
+
+.brand-name{
+    font-size:21px;
+    font-weight:800;
+}
+
+.brand-subtitle{
+    display:block;
+
+    margin-top:2px;
+
+    font-size:11px;
+
+    color:#c8d9e8;
+}
+
+.main-nav{
+    display:flex;
+    align-items:center;
+
+    gap:3px;
+
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+.main-nav a{
+    padding:10px;
+
+    border-radius:7px;
+
+    color:#e8f1f8;
+
+    font-size:13px;
+    font-weight:600;
+
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.main-nav a:hover{
+    background:rgba(17,152,229,.18);
+    color:white;
+}
+
+.main-nav .community{
+    background:#1198e5;
+    color:white;
+
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.main-nav .community:hover{
+    background:#087fc5;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,29,54,.98),
+            rgba(3,29,54,.78)
+        ),
+        url("hero-foguista.png") center/cover;
+
+    color:white;
+}
+
+.hero-inner{
+    max-width:1280px;
+
+    margin:auto;
+
+    padding:58px 28px;
+
+    display:grid;
+
+    grid-template-columns:1fr auto;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+.breadcrumb{
+    margin-bottom:14px;
+
+    color:#9dc2da;
+
+    font-size:12px;
+}
+
+.hero h1{
+    margin-bottom:15px;
+
+    font-size:clamp(40px,5vw,60px);
+
+    line-height:1.05;
+
+    letter-spacing:-1.5px;
+}
+
+.hero h1 span{
+    color:#1198e5;
+}
+
+.hero-description{
+    max-width:760px;
+
+    color:#d0e0ec;
+
+    font-size:17px;
+
+    line-height:1.65;
+}
+
+.hero-side{
+    min-width:250px;
+}
+
+.hero-check{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    margin:10px 0;
+
+    color:#eaf5fc;
+
+    font-size:14px;
+}
+
+.check{
+    width:25px;
+    height:25px;
+
+    border-radius:50%;
+
+    background:#1198e5;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:800;
+}
+
+.primary-button{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:47px;
+
+    margin-top:18px;
+
+    padding:0 22px;
+
+    border-radius:7px;
+
+    background:#1198e5;
+
+    color:white;
+
+    font-size:14px;
+    font-weight:800;
+
+    transition:.2s;
+}
+
+.primary-button:hover{
+    background:#087fc5;
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.content{
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:55px 28px;
+}
+
+.section-title{
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    color:#062b4f;
+
+    font-size:31px;
+
+    letter-spacing:-.6px;
+}
+
+.section-title p{
+    margin-top:5px;
+
+    color:#607b95;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.layout{
+    display:grid;
+
+    grid-template-columns:1.55fr .75fr;
+
+    gap:22px;
+}
+
+.panel{
+    background:white;
+
+    border:1px solid #dce7ef;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 8px 25px rgba(15,55,85,.05);
+
+    overflow:hidden;
+}
+
+.panel-header{
+    padding:20px 22px;
+
+    border-bottom:1px solid #dce7ef;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.panel-header h3{
+    color:#062b4f;
+
+    font-size:20px;
+}
+
+
+/* =====================================================
+   CATEGORÍAS
+===================================================== */
+
+.categories{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+    padding:18px;
+}
+
+.category{
+    padding:20px;
+
+    background:#fbfdfe;
+
+    border:1px solid #dce7ef;
+
+    border-radius:12px;
+
+    transition:.2s;
+}
+
+.category:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(15,55,85,.08);
+}
+
+.category-icon{
+    width:45px;
+    height:45px;
+
+    margin-bottom:13px;
+
+    border-radius:10px;
+
+    background:#e8f5fc;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:23px;
+}
+
+.category h4{
+    margin-bottom:5px;
+
+    color:#062b4f;
+
+    font-size:16px;
+}
+
+.category p{
+    color:#607b95;
+
+    font-size:12px;
+
+    line-height:1.5;
+}
+
+.category small{
+    display:block;
+
+    margin-top:11px;
+
+    color:#1198e5;
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   MENSAJE DE COMUNIDAD
+===================================================== */
+
+.community-empty{
+    padding:36px 24px;
+
+    text-align:center;
+
+    color:#607b95;
+}
+
+.community-empty-icon{
+    margin-bottom:10px;
+
+    font-size:42px;
+}
+
+.community-empty h3{
+    margin-bottom:7px;
+
+    color:#062b4f;
+
+    font-size:20px;
+}
+
+.community-empty p{
+    max-width:560px;
+
+    margin:auto;
+
+    font-size:13px;
+}
+
+.login-note{
+    max-width:600px;
+
+    margin:20px auto 0;
+
+    padding:16px;
+
+    border-radius:10px;
+
+    background:#eaf4fa;
+
+    color:#315a78;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   COLUMNA LATERAL
+===================================================== */
+
+.side-section{
+    padding:20px;
+}
+
+.side-section + .side-section{
+    border-top:1px solid #dce7ef;
+}
+
+.side-section h3{
+    margin-bottom:13px;
+
+    color:#062b4f;
+
+    font-size:17px;
+}
+
+
+/* =====================================================
+   TEMAS DESTACADOS
+===================================================== */
+
+.topic{
+    padding:12px 0;
+
+    border-bottom:1px solid #edf2f6;
+}
+
+.topic:last-child{
+    border-bottom:0;
+}
+
+.topic strong{
+    display:block;
+
+    color:#0a4d83;
+
+    font-size:13px;
+}
+
+.topic span{
+    color:#607b95;
+
+    font-size:11px;
+}
+
+
+/* =====================================================
+   REGLAS
+===================================================== */
+
+.rules{
+    list-style:none;
+}
+
+.rules li{
+    display:flex;
+
+    gap:10px;
+
+    margin:12px 0;
+
+    color:#607b95;
+
+    font-size:12px;
+}
+
+.rule-number{
+    flex-shrink:0;
+
+    width:24px;
+    height:24px;
+
+    border-radius:50%;
+
+    background:#e8f5fc;
+
+    color:#1198e5;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:800;
+}
+
+
+/* =====================================================
+   REGISTRO
+===================================================== */
+
+.register-box{
+    padding:20px;
+
+    border-radius:12px;
+
+    background:#eaf4fa;
+
+    border:1px solid #d6eaf5;
+}
+
+.register-box h3{
+    margin-bottom:5px;
+
+    color:#062b4f;
+}
+
+.register-box p{
+    margin-bottom:13px;
+
+    color:#607b95;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    margin-top:30px;
+
+    background:#031d36;
+
+    color:#c8d9e8;
+}
+
+.footer-inner{
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:30px 28px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.footer strong{
+    color:white;
+}
+
+.footer span{
+    font-size:12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+    }
+
+    .hero-side{
+        display:flex;
+
+        flex-wrap:wrap;
+
+        gap:10px;
+    }
+
+    .hero-check{
+        margin:4px 0;
+    }
+
+    .main-nav{
+        display:none;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .header-inner{
+        padding:8px 16px;
+    }
+
+    .brand-name{
+        font-size:18px;
+    }
+
+    .brand-subtitle{
+        display:none;
+    }
+
+    .brand-logo{
+        width:52px;
+        height:52px;
+    }
+
+    .hero-inner,
+    .content{
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+<div class="header-inner">
+
+<a class="brand" href="index.html">
+
+<img
+    class="brand-logo"
+    src="logo.png"
+    alt="Foguista Uruguay">
+
+<div>
+
+<div class="brand-name">
+Foguista Uruguay
+</div>
+
+<span class="brand-subtitle">
+Formación y seguridad en generadores de vapor
+</span>
+
+</div>
+
+</a>
+
+
+<nav class="main-nav">
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="generadores.html">
+Generadores
+</a>
+
+<a href="tratamiento-agua.html">
+Tratamiento del agua
+</a>
+
+<a href="normativa.html">
+Normativa URSEA
+</a>
+
+<a href="enclavamientos.html">
+Enclavamientos
+</a>
+
+<a href="estudio.html">
+Estudio
+</a>
+
+<a
+href="comunidad.html"
+class="community">
+
+Comunidad
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<div>
+
+<div class="breadcrumb">
+Inicio &nbsp;›&nbsp; Comunidad
+</div>
+
+<h1>
+Comunidad <span>Foguista</span>
+</h1>
+
+<p class="hero-description">
+
+<strong>
+Preguntas, experiencias y conocimiento entre foguistas.
+</strong>
+
+<br>
+
+Un espacio para compartir dudas, experiencias de trabajo y aprender juntos.
+
+Entre todos construimos una comunidad más segura y profesional.
+
+</p>
+
+</div>
+
+
+<div class="hero-side">
+
+<div class="hero-check">
+
+<span class="check">
+✓
+</span>
+
+Compartir
+
+</div>
+
+<div class="hero-check">
+
+<span class="check">
+✓
+</span>
+
+Aprender
+
+</div>
+
+<div class="hero-check">
+
+<span class="check">
+✓
+</span>
+
+Resolver dudas
+
+</div>
+
+<div class="hero-check">
+
+<span class="check">
+✓
+</span>
+
+Mejorar la seguridad
+
+</div>
+
+<a
+class="primary-button"
+href="#registro">
+
+＋ Nueva pregunta
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
+<main class="content">
+
+
+<div class="section-title">
+
+<h2>
+Categorías de la comunidad
+</h2>
+
+<p>
+Elegí el área que mejor representa tu pregunta o experiencia.
+</p>
+
+</div>
+
+
+
+<div class="layout">
+
+
+<!-- =====================================================
+     PANEL PRINCIPAL
+===================================================== -->
+
+<section class="panel">
+
+
+<div class="categories">
+
+
+<article class="category">
+
+<div class="category-icon">
+💬
+</div>
+
+<h4>
+Preguntas técnicas
+</h4>
+
+<p>
+Dudas y consultas sobre operación y funcionamiento de generadores de vapor.
+</p>
+
+<small>
+Comunidad · próximamente
+</small>
+
+</article>
+
+
+
+<article class="category">
+
+<div class="category-icon">
+⚙️
+</div>
+
+<h4>
+Experiencias de trabajo
+</h4>
+
+<p>
+Situaciones reales en planta, aprendizajes y buenas prácticas.
+</p>
+
+<small>
+Comunidad · próximamente
+</small>
+
+</article>
+
+
+
+<article class="category">
+
+<div class="category-icon">
+📖
+</div>
+
+<h4>
+Estudio y examen
+</h4>
+
+<p>
+Preparación, material de estudio y consejos para quienes están estudiando.
+</p>
+
+<small>
+Comunidad · próximamente
+</small>
+
+</article>
+
+
+
+<article class="category">
+
+<div class="category-icon">
+📜
+</div>
+
+<h4>
+Normativa URSEA
+</h4>
+
+<p>
+Interpretación y discusión sobre reglamentos oficiales.
+</p>
+
+<small>
+Comunidad · próximamente
+</small>
+
+</article>
+
+
+
+<article class="category">
+
+<div class="category-icon">
+💧
+</div>
+
+<h4>
+Tratamiento del agua
+</h4>
+
+<p>
+Calidad del agua, purgas, análisis y tratamiento químico.
+</p>
+
+<small>
+Comunidad · próximamente
+</small>
+
+</article>
+
+
+
+<article class="category">
+
+<div class="category-icon">
+🛡️
+</div>
+
+<h4>
+Seguridad y enclavamientos
+</h4>
+
+<p>
+Alarmas, protecciones, enclavamientos y procedimientos.
+</p>
+
+<small>
+Comunidad · próximamente
+</small>
+
+</article>
+
+
+
+<article class="category">
+
+<div class="category-icon">
+🔧
+</div>
+
+<h4>
+Equipos y mantenimiento
+</h4>
+
+<p>
+Calderas, bombas, quemadores, válvulas e instrumentación.
+</p>
+
+<small>
+Comunidad · próximamente
+</small>
+
+</article>
+
+
+
+<article class="category">
+
+<div class="category-icon">
+👥
+</div>
+
+<h4>
+Presentaciones
+</h4>
+
+<p>
+Conocé a otros miembros y contá brevemente tu experiencia.
+</p>
+
+<small>
+Comunidad · próximamente
+</small>
+
+</article>
+
+
+</div>
+
+
+
+<div class="community-empty">
+
+<div class="community-empty-icon">
+💬
+</div>
+
+<h3>
+La comunidad está empezando
+</h3>
+
+<p>
+
+Esta es la primera versión del espacio.
+
+El siguiente paso será incorporar cuentas de usuario,
+
+preguntas, respuestas y moderación.
+
+</p>
+
+
+<div class="login-note">
+
+🔒 Las publicaciones reales se habilitarán cuando terminemos el sistema de usuarios y la base de datos.
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     COLUMNA LATERAL
+===================================================== -->
+
+<aside class="panel">
+
+
+<div class="side-section">
+
+<h3>
+Temas destacados
+</h3>
+
+
+<div class="topic">
+
+<strong>
+Buenas prácticas en la operación de calderas
+</strong>
+
+<span>
+Próximamente
+</span>
+
+</div>
+
+
+<div class="topic">
+
+<strong>
+Control de dureza en agua de alimentación
+</strong>
+
+<span>
+Próximamente
+</span>
+
+</div>
+
+
+<div class="topic">
+
+<strong>
+¿Cómo se realiza la purga de fondo?
+</strong>
+
+<span>
+Próximamente
+</span>
+
+</div>
+
+
+<div class="topic">
+
+<strong>
+Válvulas de seguridad: ajuste y mantenimiento
+</strong>
+
+<span>
+Próximamente
+</span>
+
+</div>
+
+
+<div class="topic">
+
+<strong>
+Requisitos URSEA para generadores de vapor
+</strong>
+
+<span>
+Próximamente
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="side-section">
+
+<h3>
+Reglas de la comunidad
+</h3>
+
+
+<ul class="rules">
+
+
+<li>
+
+<span class="rule-number">
+1
+</span>
+
+<span>
+
+<strong>
+Respeto siempre.
+</strong>
+
+<br>
+
+Sin insultos ni ataques personales.
+
+</span>
+
+</li>
+
+
+<li>
+
+<span class="rule-number">
+2
+</span>
+
+<span>
+
+<strong>
+Compartí desde tu experiencia.
+</strong>
+
+<br>
+
+Aclarar cuándo es una opinión o experiencia propia.
+
+</span>
+
+</li>
+
+
+<li>
+
+<span class="rule-number">
+3
+</span>
+
+<span>
+
+<strong>
+No reemplaza la normativa.
+</strong>
+
+<br>
+
+El foro no sustituye la normativa oficial ni la asesoría profesional.
+
+</span>
+
+</li>
+
+
+<li>
+
+<span class="rule-number">
+4
+</span>
+
+<span>
+
+<strong>
+Enfoque en la seguridad.
+</strong>
+
+<br>
+
+Priorizamos el intercambio responsable.
+
+</span>
+
+</li>
+
+
+<li>
+
+<span class="rule-number">
+5
+</span>
+
+<span>
+
+<strong>
+Sin spam.
+</strong>
+
+<br>
+
+No se permite publicidad no relacionada.
+
+</span>
+
+</li>
+
+
+</ul>
+
+</div>
+
+
+
+<div
+class="side-section"
+id="registro">
+
+
+<div class="register-box">
+
+<h3>
+¿Sos nuevo?
+</h3>
+
+<p>
+
+Muy pronto vas a poder crear tu cuenta y participar en la comunidad.
+
+</p>
+
+<a
+class="primary-button"
+href="#"
+onclick="return false;">
+
+Crear cuenta
+
+</a>
+
+</div>
+
+
+</div>
+
+
+</aside>
+
+
+</div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<div class="footer-inner">
+
+<strong>
+FOGUISTA URUGUAY
+</strong>
+
+<span>
+Conocimiento técnico para un trabajo más seguro
+</span>
+
+<span>
+Comunidad · Uruguay
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+
+</html>
