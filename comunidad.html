@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
+<meta
+name="description"
 content="Comunidad Foguista Uruguay. Preguntas, experiencias y conocimiento entre foguistas.">
 
-<link rel="canonical" href="https://foguistauruguay.uy/comunidad.html">
-<link rel="icon" type="image/png" href="/logo.png">
+<link
+rel="canonical"
+href="https://foguistauruguay.uy/comunidad.html">
+
+<link
+rel="icon"
+type="image/png"
+href="/logo.png">
 
 <title>Comunidad Foguista | Foguista Uruguay</title>
 
@@ -35,6 +43,13 @@ body{
 a{
     text-decoration:none;
     color:inherit;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
 }
 
 img{
@@ -66,7 +81,8 @@ img{
 
     background:#062b4f;
 
-    box-shadow:0 3px 18px rgba(0,0,0,.16);
+    box-shadow:
+        0 3px 18px rgba(0,0,0,.16);
 }
 
 .header-inner{
@@ -449,53 +465,145 @@ img{
 
 
 /* =====================================================
-   MENSAJE DE COMUNIDAD
+   PUBLICACIONES
 ===================================================== */
 
-.community-empty{
-    padding:36px 24px;
+.posts-area{
+    padding:0 18px 18px;
+}
 
-    text-align:center;
+.posts-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
+    gap:15px;
+
+    padding:18px 4px 12px;
+
+    color:#062b4f;
+}
+
+.posts-title h3{
+    font-size:19px;
+}
+
+.posts-count{
     color:#607b95;
+    font-size:12px;
 }
 
-.community-empty-icon{
-    margin-bottom:10px;
+.posts-list{
+    display:flex;
+    flex-direction:column;
 
-    font-size:42px;
+    gap:12px;
 }
 
-.community-empty h3{
+.post-card{
+    padding:18px;
+
+    background:#fbfdfe;
+
+    border:1px solid #dce7ef;
+
+    border-radius:12px;
+
+    transition:.2s;
+}
+
+.post-card:hover{
+    border-color:#bcd9ea;
+
+    box-shadow:
+        0 7px 20px rgba(15,55,85,.06);
+}
+
+.post-category{
+    display:inline-block;
+
+    margin-bottom:8px;
+
+    padding:4px 9px;
+
+    border-radius:20px;
+
+    background:#e8f5fc;
+
+    color:#087fc5;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+.post-card h3{
     margin-bottom:7px;
 
     color:#062b4f;
 
-    font-size:20px;
+    font-size:17px;
 }
 
-.community-empty p{
-    max-width:560px;
-
-    margin:auto;
+.post-content{
+    color:#607b95;
 
     font-size:13px;
+
+    line-height:1.6;
+
+    white-space:pre-wrap;
 }
 
-.login-note{
-    max-width:600px;
+.post-meta{
+    display:flex;
+    flex-wrap:wrap;
 
-    margin:20px auto 0;
+    gap:8px;
 
-    padding:16px;
+    margin-top:13px;
 
-    border-radius:10px;
+    color:#7890a4;
 
-    background:#eaf4fa;
+    font-size:10px;
+}
 
-    color:#315a78;
+.post-empty{
+    padding:35px 20px;
 
-    font-size:12px;
+    text-align:center;
+
+    border:1px dashed #cbdce7;
+
+    border-radius:12px;
+
+    color:#607b95;
+}
+
+.post-empty-icon{
+    margin-bottom:8px;
+
+    font-size:34px;
+}
+
+.post-empty strong{
+    display:block;
+
+    margin-bottom:5px;
+
+    color:#062b4f;
+
+    font-size:16px;
+}
+
+.post-loading{
+    padding:25px;
+
+    text-align:center;
+
+    color:#607b95;
+
+    font-size:13px;
 }
 
 
@@ -617,6 +725,280 @@ img{
     font-size:12px;
 }
 
+.register-box .primary-button{
+    width:100%;
+}
+
+
+/* =====================================================
+   USUARIO CONECTADO
+===================================================== */
+
+.user-status{
+    display:none;
+
+    margin-top:15px;
+
+    padding:13px;
+
+    border-radius:9px;
+
+    background:#e8f5fc;
+
+    color:#315a78;
+
+    font-size:12px;
+}
+
+.user-status strong{
+    color:#062b4f;
+}
+
+.logout-button{
+    width:100%;
+
+    min-height:40px;
+
+    margin-top:10px;
+
+    border:1px solid #c9dce8;
+
+    border-radius:7px;
+
+    background:white;
+
+    color:#062b4f;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.logout-button:hover{
+    background:#f4f7fa;
+}
+
+
+/* =====================================================
+   MODALES
+===================================================== */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:3000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(3,29,54,.72);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-card{
+    width:min(470px,100%);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:28px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+.modal-header{
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:18px;
+}
+
+.modal-header h2{
+    color:#062b4f;
+
+    font-size:24px;
+}
+
+.modal-header p{
+    margin-top:5px;
+
+    color:#607b95;
+
+    font-size:13px;
+}
+
+.modal-close{
+    border:0;
+
+    background:transparent;
+
+    color:#607b95;
+
+    font-size:25px;
+
+    line-height:1;
+
+    cursor:pointer;
+}
+
+.modal-label{
+    display:block;
+
+    margin:12px 0 6px;
+
+    color:#173b60;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.modal-input,
+.modal-select,
+.modal-textarea{
+    width:100%;
+
+    padding:11px 12px;
+
+    border:1px solid #cfdde7;
+
+    border-radius:7px;
+
+    background:white;
+
+    color:#173b60;
+
+    font-size:14px;
+
+    outline:none;
+}
+
+.modal-input:focus,
+.modal-select:focus,
+.modal-textarea:focus{
+    border-color:#1198e5;
+
+    box-shadow:
+        0 0 0 3px rgba(17,152,229,.10);
+}
+
+.modal-textarea{
+    min-height:150px;
+
+    resize:vertical;
+}
+
+.modal-button{
+    width:100%;
+
+    min-height:45px;
+
+    margin-top:15px;
+
+    border:0;
+
+    border-radius:7px;
+
+    background:#1198e5;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.modal-button:hover{
+    background:#087fc5;
+}
+
+.modal-button:disabled{
+    opacity:.65;
+
+    cursor:wait;
+}
+
+.modal-secondary{
+    width:100%;
+
+    min-height:45px;
+
+    margin-top:10px;
+
+    border:1px solid #dce7ef;
+
+    border-radius:7px;
+
+    background:white;
+
+    color:#062b4f;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.modal-secondary:hover{
+    background:#f4f7fa;
+}
+
+.modal-error{
+    display:none;
+
+    margin-top:12px;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    background:#fff1f1;
+
+    color:#a33a3a;
+
+    font-size:12px;
+}
+
+.modal-success{
+    display:none;
+
+    margin-top:12px;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    background:#edf9f1;
+
+    color:#287345;
+
+    font-size:12px;
+}
+
 
 /* =====================================================
    FOOTER
@@ -654,181 +1036,6 @@ img{
 
 .footer span{
     font-size:12px;
-}
-
-
-/* =====================================================
-   MODAL AUTENTICACIÓN
-===================================================== */
-
-.firebase-auth-modal{
-    position:fixed;
-
-    inset:0;
-
-    z-index:3000;
-
-    display:none;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:20px;
-
-    background:rgba(3,29,54,.72);
-}
-
-.firebase-auth-modal.show{
-    display:flex;
-}
-
-.firebase-auth-card{
-    width:min(430px,100%);
-
-    background:#ffffff;
-
-    border-radius:16px;
-
-    padding:28px;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-}
-
-.firebase-auth-card h2{
-    margin:0 0 7px;
-
-    color:#062b4f;
-}
-
-.firebase-auth-card p{
-    margin:0 0 18px;
-
-    color:#607b95;
-
-    font-size:13px;
-}
-
-.firebase-auth-card label{
-    display:block;
-
-    margin:12px 0 6px;
-
-    color:#173b60;
-
-    font-size:12px;
-
-    font-weight:700;
-}
-
-.firebase-auth-card input{
-    width:100%;
-
-    min-height:44px;
-
-    padding:0 12px;
-
-    border:1px solid #cfdde7;
-
-    border-radius:7px;
-
-    font-size:14px;
-}
-
-.firebase-auth-card button{
-    width:100%;
-
-    min-height:44px;
-
-    margin-top:12px;
-
-    border:0;
-
-    border-radius:7px;
-
-    background:#1198e5;
-
-    color:#fff;
-
-    font-size:13px;
-
-    font-weight:800;
-
-    cursor:pointer;
-}
-
-.firebase-auth-card button:hover{
-    background:#087fc5;
-}
-
-.firebase-auth-card button.secondary{
-    background:#fff;
-
-    color:#062b4f;
-
-    border:1px solid #dce7ef;
-}
-
-.firebase-auth-card button.secondary:hover{
-    background:#f4f7fa;
-}
-
-.firebase-auth-close{
-    float:right!important;
-
-    width:auto!important;
-
-    min-height:0!important;
-
-    margin:0!important;
-
-    padding:0 4px!important;
-
-    background:transparent!important;
-
-    color:#607b95!important;
-
-    font-size:24px!important;
-}
-
-.firebase-auth-error{
-    display:none;
-
-    margin-top:12px;
-
-    padding:10px;
-
-    border-radius:8px;
-
-    background:#fff1f1;
-
-    color:#a33a3a;
-
-    font-size:12px;
-}
-
-
-/* =====================================================
-   USUARIO CONECTADO
-===================================================== */
-
-.user-status{
-    display:none;
-
-    margin-top:15px;
-
-    padding:12px;
-
-    border-radius:9px;
-
-    background:#e8f5fc;
-
-    color:#315a78;
-
-    font-size:12px;
-}
-
-.user-status strong{
-    color:#062b4f;
 }
 
 
@@ -902,11 +1109,16 @@ img{
         grid-template-columns:1fr;
     }
 
+    .modal-card{
+        padding:22px;
+    }
+
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -919,12 +1131,14 @@ img{
 
 <div class="header-inner">
 
-<a class="brand" href="index.html">
+<a
+class="brand"
+href="index.html">
 
 <img
-    class="brand-logo"
-    src="logo.png"
-    alt="Foguista Uruguay">
+class="brand-logo"
+src="logo.png"
+alt="Foguista Uruguay">
 
 <div>
 
@@ -980,7 +1194,6 @@ Comunidad
 </div>
 
 </header>
-
 
 
 <!-- =====================================================
@@ -1060,21 +1273,20 @@ Mejorar la seguridad
 
 </div>
 
-<a
+<button
 class="primary-button"
-href="#registro"
-id="newQuestionButton">
+id="newQuestionButton"
+type="button">
 
 ＋ Nueva pregunta
 
-</a>
+</button>
 
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1125,11 +1337,10 @@ Dudas y consultas sobre operación y funcionamiento de generadores de vapor.
 </p>
 
 <small>
-Comunidad · próximamente
+Preguntas y respuestas
 </small>
 
 </article>
-
 
 
 <article class="category">
@@ -1147,11 +1358,10 @@ Situaciones reales en planta, aprendizajes y buenas prácticas.
 </p>
 
 <small>
-Comunidad · próximamente
+Experiencias reales
 </small>
 
 </article>
-
 
 
 <article class="category">
@@ -1169,11 +1379,10 @@ Preparación, material de estudio y consejos para quienes están estudiando.
 </p>
 
 <small>
-Comunidad · próximamente
+Estudio y formación
 </small>
 
 </article>
-
 
 
 <article class="category">
@@ -1191,11 +1400,10 @@ Interpretación y discusión sobre reglamentos oficiales.
 </p>
 
 <small>
-Comunidad · próximamente
+Normativa y reglamentación
 </small>
 
 </article>
-
 
 
 <article class="category">
@@ -1213,11 +1421,10 @@ Calidad del agua, purgas, análisis y tratamiento químico.
 </p>
 
 <small>
-Comunidad · próximamente
+Agua y tratamiento
 </small>
 
 </article>
-
 
 
 <article class="category">
@@ -1235,11 +1442,10 @@ Alarmas, protecciones, enclavamientos y procedimientos.
 </p>
 
 <small>
-Comunidad · próximamente
+Seguridad operacional
 </small>
 
 </article>
-
 
 
 <article class="category">
@@ -1257,11 +1463,10 @@ Calderas, bombas, quemadores, válvulas e instrumentación.
 </p>
 
 <small>
-Comunidad · próximamente
+Equipos y mantenimiento
 </small>
 
 </article>
-
 
 
 <article class="category">
@@ -1279,7 +1484,7 @@ Conocé a otros miembros y contá brevemente tu experiencia.
 </p>
 
 <small>
-Comunidad · próximamente
+Comunidad
 </small>
 
 </article>
@@ -1288,31 +1493,36 @@ Comunidad · próximamente
 </div>
 
 
+<!-- =====================================================
+     PUBLICACIONES
+===================================================== -->
 
-<div class="community-empty">
+<div class="posts-area">
 
-<div class="community-empty-icon">
-💬
-</div>
+<div class="posts-title">
 
 <h3>
-La comunidad está empezando
+Últimas preguntas
 </h3>
 
-<p>
+<span
+class="posts-count"
+id="postsCount">
 
-Esta es la primera versión del espacio.
+0 publicaciones
 
-El siguiente paso será incorporar cuentas de usuario,
+</span>
 
-preguntas, respuestas y moderación.
-
-</p>
+</div>
 
 
-<div class="login-note">
+<div
+class="posts-list"
+id="postsList">
 
-🔒 Las publicaciones reales se habilitarán cuando terminemos el sistema de usuarios y la base de datos.
+<div class="post-loading">
+Cargando publicaciones...
+</div>
 
 </div>
 
@@ -1320,7 +1530,6 @@ preguntas, respuestas y moderación.
 
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1344,7 +1553,7 @@ Buenas prácticas en la operación de calderas
 </strong>
 
 <span>
-Próximamente
+Comunidad
 </span>
 
 </div>
@@ -1357,7 +1566,7 @@ Control de dureza en agua de alimentación
 </strong>
 
 <span>
-Próximamente
+Tratamiento del agua
 </span>
 
 </div>
@@ -1370,7 +1579,7 @@ Próximamente
 </strong>
 
 <span>
-Próximamente
+Preguntas técnicas
 </span>
 
 </div>
@@ -1383,7 +1592,7 @@ Válvulas de seguridad: ajuste y mantenimiento
 </strong>
 
 <span>
-Próximamente
+Seguridad
 </span>
 
 </div>
@@ -1396,14 +1605,13 @@ Requisitos URSEA para generadores de vapor
 </strong>
 
 <span>
-Próximamente
+Normativa
 </span>
 
 </div>
 
 
 </div>
-
 
 
 <div class="side-section">
@@ -1526,7 +1734,6 @@ No se permite publicidad no relacionada.
 </div>
 
 
-
 <div
 class="side-section"
 id="registro">
@@ -1534,44 +1741,50 @@ id="registro">
 
 <div class="register-box">
 
-<h3>
+<h3 id="accountTitle">
 ¿Sos nuevo?
 </h3>
 
-<p>
+<p id="accountText">
 
 Creá tu cuenta para participar en la Comunidad Foguista.
 
 </p>
 
-<a
+
+<button
 class="primary-button"
-href="#"
-id="registerButton">
+id="accountButton"
+type="button">
 
 Crear cuenta
 
-</a>
+</button>
+
 
 <div
 class="user-status"
 id="userStatus">
 
-<strong>Sesión iniciada.</strong>
+Sesión iniciada como:
 
-<span id="userEmail"></span>
+<br>
 
-</div>
+<strong id="userEmail">
+</strong>
+
 
 <button
-class="primary-button"
-type="button"
+class="logout-button"
 id="logoutButton"
-style="display:none;width:100%;">
+type="button">
 
 Cerrar sesión
 
 </button>
+
+</div>
+
 
 </div>
 
@@ -1586,6 +1799,250 @@ Cerrar sesión
 
 </main>
 
+
+<!-- =====================================================
+     MODAL AUTENTICACIÓN
+===================================================== -->
+
+<div
+class="modal"
+id="authModal">
+
+<div class="modal-card">
+
+
+<div class="modal-header">
+
+<div>
+
+<h2 id="authTitle">
+Crear cuenta
+</h2>
+
+<p id="authSubtitle">
+Registrate para participar en la Comunidad Foguista.
+</p>
+
+</div>
+
+<button
+class="modal-close"
+id="authClose"
+type="button">
+
+×
+
+</button>
+
+</div>
+
+
+<label
+class="modal-label"
+for="authEmail">
+
+Correo electrónico
+
+</label>
+
+<input
+class="modal-input"
+id="authEmail"
+type="email"
+autocomplete="email"
+placeholder="tu@email.com">
+
+
+<label
+class="modal-label"
+for="authPassword">
+
+Contraseña
+
+</label>
+
+<input
+class="modal-input"
+id="authPassword"
+type="password"
+autocomplete="current-password"
+placeholder="Mínimo 6 caracteres">
+
+
+<button
+class="modal-button"
+id="emailActionButton"
+type="button">
+
+Crear cuenta
+
+</button>
+
+
+<button
+class="modal-secondary"
+id="googleButton"
+type="button">
+
+Continuar con Google
+
+</button>
+
+
+<button
+class="modal-secondary"
+id="toggleAuthMode"
+type="button">
+
+Ya tengo una cuenta
+
+</button>
+
+
+<div
+class="modal-error"
+id="authError">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL NUEVA PREGUNTA
+===================================================== -->
+
+<div
+class="modal"
+id="postModal">
+
+<div class="modal-card">
+
+
+<div class="modal-header">
+
+<div>
+
+<h2>
+Nueva pregunta
+</h2>
+
+<p>
+Compartí tu duda con la comunidad de foguistas.
+
+</p>
+
+</div>
+
+<button
+class="modal-close"
+id="postClose"
+type="button">
+
+×
+
+</button>
+
+</div>
+
+
+<label
+class="modal-label"
+for="postCategory">
+
+Categoría
+
+</label>
+
+<select
+class="modal-select"
+id="postCategory">
+
+<option value="Preguntas técnicas">
+Preguntas técnicas
+</option>
+
+<option value="Experiencias de trabajo">
+Experiencias de trabajo
+</option>
+
+<option value="Estudio y examen">
+Estudio y examen
+</option>
+
+<option value="Normativa URSEA">
+Normativa URSEA
+</option>
+
+<option value="Tratamiento del agua">
+Tratamiento del agua
+</option>
+
+<option value="Seguridad y enclavamientos">
+Seguridad y enclavamientos
+</option>
+
+<option value="Equipos y mantenimiento">
+Equipos y mantenimiento
+</option>
+
+<option value="Presentaciones">
+Presentaciones
+</option>
+
+</select>
+
+
+<label
+class="modal-label"
+for="postTitle">
+
+Título
+
+</label>
+
+<input
+class="modal-input"
+id="postTitle"
+type="text"
+maxlength="120"
+placeholder="Ej.: ¿Cada cuánto se realiza la purga de fondo?">
+
+
+<label
+class="modal-label"
+for="postContent">
+
+Pregunta
+
+</label>
+
+<textarea
+class="modal-textarea"
+id="postContent"
+maxlength="5000"
+placeholder="Escribí tu pregunta o experiencia con el mayor detalle posible..."></textarea>
+
+
+<button
+class="modal-button"
+id="publishButton"
+type="button">
+
+Publicar pregunta
+
+</button>
+
+
+<div
+class="modal-error"
+id="postError">
+</div>
+
+</div>
+
+</div>
 
 
 <!-- =====================================================
@@ -1613,123 +2070,40 @@ Comunidad · Uruguay
 </footer>
 
 
-
-<!-- =====================================================
-     MODAL DE AUTENTICACIÓN
-===================================================== -->
-
-<div
-class="firebase-auth-modal"
-id="firebaseAuthModal">
-
-<div class="firebase-auth-card">
-
-<button
-class="firebase-auth-close"
-type="button"
-id="authCloseButton"
-aria-label="Cerrar">
-
-×
-
-</button>
-
-<h2 id="firebaseAuthTitle">
-Crear cuenta
-</h2>
-
-<p id="firebaseAuthDescription">
-
-Registrate para participar en la Comunidad Foguista.
-
-</p>
-
-<form id="firebaseAuthForm">
-
-<label for="firebaseAuthEmail">
-Correo electrónico
-</label>
-
-<input
-id="firebaseAuthEmail"
-type="email"
-autocomplete="email"
-required>
-
-
-<label for="firebaseAuthPassword">
-Contraseña
-</label>
-
-<input
-id="firebaseAuthPassword"
-type="password"
-minlength="6"
-required>
-
-
-<button
-id="firebaseEmailButton"
-type="submit">
-
-Crear cuenta
-
-</button>
-
-</form>
-
-
-<button
-id="firebaseGoogleButton"
-class="secondary"
-type="button">
-
-Continuar con Google
-
-</button>
-
-
-<button
-id="firebaseToggleButton"
-class="secondary"
-type="button">
-
-Ya tengo una cuenta
-
-</button>
-
-
-<div
-id="firebaseAuthError"
-class="firebase-auth-error">
-
-</div>
-
-</div>
-
-</div>
-
-
-
 <!-- =====================================================
      FIREBASE
 ===================================================== -->
 
 <script type="module">
 
-import { initializeApp }
+import {
+    initializeApp
+}
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
 
 import {
     getAuth,
-    GoogleAuthProvider,
-    signInWithPopup,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
     onAuthStateChanged,
     signOut
 }
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    query,
+    orderBy,
+    onSnapshot,
+    serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 
 /* =====================================================
@@ -1762,62 +2136,61 @@ const firebaseConfig = {
 };
 
 
-/* =====================================================
-   INICIALIZAR FIREBASE
-===================================================== */
-
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-const googleProvider = new GoogleAuthProvider();
+const db = getFirestore(app);
+
+const googleProvider =
+new GoogleAuthProvider();
 
 
 /* =====================================================
    ELEMENTOS
 ===================================================== */
 
-const modal =
-document.getElementById("firebaseAuthModal");
+const authModal =
+document.getElementById("authModal");
 
-const form =
-document.getElementById("firebaseAuthForm");
+const postModal =
+document.getElementById("postModal");
 
-const emailInput =
-document.getElementById("firebaseAuthEmail");
+const authTitle =
+document.getElementById("authTitle");
 
-const passwordInput =
-document.getElementById("firebaseAuthPassword");
+const authSubtitle =
+document.getElementById("authSubtitle");
 
-const emailButton =
-document.getElementById("firebaseEmailButton");
+const authEmail =
+document.getElementById("authEmail");
+
+const authPassword =
+document.getElementById("authPassword");
+
+const emailActionButton =
+document.getElementById("emailActionButton");
 
 const googleButton =
-document.getElementById("firebaseGoogleButton");
+document.getElementById("googleButton");
 
-const toggleButton =
-document.getElementById("firebaseToggleButton");
+const toggleAuthMode =
+document.getElementById("toggleAuthMode");
 
-const closeButton =
-document.getElementById("authCloseButton");
-
-const title =
-document.getElementById("firebaseAuthTitle");
-
-const description =
-document.getElementById("firebaseAuthDescription");
-
-const errorBox =
-document.getElementById("firebaseAuthError");
-
-const registerButton =
-document.getElementById("registerButton");
+const authError =
+document.getElementById("authError");
 
 const newQuestionButton =
 document.getElementById("newQuestionButton");
 
-const logoutButton =
-document.getElementById("logoutButton");
+const accountButton =
+document.getElementById("accountButton");
+
+const accountTitle =
+document.getElementById("accountTitle");
+
+const accountText =
+document.getElementById("accountText");
 
 const userStatus =
 document.getElementById("userStatus");
@@ -1825,113 +2198,216 @@ document.getElementById("userStatus");
 const userEmail =
 document.getElementById("userEmail");
 
+const logoutButton =
+document.getElementById("logoutButton");
 
-let registerMode = true;
+const postCategory =
+document.getElementById("postCategory");
+
+const postTitle =
+document.getElementById("postTitle");
+
+const postContent =
+document.getElementById("postContent");
+
+const publishButton =
+document.getElementById("publishButton");
+
+const postError =
+document.getElementById("postError");
+
+const postsList =
+document.getElementById("postsList");
+
+const postsCount =
+document.getElementById("postsCount");
+
+
+let authMode = "register";
+
+let currentUser = null;
 
 
 /* =====================================================
-   MODAL
+   UTILIDADES
 ===================================================== */
 
-function openAuth(){
+function showModal(modal){
 
     modal.classList.add("show");
 
-    errorBox.style.display = "none";
-
-    emailInput.focus();
-
 }
 
 
-function closeAuth(){
+function hideModal(modal){
 
     modal.classList.remove("show");
 
-    form.reset();
+}
 
-    errorBox.style.display = "none";
+
+function showError(element,message){
+
+    element.textContent = message;
+
+    element.style.display = "block";
 
 }
 
 
-function showError(message){
+function hideError(element){
 
-    errorBox.textContent = message;
+    element.textContent = "";
 
-    errorBox.style.display = "block";
+    element.style.display = "none";
+
+}
+
+
+function firebaseErrorMessage(error){
+
+    const code = error?.code || "";
+
+    const messages = {
+
+        "auth/email-already-in-use":
+        "Ese correo ya tiene una cuenta. Intentá iniciar sesión.",
+
+        "auth/invalid-email":
+        "El correo electrónico no es válido.",
+
+        "auth/weak-password":
+        "La contraseña debe tener al menos 6 caracteres.",
+
+        "auth/invalid-credential":
+        "El correo o la contraseña no son correctos.",
+
+        "auth/popup-closed-by-user":
+        "Se cerró la ventana de Google.",
+
+        "auth/popup-blocked":
+        "El navegador bloqueó la ventana de Google.",
+
+        "auth/unauthorized-domain":
+        "Este dominio todavía no está autorizado en Firebase.",
+
+        "permission-denied":
+        "Firebase rechazó la operación por las reglas de seguridad."
+
+    };
+
+    return messages[code]
+    ||
+    "No se pudo completar la operación. Intentá nuevamente.";
+
+}
+
+
+function escapeHtml(value){
+
+    return String(value ?? "")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+
+}
+
+
+function formatDate(timestamp){
+
+    if(!timestamp){
+        return "Ahora";
+    }
+
+    try{
+
+        const date =
+        timestamp.toDate();
+
+        return date.toLocaleString(
+            "es-UY",
+            {
+                dateStyle:"short",
+                timeStyle:"short"
+            }
+        );
+
+    }catch{
+
+        return "Ahora";
+
+    }
 
 }
 
 
 /* =====================================================
-   CAMBIAR ENTRE REGISTRO E INICIO DE SESIÓN
+   AUTENTICACIÓN
 ===================================================== */
 
-function updateMode(){
+function setAuthMode(mode){
 
-    if(registerMode){
+    authMode = mode;
 
-        title.textContent =
+    hideError(authError);
+
+    if(mode === "register"){
+
+        authTitle.textContent =
         "Crear cuenta";
 
-        description.textContent =
+        authSubtitle.textContent =
         "Registrate para participar en la Comunidad Foguista.";
 
-        emailButton.textContent =
+        emailActionButton.textContent =
         "Crear cuenta";
 
-        toggleButton.textContent =
+        toggleAuthMode.textContent =
         "Ya tengo una cuenta";
-
-        passwordInput.autocomplete =
-        "new-password";
 
     }else{
 
-        title.textContent =
+        authTitle.textContent =
         "Iniciar sesión";
 
-        description.textContent =
+        authSubtitle.textContent =
         "Ingresá para participar en la Comunidad Foguista.";
 
-        emailButton.textContent =
+        emailActionButton.textContent =
         "Iniciar sesión";
 
-        toggleButton.textContent =
+        toggleAuthMode.textContent =
         "Crear una cuenta";
-
-        passwordInput.autocomplete =
-        "current-password";
 
     }
 
 }
 
 
-/* =====================================================
-   BOTONES
-===================================================== */
+function openAuth(){
 
-registerButton.addEventListener(
+    setAuthMode("register");
+
+    authEmail.value = "";
+
+    authPassword.value = "";
+
+    showModal(authModal);
+
+}
+
+
+accountButton.addEventListener(
     "click",
-    function(event){
+    () => {
 
-        event.preventDefault();
+        if(currentUser){
 
-        openAuth();
+            openPostModal();
 
-    }
-);
-
-
-newQuestionButton.addEventListener(
-    "click",
-    function(event){
-
-        if(!auth.currentUser){
-
-            event.preventDefault();
+        }else{
 
             openAuth();
 
@@ -1941,19 +2417,17 @@ newQuestionButton.addEventListener(
 );
 
 
-closeButton.addEventListener(
+newQuestionButton.addEventListener(
     "click",
-    closeAuth
-);
+    () => {
 
+        if(currentUser){
 
-modal.addEventListener(
-    "click",
-    function(event){
+            openPostModal();
 
-        if(event.target === modal){
+        }else{
 
-            closeAuth();
+            openAuth();
 
         }
 
@@ -1961,94 +2435,99 @@ modal.addEventListener(
 );
 
 
-toggleButton.addEventListener(
+document.getElementById("authClose")
+.addEventListener(
     "click",
-    function(){
+    () => hideModal(authModal)
+);
 
-        registerMode = !registerMode;
 
-        errorBox.style.display = "none";
+toggleAuthMode.addEventListener(
+    "click",
+    () => {
 
-        updateMode();
+        if(authMode === "register"){
+
+            setAuthMode("login");
+
+        }else{
+
+            setAuthMode("register");
+
+        }
 
     }
 );
 
 
-/* =====================================================
-   REGISTRO / LOGIN CON CORREO
-===================================================== */
+emailActionButton.addEventListener(
+    "click",
+    async () => {
 
-form.addEventListener(
-    "submit",
-    async function(event){
+        hideError(authError);
 
-        event.preventDefault();
+        const email =
+        authEmail.value.trim();
 
-        emailButton.disabled = true;
+        const password =
+        authPassword.value;
 
-        errorBox.style.display = "none";
+        if(!email){
 
+            showError(
+                authError,
+                "Ingresá tu correo electrónico."
+            );
+
+            return;
+
+        }
+
+        if(password.length < 6){
+
+            showError(
+                authError,
+                "La contraseña debe tener al menos 6 caracteres."
+            );
+
+            return;
+
+        }
+
+        emailActionButton.disabled = true;
 
         try{
 
-            if(registerMode){
+            if(authMode === "register"){
 
                 await createUserWithEmailAndPassword(
                     auth,
-                    emailInput.value.trim(),
-                    passwordInput.value
+                    email,
+                    password
                 );
 
             }else{
 
                 await signInWithEmailAndPassword(
                     auth,
-                    emailInput.value.trim(),
-                    passwordInput.value
+                    email,
+                    password
                 );
 
             }
 
-
-            closeAuth();
-
+            hideModal(authModal);
 
         }catch(error){
 
-            const messages = {
-
-                "auth/email-already-in-use":
-                "Ese correo ya tiene una cuenta. Probá iniciar sesión.",
-
-                "auth/invalid-email":
-                "El correo electrónico no es válido.",
-
-                "auth/weak-password":
-                "La contraseña debe tener al menos 6 caracteres.",
-
-                "auth/invalid-credential":
-                "Correo o contraseña incorrectos.",
-
-                "auth/user-not-found":
-                "No existe una cuenta con ese correo.",
-
-                "auth/wrong-password":
-                "La contraseña es incorrecta."
-
-            };
-
-
             showError(
-                messages[error.code] ||
-                "No se pudo completar la operación. Intentá nuevamente."
+                authError,
+                firebaseErrorMessage(error)
             );
 
         }finally{
 
-            emailButton.disabled = false;
-
-            updateMode();
+            emailActionButton.disabled = false;
 
         }
 
@@ -2056,18 +2535,13 @@ form.addEventListener(
 );
 
 
-/* =====================================================
-   LOGIN CON GOOGLE
-===================================================== */
-
 googleButton.addEventListener(
     "click",
-    async function(){
+    async () => {
+
+        hideError(authError);
 
         googleButton.disabled = true;
-
-        errorBox.style.display = "none";
-
 
         try{
 
@@ -2076,33 +2550,36 @@ googleButton.addEventListener(
                 googleProvider
             );
 
-            closeAuth();
-
+            hideModal(authModal);
 
         }catch(error){
 
-            const messages = {
-
-                "auth/popup-closed-by-user":
-                "La ventana de Google fue cerrada.",
-
-                "auth/popup-blocked":
-                "El navegador bloqueó la ventana de Google.",
-
-                "auth/cancelled-popup-request":
-                "La ventana de Google fue cancelada."
-
-            };
-
-
             showError(
-                messages[error.code] ||
-                "No se pudo iniciar sesión con Google. Intentá nuevamente."
+                authError,
+                firebaseErrorMessage(error)
             );
 
         }finally{
 
             googleButton.disabled = false;
+
+        }
+
+    }
+);
+
+
+logoutButton.addEventListener(
+    "click",
+    async () => {
+
+        try{
+
+            await signOut(auth);
+
+        }catch(error){
+
+            console.error(error);
 
         }
 
@@ -2116,51 +2593,42 @@ googleButton.addEventListener(
 
 onAuthStateChanged(
     auth,
-    function(user){
+    (user) => {
+
+        currentUser = user;
 
         if(user){
 
-            registerButton.textContent =
-            user.displayName ||
+            accountTitle.textContent =
             "Cuenta conectada";
 
-            registerButton.style.pointerEvents =
-            "none";
+            accountText.textContent =
+            "Ya podés participar en la Comunidad Foguista.";
 
-            registerButton.style.opacity =
-            ".85";
-
+            accountButton.textContent =
+            "＋ Nueva pregunta";
 
             userStatus.style.display =
             "block";
 
-
             userEmail.textContent =
-            " " + (user.email || "");
-
-
-            logoutButton.style.display =
-            "block";
-
+            user.email || "Usuario";
 
         }else{
 
-            registerButton.textContent =
+            accountTitle.textContent =
+            "¿Sos nuevo?";
+
+            accountText.textContent =
+            "Creá tu cuenta para participar en la Comunidad Foguista.";
+
+            accountButton.textContent =
             "Crear cuenta";
-
-            registerButton.style.pointerEvents =
-            "";
-
-            registerButton.style.opacity =
-            "";
-
 
             userStatus.style.display =
             "none";
 
-
-            logoutButton.style.display =
-            "none";
+            userEmail.textContent = "";
 
         }
 
@@ -2169,23 +2637,141 @@ onAuthStateChanged(
 
 
 /* =====================================================
-   CERRAR SESIÓN
+   NUEVA PREGUNTA
 ===================================================== */
 
-logoutButton.addEventListener(
+function openPostModal(){
+
+    hideError(postError);
+
+    postTitle.value = "";
+
+    postContent.value = "";
+
+    postCategory.value =
+    "Preguntas técnicas";
+
+    showModal(postModal);
+
+}
+
+
+document.getElementById("postClose")
+.addEventListener(
     "click",
-    async function(){
+    () => hideModal(postModal)
+);
+
+
+publishButton.addEventListener(
+    "click",
+    async () => {
+
+        hideError(postError);
+
+        if(!currentUser){
+
+            hideModal(postModal);
+
+            openAuth();
+
+            return;
+
+        }
+
+        const category =
+        postCategory.value;
+
+        const title =
+        postTitle.value.trim();
+
+        const content =
+        postContent.value.trim();
+
+
+        if(title.length < 5){
+
+            showError(
+                postError,
+                "El título debe tener al menos 5 caracteres."
+            );
+
+            return;
+
+        }
+
+
+        if(content.length < 10){
+
+            showError(
+                postError,
+                "La pregunta debe tener al menos 10 caracteres."
+            );
+
+            return;
+
+        }
+
+
+        publishButton.disabled = true;
+
+        publishButton.textContent =
+        "Publicando...";
+
 
         try{
 
-            await signOut(auth);
+            await addDoc(
+                collection(db,"posts"),
+                {
+
+                    title:title,
+
+                    content:content,
+
+                    category:category,
+
+                    authorId:
+                    currentUser.uid,
+
+                    authorEmail:
+                    currentUser.email || "",
+
+                    authorName:
+                    currentUser.displayName || "",
+
+                    createdAt:
+                    serverTimestamp()
+
+                }
+            );
+
+
+            hideModal(postModal);
+
+            window.scrollTo({
+                top:
+                document.querySelector(".posts-area")
+                .offsetTop - 90,
+                behavior:"smooth"
+            });
+
 
         }catch(error){
 
-            console.error(
-                "Error al cerrar sesión:",
-                error
+            console.error(error);
+
+            showError(
+                postError,
+                firebaseErrorMessage(error)
             );
+
+        }finally{
+
+            publishButton.disabled = false;
+
+            publishButton.textContent =
+            "Publicar pregunta";
 
         }
 
@@ -2194,13 +2780,194 @@ logoutButton.addEventListener(
 
 
 /* =====================================================
-   INICIALIZAR
+   CARGAR PUBLICACIONES
 ===================================================== */
 
-updateMode();
+const postsQuery =
+query(
+    collection(db,"posts"),
+    orderBy("createdAt","desc")
+);
+
+
+onSnapshot(
+    postsQuery,
+
+    (snapshot) => {
+
+        postsList.innerHTML = "";
+
+        postsCount.textContent =
+        `${snapshot.size} ${
+            snapshot.size === 1
+            ? "publicación"
+            : "publicaciones"
+        }`;
+
+
+        if(snapshot.empty){
+
+            postsList.innerHTML = `
+
+                <div class="post-empty">
+
+                    <div class="post-empty-icon">
+                    💬
+                    </div>
+
+                    <strong>
+                    Todavía no hay preguntas
+                    </strong>
+
+                    <span>
+                    Sé el primero en iniciar una conversación.
+                    </span>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        snapshot.forEach(
+            (doc) => {
+
+                const post =
+                doc.data();
+
+
+                const card =
+                document.createElement("article");
+
+                card.className =
+                "post-card";
+
+
+                card.innerHTML = `
+
+                    <span class="post-category">
+
+                        ${escapeHtml(post.category)}
+
+                    </span>
+
+
+                    <h3>
+
+                        ${escapeHtml(post.title)}
+
+                    </h3>
+
+
+                    <div class="post-content">
+
+                        ${escapeHtml(post.content)}
+
+                    </div>
+
+
+                    <div class="post-meta">
+
+                        <span>
+
+                            👤
+                            ${escapeHtml(
+                                post.authorName
+                                ||
+                                post.authorEmail
+                                ||
+                                "Usuario"
+                            )}
+
+                        </span>
+
+                        <span>
+                            ·
+                        </span>
+
+                        <span>
+
+                            ${formatDate(post.createdAt)}
+
+                        </span>
+
+                    </div>
+
+                `;
+
+
+                postsList.appendChild(card);
+
+            }
+        );
+
+    },
+
+    (error) => {
+
+        console.error(error);
+
+        postsList.innerHTML = `
+
+            <div class="post-empty">
+
+                <div class="post-empty-icon">
+                ⚠️
+                </div>
+
+                <strong>
+                No se pudieron cargar las publicaciones
+                </strong>
+
+                <span>
+                Revisá la conexión con Firebase.
+                </span>
+
+            </div>
+
+        `;
+
+    }
+);
+
+
+/* =====================================================
+   CERRAR MODALES AL HACER CLIC AFUERA
+===================================================== */
+
+authModal.addEventListener(
+    "click",
+    (event) => {
+
+        if(event.target === authModal){
+
+            hideModal(authModal);
+
+        }
+
+    }
+);
+
+
+postModal.addEventListener(
+    "click",
+    (event) => {
+
+        if(event.target === postModal){
+
+            hideModal(postModal);
+
+        }
+
+    }
+);
 
 </script>
 
 
 </body>
+
 </html>
