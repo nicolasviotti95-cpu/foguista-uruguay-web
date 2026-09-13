@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="description"
+content="Pregunta de la Comunidad Foguista Uruguay.">
+
+<link
+rel="icon"
+type="image/png"
+href="/logo.png">
+
+<title>Pregunta | Comunidad Foguista</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fa;
+    color:#173b60;
+    line-height:1.5;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea{
+    font-family:inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#062b4f;
+
+    box-shadow:
+        0 3px 18px rgba(0,0,0,.16);
+}
+
+.header-inner{
+    max-width:1280px;
+    min-height:76px;
+
+    margin:auto;
+    padding:8px 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+
+    gap:13px;
+
+    color:white;
+
+    flex-shrink:0;
+}
+
+.brand-logo{
+    width:58px;
+    height:58px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+}
+
+.brand-name{
+    font-size:21px;
+    font-weight:800;
+}
+
+.brand-subtitle{
+    display:block;
+
+    margin-top:2px;
+
+    font-size:11px;
+
+    color:#c8d9e8;
+}
+
+.nav{
+    display:flex;
+    gap:3px;
+}
+
+.nav a{
+    padding:10px;
+
+    border-radius:7px;
+
+    color:#e8f1f8;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+.nav a:hover,
+.nav .active{
+    background:#1198e5;
+    color:white;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,29,54,.98),
+            rgba(3,29,54,.78)
+        ),
+        url("hero-foguista.png") center/cover;
+
+    color:white;
+}
+
+.hero-inner{
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:48px 28px;
+}
+
+.breadcrumb{
+    color:#9dc2da;
+
+    font-size:12px;
+
+    margin-bottom:14px;
+}
+
+.hero h1{
+    font-size:clamp(32px,5vw,50px);
+
+    line-height:1.08;
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.content{
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:45px 28px;
+}
+
+.panel{
+    background:white;
+
+    border:1px solid #dce7ef;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 8px 25px rgba(15,55,85,.05);
+
+    padding:28px;
+}
+
+
+/* =====================================================
+   PREGUNTA
+===================================================== */
+
+.post-category{
+    display:inline-block;
+
+    padding:4px 9px;
+
+    border-radius:20px;
+
+    background:#e8f5fc;
+
+    color:#087fc5;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.post-title{
+    color:#062b4f;
+
+    font-size:30px;
+
+    margin-bottom:10px;
+}
+
+.post-content{
+    color:#486b87;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    white-space:pre-wrap;
+}
+
+.post-meta{
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    color:#7890a4;
+
+    font-size:11px;
+
+    margin-top:16px;
+
+    padding-bottom:22px;
+
+    border-bottom:1px solid #dce7ef;
+}
+
+
+/* =====================================================
+   RESPUESTAS
+===================================================== */
+
+.section-title{
+    color:#062b4f;
+
+    font-size:21px;
+
+    margin:24px 0 14px;
+}
+
+.reply-form{
+    display:none;
+
+    background:#f8fbfd;
+
+    border:1px solid #dce7ef;
+
+    border-radius:10px;
+
+    padding:18px;
+
+    margin-bottom:20px;
+}
+
+.reply-form.show{
+    display:block;
+}
+
+.reply-textarea{
+    width:100%;
+
+    min-height:120px;
+
+    padding:11px 12px;
+
+    border:1px solid #cfdde7;
+
+    border-radius:7px;
+
+    resize:vertical;
+
+    color:#173b60;
+
+    outline:none;
+}
+
+.reply-textarea:focus{
+    border-color:#1198e5;
+
+    box-shadow:
+        0 0 0 3px rgba(17,152,229,.1);
+}
+
+.button{
+    border:0;
+
+    border-radius:7px;
+
+    background:#1198e5;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    padding:12px 18px;
+
+    cursor:pointer;
+
+    margin-top:10px;
+}
+
+.button:hover{
+    background:#087fc5;
+}
+
+.reply-card{
+    border:1px solid #dce7ef;
+
+    border-radius:10px;
+
+    padding:17px;
+
+    margin-bottom:12px;
+
+    background:#fbfdfe;
+}
+
+.reply-content{
+    color:#486b87;
+
+    font-size:14px;
+
+    white-space:pre-wrap;
+}
+
+.reply-meta{
+    font-size:10px;
+
+    color:#7890a4;
+
+    margin-bottom:8px;
+}
+
+.reply-actions{
+    margin-top:12px;
+
+    display:flex;
+
+    gap:8px;
+}
+
+.reply-actions button{
+    border:1px solid #cfdde7;
+
+    background:white;
+
+    border-radius:6px;
+
+    padding:7px 10px;
+
+    color:#062b4f;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.reply-actions button:hover{
+    background:#f4f7fa;
+}
+
+.empty{
+    padding:25px;
+
+    text-align:center;
+
+    border:1px dashed #cbdce7;
+
+    border-radius:10px;
+
+    color:#607b95;
+}
+
+.error{
+    display:none;
+
+    margin-top:12px;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    background:#fff1f1;
+
+    color:#a33a3a;
+
+    font-size:12px;
+}
+
+.login-box{
+    display:none;
+
+    padding:15px;
+
+    background:#eaf4fa;
+
+    border:1px solid #d6eaf5;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    color:#315a78;
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    margin-top:20px;
+
+    background:#031d36;
+
+    color:#c8d9e8;
+}
+
+.footer-inner{
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:30px 28px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.footer strong{
+    color:white;
+}
+
+.footer span{
+    font-size:12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header-inner{
+        padding:8px 16px;
+    }
+
+    .brand-name{
+        font-size:18px;
+    }
+
+    .brand-subtitle,
+    .nav{
+        display:none;
+    }
+
+    .brand-logo{
+        width:52px;
+        height:52px;
+    }
+
+    .content{
+        padding:30px 16px;
+    }
+
+    .panel{
+        padding:20px;
+    }
+
+    .post-title{
+        font-size:25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+<div class="header-inner">
+
+<a
+class="brand"
+href="comunidad.html">
+
+<img
+class="brand-logo"
+src="logo.png"
+alt="Foguista Uruguay">
+
+<div>
+
+<div class="brand-name">
+Foguista Uruguay
+</div>
+
+<span class="brand-subtitle">
+Formación y seguridad en generadores de vapor
+</span>
+
+</div>
+
+</a>
+
+
+<nav class="nav">
+
+<a href="index.html">
+Inicio
+</a>
+
+<a
+href="comunidad.html"
+class="active">
+
+Comunidad
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<div class="breadcrumb">
+
+Inicio
+&nbsp;›&nbsp;
+Comunidad
+&nbsp;›&nbsp;
+Pregunta
+
+</div>
+
+<h1>
+
+Comunidad
+<span style="color:#1198e5">
+Foguista
+</span>
+
+</h1>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
+<main class="content">
+
+<section class="panel">
+
+
+<div id="postArea">
+
+<div class="empty">
+Cargando pregunta...
+</div>
+
+</div>
+
+
+<h2 class="section-title">
+
+Respuestas
+
+</h2>
+
+
+<div
+id="loginBox"
+class="login-box">
+
+Iniciá sesión en Comunidad Foguista para responder.
+
+</div>
+
+
+<div
+id="replyForm"
+class="reply-form">
+
+
+<textarea
+id="replyText"
+class="reply-textarea"
+maxlength="5000"
+placeholder="Escribí tu respuesta..."></textarea>
+
+
+<button
+id="replyButton"
+class="button">
+
+Publicar respuesta
+
+</button>
+
+
+<div
+id="replyError"
+class="error">
+
+</div>
+
+</div>
+
+
+<div id="repliesList">
+
+<div class="empty">
+
+Cargando respuestas...
+
+</div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<div class="footer-inner">
+
+<strong>
+FOGUISTA URUGUAY
+</strong>
+
+<span>
+Conocimiento técnico para un trabajo más seguro
+</span>
+
+<span>
+Comunidad · Uruguay
+</span>
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
+
+<script type="module">
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    onAuthStateChanged,
+    signInWithPopup,
+    GoogleAuthProvider
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    collection,
+    addDoc,
+    query,
+    orderBy,
+    onSnapshot,
+    serverTimestamp,
+    updateDoc,
+    deleteDoc
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+/* =====================================================
+   CONFIGURACIÓN
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyAMwiZKPAOZfW7mdgHll6LbDF-n1lv1tUM",
+
+    authDomain:
+    "foguista-uruguay.firebaseapp.com",
+
+    projectId:
+    "foguista-uruguay",
+
+    storageBucket:
+    "foguista-uruguay.firebasestorage.app",
+
+    messagingSenderId:
+    "26845359651",
+
+    appId:
+    "1:26845359651:web:c7f5c04ab51fdababb8b96",
+
+    measurementId:
+    "G-GS53T440NK"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(app);
+
+const db =
+getFirestore(app);
+
+const googleProvider =
+new GoogleAuthProvider();
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const postArea =
+document.getElementById("postArea");
+
+const repliesList =
+document.getElementById("repliesList");
+
+const replyForm =
+document.getElementById("replyForm");
+
+const loginBox =
+document.getElementById("loginBox");
+
+const replyText =
+document.getElementById("replyText");
+
+const replyButton =
+document.getElementById("replyButton");
+
+const replyError =
+document.getElementById("replyError");
+
+
+const postId =
+new URLSearchParams(
+    location.search
+).get("id");
+
+
+let currentUser = null;
+
+
+/* =====================================================
+   UTILIDADES
+===================================================== */
+
+function escapeHtml(value){
+
+    return String(value ?? "")
+
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
+
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
+
+}
+
+
+function formatDate(timestamp){
+
+    if(!timestamp){
+
+        return "Ahora";
+
+    }
+
+    try{
+
+        return timestamp
+            .toDate()
+            .toLocaleString(
+                "es-UY",
+                {
+                    dateStyle:"short",
+                    timeStyle:"short"
+                }
+            );
+
+    }catch{
+
+        return "Ahora";
+
+    }
+
+}
+
+
+function showError(message){
+
+    replyError.textContent =
+    message;
+
+    replyError.style.display =
+    "block";
+
+}
+
+
+function clearError(){
+
+    replyError.textContent =
+    "";
+
+    replyError.style.display =
+    "none";
+
+}
+
+
+/* =====================================================
+   CARGAR PREGUNTA
+===================================================== */
+
+if(!postId){
+
+    postArea.innerHTML = `
+
+        <div class="empty">
+
+            No se indicó ninguna pregunta.
+
+            <br><br>
+
+            <a
+            href="comunidad.html"
+            style="
+            color:#1198e5;
+            font-weight:800;
+            ">
+
+            Volver a Comunidad
+
+            </a>
+
+        </div>
+
+    `;
+
+}else{
+
+    const postRef =
+    doc(
+        db,
+        "posts",
+        postId
+    );
+
+
+    getDoc(postRef)
+
+    .then(
+
+        (snapshot) => {
+
+            if(!snapshot.exists()){
+
+                postArea.innerHTML = `
+
+                    <div class="empty">
+
+                        La pregunta no existe
+                        o fue eliminada.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            const post =
+            snapshot.data();
+
+
+            postArea.innerHTML = `
+
+                <span
+                class="post-category">
+
+                    ${escapeHtml(
+                        post.category
+                    )}
+
+                </span>
+
+
+                <h1
+                class="post-title">
+
+                    ${escapeHtml(
+                        post.title
+                    )}
+
+                </h1>
+
+
+                <div
+                class="post-content">
+
+                    ${escapeHtml(
+                        post.content
+                    )}
+
+                </div>
+
+
+                <div
+                class="post-meta">
+
+                    👤
+
+                    ${escapeHtml(
+                        post.authorName
+                        ||
+                        post.authorEmail
+                        ||
+                        "Usuario"
+                    )}
+
+                    ·
+
+                    ${formatDate(
+                        post.createdAt
+                    )}
+
+                    ·
+
+                    <a
+                    href="comunidad.html"
+                    style="
+                    color:#1198e5;
+                    font-weight:700;
+                    ">
+
+                    Volver a preguntas
+
+                    </a>
+
+                </div>
+
+            `;
+
+        }
+
+    )
+
+    .catch(
+
+        () => {
+
+            postArea.innerHTML = `
+
+                <div class="empty">
+
+                    No se pudo cargar
+                    la pregunta.
+
+                </div>
+
+            `;
+
+        }
+
+    );
+
+
+    /* =================================================
+       CARGAR RESPUESTAS
+    ================================================= */
+
+    const repliesQuery =
+
+    query(
+
+        collection(
+            db,
+            "posts",
+            postId,
+            "replies"
+        ),
+
+        orderBy(
+            "createdAt",
+            "asc"
+        )
+
+    );
+
+
+    onSnapshot(
+
+        repliesQuery,
+
+        (snapshot) => {
+
+            if(snapshot.empty){
+
+                repliesList.innerHTML = `
+
+                    <div class="empty">
+
+                        Todavía no hay respuestas.
+
+                        <br>
+
+                        Sé el primero
+                        en responder.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            repliesList.innerHTML =
+            "";
+
+
+            snapshot.forEach(
+
+                (replyDoc) => {
+
+                    const reply =
+                    replyDoc.data();
+
+
+                    const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                    card.className =
+                    "reply-card";
+
+
+                    let actions = "";
+
+
+                    if(
+                        currentUser
+                        &&
+                        currentUser.uid
+                        ===
+                        reply.authorId
+                    ){
+
+                        actions = `
+
+                            <div
+                            class="reply-actions">
+
+                                <button
+                                data-edit="${replyDoc.id}">
+
+                                Editar
+
+                                </button>
+
+                                <button
+                                data-delete="${replyDoc.id}">
+
+                                Eliminar
+
+                                </button>
+
+                            </div>
+
+                        `;
+
+                    }
+
+
+                    card.innerHTML = `
+
+                        <div
+                        class="reply-meta">
+
+                            👤
+
+                            ${escapeHtml(
+                                reply.authorName
+                                ||
+                                reply.authorEmail
+                                ||
+                                "Usuario"
+                            )}
+
+                            ·
+
+                            ${formatDate(
+                                reply.createdAt
+                            )}
+
+                        </div>
+
+
+                        <div
+                        class="reply-content">
+
+                            ${escapeHtml(
+                                reply.content
+                            )}
+
+                        </div>
+
+
+                        ${actions}
+
+                    `;
+
+
+                    repliesList.appendChild(
+                        card
+                    );
+
+                }
+
+            );
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   EDITAR / ELIMINAR RESPUESTAS
+===================================================== */
+
+repliesList.addEventListener(
+
+    "click",
+
+    async (event) => {
+
+        const editId =
+        event.target.dataset.edit;
+
+        const deleteId =
+        event.target.dataset.delete;
+
+
+        if(editId){
+
+            const replyRef =
+            doc(
+                db,
+                "posts",
+                postId,
+                "replies",
+                editId
+            );
+
+
+            const snapshot =
+            await getDoc(replyRef);
+
+
+            if(!snapshot.exists()){
+
+                return;
+
+            }
+
+
+            const newContent =
+            prompt(
+                "Editar respuesta:",
+                snapshot.data().content
+            );
+
+
+            if(newContent === null){
+
+                return;
+
+            }
+
+
+            if(
+                newContent.trim().length < 2
+            ){
+
+                alert(
+                    "La respuesta es demasiado corta."
+                );
+
+                return;
+
+            }
+
+
+            try{
+
+                await updateDoc(
+
+                    replyRef,
+
+                    {
+
+                        content:
+                        newContent.trim(),
+
+                        updatedAt:
+                        serverTimestamp()
+
+                    }
+
+                );
+
+            }catch(error){
+
+                console.error(error);
+
+                alert(
+                    "No se pudo editar la respuesta."
+                );
+
+            }
+
+        }
+
+
+        if(deleteId){
+
+            const confirmed =
+            confirm(
+                "¿Eliminar esta respuesta?"
+            );
+
+
+            if(!confirmed){
+
+                return;
+
+            }
+
+
+            try{
+
+                await deleteDoc(
+
+                    doc(
+                        db,
+                        "posts",
+                        postId,
+                        "replies",
+                        deleteId
+                    )
+
+                );
+
+            }catch(error){
+
+                console.error(error);
+
+                alert(
+                    "No se pudo eliminar la respuesta."
+                );
+
+            }
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   AUTENTICACIÓN
+===================================================== */
+
+onAuthStateChanged(
+
+    auth,
+
+    (user) => {
+
+        currentUser =
+        user;
+
+
+        if(user){
+
+            loginBox.style.display =
+            "none";
+
+            replyForm.classList.add(
+                "show"
+            );
+
+        }else{
+
+            replyForm.classList.remove(
+                "show"
+            );
+
+            loginBox.style.display =
+            "block";
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   LOGIN GOOGLE
+===================================================== */
+
+loginBox.addEventListener(
+
+    "click",
+
+    async () => {
+
+        try{
+
+            await signInWithPopup(
+                auth,
+                googleProvider
+            );
+
+        }catch(error){
+
+            console.error(error);
+
+            alert(
+                "No se pudo iniciar sesión con Google. Intentá nuevamente."
+            );
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   PUBLICAR RESPUESTA
+===================================================== */
+
+replyButton.addEventListener(
+
+    "click",
+
+    async () => {
+
+        clearError();
+
+
+        if(!currentUser){
+
+            loginBox.style.display =
+            "block";
+
+            return;
+
+        }
+
+
+        const content =
+        replyText.value.trim();
+
+
+        if(content.length < 2){
+
+            showError(
+                "La respuesta debe tener al menos 2 caracteres."
+            );
+
+            return;
+
+        }
+
+
+        replyButton.disabled =
+        true;
+
+        replyButton.textContent =
+        "Publicando...";
+
+
+        try{
+
+            await addDoc(
+
+                collection(
+                    db,
+                    "posts",
+                    postId,
+                    "replies"
+                ),
+
+                {
+
+                    content:
+                    content,
+
+                    authorId:
+                    currentUser.uid,
+
+                    authorEmail:
+                    currentUser.email
+                    ||
+                    "",
+
+                    authorName:
+                    currentUser.displayName
+                    ||
+                    "",
+
+                    createdAt:
+                    serverTimestamp()
+
+                }
+
+            );
+
+
+            replyText.value =
+            "";
+
+
+        }catch(error){
+
+            console.error(error);
+
+            showError(
+                "No se pudo publicar la respuesta. Revisá tu conexión."
+            );
+
+        }finally{
+
+            replyButton.disabled =
+            false;
+
+            replyButton.textContent =
+            "Publicar respuesta";
+
+        }
+
+    }
+
+);
+
+</script>
+
+</body>
+
+</html>
