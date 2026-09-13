@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +10,7 @@
 <link rel="icon" type="image/png" href="/logo.png">
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -92,9 +94,15 @@ a{
 .hero{
     position:relative;
     min-height:250px;
+
     background:
-        linear-gradient(90deg,rgba(4,14,27,.96),rgba(4,14,27,.72)),
+        linear-gradient(
+            90deg,
+            rgba(4,14,27,.96),
+            rgba(4,14,27,.72)
+        ),
         url("hero-foguista.png") center/cover;
+
     display:flex;
     align-items:center;
 }
@@ -211,9 +219,17 @@ button{
     color:white;
 }
 
+.btn-danger:hover{
+    background:#96303b;
+}
+
 .btn-report{
     background:#5b4520;
     color:#f8df9c;
+}
+
+.btn-report:hover{
+    background:#765a28;
 }
 
 .section-title{
@@ -422,65 +438,139 @@ footer{
         white-space:normal;
     }
 }
+
 </style>
 </head>
 
 <body>
 
 <header class="header">
+
     <div class="header-inner">
 
         <a href="index.html" class="logo-area">
-            <img src="logo.png" alt="Foguista Uruguay">
+
+            <img
+                src="logo.png"
+                alt="Foguista Uruguay"
+            >
+
             <div class="logo-text">
-                <strong>Foguista Uruguay</strong>
-                <span>Comunidad profesional</span>
+
+                <strong>
+                    Foguista Uruguay
+                </strong>
+
+                <span>
+                    Comunidad profesional
+                </span>
+
             </div>
+
         </a>
 
         <nav class="nav">
-            <a href="index.html">Inicio</a>
-            <a href="estudio.html">Estudio</a>
-            <a href="normativa.html">Normativa</a>
-            <a href="comunidad.html">Comunidad</a>
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="estudio.html">
+                Estudio
+            </a>
+
+            <a href="normativa.html">
+                Normativa
+            </a>
+
+            <a href="comunidad.html">
+                Comunidad
+            </a>
+
         </nav>
 
     </div>
+
 </header>
 
+
 <section class="hero">
+
     <div class="hero-inner">
-        <h1>Pregunta de la comunidad</h1>
+
+        <h1>
+            Pregunta de la comunidad
+        </h1>
+
         <p>
             Consultá la pregunta, participá con tu experiencia y compartí
             conocimientos con otros foguistas.
         </p>
+
     </div>
+
 </section>
+
 
 <main class="container">
 
-    <a href="comunidad.html" class="back">← Volver a Comunidad</a>
+    <a
+        href="comunidad.html"
+        class="back"
+    >
+        ← Volver a Comunidad
+    </a>
 
-    <div id="postArea" class="loading">
+
+    <div
+        id="postArea"
+        class="loading"
+    >
         Cargando pregunta...
     </div>
 
+
     <section>
-        <h2 class="section-title">Respuestas</h2>
+
+        <h2 class="section-title">
+            Respuestas
+        </h2>
+
         <div id="repliesList">
-            <div class="loading">Cargando respuestas...</div>
+
+            <div class="loading">
+                Cargando respuestas...
+            </div>
+
         </div>
 
-        <div id="loginBox" class="login-box" style="display:none;">
+
+        <div
+            id="loginBox"
+            class="login-box"
+            style="display:none;"
+        >
+
             Para responder necesitás iniciar sesión.
+
             <br><br>
-            <button class="btn-primary" id="loginButton">
+
+            <button
+                class="btn-primary"
+                id="loginButton"
+            >
                 Iniciar sesión con Google
             </button>
+
         </div>
 
-        <form id="replyForm" class="reply-form" style="display:none;">
+
+        <form
+            id="replyForm"
+            class="reply-form"
+            style="display:none;"
+        >
+
             <textarea
                 id="replyContent"
                 placeholder="Escribí tu respuesta..."
@@ -488,61 +578,103 @@ footer{
             ></textarea>
 
             <div class="form-actions">
-                <button type="submit" class="btn-primary">
+
+                <button
+                    type="submit"
+                    class="btn-primary"
+                >
                     Publicar respuesta
                 </button>
+
             </div>
+
         </form>
+
     </section>
 
 </main>
 
+
 <footer>
+
     Foguista Uruguay · Comunidad para foguistas, operadores y estudiantes
+
 </footer>
 
 
-<!-- MODAL EDITAR PREGUNTA -->
+<div
+    id="editModal"
+    class="modal"
+>
 
-<div id="editModal" class="modal">
     <div class="modal-box">
 
-        <h2>Editar pregunta</h2>
+        <h2>
+            Editar pregunta
+        </h2>
 
         <div class="field">
-            <label for="editCat">Categoría</label>
+
+            <label for="editCat">
+                Categoría
+            </label>
+
             <select id="editCat"></select>
+
         </div>
 
-        <div class="field">
-            <label for="editTitle">Título</label>
-            <input id="editTitle" type="text">
-        </div>
 
         <div class="field">
-            <label for="editContent">Contenido</label>
+
+            <label for="editTitle">
+                Título
+            </label>
+
+            <input
+                id="editTitle"
+                type="text"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="editContent">
+                Contenido
+            </label>
+
             <textarea id="editContent"></textarea>
+
         </div>
+
 
         <div class="modal-actions">
-            <button class="btn-secondary" id="cancelEdit">
+
+            <button
+                class="btn-secondary"
+                id="cancelEdit"
+                type="button"
+            >
                 Cancelar
             </button>
 
-            <button class="btn-primary" id="saveEdit">
+            <button
+                class="btn-primary"
+                id="saveEdit"
+                type="button"
+            >
                 Guardar cambios
             </button>
+
         </div>
 
     </div>
+
 </div>
 
 
 <script type="module">
-
-/* =====================================================
-   FIREBASE
-   ===================================================== */
 
 import {
     initializeApp
@@ -572,14 +704,18 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 
-/* =====================================================
-   UTILIDADES
-   ===================================================== */
+const $ = id =>
+    document.getElementById(id);
 
-const $ = id => document.getElementById(id);
 
-const escapeHtml = value => {
-    if(value === undefined || value === null) return "";
+function escapeHtml(value){
+
+    if(
+        value === undefined ||
+        value === null
+    ){
+        return "";
+    }
 
     return String(value)
         .replace(/&/g,"&amp;")
@@ -587,33 +723,47 @@ const escapeHtml = value => {
         .replace(/>/g,"&gt;")
         .replace(/"/g,"&quot;")
         .replace(/'/g,"&#039;");
-};
+}
 
-
-/* =====================================================
-   CONFIG FIREBASE
-   ===================================================== */
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAMwiZKPAOZfW7mdgHll6LbDF-n1lv1tUM",
-    authDomain: "foguista-uruguay.firebaseapp.com",
-    projectId: "foguista-uruguay",
-    storageBucket: "foguista-uruguay.firebasestorage.app",
-    messagingSenderId: "26845359651",
-    appId: "1:26845359651:web:c7f5c04ab51fdababb8b96",
-    measurementId: "G-GS53T440NK"
+
+    apiKey:
+        "AIzaSyAMwiZKPAOZfW7mdgHll6LbDF-n1lv1tUM",
+
+    authDomain:
+        "foguista-uruguay.firebaseapp.com",
+
+    projectId:
+        "foguista-uruguay",
+
+    storageBucket:
+        "foguista-uruguay.firebasestorage.app",
+
+    messagingSenderId:
+        "26845359651",
+
+    appId:
+        "1:26845359651:web:c7f5c04ab51fdababb8b96",
+
+    measurementId:
+        "G-GS53T440NK"
+
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
 
+const app =
+    initializeApp(firebaseConfig);
 
-/* =====================================================
-   DATOS
-   ===================================================== */
+const auth =
+    getAuth(app);
+
+const db =
+    getFirestore(app);
+
 
 const categories = [
+
     "Preguntas técnicas",
     "Experiencias de trabajo",
     "Estudio y examen",
@@ -622,135 +772,208 @@ const categories = [
     "Seguridad y enclavamientos",
     "Equipos y mantenimiento",
     "Presentaciones"
+
 ];
 
-const params = new URLSearchParams(window.location.search);
-const postId = params.get("id");
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const postId =
+    params.get("id");
+
 
 let currentUser = null;
+
 let currentPost = null;
+
 let repliesCache = [];
 
-
-/* =====================================================
-   VALIDAR ID
-   ===================================================== */
 
 if(!postId){
 
     $("postArea").innerHTML = `
+
         <div class="card">
-            <h2>No se encontró la pregunta</h2>
+
+            <h2>
+                No se encontró la pregunta
+            </h2>
+
             <p class="empty">
                 El enlace no contiene una pregunta válida.
             </p>
+
         </div>
+
     `;
 
 }else{
 
     loadPost();
+
     loadReplies();
 
 }
 
 
-/* =====================================================
-   CARGAR PREGUNTA
-   ===================================================== */
-
 async function loadPost(){
 
     try{
 
-        const postRef = doc(db,"posts",postId);
-        const snapshot = await getDoc(postRef);
+        const postRef =
+            doc(
+                db,
+                "posts",
+                postId
+            );
+
+        const snapshot =
+            await getDoc(postRef);
+
 
         if(!snapshot.exists()){
 
             $("postArea").innerHTML = `
+
                 <div class="card">
-                    <h2>Pregunta no encontrada</h2>
+
+                    <h2>
+                        Pregunta no encontrada
+                    </h2>
+
                     <p class="empty">
-                        Esta publicación pudo haber sido eliminada.
+                        Esta publicación ya no existe.
                     </p>
+
                 </div>
+
             `;
 
             return;
         }
 
+
         currentPost = {
-            id:snapshot.id,
+
+            id:
+                snapshot.id,
+
             ...snapshot.data()
+
         };
+
 
         renderPost();
 
+
     }catch(error){
 
-        console.error("Error cargando pregunta:",error);
+        console.error(error);
 
         $("postArea").innerHTML = `
+
             <div class="card">
-                <h2>No se pudo cargar la pregunta</h2>
+
+                <h2>
+                    Error al cargar la pregunta
+                </h2>
+
                 <p class="empty">
-                    Ocurrió un error al consultar la publicación.
+                    No fue posible cargar esta publicación.
                 </p>
+
             </div>
+
         `;
+
     }
+
 }
 
 
-/* =====================================================
-   MOSTRAR PREGUNTA
-   ===================================================== */
-
 function renderPost(){
 
-    if(!currentPost) return;
+    if(!currentPost){
 
-    const date = currentPost.createdAt?.toDate
-        ? currentPost.createdAt.toDate().toLocaleString("es-UY")
-        : "Fecha no disponible";
+        return;
 
-    const updated = currentPost.updatedAt
-        ? `<span> · Editada</span>`
-        : "";
+    }
+
+
+    const created =
+        currentPost.createdAt?.toDate
+            ? currentPost.createdAt.toDate()
+            : null;
+
+
+    const dateText =
+        created
+            ? created.toLocaleString("es-UY")
+            : "Fecha no disponible";
+
+
+    const authorName =
+        currentPost.authorName ||
+        currentPost.authorEmail ||
+        "Usuario";
+
 
     const isAuthor =
         currentUser &&
-        currentPost.authorId === currentUser.uid;
+        currentUser.uid ===
+        currentPost.authorId;
+
 
     $("postArea").innerHTML = `
 
         <article class="card">
 
             <span class="category">
-                ${escapeHtml(currentPost.category || "General")}
+
+                ${escapeHtml(
+                    currentPost.category ||
+                    "Comunidad"
+                )}
+
             </span>
 
+
             <h2 class="question-title">
-                ${escapeHtml(currentPost.title || "Sin título")}
+
+                ${escapeHtml(
+                    currentPost.title ||
+                    "Sin título"
+                )}
+
             </h2>
 
+
             <div class="question-content">
-                ${escapeHtml(currentPost.content || "")}
+
+                ${escapeHtml(
+                    currentPost.content ||
+                    ""
+                )}
+
             </div>
+
 
             <div class="meta">
+
                 Publicado por
                 <strong>
-                    ${escapeHtml(
-                        currentPost.authorName ||
-                        currentPost.authorEmail ||
-                        "Usuario"
-                    )}
+                    ${escapeHtml(authorName)}
                 </strong>
 
-                · ${date}${updated}
+                ·
+
+                ${escapeHtml(dateText)}
+
             </div>
+
 
             <div class="actions">
 
@@ -760,465 +983,783 @@ function renderPost(){
                     `
                     <button
                         class="btn-secondary"
-                        id="editPostButton">
-                        Editar pregunta
+                        id="editPostButton"
+                        type="button"
+                    >
+                        ✏️ Editar
                     </button>
 
                     <button
                         class="btn-danger"
-                        id="deletePostButton">
-                        Eliminar pregunta
+                        id="deletePostButton"
+                        type="button"
+                    >
+                        🗑️ Eliminar
                     </button>
                     `
                     :
-                    `
-                    ${
-                        currentUser
-                        ?
-                        `
-                        <button
-                            class="btn-report"
-                            id="reportPostButton">
-                            Reportar
-                        </button>
-                        `
-                        :
-                        ""
-                    }
-                    `
+                    ""
                 }
+
+
+                <button
+                    class="btn-report"
+                    id="reportPostButton"
+                    type="button"
+                >
+                    🚩 Reportar pregunta
+                </button>
 
             </div>
 
         </article>
+
     `;
 
 
     if(isAuthor){
 
         $("editPostButton")
-            ?.addEventListener("click",openEdit);
+            ?.addEventListener(
+                "click",
+                openEdit
+            );
+
 
         $("deletePostButton")
-            ?.addEventListener("click",deletePost);
-
-    }else{
-
-        $("reportPostButton")
-            ?.addEventListener("click",reportPost);
+            ?.addEventListener(
+                "click",
+                deleteCurrentPost
+            );
 
     }
+
+
+    $("reportPostButton")
+        ?.addEventListener(
+            "click",
+            reportCurrentPost
+        );
+
 }
 
 
-/* =====================================================
-   EDITAR PREGUNTA
-   ===================================================== */
+async function reportCurrentPost(){
 
-function openEdit(){
+    if(!currentPost){
 
-    if(!currentPost) return;
-
-    $("editCat").innerHTML = categories.map(category => `
-        <option value="${escapeHtml(category)}"
-            ${
-                category === currentPost.category
-                ? "selected"
-                : ""
-            }>
-            ${escapeHtml(category)}
-        </option>
-    `).join("");
-
-    $("editTitle").value = currentPost.title || "";
-    $("editContent").value = currentPost.content || "";
-
-    $("editModal").classList.add("show");
-}
-
-
-$("cancelEdit").addEventListener("click",() => {
-    $("editModal").classList.remove("show");
-});
-
-
-$("saveEdit").addEventListener("click",async () => {
-
-    if(!currentUser || !currentPost) return;
-
-    if(currentUser.uid !== currentPost.authorId){
-
-        alert("No tenés permiso para editar esta pregunta.");
         return;
+
     }
 
-    const category = $("editCat").value;
-    const title = $("editTitle").value.trim();
-    const content = $("editContent").value.trim();
 
-    if(!title || !content){
+    if(!currentUser){
 
-        alert("Completá el título y el contenido.");
+        const wantsLogin =
+            confirm(
+                "Para reportar una pregunta necesitás iniciar sesión. ¿Querés iniciar sesión con Google?"
+            );
+
+
+        if(wantsLogin){
+
+            try{
+
+                const provider =
+                    new GoogleAuthProvider();
+
+                await signInWithPopup(
+                    auth,
+                    provider
+                );
+
+            }catch(error){
+
+                console.error(error);
+
+                alert(
+                    "No se pudo iniciar sesión."
+                );
+
+            }
+
+        }
+
         return;
+
     }
+
+
+    const reason =
+        prompt(
+            "¿Por qué querés reportar esta pregunta?\n\nPodés indicar spam, contenido ofensivo, información inapropiada, publicidad u otro motivo."
+        );
+
+
+    if(reason === null){
+
+        return;
+
+    }
+
+
+    const cleanReason =
+        reason.trim();
+
+
+    if(!cleanReason){
+
+        alert(
+            "Tenés que indicar un motivo para el reporte."
+        );
+
+        return;
+
+    }
+
 
     try{
 
-        await updateDoc(
-            doc(db,"posts",postId),
+        await addDoc(
+            collection(
+                db,
+                "reports"
+            ),
             {
-                category,
-                title,
-                content,
-                updatedAt:serverTimestamp()
+
+                type:
+                    "post",
+
+                postId:
+                    currentPost.id,
+
+                postTitle:
+                    currentPost.title ||
+                    "",
+
+                postAuthorId:
+                    currentPost.authorId ||
+                    "",
+
+                reporterId:
+                    currentUser.uid,
+
+                reporterEmail:
+                    currentUser.email ||
+                    "",
+
+                reason:
+                    cleanReason,
+
+                createdAt:
+                    serverTimestamp(),
+
+                status:
+                    "pending"
+
             }
         );
 
-        $("editModal").classList.remove("show");
 
-        await loadPost();
+        alert(
+            "Reporte enviado correctamente. Gracias por ayudar a mantener la comunidad."
+        );
+
 
     }catch(error){
 
         console.error(error);
-        alert("No se pudo guardar la modificación.");
+
+        alert(
+            "No se pudo enviar el reporte. Intentá nuevamente."
+        );
+
     }
-});
+
+}
 
 
-/* =====================================================
-   ELIMINAR PREGUNTA + RESPUESTAS
-   ===================================================== */
+function openEdit(){
 
-async function deletePost(){
+    if(!currentPost){
 
-    if(!currentUser || !currentPost) return;
-
-    if(currentUser.uid !== currentPost.authorId){
-
-        alert("No tenés permiso para eliminar esta pregunta.");
         return;
+
     }
 
-    const confirmed = confirm(
-        "¿Seguro que querés eliminar esta pregunta?\n\n" +
-        "También se eliminarán todas las respuestas asociadas."
+
+    const select =
+        $("editCat");
+
+
+    select.innerHTML =
+        categories
+            .map(
+                category => `
+
+                    <option
+                        value="${escapeHtml(category)}"
+                        ${
+                            category ===
+                            currentPost.category
+                            ? "selected"
+                            : ""
+                        }
+                    >
+                        ${escapeHtml(category)}
+                    </option>
+
+                `
+            )
+            .join("");
+
+
+    $("editTitle").value =
+        currentPost.title || "";
+
+
+    $("editContent").value =
+        currentPost.content || "";
+
+
+    $("editModal")
+        .classList
+        .add("show");
+
+}
+
+
+$("cancelEdit")
+    .addEventListener(
+        "click",
+        () => {
+
+            $("editModal")
+                .classList
+                .remove("show");
+
+        }
     );
 
-    if(!confirmed) return;
+
+$("saveEdit")
+    .addEventListener(
+        "click",
+        async () => {
+
+            if(!currentPost){
+
+                return;
+
+            }
+
+
+            const title =
+                $("editTitle")
+                    .value
+                    .trim();
+
+
+            const content =
+                $("editContent")
+                    .value
+                    .trim();
+
+
+            const category =
+                $("editCat")
+                    .value;
+
+
+            if(!title || !content){
+
+                alert(
+                    "Completá el título y el contenido."
+                );
+
+                return;
+
+            }
+
+
+            try{
+
+                await updateDoc(
+
+                    doc(
+                        db,
+                        "posts",
+                        currentPost.id
+                    ),
+
+                    {
+
+                        title:
+                            title,
+
+                        content:
+                            content,
+
+                        category:
+                            category,
+
+                        updatedAt:
+                            serverTimestamp()
+
+                    }
+
+                );
+
+
+                currentPost.title =
+                    title;
+
+                currentPost.content =
+                    content;
+
+                currentPost.category =
+                    category;
+
+
+                $("editModal")
+                    .classList
+                    .remove("show");
+
+
+                renderPost();
+
+
+            }catch(error){
+
+                console.error(error);
+
+                alert(
+                    "No se pudo actualizar la pregunta."
+                );
+
+            }
+
+        }
+    );
+
+
+async function deleteCurrentPost(){
+
+    if(!currentPost || !currentUser){
+
+        return;
+
+    }
+
+
+    if(
+        currentUser.uid !==
+        currentPost.authorId
+    ){
+
+        return;
+
+    }
+
+
+    const confirmed =
+        confirm(
+            "¿Seguro que querés eliminar esta pregunta? También se eliminarán todas sus respuestas."
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
+
 
     try{
 
         const repliesRef =
-            collection(db,"posts",postId,"replies");
+            collection(
+                db,
+                "posts",
+                currentPost.id,
+                "replies"
+            );
+
 
         const repliesSnapshot =
-            await getDocs(repliesRef);
+            await getDocs(
+                repliesRef
+            );
 
 
-        /*
-         * Firestore permite hasta 500 operaciones
-         * por batch.
-         */
+        let batch =
+            writeBatch(db);
 
-        let batch = writeBatch(db);
         let count = 0;
 
-        for(const replyDoc of repliesSnapshot.docs){
 
-            batch.delete(replyDoc.ref);
+        for(
+            const replyDoc
+            of repliesSnapshot.docs
+        ){
+
+            batch.delete(
+                replyDoc.ref
+            );
+
             count++;
+
 
             if(count === 500){
 
                 await batch.commit();
 
-                batch = writeBatch(db);
+                batch =
+                    writeBatch(db);
+
                 count = 0;
+
             }
+
         }
+
 
         if(count > 0){
+
             await batch.commit();
+
         }
 
 
-        /*
-         * Finalmente eliminamos la pregunta principal.
-         */
-
         await deleteDoc(
-            doc(db,"posts",postId)
+
+            doc(
+                db,
+                "posts",
+                currentPost.id
+            )
+
         );
 
 
-        window.location.href = "comunidad.html";
+        window.location.href =
+            "comunidad.html";
+
 
     }catch(error){
 
-        console.error(
-            "Error eliminando pregunta:",
-            error
-        );
+        console.error(error);
 
         alert(
-            "No se pudo eliminar la pregunta. " +
-            "Revisá las reglas de Firestore."
+            "No se pudo eliminar la pregunta."
         );
+
     }
+
 }
 
 
-/* =====================================================
-   CARGAR RESPUESTAS
-   ===================================================== */
+async function loadReplies(){
 
-function loadReplies(){
+    if(!postId){
 
-    if(!postId) return;
+        return;
 
-    const repliesQuery = query(
-        collection(db,"posts",postId,"replies"),
-        orderBy("createdAt","asc")
-    );
+    }
+
+
+    const repliesRef =
+        collection(
+            db,
+            "posts",
+            postId,
+            "replies"
+        );
+
+
+    const repliesQuery =
+        query(
+            repliesRef,
+            orderBy(
+                "createdAt",
+                "asc"
+            )
+        );
+
 
     onSnapshot(
+
         repliesQuery,
+
         snapshot => {
 
-            repliesCache = snapshot.docs.map(reply => ({
-                id:reply.id,
-                ...reply.data()
-            }));
+            repliesCache =
+                snapshot.docs.map(
+                    doc => ({
+
+                        id:
+                            doc.id,
+
+                        ...doc.data()
+
+                    })
+                );
+
 
             renderReplies();
 
         },
+
         error => {
 
-            console.error(
-                "Error cargando respuestas:",
-                error
-            );
+            console.error(error);
 
             $("repliesList").innerHTML = `
+
                 <div class="empty">
                     No se pudieron cargar las respuestas.
                 </div>
+
             `;
+
         }
+
     );
+
 }
 
 
-/* =====================================================
-   MOSTRAR RESPUESTAS
-   ===================================================== */
-
 function renderReplies(){
 
-    if(repliesCache.length === 0){
+    if(!repliesCache.length){
 
         $("repliesList").innerHTML = `
+
             <div class="empty">
                 Todavía no hay respuestas.
-                Sé el primero en participar.
             </div>
+
         `;
 
         return;
+
     }
 
 
     $("repliesList").innerHTML =
-        repliesCache.map(reply => {
+        repliesCache
+            .map(
+                reply => {
 
-            const date = reply.createdAt?.toDate
-                ? reply.createdAt.toDate()
-                    .toLocaleString("es-UY")
-                : "Fecha no disponible";
-
-            const isAuthor =
-                currentUser &&
-                currentUser.uid === reply.authorId;
-
-            const edited =
-                reply.updatedAt
-                ? " · Editada"
-                : "";
+                    const created =
+                        reply.createdAt?.toDate
+                            ? reply.createdAt.toDate()
+                            : null;
 
 
-            return `
+                    const dateText =
+                        created
+                            ? created.toLocaleString("es-UY")
+                            : "Fecha no disponible";
 
-                <article class="reply">
 
-                    <div class="reply-head">
+                    const author =
+                        reply.authorName ||
+                        reply.authorEmail ||
+                        "Usuario";
 
-                        <div>
 
-                            <div class="reply-author">
-                                ${escapeHtml(
-                                    reply.authorName ||
-                                    reply.authorEmail ||
-                                    "Usuario"
-                                )}
+                    const canEdit =
+                        currentUser &&
+                        currentUser.uid ===
+                        reply.authorId;
+
+
+                    return `
+
+                        <article class="reply">
+
+                            <div class="reply-head">
+
+                                <div>
+
+                                    <div class="reply-author">
+
+                                        ${escapeHtml(
+                                            author
+                                        )}
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="reply-date">
+
+                                    ${escapeHtml(
+                                        dateText
+                                    )}
+
+                                </div>
+
                             </div>
 
+
+                            <div class="reply-content">
+
+                                ${escapeHtml(
+                                    reply.content ||
+                                    ""
+                                )}
+
+                            </div>
+
+
                             ${
-                                reply.authorCondition
+                                canEdit
                                 ?
                                 `
-                                <div class="reply-condition">
-                                    ${escapeHtml(
-                                        reply.authorCondition
-                                    )}
+
+                                <div class="reply-actions">
+
+                                    <button
+                                        class="btn-secondary"
+                                        data-edit-reply="${reply.id}"
+                                        type="button"
+                                    >
+                                        ✏️ Editar
+                                    </button>
+
+                                    <button
+                                        class="btn-danger"
+                                        data-delete-reply="${reply.id}"
+                                        type="button"
+                                    >
+                                        🗑️ Eliminar
+                                    </button>
+
                                 </div>
+
                                 `
                                 :
                                 ""
                             }
 
-                        </div>
+                        </article>
 
-                        <div class="reply-date">
-                            ${date}${edited}
-                        </div>
+                    `;
 
-                    </div>
-
-
-                    <div class="reply-content">
-                        ${escapeHtml(reply.content || "")}
-                    </div>
-
-
-                    <div class="reply-actions">
-
-                        ${
-                            isAuthor
-                            ?
-                            `
-                            <button
-                                class="btn-secondary"
-                                data-edit-reply="${reply.id}">
-                                Editar
-                            </button>
-
-                            <button
-                                class="btn-danger"
-                                data-delete-reply="${reply.id}">
-                                Eliminar
-                            </button>
-                            `
-                            :
-                            currentUser
-                            ?
-                            `
-                            <button
-                                class="btn-report"
-                                data-report-reply="${reply.id}">
-                                Reportar
-                            </button>
-                            `
-                            :
-                            ""
-                        }
-
-                    </div>
-
-                </article>
-            `;
-
-        }).join("");
+                }
+            )
+            .join("");
 
 
     document
-        .querySelectorAll("[data-edit-reply]")
-        .forEach(button => {
+        .querySelectorAll(
+            "[data-edit-reply]"
+        )
+        .forEach(
+            button => {
 
-            button.addEventListener(
-                "click",
-                () => editReply(
-                    button.dataset.editReply
-                )
-            );
+                button.addEventListener(
+                    "click",
+                    () => {
 
-        });
+                        editReply(
+                            button.dataset.editReply
+                        );
 
+                    }
+                );
 
-    document
-        .querySelectorAll("[data-delete-reply]")
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => deleteReply(
-                    button.dataset.deleteReply
-                )
-            );
-
-        });
+            }
+        );
 
 
     document
-        .querySelectorAll("[data-report-reply]")
-        .forEach(button => {
+        .querySelectorAll(
+            "[data-delete-reply]"
+        )
+        .forEach(
+            button => {
 
-            button.addEventListener(
-                "click",
-                () => reportReply(
-                    button.dataset.reportReply
-                )
-            );
+                button.addEventListener(
+                    "click",
+                    () => {
 
-        });
+                        deleteReply(
+                            button.dataset.deleteReply
+                        );
+
+                    }
+                );
+
+            }
+        );
+
 }
 
 
-/* =====================================================
-   EDITAR RESPUESTA
-   ===================================================== */
-
 async function editReply(replyId){
-
-    if(!currentUser) return;
 
     const reply =
         repliesCache.find(
-            item => item.id === replyId
+            item =>
+                item.id === replyId
         );
 
-    if(!reply) return;
 
-    if(reply.authorId !== currentUser.uid){
-
-        alert(
-            "No tenés permiso para editar esta respuesta."
-        );
+    if(!reply){
 
         return;
+
     }
 
 
-    const newContent = prompt(
-        "Editar respuesta:",
-        reply.content || ""
-    );
+    if(
+        !currentUser ||
+        currentUser.uid !==
+        reply.authorId
+    ){
 
-    if(newContent === null) return;
-
-    const content = newContent.trim();
-
-    if(!content){
-
-        alert("La respuesta no puede quedar vacía.");
         return;
+
+    }
+
+
+    const newContent =
+        prompt(
+            "Editar respuesta:",
+            reply.content || ""
+        );
+
+
+    if(newContent === null){
+
+        return;
+
+    }
+
+
+    const clean =
+        newContent.trim();
+
+
+    if(!clean){
+
+        alert(
+            "La respuesta no puede quedar vacía."
+        );
+
+        return;
+
     }
 
 
     try{
 
         await updateDoc(
+
             doc(
                 db,
                 "posts",
@@ -1226,10 +1767,17 @@ async function editReply(replyId){
                 "replies",
                 replyId
             ),
+
             {
-                content,
-                updatedAt:serverTimestamp()
+
+                content:
+                    clean,
+
+                updatedAt:
+                    serverTimestamp()
+
             }
+
         );
 
     }catch(error){
@@ -1237,47 +1785,58 @@ async function editReply(replyId){
         console.error(error);
 
         alert(
-            "No se pudo modificar la respuesta."
+            "No se pudo editar la respuesta."
         );
+
     }
+
 }
 
 
-/* =====================================================
-   ELIMINAR RESPUESTA
-   ===================================================== */
-
 async function deleteReply(replyId){
-
-    if(!currentUser) return;
 
     const reply =
         repliesCache.find(
-            item => item.id === replyId
+            item =>
+                item.id === replyId
         );
 
-    if(!reply) return;
 
-    if(reply.authorId !== currentUser.uid){
-
-        alert(
-            "No tenés permiso para eliminar esta respuesta."
-        );
+    if(!reply){
 
         return;
+
     }
 
 
-    const confirmed = confirm(
-        "¿Seguro que querés eliminar esta respuesta?"
-    );
+    if(
+        !currentUser ||
+        currentUser.uid !==
+        reply.authorId
+    ){
 
-    if(!confirmed) return;
+        return;
+
+    }
+
+
+    const confirmed =
+        confirm(
+            "¿Seguro que querés eliminar esta respuesta?"
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
 
 
     try{
 
         await deleteDoc(
+
             doc(
                 db,
                 "posts",
@@ -1285,6 +1844,7 @@ async function deleteReply(replyId){
                 "replies",
                 replyId
             )
+
         );
 
     }catch(error){
@@ -1294,295 +1854,182 @@ async function deleteReply(replyId){
         alert(
             "No se pudo eliminar la respuesta."
         );
+
     }
+
 }
 
 
-/* =====================================================
-   REPORTAR PREGUNTA
-   ===================================================== */
+$("replyForm")
+    .addEventListener(
+        "submit",
+        async event => {
 
-async function reportPost(){
-
-    if(!currentUser || !currentPost) return;
-
-    const reason = prompt(
-        "¿Por qué querés reportar esta publicación?"
-    );
-
-    if(reason === null) return;
-
-    const cleanReason = reason.trim();
-
-    if(!cleanReason) return;
+            event.preventDefault();
 
 
-    try{
+            if(
+                !currentUser ||
+                !currentPost
+            ){
 
-        await addDoc(
-            collection(db,"reports"),
-            {
-                type:"post",
-                targetId:postId,
-                postId,
-                reporterId:currentUser.uid,
-                reason:cleanReason,
-                label:"Pregunta",
-                createdAt:serverTimestamp(),
-                status:"pendiente"
+                return;
+
             }
-        );
-
-        alert(
-            "Reporte enviado correctamente."
-        );
-
-    }catch(error){
-
-        console.error(error);
-
-        alert(
-            "No se pudo enviar el reporte."
-        );
-    }
-}
 
 
-/* =====================================================
-   REPORTAR RESPUESTA
-   ===================================================== */
-
-async function reportReply(replyId){
-
-    if(!currentUser) return;
-
-    const reason = prompt(
-        "¿Por qué querés reportar esta respuesta?"
-    );
-
-    if(reason === null) return;
-
-    const cleanReason = reason.trim();
-
-    if(!cleanReason) return;
+            const textarea =
+                $("replyContent");
 
 
-    try{
+            const content =
+                textarea.value.trim();
 
-        await addDoc(
-            collection(db,"reports"),
-            {
-                type:"reply",
-                targetId:replyId,
-                postId,
-                reporterId:currentUser.uid,
-                reason:cleanReason,
-                label:"Respuesta",
-                createdAt:serverTimestamp(),
-                status:"pendiente"
+
+            if(!content){
+
+                return;
+
             }
-        );
-
-        alert(
-            "Reporte enviado correctamente."
-        );
-
-    }catch(error){
-
-        console.error(error);
-
-        alert(
-            "No se pudo enviar el reporte."
-        );
-    }
-}
-
-
-/* =====================================================
-   LOGIN GOOGLE
-   ===================================================== */
-
-$("loginButton").addEventListener(
-    "click",
-    async () => {
-
-        try{
-
-            const provider =
-                new GoogleAuthProvider();
-
-            await signInWithPopup(
-                auth,
-                provider
-            );
-
-        }catch(error){
-
-            console.error(
-                "Error Google:",
-                error
-            );
-
-            alert(
-                "No se pudo iniciar sesión con Google."
-            );
-        }
-    }
-);
-
-
-/* =====================================================
-   ESTADO DE AUTENTICACIÓN
-   ===================================================== */
-
-onAuthStateChanged(
-    auth,
-    user => {
-
-        currentUser = user;
-
-        if(user){
-
-            $("loginBox").style.display = "none";
-            $("replyForm").style.display = "block";
-
-        }else{
-
-            $("loginBox").style.display = "block";
-            $("replyForm").style.display = "none";
-        }
-
-
-        /*
-         * Volvemos a renderizar para mostrar u ocultar
-         * los botones según el usuario autenticado.
-         */
-
-        if(currentPost){
-            renderPost();
-        }
-
-        renderReplies();
-    }
-);
-
-
-/* =====================================================
-   PUBLICAR RESPUESTA
-   ===================================================== */
-
-$("replyForm").addEventListener(
-    "submit",
-    async event => {
-
-        event.preventDefault();
-
-        if(!currentUser){
-
-            alert(
-                "Tenés que iniciar sesión para responder."
-            );
-
-            return;
-        }
-
-        const content =
-            $("replyContent").value.trim();
-
-        if(!content){
-
-            alert(
-                "Escribí una respuesta antes de publicar."
-            );
-
-            return;
-        }
-
-
-        try{
-
-            /*
-             * Intentamos obtener el perfil del usuario.
-             * Si todavía no existe, usamos los datos
-             * básicos de Firebase.
-             */
-
-            let authorName =
-                currentUser.displayName ||
-                currentUser.email ||
-                "Usuario";
-
-            let authorCondition = "";
 
 
             try{
 
-                const userSnapshot =
-                    await getDoc(
-                        doc(
-                            db,
-                            "users",
-                            currentUser.uid
-                        )
-                    );
+                await addDoc(
 
-                if(userSnapshot.exists()){
+                    collection(
+                        db,
+                        "posts",
+                        postId,
+                        "replies"
+                    ),
 
-                    const profile =
-                        userSnapshot.data();
+                    {
 
-                    authorName =
-                        profile.name ||
-                        profile.displayName ||
-                        authorName;
+                        content:
+                            content,
 
-                    authorCondition =
-                        profile.condition ||
-                        "";
-                }
+                        authorId:
+                            currentUser.uid,
 
-            }catch(profileError){
+                        authorEmail:
+                            currentUser.email ||
+                            "",
 
-                console.warn(
-                    "No se pudo cargar el perfil:",
-                    profileError
+                        authorName:
+                            currentUser.displayName ||
+                            currentUser.email ||
+                            "Usuario",
+
+                        createdAt:
+                            serverTimestamp()
+
+                    }
+
                 );
+
+
+                textarea.value =
+                    "";
+
+
+            }catch(error){
+
+                console.error(error);
+
+                alert(
+                    "No se pudo publicar la respuesta."
+                );
+
             }
 
-
-            await addDoc(
-                collection(
-                    db,
-                    "posts",
-                    postId,
-                    "replies"
-                ),
-                {
-                    content,
-                    authorId:currentUser.uid,
-                    authorName,
-                    authorCondition,
-                    authorEmail:currentUser.email || "",
-                    createdAt:serverTimestamp(),
-                    updatedAt:null
-                }
-            );
-
-
-            $("replyContent").value = "";
-
-        }catch(error){
-
-            console.error(
-                "Error publicando respuesta:",
-                error
-            );
-
-            alert(
-                "No se pudo publicar la respuesta."
-            );
         }
+    );
+
+
+$("loginButton")
+    .addEventListener(
+        "click",
+        async () => {
+
+            try{
+
+                const provider =
+                    new GoogleAuthProvider();
+
+                await signInWithPopup(
+                    auth,
+                    provider
+                );
+
+            }catch(error){
+
+                console.error(error);
+
+                alert(
+                    "No se pudo iniciar sesión con Google."
+                );
+
+            }
+
+        }
+    );
+
+
+onAuthStateChanged(
+
+    auth,
+
+    user => {
+
+        currentUser =
+            user;
+
+
+        if(user){
+
+            $("loginBox")
+                .style
+                .display =
+                "none";
+
+
+            $("replyForm")
+                .style
+                .display =
+                "block";
+
+        }else{
+
+            $("loginBox")
+                .style
+                .display =
+                "block";
+
+
+            $("replyForm")
+                .style
+                .display =
+                "none";
+
+        }
+
+
+        if(currentPost){
+
+            renderPost();
+
+        }
+
+
+        if(repliesCache.length){
+
+            renderReplies();
+
+        }
+
     }
+
 );
 
 </script>
