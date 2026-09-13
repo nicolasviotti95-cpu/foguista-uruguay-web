@@ -279,6 +279,9 @@ img{
     font-weight:800;
 
     transition:.2s;
+
+    border:0;
+    cursor:pointer;
 }
 
 .primary-button:hover{
@@ -655,6 +658,181 @@ img{
 
 
 /* =====================================================
+   MODAL AUTENTICACIÓN
+===================================================== */
+
+.firebase-auth-modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:3000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(3,29,54,.72);
+}
+
+.firebase-auth-modal.show{
+    display:flex;
+}
+
+.firebase-auth-card{
+    width:min(430px,100%);
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    padding:28px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.firebase-auth-card h2{
+    margin:0 0 7px;
+
+    color:#062b4f;
+}
+
+.firebase-auth-card p{
+    margin:0 0 18px;
+
+    color:#607b95;
+
+    font-size:13px;
+}
+
+.firebase-auth-card label{
+    display:block;
+
+    margin:12px 0 6px;
+
+    color:#173b60;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.firebase-auth-card input{
+    width:100%;
+
+    min-height:44px;
+
+    padding:0 12px;
+
+    border:1px solid #cfdde7;
+
+    border-radius:7px;
+
+    font-size:14px;
+}
+
+.firebase-auth-card button{
+    width:100%;
+
+    min-height:44px;
+
+    margin-top:12px;
+
+    border:0;
+
+    border-radius:7px;
+
+    background:#1198e5;
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.firebase-auth-card button:hover{
+    background:#087fc5;
+}
+
+.firebase-auth-card button.secondary{
+    background:#fff;
+
+    color:#062b4f;
+
+    border:1px solid #dce7ef;
+}
+
+.firebase-auth-card button.secondary:hover{
+    background:#f4f7fa;
+}
+
+.firebase-auth-close{
+    float:right!important;
+
+    width:auto!important;
+
+    min-height:0!important;
+
+    margin:0!important;
+
+    padding:0 4px!important;
+
+    background:transparent!important;
+
+    color:#607b95!important;
+
+    font-size:24px!important;
+}
+
+.firebase-auth-error{
+    display:none;
+
+    margin-top:12px;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    background:#fff1f1;
+
+    color:#a33a3a;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   USUARIO CONECTADO
+===================================================== */
+
+.user-status{
+    display:none;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:9px;
+
+    background:#e8f5fc;
+
+    color:#315a78;
+
+    font-size:12px;
+}
+
+.user-status strong{
+    color:#062b4f;
+}
+
+
+/* =====================================================
    RESPONSIVE
 ===================================================== */
 
@@ -884,7 +1062,8 @@ Mejorar la seguridad
 
 <a
 class="primary-button"
-href="#registro">
+href="#registro"
+id="newQuestionButton">
 
 ＋ Nueva pregunta
 
@@ -916,7 +1095,6 @@ Elegí el área que mejor representa tu pregunta o experiencia.
 </p>
 
 </div>
-
 
 
 <div class="layout">
@@ -1362,18 +1540,38 @@ id="registro">
 
 <p>
 
-Muy pronto vas a poder crear tu cuenta y participar en la comunidad.
+Creá tu cuenta para participar en la Comunidad Foguista.
 
 </p>
 
 <a
 class="primary-button"
 href="#"
-onclick="return false;">
+id="registerButton">
 
 Crear cuenta
 
 </a>
+
+<div
+class="user-status"
+id="userStatus">
+
+<strong>Sesión iniciada.</strong>
+
+<span id="userEmail"></span>
+
+</div>
+
+<button
+class="primary-button"
+type="button"
+id="logoutButton"
+style="display:none;width:100%;">
+
+Cerrar sesión
+
+</button>
 
 </div>
 
@@ -1415,6 +1613,594 @@ Comunidad · Uruguay
 </footer>
 
 
-</body>
 
+<!-- =====================================================
+     MODAL DE AUTENTICACIÓN
+===================================================== -->
+
+<div
+class="firebase-auth-modal"
+id="firebaseAuthModal">
+
+<div class="firebase-auth-card">
+
+<button
+class="firebase-auth-close"
+type="button"
+id="authCloseButton"
+aria-label="Cerrar">
+
+×
+
+</button>
+
+<h2 id="firebaseAuthTitle">
+Crear cuenta
+</h2>
+
+<p id="firebaseAuthDescription">
+
+Registrate para participar en la Comunidad Foguista.
+
+</p>
+
+<form id="firebaseAuthForm">
+
+<label for="firebaseAuthEmail">
+Correo electrónico
+</label>
+
+<input
+id="firebaseAuthEmail"
+type="email"
+autocomplete="email"
+required>
+
+
+<label for="firebaseAuthPassword">
+Contraseña
+</label>
+
+<input
+id="firebaseAuthPassword"
+type="password"
+minlength="6"
+required>
+
+
+<button
+id="firebaseEmailButton"
+type="submit">
+
+Crear cuenta
+
+</button>
+
+</form>
+
+
+<button
+id="firebaseGoogleButton"
+class="secondary"
+type="button">
+
+Continuar con Google
+
+</button>
+
+
+<button
+id="firebaseToggleButton"
+class="secondary"
+type="button">
+
+Ya tengo una cuenta
+
+</button>
+
+
+<div
+id="firebaseAuthError"
+class="firebase-auth-error">
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+/* =====================================================
+   CONFIGURACIÓN FIREBASE
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyAMwiZKPAOZfW7mdgHll6LbDF-n1lv1tUM",
+
+    authDomain:
+    "foguista-uruguay.firebaseapp.com",
+
+    projectId:
+    "foguista-uruguay",
+
+    storageBucket:
+    "foguista-uruguay.firebasestorage.app",
+
+    messagingSenderId:
+    "26845359651",
+
+    appId:
+    "1:26845359651:web:c7f5c04ab51fdababb8b96",
+
+    measurementId:
+    "G-GS53T440NK"
+
+};
+
+
+/* =====================================================
+   INICIALIZAR FIREBASE
+===================================================== */
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const googleProvider = new GoogleAuthProvider();
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const modal =
+document.getElementById("firebaseAuthModal");
+
+const form =
+document.getElementById("firebaseAuthForm");
+
+const emailInput =
+document.getElementById("firebaseAuthEmail");
+
+const passwordInput =
+document.getElementById("firebaseAuthPassword");
+
+const emailButton =
+document.getElementById("firebaseEmailButton");
+
+const googleButton =
+document.getElementById("firebaseGoogleButton");
+
+const toggleButton =
+document.getElementById("firebaseToggleButton");
+
+const closeButton =
+document.getElementById("authCloseButton");
+
+const title =
+document.getElementById("firebaseAuthTitle");
+
+const description =
+document.getElementById("firebaseAuthDescription");
+
+const errorBox =
+document.getElementById("firebaseAuthError");
+
+const registerButton =
+document.getElementById("registerButton");
+
+const newQuestionButton =
+document.getElementById("newQuestionButton");
+
+const logoutButton =
+document.getElementById("logoutButton");
+
+const userStatus =
+document.getElementById("userStatus");
+
+const userEmail =
+document.getElementById("userEmail");
+
+
+let registerMode = true;
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+function openAuth(){
+
+    modal.classList.add("show");
+
+    errorBox.style.display = "none";
+
+    emailInput.focus();
+
+}
+
+
+function closeAuth(){
+
+    modal.classList.remove("show");
+
+    form.reset();
+
+    errorBox.style.display = "none";
+
+}
+
+
+function showError(message){
+
+    errorBox.textContent = message;
+
+    errorBox.style.display = "block";
+
+}
+
+
+/* =====================================================
+   CAMBIAR ENTRE REGISTRO E INICIO DE SESIÓN
+===================================================== */
+
+function updateMode(){
+
+    if(registerMode){
+
+        title.textContent =
+        "Crear cuenta";
+
+        description.textContent =
+        "Registrate para participar en la Comunidad Foguista.";
+
+        emailButton.textContent =
+        "Crear cuenta";
+
+        toggleButton.textContent =
+        "Ya tengo una cuenta";
+
+        passwordInput.autocomplete =
+        "new-password";
+
+    }else{
+
+        title.textContent =
+        "Iniciar sesión";
+
+        description.textContent =
+        "Ingresá para participar en la Comunidad Foguista.";
+
+        emailButton.textContent =
+        "Iniciar sesión";
+
+        toggleButton.textContent =
+        "Crear una cuenta";
+
+        passwordInput.autocomplete =
+        "current-password";
+
+    }
+
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+registerButton.addEventListener(
+    "click",
+    function(event){
+
+        event.preventDefault();
+
+        openAuth();
+
+    }
+);
+
+
+newQuestionButton.addEventListener(
+    "click",
+    function(event){
+
+        if(!auth.currentUser){
+
+            event.preventDefault();
+
+            openAuth();
+
+        }
+
+    }
+);
+
+
+closeButton.addEventListener(
+    "click",
+    closeAuth
+);
+
+
+modal.addEventListener(
+    "click",
+    function(event){
+
+        if(event.target === modal){
+
+            closeAuth();
+
+        }
+
+    }
+);
+
+
+toggleButton.addEventListener(
+    "click",
+    function(){
+
+        registerMode = !registerMode;
+
+        errorBox.style.display = "none";
+
+        updateMode();
+
+    }
+);
+
+
+/* =====================================================
+   REGISTRO / LOGIN CON CORREO
+===================================================== */
+
+form.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+        emailButton.disabled = true;
+
+        errorBox.style.display = "none";
+
+
+        try{
+
+            if(registerMode){
+
+                await createUserWithEmailAndPassword(
+                    auth,
+                    emailInput.value.trim(),
+                    passwordInput.value
+                );
+
+            }else{
+
+                await signInWithEmailAndPassword(
+                    auth,
+                    emailInput.value.trim(),
+                    passwordInput.value
+                );
+
+            }
+
+
+            closeAuth();
+
+
+        }catch(error){
+
+            const messages = {
+
+                "auth/email-already-in-use":
+                "Ese correo ya tiene una cuenta. Probá iniciar sesión.",
+
+                "auth/invalid-email":
+                "El correo electrónico no es válido.",
+
+                "auth/weak-password":
+                "La contraseña debe tener al menos 6 caracteres.",
+
+                "auth/invalid-credential":
+                "Correo o contraseña incorrectos.",
+
+                "auth/user-not-found":
+                "No existe una cuenta con ese correo.",
+
+                "auth/wrong-password":
+                "La contraseña es incorrecta."
+
+            };
+
+
+            showError(
+                messages[error.code] ||
+                "No se pudo completar la operación. Intentá nuevamente."
+            );
+
+        }finally{
+
+            emailButton.disabled = false;
+
+            updateMode();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   LOGIN CON GOOGLE
+===================================================== */
+
+googleButton.addEventListener(
+    "click",
+    async function(){
+
+        googleButton.disabled = true;
+
+        errorBox.style.display = "none";
+
+
+        try{
+
+            await signInWithPopup(
+                auth,
+                googleProvider
+            );
+
+            closeAuth();
+
+
+        }catch(error){
+
+            const messages = {
+
+                "auth/popup-closed-by-user":
+                "La ventana de Google fue cerrada.",
+
+                "auth/popup-blocked":
+                "El navegador bloqueó la ventana de Google.",
+
+                "auth/cancelled-popup-request":
+                "La ventana de Google fue cancelada."
+
+            };
+
+
+            showError(
+                messages[error.code] ||
+                "No se pudo iniciar sesión con Google. Intentá nuevamente."
+            );
+
+        }finally{
+
+            googleButton.disabled = false;
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   ESTADO DEL USUARIO
+===================================================== */
+
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        if(user){
+
+            registerButton.textContent =
+            user.displayName ||
+            "Cuenta conectada";
+
+            registerButton.style.pointerEvents =
+            "none";
+
+            registerButton.style.opacity =
+            ".85";
+
+
+            userStatus.style.display =
+            "block";
+
+
+            userEmail.textContent =
+            " " + (user.email || "");
+
+
+            logoutButton.style.display =
+            "block";
+
+
+        }else{
+
+            registerButton.textContent =
+            "Crear cuenta";
+
+            registerButton.style.pointerEvents =
+            "";
+
+            registerButton.style.opacity =
+            "";
+
+
+            userStatus.style.display =
+            "none";
+
+
+            logoutButton.style.display =
+            "none";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CERRAR SESIÓN
+===================================================== */
+
+logoutButton.addEventListener(
+    "click",
+    async function(){
+
+        try{
+
+            await signOut(auth);
+
+        }catch(error){
+
+            console.error(
+                "Error al cerrar sesión:",
+                error
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   INICIALIZAR
+===================================================== */
+
+updateMode();
+
+</script>
+
+
+</body>
 </html>
