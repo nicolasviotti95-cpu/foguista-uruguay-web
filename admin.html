@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<link
+rel="icon"
+type="image/png"
+href="/logo.png">
+
+<title>Moderación | Foguista Uruguay</title>
+
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fa;
+    color:#173b60;
+    line-height:1.5;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+:root{
+    --navy:#062b4f;
+    --dark:#031d36;
+    --blue:#1198e5;
+    --blue2:#087fc5;
+    --light:#e8f5fc;
+    --muted:#607b95;
+    --border:#dce7ef;
+    --danger:#a33a3a;
+    --warn:#9b6b00;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    background:var(--navy);
+
+    color:white;
+
+    box-shadow:
+        0 3px 18px rgba(0,0,0,.16);
+}
+
+.header{
+    max-width:1180px;
+
+    margin:auto;
+
+    min-height:76px;
+
+    padding:8px 24px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    color:white;
+}
+
+.brand img{
+    width:58px;
+
+    height:58px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+}
+
+.brand b{
+    font-size:20px;
+}
+
+.brand small{
+    display:block;
+
+    color:#c8d9e8;
+
+    font-size:11px;
+}
+
+.nav{
+    display:flex;
+
+    gap:4px;
+
+    flex-wrap:wrap;
+}
+
+.nav a{
+    padding:10px;
+
+    border-radius:7px;
+
+    color:#e8f1f8;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.nav a:hover{
+    background:var(--blue);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,29,54,.98),
+            rgba(3,29,54,.78)
+        ),
+        url("hero-foguista.png") center/cover;
+
+    color:white;
+}
+
+.hero-in{
+    max-width:1180px;
+
+    margin:auto;
+
+    padding:42px 24px;
+}
+
+.crumb{
+    color:#9dc2da;
+
+    font-size:12px;
+
+    margin-bottom:10px;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    margin-top:10px;
+
+    color:#d0e0ec;
+
+    max-width:700px;
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+main{
+    max-width:1180px;
+
+    margin:auto;
+
+    padding:40px 24px;
+}
+
+.panel{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    box-shadow:
+        0 8px 25px rgba(15,55,85,.05);
+
+    overflow:hidden;
+}
+
+.panel-head{
+    padding:20px;
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.panel-head h2{
+    color:var(--navy);
+
+    font-size:20px;
+}
+
+.count{
+    font-size:12px;
+
+    color:var(--muted);
+}
+
+.notice{
+    padding:14px 18px;
+
+    background:#fff8e6;
+
+    border-bottom:1px solid #f1dfad;
+
+    color:#755300;
+
+    font-size:13px;
+}
+
+.status{
+    padding:20px;
+
+    color:var(--muted);
+
+    text-align:center;
+}
+
+.list{
+    padding:16px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+
+/* =====================================================
+   REPORTES
+===================================================== */
+
+.report{
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:17px;
+
+    background:#fbfdfe;
+}
+
+.report-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    align-items:flex-start;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:4px 9px;
+
+    border-radius:20px;
+
+    background:#fff4d6;
+
+    color:var(--warn);
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+.report h3{
+    margin:8px 0;
+
+    color:var(--navy);
+
+    font-size:17px;
+}
+
+.report p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    white-space:pre-wrap;
+}
+
+.meta{
+    margin-top:10px;
+
+    color:#7890a4;
+
+    font-size:11px;
+}
+
+.actions{
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    margin-top:14px;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.btn{
+    border:0;
+
+    border-radius:7px;
+
+    min-height:40px;
+
+    padding:0 14px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:var(--blue);
+
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--blue2);
+}
+
+.btn-danger{
+    background:var(--danger);
+
+    color:white;
+}
+
+.btn-secondary{
+    background:white;
+
+    border:1px solid #c9dce8;
+
+    color:var(--navy);
+}
+
+
+/* =====================================================
+   ESTADOS
+===================================================== */
+
+.empty{
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:var(--muted);
+}
+
+.denied{
+    max-width:650px;
+
+    margin:60px auto;
+
+    padding:30px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    text-align:center;
+}
+
+.denied h2{
+    color:var(--navy);
+
+    margin-bottom:10px;
+}
+
+.denied p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    margin-top:50px;
+
+    padding:30px 24px;
+
+    background:#031d36;
+
+    color:#a8bacb;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .report-top{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="header">
+
+<a
+class="brand"
+href="index.html">
+
+<img
+src="logo.png"
+alt="Foguista Uruguay">
+
+<div>
+
+<b>
+Foguista Uruguay
+</b>
+
+<small>
+Moderación de Comunidad
+</small>
+
+</div>
+
+</a>
+
+
+<nav class="nav">
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="comunidad.html">
+Comunidad
+</a>
+
+<a href="estudio.html">
+Estudio
+</a>
+
+<a href="normativa.html">
+Normativa
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-in">
+
+<div class="crumb">
+Comunidad / Administración
+</div>
+
+<h1>
+Panel de moderación
+</h1>
+
+<p>
+Revisá reportes y retir&aacute; contenido que incumpla
+las reglas de la comunidad.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
+<main>
+
+
+<div
+id="loading"
+class="panel status">
+
+Verificando permisos...
+
+</div>
+
+
+
+<div
+id="denied"
+class="denied hidden">
+
+<h2>
+Acceso restringido
+</h2>
+
+<p>
+Esta sección está disponible únicamente
+para la cuenta administradora.
+</p>
+
+<br>
+
+<a
+class="btn btn-secondary"
+href="comunidad.html">
+
+Volver a Comunidad
+
+</a>
+
+</div>
+
+
+
+<div
+id="adminArea"
+class="panel hidden">
+
+
+<div class="panel-head">
+
+<h2>
+Reportes pendientes
+</h2>
+
+<span
+id="count"
+class="count">
+
+0 reportes
+
+</span>
+
+</div>
+
+
+
+<div class="notice">
+
+Antes de eliminar una publicación,
+abrila y revisá el contenido completo.
+
+</div>
+
+
+
+<div
+id="reportsList"
+class="list">
+
+<div class="empty">
+
+No hay reportes pendientes.
+
+</div>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+Foguista Uruguay · Panel privado de moderación
+
+</footer>
+
+
+
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
+
+<script type="module">
+
+
+/* =====================================================
+   IMPORTACIONES
+===================================================== */
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    onAuthStateChanged
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    getDocs,
+    collection,
+    deleteDoc,
+    writeBatch
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+
+/* =====================================================
+   CONFIG FIREBASE
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyAMwiZKPAOZfW7mdgHll6LbDF-n1lv1tUM",
+
+    authDomain:
+    "foguista-uruguay.firebaseapp.com",
+
+    projectId:
+    "foguista-uruguay",
+
+    storageBucket:
+    "foguista-uruguay.firebasestorage.app",
+
+    messagingSenderId:
+    "26845359651",
+
+    appId:
+    "1:26845359651:web:c7f5c04ab51fdababb8b96",
+
+    measurementId:
+    "G-GS53T440NK"
+
+};
+
+
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const auth =
+getAuth(app);
+
+
+const db =
+getFirestore(app);
+
+
+
+/* =====================================================
+   UTILIDAD
+===================================================== */
+
+const $ =
+id =>
+document.getElementById(id);
+
+
+const esc =
+value => {
+
+    return String(value ?? "")
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/'/g,"&#039;");
+
+};
+
+
+
+/* =====================================================
+   COMPROBAR ADMIN
+===================================================== */
+
+async function isAdmin(user){
+
+    const snap =
+    await getDoc(
+        doc(
+            db,
+            "admins",
+            user.uid
+        )
+    );
+
+
+    return (
+        snap.exists()
+        &&
+        snap.data().admin === true
+    );
+
+}
+
+
+
+/* =====================================================
+   ELIMINAR RESPUESTAS
+===================================================== */
+
+async function deleteReplies(postId){
+
+    const snap =
+    await getDocs(
+        collection(
+            db,
+            "posts",
+            postId,
+            "replies"
+        )
+    );
+
+
+    const refs =
+    snap.docs.map(
+        document =>
+        document.ref
+    );
+
+
+    for(
+        let i = 0;
+        i < refs.length;
+        i += 450
+    ){
+
+        const batch =
+        writeBatch(db);
+
+
+        refs
+        .slice(i,i + 450)
+        .forEach(
+            ref =>
+            batch.delete(ref)
+        );
+
+
+        await batch.commit();
+
+    }
+
+}
+
+
+
+/* =====================================================
+   ELIMINAR PUBLICACIÓN
+===================================================== */
+
+async function deletePost(
+    postId,
+    reportId
+){
+
+    const confirmed =
+    confirm(
+        "¿Eliminar esta publicación y todas sus respuestas? Esta acción no se puede deshacer."
+    );
+
+
+    if(!confirmed){
+        return;
+    }
+
+
+    try{
+
+        await deleteReplies(
+            postId
+        );
+
+
+        await deleteDoc(
+            doc(
+                db,
+                "posts",
+                postId
+            )
+        );
+
+
+        await deleteDoc(
+            doc(
+                db,
+                "reports",
+                reportId
+            )
+        );
+
+
+        await loadReports();
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        alert(
+            "No se pudo eliminar. Verificá las reglas de Firestore."
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   DESCARTAR REPORTE
+===================================================== */
+
+async function dismissReport(
+    reportId
+){
+
+    const confirmed =
+    confirm(
+        "¿Marcar este reporte como revisado y quitarlo de la lista?"
+    );
+
+
+    if(!confirmed){
+        return;
+    }
+
+
+    try{
+
+        await deleteDoc(
+            doc(
+                db,
+                "reports",
+                reportId
+            )
+        );
+
+
+        await loadReports();
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        alert(
+            "No se pudo cerrar el reporte."
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CARGAR REPORTES
+===================================================== */
+
+async function loadReports(){
+
+    const snap =
+    await getDocs(
+        collection(
+            db,
+            "reports"
+        )
+    );
+
+
+    $("count").textContent =
+    `${snap.size} ${
+        snap.size === 1
+        ? "reporte"
+        : "reportes"
+    }`;
+
+
+    const list =
+    $("reportsList");
+
+
+    if(!snap.size){
+
+        list.innerHTML =
+        `
+        <div class="empty">
+
+            No hay reportes pendientes.
+            El foro está limpio. 👍
+
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    snap.forEach(
+        snapshot => {
+
+            const data =
+            snapshot.data();
+
+
+            const postId =
+            data.postId || "";
+
+
+            const reason =
+            data.reason ||
+            "Sin motivo indicado";
+
+
+            const reporter =
+            data.reporterId ||
+            "Desconocido";
+
+
+            const card =
+            document.createElement(
+                "article"
+            );
+
+
+            card.className =
+            "report";
+
+
+            card.innerHTML =
+            `
+            <div class="report-top">
+
+                <span class="badge">
+                    ⚠ Reporte
+                </span>
+
+                <span class="meta">
+                    ID: ${esc(snapshot.id)}
+                </span>
+
+            </div>
+
+
+            <h3>
+                Publicación reportada
+            </h3>
+
+
+            <p>
+                <strong>
+                    Motivo:
+                </strong>
+
+                ${esc(reason)}
+            </p>
+
+
+            <div class="meta">
+
+                Publicación:
+                ${esc(postId)}
+
+                <br>
+
+                Reportado por UID:
+                ${esc(reporter)}
+
+            </div>
+
+
+            <div class="actions">
+
+                <a
+                class="btn btn-primary"
+                href="pregunta.html?id=${encodeURIComponent(postId)}"
+                target="_blank"
+                rel="noopener">
+
+                    Ver publicación
+
+                </a>
+
+
+                <button
+                class="btn btn-danger"
+                data-delete>
+
+                    Eliminar publicación
+
+                </button>
+
+
+                <button
+                class="btn btn-secondary"
+                data-dismiss>
+
+                    Descartar reporte
+
+                </button>
+
+            </div>
+            `;
+
+
+            card
+            .querySelector(
+                "[data-delete]"
+            )
+            .addEventListener(
+                "click",
+                () =>
+                deletePost(
+                    postId,
+                    snapshot.id
+                )
+            );
+
+
+            card
+            .querySelector(
+                "[data-dismiss]"
+            )
+            .addEventListener(
+                "click",
+                () =>
+                dismissReport(
+                    snapshot.id
+                )
+            );
+
+
+            list.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   DENEGAR ACCESO
+===================================================== */
+
+function deny(){
+
+    $("loading")
+    .classList
+    .add("hidden");
+
+
+    $("adminArea")
+    .classList
+    .add("hidden");
+
+
+    $("denied")
+    .classList
+    .remove("hidden");
+
+}
+
+
+
+/* =====================================================
+   AUTENTICACIÓN
+===================================================== */
+
+onAuthStateChanged(
+    auth,
+    async user => {
+
+        try{
+
+            if(!user){
+
+                deny();
+
+                return;
+
+            }
+
+
+            const admin =
+            await isAdmin(
+                user
+            );
+
+
+            if(!admin){
+
+                deny();
+
+                return;
+
+            }
+
+
+            $("loading")
+            .classList
+            .add("hidden");
+
+
+            $("adminArea")
+            .classList
+            .remove("hidden");
+
+
+            await loadReports();
+
+
+        }catch(error){
+
+            console.error(error);
+
+            deny();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
