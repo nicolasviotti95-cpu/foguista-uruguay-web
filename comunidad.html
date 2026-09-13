@@ -2899,7 +2899,13 @@ onSnapshot(
                 `;
 
 
-                postsList.appendChild(card);
+                card.style.cursor = "pointer";
+
+card.addEventListener("click", () => {
+    window.location.href = `pregunta.html?id=${doc.id}`;
+});
+
+postsList.appendChild(card);
 
             }
         );
