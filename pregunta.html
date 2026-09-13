@@ -17,6 +17,7 @@ href="/logo.png">
 
 <title>Pregunta | Comunidad Foguista</title>
 
+
 <style>
 
 *{
@@ -256,6 +257,47 @@ textarea{
 
 
 /* =====================================================
+   ACCIONES DE LA PREGUNTA
+===================================================== */
+
+.post-actions{
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:16px;
+}
+
+.delete-post-button{
+    border:1px solid #e1bcbc;
+
+    border-radius:7px;
+
+    background:#fff5f5;
+
+    color:#a33a3a;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    padding:10px 15px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.delete-post-button:hover{
+    background:#ffe9e9;
+
+    border-color:#d89b9b;
+}
+
+
+/* =====================================================
    RESPUESTAS
 ===================================================== */
 
@@ -332,6 +374,12 @@ textarea{
 
 .button:hover{
     background:#087fc5;
+}
+
+.button:disabled{
+    opacity:.6;
+
+    cursor:not-allowed;
 }
 
 .reply-card{
@@ -748,7 +796,9 @@ import {
     onSnapshot,
     serverTimestamp,
     updateDoc,
-    deleteDoc
+    deleteDoc,
+    getDocs,
+    writeBatch
 }
 from
 "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
@@ -830,6 +880,8 @@ new URLSearchParams(
 
 
 let currentUser = null;
+
+let currentPost = null;
 
 
 /* =====================================================
@@ -920,133 +972,203 @@ function clearError(){
 
 
 /* =====================================================
-   CARGAR PREGUNTA
+   MOSTRAR PREGUNTA
 ===================================================== */
 
-if(!postId){
+function renderPost(post){
+
+    currentPost = post;
+
+
+    let deleteButton = "";
+
+
+    if(
+        currentUser
+        &&
+        post.authorId
+        ===
+        currentUser.uid
+    ){
+
+        deleteButton = `
+
+            <div class="post-actions">
+
+                <button
+                id="deletePostButton"
+                class="delete-post-button">
+
+                    🗑️ Eliminar pregunta
+
+                </button>
+
+            </div>
+
+        `;
+
+    }
+
 
     postArea.innerHTML = `
 
-        <div class="empty">
+        <span
+        class="post-category">
 
-            No se indicó ninguna pregunta.
+            ${escapeHtml(
+                post.category
+            )}
 
-            <br><br>
+        </span>
+
+
+        <h1
+        class="post-title">
+
+            ${escapeHtml(
+                post.title
+            )}
+
+        </h1>
+
+
+        <div
+        class="post-content">
+
+            ${escapeHtml(
+                post.content
+            )}
+
+        </div>
+
+
+        <div
+        class="post-meta">
+
+            👤
+
+            ${escapeHtml(
+                post.authorName
+                ||
+                post.authorEmail
+                ||
+                "Usuario"
+            )}
+
+            ·
+
+            ${formatDate(
+                post.createdAt
+            )}
+
+            ·
 
             <a
             href="comunidad.html"
             style="
             color:#1198e5;
-            font-weight:800;
+            font-weight:700;
             ">
 
-            Volver a Comunidad
+                Volver a preguntas
 
             </a>
 
         </div>
 
+
+        ${deleteButton}
+
     `;
 
-}else{
 
-    const postRef =
-    doc(
-        db,
-        "posts",
-        postId
+    const deleteButtonElement =
+    document.getElementById(
+        "deletePostButton"
     );
 
 
-    getDoc(postRef)
+    if(deleteButtonElement){
 
-    .then(
+        deleteButtonElement.addEventListener(
+            "click",
+            deleteCurrentPost
+        );
 
-        (snapshot) => {
+    }
 
-            if(!snapshot.exists()){
-
-                postArea.innerHTML = `
-
-                    <div class="empty">
-
-                        La pregunta no existe
-                        o fue eliminada.
-
-                    </div>
-
-                `;
-
-                return;
-
-            }
+}
 
 
-            const post =
-            snapshot.data();
+/* =====================================================
+   CARGAR PREGUNTA
+===================================================== */
 
+async function loadPost(){
+
+    if(!postId){
+
+        postArea.innerHTML = `
+
+            <div class="empty">
+
+                No se indicó ninguna pregunta.
+
+                <br><br>
+
+                <a
+                href="comunidad.html"
+                style="
+                color:#1198e5;
+                font-weight:800;
+                ">
+
+                    Volver a Comunidad
+
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    try{
+
+        const postRef =
+        doc(
+            db,
+            "posts",
+            postId
+        );
+
+
+        const snapshot =
+        await getDoc(postRef);
+
+
+        if(!snapshot.exists()){
 
             postArea.innerHTML = `
 
-                <span
-                class="post-category">
+                <div class="empty">
 
-                    ${escapeHtml(
-                        post.category
-                    )}
+                    La pregunta no existe
+                    o fue eliminada.
 
-                </span>
-
-
-                <h1
-                class="post-title">
-
-                    ${escapeHtml(
-                        post.title
-                    )}
-
-                </h1>
-
-
-                <div
-                class="post-content">
-
-                    ${escapeHtml(
-                        post.content
-                    )}
-
-                </div>
-
-
-                <div
-                class="post-meta">
-
-                    👤
-
-                    ${escapeHtml(
-                        post.authorName
-                        ||
-                        post.authorEmail
-                        ||
-                        "Usuario"
-                    )}
-
-                    ·
-
-                    ${formatDate(
-                        post.createdAt
-                    )}
-
-                    ·
+                    <br><br>
 
                     <a
                     href="comunidad.html"
                     style="
                     color:#1198e5;
-                    font-weight:700;
+                    font-weight:800;
                     ">
 
-                    Volver a preguntas
+                        Volver a Comunidad
 
                     </a>
 
@@ -1054,33 +1176,245 @@ if(!postId){
 
             `;
 
-        }
-
-    )
-
-    .catch(
-
-        () => {
-
-            postArea.innerHTML = `
-
-                <div class="empty">
-
-                    No se pudo cargar
-                    la pregunta.
-
-                </div>
-
-            `;
+            return;
 
         }
+
+
+        renderPost(
+            snapshot.data()
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        postArea.innerHTML = `
+
+            <div class="empty">
+
+                No se pudo cargar
+                la pregunta.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   ELIMINAR PREGUNTA + RESPUESTAS
+===================================================== */
+
+async function deleteCurrentPost(){
+
+    if(!currentUser){
+
+        alert(
+            "Debes iniciar sesión para eliminar la pregunta."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !currentPost
+        ||
+        currentPost.authorId
+        !==
+        currentUser.uid
+    ){
+
+        alert(
+            "No tienes permiso para eliminar esta pregunta."
+        );
+
+        return;
+
+    }
+
+
+    const confirmed =
+    confirm(
+
+        "¿Eliminar esta pregunta?\n\n" +
+
+        "También se eliminarán todas las respuestas " +
+        "de este hilo.\n\n" +
+
+        "Esta acción no se puede deshacer."
 
     );
 
 
-    /* =================================================
-       CARGAR RESPUESTAS
-    ================================================= */
+    if(!confirmed){
+
+        return;
+
+    }
+
+
+    const deleteButton =
+    document.getElementById(
+        "deletePostButton"
+    );
+
+
+    if(deleteButton){
+
+        deleteButton.disabled =
+        true;
+
+        deleteButton.textContent =
+        "Eliminando...";
+
+    }
+
+
+    try{
+
+        /*
+         * Primero obtenemos todas las respuestas
+         */
+
+        const repliesRef =
+        collection(
+            db,
+            "posts",
+            postId,
+            "replies"
+        );
+
+
+        const repliesSnapshot =
+        await getDocs(
+            repliesRef
+        );
+
+
+        /*
+         * Firestore permite hasta 500 operaciones
+         * por batch. Por eso eliminamos las respuestas
+         * en grupos de máximo 500.
+         */
+
+        let batch =
+        writeBatch(db);
+
+        let operationCount =
+        0;
+
+
+        for(
+            const replyDoc
+            of
+            repliesSnapshot.docs
+        ){
+
+            batch.delete(
+                replyDoc.ref
+            );
+
+            operationCount++;
+
+
+            if(operationCount === 500){
+
+                await batch.commit();
+
+
+                batch =
+                writeBatch(db);
+
+                operationCount =
+                0;
+
+            }
+
+        }
+
+
+        /*
+         * Si quedaron respuestas pendientes,
+         * confirmamos ese último batch.
+         */
+
+        if(operationCount > 0){
+
+            await batch.commit();
+
+        }
+
+
+        /*
+         * Finalmente eliminamos la pregunta.
+         */
+
+        await deleteDoc(
+
+            doc(
+                db,
+                "posts",
+                postId
+            )
+
+        );
+
+
+        /*
+         * Volvemos a Comunidad.
+         */
+
+        window.location.href =
+        "comunidad.html";
+
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+
+            "No se pudo eliminar la pregunta.\n\n" +
+
+            "Revisá tu conexión e intentá nuevamente."
+
+        );
+
+
+        if(deleteButton){
+
+            deleteButton.disabled =
+            false;
+
+            deleteButton.textContent =
+            "🗑️ Eliminar pregunta";
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   CARGAR RESPUESTAS
+===================================================== */
+
+function loadReplies(){
+
+    if(!postId){
+
+        return;
+
+    }
+
 
     const repliesQuery =
 
@@ -1170,14 +1504,14 @@ if(!postId){
                                 <button
                                 data-edit="${replyDoc.id}">
 
-                                Editar
+                                    Editar
 
                                 </button>
 
                                 <button
                                 data-delete="${replyDoc.id}">
 
-                                Eliminar
+                                    Eliminar
 
                                 </button>
 
@@ -1235,6 +1569,23 @@ if(!postId){
 
             );
 
+        },
+
+        (error) => {
+
+            console.error(error);
+
+            repliesList.innerHTML = `
+
+                <div class="empty">
+
+                    No se pudieron cargar
+                    las respuestas.
+
+                </div>
+
+            `;
+
         }
 
     );
@@ -1272,7 +1623,9 @@ repliesList.addEventListener(
 
 
             const snapshot =
-            await getDoc(replyRef);
+            await getDoc(
+                replyRef
+            );
 
 
             if(!snapshot.exists()){
@@ -1394,7 +1747,7 @@ onAuthStateChanged(
 
     auth,
 
-    (user) => {
+    async (user) => {
 
         currentUser =
         user;
@@ -1419,6 +1772,15 @@ onAuthStateChanged(
             "block";
 
         }
+
+
+        /*
+         * Volvemos a cargar la pregunta para que
+         * el botón "Eliminar pregunta" aparezca
+         * solamente cuando corresponde.
+         */
+
+        await loadPost();
 
     }
 
@@ -1564,6 +1926,13 @@ replyButton.addEventListener(
     }
 
 );
+
+
+/* =====================================================
+   INICIO
+===================================================== */
+
+loadReplies();
 
 </script>
 
