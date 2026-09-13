@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
@@ -22,15 +21,17 @@ href="/logo.png">
 rel="canonical"
 href="https://foguistauruguay.uy/pregunta.html">
 
-<title>Pregunta | Comunidad Foguista</title>
+<title>
+Pregunta | Comunidad Foguista
+</title>
 
 
 <style>
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 body{
@@ -46,8 +47,20 @@ a{
 }
 
 button,
-textarea{
+input,
+textarea,
+select{
     font-family:inherit;
+}
+
+:root{
+    --navy:#062b4f;
+    --dark:#031d36;
+    --blue:#1198e5;
+    --blue2:#087fc5;
+    --light:#e8f5fc;
+    --muted:#607b95;
+    --border:#dce7ef;
 }
 
 
@@ -55,18 +68,18 @@ textarea{
    HEADER
 ===================================================== */
 
-.site-header{
+header{
     position:sticky;
     top:0;
     z-index:1000;
 
-    background:#062b4f;
+    background:var(--navy);
 
     box-shadow:
         0 3px 18px rgba(0,0,0,.16);
 }
 
-.header-inner{
+.header{
     max-width:1280px;
     min-height:76px;
 
@@ -76,8 +89,6 @@ textarea{
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    gap:25px;
 }
 
 .brand{
@@ -86,11 +97,9 @@ textarea{
     gap:13px;
 
     color:white;
-
-    flex-shrink:0;
 }
 
-.brand-logo{
+.brand img{
     width:58px;
     height:58px;
 
@@ -99,32 +108,25 @@ textarea{
     border-radius:12px;
 }
 
-.brand-name{
+.brand b{
     font-size:21px;
-    font-weight:800;
 }
 
-.brand-subtitle{
+.brand small{
     display:block;
 
-    margin-top:2px;
+    color:#c8d9e8;
 
     font-size:11px;
-
-    color:#c8d9e8;
 }
 
-.main-nav{
+.nav{
     display:flex;
-    align-items:center;
-
     gap:3px;
-
     flex-wrap:wrap;
-    justify-content:flex-end;
 }
 
-.main-nav a{
+.nav a{
     padding:10px;
 
     border-radius:7px;
@@ -133,25 +135,12 @@ textarea{
 
     font-size:13px;
     font-weight:600;
-
-    white-space:nowrap;
 }
 
-.main-nav a:hover{
-    background:rgba(17,152,229,.18);
+.nav a:hover,
+.nav .active{
+    background:var(--blue);
     color:white;
-}
-
-.main-nav .community{
-    background:#1198e5;
-    color:white;
-
-    padding-left:15px;
-    padding-right:15px;
-}
-
-.main-nav .community:hover{
-    background:#087fc5;
 }
 
 
@@ -171,7 +160,7 @@ textarea{
     color:white;
 }
 
-.hero-inner{
+.hero-in{
     max-width:1220px;
 
     margin:auto;
@@ -179,7 +168,7 @@ textarea{
     padding:45px 28px;
 }
 
-.breadcrumb{
+.crumb{
     color:#9dc2da;
     font-size:12px;
 }
@@ -188,8 +177,6 @@ textarea{
     margin-top:12px;
 
     font-size:clamp(30px,5vw,48px);
-
-    line-height:1.08;
 }
 
 
@@ -197,7 +184,7 @@ textarea{
    CONTENIDO
 ===================================================== */
 
-.content{
+main{
     max-width:1000px;
 
     margin:auto;
@@ -208,7 +195,7 @@ textarea{
 .panel{
     background:white;
 
-    border:1px solid #dce7ef;
+    border:1px solid var(--border);
 
     border-radius:14px;
 
@@ -223,35 +210,33 @@ textarea{
    PREGUNTA
 ===================================================== */
 
-.post-category{
+.tag{
     display:inline-block;
-
-    margin-bottom:10px;
 
     padding:4px 9px;
 
     border-radius:20px;
 
-    background:#e8f5fc;
+    background:var(--light);
 
-    color:#087fc5;
+    color:var(--blue2);
 
     font-size:10px;
 
     font-weight:800;
 }
 
-.post-title{
-    color:#062b4f;
+.title{
+    color:var(--navy);
 
     font-size:30px;
 
     line-height:1.2;
 
-    margin-bottom:12px;
+    margin:10px 0 12px;
 }
 
-.post-content{
+.body{
     color:#486b87;
 
     font-size:15px;
@@ -261,7 +246,7 @@ textarea{
     white-space:pre-wrap;
 }
 
-.post-meta{
+.meta{
     display:flex;
 
     gap:8px;
@@ -276,24 +261,29 @@ textarea{
 
     margin-top:18px;
 
-    padding-bottom:20px;
+    padding-bottom:18px;
 
-    border-bottom:1px solid #dce7ef;
+    border-bottom:1px solid var(--border);
 }
 
-.author-condition{
-    color:#087fc5;
+.condition{
+    color:var(--blue2);
 
     font-weight:800;
 }
 
-.back-link{
-    color:#1198e5;
+.back{
+    color:var(--blue);
 
     font-weight:800;
 }
 
-.post-actions{
+
+/* =====================================================
+   ACCIONES
+===================================================== */
+
+.actions{
     display:flex;
 
     gap:8px;
@@ -303,16 +293,16 @@ textarea{
     margin-top:15px;
 }
 
-.delete-post-button{
-    border:1px solid #efcaca;
+.action{
+    border:1px solid #cbdde9;
 
-    background:#fff6f6;
+    background:white;
 
-    color:#a33a3a;
+    color:var(--navy);
 
     border-radius:7px;
 
-    padding:9px 14px;
+    padding:9px 13px;
 
     font-size:12px;
 
@@ -321,8 +311,34 @@ textarea{
     cursor:pointer;
 }
 
-.delete-post-button:hover{
+.action:hover{
+    border-color:var(--blue);
+
+    background:#f7fbfd;
+}
+
+.danger{
+    border-color:#efcaca;
+
+    background:#fff6f6;
+
+    color:#a33a3a;
+}
+
+.danger:hover{
     background:#ffecec;
+}
+
+.report{
+    border-color:#e4d8bc;
+
+    background:#fffaf0;
+
+    color:#85631c;
+}
+
+.report:hover{
+    background:#fff3d8;
 }
 
 
@@ -330,22 +346,22 @@ textarea{
    RESPUESTAS
 ===================================================== */
 
-.section-title{
-    color:#062b4f;
+.section{
+    color:var(--navy);
 
     font-size:21px;
 
     margin:28px 0 15px;
 }
 
-.reply-card{
+.reply{
     padding:18px;
 
     margin-bottom:12px;
 
     background:#fbfdfe;
 
-    border:1px solid #dce7ef;
+    border:1px solid var(--border);
 
     border-radius:12px;
 }
@@ -357,8 +373,6 @@ textarea{
 
     flex-wrap:wrap;
 
-    align-items:center;
-
     color:#7890a4;
 
     font-size:11px;
@@ -366,13 +380,7 @@ textarea{
     margin-bottom:8px;
 }
 
-.reply-condition{
-    color:#087fc5;
-
-    font-weight:800;
-}
-
-.reply-content{
+.reply-body{
     color:#486b87;
 
     font-size:14px;
@@ -402,28 +410,17 @@ textarea{
     cursor:pointer;
 }
 
-.edit-reply{
-    border:1px solid #cbdde9;
 
-    background:white;
-
-    color:#062b4f;
-}
-
-.delete-reply{
-    border:1px solid #efcaca;
-
-    background:#fff6f6;
-
-    color:#a33a3a;
-}
+/* =====================================================
+   VACÍO
+===================================================== */
 
 .empty{
     padding:25px;
 
     text-align:center;
 
-    color:#607b95;
+    color:var(--muted);
 
     border:1px dashed #cbdce7;
 
@@ -432,10 +429,32 @@ textarea{
 
 
 /* =====================================================
-   FORMULARIO
+   FORMULARIO RESPUESTA
 ===================================================== */
 
-.reply-form{
+.login{
+    margin-top:20px;
+
+    padding:17px;
+
+    border-radius:10px;
+
+    background:#eaf4fa;
+
+    border:1px solid #d6eaf5;
+
+    color:#315a78;
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+.login strong{
+    color:var(--navy);
+}
+
+.form{
     display:none;
 
     margin-top:20px;
@@ -444,12 +463,12 @@ textarea{
 
     background:#f8fbfd;
 
-    border:1px solid #dce7ef;
+    border:1px solid var(--border);
 
     border-radius:10px;
 }
 
-.reply-form textarea{
+.textarea{
     width:100%;
 
     min-height:140px;
@@ -469,14 +488,14 @@ textarea{
     outline:none;
 }
 
-.reply-form textarea:focus{
-    border-color:#1198e5;
+.textarea:focus{
+    border-color:var(--blue);
 
     box-shadow:
         0 0 0 3px rgba(17,152,229,.10);
 }
 
-.reply-button{
+.btn{
     margin-top:12px;
 
     min-height:44px;
@@ -487,58 +506,22 @@ textarea{
 
     border-radius:7px;
 
-    background:#1198e5;
+    background:var(--blue);
 
     color:white;
-
-    font-size:13px;
 
     font-weight:800;
 
     cursor:pointer;
 }
 
-.reply-button:hover{
-    background:#087fc5;
+.btn:hover{
+    background:var(--blue2);
 }
 
-.reply-button:disabled{
+.btn:disabled{
     opacity:.65;
-
-    cursor:wait;
 }
-
-
-/* =====================================================
-   LOGIN
-===================================================== */
-
-.login-box{
-    margin-top:20px;
-
-    padding:17px;
-
-    border-radius:10px;
-
-    background:#eaf4fa;
-
-    border:1px solid #d6eaf5;
-
-    color:#315a78;
-
-    font-size:13px;
-
-    cursor:pointer;
-}
-
-.login-box strong{
-    color:#062b4f;
-}
-
-
-/* =====================================================
-   ERROR
-===================================================== */
 
 .error{
     display:none;
@@ -558,18 +541,160 @@ textarea{
 
 
 /* =====================================================
+   MODAL EDITAR
+===================================================== */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:3000;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(3,29,54,.72);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.box{
+    width:min(520px,100%);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:28px;
+}
+
+.mh{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:16px;
+}
+
+.mh h2{
+    color:var(--navy);
+}
+
+.close{
+    border:0;
+
+    background:none;
+
+    color:var(--muted);
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+.label{
+    display:block;
+
+    margin:12px 0 6px;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.input,
+.select{
+    width:100%;
+
+    padding:11px 12px;
+
+    border:1px solid #cfdde7;
+
+    border-radius:7px;
+
+    background:white;
+
+    color:#173b60;
+
+    font-size:14px;
+
+    outline:none;
+}
+
+.area{
+    min-height:150px;
+
+    resize:vertical;
+}
+
+.modal-btn{
+    width:100%;
+
+    min-height:45px;
+
+    margin-top:15px;
+
+    border:0;
+
+    border-radius:7px;
+
+    background:var(--blue);
+
+    color:white;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.modal-btn:hover{
+    background:var(--blue2);
+}
+
+.modal-error{
+    display:none;
+
+    margin-top:10px;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    background:#fff1f1;
+
+    color:#a33a3a;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
    FOOTER
 ===================================================== */
 
-.footer{
+footer{
     margin-top:30px;
 
-    background:#031d36;
+    background:var(--dark);
 
     color:#c8d9e8;
 }
 
-.footer-inner{
+.foot{
     max-width:1220px;
 
     margin:auto;
@@ -580,18 +705,16 @@ textarea{
 
     justify-content:space-between;
 
-    align-items:center;
-
     gap:20px;
 
     flex-wrap:wrap;
 }
 
-.footer strong{
+.foot b{
     color:white;
 }
 
-.footer span{
+.foot span{
     font-size:12px;
 }
 
@@ -602,7 +725,7 @@ textarea{
 
 @media(max-width:850px){
 
-    .main-nav{
+    .nav{
         display:none;
     }
 
@@ -610,25 +733,25 @@ textarea{
 
 @media(max-width:650px){
 
-    .header-inner{
+    .header{
         padding:8px 16px;
     }
 
-    .brand-name{
+    .brand b{
         font-size:18px;
     }
 
-    .brand-subtitle{
+    .brand small{
         display:none;
     }
 
-    .brand-logo{
+    .brand img{
         width:52px;
         height:52px;
     }
 
-    .hero-inner,
-    .content{
+    .hero-in,
+    main{
         padding-left:18px;
         padding-right:18px;
     }
@@ -637,7 +760,7 @@ textarea{
         padding:20px;
     }
 
-    .post-title{
+    .title{
         font-size:25px;
     }
 
@@ -655,35 +778,34 @@ textarea{
      HEADER
 ===================================================== -->
 
-<header class="site-header">
+<header>
 
-<div class="header-inner">
+<div class="header">
 
 <a
 class="brand"
 href="index.html">
 
 <img
-class="brand-logo"
 src="logo.png"
 alt="Foguista Uruguay">
 
 <div>
 
-<div class="brand-name">
+<b>
 Foguista Uruguay
-</div>
+</b>
 
-<span class="brand-subtitle">
+<small>
 Formación y seguridad en generadores de vapor
-</span>
+</small>
 
 </div>
 
 </a>
 
 
-<nav class="main-nav">
+<nav class="nav">
 
 <a href="index.html">
 Inicio
@@ -710,8 +832,8 @@ Estudio
 </a>
 
 <a
-href="comunidad.html"
-class="community">
+class="active"
+href="comunidad.html">
 
 Comunidad
 
@@ -730,10 +852,12 @@ Comunidad
 
 <section class="hero">
 
-<div class="hero-inner">
+<div class="hero-in">
 
-<div class="breadcrumb">
-Inicio &nbsp;›&nbsp; Comunidad &nbsp;›&nbsp; Pregunta
+<div class="crumb">
+
+Inicio › Comunidad › Pregunta
+
 </div>
 
 <h1>
@@ -749,11 +873,12 @@ Pregunta de la comunidad
      CONTENIDO
 ===================================================== -->
 
-<main class="content">
+<main>
 
 <section class="panel">
 
-<div id="postArea">
+
+<div id="post">
 
 <div class="empty">
 Cargando pregunta...
@@ -762,12 +887,12 @@ Cargando pregunta...
 </div>
 
 
-<h2 class="section-title">
+<h2 class="section">
 Respuestas
 </h2>
 
 
-<div id="repliesList">
+<div id="replies">
 
 <div class="empty">
 Cargando respuestas...
@@ -777,8 +902,8 @@ Cargando respuestas...
 
 
 <div
-class="login-box"
-id="loginBox">
+class="login"
+id="login">
 
 <strong>
 ¿Querés responder?
@@ -786,24 +911,25 @@ id="loginBox">
 
 <br>
 
-Iniciá sesión para participar en la conversación.
+Iniciá sesión para participar.
 
 </div>
 
 
 <form
-class="reply-form"
-id="replyForm">
+class="form"
+id="form">
 
 <textarea
+class="textarea"
 id="replyText"
 maxlength="5000"
 placeholder="Escribí tu respuesta..."></textarea>
 
 
 <button
-class="reply-button"
-id="replyButton"
+class="btn"
+id="replyBtn"
 type="submit">
 
 Publicar respuesta
@@ -813,7 +939,7 @@ Publicar respuesta
 
 <div
 class="error"
-id="replyError">
+id="replyErr">
 </div>
 
 </form>
@@ -824,16 +950,94 @@ id="replyError">
 
 
 <!-- =====================================================
+     MODAL EDITAR PREGUNTA
+===================================================== -->
+
+<div
+class="modal"
+id="editModal">
+
+<div class="box">
+
+<div class="mh">
+
+<h2>
+Editar pregunta
+</h2>
+
+<button
+class="close"
+id="editClose"
+type="button">
+
+×
+
+</button>
+
+</div>
+
+
+<label class="label">
+Categoría
+</label>
+
+<select
+class="select"
+id="editCat">
+</select>
+
+
+<label class="label">
+Título
+</label>
+
+<input
+class="input"
+id="editTitle"
+maxlength="120">
+
+
+<label class="label">
+Pregunta
+</label>
+
+<textarea
+class="input area"
+id="editContent"
+maxlength="5000"></textarea>
+
+
+<button
+class="modal-btn"
+id="saveEdit"
+type="button">
+
+Guardar cambios
+
+</button>
+
+
+<div
+class="modal-error"
+id="editErr">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
      FOOTER
 ===================================================== -->
 
-<footer class="footer">
+<footer>
 
-<div class="footer-inner">
+<div class="foot">
 
-<strong>
+<b>
 FOGUISTA URUGUAY
-</strong>
+</b>
 
 <span>
 Conocimiento técnico para un trabajo más seguro
@@ -857,7 +1061,8 @@ Comunidad · Uruguay
 import {
     initializeApp
 }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 
 import {
@@ -866,7 +1071,8 @@ import {
     signInWithPopup,
     onAuthStateChanged
 }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
 import {
@@ -884,11 +1090,12 @@ import {
     getDocs,
     writeBatch
 }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 
 /* =====================================================
-   CONFIGURACIÓN FIREBASE
+   CONFIGURACIÓN
 ===================================================== */
 
 const firebaseConfig = {
@@ -918,42 +1125,130 @@ const firebaseConfig = {
 
 
 const app =
-initializeApp(firebaseConfig);
+initializeApp(
+    firebaseConfig
+);
+
 
 const auth =
 getAuth(app);
 
+
 const db =
 getFirestore(app);
 
-const googleProvider =
+
+const google =
 new GoogleAuthProvider();
 
 
 /* =====================================================
-   ELEMENTOS
+   CATEGORÍAS
 ===================================================== */
 
-const postArea =
-document.getElementById("postArea");
+const categories = [
 
-const repliesList =
-document.getElementById("repliesList");
+    "Preguntas técnicas",
 
-const replyForm =
-document.getElementById("replyForm");
+    "Experiencias de trabajo",
 
-const loginBox =
-document.getElementById("loginBox");
+    "Estudio y examen",
 
-const replyText =
-document.getElementById("replyText");
+    "Normativa URSEA",
 
-const replyButton =
-document.getElementById("replyButton");
+    "Tratamiento del agua",
 
-const replyError =
-document.getElementById("replyError");
+    "Seguridad y enclavamientos",
+
+    "Equipos y mantenimiento",
+
+    "Presentaciones"
+
+];
+
+
+$("editCat").innerHTML =
+
+categories
+.map(
+    category =>
+    `<option>
+        ${category}
+    </option>`
+)
+.join("");
+
+
+/* =====================================================
+   UTILIDADES
+===================================================== */
+
+const $ =
+id =>
+document.getElementById(id);
+
+
+const escapeHtml =
+value =>
+String(
+    value ?? ""
+)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+
+
+function formatDate(
+    timestamp
+){
+
+    if(!timestamp){
+        return "Ahora";
+    }
+
+
+    try{
+
+        return timestamp
+        .toDate()
+        .toLocaleString(
+            "es-UY",
+            {
+                dateStyle:"short",
+                timeStyle:"short"
+            }
+        );
+
+    }catch{
+
+        return "Ahora";
+
+    }
+
+}
+
+
+function firebaseError(
+    error
+){
+
+    if(
+        error?.code ===
+        "permission-denied"
+    ){
+
+        return
+        "Firebase rechazó la operación por las reglas de seguridad.";
+
+    }
+
+
+    return
+    "No se pudo completar la operación. Intentá nuevamente.";
+
+}
 
 
 /* =====================================================
@@ -966,102 +1261,12 @@ new URLSearchParams(
 ).get("id");
 
 
-let currentUser = null;
-
-let currentPost = null;
-
-
-/* =====================================================
-   UTILIDADES
-===================================================== */
-
-function escapeHtml(value){
-
-    return String(value ?? "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-
-}
+let currentUser =
+null;
 
 
-function formatDate(timestamp){
-
-    if(!timestamp){
-        return "Ahora";
-    }
-
-    try{
-
-        return timestamp
-            .toDate()
-            .toLocaleString(
-                "es-UY",
-                {
-                    dateStyle:"short",
-                    timeStyle:"short"
-                }
-            );
-
-    }catch{
-
-        return "Ahora";
-
-    }
-
-}
-
-
-function showError(message){
-
-    replyError.textContent =
-    message;
-
-    replyError.style.display =
-    "block";
-
-}
-
-
-function clearError(){
-
-    replyError.textContent =
-    "";
-
-    replyError.style.display =
-    "none";
-
-}
-
-
-function firebaseErrorMessage(error){
-
-    const code =
-    error?.code || "";
-
-    const messages = {
-
-        "permission-denied":
-        "Firebase rechazó la operación por las reglas de seguridad.",
-
-        "auth/popup-closed-by-user":
-        "Se cerró la ventana de Google.",
-
-        "auth/popup-blocked":
-        "El navegador bloqueó la ventana de Google.",
-
-        "auth/unauthorized-domain":
-        "Este dominio todavía no está autorizado en Firebase."
-
-    };
-
-    return messages[code]
-    ||
-    "No se pudo completar la operación. Intentá nuevamente.";
-
-}
+let currentPost =
+null;
 
 
 /* =====================================================
@@ -1072,7 +1277,7 @@ async function loadPost(){
 
     if(!postId){
 
-        postArea.innerHTML = `
+        $("post").innerHTML = `
 
             <div class="empty">
 
@@ -1081,8 +1286,8 @@ async function loadPost(){
                 <br><br>
 
                 <a
-                href="comunidad.html"
-                class="back-link">
+                class="back"
+                href="comunidad.html">
 
                 Volver a Comunidad
 
@@ -1099,7 +1304,7 @@ async function loadPost(){
 
     try{
 
-        const postRef =
+        const reference =
         doc(
             db,
             "posts",
@@ -1108,14 +1313,20 @@ async function loadPost(){
 
 
         const snapshot =
-        await getDoc(postRef);
+        await getDoc(
+            reference
+        );
 
 
-        if(!snapshot.exists()){
+        if(
+            !snapshot.exists()
+        ){
 
-            currentPost = null;
+            currentPost =
+            null;
 
-            postArea.innerHTML = `
+
+            $("post").innerHTML = `
 
                 <div class="empty">
 
@@ -1125,8 +1336,8 @@ async function loadPost(){
                     <br><br>
 
                     <a
-                    href="comunidad.html"
-                    class="back-link">
+                    class="back"
+                    href="comunidad.html">
 
                     Volver a Comunidad
 
@@ -1147,11 +1358,15 @@ async function loadPost(){
 
         renderPost();
 
+
     }catch(error){
 
-        console.error(error);
+        console.error(
+            error
+        );
 
-        postArea.innerHTML = `
+
+        $("post").innerHTML = `
 
             <div class="empty">
 
@@ -1177,34 +1392,39 @@ function renderPost(){
     }
 
 
-    const authorName =
-    currentPost.authorName ||
-    "Usuario";
-
-
-    const condition =
-    currentPost.authorCondition ||
-    "";
-
-
-    const canDelete =
-    currentUser &&
+    const ownPost =
+    currentUser
+    &&
     currentUser.uid ===
     currentPost.authorId;
 
 
-    postArea.innerHTML = `
+    const authorName =
+    currentPost.authorName
+    ||
+    "Usuario";
 
-        <span class="post-category">
+
+    const condition =
+    currentPost.authorCondition
+    ||
+    "";
+
+
+    $("post").innerHTML = `
+
+        <span class="tag">
 
             ${escapeHtml(
                 currentPost.category
+                ||
+                "Sin categoría"
             )}
 
         </span>
 
 
-        <h1 class="post-title">
+        <h1 class="title">
 
             ${escapeHtml(
                 currentPost.title
@@ -1213,7 +1433,7 @@ function renderPost(){
         </h1>
 
 
-        <div class="post-content">
+        <div class="body">
 
             ${escapeHtml(
                 currentPost.content
@@ -1222,11 +1442,15 @@ function renderPost(){
         </div>
 
 
-        <div class="post-meta">
+        <div class="meta">
 
             <span>
+
                 👤
-                ${escapeHtml(authorName)}
+                ${escapeHtml(
+                    authorName
+                )}
+
             </span>
 
 
@@ -1234,11 +1458,15 @@ function renderPost(){
                 condition
                 ?
                 `
-                <span>·</span>
+                <span>
+                    ·
+                </span>
 
-                <span class="author-condition">
+                <span class="condition">
 
-                    ${escapeHtml(condition)}
+                    ${escapeHtml(
+                        condition
+                    )}
 
                 </span>
                 `
@@ -1247,7 +1475,9 @@ function renderPost(){
             }
 
 
-            <span>·</span>
+            <span>
+                ·
+            </span>
 
 
             <span>
@@ -1259,12 +1489,27 @@ function renderPost(){
             </span>
 
 
-            <span>·</span>
+            ${
+                currentPost.updatedAt
+                ?
+                `
+                <span>
+                    · Editada
+                </span>
+                `
+                :
+                ""
+            }
+
+
+            <span>
+                ·
+            </span>
 
 
             <a
-            href="comunidad.html"
-            class="back-link">
+            class="back"
+            href="comunidad.html">
 
             Volver a preguntas
 
@@ -1273,39 +1518,92 @@ function renderPost(){
         </div>
 
 
-        ${
-            canDelete
-            ?
-            `
-            <div class="post-actions">
+        <div class="actions">
+
+            ${
+                ownPost
+                ?
+                `
+                <button
+                class="action"
+                id="editPost"
+                type="button">
+
+                ✏️ Editar pregunta
+
+                </button>
+
 
                 <button
-                class="delete-post-button"
-                id="deletePostButton"
+                class="action danger"
+                id="deletePost"
                 type="button">
 
                 🗑️ Eliminar pregunta
 
                 </button>
+                `
+                :
+                ""
+            }
 
-            </div>
-            `
-            :
-            ""
-        }
+
+            ${
+                !ownPost &&
+                currentUser
+                ?
+                `
+                <button
+                class="action report"
+                id="reportPost"
+                type="button">
+
+                ⚑ Reportar pregunta
+
+                </button>
+                `
+                :
+                ""
+            }
+
+        </div>
 
     `;
 
 
-    if(canDelete){
+    if(ownPost){
 
-        document
-        .getElementById(
-            "deletePostButton"
-        )
+        $("editPost")
         .addEventListener(
             "click",
-            deleteCurrentPost
+            openEdit
+        );
+
+
+        $("deletePost")
+        .addEventListener(
+            "click",
+            deletePost
+        );
+
+    }
+
+
+    if(
+        !ownPost &&
+        currentUser
+    ){
+
+        $("reportPost")
+        .addEventListener(
+            "click",
+            () =>
+            report(
+                "post",
+                postId,
+                postId,
+                currentPost.title
+            )
         );
 
     }
@@ -1314,440 +1612,178 @@ function renderPost(){
 
 
 /* =====================================================
-   CARGAR RESPUESTAS
+   EDITAR PREGUNTA
 ===================================================== */
 
-function loadReplies(){
+function openEdit(){
 
-    if(!postId){
-        return;
-    }
+    $("editCat").value =
+    currentPost.category
+    ||
+    categories[0];
 
 
-    const repliesQuery =
-    query(
-        collection(
-            db,
-            "posts",
-            postId,
-            "replies"
-        ),
-        orderBy(
-            "createdAt",
-            "asc"
-        )
-    );
+    $("editTitle").value =
+    currentPost.title
+    ||
+    "";
 
 
-    onSnapshot(
-        repliesQuery,
+    $("editContent").value =
+    currentPost.content
+    ||
+    "";
 
-        (snapshot) => {
 
-            if(snapshot.empty){
+    $("editErr").style.display =
+    "none";
 
-                repliesList.innerHTML = `
 
-                    <div class="empty">
-
-                        Todavía no hay respuestas.
-
-                        <br>
-
-                        Sé el primero en responder.
-
-                    </div>
-
-                `;
-
-                return;
-
-            }
-
-
-            repliesList.innerHTML = "";
-
-
-            snapshot.forEach(
-                (replySnapshot) => {
-
-                    const reply =
-                    replySnapshot.data();
-
-
-                    const card =
-                    document.createElement(
-                        "article"
-                    );
-
-
-                    card.className =
-                    "reply-card";
-
-
-                    const authorName =
-                    reply.authorName ||
-                    "Usuario";
-
-
-                    const condition =
-                    reply.authorCondition ||
-                    "";
-
-
-                    const canEdit =
-                    currentUser &&
-                    currentUser.uid ===
-                    reply.authorId;
-
-
-                    card.innerHTML = `
-
-                        <div class="reply-meta">
-
-                            <span>
-
-                                👤
-                                ${escapeHtml(
-                                    authorName
-                                )}
-
-                            </span>
-
-
-                            ${
-                                condition
-                                ?
-                                `
-                                <span>·</span>
-
-                                <span
-                                class="reply-condition">
-
-                                    ${escapeHtml(
-                                        condition
-                                    )}
-
-                                </span>
-                                `
-                                :
-                                ""
-                            }
-
-
-                            <span>·</span>
-
-
-                            <span>
-
-                                ${formatDate(
-                                    reply.createdAt
-                                )}
-
-                            </span>
-
-                        </div>
-
-
-                        <div class="reply-content">
-
-                            ${escapeHtml(
-                                reply.content
-                            )}
-
-                        </div>
-
-
-                        ${
-                            canEdit
-                            ?
-                            `
-                            <div class="reply-actions">
-
-                                <button
-                                class="edit-reply"
-                                data-edit="${replySnapshot.id}"
-                                type="button">
-
-                                Editar
-
-                                </button>
-
-
-                                <button
-                                class="delete-reply"
-                                data-delete="${replySnapshot.id}"
-                                type="button">
-
-                                Eliminar
-
-                                </button>
-
-                            </div>
-                            `
-                            :
-                            ""
-                        }
-
-                    `;
-
-
-                    repliesList.appendChild(card);
-
-                }
-            );
-
-        },
-
-        (error) => {
-
-            console.error(error);
-
-            repliesList.innerHTML = `
-
-                <div class="empty">
-
-                    No se pudieron cargar
-                    las respuestas.
-
-                </div>
-
-            `;
-
-        }
-
-    );
+    $("editModal")
+    .classList
+    .add("show");
 
 }
 
 
-/* =====================================================
-   EDITAR / ELIMINAR RESPUESTAS
-===================================================== */
+$("editClose").onclick =
+() => {
 
-repliesList.addEventListener(
-    "click",
-    async (event) => {
+    $("editModal")
+    .classList
+    .remove("show");
 
-        const editButton =
-        event.target.closest(
-            "[data-edit]"
-        );
+};
 
 
-        const deleteButton =
-        event.target.closest(
-            "[data-delete]"
-        );
+$("saveEdit").onclick =
+async () => {
+
+    const title =
+    $("editTitle")
+    .value
+    .trim();
 
 
-        if(editButton){
-
-            await editReply(
-                editButton.dataset.edit
-            );
-
-        }
+    const content =
+    $("editContent")
+    .value
+    .trim();
 
 
-        if(deleteButton){
-
-            await deleteReply(
-                deleteButton.dataset.delete
-            );
-
-        }
-
-    }
-);
+    const category =
+    $("editCat")
+    .value;
 
 
-async function editReply(replyId){
+    if(
+        title.length < 5
+    ){
 
-    if(!currentUser){
+        $("editErr").textContent =
+        "El título debe tener al menos 5 caracteres.";
+
+        $("editErr").style.display =
+        "block";
+
         return;
+
     }
 
 
-    const replyRef =
-    doc(
-        db,
-        "posts",
-        postId,
-        "replies",
-        replyId
-    );
+    if(
+        content.length < 10
+    ){
+
+        $("editErr").textContent =
+        "La pregunta debe tener al menos 10 caracteres.";
+
+        $("editErr").style.display =
+        "block";
+
+        return;
+
+    }
 
 
     try{
-
-        const snapshot =
-        await getDoc(replyRef);
-
-
-        if(!snapshot.exists()){
-            return;
-        }
-
-
-        const reply =
-        snapshot.data();
-
-
-        if(
-            reply.authorId !==
-            currentUser.uid
-        ){
-
-            alert(
-                "Solo podés editar tu propia respuesta."
-            );
-
-            return;
-
-        }
-
-
-        const newContent =
-        prompt(
-            "Modificar respuesta:",
-            reply.content || ""
-        );
-
-
-        if(
-            newContent === null
-        ){
-
-            return;
-
-        }
-
-
-        const content =
-        newContent.trim();
-
-
-        if(content.length < 1){
-
-            alert(
-                "La respuesta no puede quedar vacía."
-            );
-
-            return;
-
-        }
-
 
         await updateDoc(
-            replyRef,
+
+            doc(
+                db,
+                "posts",
+                postId
+            ),
+
             {
+
+                title:title,
+
                 content:content,
+
+                category:category,
+
                 updatedAt:
                 serverTimestamp()
+
             }
+
         );
+
+
+        currentPost = {
+
+            ...currentPost,
+
+            title:title,
+
+            content:content,
+
+            category:category
+
+        };
+
+
+        $("editModal")
+        .classList
+        .remove("show");
+
+
+        renderPost();
+
 
     }catch(error){
 
-        console.error(error);
-
-        alert(
-            firebaseErrorMessage(error)
+        console.error(
+            error
         );
+
+
+        $("editErr").textContent =
+        firebaseError(
+            error
+        );
+
+
+        $("editErr").style.display =
+        "block";
 
     }
 
-}
-
-
-async function deleteReply(replyId){
-
-    if(!currentUser){
-        return;
-    }
-
-
-    const replyRef =
-    doc(
-        db,
-        "posts",
-        postId,
-        "replies",
-        replyId
-    );
-
-
-    try{
-
-        const snapshot =
-        await getDoc(replyRef);
-
-
-        if(!snapshot.exists()){
-            return;
-        }
-
-
-        const reply =
-        snapshot.data();
-
-
-        if(
-            reply.authorId !==
-            currentUser.uid
-        ){
-
-            alert(
-                "Solo podés eliminar tu propia respuesta."
-            );
-
-            return;
-
-        }
-
-
-        const confirmed =
-        confirm(
-            "¿Querés eliminar esta respuesta?"
-        );
-
-
-        if(!confirmed){
-            return;
-        }
-
-
-        await deleteDoc(
-            replyRef
-        );
-
-    }catch(error){
-
-        console.error(error);
-
-        alert(
-            firebaseErrorMessage(error)
-        );
-
-    }
-
-}
+};
 
 
 /* =====================================================
-   ELIMINAR PREGUNTA + RESPUESTAS
+   ELIMINAR PREGUNTA
 ===================================================== */
 
-async function deleteCurrentPost(){
+async function deletePost(){
 
     if(!currentUser){
-        return;
-    }
 
-
-    if(!currentPost){
         return;
+
     }
 
 
@@ -1772,77 +1808,70 @@ async function deleteCurrentPost(){
 
 
     if(!confirmed){
+
         return;
-    }
-
-
-    const deleteButton =
-    document.getElementById(
-        "deletePostButton"
-    );
-
-
-    if(deleteButton){
-
-        deleteButton.disabled =
-        true;
-
-        deleteButton.textContent =
-        "Eliminando...";
 
     }
 
 
     try{
 
-        const repliesRef =
-        collection(
-            db,
-            "posts",
-            postId,
-            "replies"
-        );
-
-
-        const repliesSnapshot =
+        const replies =
         await getDocs(
-            repliesRef
+
+            collection(
+                db,
+                "posts",
+                postId,
+                "replies"
+            )
+
         );
 
 
         let batch =
         writeBatch(db);
 
-        let counter = 0;
+
+        let counter =
+        0;
 
 
         for(
-            const replySnapshot
-            of repliesSnapshot.docs
+            const reply
+            of replies.docs
         ){
 
             batch.delete(
-                replySnapshot.ref
+                reply.ref
             );
+
 
             counter++;
 
 
-            if(counter === 500){
+            if(
+                counter === 500
+            ){
 
                 await batch.commit();
+
 
                 batch =
                 writeBatch(db);
 
-                counter = 0;
+
+                counter =
+                0;
 
             }
 
         }
 
 
-        if(counter > 0){
+        if(
+            counter > 0
+        ){
 
             await batch.commit();
 
@@ -1850,37 +1879,676 @@ async function deleteCurrentPost(){
 
 
         await deleteDoc(
+
             doc(
                 db,
                 "posts",
                 postId
             )
+
         );
 
 
         window.location.href =
         "comunidad.html";
 
+
     }catch(error){
 
-        console.error(error);
-
-        alert(
-            "No se pudo eliminar la pregunta.\n\n"
-            +
-            firebaseErrorMessage(error)
+        console.error(
+            error
         );
 
 
-        if(deleteButton){
+        alert(
 
-            deleteButton.disabled =
-            false;
+            "No se pudo eliminar la pregunta.\n\n"
+            +
+            firebaseError(error)
 
-            deleteButton.textContent =
-            "🗑️ Eliminar pregunta";
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPUESTAS
+===================================================== */
+
+function loadReplies(){
+
+    if(!postId){
+
+        return;
+
+    }
+
+
+    const repliesQuery =
+    query(
+
+        collection(
+            db,
+            "posts",
+            postId,
+            "replies"
+        ),
+
+        orderBy(
+            "createdAt",
+            "asc"
+        )
+
+    );
+
+
+    onSnapshot(
+
+        repliesQuery,
+
+        snapshot => {
+
+            if(
+                snapshot.empty
+            ){
+
+                $("replies").innerHTML = `
+
+                    <div class="empty">
+
+                        Todavía no hay respuestas.
+
+                        <br>
+
+                        Sé el primero en responder.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            $("replies").innerHTML =
+            "";
+
+
+            snapshot.forEach(
+                replySnapshot => {
+
+                    const reply =
+                    replySnapshot.data();
+
+
+                    const ownReply =
+                    currentUser
+                    &&
+                    currentUser.uid ===
+                    reply.authorId;
+
+
+                    const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                    card.className =
+                    "reply";
+
+
+                    card.innerHTML = `
+
+                        <div class="reply-meta">
+
+                            <span>
+
+                                👤
+                                ${escapeHtml(
+                                    reply.authorName
+                                    ||
+                                    "Usuario"
+                                )}
+
+                            </span>
+
+
+                            ${
+                                reply.authorCondition
+                                ?
+                                `
+                                <span>
+                                    ·
+                                </span>
+
+                                <span class="condition">
+
+                                    ${escapeHtml(
+                                        reply.authorCondition
+                                    )}
+
+                                </span>
+                                `
+                                :
+                                ""
+                            }
+
+
+                            <span>
+                                ·
+                            </span>
+
+
+                            <span>
+
+                                ${formatDate(
+                                    reply.createdAt
+                                )}
+
+                            </span>
+
+
+                            ${
+                                reply.updatedAt
+                                ?
+                                `
+                                <span>
+                                    · Editada
+                                </span>
+                                `
+                                :
+                                ""
+                            }
+
+                        </div>
+
+
+                        <div class="reply-body">
+
+                            ${escapeHtml(
+                                reply.content
+                            )}
+
+                        </div>
+
+
+                        <div class="reply-actions">
+
+                            ${
+                                ownReply
+                                ?
+                                `
+                                <button
+                                class="action"
+                                data-edit="${replySnapshot.id}"
+                                type="button">
+
+                                Editar
+
+                                </button>
+
+
+                                <button
+                                class="action danger"
+                                data-delete="${replySnapshot.id}"
+                                type="button">
+
+                                Eliminar
+
+                                </button>
+                                `
+                                :
+                                ""
+                            }
+
+
+                            ${
+                                !ownReply &&
+                                currentUser
+                                ?
+                                `
+                                <button
+                                class="action report"
+                                data-report="${replySnapshot.id}"
+                                type="button">
+
+                                ⚑ Reportar
+
+                                </button>
+                                `
+                                :
+                                ""
+                            }
+
+                        </div>
+
+                    `;
+
+
+                    $("replies")
+                    .appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        },
+
+        error => {
+
+            console.error(
+                error
+            );
+
+
+            $("replies").innerHTML = `
+
+                <div class="empty">
+
+                    No se pudieron cargar
+                    las respuestas.
+
+                </div>
+
+            `;
 
         }
+
+    );
+
+}
+
+
+/* =====================================================
+   ACCIONES RESPUESTAS
+===================================================== */
+
+$("replies").addEventListener(
+    "click",
+    async event => {
+
+        const edit =
+        event.target.closest(
+            "[data-edit]"
+        );
+
+
+        const remove =
+        event.target.closest(
+            "[data-delete]"
+        );
+
+
+        const reportButton =
+        event.target.closest(
+            "[data-report]"
+        );
+
+
+        if(edit){
+
+            await editReply(
+                edit.dataset.edit
+            );
+
+        }
+
+
+        if(remove){
+
+            await deleteReply(
+                remove.dataset.delete
+            );
+
+        }
+
+
+        if(reportButton){
+
+            await report(
+                "reply",
+                reportButton.dataset.report,
+                postId,
+                "Respuesta"
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   EDITAR RESPUESTA
+===================================================== */
+
+async function editReply(
+    replyId
+){
+
+    if(!currentUser){
+
+        return;
+
+    }
+
+
+    const reference =
+    doc(
+        db,
+        "posts",
+        postId,
+        "replies",
+        replyId
+    );
+
+
+    try{
+
+        const snapshot =
+        await getDoc(
+            reference
+        );
+
+
+        if(
+            !snapshot.exists()
+        ){
+
+            return;
+
+        }
+
+
+        const reply =
+        snapshot.data();
+
+
+        if(
+            reply.authorId !==
+            currentUser.uid
+        ){
+
+            alert(
+                "Solo podés editar tu propia respuesta."
+            );
+
+            return;
+
+        }
+
+
+        const value =
+        prompt(
+            "Modificar respuesta:",
+            reply.content
+            ||
+            ""
+        );
+
+
+        if(
+            value === null
+        ){
+
+            return;
+
+        }
+
+
+        const content =
+        value.trim();
+
+
+        if(
+            content.length < 1
+        ){
+
+            alert(
+                "La respuesta no puede quedar vacía."
+            );
+
+            return;
+
+        }
+
+
+        await updateDoc(
+
+            reference,
+
+            {
+
+                content:content,
+
+                updatedAt:
+                serverTimestamp()
+
+            }
+
+        );
+
+
+    }catch(error){
+
+        console.error(
+            error
+        );
+
+
+        alert(
+            firebaseError(error)
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ELIMINAR RESPUESTA
+===================================================== */
+
+async function deleteReply(
+    replyId
+){
+
+    if(!currentUser){
+
+        return;
+
+    }
+
+
+    const reference =
+    doc(
+        db,
+        "posts",
+        postId,
+        "replies",
+        replyId
+    );
+
+
+    try{
+
+        const snapshot =
+        await getDoc(
+            reference
+        );
+
+
+        if(
+            !snapshot.exists()
+        ){
+
+            return;
+
+        }
+
+
+        const reply =
+        snapshot.data();
+
+
+        if(
+            reply.authorId !==
+            currentUser.uid
+        ){
+
+            alert(
+                "Solo podés eliminar tu propia respuesta."
+            );
+
+            return;
+
+        }
+
+
+        if(
+            !confirm(
+                "¿Querés eliminar esta respuesta?"
+            )
+        ){
+
+            return;
+
+        }
+
+
+        await deleteDoc(
+            reference
+        );
+
+
+    }catch(error){
+
+        console.error(
+            error
+        );
+
+
+        alert(
+            firebaseError(error)
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   REPORTES
+===================================================== */
+
+async function report(
+    type,
+    targetId,
+    parentPostId,
+    label
+){
+
+    if(!currentUser){
+
+        await login();
+
+        return;
+
+    }
+
+
+    const reason =
+    prompt(
+
+        `¿Por qué querés reportar ${
+            type === "post"
+            ?
+            "esta pregunta"
+            :
+            "esta respuesta"
+        }?`
+
+    );
+
+
+    if(
+        reason === null
+    ){
+
+        return;
+
+    }
+
+
+    if(
+        reason.trim().length < 5
+    ){
+
+        alert(
+            "Explicá brevemente el motivo."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await addDoc(
+
+            collection(
+                db,
+                "reports"
+            ),
+
+            {
+
+                type:type,
+
+                targetId:targetId,
+
+                postId:parentPostId,
+
+                reporterId:
+                currentUser.uid,
+
+                reason:
+                reason.trim(),
+
+                label:label,
+
+                createdAt:
+                serverTimestamp(),
+
+                status:
+                "pendiente"
+
+            }
+
+        );
+
+
+        alert(
+            "Reporte enviado. Gracias por ayudar a mantener la comunidad."
+        );
+
+
+    }catch(error){
+
+        console.error(
+            error
+        );
+
+
+        alert(
+            firebaseError(error)
+        );
 
     }
 
@@ -1891,29 +2559,20 @@ async function deleteCurrentPost(){
    RESPONDER
 ===================================================== */
 
-replyForm.addEventListener(
+$("form").addEventListener(
     "submit",
-    async (event) => {
+    async event => {
 
         event.preventDefault();
 
-        clearError();
+
+        $("replyErr").style.display =
+        "none";
 
 
         if(!currentUser){
 
-            loginWithGoogle();
-
-            return;
-
-        }
-
-
-        if(!currentPost){
-
-            showError(
-                "No se pudo identificar la pregunta."
-            );
+            await login();
 
             return;
 
@@ -1921,69 +2580,67 @@ replyForm.addEventListener(
 
 
         const content =
-        replyText.value.trim();
+        $("replyText")
+        .value
+        .trim();
 
 
-        if(content.length < 2){
+        if(
+            content.length < 2
+        ){
 
-            showError(
-                "Escribí una respuesta."
-            );
+            $("replyErr").textContent =
+            "Escribí una respuesta.";
+
+
+            $("replyErr").style.display =
+            "block";
+
 
             return;
 
         }
 
 
-        replyButton.disabled =
+        $("replyBtn").disabled =
         true;
 
-        replyButton.textContent =
+
+        $("replyBtn").textContent =
         "Publicando...";
 
 
         try{
 
-            let profile =
-            null;
-
-
             const profileSnapshot =
             await getDoc(
+
                 doc(
                     db,
                     "users",
                     currentUser.uid
                 )
+
             );
 
 
-            if(profileSnapshot.exists()){
-
-                profile =
-                profileSnapshot.data();
-
-            }
-
-
-            const authorName =
-            profile?.name ||
-            currentUser.displayName ||
-            "Usuario";
-
-
-            const authorCondition =
-            profile?.condition ||
-            "";
+            const profile =
+            profileSnapshot.exists()
+            ?
+            profileSnapshot.data()
+            :
+            {};
 
 
             await addDoc(
+
                 collection(
                     db,
                     "posts",
                     postId,
                     "replies"
                 ),
+
                 {
 
                     content:content,
@@ -1992,35 +2649,53 @@ replyForm.addEventListener(
                     currentUser.uid,
 
                     authorName:
-                    authorName,
+                    profile.name
+                    ||
+                    currentUser.displayName
+                    ||
+                    "Usuario",
 
                     authorCondition:
-                    authorCondition,
+                    profile.condition
+                    ||
+                    "",
 
                     createdAt:
-                    serverTimestamp()
+                    serverTimestamp(),
+
+                    updatedAt:null
 
                 }
+
             );
 
 
-            replyText.value =
+            $("replyText").value =
             "";
+
 
         }catch(error){
 
-            console.error(error);
-
-            showError(
-                firebaseErrorMessage(error)
+            console.error(
+                error
             );
+
+
+            $("replyErr").textContent =
+            firebaseError(error);
+
+
+            $("replyErr").style.display =
+            "block";
+
 
         }finally{
 
-            replyButton.disabled =
+            $("replyBtn").disabled =
             false;
 
-            replyButton.textContent =
+
+            $("replyBtn").textContent =
             "Publicar respuesta";
 
         }
@@ -2030,27 +2705,27 @@ replyForm.addEventListener(
 
 
 /* =====================================================
-   GOOGLE LOGIN
+   LOGIN GOOGLE
 ===================================================== */
 
-async function loginWithGoogle(){
-
-    clearError();
-
+async function login(){
 
     try{
 
         await signInWithPopup(
             auth,
-            googleProvider
+            google
         );
 
     }catch(error){
 
-        console.error(error);
+        console.error(
+            error
+        );
 
-        showError(
-            firebaseErrorMessage(error)
+
+        alert(
+            firebaseError(error)
         );
 
     }
@@ -2058,19 +2733,21 @@ async function loginWithGoogle(){
 }
 
 
-loginBox.addEventListener(
+$("login").addEventListener(
     "click",
-    loginWithGoogle
+    login
 );
 
 
 /* =====================================================
-   ESTADO DE AUTENTICACIÓN
+   AUTENTICACIÓN
 ===================================================== */
 
 onAuthStateChanged(
+
     auth,
-    (user) => {
+
+    user => {
 
         currentUser =
         user;
@@ -2081,23 +2758,26 @@ onAuthStateChanged(
 
         if(user){
 
-            loginBox.style.display =
+            $("login").style.display =
             "none";
 
-            replyForm.style.display =
+
+            $("form").style.display =
             "block";
 
         }else{
 
-            loginBox.style.display =
+            $("login").style.display =
             "block";
 
-            replyForm.style.display =
+
+            $("form").style.display =
             "none";
 
         }
 
     }
+
 );
 
 
@@ -2113,5 +2793,4 @@ loadReplies();
 
 
 </body>
-
 </html>
