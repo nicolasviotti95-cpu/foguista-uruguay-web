@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-name="description"
-content="Comunidad Foguista Uruguay. Preguntas, experiencias y conocimiento entre foguistas.">
+<meta name="description" content="Comunidad Foguista Uruguay. Preguntas, experiencias y conocimiento entre foguistas.">
 
-<link
-rel="canonical"
-href="https://foguistauruguay.uy/comunidad.html">
-
-<link
-rel="icon"
-type="image/png"
-href="/logo.png">
+<link rel="canonical" href="https://foguistauruguay.uy/comunidad.html">
+<link rel="icon" type="image/png" href="/logo.png">
 
 <title>Comunidad Foguista | Foguista Uruguay</title>
 
@@ -398,10 +389,6 @@ main{
     padding:18px 4px 10px;
 }
 
-.search{
-    width:100%;
-}
-
 .input,
 .select{
     width:100%;
@@ -747,6 +734,45 @@ main{
     margin-top:3px;
 }
 
+
+/* =====================================================
+   BOTÓN ADMINISTRACIÓN
+===================================================== */
+
+.admin-link{
+    display:none;
+
+    width:100%;
+
+    min-height:40px;
+
+    margin-top:9px;
+
+    border:1px solid #9dcfe9;
+
+    border-radius:7px;
+
+    background:#062b4f;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.admin-link:hover{
+    background:#087fc5;
+}
+
 .secondary{
     width:100%;
 
@@ -918,9 +944,9 @@ main{
 
     min-height:45px;
 
-    margin-top:10px;
+    margin-top:9px;
 
-    border:1px solid var(--border);
+    border:1px solid #c9dce8;
 
     border-radius:7px;
 
@@ -935,11 +961,8 @@ main{
     cursor:pointer;
 }
 
-.modal-secondary:hover{
-    background:#f4f7fa;
-}
-
-.error{
+.error,
+.success{
     display:none;
 
     margin-top:10px;
@@ -948,11 +971,51 @@ main{
 
     border-radius:8px;
 
+    font-size:12px;
+}
+
+.error{
     background:#fff1f1;
 
     color:#a33a3a;
+}
+
+.success{
+    background:#edf9f1;
+
+    color:#287345;
+}
+
+.info{
+    padding:12px;
+
+    background:#eaf4fa;
+
+    border:1px solid #d6eaf5;
+
+    border-radius:9px;
+
+    color:#315a78;
 
     font-size:12px;
+
+    margin-bottom:12px;
+}
+
+.current{
+    margin-top:9px;
+
+    padding:11px;
+
+    background:#f4f8fb;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    font-size:12px;
+
+    color:var(--muted);
 }
 
 
@@ -960,7 +1023,7 @@ main{
    FOOTER
 ===================================================== */
 
-.footer{
+footer{
     margin-top:30px;
 
     background:var(--dark);
@@ -968,7 +1031,7 @@ main{
     color:#c8d9e8;
 }
 
-.footer-inner{
+.foot{
     max-width:1220px;
 
     margin:auto;
@@ -979,18 +1042,16 @@ main{
 
     justify-content:space-between;
 
-    align-items:center;
-
     gap:20px;
 
     flex-wrap:wrap;
 }
 
-.footer strong{
+.foot b{
     color:white;
 }
 
-.footer span{
+.foot span{
     font-size:12px;
 }
 
@@ -1012,22 +1073,14 @@ main{
     .checks{
         display:flex;
 
-        flex-wrap:wrap;
-
         gap:10px;
-    }
 
-    .check{
-        margin:4px 0;
+        flex-wrap:wrap;
     }
 
     .nav{
         display:none;
     }
-
-}
-
-@media(max-width:700px){
 
     .tools{
         grid-template-columns:1fr 1fr;
@@ -1064,14 +1117,6 @@ main{
         padding-right:18px;
     }
 
-    .hero h1{
-        font-size:39px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
     .cats{
         grid-template-columns:1fr;
     }
@@ -1088,18 +1133,6 @@ main{
         padding:22px;
     }
 
-}
-
-
-/* =====================================================
-   DESACTIVAR ESTILOS EXTRA DEL AUTOCOMPLETE
-===================================================== */
-
-input:-webkit-autofill{
-    -webkit-text-fill-color:#173b60 !important;
-
-    transition:
-        background-color 9999s ease-in-out 0s;
 }
 
 </style>
@@ -1168,9 +1201,11 @@ Estudio
 </a>
 
 <a
-href="comunidad.html"
-class="active">
+class="active"
+href="comunidad.html">
+
 Comunidad
+
 </a>
 
 </nav>
@@ -1178,6 +1213,7 @@ Comunidad
 </div>
 
 </header>
+
 
 
 <!-- =====================================================
@@ -1191,7 +1227,7 @@ Comunidad
 <div>
 
 <div class="crumb">
-Inicio &nbsp;›&nbsp; Comunidad
+Inicio › Comunidad
 </div>
 
 <h1>
@@ -1206,9 +1242,8 @@ Preguntas, experiencias y conocimiento entre foguistas.
 
 <br>
 
-Un espacio para compartir dudas, experiencias de trabajo y aprender juntos.
-
-Entre todos construimos una comunidad más segura y profesional.
+Un espacio para compartir dudas,
+experiencias de trabajo y aprender juntos.
 
 </p>
 
@@ -1237,10 +1272,10 @@ Resolver dudas
 Mejorar la seguridad
 </div>
 
+
 <button
 class="btn"
-id="newQuestionButton"
-type="button">
+id="newBtn">
 
 ＋ Nueva pregunta
 
@@ -1253,6 +1288,7 @@ type="button">
 </section>
 
 
+
 <!-- =====================================================
      CONTENIDO
 ===================================================== -->
@@ -1263,21 +1299,23 @@ type="button">
 <div class="intro">
 
 <h2>
-Categorías de la comunidad
+Comunidad Foguista
 </h2>
 
 <p>
-Elegí el área que mejor representa tu pregunta o experiencia.
+Elegí una categoría o buscá una pregunta.
+También podés ordenar por actividad.
 </p>
 
 </div>
+
 
 
 <div class="layout">
 
 
 <!-- =====================================================
-     PANEL PRINCIPAL
+     PUBLICACIONES
 ===================================================== -->
 
 <section class="panel">
@@ -1286,203 +1324,15 @@ Elegí el área que mejor representa tu pregunta o experiencia.
 <div
 class="cats"
 id="cats">
-
-
-<article
-class="cat"
-data-category="Preguntas técnicas">
-
-<div class="cat-icon">
-💬
-</div>
-
-<h3>
-Preguntas técnicas
-</h3>
-
-<p>
-Dudas y consultas sobre operación y funcionamiento de generadores de vapor.
-</p>
-
-<small>
-Ver preguntas
-</small>
-
-</article>
-
-
-<article
-class="cat"
-data-category="Experiencias de trabajo">
-
-<div class="cat-icon">
-⚙️
-</div>
-
-<h3>
-Experiencias de trabajo
-</h3>
-
-<p>
-Situaciones reales en planta, aprendizajes y buenas prácticas.
-</p>
-
-<small>
-Ver preguntas
-</small>
-
-</article>
-
-
-<article
-class="cat"
-data-category="Estudio y examen">
-
-<div class="cat-icon">
-📖
-</div>
-
-<h3>
-Estudio y examen
-</h3>
-
-<p>
-Preparación, material de estudio y consejos para quienes están estudiando.
-</p>
-
-<small>
-Ver preguntas
-</small>
-
-</article>
-
-
-<article
-class="cat"
-data-category="Normativa URSEA">
-
-<div class="cat-icon">
-📜
-</div>
-
-<h3>
-Normativa URSEA
-</h3>
-
-<p>
-Interpretación y discusión sobre reglamentos oficiales.
-</p>
-
-<small>
-Ver preguntas
-</small>
-
-</article>
-
-
-<article
-class="cat"
-data-category="Tratamiento del agua">
-
-<div class="cat-icon">
-💧
-</div>
-
-<h3>
-Tratamiento del agua
-</h3>
-
-<p>
-Calidad del agua, purgas, análisis y tratamiento químico.
-</p>
-
-<small>
-Ver preguntas
-</small>
-
-</article>
-
-
-<article
-class="cat"
-data-category="Seguridad y enclavamientos">
-
-<div class="cat-icon">
-🛡️
-</div>
-
-<h3>
-Seguridad y enclavamientos
-</h3>
-
-<p>
-Alarmas, protecciones, enclavamientos y procedimientos.
-</p>
-
-<small>
-Ver preguntas
-</small>
-
-</article>
-
-
-<article
-class="cat"
-data-category="Equipos y mantenimiento">
-
-<div class="cat-icon">
-🔧
-</div>
-
-<h3>
-Equipos y mantenimiento
-</h3>
-
-<p>
-Calderas, bombas, quemadores, válvulas e instrumentación.
-</p>
-
-<small>
-Ver preguntas
-</small>
-
-</article>
-
-
-<article
-class="cat"
-data-category="Presentaciones">
-
-<div class="cat-icon">
-👥
-</div>
-
-<h3>
-Presentaciones
-</h3>
-
-<p>
-Conocé a otros miembros y contá brevemente tu experiencia.
-</p>
-
-<small>
-Ver preguntas
-</small>
-
-</article>
-
-
 </div>
 
 
-<!-- =====================================================
-     PUBLICACIONES
-===================================================== -->
 
 <div class="posts">
 
 
 <div class="tools">
+
 
 <div class="search">
 
@@ -1491,7 +1341,7 @@ class="input"
 id="search"
 name="forum-search"
 type="search"
-autocomplete="off"
+autocomplete="new-password"
 autocorrect="off"
 autocapitalize="off"
 spellcheck="false"
@@ -1508,38 +1358,6 @@ id="filter">
 Todas las categorías
 </option>
 
-<option>
-Preguntas técnicas
-</option>
-
-<option>
-Experiencias de trabajo
-</option>
-
-<option>
-Estudio y examen
-</option>
-
-<option>
-Normativa URSEA
-</option>
-
-<option>
-Tratamiento del agua
-</option>
-
-<option>
-Seguridad y enclavamientos
-</option>
-
-<option>
-Equipos y mantenimiento
-</option>
-
-<option>
-Presentaciones
-</option>
-
 </select>
 
 
@@ -1552,12 +1370,14 @@ Más recientes
 </option>
 
 <option value="answers">
-Más respuestas
+Más respondidas
 </option>
 
 </select>
 
+
 </div>
+
 
 
 <div class="titlebar">
@@ -1577,236 +1397,54 @@ id="count">
 </div>
 
 
+
 <div
 class="list"
 id="list">
 
 <div class="empty">
+
 Cargando publicaciones...
-</div>
 
 </div>
 
-
 </div>
 
+
+</div>
 
 </section>
 
 
+
 <!-- =====================================================
-     SIDEBAR
+     COLUMNA LATERAL
 ===================================================== -->
 
 <aside class="panel">
 
 
-<div class="side">
-
-<h3>
-Temas destacados
-</h3>
-
-
-<div class="topic">
-
-<strong>
-Buenas prácticas en la operación de calderas
-</strong>
-
-<span>
-Comunidad
-</span>
-
-</div>
-
-
-<div class="topic">
-
-<strong>
-Control de dureza en agua de alimentación
-</strong>
-
-<span>
-Tratamiento del agua
-</span>
-
-</div>
-
-
-<div class="topic">
-
-<strong>
-¿Cómo se realiza la purga de fondo?
-</strong>
-
-<span>
-Preguntas técnicas
-</span>
-
-</div>
-
-
-<div class="topic">
-
-<strong>
-Válvulas de seguridad: ajuste y mantenimiento
-</strong>
-
-<span>
-Seguridad
-</span>
-
-</div>
-
-
-<div class="topic">
-
-<strong>
-Requisitos URSEA para generadores de vapor
-</strong>
-
-<span>
-Normativa
-</span>
-
-</div>
-
-</div>
-
+<!-- CUENTA -->
 
 <div class="side">
 
-<h3>
-Reglas de la comunidad
-</h3>
-
-
-<div class="rule">
-
-<span class="num">
-1
-</span>
-
-<span>
-
-<strong>
-Respeto siempre.
-</strong>
-
-<br>
-
-Sin insultos ni ataques personales.
-
-</span>
-
-</div>
-
-
-<div class="rule">
-
-<span class="num">
-2
-</span>
-
-<span>
-
-<strong>
-Compartí desde tu experiencia.
-</strong>
-
-<br>
-
-Aclarar cuándo es una opinión o experiencia propia.
-
-</span>
-
-</div>
-
-
-<div class="rule">
-
-<span class="num">
-3
-</span>
-
-<span>
-
-<strong>
-No reemplaza la normativa.
-</strong>
-
-<br>
-
-El foro no sustituye la normativa oficial.
-
-</span>
-
-</div>
-
-
-<div class="rule">
-
-<span class="num">
-4
-</span>
-
-<span>
-
-<strong>
-Enfoque en la seguridad.
-</strong>
-
-<br>
-
-Priorizamos el intercambio responsable.
-
-</span>
-
-</div>
-
-
-<div class="rule">
-
-<span class="num">
-5
-</span>
-
-<span>
-
-<strong>
-Sin spam.
-</strong>
-
-<br>
-
-No se permite publicidad no relacionada.
-
-</span>
-
-</div>
-
-
-</div>
-
-
-<div class="side">
 
 <div class="account">
 
-<h3 id="accountTitle">
+
+<h3 id="at">
 ¿Sos nuevo?
 </h3>
 
-<p id="accountText">
-Creá tu cuenta para participar en la Comunidad Foguista.
+
+<p id="ax">
+Creá tu cuenta para participar.
 </p>
 
 
 <button
 class="btn"
-id="accountButton"
-type="button">
+id="accountBtn">
 
 Crear cuenta
 
@@ -1817,24 +1455,21 @@ Crear cuenta
 class="status"
 id="status">
 
-Sesión iniciada como:
 
-<br>
-
-<strong id="userEmail">
+<strong id="uname">
+Usuario
 </strong>
 
-<br>
 
 <span
 class="condition"
-id="userCondition">
+id="ucond">
 </span>
 
 
 <button
 class="secondary"
-id="profileButton"
+id="profileBtn"
 type="button">
 
 ✏️ Mi perfil
@@ -1842,15 +1477,129 @@ type="button">
 </button>
 
 
+<a
+class="admin-link"
+id="adminLink"
+href="admin.html">
+
+⚙️ Administración
+
+</a>
+
+
 <button
 class="secondary"
-id="logoutButton"
+id="logoutBtn"
 type="button">
 
 Cerrar sesión
 
 </button>
 
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- TEMAS DESTACADOS -->
+
+<div class="side">
+
+<h3>
+📌 Temas destacados
+</h3>
+
+
+<div id="featured">
+
+<div class="topic">
+
+<span>
+Todavía no hay temas destacados.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- REGLAS -->
+
+<div class="side">
+
+<h3>
+Reglas de la comunidad
+</h3>
+
+
+<div class="rule">
+
+<div class="num">
+1
+</div>
+
+<div>
+Respeto entre todos los participantes.
+</div>
+
+</div>
+
+
+<div class="rule">
+
+<div class="num">
+2
+</div>
+
+<div>
+No publicar información falsa como si fuera normativa oficial.
+</div>
+
+</div>
+
+
+<div class="rule">
+
+<div class="num">
+3
+</div>
+
+<div>
+Las experiencias personales deben diferenciarse
+de los requisitos reglamentarios.
+</div>
+
+</div>
+
+
+<div class="rule">
+
+<div class="num">
+4
+</div>
+
+<div>
+No compartir datos personales ni información sensible.
+</div>
+
+</div>
+
+
+<div class="rule">
+
+<div class="num">
+5
+</div>
+
+<div>
+Utilizá el reporte cuando encuentres contenido inapropiado.
 </div>
 
 </div>
@@ -1860,10 +1609,43 @@ Cerrar sesión
 
 </aside>
 
-
 </div>
 
 </main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="foot">
+
+<div>
+
+<b>
+Foguista Uruguay
+</b>
+
+<br>
+
+<span>
+Comunidad para foguistas,
+operadores y estudiantes.
+</span>
+
+</div>
+
+<span>
+Compartir · Aprender · Mejorar la seguridad
+</span>
+
+</div>
+
+</footer>
+
 
 
 <!-- =====================================================
@@ -1872,7 +1654,7 @@ Cerrar sesión
 
 <div
 class="modal"
-id="authModal">
+id="auth">
 
 <div class="modal-box">
 
@@ -1885,94 +1667,100 @@ id="authModal">
 Crear cuenta
 </h2>
 
-<p id="authSubtitle">
-Registrate para participar en la Comunidad Foguista.
+<p id="authSub">
+Registrate para participar.
 </p>
 
 </div>
 
+
 <button
 class="close"
-id="authClose"
-type="button">
+data-close="auth">
 
 ×
-
 </button>
 
 </div>
 
 
+
 <label
 class="label"
-for="authEmail">
+for="email">
 
 Correo electrónico
 
 </label>
 
+
 <input
 class="modal-input"
-id="authEmail"
+id="email"
 type="email"
 autocomplete="email"
 placeholder="tu@email.com">
 
 
+
 <label
 class="label"
-for="authPassword">
+for="password">
 
 Contraseña
 
 </label>
 
+
 <input
 class="modal-input"
-id="authPassword"
+id="password"
 type="password"
 autocomplete="current-password"
 placeholder="Mínimo 6 caracteres">
 
 
+
+<div
+class="error"
+id="authErr">
+</div>
+
+
+
 <button
 class="modal-button"
-id="emailButton"
-type="button">
+id="emailBtn">
 
 Crear cuenta
 
 </button>
 
 
+
 <button
-class="modal-secondary"
-id="googleButton"
-type="button">
+class="modal-button"
+id="googleBtn">
 
 Continuar con Google
 
 </button>
 
 
+
 <button
 class="modal-secondary"
-id="toggleAuth"
-type="button">
+id="toggleAuth">
 
 Ya tengo una cuenta
 
 </button>
 
 
-<div
-class="error"
-id="authError">
 </div>
 
 </div>
 
-</div>
 
 
 <!-- =====================================================
@@ -1981,7 +1769,7 @@ id="authError">
 
 <div
 class="modal"
-id="profileModal">
+id="profile">
 
 <div class="modal-box">
 
@@ -1995,15 +1783,15 @@ Mi perfil
 </h2>
 
 <p>
-Completá tus datos para mostrarte en la comunidad.
+Estos datos aparecerán junto a tus publicaciones.
 </p>
 
 </div>
 
+
 <button
 class="close"
-id="profileClose"
-type="button">
+data-close="profile">
 
 ×
 
@@ -2012,79 +1800,109 @@ type="button">
 </div>
 
 
+
 <label
 class="label"
-for="profileName">
+for="pname">
 
 Nombre
 
 </label>
 
+
 <input
 class="modal-input"
-id="profileName"
+id="pname"
 type="text"
 maxlength="80"
 placeholder="Tu nombre">
 
 
+
 <label
 class="label"
-for="profileCondition">
+for="pcondition">
 
 Condición
 
 </label>
 
+
 <select
 class="modal-select"
-id="profileCondition">
+id="pcondition">
 
-<option value="">
-Seleccionar
-</option>
-
-<option value="Estudiante de Foguista">
+<option>
 Estudiante de Foguista
 </option>
 
-<option value="Foguista">
+<option>
 Foguista
 </option>
 
-<option value="Operador de generadores de vapor">
-Operador de generadores de vapor
+<option>
+Operador de caldera
 </option>
 
-<option value="Técnico">
+<option>
+Foguista y operador
+</option>
+
+<option>
+Mantenimiento
+</option>
+
+<option>
 Técnico
 </option>
 
-<option value="Otro">
-Otro
+<option>
+Otra
 </option>
 
 </select>
 
 
+
+<div
+class="current"
+id="current">
+
+Condición actual
+
+</div>
+
+
+
+<div
+class="error"
+id="profileErr">
+</div>
+
+
+<div
+class="success"
+id="profileOk">
+
+Perfil guardado correctamente.
+
+</div>
+
+
+
 <button
 class="modal-button"
-id="saveProfile"
-type="button">
+id="saveProfile">
 
 Guardar perfil
 
 </button>
 
 
-<div
-class="error"
-id="profileError">
 </div>
 
 </div>
 
-</div>
 
 
 <!-- =====================================================
@@ -2093,7 +1911,7 @@ id="profileError">
 
 <div
 class="modal"
-id="postModal">
+id="post">
 
 <div class="modal-box">
 
@@ -2107,15 +1925,15 @@ Nueva pregunta
 </h2>
 
 <p>
-Compartí tu duda con la comunidad de foguistas.
+Compartí tu duda con la comunidad.
 </p>
 
 </div>
 
+
 <button
 class="close"
-id="postClose"
-type="button">
+data-close="post">
 
 ×
 
@@ -2124,127 +1942,79 @@ type="button">
 </div>
 
 
+
 <label
 class="label"
-for="postCategory">
+for="pcat">
 
 Categoría
 
 </label>
 
+
 <select
 class="modal-select"
-id="postCategory">
-
-<option>
-Preguntas técnicas
-</option>
-
-<option>
-Experiencias de trabajo
-</option>
-
-<option>
-Estudio y examen
-</option>
-
-<option>
-Normativa URSEA
-</option>
-
-<option>
-Tratamiento del agua
-</option>
-
-<option>
-Seguridad y enclavamientos
-</option>
-
-<option>
-Equipos y mantenimiento
-</option>
-
-<option>
-Presentaciones
-</option>
-
+id="pcat">
 </select>
+
 
 
 <label
 class="label"
-for="postTitle">
+for="ptitle">
 
 Título
 
 </label>
 
+
 <input
 class="modal-input"
-id="postTitle"
+id="ptitle"
 type="text"
-maxlength="120"
-placeholder="Ej.: ¿Cada cuánto se realiza la purga de fondo?">
+maxlength="150"
+placeholder="¿Cuál es tu pregunta?">
+
 
 
 <label
 class="label"
-for="postContent">
+for="pcontent">
 
 Pregunta
 
 </label>
 
+
 <textarea
 class="modal-textarea"
-id="postContent"
+id="pcontent"
 maxlength="5000"
-placeholder="Escribí tu pregunta o experiencia con el mayor detalle posible..."></textarea>
+placeholder="Explicá tu duda o situación...">
+</textarea>
+
+
+
+<div
+class="error"
+id="postErr">
+</div>
+
 
 
 <button
 class="modal-button"
-id="publishButton"
-type="button">
+id="publish">
 
 Publicar pregunta
 
 </button>
 
 
-<div
-class="error"
-id="postError">
 </div>
 
 </div>
 
-</div>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="footer">
-
-<div class="footer-inner">
-
-<strong>
-FOGUISTA URUGUAY
-</strong>
-
-<span>
-Conocimiento técnico para un trabajo más seguro
-</span>
-
-<span>
-Comunidad · Uruguay
-</span>
-
-</div>
-
-</footer>
 
 
 <!-- =====================================================
@@ -2253,38 +2023,47 @@ Comunidad · Uruguay
 
 <script type="module">
 
+
+/* =====================================================
+   IMPORTACIONES
+===================================================== */
+
 import {
     initializeApp
 }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 
 import {
     getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
+    onAuthStateChanged,
     GoogleAuthProvider,
     signInWithPopup,
-    onAuthStateChanged,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
     signOut
 }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
 import {
     getFirestore,
     collection,
     addDoc,
+    serverTimestamp,
     query,
     orderBy,
     onSnapshot,
-    serverTimestamp,
+    getDocs,
     doc,
     getDoc,
-    setDoc,
-    getDocs
+    setDoc
 }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
 
 
 /* =====================================================
@@ -2313,706 +2092,918 @@ const firebaseConfig = {
 
     measurementId:
     "G-GS53T440NK"
+
 };
+
 
 
 const app =
 initializeApp(firebaseConfig);
 
+
 const auth =
 getAuth(app);
+
 
 const db =
 getFirestore(app);
 
-const googleProvider =
+
+const google =
 new GoogleAuthProvider();
 
 
+
 /* =====================================================
-   ELEMENTOS
+   DATOS
 ===================================================== */
 
-const search =
-document.getElementById("search");
+const C = [
 
-const filter =
-document.getElementById("filter");
+[
+"💬",
+"Preguntas técnicas",
+"Dudas y consultas sobre operación y funcionamiento."
+],
 
-const sort =
-document.getElementById("sort");
+[
+"⚙️",
+"Experiencias de trabajo",
+"Situaciones reales, aprendizajes y buenas prácticas."
+],
 
-const list =
-document.getElementById("list");
+[
+"📖",
+"Estudio y examen",
+"Preparación, material y consejos para estudiar."
+],
 
-const count =
-document.getElementById("count");
+[
+"📜",
+"Normativa URSEA",
+"Discusión sobre reglamentos oficiales."
+],
 
-const authModal =
-document.getElementById("authModal");
+[
+"💧",
+"Tratamiento del agua",
+"Calidad del agua, purgas y tratamiento químico."
+],
 
-const postModal =
-document.getElementById("postModal");
+[
+"🛡️",
+"Seguridad y enclavamientos",
+"Alarmas, protecciones y procedimientos."
+],
 
-const profileModal =
-document.getElementById("profileModal");
+[
+"🔧",
+"Equipos y mantenimiento",
+"Calderas, bombas, quemadores y válvulas."
+],
 
-const authEmail =
-document.getElementById("authEmail");
+[
+"👥",
+"Presentaciones",
+"Conocé a otros miembros de la comunidad."
+]
 
-const authPassword =
-document.getElementById("authPassword");
-
-const authError =
-document.getElementById("authError");
-
-const profileError =
-document.getElementById("profileError");
-
-const postError =
-document.getElementById("postError");
-
-const profileName =
-document.getElementById("profileName");
-
-const profileCondition =
-document.getElementById("profileCondition");
-
-const userEmail =
-document.getElementById("userEmail");
-
-const userCondition =
-document.getElementById("userCondition");
-
-const status =
-document.getElementById("status");
-
-const accountTitle =
-document.getElementById("accountTitle");
-
-const accountText =
-document.getElementById("accountText");
-
-const accountButton =
-document.getElementById("accountButton");
-
-const emailButton =
-document.getElementById("emailButton");
-
-const googleButton =
-document.getElementById("googleButton");
-
-const toggleAuth =
-document.getElementById("toggleAuth");
-
-const publishButton =
-document.getElementById("publishButton");
-
-const postTitle =
-document.getElementById("postTitle");
-
-const postContent =
-document.getElementById("postContent");
-
-const postCategory =
-document.getElementById("postCategory");
-
-const newQuestionButton =
-document.getElementById("newQuestionButton");
+];
 
 
-let currentUser = null;
+let user =
+null;
 
-let authMode = "register";
+let profile =
+null;
 
-let posts = [];
+let posts =
+[];
+
+let mode =
+"register";
+
+let isAdmin =
+false;
+
 
 
 /* =====================================================
    UTILIDADES
 ===================================================== */
 
-function $(id){
+const $ =
+id =>
+document.getElementById(id);
 
-    return document.getElementById(id);
+
+const esc =
+v =>
+
+String(v ?? "")
+
+.replaceAll("&","&amp;")
+
+.replaceAll("<","&lt;")
+
+.replaceAll(">","&gt;")
+
+.replaceAll('"',"&quot;")
+
+.replaceAll("'","&#039;");
+
+
+function show(
+    id,
+    value
+){
+
+    $(id)
+    .classList
+    .toggle(
+        "show",
+        value
+    );
 
 }
 
 
-function escapeHtml(value){
+function error(
+    id,
+    msg
+){
 
-    return String(value ?? "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
+    $(id).textContent =
+    msg;
+
+    $(id).style.display =
+    "block";
+
 }
 
 
-function formatDate(timestamp){
+function clear(
+    id
+){
 
-    if(!timestamp){
+    $(id).textContent =
+    "";
+
+    $(id).style.display =
+    "none";
+
+}
+
+
+function date(
+    t
+){
+
+    if(!t){
+
         return "Ahora";
+
     }
+
 
     try{
 
-        return timestamp
-            .toDate()
-            .toLocaleString(
-                "es-UY",
-                {
-                    dateStyle:"short",
-                    timeStyle:"short"
-                }
-            );
+        return t
+        .toDate()
+        .toLocaleString(
+            "es-UY",
+            {
+                dateStyle:"short",
+                timeStyle:"short"
+            }
+        );
 
     }catch{
 
         return "Ahora";
 
     }
-}
-
-
-function showModal(modal){
-
-    modal.classList.add("show");
 
 }
 
 
-function hideModal(modal){
+function ferr(e){
 
-    modal.classList.remove("show");
-
-}
-
-
-function showError(element,message){
-
-    element.textContent = message;
-
-    element.style.display = "block";
-
-}
-
-
-function hideError(element){
-
-    element.textContent = "";
-
-    element.style.display = "none";
-
-}
-
-
-function firebaseError(error){
-
-    const code =
-    error?.code || "";
-
-    const messages = {
+    return({
 
         "auth/email-already-in-use":
-        "Ese correo ya tiene una cuenta. Intentá iniciar sesión.",
+        "Ese correo ya tiene una cuenta.",
 
         "auth/invalid-email":
-        "El correo electrónico no es válido.",
+        "Correo no válido.",
 
         "auth/weak-password":
         "La contraseña debe tener al menos 6 caracteres.",
 
         "auth/invalid-credential":
-        "El correo o la contraseña no son correctos.",
+        "Correo o contraseña incorrectos.",
 
         "auth/popup-closed-by-user":
-        "Se cerró la ventana de Google.",
+        "Se cerró Google.",
 
         "auth/popup-blocked":
-        "El navegador bloqueó la ventana de Google.",
-
-        "auth/unauthorized-domain":
-        "Este dominio todavía no está autorizado en Firebase.",
+        "El navegador bloqueó Google.",
 
         "permission-denied":
         "Firebase rechazó la operación por las reglas de seguridad."
 
-    };
+    }[e?.code] ||
 
-    return messages[code]
-    ||
-    "No se pudo completar la operación.";
+    "No se pudo completar la operación. Intentá nuevamente.");
 
 }
+
 
 
 /* =====================================================
-   AUTENTICACIÓN
+   CATEGORÍAS
 ===================================================== */
 
-function setAuthMode(mode){
+$("cats").innerHTML =
 
-    authMode = mode;
+C.map(
 
-    hideError(authError);
+x =>
 
-    if(mode === "register"){
+`
 
-        $("authTitle").textContent =
-        "Crear cuenta";
+<article
+class="cat"
+data-cat="${esc(x[1])}">
 
-        $("authSubtitle").textContent =
-        "Registrate para participar en la Comunidad Foguista.";
+<div class="cat-icon">
+${x[0]}
+</div>
 
-        emailButton.textContent =
-        "Crear cuenta";
+<h3>
+${esc(x[1])}
+</h3>
 
-        toggleAuth.textContent =
-        "Ya tengo una cuenta";
+<p>
+${esc(x[2])}
+</p>
 
-    }else{
+<small>
+Ver preguntas
+</small>
 
-        $("authTitle").textContent =
-        "Iniciar sesión";
+</article>
 
-        $("authSubtitle").textContent =
-        "Ingresá para participar en la Comunidad Foguista.";
+`
 
-        emailButton.textContent =
-        "Iniciar sesión";
-
-        toggleAuth.textContent =
-        "Crear una cuenta";
-
-    }
-
-}
+).join("");
 
 
-function openAuth(){
+$("filter").innerHTML =
 
-    setAuthMode("register");
+'<option value="">Todas las categorías</option>' +
 
-    authEmail.value = "";
-    authPassword.value = "";
+C.map(
 
-    showModal(authModal);
+x =>
 
-}
+`<option>${esc(x[1])}</option>`
+
+).join("");
 
 
-accountButton.addEventListener(
+$("pcat").innerHTML =
+
+C.map(
+
+x =>
+
+`<option>${esc(x[1])}</option>`
+
+).join("");
+
+
+
+/* =====================================================
+   SELECCIÓN DE CATEGORÍA
+===================================================== */
+
+$("cats")
+.addEventListener(
     "click",
-    () => {
+    e => {
 
-        if(currentUser){
-
-            openPostModal();
-
-        }else{
-
-            openAuth();
-
-        }
-
-    }
-);
-
-
-newQuestionButton.addEventListener(
-    "click",
-    () => {
-
-        if(currentUser){
-
-            openPostModal();
-
-        }else{
-
-            openAuth();
-
-        }
-
-    }
-);
-
-
-$("authClose").addEventListener(
-    "click",
-    () => hideModal(authModal)
-);
-
-
-toggleAuth.addEventListener(
-    "click",
-    () => {
-
-        setAuthMode(
-            authMode === "register"
-            ? "login"
-            : "register"
+        const x =
+        e.target.closest(
+            "[data-cat]"
         );
 
-    }
-);
 
-
-emailButton.addEventListener(
-    "click",
-    async () => {
-
-        hideError(authError);
-
-        const email =
-        authEmail.value.trim();
-
-        const password =
-        authPassword.value;
-
-        if(!email){
-
-            showError(
-                authError,
-                "Ingresá tu correo electrónico."
-            );
+        if(!x){
 
             return;
 
         }
 
-        if(password.length < 6){
 
-            showError(
-                authError,
-                "La contraseña debe tener al menos 6 caracteres."
-            );
+        $("filter").value =
+        x.dataset.cat;
 
-            return;
 
-        }
+        render();
 
-        emailButton.disabled = true;
 
-        try{
-
-            if(authMode === "register"){
-
-                await createUserWithEmailAndPassword(
-                    auth,
-                    email,
-                    password
-                );
-
-            }else{
-
-                await signInWithEmailAndPassword(
-                    auth,
-                    email,
-                    password
-                );
-
-            }
-
-            hideModal(authModal);
-
-        }catch(error){
-
-            showError(
-                authError,
-                firebaseError(error)
-            );
-
-        }finally{
-
-            emailButton.disabled = false;
-
-        }
+        document
+        .querySelector(".posts")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
     }
 );
 
-
-googleButton.addEventListener(
-    "click",
-    async () => {
-
-        hideError(authError);
-
-        googleButton.disabled = true;
-
-        try{
-
-            await signInWithPopup(
-                auth,
-                googleProvider
-            );
-
-            hideModal(authModal);
-
-        }catch(error){
-
-            showError(
-                authError,
-                firebaseError(error)
-            );
-
-        }finally{
-
-            googleButton.disabled = false;
-
-        }
-
-    }
-);
-
-
-$("logoutButton").addEventListener(
-    "click",
-    async () => {
-
-        await signOut(auth);
-
-    }
-);
 
 
 /* =====================================================
    PERFIL
 ===================================================== */
 
-$("profileButton").addEventListener(
-    "click",
-    async () => {
+async function loadProfile(){
 
-        if(!currentUser) return;
+    if(!user){
 
-        hideError(profileError);
+        profile =
+        null;
 
-        try{
-
-            const snap =
-            await getDoc(
-                doc(
-                    db,
-                    "users",
-                    currentUser.uid
-                )
-            );
-
-            if(snap.exists()){
-
-                const data =
-                snap.data();
-
-                profileName.value =
-                data.name || "";
-
-                profileCondition.value =
-                data.condition || "";
-
-            }else{
-
-                profileName.value =
-                currentUser.displayName || "";
-
-                profileCondition.value =
-                "";
-
-            }
-
-            showModal(profileModal);
-
-        }catch(error){
-
-            console.error(error);
-
-            showError(
-                profileError,
-                "No se pudo cargar el perfil."
-            );
-
-        }
+        return;
 
     }
-);
 
 
-$("profileClose").addEventListener(
-    "click",
-    () => hideModal(profileModal)
-);
+    const s =
+    await getDoc(
+        doc(
+            db,
+            "users",
+            user.uid
+        )
+    );
 
 
-$("saveProfile").addEventListener(
-    "click",
-    async () => {
+    profile =
+    s.exists()
+    ? s.data()
+    : null;
 
-        if(!currentUser) return;
+}
 
-        hideError(profileError);
-
-        const name =
-        profileName.value.trim();
-
-        const condition =
-        profileCondition.value;
-
-        if(!name){
-
-            showError(
-                profileError,
-                "Ingresá tu nombre."
-            );
-
-            return;
-
-        }
-
-        try{
-
-            await setDoc(
-                doc(
-                    db,
-                    "users",
-                    currentUser.uid
-                ),
-                {
-                    name,
-                    condition,
-                    email:
-                    currentUser.email || "",
-                    updatedAt:
-                    serverTimestamp()
-                },
-                {
-                    merge:true
-                }
-            );
-
-            userEmail.textContent =
-            name;
-
-            userCondition.textContent =
-            condition;
-
-            hideModal(profileModal);
-
-        }catch(error){
-
-            console.error(error);
-
-            showError(
-                profileError,
-                "No se pudo guardar el perfil."
-            );
-
-        }
-
-    }
-);
 
 
 /* =====================================================
-   ESTADO DE AUTENTICACIÓN
+   COMPROBAR ADMINISTRADOR
 ===================================================== */
 
-onAuthStateChanged(
-    auth,
-    async user => {
+async function checkAdmin(){
 
-        currentUser = user;
+    if(!user){
 
-        if(user){
+        isAdmin =
+        false;
 
-            status.style.display =
-            "block";
+        return;
 
-            accountTitle.textContent =
-            "Cuenta conectada";
+    }
 
-            accountText.textContent =
-            "Ya podés participar en la Comunidad Foguista.";
 
-            accountButton.textContent =
-            "＋ Nueva pregunta";
+    try{
 
-            userEmail.textContent =
-            user.displayName ||
-            user.email ||
-            "Usuario";
+        const s =
+        await getDoc(
+            doc(
+                db,
+                "admins",
+                user.uid
+            )
+        );
 
-            try{
 
-                const profile =
-                await getDoc(
-                    doc(
-                        db,
-                        "users",
-                        user.uid
-                    )
-                );
+        isAdmin =
+        s.exists()
+        &&
+        s.data().admin === true;
 
-                if(profile.exists()){
 
-                    const data =
-                    profile.data();
+    }catch(e){
 
-                    userEmail.textContent =
-                    data.name ||
-                    user.displayName ||
-                    user.email ||
-                    "Usuario";
+        console.error(e);
 
-                    userCondition.textContent =
-                    data.condition ||
-                    "";
+        isAdmin =
+        false;
 
-                }
+    }
 
-            }catch(error){
+}
 
-                console.warn(
-                    "Perfil no disponible:",
-                    error
-                );
 
+
+/* =====================================================
+   PERFIL COMPLETO
+===================================================== */
+
+function complete(){
+
+    return !!(
+        profile?.name
+        &&
+        profile?.condition
+    );
+
+}
+
+
+
+/* =====================================================
+   CUENTA
+===================================================== */
+
+function account(){
+
+    if(!user){
+
+        $("at").textContent =
+        "¿Sos nuevo?";
+
+
+        $("ax").textContent =
+        "Creá tu cuenta para participar.";
+
+
+        $("accountBtn").textContent =
+        "Crear cuenta";
+
+
+        $("status").style.display =
+        "none";
+
+
+        $("adminLink").style.display =
+        "none";
+
+
+        return;
+
+    }
+
+
+    $("status").style.display =
+    "block";
+
+
+    $("adminLink").style.display =
+    isAdmin
+    ? "flex"
+    : "none";
+
+
+    $("uname").textContent =
+    profile?.name
+    ||
+    user.displayName
+    ||
+    "Usuario";
+
+
+    $("ucond").textContent =
+    profile?.condition
+    ||
+    "⚠️ Perfil pendiente";
+
+
+    if(!complete()){
+
+        $("at").textContent =
+        "Completá tu perfil";
+
+
+        $("ax").textContent =
+        "Antes de participar necesitamos tu nombre y condición.";
+
+
+        $("accountBtn").textContent =
+        "Completar perfil";
+
+    }else{
+
+        $("at").textContent =
+        "Cuenta conectada";
+
+
+        $("ax").textContent =
+        "Ya podés participar.";
+
+
+        $("accountBtn").textContent =
+        "＋ Nueva pregunta";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   ABRIR PERFIL
+===================================================== */
+
+function openProfile(){
+
+    if(!user){
+
+        return;
+
+    }
+
+
+    $("pname").value =
+    profile?.name
+    ||
+    user.displayName
+    ||
+    "";
+
+
+    $("pcondition").value =
+    profile?.condition
+    ||
+    "Estudiante de Foguista";
+
+
+    $("current").innerHTML =
+
+    `Condición actual: <b>${esc(
+        $("pcondition").value
+    )}</b>`;
+
+
+    clear("profileErr");
+
+    clear("profileOk");
+
+
+    show(
+        "profile",
+        true
+    );
+
+}
+
+
+
+$("pcondition").onchange = () => {
+
+    $("current").innerHTML =
+
+    `Condición actual: <b>${esc(
+        $("pcondition").value
+    )}</b>`;
+
+};
+
+
+
+/* =====================================================
+   GUARDAR PERFIL
+===================================================== */
+
+$("saveProfile").onclick =
+async () => {
+
+    clear("profileErr");
+
+    clear("profileOk");
+
+
+    const n =
+    $("pname")
+    .value
+    .trim();
+
+
+    const c =
+    $("pcondition")
+    .value;
+
+
+    if(n.length < 2){
+
+        error(
+            "profileErr",
+            "Ingresá tu nombre."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await setDoc(
+
+            doc(
+                db,
+                "users",
+                user.uid
+            ),
+
+            {
+
+                name:n,
+
+                condition:c,
+
+                updatedAt:
+                serverTimestamp()
+
+            },
+
+            {
+                merge:true
             }
+
+        );
+
+
+        profile = {
+
+            ...(profile || {}),
+
+            name:n,
+
+            condition:c
+
+        };
+
+
+        account();
+
+
+        $("profileOk")
+        .style
+        .display =
+        "block";
+
+
+        setTimeout(
+            () =>
+            show(
+                "profile",
+                false
+            ),
+            600
+        );
+
+
+    }catch(e){
+
+        error(
+            "profileErr",
+            ferr(e)
+        );
+
+    }
+
+};
+
+
+
+/* =====================================================
+   AUTENTICACIÓN
+===================================================== */
+
+function authMode(m){
+
+    mode =
+    m;
+
+
+    $("authTitle").textContent =
+    m === "register"
+    ? "Crear cuenta"
+    : "Iniciar sesión";
+
+
+    $("authSub").textContent =
+    m === "register"
+    ? "Registrate para participar."
+    : "Ingresá para participar.";
+
+
+    $("emailBtn").textContent =
+    m === "register"
+    ? "Crear cuenta"
+    : "Iniciar sesión";
+
+
+    $("toggleAuth").textContent =
+    m === "register"
+    ? "Ya tengo una cuenta"
+    : "Crear una cuenta";
+
+
+    clear("authErr");
+
+}
+
+
+
+function openAuth(){
+
+    authMode(
+        "register"
+    );
+
+
+    $("email").value =
+    "";
+
+
+    $("password").value =
+    "";
+
+
+    show(
+        "auth",
+        true
+    );
+
+}
+
+
+
+/* =====================================================
+   EMAIL / CONTRASEÑA
+===================================================== */
+
+$("emailBtn").onclick =
+async () => {
+
+    clear("authErr");
+
+
+    const e =
+    $("email")
+    .value
+    .trim();
+
+
+    const p =
+    $("password")
+    .value;
+
+
+    if(!e){
+
+        error(
+            "authErr",
+            "Ingresá tu correo."
+        );
+
+        return;
+
+    }
+
+
+    if(p.length < 6){
+
+        error(
+            "authErr",
+            "La contraseña debe tener al menos 6 caracteres."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        if(mode === "register"){
+
+            await createUserWithEmailAndPassword(
+                auth,
+                e,
+                p
+            );
 
         }else{
 
-            status.style.display =
-            "none";
-
-            accountTitle.textContent =
-            "¿Sos nuevo?";
-
-            accountText.textContent =
-            "Creá tu cuenta para participar en la Comunidad Foguista.";
-
-            accountButton.textContent =
-            "Crear cuenta";
-
-            userEmail.textContent =
-            "";
-
-            userCondition.textContent =
-            "";
+            await signInWithEmailAndPassword(
+                auth,
+                e,
+                p
+            );
 
         }
 
+
+        show(
+            "auth",
+            false
+        );
+
+
+    }catch(x){
+
+        error(
+            "authErr",
+            ferr(x)
+        );
+
     }
-);
+
+};
+
+
+
+/* =====================================================
+   GOOGLE
+===================================================== */
+
+$("googleBtn").onclick =
+async () => {
+
+    try{
+
+        await signInWithPopup(
+            auth,
+            google
+        );
+
+
+        show(
+            "auth",
+            false
+        );
+
+
+    }catch(e){
+
+        error(
+            "authErr",
+            ferr(e)
+        );
+
+    }
+
+};
+
+
+
+$("toggleAuth").onclick =
+() => {
+
+    authMode(
+        mode === "register"
+        ? "login"
+        : "register"
+    );
+
+};
+
+
+
+/* =====================================================
+   CERRAR SESIÓN
+===================================================== */
+
+$("logoutBtn").onclick =
+() => {
+
+    signOut(
+        auth
+    );
+
+};
+
+
+
+/* =====================================================
+   PERFIL
+===================================================== */
+
+$("profileBtn").onclick =
+openProfile;
+
 
 
 /* =====================================================
    NUEVA PREGUNTA
 ===================================================== */
 
-function openPostModal(){
+function openPost(){
 
-    if(!currentUser){
+    if(!user){
 
         openAuth();
 
@@ -3020,390 +3011,340 @@ function openPostModal(){
 
     }
 
-    hideError(postError);
 
-    postTitle.value = "";
+    if(!complete()){
 
-    postContent.value = "";
+        openProfile();
 
-    postCategory.value =
+        return;
+
+    }
+
+
+    $("ptitle").value =
+    "";
+
+
+    $("pcontent").value =
+    "";
+
+
+    $("pcat").value =
     "Preguntas técnicas";
 
-    showModal(postModal);
+
+    clear("postErr");
+
+
+    show(
+        "post",
+        true
+    );
 
 }
 
 
-$("postClose").addEventListener(
-    "click",
-    () => hideModal(postModal)
-);
 
+$("accountBtn").onclick =
+() => {
 
-publishButton.addEventListener(
-    "click",
-    async () => {
+    if(!user){
 
-        hideError(postError);
-
-        if(!currentUser){
-
-            hideModal(postModal);
-
-            openAuth();
-
-            return;
-
-        }
-
-        const title =
-        postTitle.value.trim();
-
-        const content =
-        postContent.value.trim();
-
-        const category =
-        postCategory.value;
-
-        if(title.length < 5){
-
-            showError(
-                postError,
-                "El título debe tener al menos 5 caracteres."
-            );
-
-            return;
-
-        }
-
-        if(content.length < 10){
-
-            showError(
-                postError,
-                "La pregunta debe tener al menos 10 caracteres."
-            );
-
-            return;
-
-        }
-
-        publishButton.disabled =
-        true;
-
-        publishButton.textContent =
-        "Publicando...";
-
-        try{
-
-            let authorName =
-            currentUser.displayName ||
-            currentUser.email ||
-            "Usuario";
-
-            let authorCondition =
-            "";
-
-            try{
-
-                const profile =
-                await getDoc(
-                    doc(
-                        db,
-                        "users",
-                        currentUser.uid
-                    )
-                );
-
-                if(profile.exists()){
-
-                    const data =
-                    profile.data();
-
-                    authorName =
-                    data.name ||
-                    authorName;
-
-                    authorCondition =
-                    data.condition ||
-                    "";
-
-                }
-
-            }catch{}
-
-            await addDoc(
-                collection(
-                    db,
-                    "posts"
-                ),
-                {
-
-                    title,
-
-                    content,
-
-                    category,
-
-                    authorId:
-                    currentUser.uid,
-
-                    authorEmail:
-                    currentUser.email || "",
-
-                    authorName,
-
-                    authorCondition,
-
-                    pinned:false,
-
-                    createdAt:
-                    serverTimestamp()
-
-                }
-            );
-
-            hideModal(postModal);
-
-        }catch(error){
-
-            console.error(error);
-
-            showError(
-                postError,
-                firebaseError(error)
-            );
-
-        }finally{
-
-            publishButton.disabled =
-            false;
-
-            publishButton.textContent =
-            "Publicar pregunta";
-
-        }
+        openAuth();
 
     }
-);
+
+    else if(!complete()){
+
+        openProfile();
+
+    }
+
+    else{
+
+        openPost();
+
+    }
+
+};
+
+
+$("newBtn").onclick =
+openPost;
+
 
 
 /* =====================================================
-   CARGAR PUBLICACIONES
+   PUBLICAR
 ===================================================== */
 
-const postsQuery =
-query(
-    collection(db,"posts"),
-    orderBy(
-        "createdAt",
-        "desc"
-    )
-);
+$("publish").onclick =
+async () => {
+
+    clear("postErr");
 
 
-onSnapshot(
-    postsQuery,
+    const title =
+    $("ptitle")
+    .value
+    .trim();
 
-    async snapshot => {
 
-        posts = [];
+    const content =
+    $("pcontent")
+    .value
+    .trim();
 
-        for(const postDoc of snapshot.docs){
 
-            const data =
-            postDoc.data();
+    if(title.length < 5){
 
-            let replyCount = 0;
+        error(
+            "postErr",
+            "El título debe tener al menos 5 caracteres."
+        );
 
-            try{
+        return;
 
-                const replies =
-                await getDocs(
-                    collection(
-                        db,
-                        "posts",
-                        postDoc.id,
-                        "replies"
-                    )
-                );
+    }
 
-                replyCount =
-                replies.size;
 
-            }catch(error){
+    if(content.length < 10){
 
-                console.warn(
-                    "No se pudo contar respuestas:",
-                    error
-                );
+        error(
+            "postErr",
+            "La pregunta debe tener al menos 10 caracteres."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await addDoc(
+
+            collection(
+                db,
+                "posts"
+            ),
+
+            {
+
+                title,
+
+                content,
+
+                category:
+                $("pcat").value,
+
+                authorId:
+                user.uid,
+
+                authorName:
+                profile.name,
+
+                authorCondition:
+                profile.condition,
+
+                createdAt:
+                serverTimestamp(),
+
+                updatedAt:
+                null,
+
+                pinned:
+                false
 
             }
 
-            posts.push({
+        );
 
-                id:
-                postDoc.id,
 
-                ...data,
+        show(
+            "post",
+            false
+        );
 
-                replyCount
 
-            });
+    }catch(e){
 
-        }
-
-        render();
-
-    },
-
-    error => {
-
-        console.error(error);
-
-        list.innerHTML = `
-
-            <div class="empty">
-
-                <strong>
-                No se pudieron cargar las publicaciones
-                </strong>
-
-                Revisá la conexión con Firebase.
-
-            </div>
-
-        `;
+        error(
+            "postErr",
+            ferr(e)
+        );
 
     }
-);
+
+};
+
 
 
 /* =====================================================
-   RENDERIZAR
+   CONTADORES DE RESPUESTAS
 ===================================================== */
 
-function render(){
+async function counts(){
 
-    let filtered =
+    await Promise.all(
+
+        posts.map(
+            async p => {
+
+                try{
+
+                    p.replyCount =
+
+                    (
+                        await getDocs(
+
+                            collection(
+                                db,
+                                "posts",
+                                p.id,
+                                "replies"
+                            )
+
+                        )
+                    ).size;
+
+
+                }catch{
+
+                    p.replyCount =
+                    0;
+
+                }
+
+            }
+        )
+
+    );
+
+}
+
+
+
+/* =====================================================
+   RENDER PUBLICACIONES
+===================================================== */
+
+async function render(){
+
+    let a =
     [...posts];
 
 
-    const searchText =
-    search.value
-        .trim()
-        .toLowerCase();
+    const q =
+    $("search")
+    .value
+    .trim()
+    .toLowerCase();
 
 
-    const selectedCategory =
-    filter.value;
+    const c =
+    $("filter")
+    .value;
 
 
-    const selectedSort =
-    sort.value;
+    if(c){
 
-
-    if(searchText){
-
-        filtered =
-        filtered.filter(
-            post => {
-
-                const text = `
-
-                    ${post.title || ""}
-
-                    ${post.content || ""}
-
-                    ${post.category || ""}
-
-                    ${post.authorName || ""}
-
-                    ${post.authorEmail || ""}
-
-                `
-                .toLowerCase();
-
-                return text.includes(
-                    searchText
-                );
-
-            }
+        a =
+        a.filter(
+            p =>
+            p.category === c
         );
 
     }
 
 
-    if(selectedCategory){
+    if(q){
 
-        filtered =
-        filtered.filter(
-            post =>
-            post.category ===
-            selectedCategory
+        a =
+        a.filter(
+            p =>
+
+            `${p.title}
+            ${p.content}
+            ${p.authorName}
+            ${p.category}`
+
+            .toLowerCase()
+
+            .includes(q)
+
         );
 
     }
 
 
-    if(selectedSort === "answers"){
+    if(
+        $("sort").value ===
+        "answers"
+    ){
 
-        filtered.sort(
-            (a,b) =>
-            (b.replyCount || 0) -
-            (a.replyCount || 0)
+        a.sort(
+            (x,y) =>
+            (y.replyCount || 0)
+            -
+            (x.replyCount || 0)
         );
 
-    }else{
+    }
 
-        filtered.sort(
-            (a,b) => {
+    else{
 
-                const aDate =
-                a.createdAt?.toMillis
-                ? a.createdAt.toMillis()
-                : 0;
+        a.sort(
 
-                const bDate =
-                b.createdAt?.toMillis
-                ? b.createdAt.toMillis()
-                : 0;
+            (x,y) =>
 
-                return bDate - aDate;
+            (
+                y.createdAt
+                ?.toMillis?.()
+                ||
+                0
+            )
 
-            }
+            -
+
+            (
+                x.createdAt
+                ?.toMillis?.()
+                ||
+                0
+            )
+
         );
 
     }
 
 
-    count.textContent =
-    `${filtered.length} ${
-        filtered.length === 1
+    $("count").textContent =
+
+    `${a.length} ${
+        a.length === 1
         ? "publicación"
         : "publicaciones"
     }`;
 
 
-    list.innerHTML = "";
+    if(!a.length){
 
+        $("list").innerHTML =
 
-    if(filtered.length === 0){
+        `
 
-        list.innerHTML = `
+        <div class="empty">
 
-            <div class="empty">
+        🔎
 
-                <div style="font-size:32px;">
-                🔎
-                </div>
+        <strong>
+        No encontramos preguntas
+        </strong>
 
-                <strong>
-                No encontramos preguntas
-                </strong>
+        Probá con otra búsqueda o categoría.
 
-                Probá con otra búsqueda o categoría.
-
-            </div>
+        </div>
 
         `;
 
@@ -3412,265 +3353,229 @@ function render(){
     }
 
 
-    filtered.forEach(
-        post => {
+    $("list").innerHTML =
+    "";
+
+
+    a.forEach(
+        p => {
 
             const card =
             document.createElement(
                 "article"
             );
 
+
             card.className =
-            "card";
+            "card" +
+            (
+                p.pinned
+                ? " pinned"
+                : ""
+            );
 
-            if(post.pinned){
 
-                card.classList.add(
-                    "pinned"
-                );
+            card.innerHTML =
 
+            `
+
+            <span class="tag">
+
+            ${esc(
+                p.category
+                ||
+                "Sin categoría"
+            )}
+
+            </span>
+
+
+            ${
+                p.pinned
+
+                ?
+
+                '<span class="pin">📌 Destacado</span>'
+
+                :
+
+                ''
             }
 
 
-            const pinned =
-            post.pinned
-            ?
-            `
-            <span class="pin">
-            📌 Destacada
+            <h3>
+
+            ${esc(p.title)}
+
+            </h3>
+
+
+            <div class="content">
+
+            ${esc(p.content)}
+
+            </div>
+
+
+            <div class="meta">
+
+            <span>
+
+            👤
+            ${esc(
+                p.authorName
+                ||
+                "Usuario"
+            )}
+
             </span>
-            `
-            :
-            "";
 
 
-            card.innerHTML = `
+            ${
+                p.authorCondition
 
-                <span class="tag">
+                ?
 
-                    ${escapeHtml(
-                        post.category ||
-                        "General"
-                    )}
+                `
+
+                <span>
+                ·
+                </span>
+
+                <span class="condition">
+
+                ${esc(
+                    p.authorCondition
+                )}
 
                 </span>
 
-                ${pinned}
+                `
+
+                :
+
+                ""
+            }
 
 
-                <h3>
-
-                    ${escapeHtml(
-                        post.title ||
-                        "Sin título"
-                    )}
-
-                </h3>
+            <span>
+            ·
+            </span>
 
 
-                <div class="content">
+            <span>
 
-                    ${escapeHtml(
-                        post.content ||
-                        ""
-                    )}
+            ${date(
+                p.createdAt
+            )}
 
-                </div>
-
-
-                <div class="meta">
-
-                    <span>
-
-                        👤
-
-                        ${escapeHtml(
-                            post.authorName ||
-                            post.authorEmail ||
-                            "Usuario"
-                        )}
-
-                    </span>
-
-                    <span>
-                    ·
-                    </span>
-
-                    <span>
-
-                        ${formatDate(
-                            post.createdAt
-                        )}
-
-                    </span>
-
-                    ${
-                        post.authorCondition
-                        ?
-                        `
-                        <span>
-                        ·
-                        </span>
-
-                        <span class="condition">
-
-                            ${escapeHtml(
-                                post.authorCondition
-                            )}
-
-                        </span>
-                        `
-                        :
-                        ""
-                    }
-
-                </div>
+            </span>
 
 
-                <div class="bottom">
+            ${
+                p.updatedAt
 
-                    <span class="answers">
+                ?
 
-                        💬
-                        ${post.replyCount || 0}
-                        ${
-                            post.replyCount === 1
-                            ? "respuesta"
-                            : "respuestas"
-                        }
+                "<span>· Editada</span>"
 
-                    </span>
+                :
+
+                ""
+            }
+
+            </div>
 
 
-                    ${
-                        currentUser
-                        ?
-                        `
-                        <button
-                            class="report"
-                            type="button"
-                            data-report="${post.id}">
+            <div class="bottom">
 
-                            Reportar
+            <span class="answers">
 
-                        </button>
-                        `
-                        :
-                        ""
-                    }
+            💬
+            ${p.replyCount || 0}
 
-                </div>
+            ${
+                p.replyCount === 1
+                ? "respuesta"
+                : "respuestas"
+            }
+
+            </span>
+
+
+            ${
+                user &&
+                user.uid !== p.authorId
+
+                ?
+
+                '<button class="report">⚑ Reportar</button>'
+
+                :
+
+                ""
+            }
+
+            </div>
 
             `;
 
 
-            card.addEventListener(
-                "click",
-                event => {
+            card.onclick =
+            e => {
 
-                    if(
-                        event.target.closest(
-                            ".report"
-                        )
-                    ){
+                if(
+                    e.target.closest(
+                        ".report"
+                    )
+                ){
 
-                        return;
-
-                    }
-
-                    window.location.href =
-                    `pregunta.html?id=${post.id}`;
+                    return;
 
                 }
-            );
 
 
-            const reportButton =
+                location.href =
+
+                `pregunta.html?id=${
+                    encodeURIComponent(
+                        p.id
+                    )
+                }`;
+
+            };
+
+
+            const r =
             card.querySelector(
                 ".report"
             );
 
 
-            if(reportButton){
+            if(r){
 
-                reportButton.addEventListener(
-                    "click",
-                    async event => {
+                r.onclick =
+                e => {
 
-                        event.stopPropagation();
+                    e.stopPropagation();
 
-                        const reason =
-                        prompt(
-                            "¿Por qué querés reportar esta publicación?"
-                        );
 
-                        if(reason === null){
-                            return;
-                        }
+                    report(
+                        "post",
+                        p.id,
+                        p.id,
+                        p.title
+                    );
 
-                        const cleanReason =
-                        reason.trim();
-
-                        if(!cleanReason){
-                            return;
-                        }
-
-                        try{
-
-                            await addDoc(
-                                collection(
-                                    db,
-                                    "reports"
-                                ),
-                                {
-
-                                    type:"post",
-
-                                    targetId:
-                                    post.id,
-
-                                    postId:
-                                    post.id,
-
-                                    reporterId:
-                                    currentUser.uid,
-
-                                    reason:
-                                    cleanReason,
-
-                                    label:
-                                    "Pregunta",
-
-                                    createdAt:
-                                    serverTimestamp(),
-
-                                    status:
-                                    "pendiente"
-
-                                }
-                            );
-
-                            alert(
-                                "Reporte enviado correctamente."
-                            );
-
-                        }catch(error){
-
-                            console.error(error);
-
-                            alert(
-                                "No se pudo enviar el reporte."
-                            );
-
-                        }
-
-                    }
-                );
+                };
 
             }
 
 
-            list.appendChild(card);
+            $("list")
+            .appendChild(
+                card
+            );
 
         }
     );
@@ -3678,217 +3583,380 @@ function render(){
 }
 
 
+
 /* =====================================================
-   BUSCAR / FILTRAR / ORDENAR
+   REPORTAR
 ===================================================== */
 
-search.addEventListener(
-    "input",
-    render
-);
+async function report(
+    type,
+    targetId,
+    postId,
+    label
+){
 
-filter.addEventListener(
-    "change",
-    render
-);
+    if(!user){
 
-sort.addEventListener(
-    "change",
-    render
-);
+        openAuth();
+
+        return;
+
+    }
+
+
+    const reason =
+    prompt(
+
+        `¿Por qué querés reportar ${
+            type === "post"
+            ? "esta pregunta"
+            : "esta respuesta"
+        }?`
+
+    );
+
+
+    if(reason === null){
+
+        return;
+
+    }
+
+
+    if(
+        reason
+        .trim()
+        .length < 5
+    ){
+
+        alert(
+            "Explicá brevemente el motivo."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await addDoc(
+
+            collection(
+                db,
+                "reports"
+            ),
+
+            {
+
+                type,
+
+                targetId,
+
+                postId,
+
+                reporterId:
+                user.uid,
+
+                reason:
+                reason.trim(),
+
+                label:
+                String(
+                    label || ""
+                ).slice(
+                    0,
+                    120
+                ),
+
+                createdAt:
+                serverTimestamp(),
+
+                status:
+                "pendiente"
+
+            }
+
+        );
+
+
+        alert(
+            "Reporte enviado. Gracias por ayudar a mantener la comunidad."
+        );
+
+
+    }catch(e){
+
+        alert(
+            ferr(e)
+        );
+
+    }
+
+}
+
 
 
 /* =====================================================
-   CATEGORÍAS
+   BÚSQUEDA / FILTROS
+===================================================== */
+
+$("search").oninput =
+render;
+
+
+$("filter").onchange =
+render;
+
+
+$("sort").onchange =
+render;
+
+
+
+/* =====================================================
+   CARGAR PUBLICACIONES
+===================================================== */
+
+onSnapshot(
+
+    query(
+        collection(
+            db,
+            "posts"
+        ),
+
+        orderBy(
+            "createdAt",
+            "desc"
+        )
+
+    ),
+
+    async s => {
+
+        posts =
+
+        s.docs.map(
+            d => ({
+                id:d.id,
+                ...d.data()
+            })
+        );
+
+
+        await counts();
+
+
+        const f =
+        posts
+        .filter(
+            p => p.pinned
+        )
+        .slice(
+            0,
+            5
+        );
+
+
+        $("featured").innerHTML =
+
+        f.length
+
+        ?
+
+        f.map(
+
+            p =>
+
+            `
+
+            <div class="topic">
+
+            <strong>
+
+            ${esc(
+                p.title
+            )}
+
+            </strong>
+
+            <span>
+
+            ${esc(
+                p.category
+                ||
+                "Comunidad"
+            )}
+
+            </span>
+
+            </div>
+
+            `
+
+        ).join("")
+
+        :
+
+        `
+
+        <div class="topic">
+
+        <span>
+        Todavía no hay temas destacados.
+        </span>
+
+        </div>
+
+        `;
+
+
+        render();
+
+    },
+
+
+    e => {
+
+        console.error(e);
+
+
+        $("list").innerHTML =
+
+        `
+
+        <div class="empty">
+
+        ⚠️
+
+        <strong>
+        No se pudieron cargar las publicaciones
+        </strong>
+
+        Revisá la conexión con Firebase.
+
+        </div>
+
+        `;
+
+    }
+
+);
+
+
+
+/* =====================================================
+   AUTENTICACIÓN + ADMIN
+===================================================== */
+
+onAuthStateChanged(
+
+    auth,
+
+    async u => {
+
+        user =
+        u;
+
+        profile =
+        null;
+
+        isAdmin =
+        false;
+
+
+        if(u){
+
+            try{
+
+                await loadProfile();
+
+                await checkAdmin();
+
+            }catch(e){
+
+                console.error(e);
+
+            }
+
+
+            account();
+
+
+            if(!complete()){
+
+                setTimeout(
+                    openProfile,
+                    300
+                );
+
+            }
+
+        }
+
+        else{
+
+            account();
+
+        }
+
+
+        render();
+
+    }
+
+);
+
+
+
+/* =====================================================
+   CIERRE DE MODALES
 ===================================================== */
 
 document
-.querySelectorAll(".cat")
+.querySelectorAll(
+    "[data-close]"
+)
 .forEach(
-    categoryCard => {
 
-        categoryCard.addEventListener(
-            "click",
-            () => {
+    b =>
 
-                const category =
-                categoryCard.dataset.category;
+    b.onclick = () =>
 
-                filter.value =
-                category;
+    show(
+        b.dataset.close,
+        false
+    )
 
-                document
-                .querySelectorAll(".cat")
-                .forEach(
-                    item =>
-                    item.classList.remove("on")
-                );
-
-                categoryCard.classList.add(
-                    "on"
-                );
-
-                render();
-
-                document
-                .querySelector(".posts")
-                .scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
-                });
-
-            }
-        );
-
-    }
 );
 
 
-/* =====================================================
-   SOLUCIÓN DEFINITIVA AL AUTOCOMPLETADO DEL BUSCADOR
-===================================================== */
 
-/*
-   Chrome puede intentar colocar automáticamente
-   el correo del usuario en el campo de búsqueda.
+["auth","profile","post"]
+.forEach(
 
-   Cada vez que la página se muestra nuevamente,
-   limpiamos el buscador para que nunca filtre
-   las publicaciones por un correo.
-*/
+    id =>
 
-function clearForumSearch(){
-
-    if(!search){
-        return;
-    }
-
-    search.value = "";
-
-    filter.value = "";
-
-    sort.value = "recent";
-
-    document
-    .querySelectorAll(".cat")
-    .forEach(
-        item =>
-        item.classList.remove("on")
-    );
-
-    render();
-
-}
-
-
-window.addEventListener(
-    "pageshow",
-    () => {
-
-        clearForumSearch();
-
-    }
-);
-
-
-/*
-   También limpiamos al cargar completamente
-   la página.
-*/
-
-window.addEventListener(
-    "load",
-    () => {
-
-        setTimeout(
-            () => {
-
-                if(search){
-
-                    search.value = "";
-
-                    render();
-
-                }
-
-            },
-            100
-        );
-
-    }
-);
-
-
-/* =====================================================
-   CERRAR MODALES AL HACER CLIC AFUERA
-===================================================== */
-
-authModal.addEventListener(
-    "click",
-    event => {
+    $(id).onclick = e => {
 
         if(
-            event.target ===
-            authModal
+            e.target.id === id
         ){
 
-            hideModal(
-                authModal
+            show(
+                id,
+                false
             );
 
         }
 
     }
+
 );
 
-
-profileModal.addEventListener(
-    "click",
-    event => {
-
-        if(
-            event.target ===
-            profileModal
-        ){
-
-            hideModal(
-                profileModal
-            );
-
-        }
-
-    }
-);
-
-
-postModal.addEventListener(
-    "click",
-    event => {
-
-        if(
-            event.target ===
-            postModal
-        ){
-
-            hideModal(
-                postModal
-            );
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   CARGA INICIAL
-===================================================== */
-
-clearForumSearch();
 
 </script>
 
-
 </body>
-
 </html>
