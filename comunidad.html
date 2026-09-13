@@ -1339,13 +1339,15 @@ id="cats">
 <input
     class="input"
     id="search"
-    name="forum-search"
+    name="forum-search-box"
     type="search"
-    autocomplete="new-password"
+    autocomplete="off"
     autocorrect="off"
     autocapitalize="off"
     spellcheck="false"
-    placeholder="🔎 Buscar preguntas...">
+    readonly
+    placeholder="🔎 Buscar preguntas..."
+    onfocus="this.removeAttribute('readonly');">
 
 </div>
 
