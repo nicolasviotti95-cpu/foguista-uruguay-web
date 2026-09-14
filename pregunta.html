@@ -1932,7 +1932,46 @@ $("replyForm")
                 );
 
 
-                textarea.value =
+await addDoc(
+    collection(
+        db,
+        "notifications"
+    ),
+    {
+        userId:
+            currentPost.authorId,
+
+        type:
+            "reply",
+
+        postId:
+            postId,
+
+        postTitle:
+            currentPost.title ||
+            "Tu pregunta",
+
+        authorId:
+            currentUser.uid,
+
+        authorName:
+            currentUser.displayName ||
+            currentUser.email ||
+            "Usuario",
+
+        message:
+            "respondió a tu pregunta.",
+
+        read:
+            false,
+
+        createdAt:
+            serverTimestamp()
+    }
+);
+
+textarea.value =
+    "";
                     "";
 
 
