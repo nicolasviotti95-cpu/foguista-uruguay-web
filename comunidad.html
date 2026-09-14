@@ -2693,7 +2693,7 @@ function account(){
    ABRIR PERFIL
 ===================================================== */
 
-function openProfile(){
+async function openProfile(){
 
     if(!user){
 
@@ -2722,7 +2722,87 @@ function openProfile(){
         $("pcondition").value
     )}</b>`;
 
+const memberDate =
+new Date(
+    user.metadata.creationTime
+);
 
+const memberText =
+memberDate.toLocaleDateString(
+    "es-UY",
+    {
+        month:"long",
+        year:"numeric"
+    }
+);
+
+$("profileMember").textContent =
+memberText.charAt(0).toUpperCase()
++
+memberText.slice(1);
+ /* =====================================================
+   CANTIDAD DE PREGUNTAS
+===================================================== */
+
+const questionCount =
+posts.filter(
+    p =>
+    p.authorId ===
+    user.uid
+).length;
+
+$("profileQuestions").textContent =
+questionCount;
+
+
+/* =====================================================
+   CANTIDAD DE RESPUESTAS
+===================================================== */
+
+let answerCount = 0;
+
+await Promise.all(
+
+    posts.map(
+        async p => {
+
+            try{
+
+                const repliesSnapshot =
+                await getDocs(
+
+                    collection(
+                        db,
+                        "posts",
+                        p.id,
+                        "replies"
+                    )
+
+                );
+
+                answerCount +=
+                repliesSnapshot.docs.filter(
+                    reply =>
+                    reply.data().authorId ===
+                    user.uid
+                ).length;
+
+            }catch(e){
+
+                console.error(
+                    "Error contando respuestas:",
+                    e
+                );
+
+            }
+
+        }
+    )
+
+);
+
+$("profileAnswers").textContent =
+answerCount; 
     clear("profileErr");
 
     clear("profileOk");
