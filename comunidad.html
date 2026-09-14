@@ -2211,7 +2211,8 @@ import {
     getDocs,
     doc,
     getDoc,
-    setDoc
+    setDoc,
+    deleteDoc
 }
 from
 "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
@@ -2337,6 +2338,9 @@ let mode =
 
 let isAdmin =
 false;
+
+let stopNotificationBadge =
+null;
 
 
 
@@ -3310,46 +3314,40 @@ async function loadNotifications(){
 
     }
 
+    const box =
+    $("notificationsList");
+
     try{
 
-      const q =
-query(
-    collection(
-        db,
-        "notifications"
-    ),
-    where(
-        "userId",
-        "==",
-        user.uid
-    )
-);
+        const q =
+        query(
+            collection(
+                db,
+                "notifications"
+            ),
+            where(
+                "userId",
+                "==",
+                user.uid
+            )
+        );
 
         const snapshot =
         await getDocs(q);
 
         const mine =
-        snapshot.docs
-        .map(
+        snapshot.docs.map(
             d => ({
                 id:d.id,
+                ref:d.ref,
                 ...d.data()
             })
-        )
-        .filter(
-            n =>
-            n.userId ===
-            user.uid
         );
-
-        const box =
-        $("notificationsList");
 
         if(!mine.length){
 
             box.innerHTML =
-            `
-            <div class="empty">
+            `            <div class="empty">
                 <strong>
                     No tenés notificaciones nuevas.
                 </strong>
@@ -3361,8 +3359,12 @@ query(
 
         box.innerHTML =
         mine.map(
-            n => `
-            <div class="topic">
+            n => `            <button
+                class="topic"
+                type="button"
+                data-post-id="${esc(n.postId || "")}"
+                style="width:100%;border:0;background:transparent;text-align:left;cursor:pointer;"
+            >
                 <strong>
                     🔔 ${esc(n.authorName || "Usuario")}
                     ${esc(n.message || "")}
@@ -3371,9 +3373,39 @@ query(
                 <span>
                     ${esc(n.postTitle || "Tu pregunta")}
                 </span>
-            </div>
+            </button>
             `
         ).join("");
+
+        box.querySelectorAll(
+            "[data-post-id]"
+        ).forEach(
+            button => {
+
+                button.onclick = () => {
+
+                    const id =
+                    button.dataset.postId;
+
+                    if(!id){
+
+                        return;
+
+                    }
+
+                    location.href =
+                    `pregunta.html?id=${encodeURIComponent(id)}`;
+
+                };
+
+            }
+        );
+
+        await Promise.all(
+            mine.map(
+                n => deleteDoc(n.ref)
+            )
+        );
 
     }catch(error){
 
@@ -3395,8 +3427,25 @@ query(
 
 function loadNotificationBadge(){
 
+    if(stopNotificationBadge){
+
+        stopNotificationBadge();
+
+        stopNotificationBadge =
+        null;
+
+    }
+
+    const badge =
+    $("notificationBadge");
+
     if(!user){
+
+        badge.style.display =
+        "none";
+
         return;
+
     }
 
     const q =
@@ -3417,19 +3466,13 @@ function loadNotificationBadge(){
         )
     );
 
+    stopNotificationBadge =
     onSnapshot(
         q,
         snapshot => {
 
-            const badge =
-            $("notificationBadge");
-
             const count =
             snapshot.size;
-
-            if(!badge){
-                return;
-            }
 
             if(count > 0){
 
@@ -4347,6 +4390,8 @@ onAuthStateChanged(
 
             account();
 
+            loadNotificationBadge();
+
 
             if(!complete()){
 
@@ -4362,6 +4407,8 @@ onAuthStateChanged(
         else{
 
             account();
+
+            loadNotificationBadge();
 
         }
 
