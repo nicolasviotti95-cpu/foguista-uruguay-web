@@ -1,9 +1,9 @@
-<!DOCTYP
-E html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">A
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description" content="Comunidad Foguista Uruguay. Preguntas, experiencias y conocimiento entre foguistas.">
 
@@ -1681,6 +1681,7 @@ class="close"
 data-close="auth">
 
 ×
+
 </button>
 
 </div>
@@ -1720,6 +1721,16 @@ id="password"
 type="password"
 autocomplete="current-password"
 placeholder="Mínimo 6 caracteres">
+
+<button
+class="modal-secondary"
+id="forgotPassword"
+type="button"
+style="display:none;">
+
+¿Olvidaste tu contraseña?
+
+</button>
 
 
 
@@ -2044,6 +2055,7 @@ import {
     signInWithPopup,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    sendPasswordResetEmail,
     signOut
 }
 from
@@ -2642,9 +2654,11 @@ function openProfile(){
 
     $("current").innerHTML =
 
-    `Condición actual: <b>${esc(
-        $("pcondition").value
-    )}</b>`;
+    `Condición actual: <b>${
+        esc(
+            $("pcondition").value
+        )
+    }</b>`;
 
 
     clear("profileErr");
@@ -2665,9 +2679,11 @@ $("pcondition").onchange = () => {
 
     $("current").innerHTML =
 
-    `Condición actual: <b>${esc(
-        $("pcondition").value
-    )}</b>`;
+    `Condición actual: <b>${
+        esc(
+            $("pcondition").value
+        )
+    }</b>`;
 
 };
 
@@ -2815,6 +2831,11 @@ function authMode(m){
 
     clear("authErr");
 
+    $("forgotPassword").style.display =
+    m === "login"
+    ? "block"
+    : "none";
+
 }
 
 
@@ -2842,33 +2863,1355 @@ function openAuth(){
 }
 
 
+        </div>
+
+        <div class="account-panel">
+
+            <div
+                class="account-avatar"
+                id="accountAvatar">
+                👤
+            </div>
+
+            <div class="account-info">
+
+                <strong
+                    id="accountName">
+                    Invitado
+                </strong>
+
+                <span
+                    id="accountEmail">
+                    Ingresá para participar
+                </span>
+
+            </div>
+
+            <button
+                class="account-button"
+                id="accountButton">
+
+                Ingresar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-copy">
+
+            <div class="eyebrow">
+                COMUNIDAD FOGUISTA
+            </div>
+
+            <h1>
+                Compartí, preguntá y aprendé
+                junto a otros foguistas.
+            </h1>
+
+            <p>
+                Un espacio para intercambiar experiencias,
+                resolver dudas técnicas y acompañarnos
+                en el camino profesional.
+            </p>
+
+            <div class="hero-actions">
+
+                <button
+                    class="primary-button"
+                    id="heroCreatePost">
+
+                    Crear una publicación
+
+                </button>
+
+                <a
+                    class="secondary-button"
+                    href="#categorias">
+
+                    Explorar temas
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <img
+                src="hero-foguista.png"
+                alt="Generador de vapor industrial">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    class="section"
+    id="categorias">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-kicker">
+                PARTICIPÁ
+            </span>
+
+            <h2>
+                Encontrá tu espacio
+            </h2>
+
+        </div>
+
+        <p>
+            Preguntá, compartí experiencias y
+            encontrá información útil de otros
+            profesionales y estudiantes.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <button
+            class="category-card"
+            data-category="Preguntas técnicas">
+
+            <div class="category-icon">
+                ⚙️
+            </div>
+
+            <div>
+
+                <h3>
+                    Preguntas técnicas
+                </h3>
+
+                <p>
+                    Consultas sobre equipos,
+                    funcionamiento y operación.
+                </p>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="category-card"
+            data-category="Experiencias de trabajo">
+
+            <div class="category-icon">
+                🏭
+            </div>
+
+            <div>
+
+                <h3>
+                    Experiencias de trabajo
+                </h3>
+
+                <p>
+                    Compartí situaciones y
+                    experiencias del oficio.
+                </p>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="category-card"
+            data-category="Estudio y examen">
+
+            <div class="category-icon">
+                📚
+            </div>
+
+            <div>
+
+                <h3>
+                    Estudio y examen
+                </h3>
+
+                <p>
+                    Preparación, dudas y
+                    experiencias sobre el examen.
+                </p>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="category-card"
+            data-category="Normativa URSEA">
+
+            <div class="category-icon">
+                📋
+            </div>
+
+            <div>
+
+                <h3>
+                    Normativa URSEA
+                </h3>
+
+                <p>
+                    Consultas y conversaciones
+                    sobre normativa.
+                </p>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="category-card"
+            data-category="Tratamiento del agua">
+
+            <div class="category-icon">
+                💧
+            </div>
+
+            <div>
+
+                <h3>
+                    Tratamiento del agua
+                </h3>
+
+                <p>
+                    Calidad de agua, purgas y
+                    tratamiento químico.
+                </p>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="category-card"
+            data-category="Seguridad y enclavamientos">
+
+            <div class="category-icon">
+                🛡️
+            </div>
+
+            <div>
+
+                <h3>
+                    Seguridad y enclavamientos
+                </h3>
+
+                <p>
+                    Seguridad operacional y
+                    sistemas de protección.
+                </p>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="category-card"
+            data-category="Equipos y mantenimiento">
+
+            <div class="category-icon">
+                🔧
+            </div>
+
+            <div>
+
+                <h3>
+                    Equipos y mantenimiento
+                </h3>
+
+                <p>
+                    Mantenimiento, componentes
+                    y diagnóstico.
+                </p>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="category-card"
+            data-category="Presentaciones">
+
+            <div class="category-icon">
+                👋
+            </div>
+
+            <div>
+
+                <h3>
+                    Presentaciones
+                </h3>
+
+                <p>
+                    Presentate ante la comunidad
+                    y conocé a otros foguistas.
+                </p>
+
+            </div>
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+<section class="forum-section">
+
+    <div class="forum-layout">
+
+        <div class="forum-main">
+
+            <div class="forum-toolbar">
+
+                <div>
+
+                    <span class="section-kicker">
+                        COMUNIDAD
+                    </span>
+
+                    <h2>
+                        Últimas conversaciones
+                    </h2>
+
+                </div>
+
+                <div class="toolbar-controls">
+
+                    <input
+                        class="input"
+                        id="search"
+                        name="forum-search-box"
+                        type="search"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        readonly
+                        placeholder="🔎 Buscar preguntas..."
+                        onfocus="this.removeAttribute('readonly');">
+
+                    <select
+                        class="select"
+                        id="filter">
+
+                        <option value="all">
+                            Todas las categorías
+                        </option>
+
+                        <option value="Preguntas técnicas">
+                            Preguntas técnicas
+                        </option>
+
+                        <option value="Experiencias de trabajo">
+                            Experiencias de trabajo
+                        </option>
+
+                        <option value="Estudio y examen">
+                            Estudio y examen
+                        </option>
+
+                        <option value="Normativa URSEA">
+                            Normativa URSEA
+                        </option>
+
+                        <option value="Tratamiento del agua">
+                            Tratamiento del agua
+                        </option>
+
+                        <option value="Seguridad y enclavamientos">
+                            Seguridad y enclavamientos
+                        </option>
+
+                        <option value="Equipos y mantenimiento">
+                            Equipos y mantenimiento
+                        </option>
+
+                        <option value="Presentaciones">
+                            Presentaciones
+                        </option>
+
+                    </select>
+
+                    <select
+                        class="select"
+                        id="sort">
+
+                        <option value="newest">
+                            Más recientes
+                        </option>
+
+                        <option value="oldest">
+                            Más antiguas
+                        </option>
+
+                        <option value="popular">
+                            Más comentadas
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="posts"
+                id="posts">
+
+                <div class="loading">
+                    Cargando conversaciones...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <aside class="forum-sidebar">
+
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+                    📌 Temas destacados
+                </div>
+
+                <div
+                    id="pinnedTopics"
+                    class="pinned-topics">
+
+                    <div class="mini-topic">
+                        <strong>
+                            Normativa y seguridad
+                        </strong>
+
+                        <span>
+                            Información importante
+                        </span>
+                    </div>
+
+                    <div class="mini-topic">
+                        <strong>
+                            Preparación del examen
+                        </strong>
+
+                        <span>
+                            Consejos para estudiar
+                        </span>
+                    </div>
+
+                    <div class="mini-topic">
+                        <strong>
+                            Tratamiento del agua
+                        </strong>
+
+                        <span>
+                            Consultas frecuentes
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+                    📜 Reglas de la comunidad
+                </div>
+
+                <ul class="rules">
+
+                    <li>
+                        Respetá a los demás participantes.
+                    </li>
+
+                    <li>
+                        Compartí información de forma responsable.
+                    </li>
+
+                    <li>
+                        Diferenciá experiencias personales
+                        de requisitos normativos.
+                    </li>
+
+                    <li>
+                        No publiques información peligrosa
+                        como si fuera una instrucción oficial.
+                    </li>
+
+                    <li>
+                        Evitá spam y contenido fuera de tema.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="sidebar-card sidebar-cta">
+
+                <div class="sidebar-title">
+                    ¿Tenés una duda?
+                </div>
+
+                <p>
+                    Ingresá a tu cuenta y planteá tu
+                    pregunta a la comunidad.
+                </p>
+
+                <button
+                    class="primary-button"
+                    id="sidebarCreatePost">
+
+                    Crear publicación
+
+                </button>
+
+            </div>
+
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<section class="section final-section">
+
+    <div class="final-card">
+
+        <div>
+
+            <span class="section-kicker">
+                FOGUISTA URUGUAY
+            </span>
+
+            <h2>
+                Una comunidad para quienes
+                trabajan y estudian este oficio.
+            </h2>
+
+            <p>
+                El conocimiento de cada foguista puede
+                ayudar a otro. Compartí tu experiencia.
+            </p>
+
+        </div>
+
+        <button
+            class="primary-button"
+            id="finalCreatePost">
+
+            Participar
+
+        </button>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <a
+            href="index.html"
+            class="footer-brand">
+
+            <img
+                src="logo.png"
+                alt="Foguista Uruguay">
+
+            <span>
+                Foguista Uruguay
+            </span>
+
+        </a>
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="normativa.html">
+                Normativa
+            </a>
+
+            <a href="estudio.html">
+                Estudio
+            </a>
+
+            <a href="comunidad.html">
+                Comunidad
+            </a>
+
+        </div>
+
+        <div class="footer-copy">
+            © 2026 Foguista Uruguay
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     MODAL DE AUTENTICACIÓN
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="authModal">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            id="authClose"
+            type="button">
+
+            ×
+
+        </button>
+
+        <div class="modal-logo">
+
+            <img
+                src="logo.png"
+                alt="Foguista Uruguay">
+
+        </div>
+
+        <h2
+            id="authTitle">
+
+            Crear cuenta
+
+        </h2>
+
+        <p
+            class="modal-sub"
+            id="authSub">
+
+            Registrate para participar.
+
+        </p>
+
+        <label
+            class="label"
+            for="email">
+
+            Correo electrónico
+
+        </label>
+
+        <input
+            class="modal-input"
+            id="email"
+            type="email"
+            autocomplete="email"
+            placeholder="tu@email.com">
+
+        <label
+            class="label"
+            for="password">
+
+            Contraseña
+
+        </label>
+
+        <input
+            class="modal-input"
+            id="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Mínimo 6 caracteres">
+
+        <button
+            class="modal-secondary"
+            id="forgotPassword"
+            type="button"
+            style="display:none;">
+
+            ¿Olvidaste tu contraseña?
+
+        </button>
+
+        <div
+            class="error"
+            id="authErr">
+        </div>
+
+        <button
+            class="modal-button"
+            id="emailBtn">
+
+            Crear cuenta
+
+        </button>
+
+        <button
+            class="modal-button"
+            id="googleBtn">
+
+            Continuar con Google
+
+        </button>
+
+        <button
+            class="modal-secondary"
+            id="toggleAuth">
+
+            Ya tengo una cuenta
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL NUEVA PUBLICACIÓN
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="postModal">
+
+    <div class="modal post-modal">
+
+        <button
+            class="modal-close"
+            id="postClose"
+            type="button">
+
+            ×
+
+        </button>
+
+        <h2>
+            Crear publicación
+        </h2>
+
+        <p class="modal-sub">
+            Compartí una pregunta, experiencia o tema
+            con la comunidad.
+        </p>
+
+        <label
+            class="label"
+            for="postTitle">
+
+            Título
+
+        </label>
+
+        <input
+            class="modal-input"
+            id="postTitle"
+            type="text"
+            maxlength="120"
+            placeholder="¿Qué querés consultar?">
+
+        <label
+            class="label"
+            for="postCategory">
+
+            Categoría
+
+        </label>
+
+        <select
+            class="modal-input"
+            id="postCategory">
+
+            <option value="">
+                Seleccioná una categoría
+            </option>
+
+            <option value="Preguntas técnicas">
+                Preguntas técnicas
+            </option>
+
+            <option value="Experiencias de trabajo">
+                Experiencias de trabajo
+            </option>
+
+            <option value="Estudio y examen">
+                Estudio y examen
+            </option>
+
+            <option value="Normativa URSEA">
+                Normativa URSEA
+            </option>
+
+            <option value="Tratamiento del agua">
+                Tratamiento del agua
+            </option>
+
+            <option value="Seguridad y enclavamientos">
+                Seguridad y enclavamientos
+            </option>
+
+            <option value="Equipos y mantenimiento">
+                Equipos y mantenimiento
+            </option>
+
+            <option value="Presentaciones">
+                Presentaciones
+            </option>
+
+        </select>
+
+        <label
+            class="label"
+            for="postBody">
+
+            Contenido
+
+        </label>
+
+        <textarea
+            class="modal-input textarea"
+            id="postBody"
+            maxlength="5000"
+            placeholder="Escribí tu pregunta o experiencia..."></textarea>
+
+        <div
+            class="error"
+            id="postErr">
+        </div>
+
+        <button
+            class="modal-button"
+            id="publishBtn">
+
+            Publicar
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL DETALLE DE PUBLICACIÓN
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="detailModal">
+
+    <div class="modal detail-modal">
+
+        <button
+            class="modal-close"
+            id="detailClose"
+            type="button">
+
+            ×
+
+        </button>
+
+        <div
+            id="detailContent">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL PERFIL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="profileModal">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            id="profileClose"
+            type="button">
+
+            ×
+
+        </button>
+
+        <div class="modal-logo">
+
+            <img
+                src="logo.png"
+                alt="Foguista Uruguay">
+
+        </div>
+
+        <h2>
+            Mi cuenta
+        </h2>
+
+        <div
+            class="profile-box"
+            id="profileBox">
+
+        </div>
+
+        <button
+            class="modal-secondary"
+            id="logoutBtn">
+
+            Cerrar sesión
+
+        </button>
+
+    </div>
+
+</div>
+    <script type="module">
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    onAuthStateChanged,
+    GoogleAuthProvider,
+    signInWithPopup,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+    signOut
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    doc,
+    getDoc,
+    updateDoc,
+    deleteDoc,
+    query,
+    orderBy,
+    serverTimestamp
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyAMwiZKPAOZfW7mdgHll6LbDF-n1lv1tUM",
+
+    authDomain:
+    "foguista-uruguay.firebaseapp.com",
+
+    projectId:
+    "foguista-uruguay",
+
+    storageBucket:
+    "foguista-uruguay.firebasestorage.app",
+
+    messagingSenderId:
+    "26845359651",
+
+    appId:
+    "1:26845359651:web:c7f5c04ab51fdababb8b96",
+
+    measurementId:
+    "G-GS53T440NK"
+
+};
+
+
+const app =
+initializeApp(
+    firebaseConfig
+);
+
+
+const auth =
+getAuth(
+    app
+);
+
+
+const db =
+getFirestore(
+    app
+);
+
+
+const googleProvider =
+new GoogleAuthProvider();
+
+
+const $ =
+id =>
+document.getElementById(id);
+
+
+let currentUser =
+null;
+
+
+let mode =
+"register";
+
+
+let allPosts =
+[];
+
 
 /* =====================================================
-   EMAIL / CONTRASEÑA
+   UTILIDADES
+===================================================== */
+
+
+function escapeHTML(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+function clear(id){
+
+    $(id).textContent =
+    "";
+
+}
+
+
+function error(
+    id,
+    message
+){
+
+    $(id).textContent =
+    message;
+
+}
+
+
+function formatDate(
+    timestamp
+){
+
+    if(
+        !timestamp
+        ||
+        !timestamp.toDate
+    ){
+
+        return "Ahora";
+
+    }
+
+
+    return timestamp
+        .toDate()
+        .toLocaleDateString(
+            "es-UY",
+            {
+                day:
+                "2-digit",
+
+                month:
+                "2-digit",
+
+                year:
+                "numeric"
+            }
+        );
+
+}
+
+
+function show(
+    id
+){
+
+    $(id)
+        .classList
+        .add(
+            "open"
+        );
+
+    document.body.style.overflow =
+    "hidden";
+
+}
+
+
+function hide(
+    id
+){
+
+    $(id)
+        .classList
+        .remove(
+            "open"
+        );
+
+    document.body.style.overflow =
+    "";
+
+}
+
+
+/* =====================================================
+   AUTENTICACIÓN
+===================================================== */
+
+
+function openAuth(
+    requestedMode =
+    "register"
+){
+
+    authMode(
+        requestedMode
+    );
+
+    show(
+        "authModal"
+    );
+
+}
+    /* =====================================================
+   CAMBIO ENTRE REGISTRO E INGRESO
+===================================================== */
+
+function authMode(
+    m
+){
+
+    mode =
+    m;
+
+
+    $("authTitle").textContent =
+    m === "register"
+    ? "Crear cuenta"
+    : "Iniciar sesión";
+
+
+    $("authSub").textContent =
+    m === "register"
+    ? "Registrate para participar."
+    : "Ingresá para participar.";
+
+
+    $("emailBtn").textContent =
+    m === "register"
+    ? "Crear cuenta"
+    : "Iniciar sesión";
+
+
+    $("toggleAuth").textContent =
+    m === "register"
+    ? "Ya tengo una cuenta"
+    : "Crear una cuenta";
+
+
+    $("forgotPassword").style.display =
+    m === "login"
+    ? "block"
+    : "none";
+
+
+    clear(
+        "authErr"
+    );
+
+}
+
+
+/* =====================================================
+   CERRAR MODALES
+===================================================== */
+
+$("authClose").onclick =
+() => {
+
+    hide(
+        "authModal"
+    );
+
+};
+
+
+$("postClose").onclick =
+() => {
+
+    hide(
+        "postModal"
+    );
+
+};
+
+
+$("detailClose").onclick =
+() => {
+
+    hide(
+        "detailModal"
+    );
+
+};
+
+
+$("profileClose").onclick =
+() => {
+
+    hide(
+        "profileModal"
+    );
+
+};
+
+
+document.querySelectorAll(
+    ".modal-overlay"
+)
+.forEach(
+    overlay => {
+
+        overlay.addEventListener(
+            "click",
+            event => {
+
+                if(
+                    event.target ===
+                    overlay
+                ){
+
+                    hide(
+                        overlay.id
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   REGISTRO / INGRESO CON CORREO
 ===================================================== */
 
 $("emailBtn").onclick =
 async () => {
 
-    clear("authErr");
+    clear(
+        "authErr"
+    );
 
 
-    const e =
+    const email =
     $("email")
-    .value
-    .trim();
+        .value
+        .trim();
 
 
-    const p =
+    const password =
     $("password")
-    .value;
+        .value;
 
 
-    if(!e){
+    if(
+        !email
+        ||
+        !password
+    ){
 
         error(
             "authErr",
-            "Ingresá tu correo."
+            "Ingresá tu correo y contraseña."
         );
 
         return;
@@ -2876,7 +4219,11 @@ async () => {
     }
 
 
-    if(p.length < 6){
+    if(
+        mode === "register"
+        &&
+        password.length < 6
+    ){
 
         error(
             "authErr",
@@ -2890,28 +4237,149 @@ async () => {
 
     try{
 
-        if(mode === "register"){
+        if(
+            mode === "register"
+        ){
 
-            await createUserWithEmailAndPassword(
+            await
+            createUserWithEmailAndPassword(
                 auth,
-                e,
-                p
+                email,
+                password
             );
 
         }else{
 
-            await signInWithEmailAndPassword(
+            await
+            signInWithEmailAndPassword(
                 auth,
-                e,
-                p
+                email,
+                password
             );
 
         }
 
 
-        show(
-            "auth",
-            false
+        hide(
+            "authModal"
+        );
+
+
+        $("email").value =
+        "";
+
+        $("password").value =
+        "";
+
+    }catch(x){
+
+        let message =
+        "No pudimos completar la operación. Intentá nuevamente.";
+
+
+        if(
+            x.code ===
+            "auth/email-already-in-use"
+        ){
+
+            message =
+            "Ese correo ya está registrado. Iniciá sesión.";
+
+        }
+
+
+        if(
+            x.code ===
+            "auth/invalid-email"
+        ){
+
+            message =
+            "El correo electrónico no es válido.";
+
+        }
+
+
+        if(
+            x.code ===
+            "auth/weak-password"
+        ){
+
+            message =
+            "La contraseña debe tener al menos 6 caracteres.";
+
+        }
+
+
+        if(
+            x.code ===
+            "auth/invalid-credential"
+            ||
+            x.code ===
+            "auth/wrong-password"
+            ||
+            x.code ===
+            "auth/user-not-found"
+        ){
+
+            message =
+            "Correo o contraseña incorrectos.";
+
+        }
+
+
+        error(
+            "authErr",
+            message
+        );
+
+    }
+
+};
+
+
+/* =====================================================
+   RECUPERAR CONTRASEÑA
+===================================================== */
+
+$("forgotPassword").onclick =
+async () => {
+
+    clear(
+        "authErr"
+    );
+
+
+    const e =
+    $("email")
+        .value
+        .trim();
+
+
+    if(
+        !e
+    ){
+
+        error(
+            "authErr",
+            "Ingresá tu correo electrónico para recuperar la contraseña."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await
+        sendPasswordResetEmail(
+            auth,
+            e
+        );
+
+
+        alert(
+            "Te enviamos un correo para restablecer tu contraseña. Revisá también la carpeta de spam."
         );
 
 
@@ -2919,7 +4387,7 @@ async () => {
 
         error(
             "authErr",
-            ferr(x)
+            "No pudimos enviar el correo de recuperación. Verificá que el correo sea correcto e intentá nuevamente."
         );
 
     }
@@ -2927,33 +4395,37 @@ async () => {
 };
 
 
-
 /* =====================================================
-   GOOGLE
+   INGRESO CON GOOGLE
 ===================================================== */
 
 $("googleBtn").onclick =
 async () => {
 
+    clear(
+        "authErr"
+    );
+
+
     try{
 
-        await signInWithPopup(
+        await
+        signInWithPopup(
             auth,
-            google
+            googleProvider
         );
 
 
-        show(
-            "auth",
-            false
+        hide(
+            "authModal"
         );
 
 
-    }catch(e){
+    }catch(x){
 
         error(
             "authErr",
-            ferr(e)
+            "No se pudo iniciar sesión con Google. Intentá nuevamente."
         );
 
     }
@@ -2961,6 +4433,9 @@ async () => {
 };
 
 
+/* =====================================================
+   CAMBIAR MODO
+===================================================== */
 
 $("toggleAuth").onclick =
 () => {
@@ -2974,135 +4449,296 @@ $("toggleAuth").onclick =
 };
 
 
-
 /* =====================================================
-   CERRAR SESIÓN
+   ESTADO DE AUTENTICACIÓN
 ===================================================== */
 
-$("logoutBtn").onclick =
+onAuthStateChanged(
+    auth,
+    user => {
+
+        currentUser =
+        user;
+
+
+        if(
+            user
+        ){
+
+            const name =
+            user.displayName
+            ||
+            user.email
+            ||
+            "Usuario";
+
+
+            $("accountName")
+                .textContent =
+                name;
+
+
+            $("accountEmail")
+                .textContent =
+                user.email
+                ||
+                "";
+
+
+            $("accountButton")
+                .textContent =
+                "Mi cuenta";
+
+
+            if(
+                user.photoURL
+            ){
+
+                $("accountAvatar")
+                    .innerHTML =
+                    `<img src="${escapeHTML(user.photoURL)}" alt="Perfil">`;
+
+            }else{
+
+                $("accountAvatar")
+                    .textContent =
+                    "👤";
+
+            }
+
+        }else{
+
+            $("accountName")
+                .textContent =
+                "Invitado";
+
+
+            $("accountEmail")
+                .textContent =
+                "Ingresá para participar";
+
+
+            $("accountButton")
+                .textContent =
+                "Ingresar";
+
+
+            $("accountAvatar")
+                .textContent =
+                "👤";
+
+        }
+
+
+        loadPosts();
+
+    }
+);
+
+
+/* =====================================================
+   CUENTA
+===================================================== */
+
+$("accountButton").onclick =
 () => {
 
-    signOut(
-        auth
-    );
+    if(
+        currentUser
+    ){
+
+        show(
+            "profileModal"
+        );
+
+        renderProfile();
+
+    }else{
+
+        openAuth(
+            "login"
+        );
+
+    }
 
 };
-
 
 
 /* =====================================================
    PERFIL
 ===================================================== */
 
-$("profileBtn").onclick =
-openProfile;
+function renderProfile(){
+
+    if(
+        !currentUser
+    ){
+
+        return;
+
+    }
 
 
+    $("profileBox").innerHTML = `
 
-/* =====================================================
-   NUEVA PREGUNTA
+        <div class="profile-row">
+
+            <span>Correo</span>
+
+            <strong>
+                ${escapeHTML(
+                    currentUser.email
+                    ||
+                    ""
+                )}
+            </strong>
+
+        </div>
+
+        <div class="profile-row">
+
+            <span>Proveedor</span>
+
+            <strong>
+                ${
+                    currentUser.providerData
+                    &&
+                    currentUser.providerData[0]
+                    &&
+                    currentUser.providerData[0].providerId ===
+                    "google.com"
+                    ? "Google"
+                    : "Correo electrónico"
+                }
+            </strong>
+
+        </div>
+
+    `;
+
+}
+
+
+$("logoutBtn").onclick =
+async () => {
+
+    await
+    signOut(
+        auth
+    );
+
+
+    hide(
+        "profileModal"
+    );
+
+};
+    /* =====================================================
+   NUEVA PUBLICACIÓN
 ===================================================== */
 
-function openPost(){
+function openPostModal(){
 
-    if(!user){
+    if(
+        !currentUser
+    ){
 
-        openAuth();
-
-        return;
-
-    }
-
-
-    if(!complete()){
-
-        openProfile();
+        openAuth(
+            "login"
+        );
 
         return;
 
     }
 
 
-    $("ptitle").value =
+    $("postTitle").value =
     "";
 
-
-    $("pcontent").value =
+    $("postCategory").value =
     "";
 
+    $("postBody").value =
+    "";
 
-    $("pcat").value =
-    "Preguntas técnicas";
-
-
-    clear("postErr");
+    clear(
+        "postErr"
+    );
 
 
     show(
-        "post",
-        true
+        "postModal"
     );
 
 }
 
 
-
-$("accountBtn").onclick =
-() => {
-
-    if(!user){
-
-        openAuth();
-
-    }
-
-    else if(!complete()){
-
-        openProfile();
-
-    }
-
-    else{
-
-        openPost();
-
-    }
-
-};
+$("heroCreatePost").onclick =
+openPostModal;
 
 
-$("newBtn").onclick =
-openPost;
+$("sidebarCreatePost").onclick =
+openPostModal;
 
+
+$("finalCreatePost").onclick =
+openPostModal;
 
 
 /* =====================================================
    PUBLICAR
 ===================================================== */
 
-$("publish").onclick =
+$("publishBtn").onclick =
 async () => {
 
-    clear("postErr");
+    clear(
+        "postErr"
+    );
+
+
+    if(
+        !currentUser
+    ){
+
+        error(
+            "postErr",
+            "Tenés que iniciar sesión para publicar."
+        );
+
+        return;
+
+    }
 
 
     const title =
-    $("ptitle")
-    .value
-    .trim();
+    $("postTitle")
+        .value
+        .trim();
 
 
-    const content =
-    $("pcontent")
-    .value
-    .trim();
+    const category =
+    $("postCategory")
+        .value;
 
 
-    if(title.length < 5){
+    const body =
+    $("postBody")
+        .value
+        .trim();
+
+
+    if(
+        !title
+        ||
+        !category
+        ||
+        !body
+    ){
 
         error(
             "postErr",
-            "El título debe tener al menos 5 caracteres."
+            "Completá el título, la categoría y el contenido."
         );
 
         return;
@@ -3110,244 +4746,294 @@ async () => {
     }
 
 
-    if(content.length < 10){
+    const button =
+    $("publishBtn");
 
-        error(
-            "postErr",
-            "La pregunta debe tener al menos 10 caracteres."
-        );
 
-        return;
+    button.disabled =
+    true;
 
-    }
+
+    button.textContent =
+    "Publicando...";
 
 
     try{
 
-        await addDoc(
-
+        await
+        addDoc(
             collection(
                 db,
                 "posts"
             ),
-
             {
 
+                title:
                 title,
 
-                content,
-
                 category:
-                $("pcat").value,
+                category,
+
+                body:
+                body,
 
                 authorId:
-                user.uid,
+                currentUser.uid,
 
                 authorName:
-                profile.name,
+                currentUser.displayName
+                ||
+                currentUser.email
+                ||
+                "Usuario",
 
-                authorCondition:
-                profile.condition,
+                authorEmail:
+                currentUser.email
+                ||
+                "",
 
                 createdAt:
                 serverTimestamp(),
 
-                updatedAt:
-                null,
-
-                pinned:
-                false
+                replies:
+                0
 
             }
-
         );
 
 
-        show(
-            "post",
-            false
+        hide(
+            "postModal"
         );
 
 
-    }catch(e){
+        await
+        loadPosts();
+
+
+    }catch(x){
 
         error(
             "postErr",
-            ferr(e)
+            "No pudimos publicar tu mensaje. Intentá nuevamente."
         );
+
+    }finally{
+
+        button.disabled =
+        false;
+
+
+        button.textContent =
+        "Publicar";
 
     }
 
 };
 
 
-
 /* =====================================================
-   CONTADORES DE RESPUESTAS
+   CARGAR PUBLICACIONES
 ===================================================== */
 
-async function counts(){
+async function loadPosts(){
 
-    await Promise.all(
-
-        posts.map(
-            async p => {
-
-                try{
-
-                    p.replyCount =
-
-                    (
-                        await getDocs(
-
-                            collection(
-                                db,
-                                "posts",
-                                p.id,
-                                "replies"
-                            )
-
-                        )
-                    ).size;
+    const container =
+    $("posts");
 
 
-                }catch{
+    container.innerHTML =
+    `
+        <div class="loading">
+            Cargando conversaciones...
+        </div>
+    `;
 
-                    p.replyCount =
-                    0;
 
-                }
+    try{
 
-            }
-        )
+        const q =
+        query(
+            collection(
+                db,
+                "posts"
+            ),
+            orderBy(
+                "createdAt",
+                "desc"
+            )
+        );
 
-    );
+
+        const snapshot =
+        await getDocs(
+            q
+        );
+
+
+        allPosts =
+        snapshot.docs.map(
+            item => ({
+
+                id:
+                item.id,
+
+                ...item.data()
+
+            })
+        );
+
+
+        renderPosts();
+
+
+    }catch(x){
+
+        container.innerHTML =
+        `
+            <div class="empty-state">
+
+                <strong>
+                    Todavía no hay conversaciones.
+                </strong>
+
+                <span>
+                    Sé el primero en publicar una pregunta.
+                </span>
+
+            </div>
+        `;
+
+    }
 
 }
 
 
-
 /* =====================================================
-   RENDER PUBLICACIONES
+   RENDERIZAR PUBLICACIONES
 ===================================================== */
 
-async function render(){
+function renderPosts(){
 
-    let a =
-    [...posts];
+    const container =
+    $("posts");
 
 
-    const q =
+    const search =
     $("search")
-    .value
-    .trim()
-    .toLowerCase();
+        .value
+        .trim()
+        .toLowerCase();
 
 
-    const c =
+    const filter =
     $("filter")
-    .value;
+        .value;
 
 
-    if(c){
-
-        a =
-        a.filter(
-            p =>
-            p.category === c
-        );
-
-    }
+    const sort =
+    $("sort")
+        .value;
 
 
-    if(q){
+    let posts =
+    allPosts.filter(
+        post => {
 
-        a =
-        a.filter(
-            p =>
-
-            `${p.title}
-            ${p.content}
-            ${p.authorName}
-            ${p.category}`
-
+            const matchesSearch =
+            !search
+            ||
+            String(
+                post.title
+                ||
+                ""
+            )
             .toLowerCase()
+            .includes(
+                search
+            )
+            ||
+            String(
+                post.body
+                ||
+                ""
+            )
+            .toLowerCase()
+            .includes(
+                search
+            );
 
-            .includes(q)
 
+            const matchesFilter =
+            filter === "all"
+            ||
+            post.category ===
+            filter;
+
+
+            return (
+                matchesSearch
+                &&
+                matchesFilter
+            );
+
+        }
+    );
+
+
+    if(
+        sort === "oldest"
+    ){
+
+        posts.sort(
+            (a,b) =>
+                getMillis(a.createdAt)
+                -
+                getMillis(b.createdAt)
         );
 
     }
 
 
     if(
-        $("sort").value ===
-        "answers"
+        sort === "popular"
     ){
 
-        a.sort(
-            (x,y) =>
-            (y.replyCount || 0)
-            -
-            (x.replyCount || 0)
-        );
-
-    }
-
-    else{
-
-        a.sort(
-
-            (x,y) =>
-
-            (
-                y.createdAt
-                ?.toMillis?.()
-                ||
-                0
-            )
-
-            -
-
-            (
-                x.createdAt
-                ?.toMillis?.()
-                ||
-                0
-            )
-
+        posts.sort(
+            (a,b) =>
+                Number(
+                    b.replies
+                    ||
+                    0
+                )
+                -
+                Number(
+                    a.replies
+                    ||
+                    0
+                )
         );
 
     }
 
 
-    $("count").textContent =
+    if(
+        !posts.length
+    ){
 
-    `${a.length} ${
-        a.length === 1
-        ? "publicación"
-        : "publicaciones"
-    }`;
-
-
-    if(!a.length){
-
-        $("list").innerHTML =
-
+        container.innerHTML =
         `
+            <div class="empty-state">
 
-        <div class="empty">
+                <strong>
+                    No encontramos publicaciones.
+                </strong>
 
-        🔎
+                <span>
+                    Probá con otra búsqueda o categoría.
+                </span>
 
-        <strong>
-        No encontramos preguntas
-        </strong>
-
-        Probá con otra búsqueda o categoría.
-
-        </div>
-
+            </div>
         `;
 
         return;
@@ -3355,610 +5041,349 @@ async function render(){
     }
 
 
-    $("list").innerHTML =
-    "";
-
-
-    a.forEach(
-        p => {
-
-            const card =
-            document.createElement(
-                "article"
-            );
-
-
-            card.className =
-            "card" +
-            (
-                p.pinned
-                ? " pinned"
-                : ""
-            );
-
-
-            card.innerHTML =
-
-            `
-
-            <span class="tag">
-
-            ${esc(
-                p.category
-                ||
-                "Sin categoría"
-            )}
-
-            </span>
-
-
-            ${
-                p.pinned
-
-                ?
-
-                '<span class="pin">📌 Destacado</span>'
-
-                :
-
-                ''
-            }
-
-
-            <h3>
-
-            ${esc(p.title)}
-
-            </h3>
-
-
-            <div class="content">
-
-            ${esc(p.content)}
-
-            </div>
-
-
-            <div class="meta">
-
-            <span>
-
-            👤
-            ${esc(
-                p.authorName
-                ||
-                "Usuario"
-            )}
-
-            </span>
-
-
-            ${
-                p.authorCondition
-
-                ?
-
-                `
-
-                <span>
-                ·
-                </span>
-
-                <span class="condition">
-
-                ${esc(
-                    p.authorCondition
-                )}
-
-                </span>
-
-                `
-
-                :
-
-                ""
-            }
-
-
-            <span>
-            ·
-            </span>
-
-
-            <span>
-
-            ${date(
-                p.createdAt
-            )}
-
-            </span>
-
-
-            ${
-                p.updatedAt
-
-                ?
-
-                "<span>· Editada</span>"
-
-                :
-
-                ""
-            }
-
-            </div>
-
-
-            <div class="bottom">
-
-            <span class="answers">
-
-            💬
-            ${p.replyCount || 0}
-
-            ${
-                p.replyCount === 1
-                ? "respuesta"
-                : "respuestas"
-            }
-
-            </span>
-
-
-            ${
-                user &&
-                user.uid !== p.authorId
-
-                ?
-
-                '<button class="report">⚑ Reportar</button>'
-
-                :
-
-                ""
-            }
-
-            </div>
-
-            `;
-
-
-            card.onclick =
-            e => {
-
-                if(
-                    e.target.closest(
-                        ".report"
-                    )
-                ){
-
-                    return;
-
-                }
-
-
-                location.href =
-
-                `pregunta.html?id=${
-                    encodeURIComponent(
-                        p.id
-                    )
-                }`;
-
-            };
-
-
-            const r =
-            card.querySelector(
-                ".report"
-            );
-
-
-            if(r){
-
-                r.onclick =
-                e => {
-
-                    e.stopPropagation();
-
-
-                    report(
-                        "post",
-                        p.id,
-                        p.id,
-                        p.title
+    container.innerHTML =
+    posts
+        .map(
+            post =>
+            createPostHTML(
+                post
+            )
+        )
+        .join(
+            ""
+        );
+
+
+    container
+        .querySelectorAll(
+            "[data-post-id]"
+        )
+        .forEach(
+            card => {
+
+                card.onclick =
+                () => {
+
+                    openPost(
+                        card.dataset.postId
                     );
 
                 };
 
             }
-
-
-            $("list")
-            .appendChild(
-                card
-            );
-
-        }
-    );
+        );
 
 }
 
 
-
-/* =====================================================
-   REPORTAR
-===================================================== */
-
-async function report(
-    type,
-    targetId,
-    postId,
-    label
+function getMillis(
+    timestamp
 ){
 
-    if(!user){
-
-        openAuth();
-
-        return;
-
-    }
-
-
-    const reason =
-    prompt(
-
-        `¿Por qué querés reportar ${
-            type === "post"
-            ? "esta pregunta"
-            : "esta respuesta"
-        }?`
-
-    );
-
-
-    if(reason === null){
-
-        return;
-
-    }
-
-
     if(
-        reason
-        .trim()
-        .length < 5
+        !timestamp
+        ||
+        !timestamp.toDate
     ){
 
-        alert(
-            "Explicá brevemente el motivo."
-        );
-
-        return;
+        return 0;
 
     }
 
 
-    try{
-
-        await addDoc(
-
-            collection(
-                db,
-                "reports"
-            ),
-
-            {
-
-                type,
-
-                targetId,
-
-                postId,
-
-                reporterId:
-                user.uid,
-
-                reason:
-                reason.trim(),
-
-                label:
-                String(
-                    label || ""
-                ).slice(
-                    0,
-                    120
-                ),
-
-                createdAt:
-                serverTimestamp(),
-
-                status:
-                "pendiente"
-
-            }
-
-        );
-
-
-        alert(
-            "Reporte enviado. Gracias por ayudar a mantener la comunidad."
-        );
-
-
-    }catch(e){
-
-        alert(
-            ferr(e)
-        );
-
-    }
+    return timestamp
+        .toDate()
+        .getTime();
 
 }
 
 
-
 /* =====================================================
-   BÚSQUEDA / FILTROS
+   TARJETA DE PUBLICACIÓN
 ===================================================== */
 
-$("search").oninput =
-render;
+function createPostHTML(
+    post
+){
+
+    const title =
+    escapeHTML(
+        post.title
+    );
 
 
-$("filter").onchange =
-render;
+    const body =
+    escapeHTML(
+        post.body
+    );
 
 
-$("sort").onchange =
-render;
+    const category =
+    escapeHTML(
+        post.category
+        ||
+        "General"
+    );
 
 
-
-/* =====================================================
-   CARGAR PUBLICACIONES
-===================================================== */
-
-onSnapshot(
-
-    query(
-        collection(
-            db,
-            "posts"
-        ),
-
-        orderBy(
-            "createdAt",
-            "desc"
-        )
-
-    ),
-
-    async s => {
-
-        posts =
-
-        s.docs.map(
-            d => ({
-                id:d.id,
-                ...d.data()
-            })
-        );
+    const author =
+    escapeHTML(
+        post.authorName
+        ||
+        "Usuario"
+    );
 
 
-        await counts();
+    const date =
+    formatDate(
+        post.createdAt
+    );
 
 
-        const f =
-        posts
-        .filter(
-            p => p.pinned
-        )
-        .slice(
-            0,
-            5
-        );
+    const replies =
+    Number(
+        post.replies
+        ||
+        0
+    );
 
 
-        $("featured").innerHTML =
+    return `
 
-        f.length
+        <article
+            class="post-card"
+            data-post-id="${escapeHTML(post.id)}">
 
-        ?
+            <div class="post-top">
 
-        f.map(
+                <span class="post-category">
+                    ${category}
+                </span>
 
-            p =>
-
-            `
-
-            <div class="topic">
-
-            <strong>
-
-            ${esc(
-                p.title
-            )}
-
-            </strong>
-
-            <span>
-
-            ${esc(
-                p.category
-                ||
-                "Comunidad"
-            )}
-
-            </span>
+                <span class="post-date">
+                    ${date}
+                </span>
 
             </div>
 
-            `
 
-        ).join("")
-
-        :
-
-        `
-
-        <div class="topic">
-
-        <span>
-        Todavía no hay temas destacados.
-        </span>
-
-        </div>
-
-        `;
+            <h3>
+                ${title}
+            </h3>
 
 
-        render();
-
-    },
-
-
-    e => {
-
-        console.error(e);
+            <p class="post-excerpt">
+                ${body}
+            </p>
 
 
-        $("list").innerHTML =
+            <div class="post-bottom">
 
-        `
+                <span>
+                    👤 ${author}
+                </span>
 
-        <div class="empty">
+                <span>
+                    💬 ${replies}
+                </span>
 
-        ⚠️
+            </div>
 
-        <strong>
-        No se pudieron cargar las publicaciones
-        </strong>
+        </article>
 
-        Revisá la conexión con Firebase.
+    `;
 
-        </div>
-
-        `;
-
-    }
-
-);
-
+}
 
 
 /* =====================================================
-   AUTENTICACIÓN + ADMIN
+   DETALLE DE PUBLICACIÓN
 ===================================================== */
 
-onAuthStateChanged(
+async function openPost(
+    postId
+){
 
-    auth,
-
-    async u => {
-
-        user =
-        u;
-
-        profile =
-        null;
-
-        isAdmin =
-        false;
+    const post =
+    allPosts.find(
+        item =>
+        item.id ===
+        postId
+    );
 
 
-        if(u){
+    if(
+        !post
+    ){
 
-            try{
-
-                await loadProfile();
-
-                await checkAdmin();
-
-            }catch(e){
-
-                console.error(e);
-
-            }
-
-
-            account();
-
-
-            if(!complete()){
-
-                setTimeout(
-                    openProfile,
-                    300
-                );
-
-            }
-
-        }
-
-        else{
-
-            account();
-
-        }
-
-
-        render();
+        return;
 
     }
 
-);
 
+    $("detailContent").innerHTML =
+    `
+
+        <span class="post-category">
+            ${escapeHTML(
+                post.category
+                ||
+                "General"
+            )}
+        </span>
+
+        <h2>
+            ${escapeHTML(
+                post.title
+            )}
+        </h2>
+
+        <div class="detail-meta">
+
+            👤
+            ${escapeHTML(
+                post.authorName
+                ||
+                "Usuario"
+            )}
+
+            ·
+
+            ${formatDate(
+                post.createdAt
+            )}
+
+        </div>
+
+        <div class="detail-body">
+
+            ${escapeHTML(
+                post.body
+            )
+            .replace(
+                /\n/g,
+                "<br>"
+            )}
+
+        </div>
+
+        <div class="detail-actions">
+
+            <button
+                class="modal-secondary"
+                data-report-id="${escapeHTML(post.id)}">
+
+                ⚠️ Reportar publicación
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    const reportButton =
+    $("detailContent")
+        .querySelector(
+            "[data-report-id]"
+        );
+
+
+    if(
+        reportButton
+    ){
+
+        reportButton.onclick =
+        () => {
+
+            alert(
+                "Gracias por avisar. La función de reportes será ampliada en una próxima actualización."
+            );
+
+        };
+
+    }
+
+
+    show(
+        "detailModal"
+    );
+
+}
 
 
 /* =====================================================
-   CIERRE DE MODALES
+   BÚSQUEDA Y FILTROS
+===================================================== */
+
+$("search").addEventListener(
+    "input",
+    renderPosts
+);
+
+
+$("filter").addEventListener(
+    "change",
+    renderPosts
+);
+
+
+$("sort").addEventListener(
+    "change",
+    renderPosts
+);
+
+
+/* =====================================================
+   CATEGORÍAS
 ===================================================== */
 
 document
-.querySelectorAll(
-    "[data-close]"
-)
-.forEach(
-
-    b =>
-
-    b.onclick = () =>
-
-    show(
-        b.dataset.close,
-        false
+    .querySelectorAll(
+        ".category-card"
     )
+    .forEach(
+        card => {
 
-);
+            card.addEventListener(
+                "click",
+                () => {
+
+                    $("filter").value =
+                    card.dataset.category;
 
 
+                    document
+                        .querySelector(
+                            ".forum-section"
+                        )
+                        .scrollIntoView({
+                            behavior:
+                            "smooth"
+                        });
 
-["auth","profile","post"]
-.forEach(
 
-    id =>
+                    renderPosts();
 
-    $(id).onclick = e => {
-
-        if(
-            e.target.id === id
-        ){
-
-            show(
-                id,
-                false
+                }
             );
 
         }
-
-    }
-
 );
 
+
+/* =====================================================
+   INICIO
+===================================================== */
+
+authMode(
+    "register"
+);
+
+loadPosts();
 
 </script>
 
 </body>
+
 </html>
