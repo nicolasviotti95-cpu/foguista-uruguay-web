@@ -3278,7 +3278,92 @@ $("notificationsBtn").onclick =
     );
 
 };
+/* =====================================================
+   CARGAR NOTIFICACIONES
+===================================================== */
 
+async function loadNotifications(){
+
+    if(!user){
+
+        return;
+
+    }
+
+    try{
+
+        const q =
+        query(
+            collection(
+                db,
+                "notifications"
+            ),
+            orderBy(
+                "createdAt",
+                "desc"
+            )
+        );
+
+        const snapshot =
+        await getDocs(q);
+
+        const mine =
+        snapshot.docs
+        .map(
+            d => ({
+                id:d.id,
+                ...d.data()
+            })
+        )
+        .filter(
+            n =>
+            n.userId ===
+            user.uid
+        );
+
+        const box =
+        $("notificationsList");
+
+        if(!mine.length){
+
+            box.innerHTML =
+            `
+            <div class="empty">
+                <strong>
+                    No tenés notificaciones nuevas.
+                </strong>
+            </div>
+            `;
+
+            return;
+        }
+
+        box.innerHTML =
+        mine.map(
+            n => `
+            <div class="topic">
+                <strong>
+                    🔔 ${esc(n.authorName || "Usuario")}
+                    ${esc(n.message || "")}
+                </strong>
+
+                <span>
+                    ${esc(n.postTitle || "Tu pregunta")}
+                </span>
+            </div>
+            `
+        ).join("");
+
+    }catch(error){
+
+        console.error(
+            "Error cargando notificaciones:",
+            error
+        );
+
+    }
+
+}
 
 /* =====================================================
    NUEVA PREGUNTA
