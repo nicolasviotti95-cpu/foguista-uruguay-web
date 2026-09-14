@@ -2932,7 +2932,66 @@ async () => {
     }
 
 };
+/* =====================================================
+   RECUPERAR CONTRASEÑA
+===================================================== */
 
+$("forgotPassword").onclick =
+async () => {
+
+    clear("authErr");
+
+    const e =
+    $("email")
+    .value
+    .trim();
+
+    if(!e){
+
+        error(
+            "authErr",
+            "Ingresá tu correo electrónico."
+        );
+
+        $("email").focus();
+
+        return;
+    }
+
+    try{
+
+        await sendPasswordResetEmail(
+            auth,
+            e
+        );
+
+        error(
+            "authErr",
+            ""
+        );
+
+        $("authErr").style.background =
+        "#edf9f1";
+
+        $("authErr").style.color =
+        "#287345";
+
+        $("authErr").textContent =
+        "Te enviamos un correo para restablecer tu contraseña. Revisá también la carpeta de spam.";
+
+        $("authErr").style.display =
+        "block";
+
+    }catch(e){
+
+        error(
+            "authErr",
+            ferr(e)
+        );
+
+    }
+
+};
 
 
 /* =====================================================
