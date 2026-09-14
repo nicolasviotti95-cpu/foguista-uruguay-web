@@ -963,10 +963,13 @@ function renderPost(){
 
             <div class="meta">
 
-                Publicado por
-                <strong>
-                    ${escapeHtml(authorName)}
-                </strong>
+             Publicado por
+<a
+    href="perfil.html?id=${encodeURIComponent(currentPost.authorId)}"
+    style="font-weight:bold;color:#9fc4ff;text-decoration:none;"
+>
+    ${escapeHtml(authorName)}
+</a>
 
                 ·
 
