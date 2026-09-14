@@ -3636,16 +3636,20 @@ async function render(){
 
             <div class="meta">
 
-            <span>
+ <a
+    href="perfil.html?id=${encodeURIComponent(p.authorId)}"
+    style="color:inherit;text-decoration:none;"
+>
 
-            👤
-            ${esc(
-                p.authorName
-                ||
-                "Usuario"
-            )}
+    👤
 
-            </span>
+    ${esc(
+        p.authorName
+        ||
+        "Usuario"
+    )}
+
+</a>
 
 
             ${
