@@ -3293,17 +3293,18 @@ async function loadNotifications(){
 
     try{
 
-        const q =
-        query(
-            collection(
-                db,
-                "notifications"
-            ),
-            orderBy(
-                "createdAt",
-                "desc"
-            )
-        );
+      const q =
+query(
+    collection(
+        db,
+        "notifications"
+    ),
+    where(
+        "userId",
+        "==",
+        user.uid
+    )
+);
 
         const snapshot =
         await getDocs(q);
