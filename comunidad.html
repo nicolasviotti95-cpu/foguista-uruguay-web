@@ -683,7 +683,33 @@ main{
 /* =====================================================
    CUENTA
 ===================================================== */
+.profile-info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:18px;
+}
 
+.profile-stat{
+    padding:14px 10px;
+    background:#f3f7fb;
+    border:1px solid #dce6ef;
+    border-radius:10px;
+    text-align:center;
+}
+
+.profile-stat strong{
+    display:block;
+    color:var(--navy);
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.profile-stat span{
+    display:block;
+    color:#718096;
+    font-size:11px;
+}
 .account{
     padding:20px;
 
@@ -1905,7 +1931,50 @@ id="saveProfile">
 Guardar perfil
 
 </button>
+<div
+    class="profile-info"
+    id="profileInfo"
+>
 
+    <div class="profile-stat">
+
+        <strong id="profileMember">
+            Miembro
+        </strong>
+
+        <span>
+            Desde
+        </span>
+
+    </div>
+
+
+    <div class="profile-stat">
+
+        <strong id="profileQuestions">
+            0
+        </strong>
+
+        <span>
+            Preguntas
+        </span>
+
+    </div>
+
+
+    <div class="profile-stat">
+
+        <strong id="profileAnswers">
+            0
+        </strong>
+
+        <span>
+            Respuestas
+        </span>
+
+    </div>
+
+</div>
 
 </div>
 
