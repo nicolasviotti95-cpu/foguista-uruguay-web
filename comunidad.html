@@ -1991,7 +1991,55 @@ Guardar perfil
 <!-- =====================================================
      MODAL NUEVA PREGUNTA
 ===================================================== -->
+<!-- =====================================================
+     MODAL NOTIFICACIONES
+===================================================== -->
 
+<div
+class="modal"
+id="notifications"
+>
+
+<div class="modal-box">
+
+<div class="mh">
+
+<div>
+
+<h2>
+🔔 Notificaciones
+</h2>
+
+<p>
+Novedades sobre tus preguntas y respuestas.
+</p>
+
+</div>
+
+<button
+class="close"
+data-close="notifications"
+>
+×
+</button>
+
+</div>
+
+<div
+id="notificationsList"
+>
+
+<div class="empty">
+<strong>
+No tenés notificaciones nuevas.
+</strong>
+</div>
+
+</div>
+
+</div>
+
+</div>
 <div
 class="modal"
 id="post">
@@ -3217,7 +3265,19 @@ $("logoutBtn").onclick =
 
 $("profileBtn").onclick =
 openProfile;
+/* =====================================================
+   NOTIFICACIONES
+===================================================== */
 
+$("notificationsBtn").onclick =
+() => {
+
+    show(
+        "notifications",
+        true
+    );
+
+};
 
 
 /* =====================================================
