@@ -14,7 +14,7 @@
 
 <meta
     name="description"
-    content="Foguista Uruguay próximamente disponible para Android. Una herramienta de estudio para operadores de generadores de vapor."
+    content="Foguista Uruguay App. Próximamente disponible para Android."
 >
 
 <link
@@ -51,10 +51,6 @@ body{
     color:#07315c;
 }
 
-a{
-    color:inherit;
-}
-
 
 /* =====================================================
    HEADER
@@ -63,18 +59,17 @@ a{
 .header{
     background:#0b3157;
     border-bottom:1px solid rgba(255,255,255,.08);
-    position:sticky;
-    top:0;
-    z-index:20;
 }
 
 .header-inner{
     max-width:1250px;
     margin:auto;
     padding:14px 22px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     gap:25px;
 }
 
@@ -82,9 +77,9 @@ a{
     display:flex;
     align-items:center;
     gap:12px;
-    color:white;
+
     text-decoration:none;
-    flex-shrink:0;
+    color:white;
 }
 
 .logo-area img{
@@ -105,31 +100,34 @@ a{
 
 .logo-text span{
     margin-top:5px;
-    font-size:12px;
     color:#b7cbe0;
+    font-size:12px;
 }
 
 
 /* =====================================================
-   NAVEGACIÓN
+   NAV
 ===================================================== */
 
 .nav{
     display:flex;
     align-items:center;
-    gap:5px;
-    flex-wrap:wrap;
     justify-content:flex-end;
+    flex-wrap:wrap;
+    gap:5px;
 }
 
 .nav a{
-    text-decoration:none;
     padding:10px 12px;
+
     border-radius:8px;
+
     color:#d7e4f2;
+
+    text-decoration:none;
+
     font-size:14px;
     font-weight:600;
-    transition:.2s;
 }
 
 .nav a:hover{
@@ -144,146 +142,274 @@ a{
 
 
 /* =====================================================
-   APP
+   CONTENIDO PRINCIPAL
 ===================================================== */
 
-.app-page{
-    min-height:calc(100vh - 86px);
-    display:flex;
-    flex-direction:column;
-}
-
 .app-main{
-    flex:1;
-    max-width:1150px;
-    width:100%;
-    margin:auto;
-    padding:75px 22px 70px;
+
+    min-height:calc(100vh - 85px);
+
+    padding:75px 22px 80px;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(21,153,232,.12),
+            transparent 38%
+        );
 }
 
 
-/* INTRO */
+/* =====================================================
+   ENCABEZADO
+===================================================== */
 
-.app-intro{
+.app-heading{
     text-align:center;
-    margin-bottom:45px;
+    max-width:800px;
+    margin:0 auto 50px;
 }
 
-.app-tag{
+.app-heading-label{
     display:block;
+
     color:#1599e8;
+
     font-size:13px;
     font-weight:bold;
-    letter-spacing:2px;
-    margin-bottom:12px;
+
+    letter-spacing:3px;
+
+    margin-bottom:13px;
 }
 
-.app-intro h1{
+.app-heading h1{
     margin:0;
+
     color:#07315c;
-    font-size:42px;
-    line-height:1.2;
-}
 
-.app-intro p{
-    max-width:720px;
-    margin:18px auto 0;
-    color:#5b7592;
-    font-size:18px;
-    line-height:1.6;
-}
-
-
-/* TARJETA PRINCIPAL */
-
-.app-card{
-    display:flex;
-    align-items:center;
-    gap:65px;
-
-    background:linear-gradient(
-        135deg,
-        #edf7ff,
-        #ffffff
-    );
-
-    border:1px solid #d6e9f8;
-    border-radius:25px;
-
-    padding:55px;
-
-    box-shadow:
-        0 18px 45px rgba(7,45,85,.10);
-}
-
-
-/* LOGO */
-
-.app-image{
-    flex:0 0 310px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.app-image img{
-    width:270px;
-    height:270px;
-    object-fit:contain;
-    border-radius:38px;
-
-    box-shadow:
-        0 18px 40px rgba(7,45,85,.18);
-}
-
-
-/* INFORMACIÓN */
-
-.app-copy{
-    flex:1;
-}
-
-.app-copy .section-tag{
-    display:block;
-    color:#1599e8;
-    font-size:13px;
-    font-weight:bold;
-    letter-spacing:2px;
-    margin-bottom:10px;
-}
-
-.app-copy h2{
-    margin:0 0 15px;
-    color:#07315c;
-    font-size:40px;
+    font-size:44px;
     line-height:1.15;
 }
 
-.app-copy p{
-    margin:0 0 22px;
-    color:#58738e;
-    font-size:17px;
+.app-heading p{
+    margin:18px auto 0;
+
+    color:#5c7691;
+
+    font-size:18px;
+
     line-height:1.65;
 }
 
 
-/* LISTA */
+/* =====================================================
+   BLOQUE APP
+===================================================== */
 
-.app-list{
-    margin:0 0 28px;
+.app-showcase{
+
+    position:relative;
+
+    max-width:1050px;
+
+    margin:auto;
+
+    padding:55px;
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    align-items:center;
+
+    gap:65px;
+
+    background:#ffffff;
+
+    border:1px solid #d7e8f6;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 25px 65px rgba(7,45,85,.12);
+
+    overflow:hidden;
 }
 
-.app-list div{
-    margin:10px 0;
-    color:#315b80;
-    font-size:15px;
+
+/* Decoración */
+
+.app-showcase::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:#eaf6ff;
+
+    left:-170px;
+    top:-170px;
+
+    z-index:0;
 }
 
-.app-list span{
+.app-showcase::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:#f1f9ff;
+
+    right:-150px;
+    bottom:-150px;
+
+    z-index:0;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.app-logo-container{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.app-logo-frame{
+
+    width:300px;
+    height:300px;
+
+    padding:18px;
+
+    border-radius:55px;
+
+    background:#ffffff;
+
+    box-shadow:
+        0 25px 55px rgba(7,45,85,.20);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.app-logo-frame img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    border-radius:40px;
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.app-content{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.app-content-label{
+
+    display:inline-block;
+
     color:#1599e8;
+
+    font-size:13px;
+
     font-weight:bold;
-    font-size:18px;
-    margin-right:8px;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+}
+
+.app-content h2{
+
+    margin:0 0 15px;
+
+    color:#07315c;
+
+    font-size:40px;
+
+    line-height:1.15;
+}
+
+.app-content p{
+
+    margin:0 0 25px;
+
+    color:#59758f;
+
+    font-size:17px;
+
+    line-height:1.65;
+}
+
+
+/* =====================================================
+   CARACTERÍSTICAS
+===================================================== */
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px 20px;
+
+    margin-bottom:28px;
+}
+
+.feature{
+
+    color:#315b80;
+
+    font-size:14px;
+
+    padding:8px 0;
+}
+
+.feature span{
+
+    color:#1599e8;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    margin-right:7px;
 }
 
 
@@ -291,39 +417,52 @@ a{
    PRÓXIMAMENTE
 ===================================================== */
 
-.coming-soon{
-    margin-top:20px;
+.coming{
 
-    padding:25px;
+    padding:24px;
 
-    background:#ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #eef8ff,
+            #ffffff
+        );
 
-    border:1px solid #cfe5f7;
+    border:1px solid #cde5f7;
 
-    border-radius:17px;
-
-    box-shadow:
-        0 8px 25px rgba(7,45,85,.07);
+    border-radius:18px;
 }
 
-.coming-label{
+.coming-small{
+
     color:#1599e8;
-    font-size:12px;
+
+    font-size:11px;
+
     font-weight:bold;
+
     letter-spacing:2px;
-    margin-bottom:7px;
+
+    margin-bottom:6px;
 }
 
 .coming-title{
+
     color:#07315c;
+
     font-size:32px;
+
     font-weight:800;
+
     margin-bottom:7px;
 }
 
-.coming-text{
-    color:#5a7590;
-    font-size:15px;
+.coming-description{
+
+    color:#58738e;
+
+    font-size:14px;
+
     margin-bottom:18px;
 }
 
@@ -333,52 +472,67 @@ a{
 ===================================================== */
 
 .google-play{
+
     display:inline-flex;
+
     align-items:center;
+
     gap:12px;
 
     background:#050505;
+
     color:white;
 
     padding:11px 19px;
 
-    border-radius:9px;
+    border-radius:10px;
 
     min-width:235px;
-
-    text-decoration:none;
-
-    cursor:default;
 }
 
 .google-play svg{
-    width:39px;
-    height:39px;
+
+    width:40px;
+    height:40px;
+
     flex-shrink:0;
 }
 
 .google-play-text{
+
     display:flex;
+
     flex-direction:column;
+
     line-height:1.1;
 }
 
 .google-play-text small{
+
     font-size:10px;
+
     letter-spacing:.4px;
 }
 
 .google-play-text strong{
-    font-size:20px;
+
+    font-size:21px;
+
     font-weight:500;
+
     margin-top:2px;
 }
 
 .very-soon{
-    margin-top:13px;
+
+    margin-top:12px;
+
     color:#1599e8;
-    font-size:12px;
+
+    font-size:11px;
+
     font-weight:bold;
+
     letter-spacing:1.5px;
 }
 
@@ -387,23 +541,17 @@ a{
    FRASE
 ===================================================== */
 
-.app-motto{
-    text-align:center;
-    margin-top:42px;
-    color:#1266b1;
-    font-size:16px;
-    font-style:italic;
-}
+.motto{
 
-.app-motto::before,
-.app-motto::after{
-    content:"";
-    display:inline-block;
-    width:75px;
-    height:1px;
-    background:#1599e8;
-    vertical-align:middle;
-    margin:0 18px;
+    text-align:center;
+
+    margin:45px auto 0;
+
+    color:#1266b1;
+
+    font-size:16px;
+
+    font-style:italic;
 }
 
 
@@ -412,59 +560,85 @@ a{
 ===================================================== */
 
 .footer{
+
     background:#062b4d;
+
     color:#dce9f5;
-    border-top:1px solid rgba(255,255,255,.08);
 }
 
 .footer-inner{
+
     max-width:1250px;
+
     margin:auto;
+
     padding:30px 22px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:25px;
 }
 
 .footer-brand{
+
     display:flex;
+
     flex-direction:column;
 }
 
 .footer-brand strong{
-    font-size:18px;
+
     color:white;
+
+    font-size:18px;
 }
 
 .footer-brand span{
+
     margin-top:6px;
+
     color:#a9bfd4;
+
     font-size:13px;
 }
 
 .footer-nav{
+
     display:flex;
-    gap:18px;
+
     flex-wrap:wrap;
+
     justify-content:center;
+
+    gap:16px;
 }
 
 .footer-nav a{
-    text-decoration:none;
+
     color:#c9d9e8;
+
     font-size:13px;
+
+    text-decoration:none;
 }
 
 .footer-nav a:hover{
+
     color:white;
 }
 
-.footer-right{
-    text-align:right;
+.footer-copy{
+
     color:#9db4ca;
+
+    text-align:right;
+
     font-size:12px;
+
     line-height:1.6;
 }
 
@@ -476,107 +650,113 @@ a{
 @media(max-width:900px){
 
     .header-inner{
+
         flex-direction:column;
+
         align-items:flex-start;
     }
 
     .nav{
+
         width:100%;
+
         justify-content:flex-start;
     }
 
-    .app-card{
+    .app-showcase{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding:45px 35px;
+
         gap:40px;
-        padding:40px;
     }
 
-    .app-image{
-        flex:0 0 240px;
+    .app-logo-frame{
+
+        width:250px;
+        height:250px;
     }
 
-    .app-image img{
-        width:220px;
-        height:220px;
-    }
+    .features{
 
-    .app-copy h2{
-        font-size:34px;
+        text-align:left;
     }
 
     .footer-inner{
+
         flex-direction:column;
+
         align-items:flex-start;
     }
 
-    .footer-right{
+    .footer-copy{
+
         text-align:left;
     }
 
 }
 
 
-@media(max-width:700px){
+@media(max-width:600px){
 
     .app-main{
-        padding:50px 18px;
+
+        padding:50px 16px 60px;
     }
 
-    .app-intro h1{
-        font-size:31px;
+    .app-heading h1{
+
+        font-size:32px;
     }
 
-    .app-intro p{
+    .app-heading p{
+
         font-size:16px;
     }
 
-    .app-card{
-        flex-direction:column;
-        text-align:center;
+    .app-showcase{
+
         padding:30px 20px;
-        gap:30px;
+
+        border-radius:22px;
     }
 
-    .app-image{
-        flex:unset;
+    .app-logo-frame{
+
+        width:200px;
+        height:200px;
+
+        padding:13px;
+
+        border-radius:38px;
     }
 
-    .app-image img{
-        width:190px;
-        height:190px;
-        border-radius:28px;
-    }
+    .app-content h2{
 
-    .app-copy h2{
         font-size:31px;
     }
 
-    .app-copy p{
+    .app-content p{
+
         font-size:16px;
     }
 
-    .app-list{
-        text-align:left;
-        display:inline-block;
+    .features{
+
+        grid-template-columns:1fr;
     }
 
-    .coming-soon{
+    .coming{
+
         text-align:center;
     }
 
     .google-play{
+
         min-width:0;
-        width:auto;
-    }
-
-    .app-motto::before,
-    .app-motto::after{
-        width:35px;
-        margin:0 10px;
-    }
-
-    .footer-nav{
-        justify-content:flex-start;
-        gap:12px;
     }
 
 }
@@ -587,9 +767,6 @@ a{
 
 
 <body>
-
-
-<div class="app-page">
 
 
 <!-- =====================================================
@@ -676,87 +853,92 @@ a{
 
 
 <!-- =====================================================
-     CONTENIDO APP
+     APP
 ===================================================== -->
 
 <main class="app-main">
 
 
-    <div class="app-intro">
+    <div class="app-heading">
 
-        <span class="app-tag">
-            NUESTRA APP
+        <span class="app-heading-label">
+            FOGUISTA URUGUAY
         </span>
 
         <h1>
-            Foguista Uruguay en tu bolsillo
+            La formación también<br>
+            va contigo
         </h1>
 
         <p>
-            Estamos trabajando en una aplicación para que puedas
-            estudiar, practicar y repasar en cualquier momento,
-            directamente desde tu celular.
+            Una herramienta de estudio pensada para acompañar
+            la preparación del foguista directamente desde el celular.
         </p>
 
     </div>
 
 
 
-    <section class="app-card">
+    <section class="app-showcase">
 
 
         <!-- LOGO -->
 
-        <div class="app-image">
+        <div class="app-logo-container">
 
-            <img
-                src="logo.png"
-                alt="Aplicación Foguista Uruguay"
-            >
+            <div class="app-logo-frame">
+
+                <img
+                    src="logo.png"
+                    alt="Aplicación Foguista Uruguay"
+                >
+
+            </div>
 
         </div>
 
 
 
-        <!-- INFORMACIÓN -->
+        <!-- CONTENIDO -->
 
-        <div class="app-copy">
+        <div class="app-content">
 
-            <span class="section-tag">
+
+            <span class="app-content-label">
                 NUESTRA APP
             </span>
 
 
             <h2>
-                PRÓXIMAMENTE
+                Foguista Uruguay
             </h2>
 
 
             <p>
-                Una herramienta pensada para acompañarte en tu
-                formación como foguista y ayudarte a estudiar
-                desde cualquier lugar.
+                Estamos preparando una aplicación para que puedas
+                practicar y reforzar tus conocimientos estés donde estés.
             </p>
 
 
-            <div class="app-list">
 
-                <div>
+            <div class="features">
+
+                <div class="feature">
                     <span>✓</span>
                     Preguntas de práctica
                 </div>
 
-                <div>
-                    <span>✓</span>
-                    Contenidos relacionados con la formación
-                </div>
-
-                <div>
+                <div class="feature">
                     <span>✓</span>
                     Estudio desde el celular
                 </div>
 
-                <div>
+                <div class="feature">
+                    <span>✓</span>
+                    Repaso de contenidos
+                </div>
+
+                <div class="feature">
                     <span>✓</span>
                     Preparación para el examen
                 </div>
@@ -765,21 +947,22 @@ a{
 
 
 
-            <!-- CARTEL -->
+            <!-- PRÓXIMAMENTE -->
 
-            <div class="coming-soon">
+            <div class="coming">
 
-                <div class="coming-label">
-                    NUESTRA APP
+                <div class="coming-small">
+                    LANZAMIENTO
                 </div>
 
                 <div class="coming-title">
                     PRÓXIMAMENTE
                 </div>
 
-                <div class="coming-text">
-                    Muy pronto disponible para Android
+                <div class="coming-description">
+                    Muy pronto disponible para dispositivos Android.
                 </div>
+
 
 
                 <!-- GOOGLE PLAY -->
@@ -842,7 +1025,7 @@ a{
 
 
 
-    <div class="app-motto">
+    <div class="motto">
         Conocimiento que genera seguridad
     </div>
 
@@ -852,7 +1035,7 @@ a{
 
 
 <!-- =====================================================
-     PIE DE PÁGINA
+     FOOTER
 ===================================================== -->
 
 <footer class="footer">
@@ -914,7 +1097,7 @@ a{
         </nav>
 
 
-        <div class="footer-right">
+        <div class="footer-copy">
 
             © 2026 Foguista Uruguay.<br>
 
@@ -927,8 +1110,6 @@ a{
 
 </footer>
 
-
-</div>
 
 </body>
 
