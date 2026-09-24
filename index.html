@@ -898,8 +898,235 @@ img{
 ===================================================== */
 
 .normativa-section{
+    position:relative;
+    overflow:hidden;
+
+    background:#031d36;
+
+    color:#ffffff;
+}
+
+.normativa-section::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,29,54,.98) 0%,
+            rgba(3,29,54,.90) 42%,
+            rgba(3,29,54,.72) 100%
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(21,158,232,.08) 0,
+            rgba(21,158,232,.08) 1px,
+            transparent 1px,
+            transparent 55px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(21,158,232,.06) 0,
+            rgba(21,158,232,.06) 1px,
+            transparent 1px,
+            transparent 55px
+        );
+}
+
+.normativa-section::after{
+    content:"URSEA";
+
+    position:absolute;
+
+    right:5%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:150px;
+    font-weight:900;
+
+    letter-spacing:8px;
+
+    color:rgba(255,255,255,.025);
+
+    pointer-events:none;
+}
+
+.normativa-inner{
+    position:relative;
+    z-index:2;
+
+    max-width:1220px;
+
+    margin:auto;
+    padding:72px 28px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.normativa-copy .section-tag{
+    color:#65c5f4;
+}
+
+.normativa-copy h2{
+    margin-bottom:15px;
+
+    color:#ffffff;
+
+    font-size:35px;
+
+    line-height:1.15;
+}
+
+.normativa-copy p{
+    max-width:570px;
+
+    margin-bottom:22px;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.normativa-points{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+}
+
+.normativa-point{
+    padding:16px;
+
+    border:1px solid rgba(21,158,232,.18);
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.045);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.normativa-point:hover{
+    transform:translateX(5px);
+
+    background:rgba(21,158,232,.12);
+}
+
+.normativa-point strong{
+    display:block;
+
+    margin-bottom:4px;
+
+    color:#ffffff;
+
+    font-size:13px;
+}
+
+.normativa-point span{
+    color:#a9c1d4;
+
+    font-size:11px;
+
+    line-height:1.45;
+}
+
+.normativa-box{
+    position:relative;
+    overflow:hidden;
+
+    padding:32px;
+
+    border:1px solid rgba(21,158,232,.30);
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21,158,232,.14),
+            rgba(255,255,255,.035)
+        );
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.normativa-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    right:-100px;
+    bottom:-110px;
+
+    border:1px solid rgba(21,158,232,.20);
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 0 35px rgba(21,158,232,.035),
+        0 0 0 70px rgba(21,158,232,.025);
+}
+
+.normativa-box-label{
+    margin-bottom:12px;
+
+    color:#65c5f4;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+.normativa-box h3{
+    margin-bottom:12px;
+
+    color:#ffffff;
+
+    font-size:25px;
+}
+
+.normativa-box p{
+    margin-bottom:22px;
+
+    color:#bcd0df;
+
+    font-size:13px;
+
+    line-height:1.65;
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
 .app-section{
     position:relative;
+
     overflow:hidden;
 
     background:#f5faff;
@@ -933,6 +1160,7 @@ img{
 
 .app-inner{
     position:relative;
+
     z-index:2;
 
     max-width:1050px;
@@ -956,6 +1184,8 @@ img{
     display:flex;
 
     justify-content:center;
+
+    align-items:center;
 }
 
 .app-image::before{
@@ -974,12 +1204,112 @@ img{
 
     border-radius:50%;
 
-    background:
-        rgba(21,158,232,.10);
+    background:rgba(21,158,232,.10);
 
     filter:blur(10px);
 
-    z-index:-1;
+    z-index:0;
+}
+
+.app-image img{
+    position:relative;
+
+    z-index:1;
+
+    max-width:280px;
+
+    filter:
+        drop-shadow(
+            0 25px 35px
+            rgba(3,29,54,.18)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+.app-image:hover img{
+    transform:translateY(-5px);
+}
+
+.app-copy{
+    position:relative;
+
+    z-index:2;
+}
+
+.app-copy h2{
+    margin-bottom:15px;
+
+    color:#062b4f;
+
+    font-size:34px;
+
+    line-height:1.15;
+}
+
+.app-copy p{
+    margin-bottom:22px;
+
+    color:#607b95;
+
+    font-size:15px;
+
+    line-height:1.7;
+}
+
+.app-list{
+    display:grid;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.app-list > div{
+    transition:
+        transform .2s ease;
+}
+
+.app-list > div:hover{
+    transform:translateX(4px);
+}
+
+.app-list span{
+    color:#1198e5;
+
+    font-weight:800;
+
+    margin-right:8px;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.button-primary{
+    box-shadow:
+        0 8px 20px rgba(21,158,232,.22);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.button-primary:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 26px rgba(21,158,232,.32);
+}
+
+
+/* =====================================================
+   CTA FINAL
+===================================================== */
+
 .final-cta{
     position:relative;
 
@@ -1071,4 +1401,93 @@ img{
     font-size:15px;
 
     line-height:1.7;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .normativa-inner{
+        grid-template-columns:1fr;
+    }
+
+    .app-inner{
+        grid-template-columns:1fr;
+    }
+
+    .app-image{
+        order:2;
+    }
+
+    .app-copy{
+        order:1;
+    }
+
+}
+
+@media(max-width:850px){
+
+    .normativa-section::after{
+        font-size:80px;
+
+        right:-20px;
+    }
+
+    .normativa-points{
+        grid-template-columns:1fr;
+    }
+
+    .app-section::before{
+        width:360px;
+        height:360px;
+
+        right:-150px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .normativa-section::after{
+        display:none;
+    }
+
+    .normativa-inner{
+        padding:
+            55px 20px;
+    }
+
+    .normativa-copy h2{
+        font-size:30px;
+    }
+
+    .normativa-box{
+        padding:25px;
+    }
+
+    .app-inner{
+        padding:
+            55px 20px;
+    }
+
+    .app-image img{
+        max-width:230px;
+    }
+
+    .app-image:hover img{
+        transform:none;
+    }
+
+    .final-cta-inner{
+        padding:
+            60px 20px;
+    }
+
+    .final-cta h2{
+        font-size:30px;
+    }
+
 }
