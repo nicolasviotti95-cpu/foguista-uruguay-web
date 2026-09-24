@@ -355,31 +355,42 @@ img{
 ===================================================== */
 
 .hero-visual{
-    position:relative;
+    position:absolute;
+    z-index:1;
+    top:0;
+    right:0;
+    width:64%;
+    height:100%;
+    min-height:575px;
+    display:block;
+    pointer-events:none;
+}
 
-    min-height:465px;
-
-    display:flex;
-
-    align-items:stretch;
-    justify-content:stretch;
+.hero-visual::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            #031d36 0%,
+            rgba(3,29,54,.96) 9%,
+            rgba(3,29,54,.70) 22%,
+            rgba(3,29,54,.22) 38%,
+            rgba(3,29,54,0) 52%
+        );
+    z-index:2;
 }
 
 .hero-image{
     width:100%;
     height:100%;
-
-    min-height:465px;
-
+    min-height:575px;
     object-fit:cover;
-   object-position:right center;
-
-    border-radius:18px;
-
-    box-shadow:
-        0 30px 75px rgba(0,0,0,.45);
+    object-position:right center;
+    border-radius:0;
+    opacity:.98;
 }
-
 
 /* =====================================================
    INTRO
