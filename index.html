@@ -1994,7 +1994,42 @@ img{
         padding:27px;
     }
 }
-    </style>
+    
+/* Mejoras de navegación y lectura en pantallas pequeñas */
+@media(max-width:600px){
+    .header-inner{
+        align-items:stretch;
+        gap:8px;
+        padding:8px 14px;
+    }
+
+    .main-nav{
+        justify-content:flex-start;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        overscroll-behavior-x:contain;
+        scrollbar-width:thin;
+        padding-bottom:5px;
+    }
+
+    .main-nav a{
+        flex:0 0 auto;
+    }
+
+    .hero-visual{
+        width:100%;
+    }
+
+    .hero-visual::after{
+        background:linear-gradient(
+            180deg,
+            rgba(3,29,54,.70) 0%,
+            rgba(3,29,54,.84) 100%
+        );
+    }
+}
+
+</style>
 </head>
 
 
@@ -2101,6 +2136,13 @@ img{
                     class="button button-secondary"
                 >
                     Ver normativa
+                </a>
+
+                <a
+                    href="estudio.html"
+                    class="button button-secondary"
+                >
+                    Ver ruta de estudio
                 </a>
 
             </div>
@@ -3034,9 +3076,9 @@ img{
             <a href="estudio.html">Estudio</a>
             <a href="normativa.html">Normativa</a>
             <a href="enclavamientos.html">Enclavamientos</a>
-            <a href="tratamiento-del-agua.html">Tratamiento del agua</a>
+            <a href="tratamiento-agua.html">Tratamiento del agua</a>
             <a href="comunidad.html">Comunidad</a>
-            <a href="pregunta.html">App</a>
+            <a href="app.html">App</a>
         </nav>
 
         <div class="footer-derechos">
