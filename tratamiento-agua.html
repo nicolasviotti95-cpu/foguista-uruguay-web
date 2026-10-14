@@ -241,7 +241,7 @@ footer a{
         font-size:14px;
     }
 }
-</style>
+.flow-diagram{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:22px 0}.flow-step{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:125px;padding:16px;border:1px solid #d8e7f1;border-radius:14px;background:linear-gradient(160deg,#f8fcff,#edf7fc);text-align:center}.flow-step strong{color:#073b70}.flow-step span{margin-top:7px;color:#49677e;font-size:13px;line-height:1.45}.flow-step:not(:last-child):after{content:"›";position:absolute;right:-12px;top:50%;transform:translate(50%,-50%);display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#1597df;color:#fff;font-size:23px;font-weight:bold}.cause-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}.cause-card{padding:18px;border:1px solid #dfebf2;border-radius:14px;background:#f8fbfd}.cause-card h3{margin:0 0 12px;color:#073b70}.cause-card p{margin:8px 0}.cause-card .cause{color:#825c00}.cause-card .effect{padding-top:9px;border-top:1px solid #dce7ed;color:#a23535;font-weight:700}.parameter-table td:last-child{color:#315a7d}.quiz-intro{color:#49677e}.quiz-status{margin:18px 0;padding:12px 15px;border-radius:10px;background:#eef8ff;color:#07578d;font-weight:700}.quiz-question{margin:16px 0;padding:18px;border:1px solid #dbe4ea;border-radius:14px}.quiz-question legend{padding:0 7px;color:#073b70;font-weight:700;line-height:1.5}.quiz-options{display:grid;gap:9px;margin-top:10px}.quiz-option{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;border:1px solid #dbe4ea;border-radius:10px;background:white;cursor:pointer}.quiz-option input{margin-top:5px;accent-color:#087bc0}.quiz-question.is-correct{border-color:#35a765;background:#f6fcf8}.quiz-question.is-incorrect{border:2px solid #d93025;background:#fff8f7}.quiz-option.is-correct-answer{border-color:#35a765;background:#eef9f2}.quiz-option.is-incorrect-answer{border-color:#d93025;background:#fff0ee;color:#a11b14}.quiz-feedback{margin:20px 0;padding:18px 20px;border-radius:12px;background:#eef8ff;border-left:5px solid #1597df}.quiz-feedback li{margin:9px 0}.quiz-actions{display:flex;gap:12px;flex-wrap:wrap}.quiz-actions button{border:0;border-radius:9px;padding:12px 18px;background:#1597df;color:#fff;font:inherit;font-weight:700;cursor:pointer}.quiz-actions button.secondary{border:1px solid #aac2d2;background:#fff;color:#073b70}.quiz-actions button:disabled{opacity:.55;cursor:not-allowed}@media(max-width:850px){.flow-diagram{grid-template-columns:1fr}.flow-step{min-height:0;text-align:left}.flow-step:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-13px;transform:translate(50%,50%);font-size:16px}.cause-grid{grid-template-columns:1fr}}</style>
 </head>
 
 <body>
@@ -343,7 +343,7 @@ de calor y pueden aumentar el consumo energético.
 
 <section class="section">
 
-<h2>🧪 ¿Qué se controla en el agua?</h2>
+<div class="info"><strong>Seguí el recorrido:</strong> el tratamiento empieza con el agua disponible, continúa con el acondicionamiento que requiera la instalación y se completa con controles y registros durante la operación.</div><div class="flow-diagram" aria-label="Recorrido del agua en el sistema"><div class="flow-step"><strong>1 · Agua de aporte</strong><span>Origen y características variables.</span></div><div class="flow-step"><strong>2 · Pretratamiento</strong><span>Filtrado, ablandamiento u otro proceso previsto.</span></div><div class="flow-step"><strong>3 · Control del agua</strong><span>Análisis, tratamiento y seguimiento.</span></div><div class="flow-step"><strong>4 · Generación</strong><span>Parte del agua se transforma en vapor y algunas sustancias se concentran.</span></div><div class="flow-step"><strong>5 · Vapor y purgas</strong><span>Las purgas ayudan a controlar el agua según el programa.</span></div></div><h3>Relaciones de causa y efecto</h3><div class="cause-grid"><div class="cause-card"><h3>Incrustación</h3><p class="cause"><strong>Si:</strong> minerales formadores de depósitos precipitan.</p><p class="effect">Entonces: baja la transferencia de calor y puede aumentar la temperatura del metal.</p></div><div class="cause-card"><h3>Corrosión</h3><p class="cause"><strong>Si:</strong> las condiciones favorecen reacciones corrosivas.</p><p class="effect">Entonces: el material puede deteriorarse y perder espesor progresivamente.</p></div><div class="cause-card"><h3>Concentración</h3><p class="cause"><strong>Si:</strong> se evapora agua y quedan sustancias disueltas.</p><p class="effect">Entonces: el programa controla parámetros y define cuándo corresponde purgar.</p></div></div><h2>🧪 ¿Qué se controla en el agua?</h2>
 
 <p>
 El tratamiento no consiste solamente en agregar productos químicos.
@@ -351,11 +351,12 @@ Primero es necesario conocer las características del agua y controlar su
 comportamiento durante la operación.
 </p>
 
-<table>
+<table class="parameter-table">
 
 <tr>
 <th>Parámetro</th>
 <th>¿Qué permite conocer?</th>
+<th>¿Por qué se sigue?</th>
 </tr>
 
 <tr>
@@ -364,7 +365,7 @@ comportamiento durante la operación.
 Permite evaluar la presencia de determinados minerales que pueden favorecer
 la formación de incrustaciones.
 </td>
-</tr>
+<td>Ayuda a evaluar el desempeño del pretratamiento y el riesgo de depósitos.</td></tr>
 
 <tr>
 <td><span class="key">pH</span></td>
@@ -372,7 +373,7 @@ la formación de incrustaciones.
 Indica el grado de acidez o alcalinidad del agua y es importante para el
 control químico y la protección de los materiales.
 </td>
-</tr>
+<td>Permite verificar que el agua se mantenga en el rango definido para el equipo y su programa.</td></tr>
 
 <tr>
 <td><span class="key">Conductividad</span></td>
@@ -380,14 +381,14 @@ control químico y la protección de los materiales.
 Se relaciona con la cantidad de especies iónicas disueltas y puede utilizarse
 como parámetro de control del agua del generador.
 </td>
-</tr>
+<td>Su tendencia puede advertir cambios en la concentración de especies iónicas.</td></tr>
 
 <tr>
 <td><span class="key">Sólidos disueltos</span></td>
 <td>
 Permiten evaluar la concentración de sustancias que permanecen en el agua.
 </td>
-</tr>
+<td>Permiten vigilar la concentración y valorar el control del programa.</td></tr>
 
 <tr>
 <td><span class="key">Alcalinidad</span></td>
@@ -395,7 +396,7 @@ Permiten evaluar la concentración de sustancias que permanecen en el agua.
 Es un parámetro importante dentro del control químico del agua y de la
 formación de determinadas condiciones dentro del generador.
 </td>
-</tr>
+<td>Se interpreta junto con los demás análisis para seguir el equilibrio químico.</td></tr>
 
 <tr>
 <td><span class="key">Oxígeno disuelto</span></td>
@@ -403,7 +404,7 @@ formación de determinadas condiciones dentro del generador.
 Su presencia puede favorecer procesos corrosivos, por lo que debe ser
 controlado mediante el tratamiento correspondiente.
 </td>
-</tr>
+<td>Su seguimiento ayuda a detectar condiciones que puedan favorecer corrosión.</td></tr>
 
 </table>
 
@@ -841,4 +842,34 @@ y vida útil del generador de vapor.
 </p>
 
 <p>
-Los principales problemas que debemos comprender son
+Los problemas que conviene relacionar son las incrustaciones, la corrosión, la concentración y el arrastre. Preguntate qué los favorece, qué efecto producen y qué parte del programa permite controlarlos.</p><p>Recordá la secuencia: <strong>observar → analizar → comparar con el programa → actuar según el procedimiento → registrar.</strong></p></div></section>
+<section class="section" id="preguntas"><h2>📝 Poné a prueba lo aprendido</h2><p class="quiz-intro">Respondé seis preguntas por ronda. Se mezclan y no se repiten hasta completar el banco. Cada corrección incluye una explicación.</p><div id="water-quiz-status" class="quiz-status" aria-live="polite"></div><div id="water-quiz-list"></div><div class="quiz-actions"><button id="water-quiz-submit" type="button">Corregir respuestas</button><button id="water-quiz-new" class="secondary" type="button" hidden>Nueva prueba</button></div><div id="water-quiz-feedback" class="quiz-feedback" aria-live="polite" hidden></div></section></main><footer><p>Foguista Uruguay · Formación y seguridad en generadores de vapor</p><p><a href="index.html">Volver al inicio</a></p></footer>
+<script>
+(()=>{const bank=[
+["recorrido","¿Qué describe mejor el recorrido del agua?","Aporte, acondicionamiento, controles y operación según el programa.","Agregar siempre el mismo químico y no volver a analizar.","El tratamiento combina acondicionamiento, análisis y seguimiento."],
+["dureza","¿Por qué se controla la dureza?","Ciertos minerales pueden formar depósitos en superficies calientes.","Determina por sí sola la presión máxima.","La dureza se relaciona con minerales que pueden contribuir a incrustaciones."],
+["escala","¿Qué efecto puede producir una incrustación?","Dificultar la transferencia de calor y elevar la temperatura del metal.","Mejorar siempre la eficiencia.","El depósito actúa como barrera térmica; el efecto depende de la operación."],
+["conductividad","¿Qué información aporta la conductividad?","Una indicación indirecta de especies iónicas disueltas.","El espesor directo de la chapa.","Se relaciona con los iones y se interpreta junto con otros controles."],
+["concentracion","¿Por qué pueden concentrarse sustancias durante la evaporación?","El vapor se separa y algunas sustancias permanecen en el líquido.","Todas pasan al vapor en igual proporción.","Muchas sustancias no volátiles permanecen en el agua."],
+["purga","¿Cuál es el propósito general de las purgas?","Retirar agua o sedimentos según el tipo de purga y el programa.","Reemplazar los análisis químicos.","Las purgas tienen funciones distintas; su frecuencia sigue el programa."],
+["ph","¿Qué indica el pH?","El grado de acidez o alcalinidad del agua.","El caudal de vapor.","El pH caracteriza acidez/alcalinidad y se compara con límites establecidos."],
+["oxigeno","¿Por qué importa controlar el oxígeno disuelto?","Puede favorecer procesos corrosivos.","Es una medida de salinidad.","Puede intervenir en corrosión y se controla según el tratamiento."],
+["ablandador","¿Qué busca principalmente un ablandador?","Reducir la dureza mediante un proceso previsto para ello.","Eliminar todo gas y mineral de una vez.","Ablandar no equivale necesariamente a desmineralizar o desairear."],
+["filtracion","¿Qué función puede cumplir la filtración?","Retirar determinadas partículas, según el sistema.","Corregir por sí sola toda la química.","La filtración no reemplaza otros procesos ni análisis."],
+["corrosion","¿Qué puede indicar una condición corrosiva sostenida?","Deterioro progresivo y posible pérdida de espesor.","Aumento garantizado de eficiencia.","La corrosión puede avanzar sin señales externas inmediatas."],
+["limites","¿Existe un único límite para todos los generadores?","No; depende del equipo, agua, tratamiento y programa.","Sí; el mismo valor sirve para todos.","Los límites corresponden al equipo y su programa específico."],
+["quimicos","¿Cómo se dosifican productos químicos?","Según el programa y las instrucciones técnicas aplicables.","A ojo, según la llama.","La dosis depende de la instalación y no debe improvisarse."],
+["analisis","¿Para qué sirve analizar periódicamente el agua?","Para conocer tendencias y detectar desviaciones.","Para evitar registrar operaciones.","Permite seguir la evolución y orientar la respuesta prevista."],
+["registro","¿Qué aporta el registro?","Trazabilidad de resultados, acciones y evolución.","Sustituye los procedimientos.","Deja constancia, pero no reemplaza la operación correcta."],
+["ursea","¿Qué lugar ocupa el programa de tratamiento?","Forma parte de la documentación y prevé controles y registros.","Es opcional si el agua se ve clara.","La aplicación de obligaciones requiere consultar el texto oficial vigente."],
+["desviacion","Un resultado queda fuera del límite. ¿Qué corresponde?","Seguir el procedimiento, comunicar y registrar lo que corresponda.","Cambiar dosis sin consultar.","La desviación requiere respuesta establecida; no improvises."],
+["foguista","¿Qué función cumple el foguista?","Observar, registrar e interpretar desviaciones y seguir el procedimiento.","Definir límites universales por cuenta propia.","El foguista sigue el programa y escala lo que corresponda."]
+].map(x=>({id:x[0],prompt:x[1],options:[{text:x[2],correct:true},{text:x[3],correct:false},{text:"No hace falta controlar ese aspecto.",correct:false}],explanation:x[4]}));
+const n=6,key="foguista-agua-ronda-v1",list=document.getElementById("water-quiz-list"),status=document.getElementById("water-quiz-status"),feedback=document.getElementById("water-quiz-feedback"),submit=document.getElementById("water-quiz-submit"),next=document.getElementById("water-quiz-new");
+const mix=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+let state;try{state=JSON.parse(sessionStorage.getItem(key)||"{}")}catch(_){state={}}if(!state||!Array.isArray(state.remaining)||!state.remaining.every(id=>bank.some(q=>q.id===id))||new Set(state.remaining).size!==state.remaining.length)state={remaining:[],done:0};
+let current=[];const save=()=>{try{sessionStorage.setItem(key,JSON.stringify(state))}catch(_){}};
+function render(){if(state.remaining.length<n)state={remaining:mix(bank.map(q=>q.id)),done:0};current=state.remaining.splice(0,n).map(id=>bank.find(q=>q.id===id));save();status.textContent="Ronda "+(Math.floor(state.done/n)+1)+" · 6 preguntas mezcladas · "+state.remaining.length+" preguntas antes de repetir";list.innerHTML=current.map((q,i)=>'<fieldset class="quiz-question" data-id="'+q.id+'"><legend>'+(i+1)+'. '+q.prompt+'</legend><div class="quiz-options">'+mix(q.options).map(o=>'<label class="quiz-option"><input type="radio" name="water-'+q.id+'" data-correct="'+o.correct+'"><span>'+o.text+'</span></label>').join("")+'</div></fieldset>').join("");feedback.hidden=true;feedback.innerHTML="";submit.disabled=false;next.hidden=true}
+submit.addEventListener("click",()=>{const fields=[...list.querySelectorAll(".quiz-question")],missing=fields.find(x=>!x.querySelector("input:checked"));if(missing){feedback.hidden=false;feedback.innerHTML="<strong>Te falta responder alguna pregunta.</strong><p>Completá las seis antes de corregir.</p>";missing.querySelector("input").focus();return}let score=0;const detail=fields.map(x=>{const a=x.querySelector("input:checked"),ok=a.dataset.correct==="true",q=current.find(y=>y.id===x.dataset.id);if(ok)score++;x.classList.toggle("is-correct",ok);x.classList.toggle("is-incorrect",!ok);x.querySelectorAll(".quiz-option").forEach(l=>{const i=l.querySelector("input");l.classList.toggle("is-correct-answer",i.dataset.correct==="true");l.classList.toggle("is-incorrect-answer",i===a&&!ok);i.disabled=true});return"<li><strong>"+(ok?"Correcta.":"Incorrecta.")+"</strong> "+q.explanation+"</li>"});state.done+=n;save();feedback.hidden=false;feedback.innerHTML="<strong>Resultado: "+score+" de "+n+".</strong><ul>"+detail.join("")+"</ul><p>La respuesta incorrecta aparece en rojo y la correcta en verde. Iniciá otra ronda cuando quieras.</p>";submit.disabled=true;next.hidden=false});
+next.addEventListener("click",render);render()})();
+</script></body></html>
