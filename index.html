@@ -2029,6 +2029,29 @@ img{
     }
 }
 
+
+/* RECORRIDO DE APRENDIZAJE */
+.learning-path{position:relative;padding:54px 22px 60px;background:linear-gradient(180deg,#f7fbfe 0%,#fff 100%);border-top:1px solid #e2edf5;border-bottom:1px solid #e2edf5}
+.learning-path-inner{max-width:1240px;margin:0 auto}
+.path-heading{text-align:center;margin:0 auto 32px}
+.path-heading .section-tag{display:inline-block;color:#087fc5;font-size:11px;font-weight:800;letter-spacing:1.8px}
+.path-heading h2{margin:9px 0 7px;color:#082e52;font-size:clamp(25px,3vw,34px);line-height:1.18}
+.path-heading p{margin:0;color:#607b95;font-size:14px;line-height:1.6}
+.journey-steps{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.journey-steps::before{content:"";position:absolute;z-index:0;top:21px;left:7%;right:7%;height:2px;background:linear-gradient(90deg,#1b8bd0,#4db6cf,#1b8bd0);opacity:.48}
+.journey-item{position:relative;z-index:1;min-width:0}
+.journey-link{height:100%;display:flex;flex-direction:column;align-items:flex-start;padding:0 11px 15px;color:inherit;text-decoration:none;border-radius:14px}
+.step-number{width:42px;height:42px;display:grid;place-items:center;margin:0 auto 13px;border:2px solid #b8dced;border-radius:50%;background:#fff;color:#087fc5;font-size:12px;font-weight:800;box-shadow:0 0 0 5px #f7fbfe;transition:transform .2s,border-color .2s}
+.step-title{color:#0b3157;font-size:14px;font-weight:800;line-height:1.35}
+.step-desc{margin-top:7px;color:#607b95;font-size:11px;line-height:1.55}
+.step-action{margin-top:auto;padding-top:12px;color:#087fc5;font-size:10px;font-weight:800}.step-action b{padding-left:3px;font-size:13px}
+.journey-link:hover{background:#fff;box-shadow:0 10px 25px rgba(7,45,85,.08)}.journey-link:hover .step-number{transform:translateY(-2px);border-color:#1599e8}
+.journey-link:focus-visible,.journey-extra:focus-visible{outline:3px solid #1599e8;outline-offset:3px}
+.journey-extra{display:block;margin:0 11px 6px;color:#426b89;font-size:10px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1050px){.journey-steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px}.journey-steps::before{display:none}.journey-link{padding:12px;border:1px solid #e2edf5;background:rgba(255,255,255,.76)}.step-number{margin:0 0 12px;box-shadow:0 0 0 4px #f7fbfe}.journey-extra{margin:4px 12px 0}}
+@media(max-width:600px){.learning-path{padding:42px 16px}.path-heading{text-align:left;margin-bottom:22px}.journey-steps{grid-template-columns:1fr;gap:8px}.journey-link{display:grid;grid-template-columns:42px 1fr;column-gap:12px;align-items:start;padding:12px}.step-number{grid-column:1;grid-row:1/4;margin:0}.step-title{grid-column:2;grid-row:1}.step-desc{grid-column:2;grid-row:2;margin-top:4px}.step-action{grid-column:2;grid-row:3;margin-top:0;padding-top:8px}.journey-extra{margin:2px 12px 7px 66px}}
+@media(prefers-reduced-motion:reduce){.step-number{transition:none}}
+
 </style>
 </head>
 
@@ -2224,6 +2247,27 @@ img{
 <!-- =====================================================
      INTRO
 ===================================================== -->
+
+<section class="learning-path" aria-labelledby="route-title">
+    <div class="learning-path-inner">
+        <div class="path-heading">
+            <span class="section-tag">TU RECORRIDO DE APRENDIZAJE</span>
+            <h2 id="route-title">¿Por dónde empezar?</h2>
+            <p>Seguí una ruta sencilla para pasar de los conceptos básicos a la práctica y el intercambio.</p>
+        </div>
+        <ol class="journey-steps">
+            <li class="journey-item"><a class="journey-link" href="generadores.html"><span class="step-number">01</span><span class="step-title">Conocé el generador</span><span class="step-desc">Entendé sus partes, su funcionamiento y cómo produce vapor.</span><span class="step-action">Explorar generadores <b aria-hidden="true">→</b></span></a></li>
+            <li class="journey-item"><a class="journey-link" href="tratamiento-agua.html"><span class="step-number">02</span><span class="step-title">Cuidá el agua</span><span class="step-desc">Aprendé por qué el tratamiento y las purgas protegen el equipo.</span><span class="step-action">Ver tratamiento <b aria-hidden="true">→</b></span></a></li>
+            <li class="journey-item">
+                <a class="journey-link" href="seguridad.html"><span class="step-number">03</span><span class="step-title">Operá con seguridad</span><span class="step-desc">Relacioná riesgos, alarmas, controles y procedimientos.</span><span class="step-action">Estudiar seguridad <b aria-hidden="true">→</b></span></a>
+                <a class="journey-extra" href="enclavamientos.html">Ver enclavamientos →</a>
+            </li>
+            <li class="journey-item"><a class="journey-link" href="estudio.html"><span class="step-number">04</span><span class="step-title">Comprendé y practicá</span><span class="step-desc">Poné a prueba lo aprendido y revisá cada explicación.</span><span class="step-action">Ir a Estudio <b aria-hidden="true">→</b></span></a></li>
+            <li class="journey-item"><a class="journey-link" href="normativa.html"><span class="step-number">05</span><span class="step-title">Consultá la normativa</span><span class="step-desc">Conocé el reglamento y distinguí requisitos de recomendaciones.</span><span class="step-action">Consultar URSEA <b aria-hidden="true">→</b></span></a></li>
+            <li class="journey-item"><a class="journey-link" href="comunidad.html"><span class="step-number">06</span><span class="step-title">Compartí y preguntá</span><span class="step-desc">Llevá tus dudas y experiencias a la comunidad foguista.</span><span class="step-action">Ir a Comunidad <b aria-hidden="true">→</b></span></a></li>
+        </ol>
+    </div>
+</section>
 
 <section class="intro">
 
