@@ -138,12 +138,8 @@ header{
 
 .hero{
     background:
-        linear-gradient(
-            90deg,
-            rgba(3,29,54,.98),
-            rgba(3,29,54,.78)
-        ),
-        url("hero-foguista.png") center/cover;
+        linear-gradient(90deg,rgba(3,29,54,.98) 0%,rgba(3,29,54,.91) 38%,rgba(3,29,54,.18) 100%),
+        url("comunidad-hero.jpg") center/cover no-repeat;
 
     color:white;
 }
@@ -156,7 +152,7 @@ header{
     padding:55px 28px;
 
     display:grid;
-    grid-template-columns:1fr auto;
+    grid-template-columns:minmax(0,1fr);
 
     gap:35px;
 
@@ -179,7 +175,7 @@ header{
 }
 
 .hero p{
-    max-width:760px;
+    max-width:650px;
 
     margin-top:16px;
 
@@ -189,7 +185,11 @@ header{
 }
 
 .checks{
-    min-width:250px;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
 }
 
 .check{
@@ -198,7 +198,7 @@ header{
 
     gap:10px;
 
-    margin:9px 0;
+    margin:0;
 
     font-size:14px;
 }
@@ -236,6 +236,13 @@ header{
 
     padding:0 20px;
 }
+
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero-link{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:1px solid rgba(255,255,255,.3);border-radius:7px;color:#fff;font-size:13px;font-weight:800}
+.hero-link:hover{background:rgba(255,255,255,.1)}
+.hero-summary{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.hero-summary div{padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(3,29,54,.4);color:#d0e0ec;font-size:12px}
+.hero-summary strong{color:#fff;font-size:15px;margin-right:4px}
 
 .btn:hover{
     background:var(--blue2);
@@ -299,7 +306,7 @@ main{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(4,minmax(0,1fr));
 
     gap:14px;
 
@@ -307,7 +314,7 @@ main{
 }
 
 .cat{
-    padding:18px;
+    padding:15px;
 
     border:1px solid var(--border);
 
@@ -329,8 +336,8 @@ main{
 }
 
 .cat-icon{
-    width:44px;
-    height:44px;
+    width:38px;
+    height:38px;
 
     margin-bottom:10px;
 
@@ -348,7 +355,7 @@ main{
 .cat h3{
     color:var(--navy);
 
-    font-size:16px;
+    font-size:14px;
 }
 
 .cat p{
@@ -356,7 +363,7 @@ main{
 
     color:var(--muted);
 
-    font-size:12px;
+    font-size:11px;
 }
 
 .cat small{
@@ -382,7 +389,7 @@ main{
     display:grid;
 
     grid-template-columns:
-        1fr 190px 170px;
+        minmax(0,1fr) 190px 170px;
 
     gap:9px;
 
@@ -592,6 +599,14 @@ main{
 
     color:var(--navy);
 }
+
+.empty .btn{margin-top:14px}
+.state-tabs{display:flex;gap:8px;flex-wrap:wrap;padding:2px 4px 10px}
+.state-tab{border:1px solid #d7e3eb;border-radius:999px;background:#fff;color:#48647d;padding:8px 13px;font-size:12px;font-weight:700;cursor:pointer}
+.state-tab[aria-pressed="true"]{border-color:var(--blue);background:#e8f5fc;color:#087fc5}
+.state-badge{display:inline-flex;align-items:center;margin:0 5px 0 0;padding:4px 9px;border-radius:999px;font-size:10px;font-weight:800}
+.state-badge.open{background:#fff4df;color:#986200}
+.state-badge.answered{background:#eaf8ef;color:#287345}
 
 
 /* =====================================================
@@ -1098,10 +1113,6 @@ footer{
 
     .checks{
         display:flex;
-
-        gap:10px;
-
-        flex-wrap:wrap;
     }
 
     .nav{
@@ -1111,6 +1122,8 @@ footer{
     .tools{
         grid-template-columns:1fr 1fr;
     }
+
+    .cats{grid-template-columns:repeat(2,minmax(0,1fr))}
 
     .tools .search{
         grid-column:1/-1;
@@ -1143,9 +1156,16 @@ footer{
         padding-right:18px;
     }
 
-    .cats{
-        grid-template-columns:1fr;
-    }
+    .hero{background-position:center,right center}
+    .hero h1{font-size:clamp(38px,11vw,52px)}
+    .hero-summary{gap:7px}
+    .hero-summary div{font-size:11px}
+
+    .cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px}
+    .cat{padding:12px}
+    .cat-icon{width:34px;height:34px;font-size:19px}
+    .cat h3{font-size:13px}
+    .cat p{font-size:10px}
 
     .tools{
         grid-template-columns:1fr;
@@ -1276,37 +1296,14 @@ experiencias de trabajo y aprender juntos.
 </div>
 
 
-<div class="checks">
-
-<div class="check">
-<i>✓</i>
-Compartir
+<div class="hero-actions">
+<button class="btn" id="newBtn">＋ Hacer una pregunta</button>
+<a class="hero-link" href="#preguntas" id="unansweredHeroLink">Ver preguntas sin respuesta ↓</a>
 </div>
-
-<div class="check">
-<i>✓</i>
-Aprender
-</div>
-
-<div class="check">
-<i>✓</i>
-Resolver dudas
-</div>
-
-<div class="check">
-<i>✓</i>
-Mejorar la seguridad
-</div>
-
-
-<button
-class="btn"
-id="newBtn">
-
-＋ Nueva pregunta
-
-</button>
-
+<div class="hero-summary" aria-live="polite">
+<div><strong id="heroTotal">0</strong> preguntas</div>
+<div><strong id="heroOpen">0</strong> esperan respuesta</div>
+<div><strong id="heroAnswered">0</strong> con respuestas</div>
 </div>
 
 </div>
@@ -1329,8 +1326,7 @@ Comunidad Foguista
 </h2>
 
 <p>
-Elegí una categoría o buscá una pregunta.
-También podés ordenar por actividad.
+Buscá una consulta, elegí un tema o ayudá a responder algo que quedó pendiente.
 </p>
 
 </div>
@@ -1344,7 +1340,7 @@ También podés ordenar por actividad.
      PUBLICACIONES
 ===================================================== -->
 
-<section class="panel">
+<section class="panel" id="preguntas">
 
 
 <div
@@ -1375,6 +1371,12 @@ id="cats">
     placeholder="🔎 Buscar preguntas..."
     onfocus="this.removeAttribute('readonly');">
 
+</div>
+
+<div class="state-tabs" role="group" aria-label="Filtrar preguntas por estado">
+<button class="state-tab" type="button" data-state="all" aria-pressed="true">Todas</button>
+<button class="state-tab" type="button" data-state="open" aria-pressed="false">Sin respuesta</button>
+<button class="state-tab" type="button" data-state="answered" aria-pressed="false">Con respuestas</button>
 </div>
 
 
@@ -1430,11 +1432,7 @@ id="count">
 class="list"
 id="list">
 
-<div class="empty">
-
-Cargando publicaciones...
-
-</div>
+<div class="empty">Cargando publicaciones...</div>
 
 </div>
 
@@ -2332,6 +2330,9 @@ null;
 
 let posts =
 [];
+
+let stateFilter =
+"all";
 
 let mode =
 "register";
@@ -3749,6 +3750,12 @@ async function render(){
     $("filter")
     .value;
 
+    if(stateFilter === "open"){
+        a = a.filter(p => !(p.replyCount || 0));
+    }else if(stateFilter === "answered"){
+        a = a.filter(p => (p.replyCount || 0) > 0);
+    }
+
 
     if(c){
 
@@ -3832,24 +3839,10 @@ async function render(){
 
 
     if(!a.length){
-
-        $("list").innerHTML =
-
-        `
-
-        <div class="empty">
-
-        🔎
-
-        <strong>
-        No encontramos preguntas
-        </strong>
-
-        Probá con otra búsqueda o categoría.
-
-        </div>
-
-        `;
+        $("list").innerHTML = posts.length
+            ? `<div class="empty">🔎<strong>No encontramos preguntas con estos filtros</strong>Probá con otra categoría o cambiá el estado seleccionado.</div>`
+            : `<div class="empty">💬<strong>La comunidad está esperando su primera pregunta</strong>Compartí una duda concreta y ayudá a iniciar el intercambio.<br><button class="btn" type="button" data-empty-new>＋ Hacer la primera pregunta</button></div>`;
+        $("list").querySelector("[data-empty-new]")?.addEventListener("click",openPost);
 
         return;
 
@@ -3881,6 +3874,10 @@ async function render(){
             card.innerHTML =
 
             `
+
+            <span class="state-badge ${(p.replyCount || 0) ? "answered" : "open"}">
+            ${(p.replyCount || 0) ? "✓ Con respuestas" : "● Sin respuesta"}
+            </span>
 
             <span class="tag">
 
@@ -4219,6 +4216,24 @@ render;
 $("sort").onchange =
 render;
 
+document.querySelectorAll("[data-state]").forEach(button => {
+    button.addEventListener("click", () => {
+        stateFilter = button.dataset.state;
+        document.querySelectorAll("[data-state]").forEach(tab => {
+            tab.setAttribute("aria-pressed", String(tab === button));
+        });
+        render();
+    });
+});
+
+$("unansweredHeroLink").addEventListener("click", () => {
+    stateFilter = "open";
+    document.querySelectorAll("[data-state]").forEach(tab => {
+        tab.setAttribute("aria-pressed", String(tab.dataset.state === "open"));
+    });
+    render();
+});
+
 
 
 /* =====================================================
@@ -4253,6 +4268,11 @@ onSnapshot(
 
 
         await counts();
+
+        const waiting = posts.filter(p => !(p.replyCount || 0)).length;
+        $("heroTotal").textContent = posts.length;
+        $("heroOpen").textContent = waiting;
+        $("heroAnswered").textContent = posts.length - waiting;
 
 
         const f =
@@ -4471,3 +4491,5 @@ document
 
 </body>
 </html>
+
+
