@@ -3622,7 +3622,7 @@ Cómo se aprovecha la energía térmica disponible.
 <section class="learning-check" aria-labelledby="learning-check-title">
     <span class="map-kicker">Comprobá lo que entendiste</span>
     <h2 id="learning-check-title">¿Podés seguir el recorrido?</h2>
-    <p>Elegí una respuesta por pregunta. Al corregir, vas a ver una explicación breve para conectar cada concepto con el funcionamiento del equipo.</p>
+    <p>Cada prueba presenta seis preguntas. No se repiten hasta completar una ronda de 18; después, comienza una nueva ronda mezclada. Al corregir, vas a ver una explicación breve para cada respuesta.</p>
 
     <form id="learning-check-form">
         <div class="quiz-list" id="learning-check-questions"></div>
@@ -3746,6 +3746,7 @@ Agua y vapor
     const submitButton = document.getElementById("learning-check-submit");
     const newAttemptButton = document.getElementById("learning-check-new");
     const questionsPerAttempt = 6;
+    let remainingQuestionIds = [];
 
     const questionBank = [
         {
@@ -3897,6 +3898,36 @@ Agua y vapor
                 { text: "Memorizar primero los nombres de todas las piezas.", correct: false }
             ],
             explanation: "Seguir los circuitos permite deducir qué transporta cada uno y dónde se transfiere la energía."
+        },
+        {
+            id: "calor-sensible",
+            prompt: "¿Qué ocurre cuando el agua recibe calor sensible antes de comenzar a vaporizarse?",
+            options: [
+                { text: "Aumenta su temperatura sin cambiar todavía de estado.", correct: true },
+                { text: "Se transforma inmediatamente en vapor sobrecalentado.", correct: false },
+                { text: "Deja de recibir energía térmica.", correct: false }
+            ],
+            explanation: "El calor sensible cambia la temperatura del agua; el calor latente se asocia al cambio de estado."
+        },
+        {
+            id: "vapor-sobrecalentado",
+            prompt: "A una presión determinada, ¿cómo se reconoce el vapor sobrecalentado?",
+            options: [
+                { text: "Su temperatura está por encima de la temperatura de saturación correspondiente.", correct: true },
+                { text: "Contiene necesariamente gotas de agua líquida.", correct: false },
+                { text: "Está a una temperatura inferior a la de saturación.", correct: false }
+            ],
+            explanation: "El vapor sobrecalentado se encuentra a una temperatura mayor que la temperatura de saturación para su presión."
+        },
+        {
+            id: "recorrido-calor",
+            prompt: "¿Qué secuencia representa mejor el recorrido de la energía en un generador que usa combustión?",
+            options: [
+                { text: "Combustible, combustión, gases calientes, superficies, agua y vapor.", correct: true },
+                { text: "Agua, chimenea, combustible, vapor y aire.", correct: false },
+                { text: "Vapor, combustible, agua y gases mezclados.", correct: false }
+            ],
+            explanation: "La energía liberada por la combustión viaja con los gases y pasa a través de superficies hacia el agua, que puede producir vapor."
         }
     ];
 
@@ -3912,7 +3943,12 @@ Agua y vapor
     };
 
     const renderQuiz = () => {
-        const selectedQuestions = shuffle(questionBank).slice(0, questionsPerAttempt);
+        if (remainingQuestionIds.length < questionsPerAttempt) {
+            remainingQuestionIds = shuffle(questionBank.map((question) => question.id));
+        }
+        const selectedQuestions = remainingQuestionIds
+            .splice(0, questionsPerAttempt)
+            .map((id) => questionBank.find((question) => question.id === id));
         questionList.innerHTML = selectedQuestions.map((question, index) => {
             const options = shuffle(question.options);
             return '<fieldset class="quiz-question" data-question-id="' + question.id + '">' +
