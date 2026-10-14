@@ -761,6 +761,73 @@ body{
 
 }
 
+
+/* APP · HERO Y VISTA PREVIA */
+.app-main{min-height:0;padding:0 22px 70px;background:linear-gradient(180deg,#062746 0,#0a3d68 620px,#f4f8fc 620px)}
+.app-hero{max-width:1180px;margin:auto;min-height:590px;padding:66px 20px 80px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(350px,.95fr);align-items:center;gap:54px;color:white}
+.eyebrow{display:inline-block;color:#7fd6ff;font-size:11px;font-weight:800;letter-spacing:2px}
+.hero-copy h1{margin:18px 0;color:white;font-size:clamp(40px,5.2vw,64px);line-height:1.05;letter-spacing:-1.6px}
+.hero-copy h1 span{color:#68c9ff}
+.hero-copy>p{max-width:540px;margin:0;color:#d5e8f6;font-size:17px;line-height:1.7}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.action-primary,.action-secondary{min-height:46px;padding:0 17px;border-radius:9px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;font-weight:800}
+.action-primary{background:#1599e8;color:white;box-shadow:0 8px 22px rgba(0,0,0,.16)}
+.action-primary:hover{background:#38aef2}
+.action-secondary{border:1px solid rgba(255,255,255,.35);color:white}
+.action-secondary:hover{background:rgba(255,255,255,.1)}
+.hero-note{margin-top:19px;color:#a9c9e0;font-size:12px}
+.hero-note span{color:#68c9ff;margin-right:6px}
+.phone-wrap{position:relative;display:grid;place-items:center;min-height:490px}
+.phone-glow{position:absolute;width:390px;height:390px;border-radius:50%;background:radial-gradient(circle,rgba(69,187,255,.28),rgba(69,187,255,0) 70%)}
+.phone{position:relative;width:284px;padding:9px;border:2px solid #9bb1c8;border-radius:39px;background:#111d2b;box-shadow:0 30px 70px rgba(0,0,0,.4);transform:rotate(2deg)}
+.phone-island{position:absolute;z-index:2;top:14px;left:50%;width:76px;height:17px;border-radius:20px;background:#101a25;transform:translateX(-50%)}
+.phone-screen{min-height:465px;position:relative;overflow:hidden;padding:20px 15px 10px;border-radius:30px;background:#f6f9fc;color:#103858}
+.phone-status{display:flex;justify-content:space-between;padding:0 4px 16px;color:#31516a;font-size:9px;font-weight:800}
+.phone-brand{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:800}
+.phone-brand small{display:block;margin-top:3px;color:#7890a4;font-size:7px;letter-spacing:1px}
+.mini-mark{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;background:#087fc5;color:white;font-weight:900}
+.lesson-top{display:flex;justify-content:space-between;margin-top:23px;color:#52718b;font-size:8px;font-weight:800;letter-spacing:.5px}
+.lesson-top span:first-child{color:#087fc5}
+.lesson-progress{height:5px;margin:8px 0 18px;overflow:hidden;border-radius:9px;background:#dce9f2}
+.lesson-progress span{display:block;width:58%;height:100%;border-radius:9px;background:linear-gradient(90deg,#1599e8,#5ed1e8)}
+.phone-screen h2{margin:0;color:#102f4c;font-size:16px;line-height:1.35}
+.phone-hint{margin:7px 0 13px;color:#6c8296;font-size:10px}
+.answers{display:grid;gap:8px}
+.answer-option{display:flex;align-items:flex-start;gap:8px;width:100%;padding:9px;border:1px solid #d8e3ec;border-radius:10px;background:white;color:#34536d;text-align:left;font-size:9px;line-height:1.4;cursor:pointer;transition:.18s}
+.answer-option>span{flex:0 0 18px;width:18px;height:18px;display:grid;place-items:center;border-radius:6px;background:#edf4f9;color:#42627e;font-size:9px;font-weight:800}
+.answer-option:hover{border-color:#1599e8;background:#f4fbff}
+.answer-option.selected-correct{border-color:#24864a;background:#eaf8ef;color:#20643a}
+.answer-option.selected-correct>span{background:#24864a;color:white}
+.answer-option.selected-wrong{border-color:#d93025;background:#fff0ef;color:#a52c24}
+.answer-option.selected-wrong>span{background:#d93025;color:white}
+.answer-feedback{margin-top:9px;padding:9px;border-radius:9px;background:#edf6fb;color:#315a78;font-size:9px;line-height:1.45}
+.answer-feedback.correct{border:1px solid #b9e3c7;background:#edf9f1;color:#28663d}
+.answer-feedback.incorrect{border:1px solid #f1c2bf;background:#fff2f1;color:#98342c}
+.try-again{margin-top:8px;border:0;background:none;color:#087fc5;font-size:9px;font-weight:800;cursor:pointer}
+.phone-bottom{display:flex;justify-content:space-around;margin:15px -15px -10px;padding:10px 2px 6px;border-top:1px solid #e1eaf1;color:#72879a;font-size:13px}
+.phone-bottom span{text-align:center}.phone-bottom small{display:block;margin-top:3px;font-size:7px}.phone-bottom .active{color:#087fc5}
+.float-note{position:absolute;right:-5px;bottom:40px;display:flex;align-items:center;gap:9px;padding:12px 15px;border:1px solid rgba(255,255,255,.48);border-radius:13px;background:#fff;color:#153b5e;box-shadow:0 14px 34px rgba(0,0,0,.2);transform:rotate(-2deg)}
+.float-note>span{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#e9f8ef;color:#278249;font-weight:900}
+.float-note strong,.float-note small{display:block}.float-note strong{font-size:10px}.float-note small{margin-top:3px;color:#71869a;font-size:9px}
+.features-section{max-width:1140px;margin:0 auto;padding:55px 0 35px}
+.section-heading{text-align:center;margin:0 auto 27px}.section-heading .eyebrow{color:#087fc5}
+.section-heading h2{margin:9px 0;color:#0b3157;font-size:32px}.section-heading p{margin:0;color:#607b95;font-size:14px;line-height:1.6}
+.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.feature-card{padding:22px;border:1px solid #dae7f0;border-radius:17px;background:#fff;box-shadow:0 12px 30px rgba(7,45,85,.06)}
+.feature-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;font-size:22px;font-weight:800}
+.feature-icon.blue{background:#e7f4ff;color:#087fc5}.feature-icon.cyan{background:#e5f9fa;color:#168b9d}.feature-icon.amber{background:#fff4df;color:#a56a00}
+.feature-card h3{margin:15px 0 7px;color:#0b3157;font-size:16px}.feature-card p{margin:0;color:#607b95;font-size:13px;line-height:1.6}
+.launch-panel{max-width:1140px;margin:28px auto 0;padding:27px 30px;display:flex;align-items:center;justify-content:space-between;gap:25px;border:1px solid #cee2f1;border-radius:20px;background:linear-gradient(115deg,#e8f5fc,#fff)}
+.launch-copy .eyebrow{color:#087fc5}.launch-copy h2{margin:8px 0;color:#0b3157;font-size:25px}.launch-copy p{max-width:570px;margin:0;color:#607b95;font-size:13px;line-height:1.6}
+.launch-actions{display:grid;justify-items:start;gap:12px}.store-badge{display:flex;align-items:center;gap:10px;padding:10px 13px;border-radius:11px;background:#102333;color:#fff;opacity:.85}
+.play-mark{font-size:21px;color:#4ec5ed}.store-badge small,.store-badge strong{display:block}.store-badge small{font-size:8px;letter-spacing:.6px;color:#bfd0dc}.store-badge strong{margin-top:2px;font-size:16px}
+.soon-tag{padding:5px 7px;border-radius:6px;background:rgba(255,255,255,.12);color:#cbd9e4;font-size:8px;white-space:nowrap}
+.web-links{display:flex;gap:15px}.web-links a{color:#087fc5;font-size:11px;font-weight:800;text-decoration:none}.web-links a:hover{text-decoration:underline}
+.motto{margin:28px auto 0;color:#42708f;font-size:13px;font-style:normal;text-align:center}
+@media(max-width:900px){.app-hero{grid-template-columns:1fr 350px;gap:20px;padding-top:55px}.phone{transform:scale(.94)}.float-note{right:0}.features-section,.launch-panel{margin-left:10px;margin-right:10px}}
+@media(max-width:700px){.app-main{padding:0 16px 50px;background:linear-gradient(180deg,#062746 0,#0a3d68 760px,#f4f8fc 760px)}.app-hero{grid-template-columns:1fr;gap:0;padding:50px 4px 55px;text-align:center}.hero-copy>p{margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.phone-wrap{min-height:470px;margin-top:14px}.phone{transform:scale(.9)}.float-note{right:2px;bottom:31px}.features-section{padding-top:38px}.section-heading h2{font-size:27px}.feature-grid{grid-template-columns:1fr}.feature-card{display:grid;grid-template-columns:44px 1fr;column-gap:12px;padding:17px}.feature-card h3{align-self:end;margin:0 0 4px}.feature-card p{grid-column:2}.launch-panel{flex-direction:column;align-items:flex-start;padding:22px}.launch-copy h2{font-size:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.answer-option{transition:none}}
+
 </style>
 
 </head>
@@ -857,179 +924,60 @@ body{
 ===================================================== -->
 
 <main class="app-main">
-
-
-    <div class="app-heading">
-
-        <span class="app-heading-label">
-            FOGUISTA URUGUAY
-        </span>
-
-        <h1>
-            La formación también<br>
-            va contigo
-        </h1>
-
-        <p>
-            Una herramienta de estudio pensada para acompañar
-            la preparación del foguista directamente desde el celular.
-        </p>
-
+  <section class="app-hero" aria-labelledby="app-title">
+    <div class="hero-copy">
+      <span class="eyebrow">FOGUISTA URUGUAY · APP</span>
+      <h1 id="app-title">La formación técnica,<br><span>también va contigo.</span></h1>
+      <p>Una vista previa de cómo practicar, repasar conceptos y prepararte para el trabajo desde el celular.</p>
+      <div class="hero-actions">
+        <a class="action-primary" href="estudio.html">Ir al apartado de estudio <span aria-hidden="true">↗</span></a>
+        <a class="action-secondary" href="#vista-previa">Probar una pregunta ↓</a>
+      </div>
+      <div class="hero-note"><span aria-hidden="true">●</span> App para Android en preparación · Aún no disponible para descargar</div>
     </div>
-
-
-
-    <section class="app-showcase">
-
-
-        <!-- LOGO -->
-
-        <div class="app-logo-container">
-
-            <div class="app-logo-frame">
-
-                <img
-                    src="logo-foguista-nuevo.png"
-                    alt="Aplicación Foguista Uruguay"
-                >
-
-            </div>
-
+    <div class="phone-wrap" id="vista-previa">
+      <div class="phone-glow" aria-hidden="true"></div>
+      <div class="phone" aria-label="Vista previa interactiva del modo de práctica">
+        <div class="phone-island"></div>
+        <div class="phone-screen">
+          <div class="phone-status"><span>9:41</span><span aria-hidden="true">● ● ▰</span></div>
+          <div class="phone-brand"><span class="mini-mark">F</span><span>Foguista Uruguay<small>ÁREA DE ESTUDIO</small></span></div>
+          <div class="lesson-top"><span>SEGURIDAD</span><span>Pregunta 04</span></div>
+          <div class="lesson-progress"><span></span></div>
+          <h2>¿Qué hacer ante una alarma de nivel anormal?</h2>
+          <p class="phone-hint">Elegí la respuesta más segura.</p>
+          <div class="answers" role="group" aria-label="Opciones de respuesta">
+            <button class="answer-option" type="button" data-answer="wrong"><span>A</span>Anular la alarma para continuar.</button>
+            <button class="answer-option" type="button" data-answer="correct"><span>B</span>Verificar la indicación y seguir el procedimiento.</button>
+            <button class="answer-option" type="button" data-answer="wrong"><span>C</span>Ignorarla si la presión es normal.</button>
+          </div>
+          <div class="answer-feedback" id="answerFeedback" aria-live="polite" hidden></div>
+          <button class="try-again" id="tryAgain" type="button" hidden>Intentar de nuevo</button>
+          <div class="phone-bottom"><span>⌂<small>Inicio</small></span><span class="active">▤<small>Estudio</small></span><span>◷<small>Progreso</small></span></div>
         </div>
-
-
-
-        <!-- CONTENIDO -->
-
-        <div class="app-content">
-
-
-            <span class="app-content-label">
-                NUESTRA APP
-            </span>
-
-
-            <h2>
-                Foguista Uruguay
-            </h2>
-
-
-            <p>
-                Estamos preparando una aplicación para que puedas
-                practicar y reforzar tus conocimientos estés donde estés.
-            </p>
-
-
-
-            <div class="features">
-
-                <div class="feature">
-                    <span>✓</span>
-                    Preguntas de práctica
-                </div>
-
-                <div class="feature">
-                    <span>✓</span>
-                    Estudio desde el celular
-                </div>
-
-                <div class="feature">
-                    <span>✓</span>
-                    Repaso de contenidos
-                </div>
-
-                <div class="feature">
-                    <span>✓</span>
-                    Preparación para el examen
-                </div>
-
-            </div>
-
-
-
-            <!-- PRÓXIMAMENTE -->
-
-            <div class="coming">
-
-                <div class="coming-small">
-                    LANZAMIENTO
-                </div>
-
-                <div class="coming-title">
-                    PRÓXIMAMENTE
-                </div>
-
-                <div class="coming-description">
-                    Muy pronto disponible para dispositivos Android.
-                </div>
-
-
-
-                <!-- GOOGLE PLAY -->
-
-                <div class="google-play">
-
-                    <svg
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                    >
-
-                        <path
-                            fill="#00D6FF"
-                            d="M4 5.5v37L27 24 4 5.5z"
-                        />
-
-                        <path
-                            fill="#00F076"
-                            d="M4 5.5 31 20l7-4L8.5 2.5C6.5 1.4 4 3 4 5.5z"
-                        />
-
-                        <path
-                            fill="#FFCE00"
-                            d="M4 42.5c0 2.5 2.5 4.1 4.5 3L38 32l-7-4L4 42.5z"
-                        />
-
-                        <path
-                            fill="#FF3A44"
-                            d="M31 28l7 4 5.5-3c2-1.1 2-3.9 0-5l-5.5-3-7 4z"
-                        />
-
-                    </svg>
-
-
-                    <div class="google-play-text">
-
-                        <small>
-                            DISPONIBLE PRÓXIMAMENTE EN
-                        </small>
-
-                        <strong>
-                            Google Play
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="very-soon">
-                    MUY PRONTO
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <div class="motto">
-        Conocimiento que genera seguridad
+      </div>
+      <div class="float-note"><span>✓</span><div><strong>Aprendé el porqué</strong><small>Corrección con explicación</small></div></div>
     </div>
+  </section>
 
+  <section class="features-section" aria-labelledby="features-title">
+    <div class="section-heading">
+      <span class="eyebrow">PENSADA PARA ACOMPAÑARTE</span>
+      <h2 id="features-title">Estudiá con un objetivo claro</h2>
+      <p>La experiencia combina práctica y repaso para ayudarte a entender, no solo memorizar.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card"><span class="feature-icon blue" aria-hidden="true">⌕</span><h3>Práctica por temas</h3><p>Repasá generadores, seguridad, tratamiento del agua y otros contenidos técnicos.</p></article>
+      <article class="feature-card"><span class="feature-icon cyan" aria-hidden="true">✓</span><h3>Correcciones explicadas</h3><p>Entendé por qué una opción es correcta y qué criterio conviene recordar.</p></article>
+      <article class="feature-card"><span class="feature-icon amber" aria-hidden="true">↗</span><h3>Preparación progresiva</h3><p>Avanzá paso a paso y reforzá los conceptos importantes para el examen.</p></article>
+    </div>
+  </section>
 
+  <section class="launch-panel" id="lanzamiento" aria-labelledby="launch-title">
+    <div class="launch-copy"><span class="eyebrow">LANZAMIENTO</span><h2 id="launch-title">Muy pronto en Android</h2><p>La aplicación todavía está en preparación. Mientras tanto, podés estudiar desde la web y participar en la comunidad.</p></div>
+    <div class="launch-actions"><div class="store-badge" aria-label="Google Play: próximamente, descarga aún no disponible"><span class="play-mark" aria-hidden="true">▶</span><span><small>PRÓXIMAMENTE EN</small><strong>Google Play</strong></span><span class="soon-tag">En preparación</span></div><div class="web-links"><a href="estudio.html">Estudiar ahora</a><a href="comunidad.html">Ir a la comunidad</a></div></div>
+  </section>
+  <p class="motto">Conocimiento que genera seguridad</p>
 </main>
 
 
@@ -1111,6 +1059,49 @@ body{
 </footer>
 
 
+<script>
+(() => {
+    const options = [...document.querySelectorAll(".answer-option")];
+    const feedback = document.getElementById("answerFeedback");
+    const retry = document.getElementById("tryAgain");
+
+    function resetPractice() {
+        options.forEach(option => {
+            option.disabled = false;
+            option.classList.remove("selected-correct", "selected-wrong");
+        });
+        feedback.hidden = true;
+        feedback.className = "answer-feedback";
+        feedback.textContent = "";
+        retry.hidden = true;
+    }
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            const correct = option.dataset.answer === "correct";
+            option.classList.add(correct ? "selected-correct" : "selected-wrong");
+            options.forEach(item => {
+                item.disabled = true;
+                if (item.dataset.answer === "correct") item.classList.add("selected-correct");
+            });
+            feedback.hidden = false;
+            feedback.classList.add(correct ? "correct" : "incorrect");
+            feedback.textContent = correct
+                ? "¡Correcto! La alarma requiere verificar la indicación y actuar según el procedimiento del equipo."
+                : "Esa opción no es segura. Una alarma debe verificarse y atenderse según el procedimiento; no se debe anular ni ignorar una protección.";
+            retry.hidden = false;
+        });
+    });
+
+    retry.addEventListener("click", resetPractice);
+})();
+</script>
 </body>
 
 </html>
+
+
+
+
+
+
