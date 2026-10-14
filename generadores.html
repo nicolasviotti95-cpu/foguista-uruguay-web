@@ -3625,47 +3625,10 @@ Cómo se aprovecha la energía térmica disponible.
     <p>Elegí una respuesta por pregunta. Al corregir, vas a ver una explicación breve para conectar cada concepto con el funcionamiento del equipo.</p>
 
     <form id="learning-check-form">
-        <div class="quiz-list">
-            <fieldset class="quiz-question" data-answer="0">
-                <legend>1. En un generador pirotubular, ¿qué circula dentro de los tubos?</legend>
-                <div class="quiz-options">
-                    <label class="quiz-option"><input type="radio" name="q1" value="0"> Los gases calientes de combustión.</label>
-                    <label class="quiz-option"><input type="radio" name="q1" value="1"> El agua de alimentación.</label>
-                    <label class="quiz-option"><input type="radio" name="q1" value="2"> El vapor de salida en todos los casos.</label>
-                </div>
-            </fieldset>
-
-            <fieldset class="quiz-question" data-answer="1">
-                <legend>2. ¿Cómo pasa principalmente el calor desde los gases hasta el agua?</legend>
-                <div class="quiz-options">
-                    <label class="quiz-option"><input type="radio" name="q2" value="0"> Los gases se mezclan con el agua.</label>
-                    <label class="quiz-option"><input type="radio" name="q2" value="1"> Atraviesa las superficies metálicas que separan ambos circuitos.</label>
-                    <label class="quiz-option"><input type="radio" name="q2" value="2"> El agua genera calor por sí sola.</label>
-                </div>
-            </fieldset>
-
-            <fieldset class="quiz-question" data-answer="0">
-                <legend>3. Si el equipo tiene economizador, ¿qué fluido suele precalentar aprovechando calor de los gases?</legend>
-                <div class="quiz-options">
-                    <label class="quiz-option"><input type="radio" name="q3" value="0"> El agua de alimentación.</label>
-                    <label class="quiz-option"><input type="radio" name="q3" value="1"> El combustible almacenado.</label>
-                    <label class="quiz-option"><input type="radio" name="q3" value="2"> El vapor que ya salió del generador.</label>
-                </div>
-            </fieldset>
-
-            <fieldset class="quiz-question" data-answer="2">
-                <legend>4. ¿Cuál es una buena forma de estudiar un generador que no conocés?</legend>
-                <div class="quiz-options">
-                    <label class="quiz-option"><input type="radio" name="q4" value="0"> Memorizar primero los nombres de todas las piezas.</label>
-                    <label class="quiz-option"><input type="radio" name="q4" value="1"> Suponer que todos los modelos tienen los mismos componentes.</label>
-                    <label class="quiz-option"><input type="radio" name="q4" value="2"> Seguir por separado los gases y el agua, y ubicar dónde intercambian calor.</label>
-                </div>
-            </fieldset>
-        </div>
-
+        <div class="quiz-list" id="learning-check-questions"></div>
         <div class="quiz-actions">
             <button class="quiz-button primary" type="button" id="learning-check-submit">Corregir respuestas</button>
-            <button class="quiz-button secondary" type="reset">Intentar de nuevo</button>
+            <button class="quiz-button secondary" type="button" id="learning-check-new">Nuevo intento con preguntas mezcladas</button>
         </div>
         <div class="quiz-feedback" id="learning-check-feedback" role="status" aria-live="polite" hidden></div>
     </form>
@@ -3778,19 +3741,196 @@ Agua y vapor
 <script>
 (() => {
     const form = document.getElementById("learning-check-form");
+    const questionList = document.getElementById("learning-check-questions");
     const feedback = document.getElementById("learning-check-feedback");
-    const explanations = [
-        "En la pirotubular circulan los gases dentro de los tubos y el agua los rodea. En la acuotubular, el agua circula por los tubos.",
-        "El metal separa los circuitos y permite transferir energía por sus superficies; los gases y el agua no se mezclan.",
-        "El economizador recupera parte del calor de los gases para elevar la temperatura del agua de alimentación.",
-        "Seguir los recorridos muestra qué transporta cada circuito y en qué superficies pasa el calor de uno al otro."
+    const submitButton = document.getElementById("learning-check-submit");
+    const newAttemptButton = document.getElementById("learning-check-new");
+    const questionsPerAttempt = 6;
+
+    const questionBank = [
+        {
+            id: "pirotubular",
+            prompt: "En un generador pirotubular, ¿qué circula dentro de los tubos?",
+            options: [
+                { text: "Los gases calientes de combustión.", correct: true },
+                { text: "El agua de alimentación.", correct: false },
+                { text: "El vapor de salida en todos los casos.", correct: false }
+            ],
+            explanation: "En la pirotubular los gases circulan por los tubos y el agua los rodea."
+        },
+        {
+            id: "acuotubular",
+            prompt: "En un generador acuotubular, ¿qué circula dentro de los tubos?",
+            options: [
+                { text: "El agua y, durante la vaporización, la mezcla de agua y vapor.", correct: true },
+                { text: "Los gases de combustión.", correct: false },
+                { text: "Únicamente el combustible.", correct: false }
+            ],
+            explanation: "En la acuotubular el agua circula por el interior de los tubos; los gases calientes ceden calor desde el otro lado."
+        },
+        {
+            id: "transferencia",
+            prompt: "¿Cómo pasa principalmente el calor desde los gases hasta el agua sin mezclar los circuitos?",
+            options: [
+                { text: "Atraviesa las superficies metálicas que los separan.", correct: true },
+                { text: "Los gases se mezclan con el agua.", correct: false },
+                { text: "El agua produce por sí sola todo el calor necesario.", correct: false }
+            ],
+            explanation: "Las superficies metálicas permiten transferir energía entre circuitos separados."
+        },
+        {
+            id: "economizador",
+            prompt: "Si el equipo tiene economizador, ¿qué fluido suele precalentar aprovechando calor de los gases?",
+            options: [
+                { text: "El agua de alimentación.", correct: true },
+                { text: "El combustible almacenado.", correct: false },
+                { text: "El vapor que ya salió del generador.", correct: false }
+            ],
+            explanation: "El economizador recupera parte del calor de los gases para elevar la temperatura del agua de alimentación."
+        },
+        {
+            id: "precalentador",
+            prompt: "¿Qué calienta principalmente un precalentador de aire?",
+            options: [
+                { text: "El aire que se utiliza en la combustión.", correct: true },
+                { text: "El agua dentro del domo.", correct: false },
+                { text: "El vapor que ya va hacia el proceso.", correct: false }
+            ],
+            explanation: "El precalentador aprovecha calor disponible para elevar la temperatura del aire de combustión."
+        },
+        {
+            id: "sobrecalentador",
+            prompt: "¿Qué función cumple un sobrecalentador?",
+            options: [
+                { text: "Elevar la temperatura del vapor por encima de su condición de saturación.", correct: true },
+                { text: "Convertir los gases de combustión en agua.", correct: false },
+                { text: "Precalentar el combustible almacenado.", correct: false }
+            ],
+            explanation: "El sobrecalentador transfiere calor al vapor para aumentar su temperatura, según el diseño del equipo."
+        },
+        {
+            id: "calor-latente",
+            prompt: "Durante la vaporización a presión constante, ¿qué describe mejor el calor latente?",
+            options: [
+                { text: "La energía asociada al cambio de estado, sin que aumente la temperatura de saturación.", correct: true },
+                { text: "El calor que solo puede existir en los gases de combustión.", correct: false },
+                { text: "La energía necesaria únicamente para calentar el agua antes de saturarse.", correct: false }
+            ],
+            explanation: "El calor latente se asocia al cambio de estado; el calor sensible se relaciona con el cambio de temperatura."
+        },
+        {
+            id: "circulacion",
+            prompt: "¿Qué puede impulsar la circulación natural del agua en ciertos generadores?",
+            options: [
+                { text: "Diferencias de densidad relacionadas con la temperatura y la presencia de vapor.", correct: true },
+                { text: "La chimenea, que succiona directamente el agua.", correct: false },
+                { text: "La mezcla de agua con los gases calientes.", correct: false }
+            ],
+            explanation: "Las diferencias de densidad en el circuito pueden producir circulación natural, de acuerdo con el diseño."
+        },
+        {
+            id: "domo",
+            prompt: "En determinados diseños acuotubulares, ¿qué función puede cumplir el domo o tambor?",
+            options: [
+                { text: "Alojar la mezcla y facilitar la separación entre agua y vapor.", correct: true },
+                { text: "Reemplazar todas las superficies de calefacción.", correct: false },
+                { text: "Expulsar el agua junto con los gases de combustión.", correct: false }
+            ],
+            explanation: "En los diseños que lo incorporan, el tambor participa en la circulación y separación de agua y vapor."
+        },
+        {
+            id: "hogar",
+            prompt: "¿Qué ocurre principalmente en el hogar o cámara de combustión de un generador que quema combustible?",
+            options: [
+                { text: "Se libera energía térmica mediante la combustión.", correct: true },
+                { text: "Se almacena todo el vapor producido.", correct: false },
+                { text: "Se enfría el agua antes de entrar al circuito.", correct: false }
+            ],
+            explanation: "El hogar es la zona donde se desarrolla la combustión y se libera energía."
+        },
+        {
+            id: "gases-salida",
+            prompt: "¿Por qué algunos generadores aprovechan el calor de los gases antes de que salgan?",
+            options: [
+                { text: "Porque todavía pueden transportar energía térmica recuperable.", correct: true },
+                { text: "Porque los gases de salida son el producto que se envía al proceso.", correct: false },
+                { text: "Porque así se mezclan con el agua de alimentación.", correct: false }
+            ],
+            explanation: "Los gases pueden conservar calor; superficies de recuperación pueden transferir parte de esa energía a otro fluido."
+        },
+        {
+            id: "combustion",
+            prompt: "En la combustión, ¿qué combinación permite liberar energía de un combustible convencional?",
+            options: [
+                { text: "Combustible y un comburente, normalmente el oxígeno del aire.", correct: true },
+                { text: "Agua líquida y vapor, sin combustible.", correct: false },
+                { text: "Vapor y gases de salida, sin aire.", correct: false }
+            ],
+            explanation: "La combustión requiere combustible y comburente; en muchos equipos, el oxígeno se aporta con el aire."
+        },
+        {
+            id: "eficiencia",
+            prompt: "¿Qué expresa, en términos generales, la eficiencia de un generador?",
+            options: [
+                { text: "La relación entre la energía útil obtenida y la energía aportada.", correct: true },
+                { text: "La cantidad de piezas instaladas en el equipo.", correct: false },
+                { text: "La temperatura ambiente de la sala de calderas.", correct: false }
+            ],
+            explanation: "La eficiencia relaciona la energía útil producida con la energía que ingresa al sistema, según el método de cálculo."
+        },
+        {
+            id: "mecanismos",
+            prompt: "¿Qué mecanismos pueden intervenir en la transferencia de calor de un generador?",
+            options: [
+                { text: "Radiación, convección y conducción.", correct: true },
+                { text: "Únicamente la evaporación del combustible.", correct: false },
+                { text: "Solo la circulación natural del agua.", correct: false }
+            ],
+            explanation: "La radiación y la convección transfieren calor hacia las superficies; la conducción lo atraviesa por el material."
+        },
+        {
+            id: "recorrido",
+            prompt: "¿Cuál es una buena forma de estudiar un generador que no conocés?",
+            options: [
+                { text: "Seguir por separado los gases y el agua, y ubicar dónde intercambian calor.", correct: true },
+                { text: "Suponer que todos los modelos tienen los mismos componentes.", correct: false },
+                { text: "Memorizar primero los nombres de todas las piezas.", correct: false }
+            ],
+            explanation: "Seguir los circuitos permite deducir qué transporta cada uno y dónde se transfiere la energía."
+        }
     ];
 
-    if (!form || !feedback) return;
+    if (!form || !questionList || !feedback || !submitButton || !newAttemptButton) return;
 
-    document.getElementById("learning-check-submit").addEventListener("click", () => {
-        const questions = Array.from(form.querySelectorAll(".quiz-question"));
-        const unanswered = questions.filter((question) => !question.querySelector("input:checked"));
+    const shuffle = (items) => {
+        const mixed = items.slice();
+        for (let i = mixed.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [mixed[i], mixed[j]] = [mixed[j], mixed[i]];
+        }
+        return mixed;
+    };
+
+    const renderQuiz = () => {
+        const selectedQuestions = shuffle(questionBank).slice(0, questionsPerAttempt);
+        questionList.innerHTML = selectedQuestions.map((question, index) => {
+            const options = shuffle(question.options);
+            return '<fieldset class="quiz-question" data-question-id="' + question.id + '">' +
+                '<legend>' + (index + 1) + '. ' + question.prompt + '</legend>' +
+                '<div class="quiz-options">' +
+                options.map((option, optionIndex) =>
+                    '<label class="quiz-option"><input type="radio" name="' + question.id + '" value="' + optionIndex + '" data-correct="' + option.correct + '"> ' + option.text + '</label>'
+                ).join('') +
+                '</div></fieldset>';
+        }).join('');
+        feedback.hidden = true;
+        feedback.textContent = '';
+        submitButton.disabled = false;
+    };
+
+    submitButton.addEventListener("click", () => {
+        const renderedQuestions = Array.from(questionList.querySelectorAll(".quiz-question"));
+        const unanswered = renderedQuestions.filter((question) => !question.querySelector("input:checked"));
         if (unanswered.length) {
             feedback.hidden = false;
             feedback.innerHTML = "<strong>Te falta responder " + unanswered.length + (unanswered.length === 1 ? " pregunta." : " preguntas.") + "</strong>Completá las opciones pendientes y volvé a corregir.";
@@ -3799,26 +3939,24 @@ Agua y vapor
         }
 
         let score = 0;
-        const results = questions.map((question, index) => {
+        const results = renderedQuestions.map((question, index) => {
             const selected = question.querySelector("input:checked");
-            const correct = selected.value === question.dataset.answer;
+            const correct = selected.dataset.correct === "true";
+            const explanation = questionBank.find((item) => item.id === question.dataset.questionId).explanation;
             question.classList.toggle("is-correct", correct);
             question.classList.toggle("is-incorrect", !correct);
+            question.querySelectorAll("input").forEach((input) => { input.disabled = true; });
             if (correct) score += 1;
-            return "<li><b>" + (correct ? "Correcta." : "Para revisar.") + "</b> " + explanations[index] + "</li>";
+            return "<li><b>" + (correct ? "Correcta." : "Para revisar.") + "</b> " + explanation + "</li>";
         });
 
         feedback.hidden = false;
-        feedback.innerHTML = "<strong>Resultado: " + score + " de " + questions.length + ".</strong><ul>" + results.join("") + "</ul>";
+        feedback.innerHTML = "<strong>Resultado: " + score + " de " + renderedQuestions.length + ".</strong><ul>" + results.join("") + "</ul><p>Cuando quieras, iniciá otro intento: van a cambiar el orden y las opciones.</p>";
+        submitButton.disabled = true;
     });
 
-    form.addEventListener("reset", () => {
-        form.querySelectorAll(".quiz-question").forEach((question) => {
-            question.classList.remove("is-correct", "is-incorrect");
-        });
-        feedback.hidden = true;
-        feedback.textContent = "";
-    });
+    newAttemptButton.addEventListener("click", renderQuiz);
+    renderQuiz();
 })();
 </script>
 
