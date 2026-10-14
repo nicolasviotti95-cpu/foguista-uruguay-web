@@ -627,6 +627,18 @@ header{
     border-color:#e2a39d;
     background:#fff5f4;
 }
+.quiz-option.is-correct-answer{
+    background:#e8f6ee;
+    color:#17633f;
+    box-shadow:inset 0 0 0 1px #72b894;
+    font-weight:700;
+}
+.quiz-option.is-incorrect-answer{
+    background:#fff0ef;
+    color:#a32626;
+    box-shadow:inset 0 0 0 1px #df8e88;
+    font-weight:700;
+}
 .quiz-actions{
     display:flex;
     flex-wrap:wrap;
@@ -3981,6 +3993,11 @@ Agua y vapor
             const explanation = questionBank.find((item) => item.id === question.dataset.questionId).explanation;
             question.classList.toggle("is-correct", correct);
             question.classList.toggle("is-incorrect", !correct);
+            question.querySelectorAll(".quiz-option").forEach((option) => {
+                const input = option.querySelector("input");
+                option.classList.toggle("is-correct-answer", input.dataset.correct === "true");
+                option.classList.toggle("is-incorrect-answer", input === selected && !correct);
+            });
             question.querySelectorAll("input").forEach((input) => { input.disabled = true; });
             if (correct) score += 1;
             return "<li><b>" + (correct ? "Correcta." : "Para revisar.") + "</b> " + explanation + "</li>";
