@@ -576,6 +576,39 @@ footer p{
 
 }
 
+
+/* Herramientas de estudio normativo */
+.quick-index{background:#fff;border:1px solid #dce5ef;border-radius:14px;padding:24px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+.quick-index h2{color:#092b52;margin-bottom:8px}
+.quick-index p{color:#657386;margin-bottom:15px}
+.index-links{display:flex;flex-wrap:wrap;gap:9px}
+.index-links a,.norm-ref a{color:#075e9e;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.index-links a{padding:9px 12px;background:#eef5fb;border-radius:8px;text-decoration:none}
+.review-note,.norm-ref{margin-top:15px;padding:12px 15px;border-radius:9px;background:#eef5fb;color:#284563;font-size:.94rem}
+.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.role-card{background:#fff;border:1px solid #dce5ef;border-top:5px solid #1597e5;border-radius:14px;padding:22px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+.role-card h3{color:#092b52;margin-bottom:10px}
+.role-card ul{margin:10px 0 0 20px}
+.role-card li{margin:8px 0}
+.quiz-section{background:#eaf2f8}
+.quiz-panel{background:#fff;border:1px solid #dce5ef;border-radius:16px;padding:28px;box-shadow:0 8px 24px rgba(7,27,51,.08)}
+.quiz-progress{color:#526174;font-weight:700;margin:8px 0 18px}
+.quiz-question{border:1px solid #dce5ef;border-radius:12px;padding:18px;margin:14px 0}
+.quiz-question legend{font-weight:800;color:#092b52;padding:0 6px}
+.quiz-option{display:flex;gap:10px;align-items:flex-start;padding:9px;border-radius:8px;cursor:pointer}
+.quiz-option:hover{background:#f4f8fb}
+.quiz-option input{margin-top:6px;accent-color:#1261a0}
+.quiz-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-button{border:0;border-radius:9px;padding:12px 18px;font:inherit;font-weight:800;cursor:pointer;background:#1261a0;color:#fff}
+.quiz-button.secondary{background:#e9f2f9;color:#092b52;border:1px solid #dce5ef}
+.quiz-button:disabled{opacity:.55;cursor:not-allowed}
+.quiz-result{margin-top:18px;padding:18px;border-radius:10px;background:#edf8f1;border-left:5px solid #26a269}
+.quiz-explanation{margin-top:12px;padding:12px;background:#f5f9fc;border-radius:8px}
+.quiz-explanation p{margin:5px 0}
+.quiz-result[hidden],.quiz-button[hidden]{display:none}
+@media(max-width:850px){.role-grid{grid-template-columns:1fr}}
+@media(max-width:550px){.quiz-panel{padding:18px}.quiz-question{padding:14px}}
+
 </style>
 </head>
 
@@ -744,6 +777,15 @@ footer p{
 </section>
 
 
+<section id="indice-normativo" style="padding-top:35px;padding-bottom:0">
+<div class="container"><div class="quick-index">
+<h2>Ir directo al tema</h2><p>Elegí un tema y consultá el artículo o anexo que lo desarrolla.</p>
+<nav class="index-links" aria-label="Índice de contenidos de normativa">
+<a href="#categorias">Categorías</a><a href="#conceptos">Definiciones</a><a href="#responsables">Responsables</a><a href="#secciones">Secciones I–X</a><a href="#protecciones">Control y protección</a><a href="#nivel-agua">Nivel de agua</a><a href="#valvulas">Válvulas</a><a href="#sala-generacion">Sala de generación</a><a href="#anexos">Anexos</a><a href="#quiz-normativa">Practicar</a>
+</nav>
+<div class="review-note"><strong>Revisión editorial:</strong> 14/10/2026. Guía educativa basada en la Resolución URSEA 101/026; para verificar el requisito aplicable, consultá siempre el <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">texto oficial en IMPO</a>.</div>
+</div></div></section>
+
 <!-- =========================
      DATOS OFICIALES
 ========================= -->
@@ -800,17 +842,29 @@ footer p{
 </section>
 
 
+<!-- RESPONSABILIDADES -->
+<section id="responsables">
+<div class="container">
+<div class="section-title"><h2>Qué le corresponde a cada responsable</h2><p>La norma distribuye deberes entre propietarios, operadores y agentes vinculados. Este resumen orienta la lectura; el alcance exacto está en cada artículo.</p><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículos 6–16 y 84–87 · Resolución URSEA 101/026 (IMPO)</a></p></div>
+<div class="role-grid">
+<article class="role-card"><h3>Propietario</h3><p>Es responsable de asegurar las condiciones documentales, técnicas y de habilitación del equipo.</p><ul><li>Conocer y cumplir el reglamento y las instrucciones del fabricante.</li><li>Mantener documentación, libro diario y plan de mantenimiento al día.</li><li>Contar con programa de tratamiento de agua e inspecciones aplicables.</li><li>Asegurarse de que operadores y empresas intervinientes cumplan los requisitos que les correspondan.</li></ul><p class="norm-ref"><a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículos 6–10 y 30 (IMPO)</a></p></article>
+<article class="role-card"><h3>Operador del generador</h3><p>Opera según su habilitación, capacitación específica, manual y condiciones del equipo.</p><ul><li>El artículo 84 establece la regla de certificación como foguista y una excepción específica para E3m.</li><li>Realiza las comprobaciones que correspondan y registra parámetros y condiciones observadas.</li><li>Debe seguir el manual de operación y mantenimiento y comunicar condiciones anómalas.</li></ul><p class="norm-ref"><a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículos 84–90 y 92 (IMPO)</a></p></article>
+<article class="role-card"><h3>Agentes vinculados</h3><p>Sus obligaciones dependen del servicio y categoría en que actúan.</p><ul><li>Registrarse ante URSEA cuando corresponda.</li><li>Notificar condiciones de riesgo y cumplir los requisitos técnicos de su intervención.</li><li>Para reparaciones o alteraciones, atender las comunicaciones y verificaciones que exige la norma.</li></ul><p class="norm-ref"><a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículos 11–16 y Anexo 7 (IMPO)</a></p></article>
+</div>
+<div class="notice"><h3>Importante</h3><p>Este cuadro no reemplaza la lectura completa de las obligaciones ni determina por sí solo qué aplica a un equipo concreto. La responsabilidad y los requisitos pueden depender de la categoría, el servicio realizado y las condiciones de la instalación.</p></div>
+</div></section>
+
 <!-- =========================
      PMTA / CATEGORÍAS
 ========================= -->
 
-<section>
+<section id="categorias">
 
 <div class="container">
 
     <div class="section-title">
 
-        <h2>Clasificación de los generadores</h2>
+        <h2>Clasificación de los generadores</h2><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículo 2 · Resolución URSEA 101/026 (IMPO)</a></p>
 
         <p>
             Una de las primeras cosas que establece el reglamento
@@ -872,10 +926,11 @@ footer p{
                     <td><strong>E3</strong></td>
                     <td>Generador de vapor eléctrico.</td>
                 </tr>
+<tr><td><strong>E3m — subcategoría de E3</strong></td><td>Generador eléctrico con PMTA ≤ 7 bar y volumen ≤ 140 L. La subcategoría se define en el artículo 5; el artículo 84 establece una excepción específica respecto de la certificación como foguista.</td></tr>
 
             </tbody>
 
-        </table>
+        </table><div class="notice" style="margin-top:20px"><h3>Cómo leer las categorías especiales</h3><p>El artículo 2 indica que las categorías especiales prevalecen sobre las generales. E3m es una subcategoría de los generadores eléctricos E3; la excepción de certificación como foguista del artículo 84 corresponde a E3m, no a toda la categoría E3. Confirmá siempre el alcance en el reglamento oficial.</p><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículos 2, 5 y 84 · Resolución URSEA 101/026 (IMPO)</a></p></div>
 
     </div>
 
@@ -925,13 +980,13 @@ footer p{
      DEFINICIONES IMPORTANTES
 ========================= -->
 
-<section>
+<section id="conceptos">
 
 <div class="container">
 
     <div class="section-title">
 
-        <h2>Conceptos que tenés que dominar</h2>
+        <h2>Conceptos que tenés que dominar</h2><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículo 5 · Definiciones · Resolución URSEA 101/026 (IMPO)</a></p>
 
         <p>
             El reglamento comienza definiendo muchos términos que después
@@ -1055,7 +1110,7 @@ footer p{
 
     <div class="section-title">
 
-        <h2>El Reglamento, sección por sección</h2>
+        <h2>El Reglamento, sección por sección</h2><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Secciones I–X · artículos 1–183 · Resolución URSEA 101/026 (IMPO)</a></p>
 
         <p>
             Abrí cada bloque para estudiar qué regula cada parte.
@@ -1610,13 +1665,13 @@ footer p{
      SEGURIDAD Y ENCLAVAMIENTOS
 ========================= -->
 
-<section>
+<section id="protecciones">
 
 <div class="container">
 
     <div class="section-title">
 
-        <h2>🛡️ Control, medición y enclavamientos</h2>
+        <h2>🛡️ Control, medición y enclavamientos</h2><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículos 88–105 · Anexos 3 y 4 · Resolución URSEA 101/026 (IMPO)</a></p>
 
         <p>
             Uno de los puntos donde la normativa se conecta directamente
@@ -1703,13 +1758,13 @@ footer p{
      NIVEL DE AGUA
 ========================= -->
 
-<section>
+<section id="nivel-agua">
 
 <div class="container">
 
     <div class="section-title">
 
-        <h2>💧 Nivel de agua y protección</h2>
+        <h2>💧 Nivel de agua y protección</h2><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículos 91, 97 y 101–105 · Anexo 4 · Resolución URSEA 101/026 (IMPO)</a></p>
 
         <p>
             El reglamento dedica especial atención a los sistemas de
@@ -1783,13 +1838,13 @@ footer p{
      VÁLVULAS
 ========================= -->
 
-<section>
+<section id="valvulas">
 
 <div class="container">
 
     <div class="section-title">
 
-        <h2>🛡️ Válvulas de seguridad</h2>
+        <h2>🛡️ Válvulas de seguridad</h2><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Artículos 102–103 · Anexo 3 · Resolución URSEA 101/026 (IMPO)</a></p>
 
         <p>
             Una de las áreas más importantes para comprender la protección
@@ -1877,13 +1932,13 @@ footer p{
      SALA DE GENERACIÓN
 ========================= -->
 
-<section>
+<section id="sala-generacion">
 
 <div class="container">
 
     <div class="section-title">
 
-        <h2>🏭 Sala o área de generación de vapor</h2>
+        <h2>🏭 Sala o área de generación de vapor</h2><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Anexo 5 · Resolución URSEA 101/026 (IMPO)</a></p>
 
         <p>
             El Anexo 5 establece requisitos específicos relacionados
@@ -1955,13 +2010,13 @@ footer p{
      ANEXOS
 ========================= -->
 
-<section>
+<section id="anexos">
 
 <div class="container">
 
     <div class="section-title">
 
-        <h2>📚 Los 10 anexos del reglamento</h2>
+        <h2>📚 Los 10 anexos del reglamento</h2><p class="norm-ref"><strong>Referencia oficial:</strong> <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">Anexos 1–10 · Resolución URSEA 101/026 (IMPO)</a></p>
 
         <p>
             Los anexos desarrollan requisitos técnicos específicos
@@ -2136,6 +2191,16 @@ footer p{
 </section>
 
 
+<!-- PRÁCTICA NORMATIVA -->
+<section id="quiz-normativa" class="quiz-section">
+<div class="container">
+<div class="section-title"><h2>Practicá y comprobá lo aprendido</h2><p>Se presentan 6 preguntas por intento, tomadas al azar de un banco de 18. Las preguntas no se repiten hasta recorrer la ronda completa. Al corregir, cada una incluye su explicación.</p></div>
+<div class="quiz-panel"><div class="quiz-progress" id="normQuizProgress" aria-live="polite"></div><form id="normQuizForm"></form>
+<div class="quiz-actions"><button class="quiz-button" id="normQuizCorrect" type="button">Corregir respuestas</button><button class="quiz-button secondary" id="normQuizNext" type="button" hidden>Nuevo intento con preguntas mezcladas</button></div>
+<div class="quiz-result" id="normQuizResult" role="status" aria-live="polite" hidden></div></div>
+<p class="norm-ref">Las preguntas sirven para estudiar. Para tomar decisiones de cumplimiento, verificá el artículo completo y el texto vigente en <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener">IMPO</a>.</p>
+</div></section>
+
 <!-- =========================
      CIERRE
 ========================= -->
@@ -2208,5 +2273,38 @@ footer p{
 
 </footer>
 
+<script>
+(function(){
+"use strict";
+const bank=[
+{q:"¿Qué PMTA corresponde a la categoría M?",o:["Mayor a 1 y menor o igual a 7 bar.","Mayor a 7 y menor o igual a 28 bar.","Mayor a 28 bar."],a:1,e:"El artículo 2 define M como PMTA mayor a 7 bar y menor o igual a 28 bar."},
+{q:"¿Qué debe prevalecer cuando una categoría especial coincide con una general?",o:["La categoría especial.","La categoría general.","La que elija el operador."],a:0,e:"El artículo 2 establece expresamente que las categorías especiales prevalecen sobre las generales."},
+{q:"¿Qué describe la subcategoría E3m?",o:["Generador eléctrico con PMTA ≤ 7 bar y volumen ≤ 140 L.","Cualquier generador eléctrico sin límite de tamaño.","Un generador que usa licor negro."],a:0,e:"El artículo 5 define E3 como generador eléctrico y establece E3m para los que cumplen ambos límites indicados."},
+{q:"¿Cuál es la excepción indicada en el artículo 84?",o:["E3m está exceptuado de la certificación como foguista establecida allí.","Todos los generadores eléctricos están exceptuados de cualquier requisito.","Los generadores P no necesitan operador."],a:0,e:"La excepción del artículo 84 se refiere a E3m y a esa exigencia concreta. No equivale a una exención general del reglamento."},
+{q:"¿Qué exige el artículo 7 antes de poner un generador en servicio?",o:["Que cuente con habilitación de URSEA.","Que tenga solamente un manómetro nuevo.","Que el propietario haya presentado una consulta."],a:0,e:"El artículo 7 establece que solo debe ponerse en servicio y funcionamiento un generador que cuente con habilitación de URSEA."},
+{q:"¿Quién debe disponer de la última revisión del reglamento y aplicar las instrucciones del fabricante?",o:["El propietario.","Solo el inspector.","El proveedor de combustible."],a:0,e:"El artículo 6 ubica estas obligaciones en el propietario."},
+{q:"¿Qué debe contener el programa de tratamiento químico del agua según el artículo 106?",o:["Procedimientos de análisis, registro de parámetros y dosificación de productos.","Solo la marca de la bomba de alimentación.","Únicamente una lectura diaria de presión."],a:0,e:"El artículo 106 pide que el agua sea acondicionada con un programa que incluya análisis, registro de parámetros y pautas de dosificación."},
+{q:"¿Dónde se desarrollan los requisitos sobre medición, control y enclavamientos?",o:["Anexo 4, además de los artículos relacionados de la Sección V.","Solo en el Anexo 1.","Únicamente en la sección sancionatoria."],a:0,e:"El Anexo 4 reúne requisitos de medición, control y enclavamientos; los artículos 88–105 establecen obligaciones vinculadas."},
+{q:"¿Qué contiene el Anexo 3?",o:["Requisitos sobre válvulas de seguridad.","Requisitos para autoclaves.","El procedimiento de registro de operadores."],a:0,e:"El índice oficial identifica el Anexo 3 como Válvulas de Seguridad."},
+{q:"¿Qué regula principalmente el Anexo 5?",o:["La sala o área de generación de vapor.","La clasificación de los agentes vinculados.","El estudio de integridad."],a:0,e:"El Anexo 5 se ocupa del emplazamiento, espacios y condiciones de la sala o área de generación."},
+{q:"¿Qué responsabilidad tiene el operador sobre las comprobaciones diarias según el artículo 87?",o:["Comprobar sistemas según el manual y registrar parámetros y condiciones observadas.","Cambiar los puntos de ajuste para adaptarlos a su criterio.","Anular una protección si aparece una alarma."],a:0,e:"El artículo 87 establece una rutina de comprobación de sistemas y el registro de parámetros y condiciones en el libro diario."},
+{q:"¿Puede desactivarse una protección para continuar operando?",o:["No; el artículo 89 limita las excepciones a equipo fuera de servicio o prueba de seguridad con inspector autorizado.","Sí, siempre que el operador lo anote después.","Sí, si el generador sigue produciendo vapor."],a:0,e:"El artículo 89 prohíbe desactivar lazos de control, protecciones o enclavamientos salvo los casos expresamente señalados."},
+{q:"¿Qué regula el Anexo 2?",o:["Pruebas a generadores de vapor.","Clasificación y PMTA.","Sala de generación."],a:0,e:"El Anexo 2 desarrolla pruebas, incluida la revisión de información, test hidráulico y test de seguridad."},
+{q:"¿Qué describe la PMTA?",o:["La máxima presión de trabajo admisible determinada según el diseño y la norma de fabricación.","La presión que siempre indica el manómetro durante operación.","La presión exacta de cierre de una válvula."],a:0,e:"El artículo 5 define PMTA como la máxima presión de trabajo admisible, determinada con criterios de diseño y fabricación."},
+{q:"¿A quién corresponde mantener el programa de tratamiento de agua en la carpeta del generador?",o:["Al propietario, dentro de sus obligaciones de documentación y operación.","Solo al fabricante.","Exclusivamente al operador de turno."],a:0,e:"Los artículos 7 y 30 incluyen el programa de tratamiento de agua entre las obligaciones/documentos a cargo del propietario."},
+{q:"¿Cuál es el papel del Anexo 7?",o:["Detallar agentes vinculados y sus categorías.","Fijar las categorías P, M y G.","Regular la presión de prueba hidráulica."],a:0,e:"El Anexo 7 se titula Agentes Vinculados e incluye el profesional idóneo y categorías de agentes."},
+{q:"¿Qué establece la resolución sobre su entrada en vigencia?",o:["Comienza 30 días corridos después de la publicación en el Diario Oficial.","Rige desde el día de aprobación sin publicación.","Entra en vigor solo al actualizarse esta guía."],a:0,e:"El artículo 1, numeral 2, establece que el reglamento entra en vigencia a los 30 días corridos de su publicación."},
+{q:"¿Qué fuente debe consultarse para verificar el texto exigible?",o:["El reglamento oficial publicado por los organismos competentes.","Un resumen educativo sin referencias.","Una respuesta de cuestionario."],a:0,e:"La guía ayuda a estudiar, pero el requisito aplicable se confirma en el texto oficial vigente de URSEA publicado en IMPO."}
+];
+const form=document.getElementById("normQuizForm"),progress=document.getElementById("normQuizProgress"),correct=document.getElementById("normQuizCorrect"),next=document.getElementById("normQuizNext"),result=document.getElementById("normQuizResult"),key="normativaQuizRestantes_v1";
+let remaining;try{remaining=JSON.parse(sessionStorage.getItem(key)||"null")}catch(_){remaining=null}
+if(!Array.isArray(remaining)||remaining.some(i=>!Number.isInteger(i)||i<0||i>=bank.length))remaining=bank.map((_,i)=>i);
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function save(){try{sessionStorage.setItem(key,JSON.stringify(remaining))}catch(_){}}
+function begin(){if(remaining.length<6)remaining=bank.map((_,i)=>i);const ids=shuffle(remaining.slice()).slice(0,6);remaining=remaining.filter(i=>!ids.includes(i));save();form.replaceChildren();result.hidden=true;result.replaceChildren();correct.disabled=false;next.hidden=true;progress.textContent="Ronda "+(Math.floor((bank.length-remaining.length-1)/6)+1)+" de 3 · 6 preguntas";ids.forEach((id,n)=>{const item=bank[id],order=shuffle(item.o.map((_,i)=>i)),field=document.createElement("fieldset");field.className="quiz-question";field.dataset.id=String(id);const legend=document.createElement("legend");legend.textContent=(n+1)+". "+item.q;field.appendChild(legend);order.forEach(choice=>{const label=document.createElement("label");label.className="quiz-option";const input=document.createElement("input");input.type="radio";input.name="normq"+n;input.value=String(choice);input.required=true;const span=document.createElement("span");span.textContent=item.o[choice];label.append(input,span);field.appendChild(label)});form.appendChild(field)})}
+correct.addEventListener("click",()=>{if(!form.reportValidity())return;let score=0;[...form.querySelectorAll("fieldset")].forEach((field,n)=>{const item=bank[Number(field.dataset.id)],chosen=Number(form.querySelector('input[name="normq'+n+'"]:checked').value);const ok=chosen===item.a;if(ok)score++;field.querySelectorAll("input").forEach(input=>input.disabled=true);const explanation=document.createElement("div");explanation.className="quiz-explanation";const title=document.createElement("p"),body=document.createElement("p");title.textContent=ok?"Correcta":"A revisar";body.textContent=item.e;explanation.append(title,body);field.appendChild(explanation)});const summary=document.createElement("strong");summary.textContent="Resultado: "+score+" de 6.";const explain=document.createElement("p");explain.textContent="Leé las explicaciones y consultá el artículo enlazado si querés profundizar.";result.append(summary,explain);result.hidden=false;correct.disabled=true;next.hidden=false});
+next.addEventListener("click",begin);begin();
+})();
+</script>
 </body>
 </html>
