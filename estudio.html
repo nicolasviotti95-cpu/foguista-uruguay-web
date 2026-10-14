@@ -824,6 +824,33 @@ footer p{
 
 }
 
+
+/* ================= ESTUDIO INTERACTIVO ================= */
+.learning-goal{margin:14px 0 24px;padding:14px 18px;border-left:4px solid var(--blue);background:var(--softblue);border-radius:9px}
+.learning-goal strong{color:var(--navy)}
+.resource-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.resource-links a{display:inline-block;padding:9px 14px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--blue);font-weight:700}
+.study-quiz{padding:48px 0;background:#eaf2f8}
+.quiz-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow)}
+.quiz-progress{color:var(--muted);font-weight:700;margin:8px 0 18px}
+.quiz-question{border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
+.quiz-question legend{font-weight:800;color:var(--navy);padding:0 6px}
+.quiz-option{display:flex;gap:10px;align-items:flex-start;padding:9px;border-radius:8px;cursor:pointer}
+.quiz-option:hover{background:#f4f8fb}
+.quiz-option input{margin-top:6px;accent-color:var(--blue)}
+.quiz-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-button{border:0;border-radius:9px;padding:12px 18px;font:inherit;font-weight:800;cursor:pointer;background:var(--blue);color:#fff}
+.quiz-button.secondary{background:#e9f2f9;color:var(--navy);border:1px solid var(--line)}
+.quiz-button:disabled{opacity:.55;cursor:not-allowed}
+.quiz-result{margin-top:18px;padding:18px;border-radius:10px;background:var(--softgreen);border-left:5px solid var(--green)}
+.quiz-result[hidden]{display:none}
+.quiz-explanation{margin-top:12px;padding-top:12px;border-top:1px solid #c9dfd1}
+.table-wrap{width:100%;overflow-x:auto;margin:18px 0}
+table{border-collapse:collapse;width:100%;min-width:480px;background:#fff}
+th,td{padding:12px 14px;border:1px solid var(--line);text-align:left}
+th{background:var(--navy);color:#fff}
+@media(max-width:650px){.quiz-panel{padding:20px}.quiz-question{padding:14px}}
+
 </style>
 </head>
 
@@ -1045,11 +1072,22 @@ Verificar si realmente podés explicarlo.
 
 </section>
 
-
+<section class="route" aria-labelledby="goals-title">
+<div class="container">
+<div class="route-title"><h2 id="goals-title">Qué vas a poder hacer al terminar</h2><p>Usá estos objetivos para comprobar tu avance, no solo para marcar temas leídos.</p></div>
+<div class="route-grid">
+<div class="route-step"><div class="route-number">OBJETIVO 01</div><h3>Explicar el proceso</h3><p>Describir cómo la energía se transfiere al agua y permite producir vapor.</p></div>
+<div class="route-step"><div class="route-number">OBJETIVO 02</div><h3>Relacionar variables</h3><p>Explicar cómo se conectan demanda, alimentación, calor, nivel y presión.</p></div>
+<div class="route-step"><div class="route-number">OBJETIVO 03</div><h3>Distinguir funciones</h3><p>Diferenciar qué mide, controla, alarma o protege cada elemento.</p></div>
+<div class="route-step"><div class="route-number">OBJETIVO 04</div><h3>Razonar situaciones</h3><p>Identificar qué datos faltan antes de atribuir una causa.</p></div>
+<div class="route-step"><div class="route-number">OBJETIVO 05</div><h3>Verificar lo aprendido</h3><p>Resolver preguntas y explicar por qué una respuesta es correcta.</p></div>
+</div>
+</div>
+</section>
 
 <!-- ================= SECTION 01 ================= -->
 
-<section class="section">
+<section class="section" id="proceso">
 
 <div class="container">
 
@@ -1059,6 +1097,7 @@ Verificar si realmente podés explicarlo.
 
 <h2>Primero mirá el generador como un sistema</h2>
 
+<p class="learning-goal"><strong>Objetivo de aprendizaje:</strong> Al terminar este bloque, deberías poder contar con tus palabras cómo el combustible y la combustión se convierten en vapor.</p>
 <p>
 Antes de estudiar cada componente, conviene entender el proceso completo.
 </p>
@@ -1139,7 +1178,7 @@ etapa, después resulta mucho más fácil comprender sus componentes.
 
 <!-- ================= SECTION 02 ================= -->
 
-<section class="section">
+<section class="section" id="variables">
 
 <div class="container">
 
@@ -1149,6 +1188,7 @@ etapa, después resulta mucho más fácil comprender sus componentes.
 
 <h2>No memorices las variables: aprendé a relacionarlas</h2>
 
+<p class="learning-goal"><strong>Objetivo de aprendizaje:</strong> Al terminar este bloque, deberías poder describir qué cambia y qué otras variables podrían verse afectadas.</p>
 <p>
 Las variables del generador están conectadas. Una modificación en una
 puede repercutir sobre otras.
@@ -1290,7 +1330,7 @@ energía y alimentación de agua.</strong>
 
 <!-- ================= SECTION 03 ================= -->
 
-<section class="section">
+<section class="section" id="agua-nivel">
 
 <div class="container">
 
@@ -1300,6 +1340,7 @@ energía y alimentación de agua.</strong>
 
 <h2>Aprendé a pensar qué significa un cambio de nivel</h2>
 
+<p class="learning-goal"><strong>Objetivo de aprendizaje:</strong> Al terminar este bloque, deberías poder explicar por qué una lectura de nivel se interpreta junto con alimentación, producción e indicación.</p>
 <p>
 El nivel no debe estudiarse solamente como una lectura en un instrumento.
 Hay que entender qué procesos pueden modificarlo.
@@ -1413,7 +1454,7 @@ calor</strong>.
 
 <!-- ================= SECTION 04 ================= -->
 
-<section class="section">
+<section class="section" id="presion-control">
 
 <div class="container">
 
@@ -1423,6 +1464,7 @@ calor</strong>.
 
 <h2>Aprendé a distinguir medición, control y protección</h2>
 
+<p class="learning-goal"><strong>Objetivo de aprendizaje:</strong> Al terminar este bloque, deberías poder diferenciar el instrumento que informa de los dispositivos que controlan o protegen.</p>
 <p>
 Esta diferencia es fundamental porque muchos conceptos parecen similares
 cuando se estudian por separado.
@@ -1615,7 +1657,7 @@ que tengan la misma función.
 
 <!-- ================= SECTION 05 ================= -->
 
-<section class="section">
+<section class="section" id="situaciones">
 
 <div class="container">
 
@@ -1625,6 +1667,7 @@ que tengan la misma función.
 
 <h2>Situaciones para razonar</h2>
 
+<p class="learning-goal"><strong>Objetivo de aprendizaje:</strong> Al terminar este bloque, deberías poder ordenar tus observaciones y evitar concluir una causa sin suficientes datos.</p>
 <p>
 Acá no interesa memorizar una letra. La idea es entrenar la capacidad
 de analizar qué está ocurriendo.
@@ -1904,7 +1947,7 @@ correcta.</strong>
 
 <!-- ================= SECTION 06 ================= -->
 
-<section class="section">
+<section class="section" id="errores-estudio">
 
 <div class="container">
 
@@ -1914,6 +1957,7 @@ correcta.</strong>
 
 <h2>Las trampas no siempre están en la pregunta</h2>
 
+<p class="learning-goal"><strong>Objetivo de aprendizaje:</strong> Al terminar este bloque, deberías poder detectar qué hábito de estudio te lleva a confundir conceptos.</p>
 <p>
 Muchas veces el error aparece antes de responder: aparece cuando
 interpretamos mal el concepto.
@@ -2017,7 +2061,7 @@ debe estudiarse desde la normativa correspondiente.
 
 <!-- ================= SECTION 07 ================= -->
 
-<section class="section">
+<section class="section" id="autoexplicacion">
 
 <div class="container">
 
@@ -2027,6 +2071,7 @@ debe estudiarse desde la normativa correspondiente.
 
 <h2>La mejor prueba: explicarlo sin mirar</h2>
 
+<p class="learning-goal"><strong>Objetivo de aprendizaje:</strong> Al terminar este bloque, deberías poder explicar las ideas principales sin mirar la página.</p>
 <p>
 Antes de considerar que aprendiste un tema, intentá explicarlo con tus
 propias palabras.
@@ -2103,6 +2148,20 @@ buscá la relación y después intentá explicarlo nuevamente.
 </section>
 
 
+
+<!-- ================= PRACTICA INTERACTIVA ================= -->
+<section class="study-quiz" id="practica">
+<div class="container">
+<div class="section-header"><div class="section-number">08 · PRACTICÁ Y COMPROBÁ</div><h2>Un intento breve para comprobar tu comprensión</h2><p>En cada intento aparecen 6 preguntas. El banco se mezcla y las preguntas no se repiten hasta completar la ronda de 18. Al corregir, vas a ver una explicación para cada respuesta.</p></div>
+<div class="quiz-panel">
+<div class="quiz-progress" id="studyQuizProgress" aria-live="polite"></div>
+<form id="studyQuizForm"></form>
+<div class="quiz-actions"><button class="quiz-button" id="studyQuizCorrect" type="button">Corregir respuestas</button><button class="quiz-button secondary" id="studyQuizNext" type="button" hidden>Nuevo intento con preguntas mezcladas</button></div>
+<div class="quiz-result" id="studyQuizResult" role="status" aria-live="polite" hidden></div>
+</div>
+<div class="resource-links" aria-label="Continuar estudiando"><a href="generadores.html">Repasar generadores</a><a href="seguridad.html">Estudiar seguridad</a><a href="normativa.html">Consultar normativa</a></div>
+</div>
+</section>
 
 <!-- ================= FINAL ================= -->
 
@@ -2252,5 +2311,39 @@ operación y normativa aplicable en Uruguay.
 </footer>
 
 
+<script>
+(function(){
+"use strict";
+const bank=[
+{q:"¿Cuál describe mejor la transformación principal en un generador de vapor?",o:["El combustible se convierte directamente en agua.","El calor transferido al agua permite producir vapor.","La presión se transforma en combustible."],a:1,e:"El combustible aporta energía mediante la combustión; esa energía se transfiere al agua y permite producir vapor."},
+{q:"Si aumenta la demanda de vapor, ¿qué relación conviene analizar?",o:["Producción necesaria, aporte térmico y alimentación de agua.","Solo la lectura del manómetro.","Únicamente el color de la llama."],a:0,e:"La respuesta del sistema relaciona demanda, energía disponible y agua de alimentación. Una sola indicación no explica todo el proceso."},
+{q:"¿Qué representa principalmente el nivel observado?",o:["Una lectura relacionada con el equilibrio de masa dentro del generador.","La cantidad de combustible en el quemador.","La presión de salida del vapor."],a:0,e:"El nivel es una indicación vinculada al agua dentro del equipo y debe interpretarse con alimentación, producción y confiabilidad de la medición."},
+{q:"¿Por qué importa la calidad del agua?",o:["Puede afectar superficies, transferencia de calor y condición interna.","Solo cambia el color del vapor.","No tiene relación con el funcionamiento."],a:0,e:"La calidad inadecuada puede favorecer depósitos, incrustaciones o corrosión y afectar el equipo y la transferencia térmica."},
+{q:"¿Cuál es la función principal de un manómetro?",o:["Informar la presión mediante una indicación.","Actuar como válvula de seguridad.","Regular automáticamente el nivel."],a:0,e:"El manómetro permite conocer una presión. Medir una variable no equivale a controlarla ni a proteger el equipo."},
+{q:"¿Qué diferencia general a una alarma de una protección?",o:["La alarma informa una condición; la protección está diseñada para actuar según una función prevista.","Son nombres distintos para el mismo elemento.","La alarma siempre detiene el equipo."],a:0,e:"Una alarma comunica una condición para que sea atendida; una protección cumple una función de seguridad definida para el sistema."},
+{q:"La presión indicada aumenta. ¿Qué conclusión es más razonable al inicio?",o:["El manómetro es necesariamente la causa.","Hay que relacionar producción, consumo, aporte térmico e indicación.","El nivel deja de ser relevante."],a:1,e:"El instrumento puede mostrar un cambio sin ser su origen. Conviene analizar el comportamiento del sistema y la confiabilidad de la lectura."},
+{q:"Ante una disminución de nivel, ¿qué enfoque ayuda a razonar?",o:["Buscar una única causa conocida.","Comparar qué entra, qué sale y si la indicación es confiable.","Ignorar la demanda de vapor."],a:1,e:"El nivel refleja un equilibrio dinámico. Se consideran alimentación, producción, demanda y medición antes de atribuir una causa."},
+{q:"¿Qué relación describe mejor la combustión en un generador que usa combustible?",o:["Es parte de la cadena que libera energía térmica.","Es un sistema para medir presión.","Solo sirve para elevar el nivel."],a:0,e:"La combustión libera energía del combustible; luego esa energía se transfiere al agua para producir vapor."},
+{q:"¿Qué significa que una variable y otra cambien al mismo tiempo?",o:["Que una es necesariamente la causa de la otra.","Que existe una relación temporal que requiere análisis adicional.","Que el instrumento está averiado."],a:1,e:"La coincidencia temporal no demuestra causalidad. Hace falta considerar el proceso y otros datos relevantes."},
+{q:"¿Qué pregunta conviene hacer sobre un dispositivo de control?",o:["Qué variable detecta y qué respuesta está previsto que genere.","Cuánto cuesta reemplazarlo.","Si tiene un nombre parecido a otro."],a:0,e:"Entender qué detecta y qué respuesta genera permite distinguir medición, control, alarma y protección."},
+{q:"¿Qué fuente debe consultarse para confirmar un requisito reglamentario?",o:["La normativa oficial aplicable y vigente.","Una regla memorizada sin referencia.","Una explicación general del principio físico."],a:0,e:"La explicación técnica ayuda a comprender; el requisito reglamentario se confirma en la norma oficial aplicable."},
+{q:"¿Por qué una producción de vapor aparentemente normal no demuestra por sí sola que todo está bien?",o:["Porque también deben considerarse las condiciones, variables y protecciones del equipo.","Porque producir vapor siempre indica una falla.","Porque la presión no importa."],a:0,e:"La producción es solo parte del funcionamiento. Debe interpretarse junto con las demás variables e indicaciones relevantes."},
+{q:"¿Cuál es una forma útil de estudiar un componente?",o:["Memorizar el nombre aislado.","Relacionar su función, variable, conexiones y condición que ayuda a reconocer.","Aprender solo su ubicación."],a:1,e:"Relacionar función y variable permite entender el papel del componente dentro del sistema completo."},
+{q:"¿Qué permite comprobar mejor que realmente comprendiste un tema?",o:["Reconocer palabras conocidas.","Explicarlo con tus propias palabras y resolver un ejemplo.","Leerlo varias veces sin detenerte."],a:1,e:"Explicar y aplicar el concepto obliga a reconstruir la relación, en lugar de depender solo del reconocimiento."},
+{q:"Si cambia el comportamiento de la llama, ¿qué conjunto de ideas conviene relacionar?",o:["Combustible, aire, combustión y energía transferida.","Nivel, manómetro y válvula de seguridad únicamente.","Solo la demanda del proceso."],a:0,e:"La combustión depende de sus condiciones y es parte de la cadena energética que llega al agua."},
+{q:"¿Qué describe mejor el trabajo de una protección?",o:["Una función destinada a responder ante una condición definida.","La lectura normal de una variable.","Un sustituto de todos los controles."],a:0,e:"Las protecciones tienen funciones definidas y se analizan según el diseño del equipo; no deben confundirse con medición o control ordinario."},
+{q:"¿Qué hacer cuando no podés explicar una respuesta?",o:["Marcarla para memorizarla sin entender.","Volver al concepto, identificar la relación y luego intentarlo otra vez.","Suponer que el concepto no sirve."],a:1,e:"La dificultad señala qué relación necesita repaso. Revisarla y volver a explicarla fortalece la comprensión."}
+];
+const form=document.getElementById("studyQuizForm"), progress=document.getElementById("studyQuizProgress"), correctBtn=document.getElementById("studyQuizCorrect"), nextBtn=document.getElementById("studyQuizNext"), result=document.getElementById("studyQuizResult");
+const key="estudioQuizRestantes_v1";let remaining;try{remaining=JSON.parse(sessionStorage.getItem(key)||"null");}catch(_){remaining=null}
+if(!Array.isArray(remaining)||remaining.some(i=>!Number.isInteger(i)||i<0||i>=bank.length))remaining=bank.map((_,i)=>i);
+function save(){try{sessionStorage.setItem(key,JSON.stringify(remaining));}catch(_){}}
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+function begin(){if(remaining.length<6)remaining=bank.map((_,i)=>i);const ids=shuffle(remaining.slice()).slice(0,6);remaining=remaining.filter(i=>!ids.includes(i));save();form.innerHTML="";result.hidden=true;result.innerHTML="";nextBtn.hidden=true;correctBtn.disabled=false;progress.textContent="Ronda: "+(Math.floor((bank.length-remaining.length-1)/6)+1)+" de 3 · 6 preguntas";
+ids.forEach((id,n)=>{const item=bank[id],order=shuffle(item.o.map((_,i)=>i)),field=document.createElement("fieldset");field.className="quiz-question";const legend=document.createElement("legend");legend.textContent=(n+1)+". "+item.q;field.appendChild(legend);order.forEach((choice,k)=>{const label=document.createElement("label");label.className="quiz-option";const input=document.createElement("input");input.type="radio";input.name="q"+n;input.value=choice;input.required=true;const span=document.createElement("span");span.textContent=item.o[choice];label.append(input,span);field.appendChild(label)});field.dataset.id=String(id);form.appendChild(field)})}
+correctBtn.addEventListener("click",()=>{if(!form.reportValidity())return;let score=0;const fields=[...form.querySelectorAll("fieldset")];fields.forEach((field,i)=>{const item=bank[Number(field.dataset.id)],chosen=Number(form.querySelector('input[name="q'+i+'"]:checked').value);if(chosen===item.a)score++;const exp=document.createElement("p");exp.className="quiz-explanation";exp.innerHTML="<strong>"+(chosen===item.a?"Correcta. ":"A revisar. ")+"</strong>"+item.e;field.appendChild(exp);field.querySelectorAll("input").forEach(input=>input.disabled=true)});result.innerHTML="<strong>Resultado: "+score+" de "+fields.length+".</strong> Revisá las explicaciones y volvé a intentar para reforzar lo que quedó pendiente.";result.hidden=false;correctBtn.disabled=true;nextBtn.hidden=false});
+nextBtn.addEventListener("click",begin);begin();
+})();
+</script>
 </body>
 </html>
