@@ -421,8 +421,21 @@ tr:nth-child(even) td{
 }
 
 .card-icon{
-    font-size:1.8rem;
-    margin-bottom:10px;
+    width:48px;
+    height:48px;
+    display:grid;
+    place-items:center;
+    margin-bottom:15px;
+    color:var(--blue);
+    background:linear-gradient(145deg,#f2f8fd,#e2eff9);
+    border:1px solid #d5e6f3;
+    border-radius:14px;
+    box-shadow:0 5px 13px rgba(18,97,160,.08);
+}
+.card-icon svg{
+    width:31px;
+    height:31px;
+    display:block;
 }
 
 .card h3{
@@ -1915,7 +1928,7 @@ condiciones normales.
 
 <div class="card">
 
-<div class="card-icon">◉</div>
+<div class="card-icon"><svg viewBox="0 0 48 48" role="img" aria-label="Manómetro" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M9 29a15 15 0 1 1 30 0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M13 29h22" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="m24 27 8-9" stroke="#e0a32b" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="27" r="3" fill="#e0a32b"/><path d="M13 19l3 2M24 11v4m11 4-3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="17" y="34" width="14" height="4" rx="2" fill="currentColor" opacity=".22"/></svg></div>
 
 <h3>Presión</h3>
 
@@ -1930,7 +1943,7 @@ sistema de control.
 
 <div class="card">
 
-<div class="card-icon">▣</div>
+<div class="card-icon"><svg viewBox="0 0 48 48" role="img" aria-label="Indicador de nivel" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="8" width="24" height="32" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M15 27c3-2 5 2 8 0s5 2 8 0 4 1 4 1v7H15z" fill="#e0a32b" opacity=".55"/><path d="M15 27c3-2 5 2 8 0s5 2 8 0 4 1 4 1" fill="none" stroke="#b87b05" stroke-width="2.2" stroke-linecap="round"/><path d="M18 14h12M18 19h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".7"/></svg></div>
 
 <h3>Nivel</h3>
 
@@ -1945,7 +1958,7 @@ instrumento.
 
 <div class="card">
 
-<div class="card-icon">♨</div>
+<div class="card-icon"><svg viewBox="0 0 48 48" role="img" aria-label="Llama de combustión" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M26 7c2 7-4 8-3 14 2-1 4-3 4-6 7 5 10 11 7 18a11 11 0 0 1-21-3c-1-5 2-9 6-13 0 5 1 7 3 8-1-7 6-10 4-18z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M24 26c3 3 4 5 3 8a4 4 0 0 1-7-1c-.5-2 1-4 4-7z" fill="#e0a32b" stroke="#b87b05" stroke-width="1.5"/><path d="M12 41h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div>
 
 <h3>Combustión</h3>
 
@@ -1960,7 +1973,7 @@ instalado.
 
 <div class="card">
 
-<div class="card-icon">◌</div>
+<div class="card-icon"><svg viewBox="0 0 48 48" role="img" aria-label="Agua de alimentación" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24 7s-11 13-11 21a11 11 0 0 0 22 0C35 20 24 7 24 7z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M17 29c2-2 4 2 7 0s5 2 7 0" fill="none" stroke="#e0a32b" stroke-width="2.5" stroke-linecap="round"/><path d="M19 34c2-1 4 1 6 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity=".65"/></svg></div>
 
 <h3>Agua</h3>
 
@@ -1974,7 +1987,7 @@ la operación como el estado interno del generador.
 
 <div class="card">
 
-<div class="card-icon">⚙</div>
+<div class="card-icon"><svg viewBox="0 0 48 48" role="img" aria-label="Sistema de control" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24 7 37 12v10c0 8-5 14-13 19-8-5-13-11-13-19V12z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="24" cy="23" r="6" fill="none" stroke="#e0a32b" stroke-width="2.4"/><path d="M24 14v3m0 12v3m9-9h-3m-12 0h-3m15.4-6.4-2.1 2.1m-8.6 8.6-2.1 2.1m12.8 0-2.1-2.1m-8.6-8.6-2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
 
 <h3>Controles</h3>
 
@@ -1989,7 +2002,7 @@ luz o sonido.
 
 <div class="card">
 
-<div class="card-icon">!</div>
+<div class="card-icon"><svg viewBox="0 0 48 48" role="img" aria-label="Procedimiento seguro" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="10" width="22" height="30" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M19 10V7h10v3" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="m18 21 2 2 4-4m-6 11 2 2 4-4" fill="none" stroke="#b87b05" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 21h4m-4 8h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
 
 <h3>Conducta</h3>
 
