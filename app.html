@@ -763,6 +763,7 @@ body{
 
 
 /* APP · HERO Y VISTA PREVIA */
+.app-brand-lockup{display:flex;align-items:center;gap:14px;margin-bottom:23px}.app-brand-lockup img{width:70px;height:70px;object-fit:contain;padding:5px;border:1px solid rgba(255,255,255,.38);border-radius:17px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.2)}.app-brand-lockup strong,.app-brand-lockup span{display:block}.app-brand-lockup strong{color:#fff;font-size:17px;letter-spacing:.2px}.app-brand-lockup span{margin-top:5px;color:#8dcdf0;font-size:8px;font-weight:800;letter-spacing:1.2px}.phone-logo{width:29px;height:29px;object-fit:contain;border-radius:7px;background:white;padding:2px}
 .app-main{min-height:0;padding:0 22px 70px;background:linear-gradient(180deg,#062746 0,#0a3d68 620px,#f4f8fc 620px)}
 .app-hero{max-width:1180px;margin:auto;min-height:590px;padding:66px 20px 80px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(350px,.95fr);align-items:center;gap:54px;color:white}
 .eyebrow{display:inline-block;color:#7fd6ff;font-size:11px;font-weight:800;letter-spacing:2px}
@@ -926,6 +927,10 @@ body{
 <main class="app-main">
   <section class="app-hero" aria-labelledby="app-title">
     <div class="hero-copy">
+      <div class="app-brand-lockup">
+        <img src="logo-foguista-nuevo.png" alt="Logo de Foguista Uruguay">
+        <div><strong>Foguista Uruguay</strong><span>FORMACIÓN TÉCNICA · APP OFICIAL</span></div>
+      </div>
       <span class="eyebrow">FOGUISTA URUGUAY · APP</span>
       <h1 id="app-title">La formación técnica,<br><span>también va contigo.</span></h1>
       <p>Una vista previa de cómo practicar, repasar conceptos y prepararte para el trabajo desde el celular.</p>
@@ -941,7 +946,7 @@ body{
         <div class="phone-island"></div>
         <div class="phone-screen">
           <div class="phone-status"><span>9:41</span><span aria-hidden="true">● ● ▰</span></div>
-          <div class="phone-brand"><span class="mini-mark">F</span><span>Foguista Uruguay<small>ÁREA DE ESTUDIO</small></span></div>
+          <div class="phone-brand"><img class="phone-logo" src="logo-foguista-nuevo.png" alt=""><span>Foguista Uruguay<small>ÁREA DE ESTUDIO</small></span></div>
           <div class="lesson-top"><span>SEGURIDAD</span><span>Pregunta 04</span></div>
           <div class="lesson-progress"><span></span></div>
           <h2>¿Qué hacer ante una alarma de nivel anormal?</h2>
