@@ -587,6 +587,193 @@ footer p{
         padding:28px 22px;
     }
 }
+
+/* =========================
+   RUTA DE ESTUDIO Y REPASO
+========================= */
+.study-route,.security-quiz{
+    background:#fff;
+    border:1px solid #dce6ef;
+    border-radius:18px;
+    box-shadow:0 10px 28px rgba(7,27,51,.08);
+}
+.study-route{
+    margin:36px auto 8px;
+    padding:clamp(23px,4vw,36px);
+}
+.study-route h2,.security-quiz h2{
+    color:#071b33;
+    line-height:1.2;
+    margin:0 0 12px;
+}
+.study-route>p,.security-quiz>p{
+    color:#52677b;
+    max-width:850px;
+}
+.study-steps{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:14px;
+    margin:24px 0;
+}
+.study-step{
+    background:#f7fafc;
+    border:1px solid #dce6ef;
+    border-radius:12px;
+    padding:19px;
+}
+.study-step span{
+    display:block;
+    color:#1261a0;
+    font-weight:bold;
+    font-size:13px;
+    letter-spacing:.05em;
+    margin-bottom:8px;
+}
+.study-step h3{
+    color:#071b33;
+    font-size:17px;
+    margin:0 0 8px;
+}
+.study-step p{
+    color:#52677b;
+    font-size:14px;
+    margin:0;
+}
+.study-reminder{
+    border-left:5px solid #e0a32b;
+    border-radius:9px;
+    background:#fff8e8;
+    padding:16px 19px;
+    color:#334f68;
+}
+.security-quiz{
+    margin:55px auto;
+    padding:clamp(23px,4vw,38px);
+}
+.security-quiz .quiz-kicker{
+    color:#1261a0;
+    display:inline-block;
+    font-weight:bold;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:9px;
+}
+.security-quiz h2{
+    font-size:clamp(25px,3vw,32px);
+}
+.security-quiz .quiz-round{
+    color:#1261a0;
+    font-weight:bold;
+    margin:20px 0 6px;
+}
+.security-quiz .quiz-list{
+    display:grid;
+    gap:15px;
+    margin:18px 0;
+}
+.security-quiz .quiz-question{
+    border:1px solid #dce6ef;
+    border-radius:12px;
+    margin:0;
+    padding:17px 19px;
+}
+.security-quiz .quiz-question legend{
+    color:#071b33;
+    font-weight:bold;
+    line-height:1.5;
+    padding:0 7px;
+}
+.security-quiz .quiz-options{
+    display:grid;
+    gap:8px;
+    margin-top:10px;
+}
+.security-quiz .quiz-option{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    color:#42576b;
+    background:#f8fbfe;
+    border-radius:8px;
+    padding:10px 12px;
+    cursor:pointer;
+}
+.security-quiz .quiz-option input{
+    margin-top:5px;
+    accent-color:#1261a0;
+}
+.security-quiz .quiz-option:has(input:checked){
+    outline:2px solid #9bc6e8;
+}
+.security-quiz .quiz-question.is-correct{
+    border-color:#72b894;
+    background:#eef8f2;
+}
+.security-quiz .quiz-question.is-incorrect{
+    border-color:#e2a39d;
+    background:#fff5f4;
+}
+.security-quiz .quiz-actions{
+    display:flex;
+    gap:11px;
+    flex-wrap:wrap;
+    margin-top:18px;
+}
+.security-quiz .quiz-button{
+    border:0;
+    border-radius:9px;
+    padding:12px 17px;
+    font:inherit;
+    font-weight:bold;
+    cursor:pointer;
+}
+.security-quiz .quiz-button.primary{
+    background:#1261a0;
+    color:#fff;
+}
+.security-quiz .quiz-button.secondary{
+    background:#edf3f8;
+    color:#071b33;
+}
+.security-quiz .quiz-button:focus-visible,
+.security-quiz .quiz-option:focus-within{
+    outline:3px solid #8fc1e8;
+    outline-offset:2px;
+}
+.security-quiz .quiz-button:disabled{
+    cursor:not-allowed;
+    opacity:.55;
+}
+.security-quiz .quiz-feedback{
+    margin-top:18px;
+    padding:17px 20px;
+    border-radius:10px;
+    background:#edf6fd;
+    color:#334f68;
+}
+.security-quiz .quiz-feedback[hidden]{
+    display:none;
+}
+.security-quiz .quiz-feedback strong{
+    display:block;
+    color:#071b33;
+    margin-bottom:8px;
+}
+.security-quiz .quiz-feedback ul{
+    margin:8px 0 0 20px;
+}
+.security-quiz .quiz-feedback li{
+    margin:7px 0;
+}
+@media(max-width:850px){
+    .study-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+    .study-steps{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 
@@ -694,6 +881,19 @@ y didáctica, pensando especialmente en la formación del foguista.
 
 </section>
 
+
+<section class="container study-route" aria-labelledby="study-route-title">
+    <span class="quiz-kicker">Ruta de estudio</span>
+    <h2 id="study-route-title">Aprendé a relacionar riesgo, control y protección</h2>
+    <p>En cada tema, avanzá desde la variable que puede cambiar hasta la función del sistema que la observa o limita. El equipo, su manual y la normativa aplicable determinan los valores y procedimientos concretos.</p>
+    <div class="study-steps">
+        <article class="study-step"><span>01 · IDENTIFICAR</span><h3>¿Qué variable está en juego?</h3><p>Presión, nivel, combustión, alimentación de agua, calidad del agua o condiciones de la sala.</p></article>
+        <article class="study-step"><span>02 · INTERPRETAR</span><h3>¿Qué información la muestra?</h3><p>Reconocé qué indica cada instrumento y qué límites tiene esa indicación.</p></article>
+        <article class="study-step"><span>03 · DIFERENCIAR</span><h3>¿Qué función cumple cada elemento?</h3><p>Separá medición, alarma, control, enclavamiento y dispositivo de seguridad.</p></article>
+        <article class="study-step"><span>04 · APLICAR</span><h3>¿Qué referencia corresponde?</h3><p>Relacioná el concepto con el manual del equipo, los procedimientos del lugar y la regulación oficial vigente.</p></article>
+    </div>
+    <div class="study-reminder"><strong>En seguridad, entender el principio no reemplaza el procedimiento:</strong> ante una condición anormal, la respuesta depende del generador, sus controles y el procedimiento aprobado para esa instalación. No anules protecciones ni improvises maniobras.</div>
+</section>
 
 <!-- ================= SECTION 01 ================= -->
 
@@ -1903,9 +2103,11 @@ directamente desde la normativa vigente aplicable.
 </p>
 
 <p>
-En Foguista Uruguay, los contenidos normativos se tratarán en la sección
-<strong>Normativa</strong>, diferenciando el texto reglamentario de la
-explicación educativa.
+Para requisitos legales exactos, consultá el
+<a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener noreferrer"><strong>Reglamento de Seguridad de Generadores de Vapor aprobado por URSEA, Resolución 101/026</strong></a>,
+junto con las instrucciones del fabricante y la normativa que corresponda
+a la instalación. La sección <a href="normativa.html"><strong>Normativa</strong></a>
+ofrece material de apoyo; no sustituye el texto oficial.
 </p>
 
 <div class="warning">
@@ -2108,6 +2310,21 @@ seguridad de un generador de vapor.
 </section>
 
 
+<section class="container security-quiz" aria-labelledby="security-quiz-title">
+    <span class="quiz-kicker">Repaso interactivo</span>
+    <h2 id="security-quiz-title">¿Podés relacionar el riesgo con su protección?</h2>
+    <p>El banco tiene 18 preguntas. Cada prueba presenta seis, en orden aleatorio y sin repetir hasta completar la ronda. Después de corregir, vas a ver una explicación para cada respuesta y podrás empezar una nueva prueba mezclada.</p>
+    <p class="quiz-round" id="security-quiz-round" aria-live="polite"></p>
+    <form id="security-quiz-form">
+        <div class="quiz-list" id="security-quiz-questions"></div>
+        <div class="quiz-actions">
+            <button class="quiz-button primary" type="button" id="security-quiz-submit">Corregir respuestas</button>
+            <button class="quiz-button secondary" type="button" id="security-quiz-new" hidden>Nuevo intento con preguntas mezcladas</button>
+        </div>
+        <div class="quiz-feedback" id="security-quiz-feedback" role="status" aria-live="polite" hidden></div>
+    </form>
+</section>
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
@@ -2169,6 +2386,114 @@ operación y normativa aplicable en Uruguay.
 </div>
 
 </footer>
+
+<script>
+(() => {
+    const form = document.getElementById("security-quiz-form");
+    const list = document.getElementById("security-quiz-questions");
+    const feedback = document.getElementById("security-quiz-feedback");
+    const roundLabel = document.getElementById("security-quiz-round");
+    const submit = document.getElementById("security-quiz-submit");
+    const newAttempt = document.getElementById("security-quiz-new");
+    const bank = [{"id":"energia-presion","prompt":"¿Por qué la presión es una variable importante para estudiar la seguridad de un generador?","options":[{"text":"Porque se relaciona con la energía almacenada en el sistema.","correct":true},{"text":"Porque indica por sí sola el nivel exacto de agua.","correct":false},{"text":"Porque reemplaza la inspección del equipo.","correct":false}],"explanation":"El vapor presurizado almacena energía; por eso la presión debe medirse y mantenerse dentro de las condiciones previstas para el equipo."},{"id":"manometro","prompt":"¿Cuál es la función principal del manómetro?","options":[{"text":"Indicar la presión del sistema.","correct":true},{"text":"Descargar automáticamente el exceso de presión.","correct":false},{"text":"Regular por sí solo la combustión.","correct":false}],"explanation":"El manómetro muestra una medición. Controlar o proteger son funciones de otros elementos del sistema."},{"id":"presostato","prompt":"¿Qué diferencia general hay entre un presostato y una válvula de seguridad?","options":[{"text":"El presostato participa en el control; la válvula protege frente a sobrepresión.","correct":true},{"text":"Ambos son instrumentos que solo muestran la presión.","correct":false},{"text":"La válvula de seguridad controla el nivel de agua.","correct":false}],"explanation":"Aunque ambos se relacionan con la presión, cumplen funciones distintas: control y protección."},{"id":"saturacion","prompt":"Si cambia la presión, ¿qué ocurre con la temperatura de saturación del agua?","options":[{"text":"También cambia según la relación entre presión y temperatura.","correct":true},{"text":"Permanece siempre igual para cualquier presión.","correct":false},{"text":"Deja de existir mientras el generador está funcionando.","correct":false}],"explanation":"Para cada presión existe una temperatura de saturación correspondiente; por eso ambas variables se estudian relacionadas."},{"id":"bajo-nivel","prompt":"¿Por qué un nivel de agua demasiado bajo puede ser peligroso?","options":[{"text":"Algunas superficies que reciben calor podrían quedar insuficientemente refrigeradas.","correct":true},{"text":"Hace que el manómetro deje de medir presión.","correct":false},{"text":"Convierte automáticamente la válvula de seguridad en un control de nivel.","correct":false}],"explanation":"El agua ayuda a refrigerar superficies calentadas. Una condición de bajo nivel debe tratarse según los sistemas y procedimientos específicos del equipo."},{"id":"alimentacion","prompt":"¿Cuál describe mejor la diferencia entre alimentación de agua y control de nivel?","options":[{"text":"La alimentación aporta agua; el control determina la respuesta del sistema según el nivel.","correct":true},{"text":"Son dos nombres para el mismo instrumento.","correct":false},{"text":"La alimentación mide presión y el control libera vapor.","correct":false}],"explanation":"El sistema de alimentación repone agua; el control de nivel gobierna cuándo o cómo actúa, de acuerdo con el diseño."},{"id":"alarma","prompt":"¿Qué hace principalmente una alarma?","options":[{"text":"Advierte sobre una condición detectada.","correct":true},{"text":"Siempre corrige por sí sola la causa de la condición.","correct":false},{"text":"Reemplaza todos los dispositivos de protección.","correct":false}],"explanation":"La alarma informa. Puede coexistir con acciones automáticas de control o protección, que son funciones distintas."},{"id":"enclavamiento","prompt":"¿Qué caracteriza a un enclavamiento de seguridad?","options":[{"text":"Condiciona o impide una operación cuando no se cumplen requisitos definidos.","correct":true},{"text":"Muestra una medición sin afectar la operación.","correct":false},{"text":"Es siempre una válvula mecánica de descarga.","correct":false}],"explanation":"El enclavamiento aplica una lógica de seguridad prevista para el sistema; su comportamiento depende del diseño y la configuración."},{"id":"deteccion-llama","prompt":"¿Qué aporta un sistema de detección de llama en un equipo con combustión?","options":[{"text":"Detecta si la condición de llama supervisada está presente según el diseño.","correct":true},{"text":"Mide directamente el nivel de agua.","correct":false},{"text":"Sustituye el manual de operación.","correct":false}],"explanation":"El sistema supervisa la condición de llama y comunica o activa la respuesta configurada para ese equipo."},{"id":"combustion","prompt":"¿Qué puede afectar la estabilidad de la combustión?","options":[{"text":"Cambios en el combustible, el aire disponible o las condiciones del sistema.","correct":true},{"text":"Únicamente el color exterior del generador.","correct":false},{"text":"La posición del manómetro en la sala.","correct":false}],"explanation":"Combustible, aire y sistema de combustión forman parte del proceso; las condiciones y respuestas específicas dependen del equipo."},{"id":"calidad-agua","prompt":"¿Por qué la calidad del agua forma parte del estudio de seguridad?","options":[{"text":"Porque depósitos o corrosión pueden afectar superficies y transferencia de calor.","correct":true},{"text":"Porque determina qué presión indica el manómetro.","correct":false},{"text":"Porque elimina la necesidad de controles de nivel.","correct":false}],"explanation":"La composición del agua puede influir en depósitos, corrosión y condición interna del generador; el tratamiento debe seguir el programa correspondiente."},{"id":"incrustacion","prompt":"¿Qué efecto pueden tener las incrustaciones sobre una superficie calentada?","options":[{"text":"Dificultar la transferencia de calor y contribuir a condiciones térmicas desfavorables.","correct":true},{"text":"Garantizar refrigeración adicional en cualquier situación.","correct":false},{"text":"Medir el caudal de vapor producido.","correct":false}],"explanation":"Los depósitos pueden actuar como barrera térmica y alterar cómo se transfiere el calor. La evaluación y el mantenimiento corresponden a personal y procedimientos habilitados."},{"id":"indicacion","prompt":"Si una indicación parece normal, ¿eso demuestra por sí solo que todo el generador está en condición normal?","options":[{"text":"No; debe interpretarse con las otras variables, instrumentos y el diseño del equipo.","correct":true},{"text":"Sí; una sola indicación confirma todas las condiciones.","correct":false},{"text":"Sí; siempre que la combustión esté encendida.","correct":false}],"explanation":"Una lectura aislada no representa todo el sistema. Se interpreta junto con los demás datos y los límites definidos para el equipo."},{"id":"manual","prompt":"¿Dónde se consultan los valores normales y la respuesta prevista ante una contingencia?","options":[{"text":"En el manual y los procedimientos aprobados para ese generador e instalación.","correct":true},{"text":"En una secuencia universal que sirva para todos los equipos.","correct":false},{"text":"Únicamente en la lectura instantánea de un instrumento.","correct":false}],"explanation":"Los límites y procedimientos dependen del fabricante, el diseño, la automatización y las condiciones del lugar."},{"id":"capas","prompt":"¿Por qué la seguridad se organiza en varias capas?","options":[{"text":"Porque medición, alarma, control y protección atienden funciones y condiciones diferentes.","correct":true},{"text":"Porque todos los dispositivos hacen exactamente lo mismo.","correct":false},{"text":"Para permitir ignorar una alarma si el equipo sigue funcionando.","correct":false}],"explanation":"Las capas son complementarias: conocer una variable, advertir, regular y proteger no son funciones intercambiables."},{"id":"registro","prompt":"¿Qué aporta el registro de condiciones e incidentes en el libro o registro operativo?","options":[{"text":"Deja trazabilidad para interpretar tendencias y consultar el seguimiento del equipo.","correct":true},{"text":"Reemplaza el mantenimiento y las inspecciones.","correct":false},{"text":"Permite cambiar ajustes sin autorización.","correct":false}],"explanation":"Los registros ayudan al seguimiento y comunicación de la operación, pero no sustituyen mantenimiento, inspecciones ni procedimientos."},{"id":"sala","prompt":"¿Por qué importan el acceso y la ventilación del área de generación?","options":[{"text":"Contribuyen a condiciones adecuadas de operación, circulación y evacuación, según la instalación.","correct":true},{"text":"Determinan por sí solos la presión máxima admisible.","correct":false},{"text":"Eliminan la necesidad de revisar el sistema de combustión.","correct":false}],"explanation":"La sala forma parte del entorno de seguridad. Sus requisitos concretos dependen de la regulación vigente y del diseño de la instalación."},{"id":"fuentes","prompt":"Para confirmar una obligación reglamentaria uruguaya vigente, ¿qué fuente corresponde consultar?","options":[{"text":"El texto oficial actualizado de URSEA/IMPO y la documentación aplicable al equipo.","correct":true},{"text":"Un resumen educativo como única fuente legal.","correct":false},{"text":"Una respuesta genérica sin identificar el equipo ni la norma.","correct":false}],"explanation":"La página enlaza la Resolución URSEA 101/026 en IMPO. Para aplicar requisitos, revisá el texto oficial vigente y la documentación específica."}];
+    const questionsPerAttempt = 6;
+    const storageKey = "foguistauruguay-seguridad-ronda-v1";
+    let remainingIds = [];
+
+    if (!form || !list || !feedback || !roundLabel || !submit || !newAttempt) return;
+
+    const shuffle = (items) => {
+        const mixed = items.slice();
+        for (let i = mixed.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [mixed[i], mixed[j]] = [mixed[j], mixed[i]];
+        }
+        return mixed;
+    };
+
+    const loadRound = () => {
+        try {
+            const saved = JSON.parse(sessionStorage.getItem(storageKey) || "[]");
+            const valid = Array.isArray(saved) &&
+                saved.every((id) => bank.some((question) => question.id === id)) &&
+                new Set(saved).size === saved.length;
+            remainingIds = valid ? saved : [];
+        } catch (_) {
+            remainingIds = [];
+        }
+    };
+
+    const saveRound = () => {
+        try {
+            sessionStorage.setItem(storageKey, JSON.stringify(remainingIds));
+        } catch (_) {
+            // El cuestionario sigue funcionando aunque el navegador bloquee el almacenamiento de sesión.
+        }
+    };
+
+    const renderQuiz = () => {
+        if (remainingIds.length < questionsPerAttempt) {
+            remainingIds = shuffle(bank.map((question) => question.id));
+        }
+        const used = bank.length - remainingIds.length;
+        const attemptNumber = Math.floor(used / questionsPerAttempt) + 1;
+        const selected = remainingIds.splice(0, questionsPerAttempt)
+            .map((id) => bank.find((question) => question.id === id));
+        saveRound();
+        roundLabel.textContent = "Prueba " + attemptNumber + " de 3 · seis preguntas sin repetir en esta ronda";
+        list.innerHTML = selected.map((question, index) => {
+            const options = shuffle(question.options);
+            return '<fieldset class="quiz-question" data-question-id="' + question.id + '">' +
+                '<legend>' + (index + 1) + '. ' + question.prompt + '</legend>' +
+                '<div class="quiz-options">' +
+                options.map((option, optionIndex) =>
+                    '<label class="quiz-option"><input type="radio" name="' + question.id + '" value="' + optionIndex + '" data-correct="' + option.correct + '"> ' + option.text + '</label>'
+                ).join('') +
+                '</div></fieldset>';
+        }).join('');
+        feedback.hidden = true;
+        feedback.textContent = '';
+        newAttempt.hidden = true;
+        submit.disabled = false;
+    };
+
+    submit.addEventListener("click", () => {
+        const questions = Array.from(list.querySelectorAll(".quiz-question"));
+        const unanswered = questions.filter((question) => !question.querySelector("input:checked"));
+        if (unanswered.length) {
+            feedback.hidden = false;
+            feedback.innerHTML = "<strong>Te falta responder " + unanswered.length +
+                (unanswered.length === 1 ? " pregunta." : " preguntas.") +
+                "</strong>Completá las opciones pendientes y volvé a corregir.";
+            unanswered[0].querySelector("input").focus();
+            return;
+        }
+
+        let score = 0;
+        const explanations = questions.map((question) => {
+            const answer = question.querySelector("input:checked");
+            const correct = answer.dataset.correct === "true";
+            const item = bank.find((entry) => entry.id === question.dataset.questionId);
+            question.classList.toggle("is-correct", correct);
+            question.classList.toggle("is-incorrect", !correct);
+            question.querySelectorAll("input").forEach((input) => { input.disabled = true; });
+            if (correct) score += 1;
+            return "<li><strong>" + (correct ? "Correcta." : "Para revisar.") +
+                "</strong> " + item.explanation + "</li>";
+        });
+        feedback.hidden = false;
+        feedback.innerHTML = "<strong>Resultado: " + score + " de " + questions.length +
+            ".</strong><ul>" + explanations.join("") +
+            "</ul><p>Cuando quieras, empezá otra prueba mezclada. Las preguntas no se repiten hasta terminar las 18 de esta ronda.</p>";
+        submit.disabled = true;
+        newAttempt.hidden = false;
+    });
+
+    newAttempt.addEventListener("click", renderQuiz);
+    loadRound();
+    renderQuiz();
+})();
+</script>
 
 </body>
 </html>
