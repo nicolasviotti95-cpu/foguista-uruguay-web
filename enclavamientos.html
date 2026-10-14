@@ -116,26 +116,12 @@ nav a.active{
    HERO
 ========================= */
 
-.hero{
-    min-height:500px;
-
-    background:
-        linear-gradient(
-            rgba(4,20,39,.78),
-            rgba(5,28,55,.91)
-        ),
-        url("https://utomprom.ru/uploads/media/images/parovoj-kotel-ustrojstvo.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    align-items:center;
-
-    padding:75px 8%;
-
-    color:white;
-}
+.hero{min-height:500px;position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(115deg,#061a31 0%,#0b2e50 55%,#104b76 100%);display:flex;align-items:center;padding:75px 8%;color:white}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 78% 48%,rgba(51,153,210,.22),transparent 37%)}
+.hero-art{position:absolute;z-index:0;right:3%;top:50%;width:min(47vw,570px);height:380px;transform:translateY(-50%);opacity:.94;pointer-events:none}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-content{position:relative;z-index:1;max-width:560px}
+.hero .hero-content{max-width:560px}
 
 .hero-content{
     max-width:850px;
@@ -631,7 +617,36 @@ footer p{
 
 }
 
-</style>
+.topic-index{padding:20px 0;background:#fff;border-bottom:1px solid #dce6ef}
+.topic-index-label{margin:0 0 10px;color:#637083;font-size:12px;font-weight:800;letter-spacing:1.1px}
+.topic-links{display:flex;flex-wrap:wrap;gap:9px}
+.topic-links a{display:inline-flex;padding:8px 12px;border:1px solid #dce6ef;border-radius:999px;background:#f7fafc;color:#0c4e7e;font-size:14px;font-weight:700}
+.topic-links a:hover{background:#eaf4fb;border-color:#9bc8e3}
+.scope-note{margin:0 0 26px;padding:18px 21px;background:#fff8e8;border-left:5px solid #e0a32b;border-radius:10px;color:#604d21}
+.scope-note strong{color:#6e5012}
+.study-quiz{background:#eaf1f7}
+.quiz-panel{background:#fff;border:1px solid #dce6ef;border-radius:18px;padding:clamp(20px,4vw,34px);box-shadow:0 8px 26px rgba(7,27,51,.09)}
+.quiz-progress{margin:7px 0 18px;color:#5c6a7c;font-weight:700}
+.quiz-question{margin:14px 0;padding:17px 19px;border:1px solid #dce6ef;border-radius:12px}
+.quiz-question legend{padding:0 7px;color:#092d54;font-weight:800;line-height:1.5}
+.quiz-option{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:8px;color:#344b60;cursor:pointer}
+.quiz-option:hover{background:#f4f8fb}
+.quiz-option input{margin-top:6px;accent-color:#1261a0}
+.quiz-question.is-correct{border-color:#72b894;background:#f0faf4}
+.quiz-question.is-incorrect{border-color:#df8e88;background:#fff6f5}
+.quiz-option.is-correct-answer{background:#e8f6ee;color:#17633f;box-shadow:inset 0 0 0 1px #72b894;font-weight:700}
+.quiz-option.is-incorrect-answer{background:#fff0ef;color:#a32626;box-shadow:inset 0 0 0 1px #df8e88;font-weight:700}
+.quiz-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-feedback{margin-top:18px;padding:18px 20px;border-radius:11px;background:#eef6fc;color:#334f68}
+.quiz-feedback[hidden],.quiz-button[hidden]{display:none}
+.quiz-feedback ul{margin:10px 0 0 20px}
+.quiz-feedback li{margin:7px 0}
+.quiz-button{border:0;border-radius:9px;padding:12px 18px;font:inherit;font-weight:800;cursor:pointer;background:#1261a0;color:#fff}
+.quiz-button.secondary{background:#e9f2f9;color:#092d54;border:1px solid #dce6ef}
+.quiz-button:disabled{opacity:.55;cursor:not-allowed}
+.quiz-button:focus-visible,.quiz-option:focus-within{outline:3px solid #8fc1e8;outline-offset:2px}
+@media(max-width:900px){.hero-art{right:-7%;width:60vw;opacity:.25}}
+@media(max-width:550px){.hero{min-height:460px}.hero-art{right:-22%;width:85vw;height:340px;opacity:.18}.quiz-panel{padding:18px}.quiz-question{padding:14px}}</style>
 
 </head>
 
@@ -707,6 +722,8 @@ footer p{
 
 <section class="hero">
 
+    <div class="hero-art" role="img" aria-label="Ilustración de una caldera conectada a un tablero de seguridad con señales de presión, nivel y bloqueo"><svg viewBox="0 0 620 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173e65"/><stop offset="1" stop-color="#0b2340"/></linearGradient><linearGradient id="vessel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2d6897"/><stop offset="1" stop-color="#15395e"/></linearGradient><radialGradient id="glow"><stop stop-color="#4bb8f2" stop-opacity=".26"/><stop offset="1" stop-color="#4bb8f2" stop-opacity="0"/></radialGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#031326" flood-opacity=".4"/></filter></defs><circle cx="337" cy="190" r="230" fill="url(#glow)"/><g opacity=".15" stroke="#a7d9fa" stroke-width="1"><path d="M20 70h580M20 130h580M20 190h580M20 250h580M20 310h580"/><path d="M80 25v340M140 25v340M200 25v340M260 25v340M320 25v340M380 25v340M440 25v340M500 25v340M560 25v340"/></g><g filter="url(#shadow)"><rect x="45" y="125" width="270" height="150" rx="72" fill="url(#vessel)" stroke="#9bd6f7" stroke-width="3"/><ellipse cx="74" cy="200" rx="29" ry="72" fill="#1c4c75" stroke="#9bd6f7" stroke-width="3"/><ellipse cx="287" cy="200" rx="25" ry="70" fill="#123454" stroke="#9bd6f7" stroke-width="3"/><path d="M95 157h156M95 243h156" stroke="#b9e6ff" stroke-opacity=".35" stroke-width="2"/><path d="M112 126V97h128v29M112 275v28h128v-28" fill="none" stroke="#9bd6f7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M169 278v21m28-21v21" stroke="#e4a63a" stroke-width="6" stroke-linecap="round"/><path d="M154 214c12-18 8-27 20-42 2 13 15 18 15 31 8-8 12-13 12-23 19 17 23 31 16 45-12 22-48 21-62 5-5-5-6-11-1-16z" fill="#f2a43a" opacity=".95"/><path d="M177 225c4-9 10-12 12-21 8 9 10 15 5 22-5 8-15 7-17-1z" fill="#ffe4a2"/><text x="174" y="186" fill="#d8efff" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">GENERADOR</text></g><g fill="none" stroke="#74d1f4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M304 152h58v-40h62" stroke-dasharray="7 8"/><path d="M304 236h40v54h80" stroke-dasharray="7 8"/></g><circle cx="304" cy="152" r="7" fill="#f0b84a" stroke="#fff" stroke-width="2"/><circle cx="304" cy="236" r="7" fill="#54d3b1" stroke="#fff" stroke-width="2"/><g filter="url(#shadow)"><rect x="420" y="65" width="160" height="270" rx="18" fill="url(#panel)" stroke="#9bd6f7" stroke-width="3"/><rect x="439" y="84" width="122" height="64" rx="8" fill="#071a2d" stroke="#4c91bd" stroke-width="2"/><text x="450" y="105" fill="#8fc9ed" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1">SEGURIDAD</text><path d="M451 124h36" stroke="#e85f5f" stroke-width="4" stroke-linecap="round"/><text x="495" y="128" fill="#ffd2d2" font-family="Arial,sans-serif" font-size="11" font-weight="700">BLOQUEO</text><circle cx="455" cy="177" r="10" fill="#e25555"/><circle cx="455" cy="177" r="4" fill="#ffd2d2"/><text x="475" y="181" fill="#eaf6ff" font-family="Arial,sans-serif" font-size="12" font-weight="700">MAP</text><circle cx="455" cy="212" r="10" fill="#e5a63d"/><circle cx="455" cy="212" r="4" fill="#fff1c9"/><text x="475" y="216" fill="#eaf6ff" font-family="Arial,sans-serif" font-size="12" font-weight="700">NIVEL</text><circle cx="455" cy="247" r="10" fill="#47c8a1"/><circle cx="455" cy="247" r="4" fill="#d6fff2"/><text x="475" y="251" fill="#eaf6ff" font-family="Arial,sans-serif" font-size="12" font-weight="700">LLAMA</text><rect x="442" y="278" width="116" height="36" rx="7" fill="#102e4b" stroke="#39739a"/><path d="M456 296h18m10 0h18m10 0h18" stroke="#7cbce1" stroke-width="3" stroke-linecap="round"/><path d="M501 286v20" stroke="#e5a63d" stroke-width="4" stroke-linecap="round"/></g><g><circle cx="362" cy="112" r="22" fill="#0b2744" stroke="#89c9ec" stroke-width="3"/><path d="M349 115a13 13 0 0 1 26 0" fill="none" stroke="#d9efff" stroke-width="2"/><path d="m362 113 8-8" stroke="#e8aa3d" stroke-width="3" stroke-linecap="round"/><circle cx="362" cy="113" r="3" fill="#e8aa3d"/></g><g fill="#d7efff" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1"><text x="332" y="82">SENSOR</text><text x="345" y="327">SEÑAL</text></g></svg></div>
+
     <div class="hero-content">
 
         <span class="badge">
@@ -744,12 +761,13 @@ footer p{
 
 </section>
 
+<section class="topic-index" aria-label="Índice de la guía"><div class="container"><p class="topic-index-label">EN ESTA GUÍA</p><div class="topic-links"><a href="#conceptos">Conceptos clave</a><a href="#secuencia">Cómo funciona</a><a href="#enclavamientos">Bloqueos principales</a><a href="#reset">Restablecimiento</a><a href="#repaso">Practicá y corregí</a></div></div></section>
 
 <!-- =========================
      INTRO
 ========================= -->
 
-<section>
+<section id="conceptos">
 
 <div class="container">
 
@@ -771,20 +789,15 @@ footer p{
         <div class="info-card">
 
             <h3>
-                🔒 Una protección automática
+                🔒 Una función de protección
             </h3>
 
             <p>
-                Un enclavamiento de seguridad es un sistema que,
-                ante una determinada condición peligrosa o no permitida,
-                provoca una acción definida para llevar el sistema
-                a una condición más segura.
+                Un enclavamiento de seguridad detecta una condición definida y ejecuta —o requiere ejecutar— una respuesta prevista para llevar el equipo a una condición segura. La lógica y las acciones concretas dependen del diseño, la categoría del generador y el reglamento aplicable.
             </p>
 
             <p style="margin-top:12px;">
-                En un generador de vapor puede intervenir sobre
-                el combustible, ventiladores, registros de aire,
-                alarmas y otros elementos según el caso.
+                Según el caso, la respuesta puede incluir corte de combustible, alarmas y acciones sobre ventiladores o registros de aire. Algunas acciones pueden corresponder al operador si no es posible realizarlas automáticamente.
             </p>
 
         </div>
@@ -960,7 +973,7 @@ footer p{
      SYSTEM FLOW
 ========================= -->
 
-<section>
+<section id="secuencia">
 
 <div class="container">
 
@@ -1046,14 +1059,13 @@ footer p{
         </h2>
 
         <p>
-            El artículo 103 del Reglamento URSEA establece que los
-            generadores deben cumplir, respecto de los bloqueos por
-            muy alta presión, falta de llama, bajo y muy bajo nivel
-            de agua, los requisitos del Anexo 4. citeturn0search0
+            El artículo 103 remite al Anexo 4 para los bloqueos por muy alta presión, falta de llama y bajo y muy bajo nivel de agua. Los requisitos incluyen excepciones y condiciones según la categoría y el diseño del generador. <a href="https://www.impo.com.uy/bases/resoluciones-ursea-originales/101-2026" target="_blank" rel="noopener noreferrer">Consultar el texto oficial de URSEA en IMPO.</a>
         </p>
 
     </div>
 
+
+    <div class="scope-note"><strong>Antes de comparar los bloqueos:</strong> los requisitos no son idénticos para todas las categorías. En general se requieren dos dispositivos independientes para bajo y muy bajo nivel; el Anexo 4 establece excepciones para E1 y E3 y condiciones particulares para ciertos equipos eléctricos. Revisá siempre la clasificación y el diseño del generador.</div>
 
     <!-- =====================
          MUY ALTA PRESIÓN
@@ -1181,9 +1193,7 @@ footer p{
                     </h4>
 
                     <p>
-                        Debe apagar los ventiladores cuando corresponda
-                        y actuar sobre los registros de aire según
-                        lo establecido.
+                        Cuando corresponda, debe apagar ventiladores, cerrar los registros de aire de entrada y poner en posición mínima los registros del ventilador de tiro inducido.
                     </p>
 
                 </div>
@@ -1275,8 +1285,7 @@ footer p{
                 </div>
 
                 <p>
-                    El bloqueo por bajo nivel debe actuar cuando
-                    se alcanza la condición correspondiente de nivel.
+                    En general, el Anexo 4 prevé dos dispositivos de bloqueo por bajo nivel, independientes entre sí. Hay excepciones por categoría: en equipos E1 y E3 tipo resistencia se prevé un dispositivo; E3 tipo electrodo no requiere este bloqueo. El punto de actuación y la configuración deben verificarse para el equipo concreto.
                 </p>
 
                 <p style="margin-top:10px;">
@@ -1371,9 +1380,7 @@ footer p{
                 </div>
 
                 <p>
-                    El punto que no tenés que olvidar:
-                    <strong>el bajo nivel no es solamente una alarma.</strong>
-                    El enclavamiento produce acciones sobre el sistema.
+                    El restablecimiento del bloqueo por bajo nivel puede ser automático, pero la señal luminosa debe permanecer encendida hasta que el operador evalúe lo ocurrido. El bajo nivel no es solamente una alarma: produce las acciones de protección previstas.
                 </p>
 
             </div>
@@ -1446,8 +1453,7 @@ footer p{
                 </div>
 
                 <p>
-                    El bloqueo por muy bajo nivel debe producir,
-                    como mínimo, las acciones establecidas en el Anexo 4.
+                    El bloqueo por muy bajo nivel debe producir, como mínimo, las acciones establecidas en el Anexo 4. No debe cortar automáticamente el suministro de agua: el tablero debe permitir que el operador la suministre manualmente o anule completamente el suministro, según corresponda.
                 </p>
 
             </div>
@@ -1625,9 +1631,7 @@ footer p{
                 </p>
 
                 <p style="margin-top:10px;">
-                    El test de seguridad también contempla
-                    la verificación de la actuación del dispositivo
-                    de seguridad por falta de llama.
+                    El Anexo 2 incluye la verificación del bloqueo por falta de llama en el test de seguridad.
                 </p>
 
             </div>
@@ -1662,8 +1666,7 @@ footer p{
 
                 <p>
                     Relacioná siempre:
-                    <strong>combustible → llama → detector de llama
-                    → sistema de seguridad de combustión.</strong>
+                    <strong>combustible → llama → detector acorde al combustible → bloqueo que apaga el quemador y activa alarma y señal luminosa. Restablecimiento manual por el operador.</strong>
                 </p>
 
             </div>
@@ -1681,7 +1684,7 @@ footer p{
      RESET
 ========================= -->
 
-<section style="background:#eaf1f7;">
+<section id="reset" style="background:#eaf1f7;">
 
 <div class="container">
 
@@ -1753,9 +1756,7 @@ footer p{
             </h3>
 
             <p>
-                Su funcionamiento depende del sistema de seguridad
-                de combustión instalado y de los requisitos aplicables
-                al generador.
+                El restablecimiento de falta de llama no puede ser automático: debe ser manual por el operador, luego de evaluar la condición según el manual del equipo.
             </p>
 
         </div>
@@ -1788,7 +1789,7 @@ footer p{
      TABLE
 ========================= -->
 
-<section>
+<section id="comparacion">
 
 <div class="container">
 
@@ -1878,7 +1879,7 @@ footer p{
                     </td>
 
                     <td>
-                        Puede ser automático.
+                        Puede ser automático; la señal luminosa debe permanecer encendida hasta que el operador evalúe lo ocurrido.
                     </td>
 
                 </tr>
@@ -1972,10 +1973,7 @@ footer p{
             </h3>
 
             <p>
-                El artículo 89 establece que los lazos de control,
-                protecciones o enclavamientos no pueden desactivarse
-                o anularse salvo en las condiciones previstas
-                por la propia normativa.
+                El artículo 89 prohíbe desactivar o anular lazos de control, protecciones y enclavamientos, salvo cuando el generador está fuera de servicio o durante un test de seguridad con presencia del inspector autorizado. El artículo 95 también prohíbe derivar un componente de seguridad para seguir operando.
             </p>
 
         </div>
@@ -2019,11 +2017,7 @@ footer p{
         </div>
 
         <p>
-            El artículo 90 establece que la presencia de un generador
-            en servicio con ausencia o desvío de algún dispositivo
-            o sistema de medición, control o enclavamiento constituye
-            un riesgo grave e inminente que exige el cese inmediato
-            de la operación conforme al reglamento.
+            Los artículos 90 y 93–95 agregan que una ausencia o desvío puede exigir el cese inmediato, que la lógica y los puntos de ajuste no deben modificarse sin revisión de ingeniería y que los controles reparados o reprogramados deben verificarse antes de volver al servicio.
         </p>
 
         <p style="margin-top:10px;">
@@ -2133,11 +2127,29 @@ footer p{
 </section>
 
 
+<section id="repaso" class="study-quiz">
+<div class="container">
+    <div class="section-title">
+        <h2>Practicá: ¿entendés la lógica del enclavamiento?</h2>
+        <p>En cada intento aparecen seis preguntas mezcladas. Las preguntas no se repiten hasta completar la ronda de 18. Al corregir, vas a ver cuál era la opción correcta y por qué.</p>
+    </div>
+    <div class="quiz-panel">
+        <p class="quiz-progress" id="interlockQuizProgress" aria-live="polite"></p>
+        <form id="interlockQuizForm" novalidate></form>
+        <div class="quiz-actions">
+            <button class="quiz-button" type="button" id="interlockQuizCorrect">Corregir respuestas</button>
+            <button class="quiz-button secondary" type="button" id="interlockQuizNext" hidden>Empezar otra prueba</button>
+        </div>
+        <div class="quiz-feedback" id="interlockQuizFeedback" role="status" aria-live="polite" hidden></div>
+    </div>
+</div>
+</section>
+
 <!-- =========================
      OFFICIAL SOURCE
 ========================= -->
 
-<section>
+<section id="fuente">
 
 <div class="container">
 
@@ -2231,6 +2243,126 @@ footer p{
 
 </footer>
 
+
+
+<script>
+(() => {
+    const bank = [
+        {q:"¿Qué función cumple principalmente un enclavamiento?",o:["Informa una medición para que el operador la interprete.","Responde ante una condición definida mediante una acción de protección prevista.","Mantiene siempre la producción de vapor al máximo."],a:1,e:"El enclavamiento vincula una condición detectada con una respuesta de protección definida para ese sistema."},
+        {q:"¿Qué diferencia mejor una medición de un control?",o:["La medición indica una variable; el control actúa para mantener condiciones previstas.","La medición siempre detiene el generador; el control solo informa.","Son dos nombres para la misma función."],a:0,e:"Un instrumento de medición informa un valor. Un control actúa sobre el proceso de acuerdo con el diseño."},
+        {q:"¿Qué diferencia hay entre una alarma y un enclavamiento?",o:["La alarma informa; el enclavamiento ejecuta o requiere una respuesta de protección.","La alarma corta combustible y el enclavamiento solo enciende una luz.","No existe diferencia."],a:0,e:"La alarma llama la atención del operador; el enclavamiento actúa sobre el sistema según una lógica de seguridad."},
+        {q:"¿Qué característica debe tener el bloqueo por muy alta presión (MAP)?",o:["Ser adicional e independiente del corte por alta presión de operación.","Usar necesariamente el mismo control que regula la presión normal.","Actuar después de abrir la primera válvula de seguridad."],a:0,e:"El Anexo 4 pide un bloqueo MAP adicional e independiente del corte asociado al control normal de operación."},
+        {q:"¿Entre qué límites se ajusta el bloqueo MAP?",o:["Por debajo de la presión de trabajo.","Por encima de la presión de trabajo y por debajo de la apertura de la primera válvula de seguridad.","Por encima de la apertura de todas las válvulas de seguridad."],a:1,e:"El Anexo 4 sitúa la actuación por encima de la presión de trabajo y por debajo de la presión de apertura de la primera válvula de seguridad."},
+        {q:"¿Cómo se restablece el bloqueo por muy alta presión?",o:["Automáticamente apenas la presión baje.","Manualmente por el operador.","No requiere restablecimiento."],a:1,e:"El Anexo 4 establece que el restablecimiento del MAP no puede ser automático."},
+        {q:"¿Qué detector de falta de llama prevé el Anexo 4 para quemadores de gas o combustibles líquidos?",o:["Fotocélula o varilla de ionización acorde al combustible; hay alternativas indicadas para hornallas de gas.","Un manómetro instalado en la línea de vapor.","Un sensor de nivel de agua."],a:0,e:"El detector debe ser adecuado al combustible. Para calentamiento por hornallas de gas, el reglamento admite sensores específicos alternativos."},
+        {q:"¿Qué respuesta mínima corresponde al bloqueo por falta de llama?",o:["Apagar el quemador, activar alarma sonora y señal luminosa; el reset no debe ser automático.","Encender el quemador nuevamente sin intervención.","Solo registrar la condición en el libro diario."],a:0,e:"El Anexo 4 establece el apagado del quemador, alarma sonora, señal luminosa y restablecimiento manual."},
+        {q:"¿Qué pide en general el Anexo 4 para los bloqueos por bajo y muy bajo nivel?",o:["Dos dispositivos independientes, con excepciones específicas para categorías E1 y E3.","Un único dispositivo común para todos los generadores.","Un control visual sin bloqueo."],a:0,e:"Se requieren dos dispositivos independientes en general, pero existen excepciones por categoría y tipo de generador eléctrico."},
+        {q:"¿Qué particularidad tiene el reset del bloqueo por bajo nivel?",o:["Puede ser automático, pero la señal luminosa debe quedar encendida hasta que el operador evalúe lo ocurrido.","Siempre debe ser automático y apagar todas las señales.","Nunca puede restablecerse."],a:0,e:"El Anexo 4 permite reset automático para bajo nivel, pero exige que la señal luminosa permanezca encendida hasta la evaluación del operador."},
+        {q:"¿Qué se requiere antes de restablecer un bloqueo por muy bajo nivel?",o:["Que el operador examine las causas, tome registros y aplique medidas correctivas; el reset es manual.","Que el operador pulse reset inmediatamente para comprobar si vuelve a ocurrir.","Que el nivel visual se desconecte."],a:0,e:"El reset no puede ser automático y debe realizarse manualmente luego de examinar las causas, registrar y corregir lo necesario."},
+        {q:"¿Qué indica el Anexo 4 sobre el suministro de agua al actuar el bloqueo por muy bajo nivel?",o:["Debe cortarse automáticamente en todos los equipos.","No debe anularse automáticamente; el tablero debe permitir suministro manual o cortar completamente el suministro.","Debe quedar siempre bloqueado hasta reiniciar el tablero."],a:1,e:"El reglamento indica que el bloqueo por muy bajo nivel no debe anular automáticamente el suministro de agua y prevé un comando para que el operador lo gestione."},
+        {q:"¿Qué excepción específica menciona el Anexo 4 para E3 tipo electrodo respecto al bloqueo por bajo nivel?",o:["No requiere dispositivo de bloqueo por bajo nivel.","Debe tener tres dispositivos independientes.","Debe usar un reset automático."],a:0,e:"El Anexo 4 señala que los generadores E3 tipo electrodo no requieren dispositivo de bloqueo por bajo nivel."},
+        {q:"¿Cuándo admite el artículo 89 desactivar o anular protecciones o enclavamientos?",o:["Cuando el operador considera que es una molestia.","Con el generador fuera de servicio o durante un test de seguridad con presencia del inspector autorizado.","Durante cualquier parada breve."],a:1,e:"El artículo 89 establece esas excepciones concretas. No habilita a anular protecciones para continuar la operación."},
+        {q:"¿Qué implica operar con ausencia o desvío de un sistema de medición, control o enclavamiento?",o:["Puede constituir un riesgo grave e inminente que requiere cese inmediato según el artículo 90.","Solo requiere una anotación al finalizar el turno.","No tiene consecuencias si no hay alarma."],a:0,e:"El artículo 90 califica esa condición como riesgo grave e inminente y remite al cese de operación previsto por el reglamento."},
+        {q:"¿Qué exige el artículo 93 antes de cambiar lógica, puntos de ajuste o hardware de detección?",o:["Una revisión detallada de ingeniería y documentación por fabricante y/o profesional idóneo.","Una autorización verbal del operador de turno.","Ninguna revisión si el cambio parece pequeño."],a:0,e:"La configuración de seguridad solo puede modificarse con la revisión y documentación técnica previstas en el artículo 93."},
+        {q:"¿Qué debe hacerse después de reemplazar, reparar, reprogramar o actualizar un controlador?",o:["Verificar y probar el sistema antes de volver al servicio y documentar los cambios.","Reiniciar el equipo y asumir que la configuración anterior se conservó.","Borrar el registro previo."],a:0,e:"El artículo 94 exige probar y verificar el funcionamiento antes del retorno al servicio, registrar los cambios y actualizar el manual cuando corresponda."},
+        {q:"¿Qué conducta corresponde si falla un componente de un lazo de seguridad?",o:["Derivarlo temporalmente para continuar produciendo.","Reportar la condición y seguir el manual y procedimiento aplicables; no hacer bypass para continuar operando.","Cambiar los puntos de ajuste por cuenta propia."],a:1,e:"El reglamento prohíbe derivar componentes vinculados a seguridad para continuar la operación. La condición debe reportarse y tratarse conforme a la documentación técnica."}
+    ];
+    const form = document.getElementById("interlockQuizForm");
+    const progress = document.getElementById("interlockQuizProgress");
+    const correctButton = document.getElementById("interlockQuizCorrect");
+    const nextButton = document.getElementById("interlockQuizNext");
+    const feedback = document.getElementById("interlockQuizFeedback");
+    const key = "enclavamientosQuizRestantes_v1";
+    let remaining;
+    try { remaining = JSON.parse(sessionStorage.getItem(key) || "null"); } catch (_) { remaining = null; }
+    if (!Array.isArray(remaining) || remaining.some(i => !Number.isInteger(i) || i < 0 || i >= bank.length)) {
+        remaining = bank.map((_, i) => i);
+    }
+    function save() { try { sessionStorage.setItem(key, JSON.stringify(remaining)); } catch (_) {} }
+    function shuffle(items) {
+        for (let i = items.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [items[i], items[j]] = [items[j], items[i]];
+        }
+        return items;
+    }
+    function begin() {
+        if (remaining.length < 6) remaining = bank.map((_, i) => i);
+        const selected = shuffle(remaining.slice()).slice(0, 6);
+        remaining = remaining.filter(i => !selected.includes(i));
+        save();
+        form.innerHTML = "";
+        feedback.hidden = true;
+        feedback.innerHTML = "";
+        nextButton.hidden = true;
+        correctButton.disabled = false;
+        const round = Math.floor((bank.length - remaining.length - 1) / 6) + 1;
+        progress.textContent = "Ronda " + round + " de 3 · seis preguntas sin repetir";
+        selected.forEach((bankIndex, n) => {
+            const item = bank[bankIndex];
+            const order = shuffle(item.o.map((_, i) => i));
+            const field = document.createElement("fieldset");
+            field.className = "quiz-question";
+            const legend = document.createElement("legend");
+            legend.textContent = (n + 1) + ". " + item.q;
+            field.appendChild(legend);
+            order.forEach(optionIndex => {
+                const label = document.createElement("label");
+                label.className = "quiz-option";
+                const input = document.createElement("input");
+                input.type = "radio";
+                input.name = "interlockQ" + n;
+                input.value = String(optionIndex);
+                input.required = true;
+                const text = document.createElement("span");
+                text.textContent = item.o[optionIndex];
+                label.append(input, text);
+                field.appendChild(label);
+            });
+            field.dataset.bankIndex = String(bankIndex);
+            form.appendChild(field);
+        });
+    }
+    correctButton.addEventListener("click", () => {
+        if (!form.reportValidity()) return;
+        let score = 0;
+        const fields = Array.from(form.querySelectorAll("fieldset"));
+        const explanations = [];
+        fields.forEach((field, n) => {
+            const item = bank[Number(field.dataset.bankIndex)];
+            const selectedInput = field.querySelector("input:checked");
+            const selectedIndex = Number(selectedInput.value);
+            const isCorrect = selectedIndex === item.a;
+            if (isCorrect) score++;
+            field.classList.add(isCorrect ? "is-correct" : "is-incorrect");
+            field.querySelectorAll(".quiz-option").forEach(label => {
+                const input = label.querySelector("input");
+                const choice = Number(input.value);
+                label.classList.toggle("is-correct-answer", choice === item.a);
+                label.classList.toggle("is-incorrect-answer", input.checked && !isCorrect);
+                input.disabled = true;
+            });
+            explanations.push({correct:isCorrect, explanation:item.e});
+        });
+        const heading = document.createElement("strong");
+        heading.textContent = "Resultado: " + score + " de " + fields.length + ".";
+        const list = document.createElement("ul");
+        explanations.forEach(item => {
+            const li = document.createElement("li");
+            const result = document.createElement("strong");
+            result.textContent = item.correct ? "Correcta. " : "Para revisar. ";
+            li.append(result, document.createTextNode(item.explanation));
+            list.appendChild(li);
+        });
+        feedback.replaceChildren(heading, list);
+        feedback.hidden = false;
+        correctButton.disabled = true;
+        nextButton.hidden = false;
+    });
+    nextButton.addEventListener("click", begin);
+    begin();
+})();
+</script>
 
 </body>
 </html>
