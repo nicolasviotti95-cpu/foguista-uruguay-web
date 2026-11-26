@@ -855,6 +855,9 @@ th,td{padding:12px 14px;border:1px solid var(--line);text-align:left}
 th{background:var(--navy);color:#fff}
 @media(max-width:650px){.quiz-panel{padding:20px}.quiz-question{padding:14px}}
 
+
+/* Mejoras de navegación y lectura */
+section[id],h2[id]{scroll-margin-top:105px}.topic-index{padding:20px 0;background:#fff;border-bottom:1px solid #dce6ef}.topic-index-label{margin:0 0 10px;color:#637083;font-size:12px;font-weight:800;letter-spacing:1.1px}.topic-links{display:flex;flex-wrap:wrap;gap:9px}.topic-links a{display:inline-flex;padding:8px 12px;border:1px solid #dce6ef;border-radius:999px;background:#f7fafc;color:#0c4e7e;font-size:14px;font-weight:700;text-decoration:none}.topic-links a:hover{background:#eaf4fb;border-color:#9bc8e3}.next-step{margin:28px 0;padding:24px 26px;border-radius:15px;background:linear-gradient(120deg,#eaf5fc,#f7fbff);border:1px solid #d4e7f4;display:flex;align-items:center;justify-content:space-between;gap:20px}.next-step h2,.next-step h3{margin:0 0 5px;color:#0b3157;font-size:1.25rem}.next-step p{margin:0;color:#536b80}.next-step a{display:inline-flex;flex-shrink:0;padding:11px 16px;border-radius:9px;background:#117fbd;color:#fff;font-weight:800;text-decoration:none}.next-step a:hover{background:#086a9f}@media(max-width:650px){.next-step{align-items:flex-start;flex-direction:column}.topic-links a{font-size:13px}}
 </style>
 </head>
 
@@ -913,7 +916,7 @@ el razonamiento necesario para operar y estudiar con criterio.
 
 </div>
 
-</section>
+</section><section class="topic-index" aria-label="Índice de la guía"><div class="container"><p class="topic-index-label">EN ESTA GUÍA</p><div class="topic-links"><a href="#proceso">Proceso</a><a href="#variables">Variables</a><a href="#agua-nivel">Agua y nivel</a><a href="#presion-control">Presión y control</a><a href="#situaciones">Situaciones</a><a href="#errores-estudio">Errores frecuentes</a><a href="#autoexplicacion">Autoexplicación</a><a href="#practica">Práctica</a></div></div></section>
 
 
 
@@ -2247,7 +2250,7 @@ entendés qué está ocurriendo en el generador.
 
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<section class="next-step" aria-label="Siguiente paso"><div><h2>Comprobá lo que ya aprendiste</h2><p>Hacé un simulacro completo y revisá las explicaciones al final.</p></div><a href="evalua.html">Ir a Evalúate →</a></section><footer>
 
 <div class="container footer-grid">
 

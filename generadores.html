@@ -848,6 +848,9 @@ footer{
         padding:29px 22px;
     }
 }
+
+/* Mejoras de navegación y lectura */
+section[id],h2[id]{scroll-margin-top:105px}.topic-index{padding:20px 0;background:#fff;border-bottom:1px solid #dce6ef}.topic-index-label{margin:0 0 10px;color:#637083;font-size:12px;font-weight:800;letter-spacing:1.1px}.topic-links{display:flex;flex-wrap:wrap;gap:9px}.topic-links a{display:inline-flex;padding:8px 12px;border:1px solid #dce6ef;border-radius:999px;background:#f7fafc;color:#0c4e7e;font-size:14px;font-weight:700;text-decoration:none}.topic-links a:hover{background:#eaf4fb;border-color:#9bc8e3}.next-step{margin:28px 0;padding:24px 26px;border-radius:15px;background:linear-gradient(120deg,#eaf5fc,#f7fbff);border:1px solid #d4e7f4;display:flex;align-items:center;justify-content:space-between;gap:20px}.next-step h2,.next-step h3{margin:0 0 5px;color:#0b3157;font-size:1.25rem}.next-step p{margin:0;color:#536b80}.next-step a{display:inline-flex;flex-shrink:0;padding:11px 16px;border-radius:9px;background:#117fbd;color:#fff;font-weight:800;text-decoration:none}.next-step a:hover{background:#086a9f}@media(max-width:650px){.next-step{align-items:flex-start;flex-direction:column}.topic-links a{font-size:13px}}
 </style>
 </head>
 
@@ -909,7 +912,7 @@ footer{
 
 </div>
 
-</section>
+</section><section class="topic-index" aria-label="Índice de la guía"><div class="container"><p class="topic-index-label">EN ESTA GUÍA</p><div class="topic-links"><a href="#principios-funcionamiento">Principios</a><a href="#tipos-generadores">Tipos</a><a href="#componentes">Componentes</a><a href="#combustion-transferencia">Combustión y calor</a><a href="#agua-vapor">Agua y vapor</a><a href="#aprovechamiento">Aprovechamiento</a><a href="#sistema-generador">Sistema completo</a></div></div></section>
 
 
 <!-- =========================
@@ -1027,7 +1030,7 @@ footer{
 
     <div>
 
-        <h2>
+        <h2 id="principios-funcionamiento">
             Principios de funcionamiento
         </h2>
 
@@ -1430,7 +1433,7 @@ de saturación correspondiente a su presión.
 
     <div>
 
-        <h2>
+        <h2 id="tipos-generadores">
             Tipos de generadores
         </h2>
 
@@ -1936,7 +1939,7 @@ Memorizá la relación:
 
     <div>
 
-        <h2>
+        <h2 id="componentes">
             Construcción y componentes
         </h2>
 
@@ -2473,7 +2476,7 @@ diferentes superficies.
 
     <div>
 
-        <h2>
+        <h2 id="combustion-transferencia">
             Combustión y transferencia de calor
         </h2>
 
@@ -2719,7 +2722,7 @@ acuerdo con su diseño.
 
     <div>
 
-        <h2>
+        <h2 id="agua-vapor">
             Agua y circulación
         </h2>
 
@@ -3010,7 +3013,7 @@ fluidos dentro de un circuito diseñado para producir vapor útil.
 
     <div>
 
-        <h2>
+        <h2 id="aprovechamiento">
             Aprovechamiento de la energía
         </h2>
 
@@ -3224,7 +3227,7 @@ Permiten transferir energía desde los gases hacia el agua o vapor.
 
     <div>
 
-        <h2>
+        <h2 id="sistema-generador">
             El generador como un solo sistema
         </h2>
 
@@ -3640,7 +3643,7 @@ Cómo se aprovecha la energía térmica disponible.
      FOOTER
 ========================= -->
 
-<footer>
+<section class="next-step" aria-label="Siguiente tema"><div><h2>Seguí con el tratamiento del agua</h2><p>Conectá circulación, calidad del agua y generación de vapor.</p></div><a href="tratamiento-agua.html">Ver tratamiento del agua →</a></section><footer>
 
 <div class="footer-main">
 

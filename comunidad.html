@@ -1276,9 +1276,9 @@ experiencias de trabajo y aprender juntos.
 <a class="hero-link" href="#preguntas" id="unansweredHeroLink">Ver preguntas sin respuesta ↓</a>
 </div>
 <div class="hero-summary" aria-live="polite">
-<div><strong id="heroTotal">0</strong> preguntas</div>
-<div><strong id="heroOpen">0</strong> esperan respuesta</div>
-<div><strong id="heroAnswered">0</strong> con respuestas</div>
+<div><strong id="heroTotal">—</strong> preguntas</div>
+<div><strong id="heroOpen">—</strong> esperan respuesta</div>
+<div><strong id="heroAnswered">—</strong> con respuestas</div>
 </div>
 
 </div>
@@ -1393,9 +1393,9 @@ Preguntas de la comunidad
 
 <span
 class="count"
-id="count">
+id="count" aria-live="polite">
 
-0 publicaciones
+Consultando publicaciones…
 
 </span>
 
@@ -1407,7 +1407,7 @@ id="count">
 class="list"
 id="list">
 
-<div class="empty">Cargando publicaciones...</div>
+<div class="empty" role="status" aria-live="polite">Consultando publicaciones…</div>
 
 </div>
 
@@ -4322,7 +4322,10 @@ onSnapshot(
     e => {
 
         console.error(e);
-
+        $("heroTotal").textContent = "—";
+        $("heroOpen").textContent = "—";
+        $("heroAnswered").textContent = "—";
+        $("count").textContent = "Publicaciones no disponibles";
 
         $("list").innerHTML =
 
@@ -4336,7 +4339,7 @@ onSnapshot(
         No se pudieron cargar las publicaciones
         </strong>
 
-        Revisá la conexión con Firebase.
+        Intentá actualizar la página en unos minutos.
 
         </div>
 
