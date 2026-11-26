@@ -117,7 +117,22 @@ const quotas={fundamentos:4,agua:4,operacion:4,seguridad:6,normativa:6};
 const pools={};for(const area of Object.keys(quotas))pools[area]=[];
 questions.forEach((item,index)=>{const area=questionArea(item);if(item.type==="choice"&&pools[area])pools[area].push(index)});
 let selected=[];for(const [area,count] of Object.entries(quotas)){const pool=pools[area];if(pool.length<count)throw new Error("Banco insuficiente: "+area);selected.push(...shuffle(pool).slice(0,count))}
-let picks=shuffle(selected);try{const previous=JSON.parse(localStorage.getItem("evalua-last-exam")||"[]"),oldSet=previous.slice().sort((a,b)=>a-b),newSet=picks.slice().sort((a,b)=>a-b);if(oldSet.length===newSet.length&&newSet.every((value,index)=>value===oldSet[index])){selected=[];for(const [area,count] of Object.entries(quotas))selected.push(...shuffle(pools[area]).slice(0,count));picks=shuffle(selected)}localStorage.setItem("evalua-last-exam",JSON.stringify(picks.slice().sort((a,b)=>a-b)))}catch(error){}return picks
+try{
+const previous=JSON.parse(localStorage.getItem("evalua-last-exam")||"[]");
+const previousSet=Array.isArray(previous)?previous.slice().sort((a,b)=>a-b):[];
+const selectedSet=selected.slice().sort((a,b)=>a-b);
+const identical=previousSet.length===selectedSet.length&&selectedSet.every((value,index)=>value===previousSet[index]);
+if(identical){
+for(const area of Object.keys(quotas)){
+const outgoing=selected.findIndex(index=>questionArea(questions[index])===area);
+const replacement=pools[area].find(index=>!selected.includes(index));
+if(outgoing>=0&&replacement!==undefined){selected[outgoing]=replacement;break}
+}
+}
+const picks=shuffle(selected);
+localStorage.setItem("evalua-last-exam",JSON.stringify(picks.slice().sort((a,b)=>a-b)));
+return picks
+}catch(error){return shuffle(selected)}
 }
 function updateTimer(){const timer=el("timeLeft");if(!timer)return;timer.textContent=`${Math.floor(timeLeft/60)}:${String(timeLeft%60).padStart(2,"0")}`;timer.classList.toggle("warning",timeLeft<=600&&timeLeft>60);timer.classList.toggle("urgent",timeLeft<=60)}
 function stopTimer(){if(timerInterval){clearInterval(timerInterval);timerInterval=null}}
